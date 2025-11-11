@@ -1,0 +1,41 @@
+{
+  "name": "kvv-ausfaelle-scraper",
+  "version": "1.0.0",
+  "description": "Scraper for KVV (Karlsruhe) transit cancellations from RSS feeds",
+  "type": "module",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:clean": "rm -rf dist && npm run build",
+    "start": "node dist/index.js",
+    "dev": "npm run build && npm run start",
+    "fetch-article": "tsx src/fetch-article.ts",
+    "test:parser": "tsx src/test-parser.ts",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run type-check && npm run format:check"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/xml2js": "^0.4.14",
+    "prettier": "^3.6.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "keywords": [
+    "kvv",
+    "karlsruhe",
+    "transit",
+    "scraper",
+    "rss",
+    "cancellations"
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "line": "S51",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:56:00.000Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "08:38",
+    "toStop": "Germersheim Bahnhof 84897 10:50 Uhr Germersheim Bahnhof - 11:30 Uhr Karlsruhe Rheinbergstraße",
+    "toTime": "10:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
+    "capturedAt": "2025-11-12T09:46:23.276Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:56:00.000Z",
+    "trainNumber": "84897",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "10:50",
+    "toStop": "Karlsruhe Rheinbergstraße",
+    "toTime": "11:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
+    "capturedAt": "2025-11-12T11:51:47.376Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-11-12",
+    "stand": "2025-11-12T07:18:13.582Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "08:38",
+    "toStop": "Germersheim Bahnhof",
+    "toTime": "10:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
+    "capturedAt": "2025-11-12T07:18:13.582Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-11-12",
+    "stand": "2025-11-12T07:18:13.582Z",
+    "trainNumber": "84897",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "10:50",
+    "toStop": "Karlsruhe Rheinbergstraße",
+    "toTime": "11:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
+    "capturedAt": "2025-11-12T07:18:13.582Z"
+  }
+]

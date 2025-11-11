@@ -1,0 +1,192 @@
+[
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "30029",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "12:08",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "12:51"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "30026",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "12:11",
+    "toStop": "Bad-Herrenalb",
+    "toTime": "12:33"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "30033",
+    "fromStop": "Bad-Herrenalb",
+    "fromTime": "12:43",
+    "toStop": "Hochstetten",
+    "toTime": "14:15"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20038",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "13:05",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "14:15"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20039",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "14:21",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "14:44"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "30039",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "14:28",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "15:11"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20044",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "15:21",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "15:45"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "30042",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "15:25",
+    "toStop": "Bad-Herrenalb",
+    "toTime": "16:33"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "10057",
+    "fromStop": "Ettlingnen Albgaubad",
+    "fromTime": "15:34",
+    "toStop": "Hochstetten",
+    "toTime": "16:47"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20045",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "15:51",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "16:15"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "30049",
+    "fromStop": "Bad-Herrenalb",
+    "fromTime": "16:43",
+    "toStop": "Hochstetten",
+    "toTime": "18:15"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "10060",
+    "fromStop": "Hochstetten",
+    "fromTime": "16:52",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "18:02"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "10067",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "17:54",
+    "toStop": "Hochstetten",
+    "toTime": "19:07"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "10068",
+    "fromStop": "Hochstetten",
+    "fromTime": "18:52",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "20:02"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "10073",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "19:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "19:51"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20064",
+    "fromStop": "Hochstetten",
+    "fromTime": "19:12",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "20:45"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20066",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "20:05",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "21:15"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20065",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "20:51",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "21:55"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:10:00.000Z",
+    "trainNumber": "20067",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "21:21",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "21:45"
+  }
+]

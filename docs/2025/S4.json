@@ -1,0 +1,74 @@
+[
+  {
+    "line": "S4",
+    "date": "2025-11-12",
+    "stand": "2025-11-12T08:30:00.000Z",
+    "trainNumber": "85518",
+    "fromStop": "Bretten Bahnhof",
+    "fromTime": "10:36",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "11:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
+    "capturedAt": "2025-11-12T11:51:47.409Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-12",
+    "stand": "2025-11-12T08:30:00.000Z",
+    "trainNumber": "85517",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "12:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "13:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
+    "capturedAt": "2025-11-12T11:51:47.409Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-12",
+    "stand": "2025-11-12T08:30:00.000Z",
+    "trainNumber": "85526",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "14:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "15:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
+    "capturedAt": "2025-11-12T11:51:47.409Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-12",
+    "stand": "2025-11-12T08:30:00.000Z",
+    "trainNumber": "85453",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "16:15",
+    "toStop": "Bretten Bahnhof",
+    "toTime": "16:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
+    "capturedAt": "2025-11-12T11:51:47.409Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:01:00.000Z",
+    "trainNumber": "85517",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "12:35",
+    "toStop": "Flehingen",
+    "toTime": "13:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257118",
+    "capturedAt": "2025-11-13T09:57:17.740Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T10:01:00.000Z",
+    "trainNumber": "85526",
+    "fromStop": "Flehingen",
+    "fromTime": "14:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "15:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257118",
+    "capturedAt": "2025-11-13T09:57:17.740Z"
+  }
+]

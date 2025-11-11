@@ -1,0 +1,22 @@
+[
+  {
+    "line": "S51",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:56:00.000Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "08:38",
+    "toStop": "Germersheim Bahnhof",
+    "toTime": "10:07"
+  },
+  {
+    "line": "S51",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:56:00.000Z",
+    "trainNumber": "84897",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "10:50",
+    "toStop": "Karlsruhe Rheinbergstraße",
+    "toTime": "11:30"
+  }
+]

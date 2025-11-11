@@ -1,0 +1,82 @@
+[
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84792",
+    "fromStop": "Tullastraße / Alter Schlachthof",
+    "fromTime": "04:10",
+    "toStop": "Wörth Badepark",
+    "toTime": "04:51"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84705",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "05:02",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "05:38"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84791",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:05",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "06:07"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84806",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "05:58",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:05"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84810",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "06:18",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:22"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84803",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:15",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "08:17"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84805",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:35",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "08:37"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-11",
+    "stand": "2025-11-11T23:55:00.000Z",
+    "trainNumber": "84920",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "08:48",
+    "toStop": "Karlsruhe Weinweg",
+    "toTime": "09:09"
+  }
+]
