@@ -13,7 +13,13 @@ TypeScript/Node script that fetches the public KVV RSS feed, parses the “Betri
 ## Live data & format
 
 - GitHub Pages serves the contents of `docs/`. The root `index.html` lists available years; each year directory has its own index and JSON files grouped by line.
-- Sample entry (see `docs/2025/S5.json`):
+- **Navigation**: Both HTML and JSON indices are automatically generated:
+  - `docs/index.html` and `docs/index.json` — Root index listing all years
+  - `docs/<year>/index.html` and `docs/<year>/index.json` — Year-specific index listing all data files
+- **Index JSON format**:
+  - Root index: `{ "years": ["2025", ...], "generatedAt": "..." }`
+  - Year index: `{ "year": "2025", "files": ["S1-S11.json", ...], "generatedAt": "..." }`
+- Sample data entry (see `docs/2025/S5.json`):
 
 ```json
 {

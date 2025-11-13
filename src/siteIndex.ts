@@ -102,6 +102,29 @@ ${fileLinks || '      <li><em>No files yet</em></li>'}
 }
 
 /**
+ * Builds the root index JSON listing all available years.
+ */
+function buildRootIndexJson(years: readonly string[]): string {
+  const data = {
+    years: years.slice().sort(),
+    generatedAt: new Date().toISOString(),
+  };
+  return JSON.stringify(data, null, 2);
+}
+
+/**
+ * Builds a year index JSON listing all JSON files for that year.
+ */
+function buildYearIndexJson(year: string, files: readonly string[]): string {
+  const data = {
+    year,
+    files: files.slice().sort(),
+    generatedAt: new Date().toISOString(),
+  };
+  return JSON.stringify(data, null, 2);
+}
+
+/**
  * Checks if a directory exists.
  */
 async function directoryExists(path: string): Promise<boolean> {
@@ -142,7 +165,7 @@ async function listJsonFiles(dir: string): Promise<string[]> {
 }
 
 /**
- * Generates HTML index pages for the site.
+ * Generates HTML and JSON index pages for the site.
  * Creates a root index listing all years and per-year indices listing JSON files.
  */
 export async function generateSiteIndices(baseDir: string): Promise<void> {
@@ -151,17 +174,25 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
 
   const years = await findYears(baseDir);
 
-  // Generate root index
+  // Generate root indices (HTML and JSON)
   const rootHtml = buildRootIndex(years);
-  await writeFile(join(baseDir, 'index.html'), rootHtml, 'utf8');
+  const rootJson = buildRootIndexJson(years);
+  await Promise.all([
+    writeFile(join(baseDir, 'index.html'), rootHtml, 'utf8'),
+    writeFile(join(baseDir, 'index.json'), rootJson, 'utf8'),
+  ]);
 
-  // Generate per-year indices
+  // Generate per-year indices (HTML and JSON)
   await Promise.all(
     years.map(async (year) => {
       const yearDir = join(baseDir, year);
       const files = await listJsonFiles(yearDir);
       const html = buildYearIndex(year, files);
-      await writeFile(join(yearDir, 'index.html'), html, 'utf8');
+      const json = buildYearIndexJson(year, files);
+      await Promise.all([
+        writeFile(join(yearDir, 'index.html'), html, 'utf8'),
+        writeFile(join(yearDir, 'index.json'), json, 'utf8'),
+      ]);
     }),
   );
 }
