@@ -98,6 +98,18 @@
   {
     "line": "S1-S11",
     "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "30039",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "14:28",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "15:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
     "stand": "2025-11-13T07:09:00.000Z",
     "trainNumber": "20044",
     "fromStop": "Ettlingen Stadt",
@@ -106,6 +118,30 @@
     "toTime": "15:45",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
     "capturedAt": "2025-11-13T09:57:18.042Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "30042",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "15:25",
+    "toStop": "Bad-Herrenalb",
+    "toTime": "16:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "10057",
+    "fromStop": "Ettlingnen Albgaubad",
+    "fromTime": "15:34",
+    "toStop": "Hochstetten",
+    "toTime": "16:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
   },
   {
     "line": "S1-S11",
@@ -122,6 +158,54 @@
   {
     "line": "S1-S11",
     "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "10056",
+    "fromStop": "Hochstetten",
+    "fromTime": "15:52",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "17:02",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "30049",
+    "fromStop": "Bad-Herrenalb",
+    "fromTime": "16:43",
+    "toStop": "Hochstetten",
+    "toTime": "18:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "10060",
+    "fromStop": "Hochstetten",
+    "fromTime": "16:52",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "18:02",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "10065",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "17:34",
+    "toStop": "Hochstetten",
+    "toTime": "18:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
     "stand": "2025-11-13T07:09:00.000Z",
     "trainNumber": "10067",
     "fromStop": "Ettlingen Albgaubad",
@@ -130,6 +214,30 @@
     "toTime": "19:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
     "capturedAt": "2025-11-13T09:57:18.042Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "10068",
+    "fromStop": "Hochstetten",
+    "fromTime": "18:52",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "20:02",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "10073",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "19:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "19:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
   },
   {
     "line": "S1-S11",
@@ -146,6 +254,30 @@
   {
     "line": "S1-S11",
     "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "20066",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "20:05",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "21:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "20070",
+    "fromStop": "Hochstetten",
+    "fromTime": "20:43",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "22:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
     "stand": "2025-11-13T07:09:00.000Z",
     "trainNumber": "20065",
     "fromStop": "Ittersbach Rathaus",
@@ -154,5 +286,29 @@
     "toTime": "21:55",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
     "capturedAt": "2025-11-13T09:57:18.042Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "20067",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "21:21",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "21:45",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
+  },
+  {
+    "line": "S1-S11",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "20069",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "22:21",
+    "toStop": "Hochstetten",
+    "toTime": "23:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T12:48:55.542Z"
   }
 ]
