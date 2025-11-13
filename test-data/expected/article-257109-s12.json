@@ -1,0 +1,12 @@
+[
+  {
+    "line": "S12",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T08:29:00.000Z",
+    "trainNumber": "40004",
+    "fromStop": "Karlsruhe Rheinhafen",
+    "fromTime": "15:25",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "16:29"
+  }
+]
