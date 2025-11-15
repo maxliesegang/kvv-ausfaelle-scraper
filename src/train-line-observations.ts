@@ -1,5 +1,5 @@
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { exists, ensureDirectory, readJsonFile, writeJsonFile } from './utils/fs.js';
 
 const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'src', 'train-line-definitions', 'data');
 
@@ -42,16 +42,14 @@ function slugifyLineId(line: string): string {
 /**
  * Persists observed train line mappings into the data directory.
  */
-export function updateTrainLineDefinitionsFromObservations(
+export async function updateTrainLineDefinitionsFromObservations(
   observations: TrainLineObservations,
-): void {
+): Promise<void> {
   if (observations.size === 0) {
     return;
   }
 
-  if (!existsSync(TRAIN_LINE_DATA_DIR)) {
-    mkdirSync(TRAIN_LINE_DATA_DIR, { recursive: true });
-  }
+  await ensureDirectory(TRAIN_LINE_DATA_DIR);
 
   for (const [line, trainNumbers] of observations) {
     if (trainNumbers.size === 0) continue;
@@ -62,9 +60,12 @@ export function updateTrainLineDefinitionsFromObservations(
     const filePath = join(TRAIN_LINE_DATA_DIR, `${slug}.json`);
     let existing: { line: string; trainNumbers: string[] } = { line, trainNumbers: [] };
 
-    if (existsSync(filePath)) {
+    if (await exists(filePath)) {
       try {
-        existing = JSON.parse(readFileSync(filePath, 'utf-8'));
+        const data = await readJsonFile<{ line: string; trainNumbers: string[] }>(filePath);
+        if (data) {
+          existing = data;
+        }
       } catch (error) {
         console.warn(`⚠️  Failed to read ${filePath}:`, error);
         continue;
@@ -96,7 +97,7 @@ export function updateTrainLineDefinitionsFromObservations(
       trainNumbers: Array.from(merged).sort((a, b) => a.localeCompare(b, 'de', { numeric: true })),
     };
 
-    writeFileSync(filePath, JSON.stringify(updated, null, 2) + '\n', 'utf-8');
+    await writeJsonFile(filePath, updated);
     console.log(`  ↳ Added ${newlyAdded.join(', ')} to train-line mapping (${line} → ${filePath})`);
   }
 }

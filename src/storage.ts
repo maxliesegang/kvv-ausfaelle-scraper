@@ -1,33 +1,16 @@
-import { access, mkdir, readFile, writeFile } from 'fs/promises';
-import { dirname, join } from 'path';
+import { join } from 'path';
 import type { Cancellation } from './types.js';
-
-/**
- * Checks if a file exists.
- */
-async function fileExists(filePath: string): Promise<boolean> {
-  try {
-    await access(filePath);
-    return true;
-  } catch {
-    return false;
-  }
-}
+import { readJsonFile } from './utils/fs.js';
 
 /**
  * Loads existing cancellation data from a JSON file.
  * Returns empty array if file doesn't exist or cannot be parsed.
  */
 export async function loadExisting(filePath: string): Promise<Cancellation[]> {
-  if (!(await fileExists(filePath))) {
-    return [];
-  }
-
   try {
-    const raw = await readFile(filePath, 'utf8');
-    const json = JSON.parse(raw);
-    if (Array.isArray(json)) {
-      return json as Cancellation[];
+    const data = await readJsonFile<Cancellation[]>(filePath);
+    if (data && Array.isArray(data)) {
+      return data;
     }
   } catch (error) {
     console.warn('Failed to read/parse existing file', filePath, error);
@@ -121,9 +104,9 @@ function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
  */
 async function writeBucket(bucket: CancellationBucket): Promise<void> {
   const { filePath, entries, stats } = bucket;
-  await mkdir(dirname(filePath), { recursive: true });
+  const { writeJsonFile } = await import('./utils/fs.js');
   entries.sort(sortDeterministic);
-  await writeFile(filePath, JSON.stringify(entries, null, 2), 'utf8');
+  await writeJsonFile(filePath, entries);
   console.log('Updated', filePath, `(added: ${stats.added}, duplicates: ${stats.duplicates})`);
 }
 

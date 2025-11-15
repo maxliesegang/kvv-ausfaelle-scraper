@@ -1,65 +1,23 @@
-import type { Cancellation } from './types.js';
-import { lookupLineForTrain } from './train-lines.js';
-
 /**
- * Regex patterns for parsing cancellation detail pages.
+ * Trip line parsing and validation utilities.
  */
-const PATTERNS = {
-  /**
-   * Matches "Linie <line>" to extract the transit line identifier.
-   * Requires the token to contain at least one digit to avoid words like "Regiobus".
-   */
-  LINE: /Linien?\s+([A-Za-z]+[0-9][A-Za-z0-9-]*)/i,
 
-  /** Matches "Nach aktuellem Stand DD.MM.YYYY HH:MM:SS" to extract the status timestamp */
-  STAND: /Nach aktuellem Stand\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})/,
-
-  /** Matches "DD.MM.YYYY, HH:MM Uhr" alternative date format (without seconds) */
-  STAND_ALT: /(\d{2}\.\d{2}\.\d{4}),\s*(\d{2}:\d{2})\s*Uhr/,
-
-  /**
-   * Matches trip format: <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
-   * Handles optional "Uhr" suffix after times
-   * Example: "123 Karlsruhe Hbf (10:30 Uhr) - Bruchsal (11:00)"
-   */
-  TRIP_OLD_FORMAT:
-    /^(\d+)\s+(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)\s*[-–]+\s*(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)/,
-
-  /**
-   * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
-   * Example: "84888 08:38 Uhr Söllingen Bahnhof - 10:07 Uhr Germersheim Bahnhof"
-   */
-  TRIP_NEW_FORMAT:
-    /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
-} as const;
-
-/**
- * Text markers used to identify sections in the HTML.
- */
-const MARKERS = {
-  /** Markers that precede the list of affected trips (multiple variants) */
-  TRIPS_START: [
-    'sind folgende Fahrten von einem (Teil-)Ausfall betroffen:',
-    'sind folgende Fahrten betroffen:',
-    'Betroffene Fahrten:',
-  ] as readonly string[],
-
-  /** Marker that ends the list of affected trips */
-  TRIPS_END: 'Ob deine Verbindung' as const,
-};
-
-/** Default line value when parsing fails */
-const DEFAULT_LINE = 'UNKNOWN' as const;
-
-const MULTI_LINE_HINT_PATTERN = /\bund\b|,|\/|&/i;
-const MULTI_LINE_RANGE_PATTERN = /[A-Za-z]+\d+\s*-\s*[A-Za-z]*\d+/;
-const LINE_MENTION_SECTION_PATTERN = /Linien?\s+([^.\n]+)/gi;
-const LINE_IDENTIFIER_PATTERN = /\b[A-Za-z]+\d{1,3}\b/g;
+import type { Cancellation } from '../types.js';
+import { lookupLineForTrain } from '../train-lines.js';
+import {
+  PATTERNS,
+  MARKERS,
+  DEFAULT_LINE,
+  MULTI_LINE_HINT_PATTERN,
+  MULTI_LINE_RANGE_PATTERN,
+  LINE_MENTION_SECTION_PATTERN,
+  LINE_IDENTIFIER_PATTERN,
+} from './patterns.js';
 
 /**
  * Determines whether the parsed line value looks ambiguous (e.g. "S1 und S11").
  */
-function isAmbiguousLine(line: string): boolean {
+export function isAmbiguousLine(line: string): boolean {
   if (!line || line === DEFAULT_LINE) return true;
   if (MULTI_LINE_HINT_PATTERN.test(line)) return true;
   if (MULTI_LINE_RANGE_PATTERN.test(line)) return true;
@@ -69,7 +27,7 @@ function isAmbiguousLine(line: string): boolean {
 /**
  * Resolves the effective line for a trip, falling back to train-number overrides.
  */
-function resolveLineForTrip(
+export function resolveLineForTrip(
   trainNumber: string,
   metadata: {
     readonly line: string;
@@ -99,7 +57,7 @@ function resolveLineForTrip(
 /**
  * Checks whether a line of text looks like a parsable trip entry.
  */
-function isValidTripLine(line: string): boolean {
+export function isValidTripLine(line: string): boolean {
   // Try new format first
   const newMatch = line.match(PATTERNS.TRIP_NEW_FORMAT);
   if (newMatch) {
@@ -117,7 +75,7 @@ function isValidTripLine(line: string): boolean {
 /**
  * Splits a text block into trimmed candidate lines for trip parsing.
  */
-function buildTripCandidateLines(text: string): string[] {
+export function buildTripCandidateLines(text: string): string[] {
   return text
     .split('\n')
     .map((line) =>
@@ -140,7 +98,7 @@ function buildTripCandidateLines(text: string): string[] {
 /**
  * Extracts how many distinct lines are explicitly mentioned in the article text.
  */
-function extractMentionedLines(text: string): string[] {
+export function extractMentionedLines(text: string): string[] {
   const mentions = new Set<string>();
   let match: RegExpExecArray | null;
 
@@ -158,8 +116,17 @@ function extractMentionedLines(text: string): string[] {
 
 /**
  * Merges lines that belong together and filters out invalid ones.
+ *
+ * This handles cases where trip information is split across multiple lines
+ * by attempting to combine up to 3 consecutive lines to form valid trip entries.
+ *
+ * Algorithm:
+ * 1. If current line is valid, add it and move to next
+ * 2. Otherwise, try combining with next 1-3 lines
+ * 3. If combination becomes valid, add it and skip merged lines
+ * 4. If no valid combination found, keep the line (will be filtered later)
  */
-function mergeTripLines(rawLines: string[]): string[] {
+export function mergeTripLines(rawLines: string[]): string[] {
   const mergedLines: string[] = [];
   let i = 0;
 
@@ -195,113 +162,12 @@ function mergeTripLines(rawLines: string[]): string[] {
 }
 
 /**
- * Strips HTML tags from a string and normalizes whitespace.
- * Converts <br> and </p> tags to line breaks before stripping.
- *
- * @param html - HTML string to strip
- * @returns Plain text with normalized line breaks
- */
-function stripHtml(html: string): string {
-  return html
-    .replace(/<br\s*\/?\s*>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/\r/g, '')
-    .trim();
-}
-
-/**
- * Parses a German datetime (DD.MM.YYYY HH:MM:SS) into ISO format.
- *
- * @param dateStr - Date string in DD.MM.YYYY format
- * @param timeStr - Time string in HH:MM:SS format
- * @returns ISO timestamp string
- */
-function parseGermanDateTime(dateStr: string, timeStr: string): string {
-  const dateParts = dateStr.split('.').map(Number);
-  const timeParts = timeStr.split(':').map(Number);
-
-  const day = dateParts[0] ?? 1;
-  const month = dateParts[1] ?? 1;
-  const year = dateParts[2] ?? new Date().getFullYear();
-  const hh = timeParts[0] ?? 0;
-  const mm = timeParts[1] ?? 0;
-  const ss = timeParts[2] ?? 0;
-
-  const date = new Date(year, month - 1, day, hh, mm, ss);
-  return date.toISOString();
-}
-
-/**
- * Extracts the transit line identifier from the text.
- *
- * @param text - Plain text content to search
- * @returns Line identifier (uppercase) or DEFAULT_LINE if not found
- */
-function extractLine(text: string): string {
-  const match = text.match(PATTERNS.LINE);
-  return match?.[1]?.toUpperCase() ?? DEFAULT_LINE;
-}
-
-interface StandInfo {
-  /** ISO timestamp of the status */
-  readonly standIso: string;
-  /** ISO date (YYYY-MM-DD) extracted from the status */
-  readonly dateForTrips: string;
-}
-
-export interface ParseDetailOptions {
-  readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
-}
-
-/**
- * Extracts the status ("Stand") timestamp from the text.
- *
- * @param text - Plain text content to search
- * @returns Status info with ISO timestamp and date, or current time if not found
- */
-function extractStand(text: string): StandInfo {
-  // Try primary format: "Nach aktuellem Stand DD.MM.YYYY HH:MM:SS"
-  let match = text.match(PATTERNS.STAND);
-
-  if (match) {
-    const dateStr = match[1];
-    const timeStr = match[2];
-    if (dateStr && timeStr) {
-      const standIso = parseGermanDateTime(dateStr, timeStr);
-      const dateForTrips = standIso.slice(0, 10);
-      return { standIso, dateForTrips };
-    }
-  }
-
-  // Try alternative format: "DD.MM.YYYY, HH:MM Uhr"
-  match = text.match(PATTERNS.STAND_ALT);
-  if (match) {
-    const dateStr = match[1];
-    const timeStr = match[2];
-    if (dateStr && timeStr) {
-      // Add seconds since alternative format doesn't include them
-      const standIso = parseGermanDateTime(dateStr, `${timeStr}:00`);
-      const dateForTrips = standIso.slice(0, 10);
-      return { standIso, dateForTrips };
-    }
-  }
-
-  // Fallback to current time
-  const now = new Date().toISOString();
-  return {
-    standIso: now,
-    dateForTrips: now.slice(0, 10),
-  };
-}
-
-/**
  * Extracts the section of text containing trip listings.
  *
  * @param text - Full plain text content
  * @returns Array of trip lines, or empty array if section not found
  */
-function extractTripLines(text: string): string[] {
+export function extractTripLines(text: string): string[] {
   const parseFromSection = (section: string): string[] => {
     const rawLines = buildTripCandidateLines(section);
     if (rawLines.length === 0) {
@@ -340,7 +206,7 @@ function extractTripLines(text: string): string[] {
  * @param metadata - Common metadata for all trips (line, date, stand, sourceUrl, capturedAt)
  * @returns Cancellation object or null if parsing fails
  */
-function parseTripLine(
+export function parseTripLine(
   line: string,
   metadata: {
     readonly line: string;
@@ -414,53 +280,4 @@ function parseTripLine(
   }
 
   return null;
-}
-
-/**
- * Parses a cancellation detail page HTML into an array of Cancellation objects.
- *
- * @param html - Raw HTML content of the detail page
- * @param url - Source URL for reference
- * @returns Array of parsed cancellations (empty if parsing fails or no trips found)
- */
-export function parseDetailPage(
-  html: string,
-  url: string,
-  options?: ParseDetailOptions,
-): Cancellation[] {
-  const text = stripHtml(html);
-
-  // Extract metadata
-  const line = extractLine(text);
-  const mentionedLines = extractMentionedLines(text);
-  const lineMentionCount = mentionedLines.length;
-  const { standIso, dateForTrips } = extractStand(text);
-  const capturedAt = new Date().toISOString();
-
-  const metadata = {
-    line,
-    date: dateForTrips,
-    stand: standIso,
-    sourceUrl: url,
-    capturedAt,
-    lineMentionCount,
-    ...(options?.onTrainLineObserved ? { onTrainLineObserved: options.onTrainLineObserved } : {}),
-  };
-
-  // Extract and parse trip lines
-  const tripLines = extractTripLines(text);
-  const trips: Cancellation[] = [];
-
-  for (const tripLine of tripLines) {
-    const trip = parseTripLine(tripLine, metadata);
-    if (trip) {
-      trips.push(trip);
-    }
-  }
-
-  if (trips.length === 0) {
-    throw new Error(`Incorrect parse: no trips were found in article ${url}`);
-  }
-
-  return trips;
 }

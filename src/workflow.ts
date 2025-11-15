@@ -1,7 +1,7 @@
 import type { Cancellation, Item } from './types.js';
 import { RSS_URL } from './config.js';
 import { fetchText, parseRss } from './rss.js';
-import { parseDetailPage } from './parser.js';
+import { parseDetailPage } from './parser/index.js';
 import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
@@ -58,7 +58,7 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     const trips = parseDetailPage(html, url, {
       onTrainLineObserved: record,
     });
-    updateTrainLineDefinitionsFromObservations(observations);
+    await updateTrainLineDefinitionsFromObservations(observations);
     console.log(`  -> parsed ${trips.length} trips`);
     return trips;
   } catch (error) {

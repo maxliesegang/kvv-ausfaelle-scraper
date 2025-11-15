@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
-import { parseDetailPage } from './parser.js';
+import { parseDetailPage } from './parser/index.js';
 import type { Cancellation } from './types.js';
 
 /** ANSI color codes for terminal output */

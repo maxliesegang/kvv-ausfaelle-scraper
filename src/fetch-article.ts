@@ -1,7 +1,7 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fetchText } from './rss.js';
-import { parseDetailPage } from './parser.js';
+import { parseDetailPage } from './parser/index.js';
 import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
@@ -82,7 +82,7 @@ async function main() {
     const cancellations = parseDetailPage(html, url, {
       onTrainLineObserved: record,
     });
-    updateTrainLineDefinitionsFromObservations(observations);
+    await updateTrainLineDefinitionsFromObservations(observations);
 
     if (cancellations.length === 0) {
       console.warn('Warning: No cancellations parsed from HTML!');

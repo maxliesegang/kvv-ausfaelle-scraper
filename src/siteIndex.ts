@@ -1,5 +1,6 @@
-import { access, mkdir, readdir, writeFile } from 'fs/promises';
+import { readdir } from 'fs/promises';
 import { join } from 'path';
+import { exists, ensureDirectory, writeTextFile } from './utils/fs.js';
 
 /**
  * Escapes special HTML characters.
@@ -124,25 +125,13 @@ function buildYearIndexJson(year: string, files: readonly string[]): string {
   return JSON.stringify(data, null, 2);
 }
 
-/**
- * Checks if a directory exists.
- */
-async function directoryExists(path: string): Promise<boolean> {
-  try {
-    await access(path);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 const YEAR_PATTERN = /^\d{4}$/;
 
 /**
  * Finds all year directories (4-digit names) in the base directory.
  */
 async function findYears(baseDir: string): Promise<string[]> {
-  if (!(await directoryExists(baseDir))) {
+  if (!(await exists(baseDir))) {
     return [];
   }
 
@@ -154,7 +143,7 @@ async function findYears(baseDir: string): Promise<string[]> {
  * Lists all JSON files in a directory.
  */
 async function listJsonFiles(dir: string): Promise<string[]> {
-  if (!(await directoryExists(dir))) {
+  if (!(await exists(dir))) {
     return [];
   }
 
@@ -170,7 +159,7 @@ async function listJsonFiles(dir: string): Promise<string[]> {
  */
 export async function generateSiteIndices(baseDir: string): Promise<void> {
   // Ensure base directory exists
-  await mkdir(baseDir, { recursive: true });
+  await ensureDirectory(baseDir);
 
   const years = await findYears(baseDir);
 
@@ -178,8 +167,8 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
   const rootHtml = buildRootIndex(years);
   const rootJson = buildRootIndexJson(years);
   await Promise.all([
-    writeFile(join(baseDir, 'index.html'), rootHtml, 'utf8'),
-    writeFile(join(baseDir, 'index.json'), rootJson, 'utf8'),
+    writeTextFile(join(baseDir, 'index.html'), rootHtml),
+    writeTextFile(join(baseDir, 'index.json'), rootJson),
   ]);
 
   // Generate per-year indices (HTML and JSON)
@@ -190,8 +179,8 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
       const html = buildYearIndex(year, files);
       const json = buildYearIndexJson(year, files);
       await Promise.all([
-        writeFile(join(yearDir, 'index.html'), html, 'utf8'),
-        writeFile(join(yearDir, 'index.json'), json, 'utf8'),
+        writeTextFile(join(yearDir, 'index.html'), html),
+        writeTextFile(join(yearDir, 'index.json'), json),
       ]);
     }),
   );

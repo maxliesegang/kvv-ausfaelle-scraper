@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { parseDetailPage } from './parser.js';
+import { parseDetailPage } from './parser/index.js';
 import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
@@ -59,7 +59,7 @@ try {
   console.log(`  JSON: ${jsonOutputPath}`);
   console.log(`  Trips: ${cancellations.length}`);
 
-  updateTrainLineDefinitionsFromObservations(observations);
+  await updateTrainLineDefinitionsFromObservations(observations);
 
   // Print first cancellation as sample
   if (cancellations.length > 0) {
