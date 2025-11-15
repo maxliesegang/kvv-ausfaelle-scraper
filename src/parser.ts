@@ -5,11 +5,11 @@ import { lookupLineForTrain } from './train-lines.js';
  * Regex patterns for parsing cancellation detail pages.
  */
 const PATTERNS = {
-  /** Matches "Linien S1 und S11" to handle combined S1/S11 lines */
-  LINE_S1_S11: /Linien S1 und S11/i,
-
-  /** Matches "Linie <line>" to extract the transit line identifier */
-  LINE: /Linie\s+([A-Za-z0-9]+)/,
+  /**
+   * Matches "Linie <line>" to extract the transit line identifier.
+   * Requires the token to contain at least one digit to avoid words like "Regiobus".
+   */
+  LINE: /Linien?\s+([A-Za-z]+[0-9][A-Za-z0-9-]*)/i,
 
   /** Matches "Nach aktuellem Stand DD.MM.YYYY HH:MM:SS" to extract the status timestamp */
   STAND: /Nach aktuellem Stand\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})/,
@@ -73,18 +73,20 @@ function resolveLineForTrip(
   trainNumber: string,
   metadata: {
     readonly line: string;
-    readonly hasMultipleLineMentions: boolean;
+    readonly lineMentionCount: number;
     readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
   },
 ): string {
   const normalizedLine = metadata.line?.trim() || DEFAULT_LINE;
   const isAmbiguous = isAmbiguousLine(normalizedLine);
+  const hasSingleLineMention = metadata.lineMentionCount === 1;
 
-  if (!metadata.hasMultipleLineMentions && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
+  if (hasSingleLineMention && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
     metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
+    return normalizedLine;
   }
 
-  if (metadata.hasMultipleLineMentions && isAmbiguous) {
+  if (metadata.lineMentionCount > 0) {
     const mapped = lookupLineForTrain(trainNumber);
     if (mapped) {
       return mapped;
@@ -237,11 +239,6 @@ function parseGermanDateTime(dateStr: string, timeStr: string): string {
  * @returns Line identifier (uppercase) or DEFAULT_LINE if not found
  */
 function extractLine(text: string): string {
-  // Check for special case: S1 and S11 together (treat as S1-S11)
-  if (PATTERNS.LINE_S1_S11.test(text)) {
-    return 'S1-S11';
-  }
-
   const match = text.match(PATTERNS.LINE);
   return match?.[1]?.toUpperCase() ?? DEFAULT_LINE;
 }
@@ -351,7 +348,7 @@ function parseTripLine(
     readonly stand: string;
     readonly sourceUrl: string;
     readonly capturedAt: string;
-    readonly hasMultipleLineMentions: boolean;
+    readonly lineMentionCount: number;
     readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
   },
 ): Cancellation | null {
@@ -436,7 +433,7 @@ export function parseDetailPage(
   // Extract metadata
   const line = extractLine(text);
   const mentionedLines = extractMentionedLines(text);
-  const hasMultipleLineMentions = mentionedLines.length > 1;
+  const lineMentionCount = mentionedLines.length;
   const { standIso, dateForTrips } = extractStand(text);
   const capturedAt = new Date().toISOString();
 
@@ -446,7 +443,7 @@ export function parseDetailPage(
     stand: standIso,
     sourceUrl: url,
     capturedAt,
-    hasMultipleLineMentions,
+    lineMentionCount,
     ...(options?.onTrainLineObserved ? { onTrainLineObserved: options.onTrainLineObserved } : {}),
   };
 
@@ -459,6 +456,10 @@ export function parseDetailPage(
     if (trip) {
       trips.push(trip);
     }
+  }
+
+  if (trips.length === 0) {
+    throw new Error(`Incorrect parse: no trips were found in article ${url}`);
   }
 
   return trips;

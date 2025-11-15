@@ -2,6 +2,10 @@ import type { Cancellation, Item } from './types.js';
 import { RSS_URL } from './config.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage } from './parser.js';
+import {
+  createTrainLineObservationRecorder,
+  updateTrainLineDefinitionsFromObservations,
+} from './train-line-observations.js';
 
 /** Search strings to identify relevant RSS items (case-insensitive matching) */
 const RELEVANT_TITLE_MARKERS = [
@@ -50,7 +54,11 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
   console.log('Fetching detail:', url);
   try {
     const html = await fetchText(url);
-    const trips = parseDetailPage(html, url);
+    const { observations, record } = createTrainLineObservationRecorder();
+    const trips = parseDetailPage(html, url, {
+      onTrainLineObserved: record,
+    });
+    updateTrainLineDefinitionsFromObservations(observations);
     console.log(`  -> parsed ${trips.length} trips`);
     return trips;
   } catch (error) {

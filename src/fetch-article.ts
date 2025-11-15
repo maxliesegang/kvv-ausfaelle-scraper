@@ -2,6 +2,10 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fetchText } from './rss.js';
 import { parseDetailPage } from './parser.js';
+import {
+  createTrainLineObservationRecorder,
+  updateTrainLineDefinitionsFromObservations,
+} from './train-line-observations.js';
 
 /**
  * Automated script to fetch a KVV article from a URL, parse it, and save as test data.
@@ -74,7 +78,11 @@ async function main() {
 
     // Parse it
     console.log('Parsing HTML...');
-    const cancellations = parseDetailPage(html, url);
+    const { observations, record } = createTrainLineObservationRecorder();
+    const cancellations = parseDetailPage(html, url, {
+      onTrainLineObserved: record,
+    });
+    updateTrainLineDefinitionsFromObservations(observations);
 
     if (cancellations.length === 0) {
       console.warn('Warning: No cancellations parsed from HTML!');

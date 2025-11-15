@@ -18,7 +18,7 @@ TypeScript/Node script that fetches the public KVV RSS feed, parses the “Betri
   - `docs/<year>/index.html` and `docs/<year>/index.json` — Year-specific index listing all data files
 - **Index JSON format**:
   - Root index: `{ "years": ["2025", ...], "generatedAt": "..." }`
-  - Year index: `{ "year": "2025", "files": ["S1-S11.json", ...], "generatedAt": "..." }`
+  - Year index: `{ "year": "2025", "files": ["S1.json", "S11.json", ...], "generatedAt": "..." }`
 - Sample data entry (see `docs/2025/S5.json`):
 
 ```json

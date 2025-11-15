@@ -87,6 +87,43 @@ function testArticle(articlePath: string, expectedPath: string): TestResult {
 }
 
 /**
+ * Ensures parser fails loudly when no trips can be extracted.
+ */
+function testThrowsWhenNoTrips(): TestResult {
+  const name = 'throws-when-no-trips';
+  const html = `
+    <html>
+      <body>
+        <p>Linie S1</p>
+        <p>Nach aktuellem Stand 15.05.2024 12:00:00</p>
+        <p>Betroffene Fahrten:</p>
+        <p>keine konkreten Angaben</p>
+      </body>
+    </html>
+  `;
+
+  try {
+    parseDetailPage(html, 'test://no-trips');
+    return {
+      name,
+      passed: false,
+      errors: ['Expected parser to throw when no trips are found, but it returned successfully'],
+    };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (!message.includes('Incorrect parse')) {
+      return {
+        name,
+        passed: false,
+        errors: [`Expected "Incorrect parse" error, got: ${message}`],
+      };
+    }
+
+    return { name, passed: true, errors: [] };
+  }
+}
+
+/**
  * Runs all tests and reports results.
  */
 function runTests(): void {
@@ -105,6 +142,17 @@ function runTests(): void {
   }
 
   const results: TestResult[] = [];
+
+  const noTripResult = testThrowsWhenNoTrips();
+  results.push(noTripResult);
+  if (noTripResult.passed) {
+    console.log(`${colors.green}✓${colors.reset} ${noTripResult.name}`);
+  } else {
+    console.log(`${colors.red}✗${colors.reset} ${noTripResult.name}`);
+    for (const error of noTripResult.errors) {
+      console.log(`  ${colors.gray}${error}${colors.reset}`);
+    }
+  }
 
   // Run tests
   for (const articleFile of articleFiles) {

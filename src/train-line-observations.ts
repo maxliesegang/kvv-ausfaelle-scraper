@@ -1,0 +1,102 @@
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'src', 'train-line-definitions', 'data');
+
+export type TrainLineObservations = Map<string, Set<string>>;
+
+/**
+ * Creates a helper that records observed line/train-number pairs.
+ */
+export function createTrainLineObservationRecorder(): {
+  readonly observations: TrainLineObservations;
+  readonly record: (line: string, trainNumber: string) => void;
+} {
+  const observations: TrainLineObservations = new Map();
+
+  const record = (line: string, trainNumber: string): void => {
+    const normalizedLine = line?.trim();
+    const normalizedTrainNumber = trainNumber?.trim();
+    if (!normalizedLine || !normalizedTrainNumber) {
+      return;
+    }
+
+    if (!observations.has(normalizedLine)) {
+      observations.set(normalizedLine, new Set());
+    }
+
+    observations.get(normalizedLine)!.add(normalizedTrainNumber);
+  };
+
+  return { observations, record };
+}
+
+function slugifyLineId(line: string): string {
+  return line
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Persists observed train line mappings into the data directory.
+ */
+export function updateTrainLineDefinitionsFromObservations(
+  observations: TrainLineObservations,
+): void {
+  if (observations.size === 0) {
+    return;
+  }
+
+  if (!existsSync(TRAIN_LINE_DATA_DIR)) {
+    mkdirSync(TRAIN_LINE_DATA_DIR, { recursive: true });
+  }
+
+  for (const [line, trainNumbers] of observations) {
+    if (trainNumbers.size === 0) continue;
+
+    const slug = slugifyLineId(line);
+    if (!slug) continue;
+
+    const filePath = join(TRAIN_LINE_DATA_DIR, `${slug}.json`);
+    let existing: { line: string; trainNumbers: string[] } = { line, trainNumbers: [] };
+
+    if (existsSync(filePath)) {
+      try {
+        existing = JSON.parse(readFileSync(filePath, 'utf-8'));
+      } catch (error) {
+        console.warn(`⚠️  Failed to read ${filePath}:`, error);
+        continue;
+      }
+    }
+
+    if (existing.line && existing.line !== line) {
+      console.warn(
+        `⚠️  Skipping train line update for ${line} because ${filePath} already defines ${existing.line}`,
+      );
+      continue;
+    }
+
+    const merged = new Set(existing.trainNumbers ?? []);
+    const newlyAdded: string[] = [];
+    for (const trainNumber of trainNumbers) {
+      if (!merged.has(trainNumber)) {
+        merged.add(trainNumber);
+        newlyAdded.push(trainNumber);
+      }
+    }
+
+    if (newlyAdded.length === 0) {
+      continue;
+    }
+
+    const updated = {
+      line,
+      trainNumbers: Array.from(merged).sort((a, b) => a.localeCompare(b, 'de', { numeric: true })),
+    };
+
+    writeFileSync(filePath, JSON.stringify(updated, null, 2) + '\n', 'utf-8');
+    console.log(`  ↳ Added ${newlyAdded.join(', ')} to train-line mapping (${line} → ${filePath})`);
+  }
+}

@@ -1,5 +1,14 @@
 {
   "year": "2025",
-  "files": ["S1-S11.json", "S12.json", "S4.json", "S5.json", "S51.json", "index.json"],
-  "generatedAt": "2025-11-15T11:33:15.943Z"
+  "files": [
+    "S1.json",
+    "S11.json",
+    "S12.json",
+    "S4.json",
+    "S5.json",
+    "S51.json",
+    "S6.json",
+    "index.json"
+  ],
+  "generatedAt": "2025-11-15T12:29:06.395Z"
 }
