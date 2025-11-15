@@ -47,6 +47,7 @@ TypeScript/Node script that fetches the public KVV RSS feed, parses the “Betri
 
 - `npm run format` / `npm run format:check` — Prettier formatting
 - `npm run test:parser` — Run parser tests on test articles
+- `npm run train-lines:from-tests` — Extract train-number ↔ line mappings from parser fixtures
 - `npm run fetch-article <url>` — Fetch a live article and save as test data
 
 ## Testing
