@@ -8,6 +8,7 @@
 import { readFile, writeFile, mkdir, access, readdir } from 'node:fs/promises';
 import { constants } from 'node:fs';
 import { dirname } from 'node:path';
+import { wrapError } from './errors.js';
 
 /**
  * Checks if a file or directory exists.
@@ -42,9 +43,7 @@ export async function readJsonFile<T>(path: string): Promise<T | null> {
       return null;
     }
     // Invalid JSON or other read error
-    throw new Error(
-      `Failed to read JSON file ${path}: ${error instanceof Error ? error.message : String(error)}`,
-    );
+    throw new Error(wrapError(`Failed to read JSON file ${path}`, error));
   }
 }
 
@@ -70,9 +69,7 @@ export async function readTextFile(path: string): Promise<string | null> {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
       return null;
     }
-    throw new Error(
-      `Failed to read file ${path}: ${error instanceof Error ? error.message : String(error)}`,
-    );
+    throw new Error(wrapError(`Failed to read file ${path}`, error));
   }
 }
 
@@ -97,8 +94,6 @@ export async function listFiles(path: string): Promise<string[]> {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
       return [];
     }
-    throw new Error(
-      `Failed to read directory ${path}: ${error instanceof Error ? error.message : String(error)}`,
-    );
+    throw new Error(wrapError(`Failed to read directory ${path}`, error));
   }
 }

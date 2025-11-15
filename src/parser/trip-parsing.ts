@@ -5,6 +5,7 @@
 import type { Cancellation, TripParsingMetadata } from '../types.js';
 import { lookupLineForTrain } from '../train-lines.js';
 import { normalizeLine } from '../utils/normalization.js';
+import { MAX_LINES_TO_COMBINE } from '../utils/constants.js';
 import {
   PATTERNS,
   MARKERS,
@@ -121,7 +122,7 @@ export function extractMentionedLines(text: string): string[] {
 function tryMergeWithNext(
   rawLines: string[],
   startIndex: number,
-  maxLinesToCombine: number = 3,
+  maxLinesToCombine: number = MAX_LINES_TO_COMBINE,
 ): { combinedLine: string; linesConsumed: number } | null {
   let combined = rawLines[startIndex] || '';
 

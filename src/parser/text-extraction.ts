@@ -3,6 +3,7 @@
  */
 
 import { PATTERNS, DEFAULT_LINE } from './patterns.js';
+import { ISO_DATE_LENGTH } from '../utils/constants.js';
 
 /**
  * Strips HTML tags from a string and normalizes whitespace.
@@ -75,7 +76,7 @@ export function extractStand(text: string): StandInfo {
     const timeStr = match[2];
     if (dateStr && timeStr) {
       const standIso = parseGermanDateTime(dateStr, timeStr);
-      const dateForTrips = standIso.slice(0, 10);
+      const dateForTrips = standIso.slice(0, ISO_DATE_LENGTH);
       return { standIso, dateForTrips };
     }
   }
@@ -88,7 +89,7 @@ export function extractStand(text: string): StandInfo {
     if (dateStr && timeStr) {
       // Add seconds since alternative format doesn't include them
       const standIso = parseGermanDateTime(dateStr, `${timeStr}:00`);
-      const dateForTrips = standIso.slice(0, 10);
+      const dateForTrips = standIso.slice(0, ISO_DATE_LENGTH);
       return { standIso, dateForTrips };
     }
   }
@@ -97,6 +98,6 @@ export function extractStand(text: string): StandInfo {
   const now = new Date().toISOString();
   return {
     standIso: now,
-    dateForTrips: now.slice(0, 10),
+    dateForTrips: now.slice(0, ISO_DATE_LENGTH),
   };
 }

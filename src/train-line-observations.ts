@@ -35,12 +35,60 @@ export function createTrainLineObservationRecorder(): {
   return { observations, record };
 }
 
+interface LineDefinition {
+  readonly line: string;
+  readonly trainNumbers: string[];
+}
+
 function slugifyLineId(line: string): string {
   return line
     .trim()
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Loads an existing train line definition from disk.
+ * Returns a default empty definition if the file doesn't exist.
+ */
+async function loadExistingLineDefinition(
+  filePath: string,
+  line: string,
+): Promise<LineDefinition | null> {
+  if (!(await exists(filePath))) {
+    return { line, trainNumbers: [] };
+  }
+
+  try {
+    const data = await readJsonFile<LineDefinition>(filePath);
+    return data || { line, trainNumbers: [] };
+  } catch (error) {
+    console.warn(`⚠️  Failed to read ${filePath}:`, error);
+    return null;
+  }
+}
+
+/**
+ * Merges new train numbers with existing ones.
+ * Returns the newly added train numbers and the complete merged set.
+ */
+function mergeTrainNumbers(
+  existing: readonly string[],
+  newNumbers: Set<string>,
+): { merged: string[]; newlyAdded: string[] } {
+  const mergedSet = new Set(existing);
+  const newlyAdded: string[] = [];
+
+  for (const trainNumber of newNumbers) {
+    if (!mergedSet.has(trainNumber)) {
+      mergedSet.add(trainNumber);
+      newlyAdded.push(trainNumber);
+    }
+  }
+
+  const merged = Array.from(mergedSet).sort((a, b) => a.localeCompare(b, 'de', { numeric: true }));
+  return { merged, newlyAdded };
 }
 
 /**
@@ -62,20 +110,11 @@ export async function updateTrainLineDefinitionsFromObservations(
     if (!slug) continue;
 
     const filePath = join(TRAIN_LINE_DATA_DIR, `${slug}.json`);
-    let existing: { line: string; trainNumbers: string[] } = { line, trainNumbers: [] };
+    const existing = await loadExistingLineDefinition(filePath, line);
 
-    if (await exists(filePath)) {
-      try {
-        const data = await readJsonFile<{ line: string; trainNumbers: string[] }>(filePath);
-        if (data) {
-          existing = data;
-        }
-      } catch (error) {
-        console.warn(`⚠️  Failed to read ${filePath}:`, error);
-        continue;
-      }
-    }
+    if (!existing) continue; // Failed to load, skip this line
 
+    // Validate line consistency
     if (existing.line && existing.line !== line) {
       console.warn(
         `⚠️  Skipping train line update for ${line} because ${filePath} already defines ${existing.line}`,
@@ -83,24 +122,15 @@ export async function updateTrainLineDefinitionsFromObservations(
       continue;
     }
 
-    const merged = new Set(existing.trainNumbers ?? []);
-    const newlyAdded: string[] = [];
-    for (const trainNumber of trainNumbers) {
-      if (!merged.has(trainNumber)) {
-        merged.add(trainNumber);
-        newlyAdded.push(trainNumber);
-      }
-    }
+    // Merge train numbers
+    const { merged, newlyAdded } = mergeTrainNumbers(existing.trainNumbers, trainNumbers);
 
     if (newlyAdded.length === 0) {
-      continue;
+      continue; // No new train numbers to add
     }
 
-    const updated = {
-      line,
-      trainNumbers: Array.from(merged).sort((a, b) => a.localeCompare(b, 'de', { numeric: true })),
-    };
-
+    // Save updated definition
+    const updated: LineDefinition = { line, trainNumbers: merged };
     await writeJsonFile(filePath, updated);
     console.log(`  ↳ Added ${newlyAdded.join(', ')} to train-line mapping (${line} → ${filePath})`);
   }
