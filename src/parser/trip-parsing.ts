@@ -3,7 +3,7 @@
  */
 
 import type { Cancellation, TripParsingMetadata } from '../types.js';
-import { lookupLineForTrain } from '../train-lines.js';
+import { lookupLineForTrain, isLineValidForMentionedLines } from '../train-lines.js';
 import { normalizeLine } from '../utils/normalization.js';
 import { MAX_LINES_TO_COMBINE } from '../utils/constants.js';
 import {
@@ -29,6 +29,7 @@ export function isAmbiguousLine(line: string): boolean {
 /**
  * Resolves the effective line for a trip, falling back to train-number overrides.
  * @throws {Error} When a multi-line article is parsed but no train number mapping is found
+ * @throws {Error} When a train number is mapped to a line that's not connected to the mentioned lines
  */
 export function resolveLineForTrip(
   trainNumber: string,
@@ -50,6 +51,15 @@ export function resolveLineForTrip(
   if (metadata.lineMentionCount > 0) {
     const mapped = lookupLineForTrain(trainNumber, metadata.mentionedLines);
     if (mapped) {
+      // Validate that the mapped line is actually valid for the mentioned lines
+      if (!isLineValidForMentionedLines(mapped, metadata.mentionedLines)) {
+        throw new Error(
+          `Train number ${trainNumber} is mapped to line ${mapped}, ` +
+            `but this line is not mentioned in the article (${metadata.mentionedLines.join(', ')}) ` +
+            `and is not connected to any of the mentioned lines. ` +
+            `Please correct the train number mapping in the line definition files.`,
+        );
+      }
       return mapped;
     }
 

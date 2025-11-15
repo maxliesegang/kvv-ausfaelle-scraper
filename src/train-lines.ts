@@ -74,7 +74,33 @@ function buildTrainLineMapping(definitions: readonly TrainLineDefinition[]): Tra
   return map;
 }
 
+const LINE_CONNECTIONS = buildLineConnections(TRAIN_LINE_DEFINITIONS);
 const TRAIN_LINE_MAPPING = buildTrainLineMapping(TRAIN_LINE_DEFINITIONS);
+
+/**
+ * Checks if a line is valid within the context of mentioned lines.
+ * A line is valid if it's one of the mentioned lines or connected to any of them.
+ */
+export function isLineValidForMentionedLines(
+  line: string,
+  mentionedLines: readonly string[],
+): boolean {
+  const normalizedLine = normalizeLine(line);
+  if (!normalizedLine) return false;
+
+  const normalizedMentioned = normalizeLines(mentionedLines);
+
+  // Check if it's directly mentioned
+  if (normalizedMentioned.includes(normalizedLine)) {
+    return true;
+  }
+
+  // Check if it's connected to any mentioned line
+  const connections = LINE_CONNECTIONS.get(normalizedLine);
+  if (!connections) return false;
+
+  return normalizedMentioned.some((mentioned) => connections.has(mentioned));
+}
 
 /**
  * Returns the canonical line for a given train number, if known.
