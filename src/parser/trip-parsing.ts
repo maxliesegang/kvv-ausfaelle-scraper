@@ -2,8 +2,9 @@
  * Trip line parsing and validation utilities.
  */
 
-import type { Cancellation } from '../types.js';
+import type { Cancellation, TripParsingMetadata } from '../types.js';
 import { lookupLineForTrain } from '../train-lines.js';
+import { normalizeLine } from '../utils/normalization.js';
 import {
   PATTERNS,
   MARKERS,
@@ -29,14 +30,12 @@ export function isAmbiguousLine(line: string): boolean {
  */
 export function resolveLineForTrip(
   trainNumber: string,
-  metadata: {
-    readonly line: string;
-    readonly mentionedLines: readonly string[];
-    readonly lineMentionCount: number;
-    readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
-  },
+  metadata: Pick<
+    TripParsingMetadata,
+    'line' | 'mentionedLines' | 'lineMentionCount' | 'onTrainLineObserved'
+  >,
 ): string {
-  const normalizedLine = metadata.line?.trim() || DEFAULT_LINE;
+  const normalizedLine = normalizeLine(metadata.line) || DEFAULT_LINE;
   const isAmbiguous = isAmbiguousLine(normalizedLine);
   const hasSingleLineMention = metadata.lineMentionCount === 1;
 
@@ -116,50 +115,62 @@ export function extractMentionedLines(text: string): string[] {
 }
 
 /**
+ * Attempts to combine a line with subsequent lines to create a valid trip line.
+ * @returns Combined line and number of lines consumed, or null if no valid combination found
+ */
+function tryMergeWithNext(
+  rawLines: string[],
+  startIndex: number,
+  maxLinesToCombine: number = 3,
+): { combinedLine: string; linesConsumed: number } | null {
+  let combined = rawLines[startIndex] || '';
+
+  for (
+    let offset = 1;
+    offset <= maxLinesToCombine && startIndex + offset < rawLines.length;
+    offset++
+  ) {
+    combined = `${combined} ${rawLines[startIndex + offset] || ''}`.trim();
+    if (isValidTripLine(combined)) {
+      return { combinedLine: combined, linesConsumed: offset + 1 };
+    }
+  }
+
+  return null;
+}
+
+/**
  * Merges lines that belong together and filters out invalid ones.
  *
  * This handles cases where trip information is split across multiple lines
  * by attempting to combine up to 3 consecutive lines to form valid trip entries.
- *
- * Algorithm:
- * 1. If current line is valid, add it and move to next
- * 2. Otherwise, try combining with next 1-3 lines
- * 3. If combination becomes valid, add it and skip merged lines
- * 4. If no valid combination found, keep the line (will be filtered later)
  */
 export function mergeTripLines(rawLines: string[]): string[] {
   const mergedLines: string[] = [];
   let i = 0;
 
   while (i < rawLines.length) {
-    let combined = rawLines[i] || '';
+    const currentLine = rawLines[i] || '';
 
-    if (isValidTripLine(combined)) {
-      mergedLines.push(combined);
+    // If the line is already valid, use it as-is
+    if (isValidTripLine(currentLine)) {
+      mergedLines.push(currentLine);
       i++;
       continue;
     }
 
-    let merged = false;
-    for (let j = i + 1; j < rawLines.length && j <= i + 3; j++) {
-      const testLine = `${combined} ${rawLines[j] || ''}`.trim();
-      if (isValidTripLine(testLine)) {
-        mergedLines.push(testLine);
-        i = j + 1;
-        merged = true;
-        break;
-      }
-      combined = testLine;
-    }
-
-    if (!merged) {
-      // Keep single line even if invalid - parseTripLine will ignore it later
-      mergedLines.push(rawLines[i] || '');
+    // Try to combine with next lines to create a valid trip line
+    const mergeResult = tryMergeWithNext(rawLines, i);
+    if (mergeResult) {
+      mergedLines.push(mergeResult.combinedLine);
+      i += mergeResult.linesConsumed;
+    } else {
+      // No valid combination found, skip this line
       i++;
     }
   }
 
-  return mergedLines.filter(isValidTripLine);
+  return mergedLines;
 }
 
 /**
@@ -201,25 +212,61 @@ export function extractTripLines(text: string): string[] {
 }
 
 /**
+ * Validates parsed trip fields.
+ */
+function isValidTripFields(
+  trainNumber: string | undefined,
+  fromStop: string | undefined,
+  fromTime: string | undefined,
+  toStop: string | undefined,
+  toTime: string | undefined,
+  format: 'new' | 'old',
+): boolean {
+  if (!trainNumber || !fromStop || !fromTime || !toStop || !toTime) {
+    return false;
+  }
+
+  // New format requires stops not to be just "Uhr" (indicates incomplete line)
+  if (format === 'new') {
+    return toStop.trim() !== 'Uhr' && fromStop.trim() !== 'Uhr';
+  }
+
+  return true;
+}
+
+/**
+ * Builds a Cancellation object from parsed trip fields.
+ */
+function buildCancellation(
+  trainNumber: string,
+  fromStop: string,
+  fromTime: string,
+  toStop: string,
+  toTime: string,
+  metadata: TripParsingMetadata,
+): Cancellation {
+  return {
+    line: resolveLineForTrip(trainNumber, metadata),
+    date: metadata.date,
+    stand: metadata.stand,
+    trainNumber,
+    fromStop: fromStop.trim(),
+    fromTime,
+    toStop: toStop.trim(),
+    toTime,
+    sourceUrl: metadata.sourceUrl,
+    capturedAt: metadata.capturedAt,
+  };
+}
+
+/**
  * Parses a single trip line into a Cancellation object.
  *
  * @param line - Trip line text to parse
- * @param metadata - Common metadata for all trips (line, date, stand, sourceUrl, capturedAt)
+ * @param metadata - Common metadata for all trips
  * @returns Cancellation object or null if parsing fails
  */
-export function parseTripLine(
-  line: string,
-  metadata: {
-    readonly line: string;
-    readonly date: string;
-    readonly stand: string;
-    readonly sourceUrl: string;
-    readonly capturedAt: string;
-    readonly mentionedLines: readonly string[];
-    readonly lineMentionCount: number;
-    readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
-  },
-): Cancellation | null {
+export function parseTripLine(line: string, metadata: TripParsingMetadata): Cancellation | null {
   // Try new format first: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
   let match = line.match(PATTERNS.TRIP_NEW_FORMAT);
   if (match) {
@@ -229,29 +276,9 @@ export function parseTripLine(
     const toTime = match[4];
     const toStop = match[5];
 
-    // Ensure all required fields are present and valid
-    // toStop/fromStop should not be just "Uhr" (indicates incomplete line)
-    if (
-      trainNumber &&
-      fromStop &&
-      fromTime &&
-      toStop &&
-      toTime &&
-      toStop.trim() !== 'Uhr' &&
-      fromStop.trim() !== 'Uhr'
-    ) {
-      return {
-        line: resolveLineForTrip(trainNumber, metadata),
-        date: metadata.date,
-        stand: metadata.stand,
-        trainNumber,
-        fromStop: fromStop.trim(),
-        fromTime,
-        toStop: toStop.trim(),
-        toTime,
-        sourceUrl: metadata.sourceUrl,
-        capturedAt: metadata.capturedAt,
-      };
+    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
+      // Type assertion is safe here because isValidTripFields ensures all are defined
+      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
     }
   }
 
@@ -264,20 +291,9 @@ export function parseTripLine(
     const toStop = match[4];
     const toTime = match[5];
 
-    // Ensure all required fields are present
-    if (trainNumber && fromStop && fromTime && toStop && toTime) {
-      return {
-        line: resolveLineForTrip(trainNumber, metadata),
-        date: metadata.date,
-        stand: metadata.stand,
-        trainNumber,
-        fromStop: fromStop.trim(),
-        fromTime,
-        toStop: toStop.trim(),
-        toTime,
-        sourceUrl: metadata.sourceUrl,
-        capturedAt: metadata.capturedAt,
-      };
+    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'old')) {
+      // Type assertion is safe here because isValidTripFields ensures all are defined
+      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
     }
   }
 

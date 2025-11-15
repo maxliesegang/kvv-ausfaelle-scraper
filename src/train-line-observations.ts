@@ -1,8 +1,12 @@
 import { join } from 'node:path';
 import { exists, ensureDirectory, readJsonFile, writeJsonFile } from './utils/fs.js';
+import { normalizeLine, normalizeTrainNumber } from './utils/normalization.js';
 
 const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'src', 'train-line-definitions', 'data');
 
+/**
+ * Map from line identifier to set of train numbers observed for that line.
+ */
 export type TrainLineObservations = Map<string, Set<string>>;
 
 /**
@@ -15,9 +19,9 @@ export function createTrainLineObservationRecorder(): {
   const observations: TrainLineObservations = new Map();
 
   const record = (line: string, trainNumber: string): void => {
-    const normalizedLine = line?.trim();
-    const normalizedTrainNumber = trainNumber?.trim();
-    if (!normalizedLine || !normalizedTrainNumber) {
+    const normalizedLine = normalizeLine(line);
+    const normalizedTrainNum = normalizeTrainNumber(trainNumber);
+    if (!normalizedLine || !normalizedTrainNum) {
       return;
     }
 
@@ -25,7 +29,7 @@ export function createTrainLineObservationRecorder(): {
       observations.set(normalizedLine, new Set());
     }
 
-    observations.get(normalizedLine)!.add(normalizedTrainNumber);
+    observations.get(normalizedLine)!.add(normalizedTrainNum);
   };
 
   return { observations, record };

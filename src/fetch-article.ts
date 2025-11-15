@@ -6,6 +6,7 @@ import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
 } from './train-line-observations.js';
+import { normalizeCancellationsForTest } from './utils/test-helpers.js';
 
 /**
  * Automated script to fetch a KVV article from a URL, parse it, and save as test data.
@@ -104,7 +105,7 @@ async function main() {
     console.log(`Test name: ${testName}`);
 
     // Normalize cancellations (remove sourceUrl and capturedAt for expected output)
-    const expectedOutput = cancellations.map(({ sourceUrl, capturedAt, ...rest }) => rest);
+    const expectedOutput = normalizeCancellationsForTest(cancellations);
 
     // Save HTML to test-data/articles/
     const htmlOutputPath = join(process.cwd(), 'test-data', 'articles', `${testName}.html`);

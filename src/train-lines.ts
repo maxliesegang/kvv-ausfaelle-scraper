@@ -1,13 +1,13 @@
 import type { TrainLineDefinition } from './train-line-definitions/types.js';
 import { TRAIN_LINE_DEFINITIONS } from './train-line-definitions/index.js';
-
-type LineConnections = Map<string, Set<string>>;
+import { normalizeLine, normalizeLines } from './utils/normalization.js';
 
 interface TrainLineMappingEntry {
   readonly primaryLine: string;
   readonly lines: readonly string[];
 }
 
+type LineConnections = Map<string, Set<string>>;
 type TrainLineMapping = Readonly<Record<string, TrainLineMappingEntry>>;
 
 function ensureLineConnection(connections: LineConnections, line: string): Set<string> {
@@ -21,13 +21,13 @@ function buildLineConnections(definitions: readonly TrainLineDefinition[]): Line
   const connections: LineConnections = new Map();
 
   for (const { line, connectedLines } of definitions) {
-    const normalizedLine = line?.trim();
+    const normalizedLine = normalizeLine(line);
     if (!normalizedLine) continue;
 
     const current = ensureLineConnection(connections, normalizedLine);
 
     for (const connected of connectedLines ?? []) {
-      const normalizedConnected = connected?.trim();
+      const normalizedConnected = normalizeLine(connected);
       if (!normalizedConnected) continue;
       current.add(normalizedConnected);
       ensureLineConnection(connections, normalizedConnected).add(normalizedLine);
@@ -86,10 +86,7 @@ export function lookupLineForTrain(
   const entry = TRAIN_LINE_MAPPING[trainNumber];
   if (!entry) return undefined;
 
-  const normalizedPreferences =
-    preferredLines
-      ?.map((line) => line?.trim().toUpperCase())
-      .filter((line): line is string => Boolean(line)) ?? [];
+  const normalizedPreferences = preferredLines ? normalizeLines(preferredLines) : [];
 
   if (normalizedPreferences.length > 0) {
     for (const preferred of normalizedPreferences) {

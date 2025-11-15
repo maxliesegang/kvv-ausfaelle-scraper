@@ -35,6 +35,29 @@ export interface Cancellation {
 }
 
 /**
+ * Metadata context used during trip parsing.
+ * This includes both required fields and optional callbacks.
+ */
+export interface TripParsingMetadata {
+  /** Transit line identifier */
+  readonly line: string;
+  /** ISO date (YYYY-MM-DD) */
+  readonly date: string;
+  /** ISO timestamp of "Stand" (status timestamp from source) */
+  readonly stand: string;
+  /** Original source URL */
+  readonly sourceUrl: string;
+  /** ISO timestamp when captured */
+  readonly capturedAt: string;
+  /** Lines explicitly mentioned in the article */
+  readonly mentionedLines: readonly string[];
+  /** Count of distinct lines mentioned */
+  readonly lineMentionCount: number;
+  /** Optional callback for recording train/line observations */
+  readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
+}
+
+/**
  * Re-export upstream rss-parser item type for direct use across the app.
  * This represents a single RSS feed item.
  */
