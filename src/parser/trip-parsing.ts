@@ -31,6 +31,7 @@ export function resolveLineForTrip(
   trainNumber: string,
   metadata: {
     readonly line: string;
+    readonly mentionedLines: readonly string[];
     readonly lineMentionCount: number;
     readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
   },
@@ -45,7 +46,7 @@ export function resolveLineForTrip(
   }
 
   if (metadata.lineMentionCount > 0) {
-    const mapped = lookupLineForTrain(trainNumber);
+    const mapped = lookupLineForTrain(trainNumber, metadata.mentionedLines);
     if (mapped) {
       return mapped;
     }
@@ -214,6 +215,7 @@ export function parseTripLine(
     readonly stand: string;
     readonly sourceUrl: string;
     readonly capturedAt: string;
+    readonly mentionedLines: readonly string[];
     readonly lineMentionCount: number;
     readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
   },

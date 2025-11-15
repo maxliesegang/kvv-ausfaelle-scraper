@@ -42,6 +42,7 @@ export function parseDetailPage(
 
   const metadata = {
     line,
+    mentionedLines,
     date: dateForTrips,
     stand: standIso,
     sourceUrl: url,

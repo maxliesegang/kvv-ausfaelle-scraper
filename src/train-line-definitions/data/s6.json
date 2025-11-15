@@ -1,4 +1,5 @@
 {
   "line": "S6",
-  "trainNumbers": ["85084", "85085"]
+  "trainNumbers": ["85084", "85085"],
+  "connectedLines": ["S5"]
 }
