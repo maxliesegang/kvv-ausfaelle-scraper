@@ -28,6 +28,7 @@ export function isAmbiguousLine(line: string): boolean {
 
 /**
  * Resolves the effective line for a trip, falling back to train-number overrides.
+ * @throws {Error} When a multi-line article is parsed but no train number mapping is found
  */
 export function resolveLineForTrip(
   trainNumber: string,
@@ -39,6 +40,7 @@ export function resolveLineForTrip(
   const normalizedLine = normalizeLine(metadata.line) || DEFAULT_LINE;
   const isAmbiguous = isAmbiguousLine(normalizedLine);
   const hasSingleLineMention = metadata.lineMentionCount === 1;
+  const isMultiLineArticle = metadata.lineMentionCount > 1;
 
   if (hasSingleLineMention && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
     metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
@@ -49,6 +51,15 @@ export function resolveLineForTrip(
     const mapped = lookupLineForTrain(trainNumber, metadata.mentionedLines);
     if (mapped) {
       return mapped;
+    }
+
+    // Throw error if multi-line article has no mapping for this train number
+    if (isMultiLineArticle) {
+      throw new Error(
+        `Multi-line article detected (${metadata.lineMentionCount} lines: ${metadata.mentionedLines.join(', ')}) ` +
+          `but no train number mapping found for train ${trainNumber}. ` +
+          `Please add this train number to the appropriate line definition.`,
+      );
     }
   }
 
