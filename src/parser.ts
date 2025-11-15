@@ -1,4 +1,5 @@
 import type { Cancellation } from './types.js';
+import { lookupLineForTrain } from './train-lines.js';
 
 /**
  * Regex patterns for parsing cancellation detail pages.
@@ -22,14 +23,14 @@ const PATTERNS = {
    * Example: "123 Karlsruhe Hbf (10:30 Uhr) - Bruchsal (11:00)"
    */
   TRIP_OLD_FORMAT:
-    /^(\d+)\s+(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)\s*-\s*(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)/,
+    /^(\d+)\s+(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)\s*[-–]+\s*(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)/,
 
   /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
    * Example: "84888 08:38 Uhr Söllingen Bahnhof - 10:07 Uhr Germersheim Bahnhof"
    */
   TRIP_NEW_FORMAT:
-    /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*-\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
+    /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
 } as const;
 
 /**
@@ -49,6 +50,147 @@ const MARKERS = {
 
 /** Default line value when parsing fails */
 const DEFAULT_LINE = 'UNKNOWN' as const;
+
+const MULTI_LINE_HINT_PATTERN = /\bund\b|,|\/|&/i;
+const MULTI_LINE_RANGE_PATTERN = /[A-Za-z]+\d+\s*-\s*[A-Za-z]*\d+/;
+const LINE_MENTION_SECTION_PATTERN = /Linien?\s+([^.\n]+)/gi;
+const LINE_IDENTIFIER_PATTERN = /\b[A-Za-z]+\d{1,3}\b/g;
+
+/**
+ * Determines whether the parsed line value looks ambiguous (e.g. "S1 und S11").
+ */
+function isAmbiguousLine(line: string): boolean {
+  if (!line || line === DEFAULT_LINE) return true;
+  if (MULTI_LINE_HINT_PATTERN.test(line)) return true;
+  if (MULTI_LINE_RANGE_PATTERN.test(line)) return true;
+  return false;
+}
+
+/**
+ * Resolves the effective line for a trip, falling back to train-number overrides.
+ */
+function resolveLineForTrip(
+  trainNumber: string,
+  metadata: {
+    readonly line: string;
+    readonly hasMultipleLineMentions: boolean;
+    readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
+  },
+): string {
+  const normalizedLine = metadata.line?.trim() || DEFAULT_LINE;
+  const isAmbiguous = isAmbiguousLine(normalizedLine);
+
+  if (!metadata.hasMultipleLineMentions && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
+    metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
+  }
+
+  if (metadata.hasMultipleLineMentions && isAmbiguous) {
+    const mapped = lookupLineForTrain(trainNumber);
+    if (mapped) {
+      return mapped;
+    }
+  }
+
+  return normalizedLine;
+}
+
+/**
+ * Checks whether a line of text looks like a parsable trip entry.
+ */
+function isValidTripLine(line: string): boolean {
+  // Try new format first
+  const newMatch = line.match(PATTERNS.TRIP_NEW_FORMAT);
+  if (newMatch) {
+    const toStop = newMatch[5];
+    const fromStop = newMatch[3];
+    if (toStop?.trim() !== 'Uhr' && fromStop?.trim() !== 'Uhr') {
+      return true;
+    }
+  }
+
+  // Fallback to the old "<from> (<time>) - <to> (<time>)" format
+  return Boolean(line.match(PATTERNS.TRIP_OLD_FORMAT));
+}
+
+/**
+ * Splits a text block into trimmed candidate lines for trip parsing.
+ */
+function buildTripCandidateLines(text: string): string[] {
+  return text
+    .split('\n')
+    .map((line) =>
+      line
+        // Replace HTML entities / non-breaking spaces before trimming
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/\u00a0/g, ' ')
+        .trim(),
+    )
+    .filter((line) => {
+      if (!line) return false;
+      if (line.startsWith(MARKERS.TRIPS_END)) return false;
+      if (line.startsWith('(Zug wird')) return false;
+      if (line === '&nbsp;') return false;
+      if (line.includes('in Richtung') && line.includes('eingesetzt)')) return false;
+      return true;
+    });
+}
+
+/**
+ * Extracts how many distinct lines are explicitly mentioned in the article text.
+ */
+function extractMentionedLines(text: string): string[] {
+  const mentions = new Set<string>();
+  let match: RegExpExecArray | null;
+
+  while ((match = LINE_MENTION_SECTION_PATTERN.exec(text)) !== null) {
+    const section = match[1] ?? '';
+    const tokens = section.match(LINE_IDENTIFIER_PATTERN);
+    if (!tokens) continue;
+    for (const token of tokens) {
+      mentions.add(token.toUpperCase());
+    }
+  }
+
+  return Array.from(mentions);
+}
+
+/**
+ * Merges lines that belong together and filters out invalid ones.
+ */
+function mergeTripLines(rawLines: string[]): string[] {
+  const mergedLines: string[] = [];
+  let i = 0;
+
+  while (i < rawLines.length) {
+    let combined = rawLines[i] || '';
+
+    if (isValidTripLine(combined)) {
+      mergedLines.push(combined);
+      i++;
+      continue;
+    }
+
+    let merged = false;
+    for (let j = i + 1; j < rawLines.length && j <= i + 3; j++) {
+      const testLine = `${combined} ${rawLines[j] || ''}`.trim();
+      if (isValidTripLine(testLine)) {
+        mergedLines.push(testLine);
+        i = j + 1;
+        merged = true;
+        break;
+      }
+      combined = testLine;
+    }
+
+    if (!merged) {
+      // Keep single line even if invalid - parseTripLine will ignore it later
+      mergedLines.push(rawLines[i] || '');
+      i++;
+    }
+  }
+
+  return mergedLines.filter(isValidTripLine);
+}
 
 /**
  * Strips HTML tags from a string and normalizes whitespace.
@@ -111,6 +253,10 @@ interface StandInfo {
   readonly dateForTrips: string;
 }
 
+export interface ParseDetailOptions {
+  readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
+}
+
 /**
  * Extracts the status ("Stand") timestamp from the text.
  *
@@ -159,8 +305,15 @@ function extractStand(text: string): StandInfo {
  * @returns Array of trip lines, or empty array if section not found
  */
 function extractTripLines(text: string): string[] {
-  // Try each possible start marker
-  // Use regex to allow flexible whitespace matching in markers
+  const parseFromSection = (section: string): string[] => {
+    const rawLines = buildTripCandidateLines(section);
+    if (rawLines.length === 0) {
+      return [];
+    }
+    return mergeTripLines(rawLines);
+  };
+
+  // Try each possible start marker using regex for flexible whitespace
   for (const marker of MARKERS.TRIPS_START) {
     // Escape special regex characters and replace spaces with \s+ to match any whitespace
     const markerRegex = new RegExp(
@@ -172,85 +325,15 @@ function extractTripLines(text: string): string[] {
       // Get text after the start marker
       const afterMarker = text.slice(startIdx);
 
-      // Split by lines and filter
-      const rawLines = afterMarker
-        .split('\n')
-        .map((line) => line.trim())
-        .filter((line) => {
-          if (!line) return false;
-          if (line.startsWith(MARKERS.TRIPS_END)) return false;
-          // Filter out lines that are clearly not trip data
-          if (line === '&nbsp;') return false;
-          if (line.startsWith('(Zug wird')) return false;
-          if (line.includes('in Richtung') && line.includes('eingesetzt)')) return false;
-          return true;
-        });
-
-      // Intelligently merge lines that are part of the same trip
-      // Strategy: check if current line is valid, if not try merging with next lines
-      const mergedLines: string[] = [];
-      let i = 0;
-
-      while (i < rawLines.length) {
-        let combined = rawLines[i] || '';
-
-        // Helper to check if a line would parse as a valid trip
-        const isValidTrip = (line: string): boolean => {
-          // Try new format
-          const newMatch = line.match(PATTERNS.TRIP_NEW_FORMAT);
-          if (newMatch) {
-            const toStop = newMatch[5];
-            const fromStop = newMatch[3];
-            // Valid if stops are not just "Uhr"
-            if (toStop?.trim() !== 'Uhr' && fromStop?.trim() !== 'Uhr') {
-              return true;
-            }
-          }
-
-          // Try old format
-          const oldMatch = line.match(PATTERNS.TRIP_OLD_FORMAT);
-          if (oldMatch) {
-            return true;
-          }
-
-          return false;
-        };
-
-        // First check if the current line by itself is already a valid trip
-        if (isValidTrip(combined)) {
-          mergedLines.push(combined);
-          i++;
-          continue;
-        }
-
-        // If not, try merging with next lines until we get a valid trip line
-        let merged = false;
-        for (let j = i + 1; j < rawLines.length && j <= i + 3; j++) {
-          const testLine = combined + ' ' + (rawLines[j] || '');
-
-          // Check if this is a valid trip
-          if (isValidTrip(testLine)) {
-            mergedLines.push(testLine);
-            i = j + 1; // Move past all merged lines
-            merged = true;
-            break;
-          }
-
-          combined = testLine;
-        }
-
-        // If we didn't find a valid merge, just add the line as-is and move on
-        if (!merged) {
-          mergedLines.push(rawLines[i] || '');
-          i++;
-        }
+      const mergedLines = parseFromSection(afterMarker);
+      if (mergedLines.length > 0) {
+        return mergedLines;
       }
-
-      return mergedLines;
     }
   }
 
-  return [];
+  // Fallback: scan the entire text for trip-looking lines
+  return parseFromSection(text);
 }
 
 /**
@@ -268,6 +351,8 @@ function parseTripLine(
     readonly stand: string;
     readonly sourceUrl: string;
     readonly capturedAt: string;
+    readonly hasMultipleLineMentions: boolean;
+    readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
   },
 ): Cancellation | null {
   // Try new format first: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
@@ -291,7 +376,7 @@ function parseTripLine(
       fromStop.trim() !== 'Uhr'
     ) {
       return {
-        line: metadata.line,
+        line: resolveLineForTrip(trainNumber, metadata),
         date: metadata.date,
         stand: metadata.stand,
         trainNumber,
@@ -317,7 +402,7 @@ function parseTripLine(
     // Ensure all required fields are present
     if (trainNumber && fromStop && fromTime && toStop && toTime) {
       return {
-        line: metadata.line,
+        line: resolveLineForTrip(trainNumber, metadata),
         date: metadata.date,
         stand: metadata.stand,
         trainNumber,
@@ -341,11 +426,17 @@ function parseTripLine(
  * @param url - Source URL for reference
  * @returns Array of parsed cancellations (empty if parsing fails or no trips found)
  */
-export function parseDetailPage(html: string, url: string): Cancellation[] {
+export function parseDetailPage(
+  html: string,
+  url: string,
+  options?: ParseDetailOptions,
+): Cancellation[] {
   const text = stripHtml(html);
 
   // Extract metadata
   const line = extractLine(text);
+  const mentionedLines = extractMentionedLines(text);
+  const hasMultipleLineMentions = mentionedLines.length > 1;
   const { standIso, dateForTrips } = extractStand(text);
   const capturedAt = new Date().toISOString();
 
@@ -355,6 +446,8 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     stand: standIso,
     sourceUrl: url,
     capturedAt,
+    hasMultipleLineMentions,
+    ...(options?.onTrainLineObserved ? { onTrainLineObserved: options.onTrainLineObserved } : {}),
   };
 
   // Extract and parse trip lines

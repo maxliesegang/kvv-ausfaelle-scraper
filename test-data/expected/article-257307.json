@@ -1,0 +1,82 @@
+[
+  {
+    "line": "S5",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "85060",
+    "fromStop": "Pforzheim Bf",
+    "fromTime": "12:46",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:15"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "85077",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "14:45",
+    "toStop": "Pforzheim Bf",
+    "toTime": "16:10"
+  },
+  {
+    "line": "S6",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "85085",
+    "fromStop": "Pforzheim Bf",
+    "fromTime": "18:17",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "18:52"
+  },
+  {
+    "line": "S6",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "85084",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "19:05",
+    "toStop": "Pforzheim Bf",
+    "toTime": "19:40"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "84757",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "14:52",
+    "toStop": "Sollingen Bf",
+    "toTime": "15:37"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "84844",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "15:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "16:53"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "84837",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "17:05",
+    "toStop": "Söllingen Bf",
+    "toTime": "18:06"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-15",
+    "stand": "2025-11-15T09:49:00.000Z",
+    "trainNumber": "84770",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "18:18",
+    "toStop": "KA Lameyplatz",
+    "toTime": "18:58"
+  }
+]

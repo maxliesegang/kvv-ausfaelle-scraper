@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseDetailPage } from './parser.js';
 
@@ -25,7 +25,15 @@ try {
 
   // Parse it
   console.log('Parsing HTML...');
-  const cancellations = parseDetailPage(html, `https://www.kvv.de/test/${testName}`);
+  const observedTrainLines = new Map<string, Set<string>>();
+  const cancellations = parseDetailPage(html, `https://www.kvv.de/test/${testName}`, {
+    onTrainLineObserved: (line, trainNumber) => {
+      if (!observedTrainLines.has(line)) {
+        observedTrainLines.set(line, new Set());
+      }
+      observedTrainLines.get(line)!.add(trainNumber);
+    },
+  });
 
   if (cancellations.length === 0) {
     console.warn('Warning: No cancellations parsed from HTML!');
@@ -52,6 +60,8 @@ try {
   console.log(`  JSON: ${jsonOutputPath}`);
   console.log(`  Trips: ${cancellations.length}`);
 
+  updateTrainLineDefinitionsFromObservations(observedTrainLines);
+
   // Print first cancellation as sample
   if (cancellations.length > 0) {
     console.log(`\nFirst trip:`);
@@ -64,4 +74,71 @@ try {
 } catch (error) {
   console.error('Error:', error instanceof Error ? error.message : String(error));
   process.exit(1);
+}
+
+const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'src', 'train-line-definitions', 'data');
+
+function slugifyLineId(line: string): string {
+  return line
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function updateTrainLineDefinitionsFromObservations(observations: Map<string, Set<string>>): void {
+  if (observations.size === 0) {
+    return;
+  }
+
+  if (!existsSync(TRAIN_LINE_DATA_DIR)) {
+    mkdirSync(TRAIN_LINE_DATA_DIR, { recursive: true });
+  }
+
+  for (const [line, trainNumbers] of observations) {
+    if (trainNumbers.size === 0) continue;
+
+    const slug = slugifyLineId(line);
+    if (!slug) continue;
+
+    const filePath = join(TRAIN_LINE_DATA_DIR, `${slug}.json`);
+    let existing: { line: string; trainNumbers: string[] } = { line, trainNumbers: [] };
+
+    if (existsSync(filePath)) {
+      try {
+        existing = JSON.parse(readFileSync(filePath, 'utf-8'));
+      } catch (error) {
+        console.warn(`⚠️  Failed to read ${filePath}:`, error);
+        continue;
+      }
+    }
+
+    if (existing.line && existing.line !== line) {
+      console.warn(
+        `⚠️  Skipping train line update for ${line} because ${filePath} already defines ${existing.line}`,
+      );
+      continue;
+    }
+
+    const merged = new Set(existing.trainNumbers ?? []);
+    const newlyAdded: string[] = [];
+    for (const trainNumber of trainNumbers) {
+      if (!merged.has(trainNumber)) {
+        merged.add(trainNumber);
+        newlyAdded.push(trainNumber);
+      }
+    }
+
+    if (newlyAdded.length === 0) {
+      continue;
+    }
+
+    const updated = {
+      line,
+      trainNumbers: Array.from(merged).sort((a, b) => a.localeCompare(b, 'de', { numeric: true })),
+    };
+
+    writeFileSync(filePath, JSON.stringify(updated, null, 2) + '\n', 'utf-8');
+    console.log(`  ↳ Added ${newlyAdded.join(', ')} to train-line mapping (${line} → ${filePath})`);
+  }
 }
