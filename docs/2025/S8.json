@@ -1,0 +1,26 @@
+[
+  {
+    "line": "S8",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T09:16:00.000Z",
+    "trainNumber": "85645",
+    "fromStop": "Forbach",
+    "fromTime": "14:17",
+    "toStop": "Bondorf",
+    "toTime": "15:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257456",
+    "capturedAt": "2025-11-17T12:47:21.156Z"
+  },
+  {
+    "line": "S8",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T09:16:00.000Z",
+    "trainNumber": "85656",
+    "fromStop": "Bondorf",
+    "fromTime": "16:02",
+    "toStop": "Forbach",
+    "toTime": "17:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257456",
+    "capturedAt": "2025-11-17T12:47:21.156Z"
+  }
+]

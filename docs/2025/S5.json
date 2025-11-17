@@ -346,5 +346,77 @@
     "toTime": "18:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
     "capturedAt": "2025-11-15T12:06:44.437Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T10:23:00.000Z",
+    "trainNumber": "84745",
+    "fromStop": "KA-Rheinbergstr.",
+    "fromTime": "12:52",
+    "toStop": "Söllingen Bf.",
+    "toTime": "13:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
+    "capturedAt": "2025-11-17T12:47:20.850Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T10:23:00.000Z",
+    "trainNumber": "84834",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "13:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
+    "capturedAt": "2025-11-17T12:47:20.850Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T10:23:00.000Z",
+    "trainNumber": "84831",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "15:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "16:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
+    "capturedAt": "2025-11-17T12:47:20.850Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T10:23:00.000Z",
+    "trainNumber": "84758",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "16:18",
+    "toStop": "KA-Rheinbergstr.",
+    "toTime": "17:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
+    "capturedAt": "2025-11-17T12:47:20.850Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T10:23:00.000Z",
+    "trainNumber": "84779",
+    "fromStop": "KA-Rheinbergstr.",
+    "fromTime": "18:12",
+    "toStop": "Söllingen Bf.",
+    "toTime": "18:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
+    "capturedAt": "2025-11-17T12:47:20.850Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-17",
+    "stand": "2025-11-17T10:23:00.000Z",
+    "trainNumber": "84772",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "19:01",
+    "toStop": "KA-Rheinbergstr.",
+    "toTime": "19:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
+    "capturedAt": "2025-11-17T12:47:20.850Z"
   }
 ]
