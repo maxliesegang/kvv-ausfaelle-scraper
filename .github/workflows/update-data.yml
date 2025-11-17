@@ -31,8 +31,8 @@ jobs:
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            # Commit only the site content under docs/ (single source of truth for Pages)
-            git add docs
+            # Commit the site content under docs/ and train-line definitions
+            git add docs src/train-line-definitions/data
             git commit -m "Update KVV cancellations (docs)"
             git push
           else
