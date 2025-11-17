@@ -1,10 +1,10 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import type { TrainLineDefinition } from './types.js';
 
 function loadDefinitions(): readonly TrainLineDefinition[] {
-  const dataDir = fileURLToPath(new URL('./data', import.meta.url));
+  // Read from docs/train-line-definitions/data instead of src
+  const dataDir = join(process.cwd(), 'docs', 'train-line-definitions', 'data');
   const files = readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
     .sort((a, b) => a.localeCompare(b, 'en'));

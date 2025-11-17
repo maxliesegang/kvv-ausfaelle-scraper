@@ -2,7 +2,7 @@ import { join } from 'node:path';
 import { exists, ensureDirectory, readJsonFile, writeJsonFile } from './utils/fs.js';
 import { normalizeLine, normalizeTrainNumber } from './utils/normalization.js';
 
-const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'src', 'train-line-definitions', 'data');
+const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'docs', 'train-line-definitions', 'data');
 
 /**
  * Map from line identifier to set of train numbers observed for that line.

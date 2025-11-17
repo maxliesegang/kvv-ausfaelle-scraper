@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const rootDir = dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
-const srcDir = join(rootDir, 'src', 'train-line-definitions', 'data');
+const srcDir = join(rootDir, 'docs', 'train-line-definitions', 'data');
 const destDir = join(rootDir, 'dist', 'train-line-definitions', 'data');
 
 if (!existsSync(srcDir)) {
