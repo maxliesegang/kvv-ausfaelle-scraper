@@ -346,5 +346,65 @@
     "toTime": "21:45",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
     "capturedAt": "2025-11-19T12:47:52.846Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-20",
+    "stand": "2025-11-20T08:01:00.000Z",
+    "trainNumber": "30037",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "13:43",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "14:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
+    "capturedAt": "2025-11-20T12:45:55.486Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-20",
+    "stand": "2025-11-20T08:01:00.000Z",
+    "trainNumber": "20046",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "15:05",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "15:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
+    "capturedAt": "2025-11-20T12:45:55.486Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-20",
+    "stand": "2025-11-20T08:01:00.000Z",
+    "trainNumber": "30044",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "16:29",
+    "toStop": "Bad Herrenalb",
+    "toTime": "16:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
+    "capturedAt": "2025-11-20T12:45:55.486Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-20",
+    "stand": "2025-11-20T08:01:00.000Z",
+    "trainNumber": "30051",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "17:03",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "18:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
+    "capturedAt": "2025-11-20T12:45:55.486Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-20",
+    "stand": "2025-11-20T08:01:00.000Z",
+    "trainNumber": "30054",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "18:25",
+    "toStop": "Bad Herrenalb",
+    "toTime": "19:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
+    "capturedAt": "2025-11-20T12:45:55.486Z"
   }
 ]
