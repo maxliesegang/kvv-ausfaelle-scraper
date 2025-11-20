@@ -418,5 +418,17 @@
     "toTime": "19:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
     "capturedAt": "2025-11-17T12:47:20.850Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-20",
+    "stand": "2025-11-20T17:43:00.000Z",
+    "trainNumber": "84787",
+    "fromStop": "Tullastraße",
+    "fromTime": "01:06",
+    "toStop": "Söllingen",
+    "toTime": "01:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257838",
+    "capturedAt": "2025-11-20T18:33:08.403Z"
   }
 ]
