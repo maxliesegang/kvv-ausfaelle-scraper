@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S71",
+    "date": "2025-11-24",
+    "stand": "2025-11-24T03:10:00.000Z",
+    "trainNumber": "85562",
+    "fromStop": "Baden-Baden",
+    "fromTime": "08:23",
+    "toStop": "Rastatt",
+    "toTime": "08:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257993",
+    "capturedAt": "2025-11-24T06:34:57.906Z"
+  }
+]
