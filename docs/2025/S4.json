@@ -142,5 +142,29 @@
     "toTime": "16:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257799",
     "capturedAt": "2025-11-20T12:45:55.194Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-25",
+    "stand": "2025-11-25T17:18:00.000Z",
+    "trainNumber": "85496",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "00:24",
+    "toStop": "Eppingen Bf",
+    "toTime": "01:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258175",
+    "capturedAt": "2025-11-25T18:34:47.139Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-25",
+    "stand": "2025-11-25T17:18:00.000Z",
+    "trainNumber": "85467",
+    "fromStop": "Eppingen Bf",
+    "fromTime": "23:25",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "00:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258175",
+    "capturedAt": "2025-11-25T18:34:47.139Z"
   }
 ]
