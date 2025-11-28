@@ -742,5 +742,113 @@
     "toTime": "13:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
     "capturedAt": "2025-11-25T06:35:45.267Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84705",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "05:02",
+    "toStop": "Söllingen Bf.",
+    "toTime": "05:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84806",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "05:58",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84704",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "06:01",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "06:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84717",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "06:52",
+    "toStop": "Söllingen Bf.",
+    "toTime": "07:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84803",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:15",
+    "toStop": "Söllingen Bf.",
+    "toTime": "08:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84818",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "07:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "05:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "08:38",
+    "toStop": "KA Tullastraße",
+    "toTime": "09:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84811",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "09:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "10:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-28",
+    "stand": "2025-11-28T03:13:00.000Z",
+    "trainNumber": "84726",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "10:18",
+    "toStop": "KA Tullastraße",
+    "toTime": "10:41",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
+    "capturedAt": "2025-11-28T06:35:18.760Z"
   }
 ]
