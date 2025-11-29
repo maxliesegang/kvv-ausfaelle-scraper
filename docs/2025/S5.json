@@ -850,5 +850,65 @@
     "toTime": "10:41",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
     "capturedAt": "2025-11-28T06:35:18.760Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-29",
+    "stand": "2025-11-29T14:35:00.000Z",
+    "trainNumber": "84763",
+    "fromStop": "Ka. Rheinbergstraße",
+    "fromTime": "15:52",
+    "toStop": "Söllingen",
+    "toTime": "16:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
+    "capturedAt": "2025-11-29T18:30:40.270Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-29",
+    "stand": "2025-11-29T14:35:00.000Z",
+    "trainNumber": "84848",
+    "fromStop": "Söllingen",
+    "fromTime": "16:51",
+    "toStop": "Ka. Lameyplatz",
+    "toTime": "17:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
+    "capturedAt": "2025-11-29T18:30:40.270Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-29",
+    "stand": "2025-11-29T14:35:00.000Z",
+    "trainNumber": "85089",
+    "fromStop": "Ka. Starckstraße",
+    "fromTime": "18:07",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "19:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
+    "capturedAt": "2025-11-29T18:30:40.270Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-29",
+    "stand": "2025-11-29T14:35:00.000Z",
+    "trainNumber": "85086",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "20:05",
+    "toStop": "Wörth Badepark",
+    "toTime": "22:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
+    "capturedAt": "2025-11-29T18:30:40.270Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-11-29",
+    "stand": "2025-11-29T14:35:00.000Z",
+    "trainNumber": "84853",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "22:45",
+    "toStop": "Ka. Rheinbergstraße",
+    "toTime": "23:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
+    "capturedAt": "2025-11-29T18:30:40.270Z"
   }
 ]
