@@ -262,5 +262,53 @@
     "toTime": "20:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
     "capturedAt": "2025-11-29T12:42:36.471Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-30",
+    "stand": "2025-11-30T10:45:00.000Z",
+    "trainNumber": "85517",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "12:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "13:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
+    "capturedAt": "2025-11-30T12:41:56.973Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-30",
+    "stand": "2025-11-30T10:45:00.000Z",
+    "trainNumber": "85439",
+    "fromStop": "Eppingen Bf.",
+    "fromTime": "13:33",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "14:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
+    "capturedAt": "2025-11-30T12:41:56.973Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-30",
+    "stand": "2025-11-30T10:45:00.000Z",
+    "trainNumber": "85526",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "14:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "15:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
+    "capturedAt": "2025-11-30T12:41:56.973Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-30",
+    "stand": "2025-11-30T10:45:00.000Z",
+    "trainNumber": "85444",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "14:40",
+    "toStop": "Eppingen Bf.",
+    "toTime": "15:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
+    "capturedAt": "2025-11-30T12:41:56.973Z"
   }
 ]
