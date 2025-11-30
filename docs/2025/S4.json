@@ -310,5 +310,29 @@
     "toTime": "15:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
     "capturedAt": "2025-11-30T12:41:56.973Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-30",
+    "stand": "2025-11-30T10:45:00.000Z",
+    "trainNumber": "85462",
+    "fromStop": "Ka Tullastrasse",
+    "fromTime": "21:27",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "21:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
+    "capturedAt": "2025-11-30T18:30:38.790Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-11-30",
+    "stand": "2025-11-30T10:45:00.000Z",
+    "trainNumber": "85469",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "23:15",
+    "toStop": "Ka Tullastrasse",
+    "toTime": "23:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
+    "capturedAt": "2025-11-30T18:30:38.790Z"
   }
 ]
