@@ -334,5 +334,17 @@
     "toTime": "23:30",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
     "capturedAt": "2025-11-30T18:30:38.790Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T18:16:00.000Z",
+    "trainNumber": "85541",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "01:15",
+    "toStop": "Gölshausen",
+    "toTime": "02:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258666",
+    "capturedAt": "2025-12-01T19:27:20.213Z"
   }
 ]
