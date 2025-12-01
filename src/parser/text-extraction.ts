@@ -16,8 +16,18 @@ export function stripHtml(html: string): string {
   return html
     .replace(/<br\s*\/?\s*>/gi, '\n')
     .replace(/<\/p>/gi, '\n')
+    .replace(/<\/div>/gi, '\n')
+    .replace(/<\/h[1-6]>/gi, '\n')
+    .replace(/<\/li>/gi, '\n')
+    .replace(/<(li|p|div|h[1-6]|section|article)[^>]*>/gi, '\n')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/\u00a0/g, ' ')
+    .replace(/&#160;/gi, ' ')
+    .replace(/&ndash;|&#8211;|–/g, '-')
+    .replace(/&amp;/gi, '&')
     .replace(/<[^>]+>/g, '')
     .replace(/\r/g, '')
+    .replace(/\n{2,}/g, '\n')
     .trim();
 }
 

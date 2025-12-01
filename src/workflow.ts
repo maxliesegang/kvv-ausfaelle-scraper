@@ -6,25 +6,7 @@ import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
 } from './train-line-observations.js';
-
-/** Search strings to identify relevant RSS items (case-insensitive matching) */
-const RELEVANT_TITLE_MARKERS = [
-  'betriebsbedingte fahrtausfälle',
-  'betriebsbedingter ausfall',
-] as const;
-
-/**
- * Determines if an RSS item is relevant (contains cancellation information).
- * Uses case-insensitive matching for better reliability.
- *
- * @param item - RSS feed item to check
- * @returns true if the item contains operational cancellations
- */
-export function isRelevant(item: Item): boolean {
-  if (!item.title) return false;
-  const titleLower = item.title.toLowerCase();
-  return RELEVANT_TITLE_MARKERS.some((marker) => titleLower.includes(marker));
-}
+import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
 /**
  * Fetches and filters the RSS feed for relevant cancellation items.
@@ -36,7 +18,16 @@ export function isRelevant(item: Item): boolean {
 export async function fetchRelevantItems(rssUrl: string = RSS_URL): Promise<Item[]> {
   const rssXml = await fetchText(rssUrl);
   const items = await parseRss(rssXml);
-  return items.filter(isRelevant);
+
+  const scored = items.map((item) => ({ item, relevance: analyzeRssItem(item) }));
+  const relevant = scored.filter(({ relevance }) => relevance.isRelevant).map(({ item }) => item);
+
+  const skipped = scored.length - relevant.length;
+  if (skipped > 0) {
+    console.log(`Filtered out ${skipped} non-cancellation RSS items based on relevance scoring.`);
+  }
+
+  return relevant;
 }
 
 /**
@@ -58,6 +49,13 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     html = await fetchText(url);
   } catch (error) {
     console.warn('Failed to fetch detail page:', url, error);
+    return [];
+  }
+
+  const detailRelevance = analyzeDetailPage(html);
+  if (!detailRelevance.isRelevant) {
+    const reason = detailRelevance.reasons.join('; ') || 'no cancellation signals found';
+    console.warn(`  -> skipping article due to low relevance (${reason})`);
     return [];
   }
 
