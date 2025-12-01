@@ -52,9 +52,18 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
   }
 
   console.log('Fetching detail:', url);
+
+  let html: string;
   try {
-    const html = await fetchText(url);
-    const { observations, record } = createTrainLineObservationRecorder();
+    html = await fetchText(url);
+  } catch (error) {
+    console.warn('Failed to fetch detail page:', url, error);
+    return [];
+  }
+
+  const { observations, record } = createTrainLineObservationRecorder();
+
+  try {
     const trips = parseDetailPage(html, url, {
       onTrainLineObserved: record,
     });
@@ -62,12 +71,19 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     console.log(`  -> parsed ${trips.length} trips`);
     return trips;
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+
+    if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
+      console.warn(`  -> skipping article with no trips: ${url}`);
+      return [];
+    }
+
     if (error instanceof ParseError) {
       // Surface incorrect parses so CI fails loudly
       throw error;
     }
-    console.warn('Failed to fetch detail page:', url, error);
-    return [];
+
+    throw new ParseError(`Failed to parse detail page ${url}: ${message}`);
   }
 }
 

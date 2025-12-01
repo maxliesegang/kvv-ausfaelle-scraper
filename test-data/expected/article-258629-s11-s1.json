@@ -1,0 +1,92 @@
+[
+  {
+    "line": "S11",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "20054",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "17:05",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "18:15"
+  },
+  {
+    "line": "S11",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "20055",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "18:21",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "19:31"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "10075",
+    "fromStop": "Ettlingen Freibad",
+    "fromTime": "19:34",
+    "toStop": "Hochstetten",
+    "toTime": "20:47"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "30058",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "19:45",
+    "toStop": "Bad Herrenalb",
+    "toTime": "20:53"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "10080",
+    "fromStop": "Hochstetten",
+    "fromTime": "21:02",
+    "toStop": "Ettlingen Freibad",
+    "toTime": "22:12"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "30061",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "21:03",
+    "toStop": "Hochstetten",
+    "toTime": "22:37"
+  },
+  {
+    "line": "S11",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "20074",
+    "fromStop": "Hochstetten",
+    "fromTime": "22:42",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "00:15"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "10085",
+    "fromStop": "Ettlingen Freibad",
+    "fromTime": "23:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "23:51"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-01",
+    "stand": "2025-12-01T12:08:00.000Z",
+    "trainNumber": "10086",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "00:25",
+    "toStop": "Ettlingen Freibad",
+    "toTime": "01:12"
+  }
+]
