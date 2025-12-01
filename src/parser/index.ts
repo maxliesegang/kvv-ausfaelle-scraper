@@ -17,6 +17,14 @@ export interface ParseDetailOptions {
   readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
 }
 
+/** Error thrown when the parser cannot extract any trips from an article. */
+export class ParseError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ParseError';
+  }
+}
+
 /**
  * Parses a cancellation detail page HTML into an array of Cancellation objects.
  *
@@ -63,7 +71,7 @@ export function parseDetailPage(
   }
 
   if (trips.length === 0) {
-    throw new Error(`Incorrect parse: no trips were found in article ${url}`);
+    throw new ParseError(`Incorrect parse: no trips were found in article ${url}`);
   }
 
   return trips;

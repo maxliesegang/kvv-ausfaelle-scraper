@@ -1,7 +1,7 @@
 import type { Cancellation, Item } from './types.js';
 import { RSS_URL } from './config.js';
 import { fetchText, parseRss } from './rss.js';
-import { parseDetailPage } from './parser/index.js';
+import { parseDetailPage, ParseError } from './parser/index.js';
 import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
@@ -62,6 +62,10 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     console.log(`  -> parsed ${trips.length} trips`);
     return trips;
   } catch (error) {
+    if (error instanceof ParseError) {
+      // Surface incorrect parses so CI fails loudly
+      throw error;
+    }
     console.warn('Failed to fetch detail page:', url, error);
     return [];
   }
@@ -77,11 +81,27 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
 export async function collectTrips(items: Item[]): Promise<Cancellation[]> {
   const results = await Promise.allSettled(items.map((item) => fetchTripsFromItem(item)));
 
-  return results.flatMap((res) => {
+  const cancellations: Cancellation[] = [];
+  const parseErrors: ParseError[] = [];
+
+  for (const res of results) {
     if (res.status === 'fulfilled') {
-      return res.value;
+      cancellations.push(...res.value);
+      continue;
     }
+
+    if (res.reason instanceof ParseError) {
+      parseErrors.push(res.reason);
+      continue;
+    }
+
     console.warn('Detail fetch failed:', res.reason);
-    return [];
-  });
+  }
+
+  if (parseErrors.length > 0) {
+    const messages = parseErrors.map((err) => err.message).join('; ');
+    throw new Error(`Parser errors encountered: ${messages}`);
+  }
+
+  return cancellations;
 }
