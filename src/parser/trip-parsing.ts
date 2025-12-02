@@ -35,7 +35,11 @@ export function resolveLineForTrip(
   trainNumber: string,
   metadata: Pick<
     TripParsingMetadata,
-    'line' | 'mentionedLines' | 'lineMentionCount' | 'onTrainLineObserved'
+    | 'line'
+    | 'mentionedLines'
+    | 'lineMentionCount'
+    | 'onTrainLineObserved'
+    | 'lineExplicitlyProvided'
   >,
 ): string {
   const normalizedLine = normalizeLine(metadata.line) || DEFAULT_LINE;
@@ -43,6 +47,14 @@ export function resolveLineForTrip(
   const hasSingleLineMention = metadata.lineMentionCount === 1;
   const isMultiLineArticle = metadata.lineMentionCount > 1;
 
+  // If line is explicitly provided in the trip line (line-prefix format),
+  // use it directly without requiring train mappings
+  if (metadata.lineExplicitlyProvided && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
+    metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
+    return normalizedLine;
+  }
+
+  // For articles with a single line mention, use it directly
   if (hasSingleLineMention && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
     metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
     return normalizedLine;
@@ -80,7 +92,12 @@ export function resolveLineForTrip(
  * Checks whether a line of text looks like a parsable trip entry.
  */
 export function isValidTripLine(line: string): boolean {
-  // Try new format first
+  // Try line-prefix format first (e.g., "S5 84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr")
+  if (PATTERNS.TRIP_LINE_PREFIX_FORMAT.test(line)) {
+    return true;
+  }
+
+  // Try new format
   const newMatch = line.match(PATTERNS.TRIP_NEW_FORMAT);
   if (newMatch) {
     const toStop = newMatch[5];
@@ -289,8 +306,37 @@ function buildCancellation(
  * @returns Cancellation object or null if parsing fails
  */
 export function parseTripLine(line: string, metadata: TripParsingMetadata): Cancellation | null {
-  // Try new format first: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
-  let match = line.match(PATTERNS.TRIP_NEW_FORMAT);
+  // Try line-prefix format first: <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
+  let match = line.match(PATTERNS.TRIP_LINE_PREFIX_FORMAT);
+  if (match) {
+    const lineId = match[1]?.toUpperCase();
+    const trainNumber = match[2];
+    const fromStop = match[3];
+    const fromTime = match[4];
+    const toStop = match[5];
+    const toTime = match[6];
+
+    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
+      // Override the line from metadata with the line from the trip line itself
+      // Mark it as explicitly provided so train mappings aren't required
+      const overriddenMetadata = {
+        ...metadata,
+        line: lineId || metadata.line,
+        lineExplicitlyProvided: true,
+      };
+      return buildCancellation(
+        trainNumber!,
+        fromStop!,
+        fromTime!,
+        toStop!,
+        toTime!,
+        overriddenMetadata,
+      );
+    }
+  }
+
+  // Try new format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
+  match = line.match(PATTERNS.TRIP_NEW_FORMAT);
   if (match) {
     const trainNumber = match[1];
     const fromTime = match[2];

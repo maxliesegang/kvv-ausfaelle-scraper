@@ -55,6 +55,8 @@ export interface TripParsingMetadata {
   readonly lineMentionCount: number;
   /** Optional callback for recording train/line observations */
   readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
+  /** Whether the line was explicitly provided in the trip line itself (line-prefix format) */
+  readonly lineExplicitlyProvided?: boolean;
 }
 
 /**

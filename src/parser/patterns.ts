@@ -32,6 +32,14 @@ export const PATTERNS = {
    */
   TRIP_NEW_FORMAT:
     /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
+
+  /**
+   * Matches trip format with line prefix: <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
+   * Example: "S5 84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr"
+   * This format includes the line identifier at the beginning of each trip line.
+   */
+  TRIP_LINE_PREFIX_FORMAT:
+    /^([A-Z]+\d+)\s+(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
 } as const;
 
 /**

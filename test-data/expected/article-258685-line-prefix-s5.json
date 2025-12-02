@@ -1,0 +1,42 @@
+[
+  {
+    "line": "S5",
+    "date": "2025-12-02",
+    "stand": "2025-12-02T01:50:00.000Z",
+    "trainNumber": "84957",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "05:02",
+    "toStop": "Pforzheim",
+    "toTime": "06:11"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-02",
+    "stand": "2025-12-02T01:50:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "Pforzheim",
+    "fromTime": "06:25",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-02",
+    "stand": "2025-12-02T01:50:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:52",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "09:09"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-02",
+    "stand": "2025-12-02T01:50:00.000Z",
+    "trainNumber": "84722",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "09:18",
+    "toStop": "Rheinbergstraße",
+    "toTime": "09:58"
+  }
+]

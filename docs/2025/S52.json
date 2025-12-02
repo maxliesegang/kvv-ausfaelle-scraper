@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S52",
+    "date": "2025-12-02",
+    "stand": "2025-12-02T01:46:00.000Z",
+    "trainNumber": "84713",
+    "fromStop": "Wörth Bahnhof",
+    "fromTime": "06:20",
+    "toStop": "KA Marktplatz",
+    "toTime": "06:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258676",
+    "capturedAt": "2025-12-02T08:49:38.638Z"
+  }
+]
