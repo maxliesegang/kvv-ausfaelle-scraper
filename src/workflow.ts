@@ -72,8 +72,10 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     const message = error instanceof Error ? error.message : String(error);
 
     if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
-      console.warn(`  -> skipping article with no trips: ${url}`);
-      return [];
+      const reasons = detailRelevance.reasons.join('; ') || 'no relevance reasons recorded';
+      throw new ParseError(
+        `Relevant article contained no trips after parsing: ${url} (signals: ${reasons})`,
+      );
     }
 
     if (error instanceof ParseError) {
