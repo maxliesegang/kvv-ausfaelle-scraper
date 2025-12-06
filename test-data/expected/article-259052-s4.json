@@ -1,0 +1,112 @@
+[
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85335",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "15:34",
+    "toStop": "Cappel",
+    "toTime": "16:20"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85348",
+    "fromStop": "Cappel",
+    "fromTime": "16:33",
+    "toStop": "Heilbronn Hbf",
+    "toTime": "17:20"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85347",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "17:34",
+    "toStop": "Cappel",
+    "toTime": "18:20"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85360",
+    "fromStop": "Cappel",
+    "fromTime": "18:33",
+    "toStop": "Schwaigern West",
+    "toTime": "19:40"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85365",
+    "fromStop": "Schwaigern West",
+    "fromTime": "20:16",
+    "toStop": "Heilbronn Hbf",
+    "toTime": "20:34"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85368",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "21:20",
+    "toStop": "Schwaigern West",
+    "toTime": "21:40"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85373",
+    "fromStop": "Schwaigern West",
+    "fromTime": "22:14",
+    "toStop": "Heilbronn Hbf",
+    "toTime": "22:40"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85379",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "23:15",
+    "toStop": "Cappel",
+    "toTime": "23:57"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85469",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "23:15",
+    "toStop": "Pfühlpark",
+    "toTime": "01:18"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85378",
+    "fromStop": "Cappel",
+    "fromTime": "00:30",
+    "toStop": "Heilbronn Hbf",
+    "toTime": "01:17"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:08:00.000Z",
+    "trainNumber": "85479",
+    "fromStop": "Pfühlpark",
+    "fromTime": "01:25",
+    "toStop": "Albtalbahnhof",
+    "toTime": "03:23"
+  }
+]

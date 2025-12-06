@@ -97,6 +97,16 @@ export function isValidTripLine(line: string): boolean {
     return true;
   }
 
+  // Handle "ab/bis/an" variant
+  if (PATTERNS.TRIP_AB_BIS_FORMAT.test(line)) {
+    return true;
+  }
+
+  // Handle "<stop> <time> - <stop> <time>" variant
+  if (PATTERNS.TRIP_STOP_TIME_FORMAT.test(line)) {
+    return true;
+  }
+
   // Try new format
   const newMatch = line.match(PATTERNS.TRIP_NEW_FORMAT);
   if (newMatch) {
@@ -232,6 +242,7 @@ export function extractTripLines(text: string): string[] {
     // Escape special regex characters and replace spaces with \s+ to match any whitespace
     const markerRegex = new RegExp(
       marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+'),
+      'i',
     );
     const match = text.match(markerRegex);
     if (match) {
@@ -332,6 +343,34 @@ export function parseTripLine(line: string, metadata: TripParsingMetadata): Canc
         toTime!,
         overriddenMetadata,
       );
+    }
+  }
+
+  // Try "ab/bis/an" format: <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
+  match = line.match(PATTERNS.TRIP_AB_BIS_FORMAT);
+  if (match) {
+    const trainNumber = match[1];
+    const fromStop = match[2];
+    const fromTime = match[3];
+    const toStop = match[4];
+    const toTime = match[5];
+
+    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
+      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
+    }
+  }
+
+  // Try "<stop> <time> - <stop> <time>" format
+  match = line.match(PATTERNS.TRIP_STOP_TIME_FORMAT);
+  if (match) {
+    const trainNumber = match[1];
+    const fromStop = match[2];
+    const fromTime = match[3];
+    const toStop = match[4];
+    const toTime = match[5];
+
+    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
+      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
     }
   }
 

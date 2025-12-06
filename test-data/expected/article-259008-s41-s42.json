@@ -1,0 +1,122 @@
+[
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85715",
+    "fromStop": "Heilbronn Hbf. Vorplatz",
+    "fromTime": "10:16",
+    "toStop": "Mosbach Bf.",
+    "toTime": "11:16"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85760",
+    "fromStop": "Mosbach Bf.",
+    "fromTime": "11:20",
+    "toStop": "Mosbach-Neckarelz Bf.",
+    "toTime": "11:24"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85759",
+    "fromStop": "Mosbach-Neckarelz Bf.",
+    "fromTime": "11:34",
+    "toStop": "Mosbach Bf.",
+    "toTime": "11:38"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85720",
+    "fromStop": "Mosbach Bf.",
+    "fromTime": "11:42",
+    "toStop": "Heilbronn Hbf. Vorplatz",
+    "toTime": "12:37"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85843",
+    "fromStop": "Heilbronn Hbf. Vorplatz",
+    "fromTime": "13:03",
+    "toStop": "Sinsheim Bf.",
+    "toTime": "14:07"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85850",
+    "fromStop": "Sinsheim Bf.",
+    "fromTime": "14:46",
+    "toStop": "Heilbronn Hbf. Vorplatz",
+    "toTime": "15:46"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85725",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "15:09",
+    "toStop": "Mosbach",
+    "toTime": "16:16"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85770",
+    "fromStop": "Mosbach",
+    "fromTime": "16:20",
+    "toStop": "Neckarelz",
+    "toTime": "16:24"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85769",
+    "fromStop": "Neckarelz",
+    "fromTime": "16:34",
+    "toStop": "Mosbach",
+    "toTime": "16:38"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85730",
+    "fromStop": "Mosbach",
+    "fromTime": "16:42",
+    "toStop": "Heilbronn Hbf",
+    "toTime": "17:37"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85863",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "18:02",
+    "toStop": "Sinsheim",
+    "toTime": "19:08"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T07:29:00.000Z",
+    "trainNumber": "85874",
+    "fromStop": "Sinsheim",
+    "fromTime": "19:45",
+    "toStop": "Heilbronn Hbf",
+    "toTime": "20:47"
+  }
+]

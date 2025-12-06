@@ -1,0 +1,102 @@
+[
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "85398",
+    "fromStop": "Tullastraße",
+    "fromTime": "09:38",
+    "toStop": "Wörth Badepark",
+    "toTime": "09:15"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "85063",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "09:45",
+    "toStop": "Tullastraße",
+    "toTime": "11:26"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84734",
+    "fromStop": "Tullastraße",
+    "fromTime": "12:40",
+    "toStop": "Rheinbergstraße",
+    "toTime": "13:04"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84747",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "13:12",
+    "toStop": "Berghausen",
+    "toTime": "13:53"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84744",
+    "fromStop": "Berghausen",
+    "fromTime": "14:03",
+    "toStop": "Rheinbergstraße",
+    "toTime": "14:44"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84757",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "14:52",
+    "toStop": "Söllingen",
+    "toTime": "15:37"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84844",
+    "fromStop": "Söllingen",
+    "fromTime": "15:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "16:53"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84837",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "17:05",
+    "toStop": "Söllingen",
+    "toTime": "18:06"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84770",
+    "fromStop": "Söllingen",
+    "fromTime": "18:18",
+    "toStop": "Rheinbergstraße",
+    "toTime": "19:04"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T11:12:00.000Z",
+    "trainNumber": "84783",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "19:12",
+    "toStop": "Tullastraße",
+    "toTime": "19:56"
+  }
+]

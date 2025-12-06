@@ -27,6 +27,20 @@ export const PATTERNS = {
     /^(\d+)\s+(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)\s*[-–]+\s*(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)/,
 
   /**
+   * Matches trip format: <trainNumber> <fromStop> <fromTime> Uhr - <toStop> <toTime> Uhr
+   * Example: "85582 Albtalbahnhof 18:24 Uhr - Tullastraße 18:44 Uhr"
+   */
+  TRIP_STOP_TIME_FORMAT:
+    /^(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/,
+
+  /**
+   * Matches trip format using "ab/bis/an": <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
+   * Example: "85715 Heilbronn Hbf. Vorplatz ab 10:16 Uhr bis Mosbach Bf. an 11:16 Uhr"
+   */
+  TRIP_AB_BIS_FORMAT:
+    /^(\d+)\s+(.+?)\s+ab\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+an\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
+
+  /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
    * Example: "84888 08:38 Uhr Söllingen Bahnhof - 10:07 Uhr Germersheim Bahnhof"
    */
@@ -51,6 +65,7 @@ export const MARKERS = {
     'sind folgende Fahrten von einem (Teil-)Ausfall betroffen:',
     'sind folgende Fahrten betroffen:',
     'Betroffene Fahrten:',
+    'Betroffene Fahrten;',
   ] as readonly string[],
 
   /** Marker that ends the list of affected trips */

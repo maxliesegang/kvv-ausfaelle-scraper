@@ -1,0 +1,32 @@
+[
+  {
+    "line": "S7",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:29:00.000Z",
+    "trainNumber": "85582",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "18:24",
+    "toStop": "Tullastraße",
+    "toTime": "18:44"
+  },
+  {
+    "line": "S7",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:29:00.000Z",
+    "trainNumber": "85589",
+    "fromStop": "Tullastraße",
+    "fromTime": "19:13",
+    "toStop": "Achern",
+    "toTime": "20:25"
+  },
+  {
+    "line": "S7",
+    "date": "2025-12-06",
+    "stand": "2025-12-06T14:29:00.000Z",
+    "trainNumber": "85588",
+    "fromStop": "Achern",
+    "fromTime": "20:50",
+    "toStop": "Karlsruhe Hauptbahnhof",
+    "toTime": "21:47"
+  }
+]
