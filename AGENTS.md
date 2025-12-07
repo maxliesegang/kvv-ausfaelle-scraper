@@ -14,8 +14,8 @@ The primary automation agent is a GitHub Actions workflow that runs the scraper 
 
 ### Schedule
 
-- **Frequency**: Every 6 hours (4 times per day)
-- **Times (UTC)**: 00:00, 06:00, 12:00, 18:00
+- **Frequency**: Every 4 hours (6 times per day)
+- **Times (UTC)**: 00:00, 04:00, 08:00, 12:00, 16:00, 20:00
 - **Trigger**: Can also be manually dispatched via GitHub UI
 
 ### Workflow Steps

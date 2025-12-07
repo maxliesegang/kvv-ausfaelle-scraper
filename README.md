@@ -94,7 +94,7 @@ This validates that the parser correctly extracts all trip information from each
 
 ## Automation
 
-`.github/workflows/update-data.yml` runs every 6 hours (UTC) and on manual dispatch. The workflow installs dependencies, builds the scraper, runs it, formats the working tree via `npm run format`, and commits any changes under `docs/` so the published data and HTML indexes stay current.
+`.github/workflows/update-data.yml` runs every 4 hours (UTC) and on manual dispatch. The workflow installs dependencies, builds the scraper, runs it, formats the working tree via `npm run format`, and commits any changes under `docs/` so the published data and HTML indexes stay current.
 
 For detailed documentation about the automation agents and workflow, see [AGENTS.md](AGENTS.md).
 

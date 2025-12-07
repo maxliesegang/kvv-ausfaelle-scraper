@@ -8,6 +8,8 @@ import {
 } from './train-line-observations.js';
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
+const MIN_ARTICLE_AGE_MS = 60 * 60 * 1000; // 1 hour
+
 /**
  * Fetches and filters the RSS feed for relevant cancellation items.
  *
@@ -57,6 +59,18 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     const reason = detailRelevance.reasons.join('; ') || 'no cancellation signals found';
     console.warn(`  -> skipping article due to low relevance (${reason})`);
     return [];
+  }
+
+  const publishedMs = getArticlePublishedMs(item, html);
+  if (publishedMs !== undefined) {
+    const ageMs = Date.now() - publishedMs;
+    if (ageMs < MIN_ARTICLE_AGE_MS) {
+      const ageMinutes = Math.floor(ageMs / 60_000);
+      console.log(
+        `  -> skipping article because it is only ${ageMinutes} minutes old (needs 60 minutes)`,
+      );
+      return [];
+    }
   }
 
   const { observations, record } = createTrainLineObservationRecorder();
@@ -120,4 +134,14 @@ export async function collectTrips(items: Item[]): Promise<Cancellation[]> {
   }
 
   return cancellations;
+}
+
+function getArticlePublishedMs(item: Item, html: string): number | undefined {
+  const rssDate = item.isoDate ?? item.pubDate;
+  if (!rssDate) {
+    return undefined;
+  }
+
+  const rssMs = Date.parse(rssDate);
+  return Number.isFinite(rssMs) ? rssMs : undefined;
 }
