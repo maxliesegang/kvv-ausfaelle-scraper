@@ -61,7 +61,7 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     return [];
   }
 
-  const publishedMs = getArticlePublishedMs(item, html);
+  const publishedMs = getArticlePublishedMs(item);
   if (publishedMs !== undefined) {
     const ageMs = Date.now() - publishedMs;
     if (ageMs < MIN_ARTICLE_AGE_MS) {
@@ -136,7 +136,7 @@ export async function collectTrips(items: Item[]): Promise<Cancellation[]> {
   return cancellations;
 }
 
-function getArticlePublishedMs(item: Item, html: string): number | undefined {
+function getArticlePublishedMs(item: Item): number | undefined {
   const rssDate = item.isoDate ?? item.pubDate;
   if (!rssDate) {
     return undefined;
