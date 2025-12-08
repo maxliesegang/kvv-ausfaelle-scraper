@@ -11,7 +11,12 @@
 
 import type { Cancellation } from '../types.js';
 import { stripHtml, extractLine, extractStand } from './text-extraction.js';
-import { extractMentionedLines, extractTripLines, parseTripLine } from './trip-parsing.js';
+import {
+  extractMentionedLines,
+  extractTripLines,
+  MultiLineMappingError,
+  parseTripLine,
+} from './trip-parsing.js';
 
 export interface ParseDetailOptions {
   readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
@@ -62,12 +67,37 @@ export function parseDetailPage(
   // Extract and parse trip lines
   const tripLines = extractTripLines(text);
   const trips: Cancellation[] = [];
+  const unmappedTrainNumbers = new Set<string>();
 
   for (const tripLine of tripLines) {
-    const trip = parseTripLine(tripLine, metadata);
-    if (trip) {
-      trips.push(trip);
+    try {
+      const trip = parseTripLine(tripLine, metadata);
+      if (trip) {
+        trips.push(trip);
+      }
+    } catch (error) {
+      if (error instanceof MultiLineMappingError) {
+        unmappedTrainNumbers.add(error.trainNumber);
+        continue;
+      }
+      throw error;
     }
+  }
+
+  if (unmappedTrainNumbers.size > 0) {
+    const linesDescription =
+      lineMentionCount > 0 && mentionedLines.length > 0
+        ? `${lineMentionCount} lines: ${mentionedLines.join(', ')}`
+        : 'multiple lines';
+    const trains = Array.from(unmappedTrainNumbers);
+    const trainsLabel = trains.length > 1 ? 'trains' : 'train';
+    const numbersLabel = trains.length > 1 ? 'these train numbers' : 'this train number';
+
+    throw new ParseError(
+      `Multi-line article detected (${linesDescription}) in article ${url} ` +
+        `but no train number mapping found for ${trainsLabel} ${trains.join(', ')}. ` +
+        `Please add ${numbersLabel} to the appropriate line definition.`,
+    );
   }
 
   if (trips.length === 0) {

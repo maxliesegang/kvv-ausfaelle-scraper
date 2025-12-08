@@ -16,6 +16,16 @@ import {
   LINE_IDENTIFIER_PATTERN,
 } from './patterns.js';
 
+export class MultiLineMappingError extends Error {
+  constructor(
+    message: string,
+    readonly trainNumber: string,
+  ) {
+    super(message);
+    this.name = 'MultiLineMappingError';
+  }
+}
+
 /**
  * Determines whether the parsed line value looks ambiguous (e.g. "S1 und S11").
  */
@@ -77,10 +87,11 @@ export function resolveLineForTrip(
 
     // Throw error if multi-line article has no mapping for this train number
     if (isMultiLineArticle) {
-      throw new Error(
+      throw new MultiLineMappingError(
         `Multi-line article detected (${metadata.lineMentionCount} lines: ${metadata.mentionedLines.join(', ')}) ` +
           `but no train number mapping found for train ${trainNumber}. ` +
           `Please add this train number to the appropriate line definition.`,
+        trainNumber,
       );
     }
   }
