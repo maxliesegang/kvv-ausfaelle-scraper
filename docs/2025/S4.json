@@ -346,5 +346,17 @@
     "toTime": "02:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258666",
     "capturedAt": "2025-12-01T19:27:20.213Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-07",
+    "stand": "2025-12-07T15:30:00.000Z",
+    "trainNumber": "85383",
+    "fromStop": "Heilbronn Hbf",
+    "fromTime": "01:36",
+    "toStop": "Cappel",
+    "toTime": "02:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259178",
+    "capturedAt": "2025-12-08T01:17:10.867Z"
   }
 ]
