@@ -958,5 +958,29 @@
     "toTime": "09:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258685",
     "capturedAt": "2025-12-02T08:49:38.575Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-08",
+    "stand": "2025-12-08T16:22:00.000Z",
+    "trainNumber": "85027",
+    "fromStop": "KA. Rheinbergstraße",
+    "fromTime": "20:42",
+    "toStop": "Pforzheim Bf.",
+    "toTime": "21:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259246",
+    "capturedAt": "2025-12-08T16:22:33.721Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-08",
+    "stand": "2025-12-08T16:22:00.000Z",
+    "trainNumber": "85022",
+    "fromStop": "Pforzheim Bf.",
+    "fromTime": "22:06",
+    "toStop": "Germersheim Bf.",
+    "toTime": "00:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259246",
+    "capturedAt": "2025-12-08T16:22:33.721Z"
   }
 ]
