@@ -1,0 +1,38 @@
+[
+  {
+    "line": "S42",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85903",
+    "fromStop": "Schwaigern West",
+    "fromTime": "18:18",
+    "toStop": "Bad Rappenau",
+    "toTime": "19:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85872",
+    "fromStop": "Bad Rappenau",
+    "fromTime": "19:33",
+    "toStop": "Heilbronn Hbf/Willy-Brand-Platz",
+    "toTime": "20:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85879",
+    "fromStop": "Heilbronn Hbf/Willy-Brand-Platz",
+    "fromTime": "23:50",
+    "toStop": "Sinsheim (Elsenz) Hbf",
+    "toTime": "00:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  }
+]

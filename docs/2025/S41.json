@@ -1,0 +1,110 @@
+[
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85796",
+    "fromStop": "Heilbronn Hbf/Willy-Brand-Platz",
+    "fromTime": "16:39",
+    "toStop": "Eppingen",
+    "toTime": "17:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85799",
+    "fromStop": "Eppingen",
+    "fromTime": "17:46",
+    "toStop": "Mosbach (Baden)",
+    "toTime": "19:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85776",
+    "fromStop": "Mosbach (Baden)",
+    "fromTime": "19:20",
+    "toStop": "Mosbach-Neckarelz",
+    "toTime": "19:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85775",
+    "fromStop": "Mosbach-Neckarelz",
+    "fromTime": "19:34",
+    "toStop": "Mosbach (Baden)",
+    "toTime": "19:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85736",
+    "fromStop": "Mosbach (Baden)",
+    "fromTime": "19:42",
+    "toStop": "Heilbronn Hbf/Willy-Brand-Platz",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85735",
+    "fromStop": "Heilbronn Hbf/Willy-Brand-Platz",
+    "fromTime": "20:18",
+    "toStop": "Mosbach (Baden)",
+    "toTime": "21:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85780",
+    "fromStop": "Mosbach (Baden)",
+    "fromTime": "21:20",
+    "toStop": "Mosbach-Neckarelz",
+    "toTime": "21:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85779",
+    "fromStop": "Mosbach-Neckarelz",
+    "fromTime": "21:34",
+    "toStop": "Mosbach (Baden)",
+    "toTime": "21:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S41",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:11:00.000Z",
+    "trainNumber": "85740",
+    "fromStop": "Mosbach (Baden)",
+    "fromTime": "21:42",
+    "toStop": "Heilbronn Hbf/Willy-Brand-Platz",
+    "toTime": "22:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
+    "capturedAt": "2025-12-09T16:46:43.303Z"
+  }
+]

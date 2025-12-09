@@ -586,5 +586,17 @@
     "toTime": "15:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
     "capturedAt": "2025-12-08T07:31:09.123Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T11:43:00.000Z",
+    "trainNumber": "30041",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "15:05",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "15:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259348",
+    "capturedAt": "2025-12-09T16:46:43.361Z"
   }
 ]

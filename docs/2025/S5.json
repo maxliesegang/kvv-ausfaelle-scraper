@@ -1102,5 +1102,89 @@
     "toTime": "10:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
     "capturedAt": "2025-12-09T04:25:48.393Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T02:20:00.000Z",
+    "trainNumber": "84746",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "14:18",
+    "toStop": "Rheinbergstraße",
+    "toTime": "14:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
+    "capturedAt": "2025-12-09T16:46:43.376Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:08:00.000Z",
+    "trainNumber": "85001",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "15:29",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "16:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
+    "capturedAt": "2025-12-09T16:46:43.353Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:08:00.000Z",
+    "trainNumber": "84763",
+    "fromStop": "Karlsruhe Rheinbergstraße",
+    "fromTime": "15:50",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "16:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
+    "capturedAt": "2025-12-09T16:46:43.353Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:08:00.000Z",
+    "trainNumber": "85000",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "16:40",
+    "toStop": "Karlsruhe Hbf",
+    "toTime": "17:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
+    "capturedAt": "2025-12-09T16:46:43.353Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:08:00.000Z",
+    "trainNumber": "84846",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "16:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "17:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
+    "capturedAt": "2025-12-09T16:46:43.353Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:08:00.000Z",
+    "trainNumber": "84843",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "18:05",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "19:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
+    "capturedAt": "2025-12-09T16:46:43.353Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-09",
+    "stand": "2025-12-09T14:08:00.000Z",
+    "trainNumber": "84776",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "19:18",
+    "toStop": "Karlsruhe Entenfang",
+    "toTime": "19:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
+    "capturedAt": "2025-12-09T16:46:43.353Z"
   }
 ]
