@@ -1262,6 +1262,18 @@
   {
     "line": "S5",
     "date": "2025-12-10",
+    "stand": "2025-12-10T07:05:00.000Z",
+    "trainNumber": "84818",
+    "fromStop": "Söllingen Bf (AVG)",
+    "fromTime": "07:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "08:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
+    "capturedAt": "2025-12-10T08:23:47.974Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-10",
     "stand": "2025-12-10T03:20:00.000Z",
     "trainNumber": "84820",
     "fromStop": "Söllingen Bf (AVG)",
@@ -1270,5 +1282,29 @@
     "toTime": "09:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
     "capturedAt": "2025-12-10T04:30:10.971Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-10",
+    "stand": "2025-12-10T07:05:00.000Z",
+    "trainNumber": "84811",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "09:05",
+    "toStop": "Söllingen Bf (AVG)",
+    "toTime": "10:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
+    "capturedAt": "2025-12-10T08:23:47.974Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-10",
+    "stand": "2025-12-10T07:05:00.000Z",
+    "trainNumber": "84726",
+    "fromStop": "Söllingen Bf (AVG)",
+    "fromTime": "10:18",
+    "toStop": "KarlsruheTullastraße",
+    "toTime": "10:41",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
+    "capturedAt": "2025-12-10T08:23:47.974Z"
   }
 ]
