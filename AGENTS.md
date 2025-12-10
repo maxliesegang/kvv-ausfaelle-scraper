@@ -106,12 +106,8 @@ npm start
 
 Potential enhancements for the automation system:
 
-- **Alert Agent**: Monitor for specific lines or routes and send notifications
-- **Analytics Agent**: Generate statistics on cancellation patterns and trends
-- **Validation Agent**: Verify data quality and flag anomalies
 - **Archive Agent**: Compress and archive historical data beyond a retention period
 - **API Agent**: Expose real-time query endpoints for the collected data
-- **Multi-Source Agent**: Aggregate data from additional transit sources
 
 ## Monitoring & Logs
 
