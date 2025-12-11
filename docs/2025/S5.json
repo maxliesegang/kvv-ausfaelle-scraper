@@ -1306,5 +1306,101 @@
     "toTime": "10:41",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
     "capturedAt": "2025-12-10T08:23:47.974Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84826",
+    "fromStop": "Tullastraße",
+    "fromTime": "11:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "11:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84819",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "12:05",
+    "toStop": "Tullastraße",
+    "toTime": "12:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84745",
+    "fromStop": "Knielingen Rheinbergstraße",
+    "fromTime": "12:51",
+    "toStop": "Söllingen Bf.",
+    "toTime": "13:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84834",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "13:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84831",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "15:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "16:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84758",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "16:18",
+    "toStop": "Knielingen Rheinbergstraße",
+    "toTime": "17:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84779",
+    "fromStop": "Knielingen Rheinbergstraße",
+    "fromTime": "18:11",
+    "toStop": "Söllingen Bf.",
+    "toTime": "18:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "84772",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "19:01",
+    "toStop": "Knielingen Rheinbergstraße",
+    "toTime": "19:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T12:37:06.269Z"
   }
 ]
