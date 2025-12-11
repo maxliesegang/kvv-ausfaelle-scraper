@@ -1402,5 +1402,29 @@
     "toTime": "19:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
     "capturedAt": "2025-12-11T12:37:06.269Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "85016",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "19:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "20:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T16:24:38.336Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-11",
+    "stand": "2025-12-11T08:11:00.000Z",
+    "trainNumber": "85095",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "20:45",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "22:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
+    "capturedAt": "2025-12-11T16:24:38.336Z"
   }
 ]
