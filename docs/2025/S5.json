@@ -1426,5 +1426,17 @@
     "toTime": "22:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
     "capturedAt": "2025-12-11T16:24:38.336Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-12",
+    "stand": "2025-12-12T08:25:00.000Z",
+    "trainNumber": "84826",
+    "fromStop": "KA Tullastr/Alter Schlachthof",
+    "fromTime": "11:11",
+    "toStop": "Wörth Badepark ( 11:53 Uhr) 84819 Wörth Badepark",
+    "toTime": "12:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259663",
+    "capturedAt": "2025-12-12T12:35:46.259Z"
   }
 ]
