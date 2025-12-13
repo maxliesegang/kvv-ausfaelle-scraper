@@ -314,6 +314,18 @@
   {
     "line": "S11",
     "date": "2025-12-13",
+    "stand": "2025-12-13T10:33:00.000Z",
+    "trainNumber": "56009",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "02:59",
+    "toStop": "Hochstetten",
+    "toTime": "04:14",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
+    "capturedAt": "2025-12-13T20:17:17.122Z"
+  },
+  {
+    "line": "S11",
+    "date": "2025-12-13",
     "stand": "2025-12-13T09:33:00.000Z",
     "trainNumber": "26043",
     "fromStop": "Ettlingen Stadt",
