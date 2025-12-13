@@ -34,5 +34,29 @@
     "toTime": "00:48",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
     "capturedAt": "2025-12-09T16:46:43.303Z"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T08:15:00.000Z",
+    "trainNumber": "85843",
+    "fromStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "fromTime": "13:03",
+    "toStop": "Sinsheim Hbf",
+    "toTime": "14:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259779",
+    "capturedAt": "2025-12-13T08:20:41.106Z"
+  },
+  {
+    "line": "S42",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T08:15:00.000Z",
+    "trainNumber": "85850",
+    "fromStop": "Sinsheim Hbf",
+    "fromTime": "14:46",
+    "toStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "toTime": "15:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259779",
+    "capturedAt": "2025-12-13T08:20:41.106Z"
   }
 ]
