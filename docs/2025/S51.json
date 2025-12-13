@@ -106,5 +106,65 @@
     "toTime": "22:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259627",
     "capturedAt": "2025-12-11T16:24:37.957Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84904",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "15:00",
+    "toStop": "Germersheim",
+    "toTime": "16:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84919",
+    "fromStop": "Germersheim",
+    "fromTime": "16:50",
+    "toStop": "KA Tullastr.",
+    "toTime": "17:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84928",
+    "fromStop": "LA Lameypl.",
+    "fromTime": "21:17",
+    "toStop": "Germersheim",
+    "toTime": "22:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84937",
+    "fromStop": "KA Starkstr.",
+    "fromTime": "21:37",
+    "toStop": "KA Tullastr.",
+    "toTime": "22:01",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S51",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84943",
+    "fromStop": "Germersheim",
+    "fromTime": "22:30",
+    "toStop": "Söllingen Bf",
+    "toTime": "23:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
   }
 ]

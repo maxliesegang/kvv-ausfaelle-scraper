@@ -1438,5 +1438,77 @@
     "toTime": "12:05",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259663",
     "capturedAt": "2025-12-12T12:35:46.259Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84782",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "00:02",
+    "toStop": "KA Rheinbergstr.",
+    "toTime": "00:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "85004",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "17:50",
+    "toStop": "KA Rheinbergstr.",
+    "toTime": "18:14",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "85021",
+    "fromStop": "KA Rheinbergstr.",
+    "fromTime": "18:42",
+    "toStop": "Pforzheim",
+    "toTime": "19:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84783",
+    "fromStop": "KA Marktpl. (U)",
+    "fromTime": "19:31",
+    "toStop": "Berghausen",
+    "toTime": "19:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "84778",
+    "fromStop": "Berghausen",
+    "fromTime": "20:03",
+    "toStop": "KA Rheinbergstr.",
+    "toTime": "20:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-13",
+    "stand": "2025-12-13T13:06:00.000Z",
+    "trainNumber": "85018",
+    "fromStop": "Pforzheim",
+    "fromTime": "20:06",
+    "toStop": "KA Tullastr.",
+    "toTime": "20:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
+    "capturedAt": "2025-12-13T15:41:01.826Z"
   }
 ]
