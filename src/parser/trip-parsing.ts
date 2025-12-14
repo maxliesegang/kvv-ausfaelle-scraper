@@ -234,6 +234,26 @@ export function mergeTripLines(rawLines: string[]): string[] {
 }
 
 /**
+ * Extracts raw candidate lines from the trip section without validation or merging.
+ * Useful for diagnostics when no trips could be parsed.
+ */
+export function extractTripSectionCandidates(text: string): string[] {
+  for (const marker of MARKERS.TRIPS_START) {
+    const markerRegex = new RegExp(
+      marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+'),
+      'i',
+    );
+    const match = text.match(markerRegex);
+    if (match) {
+      const startIdx = match.index! + match[0].length;
+      return buildTripCandidateLines(text.slice(startIdx));
+    }
+  }
+
+  return buildTripCandidateLines(text);
+}
+
+/**
  * Extracts the section of text containing trip listings.
  *
  * @param text - Full plain text content

@@ -2,6 +2,8 @@ import type { Cancellation, Item } from './types.js';
 import { RSS_URL } from './config.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage, ParseError } from './parser/index.js';
+import { extractTripSectionCandidates } from './parser/trip-parsing.js';
+import { stripHtml } from './parser/text-extraction.js';
 import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
@@ -9,6 +11,7 @@ import {
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
 const MIN_ARTICLE_AGE_MS = 60 * 60 * 1000; // 1 hour
+const TRIP_TIME_PAIR_PATTERN = /\d{1,2}:\d{2}.*\d{1,2}:\d{2}/;
 
 /**
  * Fetches and filters the RSS feed for relevant cancellation items.
@@ -87,6 +90,18 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
 
     if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
       const reasons = detailRelevance.reasons.join('; ') || 'no relevance reasons recorded';
+      const text = stripHtml(html);
+      const tripCandidates = extractTripSectionCandidates(text);
+      const hasTripLikeTimes = tripCandidates.some((line) => TRIP_TIME_PAIR_PATTERN.test(line));
+
+      if (!hasTripLikeTimes) {
+        await updateTrainLineDefinitionsFromObservations(observations);
+        console.warn(
+          `  -> skipping article because no trip details were listed despite relevance signals (${reasons})`,
+        );
+        return [];
+      }
+
       throw new ParseError(
         `Relevant article contained no trips after parsing: ${url} (signals: ${reasons})`,
       );
