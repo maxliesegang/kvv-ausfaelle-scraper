@@ -1,7 +1,7 @@
 import { join } from 'path';
 import type { Cancellation } from './types.js';
 import { readJsonFile } from './utils/fs.js';
-import { ISO_YEAR_LENGTH } from './utils/constants.js';
+import { getFahrplanYear } from './fahrplan.js';
 
 /**
  * Loads existing cancellation data from a JSON file.
@@ -66,7 +66,15 @@ async function findOrCreateBucket(
   baseDir: string,
   trip: Cancellation,
 ): Promise<CancellationBucket> {
-  const year = trip.date.slice(0, ISO_YEAR_LENGTH);
+  const fahrplanYear = getFahrplanYear(trip.date);
+  if (fahrplanYear === undefined) {
+    throw new Error(
+      `Cannot determine Fahrplan year for date ${trip.date}. ` +
+        `This date may be outside of known Fahrplan periods. ` +
+        `Please update the Fahrplan definitions in src/fahrplan.ts.`,
+    );
+  }
+  const year = String(fahrplanYear);
   const line = trip.line;
   const key = bucketKey(year, line);
 

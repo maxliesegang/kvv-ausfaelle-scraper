@@ -1,8 +1,16 @@
 import { join } from 'node:path';
 import { exists, ensureDirectory, readJsonFile, writeJsonFile } from './utils/fs.js';
 import { normalizeLine, normalizeTrainNumber } from './utils/normalization.js';
+import { getCurrentFahrplanYear } from './fahrplan.js';
 
-const TRAIN_LINE_DATA_DIR = join(process.cwd(), 'docs', 'train-line-definitions', 'data');
+function getTrainLineDataDir(fahrplanYear?: number): string {
+  const year = fahrplanYear ?? getCurrentFahrplanYear();
+  if (!year) {
+    // Fall back to legacy data/ directory if we can't determine current year
+    return join(process.cwd(), 'docs', 'train-line-definitions', 'data');
+  }
+  return join(process.cwd(), 'docs', String(year), 'train-line-definitions');
+}
 
 /**
  * Map from line identifier to set of train numbers observed for that line.
@@ -94,15 +102,21 @@ function mergeTrainNumbers(
 
 /**
  * Persists observed train line mappings into the data directory.
+ * Saves to year-specific directory based on current Fahrplan year.
+ *
+ * @param observations - Map of observed line/train-number pairs
+ * @param fahrplanYear - Optional Fahrplan year (defaults to current year)
  */
 export async function updateTrainLineDefinitionsFromObservations(
   observations: TrainLineObservations,
+  fahrplanYear?: number,
 ): Promise<void> {
   if (observations.size === 0) {
     return;
   }
 
-  await ensureDirectory(TRAIN_LINE_DATA_DIR);
+  const dataDir = getTrainLineDataDir(fahrplanYear);
+  await ensureDirectory(dataDir);
 
   for (const [line, trainNumbers] of observations) {
     if (trainNumbers.size === 0) continue;
@@ -110,7 +124,7 @@ export async function updateTrainLineDefinitionsFromObservations(
     const slug = slugifyLineId(line);
     if (!slug) continue;
 
-    const filePath = join(TRAIN_LINE_DATA_DIR, `${slug}.json`);
+    const filePath = join(dataDir, `${slug}.json`);
     const existing = await loadExistingLineDefinition(filePath, line);
 
     if (!existing) continue; // Failed to load, skip this line

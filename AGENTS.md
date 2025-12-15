@@ -102,12 +102,92 @@ npm run build
 npm start
 ```
 
+## Fahrplan-Based Data Organization
+
+### Overview
+
+The scraper organizes cancellation data and train line definitions by German Fahrplan (train schedule) years instead of calendar years. This ensures data accuracy since train numbers, schedules, and line assignments change according to Fahrplan periods.
+
+### Fahrplan Period Definitions
+
+German train schedules operate on Fahrplan years, which differ from calendar years:
+
+| Year | Period | Start Date | End Date   | Full Year Range         |
+| ---- | ------ | ---------- | ---------- | ----------------------- |
+| 2025 | Winter | 15.12.2024 | 14.06.2025 | 15.12.2024 – 13.12.2025 |
+| 2025 | Summer | 15.06.2025 | 13.12.2025 |                         |
+| 2026 | Winter | 14.12.2025 | 13.06.2026 | 14.12.2025 – 12.12.2026 |
+| 2026 | Summer | 14.06.2026 | 12.12.2026 |                         |
+| 2027 | Winter | 13.12.2026 | 12.06.2027 | 13.12.2026 – 11.12.2027 |
+| 2027 | Summer | 13.06.2027 | 11.12.2027 |                         |
+
+**Key Insight**: A cancellation on 2024-12-16 belongs to Fahrplan year 2025 (not 2024) because Fahrplan 2025 starts on 15.12.2024.
+
+### Implementation
+
+The system automatically maps cancellation dates to their corresponding Fahrplan year:
+
+1. **Cancellation Storage** ([`src/storage.ts`](src/storage.ts))
+   - Uses `getFahrplanYear(date)` to determine the correct year folder
+   - Stores data in `docs/<fahrplan-year>/<line>.json`
+
+2. **Train Line Definitions** ([`src/train-line-definitions/`](src/train-line-definitions/))
+   - Versioned by Fahrplan year in `docs/<fahrplan-year>/train-line-definitions/`
+   - Train numbers can change between Fahrplan periods
+   - Automatically loads definitions for the current Fahrplan year
+   - Coupled with cancellation data in the same year directory
+
+3. **Fahrplan Module** ([`src/fahrplan.ts`](src/fahrplan.ts))
+   - Defines period boundaries for 2024-2027
+   - Provides `getFahrplanYear(date)` utility
+   - Supports both ISO date strings and Date objects
+
+### Data Structure
+
+```
+docs/
+├── 2025/                              # Fahrplan year 2025
+│   ├── S1.json                        # Cancellations for S1
+│   ├── S7.json
+│   ├── train-line-definitions/        # Train numbers for Fahrplan 2025
+│   │   ├── s1.json
+│   │   ├── s7.json
+│   │   └── ...
+│   └── index.json
+├── 2026/                              # Fahrplan year 2026
+│   ├── train-line-definitions/        # Train numbers for Fahrplan 2026
+│   │   └── ...
+│   └── ...
+├── train-line-definitions/
+│   └── data/                          # Legacy (kept for backwards compatibility)
+└── index.json
+```
+
+### Updating Fahrplan Definitions
+
+When new Fahrplan periods are announced:
+
+1. Update [`src/fahrplan.ts`](src/fahrplan.ts) with new year definitions
+2. Create new directory: `docs/<year>/train-line-definitions/`
+3. Copy previous year's definitions as starting point (optional)
+4. System will automatically use new definitions when the period begins
+
+### Error Handling
+
+If a cancellation date falls outside known Fahrplan periods, the system throws a clear error:
+
+```
+Cannot determine Fahrplan year for date 2023-01-01.
+This date may be outside of known Fahrplan periods.
+Please update the Fahrplan definitions in src/fahrplan.ts.
+```
+
 ## Future Agent Possibilities
 
-Potential enhancements for the automation system:
+Additional potential enhancements:
 
-- **Archive Agent**: Compress and archive historical data beyond a retention period
 - **API Agent**: Expose real-time query endpoints for the collected data
+- **Analytics Agent**: Generate statistics and trends from historical data
 
 ## Monitoring & Logs
 
