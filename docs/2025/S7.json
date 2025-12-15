@@ -46,5 +46,29 @@
     "toTime": "20:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259807",
     "capturedAt": "2025-12-13T15:41:02.011Z"
+  },
+  {
+    "line": "S7",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:00:00.000Z",
+    "trainNumber": "85553",
+    "fromStop": "Karlsruhe Hbf.",
+    "fromTime": "05:08",
+    "toStop": "Achern Bf.",
+    "toTime": "06:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259951",
+    "capturedAt": "2025-12-15T04:36:48.419Z"
+  },
+  {
+    "line": "S7",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:00:00.000Z",
+    "trainNumber": "85473",
+    "fromStop": "Achern Bf.",
+    "fromTime": "06:17",
+    "toStop": "Albtalbahnhof",
+    "toTime": "07:13",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259951",
+    "capturedAt": "2025-12-15T04:36:48.419Z"
   }
 ]

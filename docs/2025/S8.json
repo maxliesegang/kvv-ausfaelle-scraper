@@ -46,5 +46,29 @@
     "toTime": "16:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259564",
     "capturedAt": "2025-12-11T08:24:56.306Z"
+  },
+  {
+    "line": "S8",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:00:00.000Z",
+    "trainNumber": "85611",
+    "fromStop": "Tullastraße",
+    "fromTime": "05:21",
+    "toStop": "Freudenstadt Hbf.",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259942",
+    "capturedAt": "2025-12-15T04:36:48.480Z"
+  },
+  {
+    "line": "S8",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:00:00.000Z",
+    "trainNumber": "85622",
+    "fromStop": "Freudenstadt Hbf.",
+    "fromTime": "07:48",
+    "toStop": "Tullastraße",
+    "toTime": "10:02",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259942",
+    "capturedAt": "2025-12-15T04:36:48.480Z"
   }
 ]
