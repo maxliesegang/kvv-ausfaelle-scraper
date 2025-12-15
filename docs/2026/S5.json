@@ -1,0 +1,50 @@
+[
+  {
+    "line": "S5",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:26:00.000Z",
+    "trainNumber": "84782",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "00:02",
+    "toStop": "Knielingen  Rheinbergstraße",
+    "toTime": "00:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
+    "capturedAt": "2025-12-15T22:28:35.171Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:26:00.000Z",
+    "trainNumber": "84928",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "21:01",
+    "toStop": "Wörth Bahnhof",
+    "toTime": "21:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
+    "capturedAt": "2025-12-15T22:28:35.171Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:26:00.000Z",
+    "trainNumber": "74358",
+    "fromStop": "Wörth Bahnhof",
+    "fromTime": "21:35",
+    "toStop": "Wörth Badepark",
+    "toTime": "21:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
+    "capturedAt": "2025-12-15T22:28:35.171Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T03:26:00.000Z",
+    "trainNumber": "84943",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "22:55",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "23:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
+    "capturedAt": "2025-12-15T22:28:35.171Z"
+  }
+]
