@@ -418,5 +418,53 @@
     "toTime": "07:29",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
     "capturedAt": "2025-12-15T04:36:48.505Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T02:00:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "07:50",
+    "toStop": "Flehingen Bf",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
+    "capturedAt": "2025-12-15T16:48:24.608Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T02:00:00.000Z",
+    "trainNumber": "85516",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "09:20",
+    "toStop": "Albtal Bf",
+    "toTime": "10:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
+    "capturedAt": "2025-12-15T16:48:24.608Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T02:00:00.000Z",
+    "trainNumber": "85515",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "11:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "12:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
+    "capturedAt": "2025-12-15T16:48:24.608Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-15",
+    "stand": "2025-12-15T02:00:00.000Z",
+    "trainNumber": "85524",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "13:20",
+    "toStop": "KA Albtal Bf",
+    "toTime": "14:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
+    "capturedAt": "2025-12-15T16:48:24.608Z"
   }
 ]
