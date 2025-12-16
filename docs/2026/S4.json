@@ -1,0 +1,50 @@
+[
+  {
+    "line": "S4",
+    "date": "2025-12-16",
+    "stand": "2025-12-16T08:37:00.000Z",
+    "trainNumber": "85522",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "13:07",
+    "toStop": "KA Albtal Bf",
+    "toTime": "13:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260058",
+    "capturedAt": "2025-12-16T10:54:40.949Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-16",
+    "stand": "2025-12-16T08:37:00.000Z",
+    "trainNumber": "85445",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "14:15",
+    "toStop": "KA Tullastr.",
+    "toTime": "14:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260058",
+    "capturedAt": "2025-12-16T10:54:40.949Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-16",
+    "stand": "2025-12-16T08:37:00.000Z",
+    "trainNumber": "85482",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "18:27",
+    "toStop": "KA Albtal Bf",
+    "toTime": "18:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260058",
+    "capturedAt": "2025-12-16T10:54:40.949Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-16",
+    "stand": "2025-12-16T08:37:00.000Z",
+    "trainNumber": "85461",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "19:15",
+    "toStop": "KA Tullastr.",
+    "toTime": "19:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260058",
+    "capturedAt": "2025-12-16T10:54:40.949Z"
+  }
+]
