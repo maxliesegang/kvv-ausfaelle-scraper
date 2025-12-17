@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S11",
+    "date": "2025-12-17",
+    "stand": "2025-12-17T03:17:00.000Z",
+    "trainNumber": "20021",
+    "fromStop": "Ettlingen Erbprinz",
+    "fromTime": "10:19",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "11:01",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260086",
+    "capturedAt": "2025-12-17T06:27:58.359Z"
+  }
+]
