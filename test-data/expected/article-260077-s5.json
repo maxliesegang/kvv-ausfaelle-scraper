@@ -1,0 +1,22 @@
+[
+  {
+    "line": "S5",
+    "date": "2025-12-17",
+    "stand": "2025-12-17T01:00:00.000Z",
+    "trainNumber": "84940",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "4:46",
+    "toStop": "Wörth Badepark",
+    "toTime": "6:13"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-17",
+    "stand": "2025-12-17T01:00:00.000Z",
+    "trainNumber": "84965",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "6:23",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "7:50"
+  }
+]

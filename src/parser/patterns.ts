@@ -24,7 +24,7 @@ export const PATTERNS = {
    * Example: "123 Karlsruhe Hbf (10:30 Uhr) - Bruchsal (11:00)"
    */
   TRIP_OLD_FORMAT:
-    /^(\d+)\s+(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)\s*[-–]+\s*(.+?)\s+\((\d{1,2}:\d{2})(?:\s*Uhr)?\)/,
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*[-–]+\s*(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)/,
 
   /**
    * Matches trip format: <trainNumber> <fromStop> <fromTime> Uhr - <toStop> <toTime> Uhr
