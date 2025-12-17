@@ -36,6 +36,9 @@ function buildTrainLineMapping(definitions: readonly TrainLineDefinition[]): Tra
 }
 
 const TRAIN_LINE_MAPPING = buildTrainLineMapping(TRAIN_LINE_DEFINITIONS);
+const LINE_TRAIN_COUNT: Readonly<Record<string, number>> = Object.freeze(
+  Object.fromEntries(TRAIN_LINE_DEFINITIONS.map((def) => [def.line, def.trainNumbers.length])),
+);
 
 /**
  * Checks if a line is valid within the context of mentioned lines.
@@ -66,9 +69,22 @@ export function lookupLineForTrain(
   const normalizedPreferences = preferredLines ? normalizeLines(preferredLines) : [];
 
   if (normalizedPreferences.length > 0) {
-    for (const preferred of normalizedPreferences) {
-      const match = entry.lines.find((candidate) => candidate.toUpperCase() === preferred);
-      if (match) return match;
+    const matches = normalizedPreferences
+      .map((preferred) => entry.lines.find((candidate) => candidate.toUpperCase() === preferred))
+      .filter((line): line is string => Boolean(line));
+
+    if (matches.length === 1) {
+      return matches[0];
+    }
+
+    if (matches.length > 1) {
+      // Prefer the line with the fewest train numbers (most specific definition)
+      return matches.reduce((best, current) => {
+        const bestSize = LINE_TRAIN_COUNT[best] ?? Number.MAX_SAFE_INTEGER;
+        const currentSize = LINE_TRAIN_COUNT[current] ?? Number.MAX_SAFE_INTEGER;
+        if (currentSize < bestSize) return current;
+        return best;
+      });
     }
   }
 
