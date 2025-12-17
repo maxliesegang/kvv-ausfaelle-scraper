@@ -9,7 +9,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "tsc && node scripts/copy-train-line-data.mjs",
+    "build": "tsc",
     "build:clean": "rm -rf dist && npm run build",
     "start": "node dist/index.js",
     "dev": "npm run build && npm run start",

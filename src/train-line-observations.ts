@@ -6,8 +6,10 @@ import { getCurrentFahrplanYear } from './fahrplan.js';
 function getTrainLineDataDir(fahrplanYear?: number): string {
   const year = fahrplanYear ?? getCurrentFahrplanYear();
   if (!year) {
-    // Fall back to legacy data/ directory if we can't determine current year
-    return join(process.cwd(), 'docs', 'train-line-definitions', 'data');
+    throw new Error(
+      'Cannot determine current Fahrplan year. ' +
+        'Please update Fahrplan definitions or provide explicit year.',
+    );
   }
   return join(process.cwd(), 'docs', String(year), 'train-line-definitions');
 }
@@ -46,7 +48,6 @@ export function createTrainLineObservationRecorder(): {
 interface LineDefinition {
   readonly line: string;
   readonly trainNumbers: string[];
-  readonly connectedLines?: string[];
 }
 
 function slugifyLineId(line: string): string {
@@ -144,11 +145,10 @@ export async function updateTrainLineDefinitionsFromObservations(
       continue; // No new train numbers to add
     }
 
-    // Save updated definition, preserving connectedLines if present
+    // Save updated definition
     const updated: LineDefinition = {
       line,
       trainNumbers: merged,
-      ...(existing.connectedLines && { connectedLines: existing.connectedLines }),
     };
     await writeJsonFile(filePath, updated);
     console.log(`  ↳ Added ${newlyAdded.join(', ')} to train-line mapping (${line} → ${filePath})`);

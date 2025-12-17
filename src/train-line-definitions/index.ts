@@ -15,27 +15,18 @@ function loadDefinitions(fahrplanYear?: number): readonly TrainLineDefinition[] 
   // Read from docs/<year>/train-line-definitions/
   const dataDir = join(process.cwd(), 'docs', String(year), 'train-line-definitions');
 
-  // Fall back to legacy locations if new location doesn't exist
-  const legacyYearDir = join(process.cwd(), 'docs', 'train-line-definitions', String(year));
-  const legacyDataDir = join(process.cwd(), 'docs', 'train-line-definitions', 'data');
-
-  let effectiveDir = dataDir;
   if (!existsSync(dataDir)) {
-    effectiveDir = existsSync(legacyYearDir) ? legacyYearDir : legacyDataDir;
-  }
-
-  if (!existsSync(effectiveDir)) {
     console.warn(`⚠️  No train line definitions found for Fahrplan year ${year}`);
     return [];
   }
 
-  const files = readdirSync(effectiveDir)
+  const files = readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
     .sort((a, b) => a.localeCompare(b, 'en'));
   const definitions: TrainLineDefinition[] = [];
 
   for (const file of files) {
-    const filePath = join(effectiveDir, file);
+    const filePath = join(dataDir, file);
     const json = JSON.parse(readFileSync(filePath, 'utf-8')) as TrainLineDefinition;
     definitions.push(json);
   }

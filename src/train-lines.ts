@@ -7,42 +7,13 @@ interface TrainLineMappingEntry {
   readonly lines: readonly string[];
 }
 
-type LineConnections = Map<string, Set<string>>;
 type TrainLineMapping = Readonly<Record<string, TrainLineMappingEntry>>;
-
-function ensureLineConnection(connections: LineConnections, line: string): Set<string> {
-  if (!connections.has(line)) {
-    connections.set(line, new Set());
-  }
-  return connections.get(line)!;
-}
-
-function buildLineConnections(definitions: readonly TrainLineDefinition[]): LineConnections {
-  const connections: LineConnections = new Map();
-
-  for (const { line, connectedLines } of definitions) {
-    const normalizedLine = normalizeLine(line);
-    if (!normalizedLine) continue;
-
-    const current = ensureLineConnection(connections, normalizedLine);
-
-    for (const connected of connectedLines ?? []) {
-      const normalizedConnected = normalizeLine(connected);
-      if (!normalizedConnected) continue;
-      current.add(normalizedConnected);
-      ensureLineConnection(connections, normalizedConnected).add(normalizedLine);
-    }
-  }
-
-  return connections;
-}
 
 /**
  * Builds a mapping from train numbers to their canonical line identifiers.
- * Allows duplicates when lines declare a connection via connectedLines.
+ * Allows train numbers to appear in multiple line definitions.
  */
 function buildTrainLineMapping(definitions: readonly TrainLineDefinition[]): TrainLineMapping {
-  const connections = buildLineConnections(definitions);
   const map: Record<string, { primaryLine: string; lines: string[] }> = {};
 
   for (const { line, trainNumbers } of definitions) {
@@ -57,16 +28,6 @@ function buildTrainLineMapping(definitions: readonly TrainLineDefinition[]): Tra
         continue;
       }
 
-      const isConnected = existing.lines.some((existingLine) =>
-        connections.get(existingLine)?.has(line),
-      );
-
-      if (!isConnected) {
-        throw new Error(
-          `Train number ${trainNumber} already assigned to line ${existing.primaryLine} (duplicate in ${line})`,
-        );
-      }
-
       existing.lines.push(line);
     }
   }
@@ -74,12 +35,11 @@ function buildTrainLineMapping(definitions: readonly TrainLineDefinition[]): Tra
   return map;
 }
 
-const LINE_CONNECTIONS = buildLineConnections(TRAIN_LINE_DEFINITIONS);
 const TRAIN_LINE_MAPPING = buildTrainLineMapping(TRAIN_LINE_DEFINITIONS);
 
 /**
  * Checks if a line is valid within the context of mentioned lines.
- * A line is valid if it's one of the mentioned lines or connected to any of them.
+ * A line is valid if it's one of the mentioned lines.
  */
 export function isLineValidForMentionedLines(
   line: string,
@@ -90,16 +50,7 @@ export function isLineValidForMentionedLines(
 
   const normalizedMentioned = normalizeLines(mentionedLines);
 
-  // Check if it's directly mentioned
-  if (normalizedMentioned.includes(normalizedLine)) {
-    return true;
-  }
-
-  // Check if it's connected to any mentioned line
-  const connections = LINE_CONNECTIONS.get(normalizedLine);
-  if (!connections) return false;
-
-  return normalizedMentioned.some((mentioned) => connections.has(mentioned));
+  return normalizedMentioned.includes(normalizedLine);
 }
 
 /**
