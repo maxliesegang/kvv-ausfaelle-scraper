@@ -142,5 +142,29 @@
     "toTime": "09:01",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260181",
     "capturedAt": "2025-12-19T04:31:05.880Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T11:30:00.000Z",
+    "trainNumber": "85013",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "17:29",
+    "toStop": "Pforzheim Bf",
+    "toTime": "18:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
+    "capturedAt": "2025-12-19T12:34:37.302Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T11:30:00.000Z",
+    "trainNumber": "85012",
+    "fromStop": "Pforzheim Bf",
+    "fromTime": "18:37",
+    "toStop": "Karlsruhe Hbf",
+    "toTime": "19:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
+    "capturedAt": "2025-12-19T12:34:37.302Z"
   }
 ]
