@@ -1,0 +1,38 @@
+[
+  {
+    "line": "S7",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T17:46:00.000Z",
+    "trainNumber": "85580",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "17:25",
+    "toStop": "KA Tullastraße",
+    "toTime": "17:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260235",
+    "capturedAt": "2025-12-19T21:21:10.626Z"
+  },
+  {
+    "line": "S7",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T17:46:00.000Z",
+    "trainNumber": "85585",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "18:13",
+    "toStop": "Achern Bf.",
+    "toTime": "19:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260235",
+    "capturedAt": "2025-12-19T21:21:10.626Z"
+  },
+  {
+    "line": "S7",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T17:46:00.000Z",
+    "trainNumber": "85586",
+    "fromStop": "Achern Bf.",
+    "fromTime": "19:55",
+    "toStop": "KA Hauptbahnhof",
+    "toTime": "20:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260235",
+    "capturedAt": "2025-12-19T21:21:10.626Z"
+  }
+]

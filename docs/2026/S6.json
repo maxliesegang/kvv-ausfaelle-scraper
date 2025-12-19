@@ -1,0 +1,38 @@
+[
+  {
+    "line": "S6",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T10:30:00.000Z",
+    "trainNumber": "85085",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "18:17",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "18:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
+    "capturedAt": "2025-12-19T21:21:10.649Z"
+  },
+  {
+    "line": "S6",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T10:30:00.000Z",
+    "trainNumber": "85084",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "19:46",
+    "toStop": "KA Tullastraße",
+    "toTime": "20:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
+    "capturedAt": "2025-12-19T21:21:10.649Z"
+  },
+  {
+    "line": "S6",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T10:30:00.000Z",
+    "trainNumber": "85084",
+    "fromStop": "wir in KA Tullastraße wieder eingesetzt 85088 Pforzheim Hbf.",
+    "fromTime": "21:46",
+    "toStop": "Wörth Badepark",
+    "toTime": "23:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
+    "capturedAt": "2025-12-19T21:21:10.649Z"
+  }
+]

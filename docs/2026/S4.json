@@ -46,5 +46,17 @@
     "toTime": "19:29",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260058",
     "capturedAt": "2025-12-16T10:54:40.949Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-19",
+    "stand": "2025-12-19T17:48:00.000Z",
+    "trainNumber": "85469",
+    "fromStop": "KA Albtalbahnhof (23:15 uhr) - Heilbronn Pfühlpark (01:18 Uhr) 85476 Heilbronn Pfühlpark",
+    "fromTime": "01:25",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "03:23",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260244",
+    "capturedAt": "2025-12-19T21:21:10.620Z"
   }
 ]
