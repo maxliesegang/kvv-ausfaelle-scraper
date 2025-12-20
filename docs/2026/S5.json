@@ -322,5 +322,77 @@
     "toTime": "00:21",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
     "capturedAt": "2025-12-19T21:21:10.649Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T10:52:00.000Z",
+    "trainNumber": "84947",
+    "fromStop": "Starckstraße",
+    "fromTime": "01:12",
+    "toStop": "Söllingen",
+    "toTime": "01:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
+    "capturedAt": "2025-12-20T14:13:53.251Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T10:52:00.000Z",
+    "trainNumber": "84870",
+    "fromStop": "Söllingen",
+    "fromTime": "02:01",
+    "toStop": "Wörth Badepark",
+    "toTime": "03:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
+    "capturedAt": "2025-12-20T14:13:53.251Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T10:52:00.000Z",
+    "trainNumber": "84869",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "03:20",
+    "toStop": "Rheinbergstraße",
+    "toTime": "03:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
+    "capturedAt": "2025-12-20T14:13:53.251Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T10:52:00.000Z",
+    "trainNumber": "85091",
+    "fromStop": "Starckstraße",
+    "fromTime": "19:07",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "20:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
+    "capturedAt": "2025-12-20T14:13:53.251Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T10:52:00.000Z",
+    "trainNumber": "85088",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "21:05",
+    "toStop": "Wörth Badepark",
+    "toTime": "23:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
+    "capturedAt": "2025-12-20T14:13:53.251Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T10:52:00.000Z",
+    "trainNumber": "84859",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "23:35",
+    "toStop": "Lameyplatz",
+    "toTime": "23:59",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
+    "capturedAt": "2025-12-20T14:13:53.251Z"
   }
 ]

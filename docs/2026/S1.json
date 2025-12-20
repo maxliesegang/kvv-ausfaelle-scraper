@@ -58,5 +58,53 @@
     "toTime": "11:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260086",
     "capturedAt": "2025-12-17T06:27:58.359Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T08:37:00.000Z",
+    "trainNumber": "16009",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "10:35",
+    "toStop": "Hochstetten",
+    "toTime": "11:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260254",
+    "capturedAt": "2025-12-20T14:13:53.257Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T08:37:00.000Z",
+    "trainNumber": "16022",
+    "fromStop": "Hochstetten",
+    "fromTime": "11:52",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "12:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260254",
+    "capturedAt": "2025-12-20T14:13:53.257Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T08:37:00.000Z",
+    "trainNumber": "36024",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "15:45",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "16:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260254",
+    "capturedAt": "2025-12-20T14:13:53.257Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-20",
+    "stand": "2025-12-20T08:37:00.000Z",
+    "trainNumber": "26040",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "16:48",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "17:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260254",
+    "capturedAt": "2025-12-20T14:13:53.257Z"
   }
 ]
