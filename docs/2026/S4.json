@@ -82,5 +82,29 @@
     "toTime": "19:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260370",
     "capturedAt": "2025-12-21T16:19:03.027Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-22",
+    "stand": "2025-12-22T10:34:00.000Z",
+    "trainNumber": "85519",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "13:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "14:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260394",
+    "capturedAt": "2025-12-22T12:35:30.343Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-22",
+    "stand": "2025-12-22T10:34:00.000Z",
+    "trainNumber": "85528",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "15:20",
+    "toStop": "KA Albtal Bf",
+    "toTime": "16:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260394",
+    "capturedAt": "2025-12-22T12:35:30.343Z"
   }
 ]
