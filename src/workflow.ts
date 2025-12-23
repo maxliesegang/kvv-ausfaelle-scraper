@@ -117,13 +117,27 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
 }
 
 /**
+ * Result of collecting trips from multiple RSS items.
+ * Separates successful parses from errors to allow partial success.
+ */
+export interface CollectTripsResult {
+  /** Successfully parsed trip cancellations */
+  readonly cancellations: Cancellation[];
+  /** Parse errors encountered (e.g., missing train number mappings) */
+  readonly parseErrors: ParseError[];
+}
+
+/**
  * Collects all trip cancellations from multiple RSS items.
  * Uses Promise.allSettled to tolerate individual failures.
  *
+ * This function processes all items and returns both successful results and errors,
+ * allowing the caller to save valid data while still being alerted to parsing issues.
+ *
  * @param items - Array of RSS items to process
- * @returns Combined array of all successfully parsed cancellations
+ * @returns Object containing successfully parsed cancellations and any parse errors encountered
  */
-export async function collectTrips(items: Item[]): Promise<Cancellation[]> {
+export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
   const results = await Promise.allSettled(items.map((item) => fetchTripsFromItem(item)));
 
   const cancellations: Cancellation[] = [];
@@ -143,12 +157,7 @@ export async function collectTrips(items: Item[]): Promise<Cancellation[]> {
     console.warn('Detail fetch failed:', res.reason);
   }
 
-  if (parseErrors.length > 0) {
-    const messages = parseErrors.map((err) => err.message).join('; ');
-    throw new Error(`Parser errors encountered: ${messages}`);
-  }
-
-  return cancellations;
+  return { cancellations, parseErrors };
 }
 
 function getArticlePublishedMs(item: Item): number | undefined {
