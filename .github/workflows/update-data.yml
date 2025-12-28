@@ -22,11 +22,17 @@ jobs:
 
       - run: npm run build
 
-      - run: npm start
+      - name: Run scraper
+        id: scraper
+        continue-on-error: true
+        run: npm start
 
-      - run: npm run format
+      - name: Format generated files
+        if: always()
+        run: npm run format
 
       - name: Commit and push changes
+        if: always()
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
@@ -38,3 +44,9 @@ jobs:
           else
             echo "No changes"
           fi
+
+      - name: Fail if scraper had errors
+        if: steps.scraper.outcome == 'failure'
+        run: |
+          echo "Scraper encountered parse errors. Check logs above for details."
+          exit 1
