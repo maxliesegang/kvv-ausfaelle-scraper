@@ -418,5 +418,29 @@
     "toTime": "23:59",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260277",
     "capturedAt": "2025-12-20T14:13:53.251Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-29",
+    "stand": "2025-12-29T06:37:00.000Z",
+    "trainNumber": "84815",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "11:46",
+    "toStop": "Söllingen Bf.",
+    "toTime": "12:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260624",
+    "capturedAt": "2025-12-29T08:26:20.625Z"
+  },
+  {
+    "line": "S5",
+    "date": "2025-12-29",
+    "stand": "2025-12-29T06:37:00.000Z",
+    "trainNumber": "85932",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "12:18",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "12:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260624",
+    "capturedAt": "2025-12-29T08:26:20.625Z"
   }
 ]
