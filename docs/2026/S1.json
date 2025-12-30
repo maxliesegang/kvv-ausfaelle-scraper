@@ -262,5 +262,65 @@
     "toTime": "08:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
     "capturedAt": "2025-12-30T04:36:26.062Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T10:50:00.000Z",
+    "trainNumber": "30028",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "12:28",
+    "toStop": "Bad Herrenalb",
+    "toTime": "12:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T22:31:56.447Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T10:50:00.000Z",
+    "trainNumber": "30035",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "13:03",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "13:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T22:31:56.447Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T10:50:00.000Z",
+    "trainNumber": "10049",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "13:34",
+    "toStop": "Hochstetten",
+    "toTime": "14:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T22:31:56.447Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T10:50:00.000Z",
+    "trainNumber": "10052",
+    "fromStop": "Hochstetten",
+    "fromTime": "14:52",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "15:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T22:31:56.447Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T10:50:00.000Z",
+    "trainNumber": "10061",
+    "fromStop": "Ettlingen Stadt 16:30 Ihr - Hochstetten 17:46 Uhr 10064 Hochstetten",
+    "fromTime": "17:52",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "18:59",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T22:31:56.447Z"
   }
 ]
