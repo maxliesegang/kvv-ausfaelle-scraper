@@ -226,5 +226,41 @@
     "toTime": "13:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260597",
     "capturedAt": "2025-12-29T09:10:35.059Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T04:00:00.000Z",
+    "trainNumber": "10001",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "04:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "04:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T04:36:26.062Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T04:00:00.000Z",
+    "trainNumber": "10002",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "05:25",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "06:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T04:36:26.062Z"
+  },
+  {
+    "line": "S1",
+    "date": "2025-12-30",
+    "stand": "2025-12-30T04:00:00.000Z",
+    "trainNumber": "30007",
+    "fromStop": "Marxzell Bf.",
+    "fromTime": "07:07",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "08:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260701",
+    "capturedAt": "2025-12-30T04:36:26.062Z"
   }
 ]
