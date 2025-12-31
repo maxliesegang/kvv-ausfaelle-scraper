@@ -106,5 +106,17 @@
     "toTime": "16:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260394",
     "capturedAt": "2025-12-22T12:35:30.343Z"
+  },
+  {
+    "line": "S4",
+    "date": "2025-12-31",
+    "stand": "2025-12-31T12:55:00.000Z",
+    "trainNumber": "85466",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "22:27",
+    "toStop": "KA Albtal Bf",
+    "toTime": "22:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260758",
+    "capturedAt": "2025-12-31T16:21:16.868Z"
   }
 ]
