@@ -16,8 +16,13 @@ pids
 *.seed
 *.pid.lock
 lib-cov
-coverage
-.nyc_output
+
+# Test coverage
+coverage/
+.coverage/
+.nyc_output/
+.c8/
+*.lcov
 
 # Build output
 dist/

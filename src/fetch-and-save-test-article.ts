@@ -5,7 +5,7 @@ import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
 } from './train-line-observations.js';
-import { normalizeCancellationsForTest } from './utils/test-helpers.js';
+import { normalizeCancellationsForTest } from './utils/test-data.js';
 
 /**
  * Helper script to process a real KVV article HTML file and save it as test data.
