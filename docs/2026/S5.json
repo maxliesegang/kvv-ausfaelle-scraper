@@ -658,5 +658,113 @@
     "toTime": "18:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260750",
     "capturedAt": "2025-12-31T16:21:17.136Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "85064",
+    "fromStop": "KA Lameyplatz",
+    "fromTime": "14:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "85081",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "15:45",
+    "toStop": "KA Lameyplatz",
+    "toTime": "16:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "84915",
+    "fromStop": "Germersheim",
+    "fromTime": "15:50",
+    "toStop": "Söllingen Bf",
+    "toTime": "17:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "84833",
+    "fromStop": "KA Starkstr.",
+    "fromTime": "16:27",
+    "toStop": "Söllingen Bf",
+    "toTime": "17:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "84918",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "17:38",
+    "toStop": "Germersheim",
+    "toTime": "19:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "84852",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "17:51",
+    "toStop": "KA Starkstr.",
+    "toTime": "18:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "84933",
+    "fromStop": "Germersheim",
+    "fromTime": "19:45",
+    "toStop": "KA Tullastr.",
+    "toTime": "21:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "85029",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "22:06",
+    "toStop": "Pforzheim Bf",
+    "toTime": "22:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-03",
+    "stand": "2026-01-03T15:12:00.000Z",
+    "trainNumber": "85024",
+    "fromStop": "Pforzheim Bf",
+    "fromTime": "23:06",
+    "toStop": "Germersheim",
+    "toTime": "00:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260841",
+    "capturedAt": "2026-01-03T16:19:57.908Z"
   }
 ]
