@@ -106,5 +106,17 @@
     "toTime": "19:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260865",
     "capturedAt": "2026-01-04T12:33:02.816Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-01-04",
+    "stand": "2026-01-04T12:05:00.000Z",
+    "trainNumber": "85590",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "23:35",
+    "toStop": "KA Tullastr.",
+    "toTime": "23:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260865",
+    "capturedAt": "2026-01-04T16:19:46.452Z"
   }
 ]
