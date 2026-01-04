@@ -22,5 +22,17 @@
     "toTime": "12:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260040",
     "capturedAt": "2025-12-16T10:54:40.998Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-01-04",
+    "stand": "2026-01-04T12:19:00.000Z",
+    "trainNumber": "85022",
+    "fromStop": "KA Entenfang",
+    "fromTime": "23:06",
+    "toStop": "Germersheim",
+    "toTime": "00:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260882",
+    "capturedAt": "2026-01-04T12:33:02.543Z"
   }
 ]
