@@ -862,5 +862,41 @@
     "toTime": "08:49",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261135",
     "capturedAt": "2026-01-09T04:36:48.586Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T02:30:00.000Z",
+    "trainNumber": "84830",
+    "fromStop": "Knielingen Rheinbergstr",
+    "fromTime": "13:34",
+    "toStop": "Wörth Badepark",
+    "toTime": "13:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261135",
+    "capturedAt": "2026-01-09T08:25:10.580Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T02:30:00.000Z",
+    "trainNumber": "84827",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "14:05",
+    "toStop": "Söllingen Bf",
+    "toTime": "15:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261135",
+    "capturedAt": "2026-01-09T08:25:10.580Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T02:30:00.000Z",
+    "trainNumber": "84752",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "15:18",
+    "toStop": "Knielingen Rheinbergstr",
+    "toTime": "16:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261135",
+    "capturedAt": "2026-01-09T08:25:10.580Z"
   }
 ]

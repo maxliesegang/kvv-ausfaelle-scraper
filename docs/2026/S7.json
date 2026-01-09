@@ -118,5 +118,29 @@
     "toTime": "23:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260865",
     "capturedAt": "2026-01-04T16:19:46.452Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T05:29:00.000Z",
+    "trainNumber": "85567",
+    "fromStop": "Tullastrasse",
+    "fromTime": "09:12",
+    "toStop": "Achern Bf.",
+    "toTime": "10:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261151",
+    "capturedAt": "2026-01-09T08:25:10.206Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T05:29:00.000Z",
+    "trainNumber": "85568",
+    "fromStop": "Achern Bf.",
+    "fromTime": "10:33",
+    "toStop": "Tullastrasse",
+    "toTime": "11:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261151",
+    "capturedAt": "2026-01-09T08:25:10.206Z"
   }
 ]

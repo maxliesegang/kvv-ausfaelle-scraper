@@ -82,5 +82,41 @@
     "toTime": "00:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260882",
     "capturedAt": "2026-01-04T12:33:02.543Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T05:24:00.000Z",
+    "trainNumber": "84874",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "06:06",
+    "toStop": "Germersheim Bf.",
+    "toTime": "07:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261143",
+    "capturedAt": "2026-01-09T08:25:10.613Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T05:24:00.000Z",
+    "trainNumber": "84885",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "07:26",
+    "toStop": "KA Marktplatz Pyramide",
+    "toTime": "08:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261143",
+    "capturedAt": "2026-01-09T08:25:10.613Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T05:24:00.000Z",
+    "trainNumber": "80702",
+    "fromStop": "KA Marktplatz Pyramide",
+    "fromTime": "08:39",
+    "toStop": "Albtalbahnhof",
+    "toTime": "08:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261143",
+    "capturedAt": "2026-01-09T08:25:10.613Z"
   }
 ]
