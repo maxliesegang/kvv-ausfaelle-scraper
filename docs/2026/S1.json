@@ -370,5 +370,17 @@
     "toTime": "08:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260914",
     "capturedAt": "2026-01-05T04:53:59.190Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-01-10",
+    "stand": "2026-01-10T16:10:00.000Z",
+    "trainNumber": "36028",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "17:45",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "18:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261318",
+    "capturedAt": "2026-01-10T20:18:30.071Z"
   }
 ]

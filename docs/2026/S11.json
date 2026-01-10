@@ -94,5 +94,17 @@
     "toTime": "11:31",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261060",
     "capturedAt": "2026-01-08T12:37:46.382Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-01-10",
+    "stand": "2026-01-10T16:10:00.000Z",
+    "trainNumber": "26041",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "16:48",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "17:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261318",
+    "capturedAt": "2026-01-10T20:18:30.071Z"
   }
 ]
