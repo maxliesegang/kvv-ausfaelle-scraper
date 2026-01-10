@@ -118,5 +118,41 @@
     "toTime": "22:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260758",
     "capturedAt": "2025-12-31T16:21:16.868Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-01-10",
+    "stand": "2026-01-10T06:15:00.000Z",
+    "trainNumber": "85406",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "07:27",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "07:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261301",
+    "capturedAt": "2026-01-10T08:21:48.668Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-01-10",
+    "stand": "2026-01-10T06:15:00.000Z",
+    "trainNumber": "85509",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "08:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "09:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261301",
+    "capturedAt": "2026-01-10T08:21:48.668Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-01-10",
+    "stand": "2026-01-10T06:15:00.000Z",
+    "trainNumber": "85518",
+    "fromStop": "Karlsruhe Flehingen",
+    "fromTime": "10:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "11:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261301",
+    "capturedAt": "2026-01-10T08:21:48.668Z"
   }
 ]
