@@ -934,5 +934,29 @@
     "toTime": "08:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261285",
     "capturedAt": "2026-01-10T04:30:33.612Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-11",
+    "stand": "2026-01-11T09:30:00.000Z",
+    "trainNumber": "85071",
+    "fromStop": "Karlsruhe Tullatr.",
+    "fromTime": "13:26",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "14:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261342",
+    "capturedAt": "2026-01-11T16:19:38.801Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-11",
+    "stand": "2026-01-11T09:30:00.000Z",
+    "trainNumber": "85070",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "15:04",
+    "toStop": "Karlsruhe Tullatr.",
+    "toTime": "16:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261342",
+    "capturedAt": "2026-01-11T16:19:38.801Z"
   }
 ]
