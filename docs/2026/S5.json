@@ -1030,5 +1030,41 @@
     "toTime": "23:34",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261615",
     "capturedAt": "2026-01-17T16:18:48.650Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-18",
+    "stand": "2026-01-18T03:57:00.000Z",
+    "trainNumber": "84800",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "04:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "05:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261655",
+    "capturedAt": "2026-01-18T04:38:28.081Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-18",
+    "stand": "2026-01-18T03:57:00.000Z",
+    "trainNumber": "84795",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:50",
+    "toStop": "Söllingen",
+    "toTime": "06:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261655",
+    "capturedAt": "2026-01-18T04:38:28.081Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-01-18",
+    "stand": "2026-01-18T03:57:00.000Z",
+    "trainNumber": "84816",
+    "fromStop": "Söllingen",
+    "fromTime": "07:09",
+    "toStop": "Kalrsruhe Tullastraße",
+    "toTime": "07:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261655",
+    "capturedAt": "2026-01-18T04:38:28.081Z"
   }
 ]
