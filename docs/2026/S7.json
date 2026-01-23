@@ -142,5 +142,29 @@
     "toTime": "11:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261151",
     "capturedAt": "2026-01-09T08:25:10.206Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-01-23",
+    "stand": "2026-01-23T06:46:00.000Z",
+    "trainNumber": "85557",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "06:15",
+    "toStop": "Baden-Baden",
+    "toTime": "06:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261868",
+    "capturedAt": "2026-01-23T08:25:19.063Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-01-23",
+    "stand": "2026-01-23T06:46:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Baden-Baden",
+    "fromTime": "07:00",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "07:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261868",
+    "capturedAt": "2026-01-23T08:25:19.063Z"
   }
 ]
