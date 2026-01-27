@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S41",
+    "date": "2026-01-27",
+    "stand": "2026-01-27T02:08:00.000Z",
+    "trainNumber": "85702",
+    "fromStop": "Mosbach Bahnhof",
+    "fromTime": "05:00",
+    "toStop": "Heilbronn Willy-Brandt-Platz",
+    "toTime": "05:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262171",
+    "capturedAt": "2026-01-27T04:43:05.460Z"
+  }
+]
