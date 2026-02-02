@@ -202,5 +202,17 @@
     "toTime": "20:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261960",
     "capturedAt": "2026-01-24T12:33:24.231Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T11:00:00.000Z",
+    "trainNumber": "85426",
+    "fromStop": "Eppingen",
+    "fromTime": "11:24",
+    "toStop": "Albtalbahnhof",
+    "toTime": "12:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262448",
+    "capturedAt": "2026-02-02T12:51:17.233Z"
   }
 ]

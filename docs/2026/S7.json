@@ -166,5 +166,29 @@
     "toTime": "07:35",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261868",
     "capturedAt": "2026-01-23T08:25:19.063Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T11:45:00.000Z",
+    "trainNumber": "85572",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "13:25",
+    "toStop": "Tullastraße",
+    "toTime": "13:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262457",
+    "capturedAt": "2026-02-02T12:51:16.906Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T11:45:00.000Z",
+    "trainNumber": "85577",
+    "fromStop": "Tullastraße",
+    "fromTime": "14:17",
+    "toStop": "Albtalbahnhof",
+    "toTime": "14:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262457",
+    "capturedAt": "2026-02-02T12:51:16.906Z"
   }
 ]
