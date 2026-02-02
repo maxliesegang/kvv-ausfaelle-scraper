@@ -1114,5 +1114,41 @@
     "toTime": "07:48",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261671",
     "capturedAt": "2026-01-19T04:48:10.470Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T03:15:00.000Z",
+    "trainNumber": "84735",
+    "fromStop": "Rheinbergstr.",
+    "fromTime": "10:52",
+    "toStop": "Söllingen Bf.",
+    "toTime": "11:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262418",
+    "capturedAt": "2026-02-02T16:34:58.496Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T03:15:00.000Z",
+    "trainNumber": "85067",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "11:45",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "13:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262418",
+    "capturedAt": "2026-02-02T16:34:58.496Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T03:15:00.000Z",
+    "trainNumber": "84828",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "11:51",
+    "toStop": "Tullastraße",
+    "toTime": "12:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262418",
+    "capturedAt": "2026-02-02T16:34:58.496Z"
   }
 ]
