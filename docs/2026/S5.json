@@ -1198,5 +1198,41 @@
     "toTime": "09:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262497",
     "capturedAt": "2026-02-03T05:13:15.228Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-03",
+    "stand": "2026-02-03T03:00:00.000Z",
+    "trainNumber": "84820",
+    "fromStop": "Ka. Marktplatz Kaiserstraße U",
+    "fromTime": "09:17",
+    "toStop": "Wörth Badepark",
+    "toTime": "09:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262497",
+    "capturedAt": "2026-02-03T08:31:55.361Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-03",
+    "stand": "2026-02-03T03:00:00.000Z",
+    "trainNumber": "84813",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "10:05",
+    "toStop": "Söllingen",
+    "toTime": "11:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262497",
+    "capturedAt": "2026-02-03T08:31:55.361Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-03",
+    "stand": "2026-02-03T03:00:00.000Z",
+    "trainNumber": "85922",
+    "fromStop": "Söllingen",
+    "fromTime": "11:18",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "11:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262497",
+    "capturedAt": "2026-02-03T08:31:55.361Z"
   }
 ]
