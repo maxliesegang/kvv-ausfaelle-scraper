@@ -190,5 +190,29 @@
     "toTime": "14:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262457",
     "capturedAt": "2026-02-02T12:51:16.906Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-02-03",
+    "stand": "2026-02-03T03:00:00.000Z",
+    "trainNumber": "85553",
+    "fromStop": "Karlsruhe Hauptbahnhof",
+    "fromTime": "05:16",
+    "toStop": "Achern",
+    "toTime": "06:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262505",
+    "capturedAt": "2026-02-03T05:13:15.249Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-02-03",
+    "stand": "2026-02-03T03:00:00.000Z",
+    "trainNumber": "85473",
+    "fromStop": "Achern",
+    "fromTime": "06:17",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "07:13",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262505",
+    "capturedAt": "2026-02-03T05:13:15.249Z"
   }
 ]
