@@ -1282,5 +1282,65 @@
     "toTime": "09:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262678",
     "capturedAt": "2026-02-06T05:13:26.623Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "84866",
+    "fromStop": "Tullastraße",
+    "fromTime": "00:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "00:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T12:39:20.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85033",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "01:20",
+    "toStop": "Tullastraße",
+    "toTime": "02:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T12:39:20.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "84998",
+    "fromStop": "Tullastraße",
+    "fromTime": "16:51",
+    "toStop": "Rheinbergstraße",
+    "toTime": "17:14",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T12:39:20.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85015",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "17:42",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "18:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T12:39:20.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85014",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "19:06",
+    "toStop": "Lameyplatz",
+    "toTime": "20:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T12:39:20.448Z"
   }
 ]
