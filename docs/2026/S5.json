@@ -1311,6 +1311,18 @@
     "line": "S5",
     "date": "2026-02-07",
     "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85034",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "03:09",
+    "toStop": "Karlsruhe Tullatr.",
+    "toTime": "03:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T16:24:54.887Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
     "trainNumber": "84998",
     "fromStop": "Tullastraße",
     "fromTime": "16:51",
@@ -1342,5 +1354,41 @@
     "toTime": "20:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
     "capturedAt": "2026-02-07T12:39:20.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85086",
+    "fromStop": "Karlsruhe Tullatr.",
+    "fromTime": "21:30",
+    "toStop": "Wörth Badepark",
+    "toTime": "22:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T16:24:54.887Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "84853",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "22:35",
+    "toStop": "Karlsruhe Tullatr.(23:27 Uhr) 84859 Wörth Badepark",
+    "toTime": "23:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T16:24:54.887Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85088",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "22:37",
+    "toStop": "Wörth Badepark",
+    "toTime": "23:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
+    "capturedAt": "2026-02-07T16:24:54.887Z"
   }
 ]

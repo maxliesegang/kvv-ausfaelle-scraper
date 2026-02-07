@@ -334,5 +334,101 @@
     "toTime": "08:34",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262755",
     "capturedAt": "2026-02-07T08:26:00.868Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85521",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "14:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "15:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85530",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "16:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "17:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85527",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "17:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "18:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85529",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "18:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "19:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85536",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "19:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "20:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85531",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85538",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "20:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "21:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T12:30:00.000Z",
+    "trainNumber": "85540",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "21:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "22:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
+    "capturedAt": "2026-02-07T16:24:54.848Z"
   }
 ]
