@@ -310,5 +310,29 @@
     "toTime": "16:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262513",
     "capturedAt": "2026-02-03T08:31:55.108Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T07:36:00.000Z",
+    "trainNumber": "85314",
+    "fromStop": "Heilbronn Hbf. Vorplatz",
+    "fromTime": "07:22",
+    "toStop": "Schwaigern West",
+    "toTime": "07:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262755",
+    "capturedAt": "2026-02-07T08:26:00.868Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-07",
+    "stand": "2026-02-07T07:36:00.000Z",
+    "trainNumber": "85315",
+    "fromStop": "Schwaigern West",
+    "fromTime": "08:16",
+    "toStop": "Heilbronn Hbf. Vorplatz",
+    "toTime": "08:34",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262755",
+    "capturedAt": "2026-02-07T08:26:00.868Z"
   }
 ]
