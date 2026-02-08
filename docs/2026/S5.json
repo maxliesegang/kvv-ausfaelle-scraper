@@ -1390,5 +1390,29 @@
     "toTime": "23:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262764",
     "capturedAt": "2026-02-07T16:24:54.887Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T00:31:00.000Z",
+    "trainNumber": "85033",
+    "fromStop": "Wörth (Rhein) Badepark",
+    "fromTime": "01:20",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "02:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262843",
+    "capturedAt": "2026-02-08T02:09:26.522Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T00:31:00.000Z",
+    "trainNumber": "85034",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "03:09",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "03:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262843",
+    "capturedAt": "2026-02-08T02:09:26.522Z"
   }
 ]
