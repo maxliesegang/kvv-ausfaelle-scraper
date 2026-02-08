@@ -1414,5 +1414,29 @@
     "toTime": "03:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262843",
     "capturedAt": "2026-02-08T02:09:26.522Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T04:38:00.000Z",
+    "trainNumber": "84707",
+    "fromStop": "Knielingen Rheinbergstr.",
+    "fromTime": "05:07",
+    "toStop": "Söllingen Bf",
+    "toTime": "05:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262885",
+    "capturedAt": "2026-02-08T05:21:42.383Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T04:38:00.000Z",
+    "trainNumber": "84808",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "06:01",
+    "toStop": "Karlsruhe Starckstr.",
+    "toTime": "06:41",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262885",
+    "capturedAt": "2026-02-08T05:21:42.383Z"
   }
 ]

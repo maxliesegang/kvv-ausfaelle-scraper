@@ -430,5 +430,29 @@
     "toTime": "22:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262780",
     "capturedAt": "2026-02-07T16:24:54.848Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T04:00:00.000Z",
+    "trainNumber": "85403",
+    "fromStop": "Bretten Bf",
+    "fromTime": "04:58",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "06:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262867",
+    "capturedAt": "2026-02-08T05:21:42.881Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T04:00:00.000Z",
+    "trainNumber": "85412",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "06:40",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "08:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262867",
+    "capturedAt": "2026-02-08T05:21:42.881Z"
   }
 ]
