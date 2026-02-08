@@ -118,5 +118,17 @@
     "toTime": "08:48",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261143",
     "capturedAt": "2026-01-09T08:25:10.613Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T18:18:00.000Z",
+    "trainNumber": "84945",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "00:31",
+    "toStop": "Söllingen Bf.",
+    "toTime": "00:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262907",
+    "capturedAt": "2026-02-08T20:21:34.860Z"
   }
 ]

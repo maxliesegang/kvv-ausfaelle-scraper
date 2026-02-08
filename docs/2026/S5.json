@@ -1394,6 +1394,18 @@
   {
     "line": "S5",
     "date": "2026-02-08",
+    "stand": "2026-02-08T18:18:00.000Z",
+    "trainNumber": "84784",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "01:01",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "01:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262907",
+    "capturedAt": "2026-02-08T20:21:34.860Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-08",
     "stand": "2026-02-08T00:31:00.000Z",
     "trainNumber": "85033",
     "fromStop": "Wörth (Rhein) Badepark",
