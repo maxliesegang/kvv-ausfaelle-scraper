@@ -1450,5 +1450,29 @@
     "toTime": "06:41",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262885",
     "capturedAt": "2026-02-08T05:21:42.383Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-11",
+    "stand": "2026-02-11T10:45:00.000Z",
+    "trainNumber": "84980",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "13:31",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263027",
+    "capturedAt": "2026-02-11T13:00:06.585Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-11",
+    "stand": "2026-02-11T10:45:00.000Z",
+    "trainNumber": "84995",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "14:23",
+    "toStop": "KA Tullastr.",
+    "toTime": "15:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263027",
+    "capturedAt": "2026-02-11T13:00:06.585Z"
   }
 ]
