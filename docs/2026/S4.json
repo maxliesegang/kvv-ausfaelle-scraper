@@ -478,5 +478,89 @@
     "toTime": "10:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262979",
     "capturedAt": "2026-02-10T05:25:20.642Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85471",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "00:11",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "00:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85546",
+    "fromStop": "Bretten Bf",
+    "fromTime": "17:39",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85531",
+    "fromStop": "(Karlsruhe Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85540",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "21:20",
+    "toStop": "Bretten Bf",
+    "toTime": "21:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85535",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "21:31",
+    "toStop": "Bretten Bf",
+    "toTime": "22:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85466",
+    "fromStop": "Bretten Bf",
+    "fromTime": "21:59",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "22:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:42:00.000Z",
+    "trainNumber": "85468",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "23:27",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "23:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263196",
+    "capturedAt": "2026-02-13T12:50:45.883Z"
   }
 ]
