@@ -1515,6 +1515,30 @@
     "line": "S5",
     "date": "2026-02-13",
     "stand": "2026-02-13T11:41:00.000Z",
+    "trainNumber": "85019",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "18:29",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "19:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263148",
+    "capturedAt": "2026-02-13T16:40:20.707Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:41:00.000Z",
+    "trainNumber": "85018",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "20:06",
+    "toStop": "Karlsruhe Rheinbergstraße",
+    "toTime": "21:14",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263148",
+    "capturedAt": "2026-02-13T16:40:20.707Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:41:00.000Z",
     "trainNumber": "85027",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "21:07",
@@ -1534,5 +1558,17 @@
     "toTime": "22:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263148",
     "capturedAt": "2026-02-13T12:50:46.374Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T11:41:00.000Z",
+    "trainNumber": "85099",
+    "fromStop": "Karlsruhe Rheinbergstraße",
+    "fromTime": "22:42",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "23:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263148",
+    "capturedAt": "2026-02-13T16:40:20.707Z"
   }
 ]

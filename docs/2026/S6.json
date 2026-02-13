@@ -118,5 +118,17 @@
     "toTime": "18:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
     "capturedAt": "2026-02-13T08:37:39.096Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-02-13",
+    "stand": "2026-02-13T14:50:00.000Z",
+    "trainNumber": "85099",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "23:57",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "00:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
+    "capturedAt": "2026-02-13T16:40:20.756Z"
   }
 ]
