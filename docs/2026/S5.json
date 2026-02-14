@@ -1606,5 +1606,41 @@
     "toTime": "23:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263148",
     "capturedAt": "2026-02-13T16:40:20.707Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-14",
+    "stand": "2026-02-14T12:24:00.000Z",
+    "trainNumber": "85070",
+    "fromStop": "KA-Rheinbergstr.",
+    "fromTime": "16:58",
+    "toStop": "Wörth Badepark",
+    "toTime": "17:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263341",
+    "capturedAt": "2026-02-14T16:23:59.434Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-14",
+    "stand": "2026-02-14T12:24:00.000Z",
+    "trainNumber": "85089",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "17:45",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "19:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263341",
+    "capturedAt": "2026-02-14T16:23:59.434Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-14",
+    "stand": "2026-02-14T12:24:00.000Z",
+    "trainNumber": "85086",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "20:05",
+    "toStop": "KA Tullastr.",
+    "toTime": "21:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263341",
+    "capturedAt": "2026-02-14T16:23:59.434Z"
   }
 ]

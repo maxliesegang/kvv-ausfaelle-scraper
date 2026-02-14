@@ -514,5 +514,29 @@
     "toTime": "23:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263172",
     "capturedAt": "2026-02-13T12:50:46.383Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-02-14",
+    "stand": "2026-02-14T14:47:00.000Z",
+    "trainNumber": "16043",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "16:08",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "16:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263367",
+    "capturedAt": "2026-02-14T16:23:59.188Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-02-14",
+    "stand": "2026-02-14T14:47:00.000Z",
+    "trainNumber": "26044",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "17:05",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "17:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263367",
+    "capturedAt": "2026-02-14T16:23:59.188Z"
   }
 ]
