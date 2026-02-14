@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "build": "tsc",
@@ -32,12 +32,12 @@
     "rss-parser": "^3.13.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^25.2.3",
     "@types/xml2js": "^0.4.14",
     "c8": "^10.1.3",
-    "prettier": "^3.6.2",
-    "tsx": "^4.19.0",
-    "typescript": "^5.6.0"
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "keywords": [
     "kvv",

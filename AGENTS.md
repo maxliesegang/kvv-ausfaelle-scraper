@@ -24,7 +24,7 @@ The automation agent ([`.github/workflows/update-data.yml`](.github/workflows/up
 
 1. **Environment Setup**
    - Checks out the repository
-   - Sets up Node.js 20
+   - Sets up Node.js 22
    - Installs dependencies via `npm ci`
 
 2. **Build & Execute**

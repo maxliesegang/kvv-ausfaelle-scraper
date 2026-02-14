@@ -38,7 +38,7 @@ TypeScript/Node script that fetches the public KVV RSS feed, parses the “Betri
 
 ## Running locally
 
-1. Requirements: Node 18+
+1. Requirements: Node 22+
 2. Install deps: `npm ci`
 3. Build TypeScript: `npm run build`
 4. Run the scraper: `npm start` (writes output into `docs/` and refreshes the HTML indexes)
