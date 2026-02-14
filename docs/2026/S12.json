@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S12",
+    "date": "2026-02-03",
+    "stand": "2026-02-03T04:54:00.000Z",
+    "trainNumber": "40003",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "07:06",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "08:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262521",
+    "capturedAt": "2026-02-03T05:13:14.798Z"
+  }
+]

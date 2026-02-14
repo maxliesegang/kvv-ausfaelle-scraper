@@ -1,0 +1,26 @@
+[
+  {
+    "line": "UNKNOWN",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T11:31:00.000Z",
+    "trainNumber": "85697",
+    "fromStop": "Karlsruhe Hbf",
+    "fromTime": "16:18",
+    "toStop": "Bad Herrenalb",
+    "toTime": "16:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262903",
+    "capturedAt": "2026-02-08T12:39:57.084Z"
+  },
+  {
+    "line": "UNKNOWN",
+    "date": "2026-02-08",
+    "stand": "2026-02-08T11:31:00.000Z",
+    "trainNumber": "85698",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "17:03",
+    "toStop": "Karlsruhe Hbf",
+    "toTime": "17:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262903",
+    "capturedAt": "2026-02-08T12:39:57.084Z"
+  }
+]

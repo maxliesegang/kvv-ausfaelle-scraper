@@ -22,5 +22,41 @@
     "toTime": "10:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260380",
     "capturedAt": "2025-12-22T08:25:29.288Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T11:00:00.000Z",
+    "trainNumber": "85636",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "12:44",
+    "toStop": "Tullastraße",
+    "toTime": "13:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
+    "capturedAt": "2026-01-09T12:36:39.527Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T11:00:00.000Z",
+    "trainNumber": "85647",
+    "fromStop": "Tullastraße",
+    "fromTime": "13:53",
+    "toStop": "Freudenstadt Hbf.",
+    "toTime": "16:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
+    "capturedAt": "2026-01-09T12:36:39.527Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-01-09",
+    "stand": "2026-01-09T11:00:00.000Z",
+    "trainNumber": "85660",
+    "fromStop": "Freudenstadt Hbf.",
+    "fromTime": "17:23",
+    "toStop": "Karlsruhe Hbf",
+    "toTime": "19:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
+    "capturedAt": "2026-01-09T12:36:39.527Z"
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "line": "S42",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T08:01:00.000Z",
+    "trainNumber": "85817",
+    "fromStop": "Heilbronn Hbf.",
+    "fromTime": "07:03",
+    "toStop": "Sinsheim Bf.",
+    "toTime": "08:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262432",
+    "capturedAt": "2026-02-02T08:37:51.969Z"
+  },
+  {
+    "line": "S42",
+    "date": "2026-02-02",
+    "stand": "2026-02-02T08:01:00.000Z",
+    "trainNumber": "85824",
+    "fromStop": "Sinsheim Bf.",
+    "fromTime": "08:46",
+    "toStop": "Heilbronn Hbf.",
+    "toTime": "09:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262432",
+    "capturedAt": "2026-02-02T08:37:51.969Z"
+  }
+]
