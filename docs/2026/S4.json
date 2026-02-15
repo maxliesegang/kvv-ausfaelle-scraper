@@ -610,5 +610,41 @@
     "toTime": "22:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263315",
     "capturedAt": "2026-02-14T12:38:32.595Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-15",
+    "stand": "2026-02-15T12:04:00.000Z",
+    "trainNumber": "85428",
+    "fromStop": "Eppingen",
+    "fromTime": "11:28",
+    "toStop": "Albtalbahnhof",
+    "toTime": "12:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263427",
+    "capturedAt": "2026-02-15T12:40:51.858Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-15",
+    "stand": "2026-02-15T12:04:00.000Z",
+    "trainNumber": "85443",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "13:15",
+    "toStop": "Pfühlpark",
+    "toTime": "15:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263427",
+    "capturedAt": "2026-02-15T12:40:51.858Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-15",
+    "stand": "2026-02-15T12:04:00.000Z",
+    "trainNumber": "85448",
+    "fromStop": "Pfühlpark",
+    "fromTime": "15:37",
+    "toStop": "Eppingen",
+    "toTime": "16:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263427",
+    "capturedAt": "2026-02-15T12:40:51.858Z"
   }
 ]
