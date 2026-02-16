@@ -154,5 +154,29 @@
     "toTime": "15:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
     "capturedAt": "2026-02-14T12:38:32.428Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-02-16",
+    "stand": "2026-02-16T02:15:00.000Z",
+    "trainNumber": "85791",
+    "fromStop": "Heilbronn Willy Brandt-Pl.",
+    "fromTime": "08:18",
+    "toStop": "Heilbronn Kaufland",
+    "toTime": "08:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263444",
+    "capturedAt": "2026-02-16T05:24:06.569Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-02-16",
+    "stand": "2026-02-16T02:15:00.000Z",
+    "trainNumber": "80924",
+    "fromStop": "Heilbronn Kaufland",
+    "fromTime": "08:53",
+    "toStop": "Heilbronn Willy Brandt-Pl.",
+    "toTime": "09:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263444",
+    "capturedAt": "2026-02-16T05:24:06.569Z"
   }
 ]
