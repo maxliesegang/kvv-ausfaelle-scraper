@@ -1666,5 +1666,101 @@
     "toTime": "07:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263511",
     "capturedAt": "2026-02-17T05:18:57.479Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84705",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "05:02",
+    "toStop": "Söllingen Bf.",
+    "toTime": "05:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84957",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "05:02",
+    "toStop": "Pforzheim",
+    "toTime": "06:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84806",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "05:58",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "Pforzheim",
+    "fromTime": "06:25",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84803",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:15",
+    "toStop": "Söllingen Bf.",
+    "toTime": "08:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "08:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "09:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "08:38",
+    "toStop": "KA Tullastraße",
+    "toTime": "09:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84824",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "09:51",
+    "toStop": "KA Starckstr.",
+    "toTime": "10:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T05:21:13.186Z"
   }
 ]
