@@ -1762,5 +1762,29 @@
     "toTime": "10:28",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
     "capturedAt": "2026-02-18T05:21:13.186Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "84815",
+    "fromStop": "Wörth (Rhein) Badepark",
+    "fromTime": "11:05",
+    "toStop": "Söllingen Bf",
+    "toTime": "12:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T08:39:34.795Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-18",
+    "stand": "2026-02-18T02:57:00.000Z",
+    "trainNumber": "85932",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "12:18",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "12:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
+    "capturedAt": "2026-02-18T08:39:34.795Z"
   }
 ]
