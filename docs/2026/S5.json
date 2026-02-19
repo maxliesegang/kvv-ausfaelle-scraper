@@ -1786,5 +1786,41 @@
     "toTime": "12:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263527",
     "capturedAt": "2026-02-18T08:39:34.795Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T14:49:00.000Z",
+    "trainNumber": "85013",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "17:29",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "18:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263662",
+    "capturedAt": "2026-02-19T16:46:05.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T14:49:00.000Z",
+    "trainNumber": "84843",
+    "fromStop": "Karlsruhe Starckstraße",
+    "fromTime": "18:27",
+    "toStop": "Söllingen Bahnhof (19:09 Uhr 85012 Pforzheim Bahnhof",
+    "toTime": "18:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263662",
+    "capturedAt": "2026-02-19T16:46:05.448Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T14:49:00.000Z",
+    "trainNumber": "85928",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "19:51",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "20:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263662",
+    "capturedAt": "2026-02-19T16:46:05.448Z"
   }
 ]
