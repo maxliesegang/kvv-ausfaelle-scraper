@@ -130,5 +130,53 @@
     "toTime": "00:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
     "capturedAt": "2026-02-13T16:40:20.756Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T09:09:00.000Z",
+    "trainNumber": "85065",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "12:47",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "13:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
+    "capturedAt": "2026-02-19T12:56:38.805Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T09:09:00.000Z",
+    "trainNumber": "85066",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "13:35",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "14:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
+    "capturedAt": "2026-02-19T12:56:38.805Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T09:09:00.000Z",
+    "trainNumber": "85075",
+    "fromStop": "Pforzheim Hbf (15:47 Uhr)  Bad Wildbad Kurpark (16:22 Uhr) 85076 Bad Wildbad Kurpark",
+    "fromTime": "16:35",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "17:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
+    "capturedAt": "2026-02-19T12:56:38.805Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-02-19",
+    "stand": "2026-02-19T09:09:00.000Z",
+    "trainNumber": "85083",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "17:47",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
+    "capturedAt": "2026-02-19T12:56:38.805Z"
   }
 ]
