@@ -1862,6 +1862,18 @@
   {
     "line": "S5",
     "date": "2026-02-20",
+    "stand": "2026-02-20T15:08:00.000Z",
+    "trainNumber": "85007",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "16:26",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "17:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263751",
+    "capturedAt": "2026-02-20T16:33:01.056Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-20",
     "stand": "2026-02-20T09:36:00.000Z",
     "trainNumber": "84912",
     "fromStop": "Söllingen Bf.",
@@ -1870,6 +1882,18 @@
     "toTime": "17:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263697",
     "capturedAt": "2026-02-20T12:50:54.256Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-20",
+    "stand": "2026-02-20T15:08:00.000Z",
+    "trainNumber": "85006",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "17:37",
+    "toStop": "Karlsruhe Hbf.",
+    "toTime": "18:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263751",
+    "capturedAt": "2026-02-20T16:33:01.056Z"
   },
   {
     "line": "S5",
