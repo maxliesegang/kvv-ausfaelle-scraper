@@ -694,5 +694,113 @@
     "toTime": "22:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263646",
     "capturedAt": "2026-02-19T16:46:05.912Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85496",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "00:24",
+    "toStop": "Bahnhof Eppingen",
+    "toTime": "01:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85515",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "11:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "12:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85524",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "13:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "14:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85449",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "15:19",
+    "toStop": "Heilbronn Bf. Vorplatz",
+    "toTime": "17:14",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85523",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "15:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "16:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85532",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "17:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85531",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85540",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "21:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "22:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-21",
+    "stand": "2026-02-21T10:27:00.000Z",
+    "trainNumber": "85467",
+    "fromStop": "Bahnhof Eppingen",
+    "fromTime": "23:29",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "00:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263767",
+    "capturedAt": "2026-02-21T12:38:32.753Z"
   }
 ]
