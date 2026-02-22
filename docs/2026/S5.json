@@ -2122,5 +2122,29 @@
     "toTime": "23:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263836",
     "capturedAt": "2026-02-21T16:23:38.354Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-22",
+    "stand": "2026-02-22T12:30:00.000Z",
+    "trainNumber": "85064",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "13:46",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263948",
+    "capturedAt": "2026-02-22T16:24:08.658Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-22",
+    "stand": "2026-02-22T12:30:00.000Z",
+    "trainNumber": "85081",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "15:45",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "17:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263948",
+    "capturedAt": "2026-02-22T16:24:08.658Z"
   }
 ]
