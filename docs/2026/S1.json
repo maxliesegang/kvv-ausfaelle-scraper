@@ -538,5 +538,17 @@
     "toTime": "17:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263367",
     "capturedAt": "2026-02-14T16:23:59.188Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-02-23",
+    "stand": "2026-02-23T14:12:00.000Z",
+    "trainNumber": "10051",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "13:58",
+    "toStop": "Hochstetten",
+    "toTime": "15:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263989",
+    "capturedAt": "2026-02-23T20:40:28.335Z"
   }
 ]

@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S32",
+    "date": "2026-02-23",
+    "stand": "2026-02-23T17:11:00.000Z",
+    "trainNumber": "85166",
+    "fromStop": "Ubstadt Ort",
+    "fromTime": "22:53",
+    "toStop": "Menzingen Bf",
+    "toTime": "23:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264013",
+    "capturedAt": "2026-02-23T20:40:27.980Z"
+  }
+]

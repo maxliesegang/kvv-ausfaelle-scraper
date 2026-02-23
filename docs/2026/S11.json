@@ -154,5 +154,29 @@
     "toTime": "21:45",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263180",
     "capturedAt": "2026-02-13T12:50:46.312Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-02-23",
+    "stand": "2026-02-23T14:12:00.000Z",
+    "trainNumber": "20048",
+    "fromStop": "Hochstetten",
+    "fromTime": "15:12",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "16:45",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263989",
+    "capturedAt": "2026-02-23T20:40:28.335Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-02-23",
+    "stand": "2026-02-23T14:12:00.000Z",
+    "trainNumber": "20049",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "16:51",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "17:14",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263989",
+    "capturedAt": "2026-02-23T20:40:28.335Z"
   }
 ]
