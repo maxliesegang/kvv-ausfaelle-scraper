@@ -874,5 +874,53 @@
     "toTime": "20:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263912",
     "capturedAt": "2026-02-22T12:40:09.827Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-24",
+    "stand": "2026-02-24T09:25:00.000Z",
+    "trainNumber": "85518",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "11:07",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "11:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264041",
+    "capturedAt": "2026-02-24T12:56:49.505Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-24",
+    "stand": "2026-02-24T09:25:00.000Z",
+    "trainNumber": "85517",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "12:35",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "12:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264041",
+    "capturedAt": "2026-02-24T12:56:49.505Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-24",
+    "stand": "2026-02-24T09:25:00.000Z",
+    "trainNumber": "85526",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "15:07",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "15:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264041",
+    "capturedAt": "2026-02-24T12:56:49.505Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-02-24",
+    "stand": "2026-02-24T09:25:00.000Z",
+    "trainNumber": "85453",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "16:15",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "16:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264041",
+    "capturedAt": "2026-02-24T12:56:49.505Z"
   }
 ]
