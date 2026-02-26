@@ -2146,5 +2146,53 @@
     "toTime": "17:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263948",
     "capturedAt": "2026-02-22T16:24:08.658Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T10:05:00.000Z",
+    "trainNumber": "85013",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "17:29",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "18:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264161",
+    "capturedAt": "2026-02-26T12:56:47.918Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T10:05:00.000Z",
+    "trainNumber": "84850",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "18:10",
+    "toStop": "Wörth (Rhein) Badepark",
+    "toTime": "18:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264161",
+    "capturedAt": "2026-02-26T12:56:47.918Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T10:05:00.000Z",
+    "trainNumber": "85012",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "18:37",
+    "toStop": "Karlsruhe Hbf",
+    "toTime": "19:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264161",
+    "capturedAt": "2026-02-26T12:56:47.918Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T10:05:00.000Z",
+    "trainNumber": "85919",
+    "fromStop": "Wörth (Rhein) Badepark",
+    "fromTime": "19:05",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "19:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264161",
+    "capturedAt": "2026-02-26T12:56:47.918Z"
   }
 ]
