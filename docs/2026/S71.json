@@ -1,0 +1,14 @@
+[
+  {
+    "line": "S71",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T17:36:00.000Z",
+    "trainNumber": "85597",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "22:17",
+    "toStop": "Rastatt Bf",
+    "toTime": "22:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264274",
+    "capturedAt": "2026-02-26T20:32:26.276Z"
+  }
+]

@@ -178,5 +178,17 @@
     "toTime": "17:14",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263989",
     "capturedAt": "2026-02-23T20:40:28.335Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T15:44:00.000Z",
+    "trainNumber": "20059",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "20:01",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "20:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264250",
+    "capturedAt": "2026-02-26T20:32:26.297Z"
   }
 ]

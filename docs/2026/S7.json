@@ -322,5 +322,17 @@
     "toTime": "17:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264120",
     "capturedAt": "2026-02-25T17:03:59.822Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-02-26",
+    "stand": "2026-02-26T17:36:00.000Z",
+    "trainNumber": "85590",
+    "fromStop": "Rastatt",
+    "fromTime": "23:10",
+    "toStop": "KA Tullastr.",
+    "toTime": "23:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264274",
+    "capturedAt": "2026-02-26T20:32:26.276Z"
   }
 ]
