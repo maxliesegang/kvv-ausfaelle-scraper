@@ -11,7 +11,9 @@ interface TextAnalysis {
   readonly score: number;
   readonly keywordMatches: string[];
   readonly structureMatches: string[];
+  readonly constructionMatches: string[];
   readonly lineMentioned: boolean;
+  readonly excludeAsConstruction: boolean;
   readonly reasons: string[];
   readonly normalizedText: string;
 }
@@ -75,6 +77,38 @@ const TRIP_SECTION_HINTS: readonly KeywordGroup[] = [
   { weight: 1, keywords: ['betroffene fahrten', 'folgende fahrten', 'fahrten betroffen'] },
 ];
 
+const CONSTRUCTION_CAUSE_MARKERS: readonly KeywordGroup[] = [
+  {
+    weight: 0,
+    keywords: [
+      'wegen bauarbeiten',
+      'bauarbeiten',
+      'baustelle',
+      'baubedingt',
+      'baumassnahme',
+      'baumassnahmen',
+      'gleisbauarbeiten',
+      'gleisarbeiten',
+      'kanalsanierung',
+      'kanalsanierungsarbeiten',
+      'sperrung',
+    ],
+  },
+];
+
+const PERSONNEL_CAUSE_MARKERS: readonly KeywordGroup[] = [
+  {
+    weight: 0,
+    keywords: [
+      'personalmangel',
+      'personalausfall',
+      'krankheitsbedingt',
+      'krankheitsausfall',
+      'betriebsbedingt',
+    ],
+  },
+];
+
 const LINE_MENTION_PATTERN = /\blinie[n]?\s+[a-z]+\d{1,3}\b/;
 
 const RSS_RELEVANCE_THRESHOLD = 2;
@@ -117,6 +151,8 @@ function analyzeTextSegments(segments: string[]): TextAnalysis {
 
   const keywordResult = collectMatches(normalizedText, CANCELLATION_KEYWORDS);
   const structureResult = collectMatches(normalizedText, STRUCTURE_MARKERS);
+  const constructionResult = collectMatches(normalizedText, CONSTRUCTION_CAUSE_MARKERS);
+  const personnelResult = collectMatches(normalizedText, PERSONNEL_CAUSE_MARKERS);
 
   const reasons: string[] = [];
   let score = keywordResult.score + structureResult.score;
@@ -129,17 +165,34 @@ function analyzeTextSegments(segments: string[]): TextAnalysis {
     reasons.push(`structure: ${structureResult.matches.join(', ')}`);
   }
 
+  if (constructionResult.matches.length > 0) {
+    reasons.push(`construction markers: ${constructionResult.matches.join(', ')}`);
+  }
+
   const lineMentioned = LINE_MENTION_PATTERN.test(normalizedText);
   if (lineMentioned) {
     score += 1;
     reasons.push('mentions a line identifier');
   }
 
+  const hasCancellationSignal =
+    keywordResult.matches.length > 0 || structureResult.matches.length > 0;
+  const excludeAsConstruction =
+    constructionResult.matches.length > 0 &&
+    hasCancellationSignal &&
+    personnelResult.matches.length === 0;
+
+  if (excludeAsConstruction) {
+    reasons.push('excluded: construction-related notice without personnel shortage signal');
+  }
+
   return {
     score,
     keywordMatches: keywordResult.matches,
     structureMatches: structureResult.matches,
+    constructionMatches: constructionResult.matches,
     lineMentioned,
+    excludeAsConstruction,
     reasons,
     normalizedText,
   };
@@ -166,7 +219,7 @@ export function analyzeRssItem(item: Item): RelevanceResult {
 
   return {
     score: analysis.score,
-    isRelevant: analysis.score >= RSS_RELEVANCE_THRESHOLD,
+    isRelevant: analysis.score >= RSS_RELEVANCE_THRESHOLD && !analysis.excludeAsConstruction,
     reasons: analysis.reasons,
     keywordMatches: analysis.keywordMatches,
     structureMatches: analysis.structureMatches,
@@ -195,7 +248,8 @@ export function analyzeDetailPage(html: string): RelevanceResult {
     reasons.push(`found ${tripLike.length} trip-like lines`);
   }
 
-  const isRelevant = score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0;
+  const isRelevant =
+    (score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0) && !analysis.excludeAsConstruction;
 
   return {
     score,
