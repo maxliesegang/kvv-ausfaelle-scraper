@@ -4,7 +4,9 @@
  */
 
 import { describe, it } from 'node:test';
+import assert from 'node:assert';
 import { parseDetailPage } from '../../src/parser/index.js';
+import { extractTripLines, extractTripSectionCandidates } from '../../src/parser/trip-parsing.js';
 import { loadAllFixtures, loadFixture } from '../helpers/fixture-loader.js';
 import { assertCancellationsEqual, assertThrows } from '../helpers/test-utils.js';
 
@@ -105,6 +107,34 @@ describe('Parser - Detail Page Parsing', () => {
         const actual = parseDetailPage(fixture.html, `test://${fixture.name}`);
         assertCancellationsEqual(actual, fixture.expected, `Multi-line: ${fixture.name}`);
       }
+    });
+  });
+
+  describe('Trip section extraction', () => {
+    it('should detect trip section markers with flexible whitespace', () => {
+      const text = `
+        Linie S5
+        Betroffene   Fahrten:
+        84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr
+        Ob deine Verbindung aktuell fährt
+      `;
+
+      const candidates = extractTripSectionCandidates(text);
+      assert.deepStrictEqual(candidates, ['84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr']);
+    });
+
+    it('should fall back to scanning the full text when the trip marker section is empty', () => {
+      const text = `
+        Linie S5
+        Betroffene Fahrten:
+
+        Zusatzhinweis ohne konkrete Fahrten
+
+        84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr
+      `;
+
+      const tripLines = extractTripLines(text);
+      assert.deepStrictEqual(tripLines, ['84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr']);
     });
   });
 });

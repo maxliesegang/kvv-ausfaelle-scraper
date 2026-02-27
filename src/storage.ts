@@ -1,6 +1,6 @@
 import { join } from 'path';
 import type { Cancellation } from './types.js';
-import { readJsonFile } from './utils/fs.js';
+import { readJsonFile, writeJsonFile } from './utils/fs.js';
 import { getFahrplanYear } from './fahrplan.js';
 
 /**
@@ -19,11 +19,8 @@ export async function loadExisting(filePath: string): Promise<Cancellation[]> {
   return [];
 }
 
-/**
- * Checks if two cancellations are duplicates based on key fields.
- */
-function isDuplicate(a: Cancellation, b: Cancellation): boolean {
-  return a.date === b.date && a.trainNumber === b.trainNumber && a.fromTime === b.fromTime;
+function getCancellationKey(cancellation: Cancellation): string {
+  return `${cancellation.date}|${cancellation.trainNumber}|${cancellation.fromTime}`;
 }
 
 /**
@@ -38,8 +35,8 @@ function sortDeterministic(a: Cancellation, b: Cancellation): number {
 }
 
 interface BucketStats {
-  readonly added: number;
-  readonly duplicates: number;
+  added: number;
+  duplicates: number;
 }
 
 interface CancellationBucket {
@@ -47,6 +44,7 @@ interface CancellationBucket {
   readonly year: string;
   readonly line: string;
   readonly filePath: string;
+  readonly seenKeys: Set<string>;
   entries: Cancellation[];
   stats: BucketStats;
 }
@@ -87,6 +85,7 @@ async function findOrCreateBucket(
       year,
       line,
       filePath,
+      seenKeys: new Set(entries.map((entry) => getCancellationKey(entry))),
       entries,
       stats: { added: 0, duplicates: 0 },
     };
@@ -99,13 +98,15 @@ async function findOrCreateBucket(
  * Merges a trip into a bucket, tracking whether it was added or was a duplicate.
  */
 function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
-  const duplicate = bucket.entries.some((existing) => isDuplicate(existing, trip));
-  if (duplicate) {
-    bucket.stats = { ...bucket.stats, duplicates: bucket.stats.duplicates + 1 };
+  const tripKey = getCancellationKey(trip);
+  if (bucket.seenKeys.has(tripKey)) {
+    bucket.stats.duplicates += 1;
     return;
   }
+
+  bucket.seenKeys.add(tripKey);
   bucket.entries.push(trip);
-  bucket.stats = { ...bucket.stats, added: bucket.stats.added + 1 };
+  bucket.stats.added += 1;
 }
 
 /**
@@ -113,10 +114,21 @@ function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
  */
 async function writeBucket(bucket: CancellationBucket): Promise<void> {
   const { filePath, entries, stats } = bucket;
-  const { writeJsonFile } = await import('./utils/fs.js');
   entries.sort(sortDeterministic);
   await writeJsonFile(filePath, entries);
   console.log('Updated', filePath, `(added: ${stats.added}, duplicates: ${stats.duplicates})`);
+}
+
+function summarizeBuckets(buckets: Iterable<CancellationBucket>): BucketStats {
+  let added = 0;
+  let duplicates = 0;
+
+  for (const bucket of buckets) {
+    added += bucket.stats.added;
+    duplicates += bucket.stats.duplicates;
+  }
+
+  return { added, duplicates };
 }
 
 /**
@@ -136,13 +148,7 @@ export async function saveCancellations(baseDir: string, trips: Cancellation[]):
   await Promise.all(Array.from(buckets.values()).map((bucket) => writeBucket(bucket)));
 
   // Report summary statistics
-  const totals = Array.from(buckets.values()).reduce(
-    (agg, bucket) => ({
-      added: agg.added + bucket.stats.added,
-      duplicates: agg.duplicates + bucket.stats.duplicates,
-    }),
-    { added: 0, duplicates: 0 },
-  );
+  const totals = summarizeBuckets(buckets.values());
 
   console.log(
     `Summary: added ${totals.added} new cancellations, skipped ${totals.duplicates} duplicates.`,

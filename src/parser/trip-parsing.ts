@@ -26,6 +26,16 @@ export class MultiLineMappingError extends Error {
   }
 }
 
+function escapeRegexLiteral(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function createFlexibleMarkerPattern(marker: string): RegExp {
+  return new RegExp(escapeRegexLiteral(marker).replace(/\s+/g, '\\s+'), 'i');
+}
+
+const TRIP_START_PATTERNS = MARKERS.TRIPS_START.map(createFlexibleMarkerPattern);
+
 /**
  * Determines whether the parsed line value looks ambiguous (e.g. "S1 und S11").
  */
@@ -238,19 +248,8 @@ export function mergeTripLines(rawLines: string[]): string[] {
  * Useful for diagnostics when no trips could be parsed.
  */
 export function extractTripSectionCandidates(text: string): string[] {
-  for (const marker of MARKERS.TRIPS_START) {
-    const markerRegex = new RegExp(
-      marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+'),
-      'i',
-    );
-    const match = text.match(markerRegex);
-    if (match) {
-      const startIdx = match.index! + match[0].length;
-      return buildTripCandidateLines(text.slice(startIdx));
-    }
-  }
-
-  return buildTripCandidateLines(text);
+  const tripSection = findTripSection(text);
+  return buildTripCandidateLines(tripSection ?? text);
 }
 
 /**
@@ -260,36 +259,36 @@ export function extractTripSectionCandidates(text: string): string[] {
  * @returns Array of trip lines, or empty array if section not found
  */
 export function extractTripLines(text: string): string[] {
-  const parseFromSection = (section: string): string[] => {
-    const rawLines = buildTripCandidateLines(section);
-    if (rawLines.length === 0) {
-      return [];
-    }
-    return mergeTripLines(rawLines);
-  };
+  const tripSection = findTripSection(text);
 
-  // Try each possible start marker using regex for flexible whitespace
-  for (const marker of MARKERS.TRIPS_START) {
-    // Escape special regex characters and replace spaces with \s+ to match any whitespace
-    const markerRegex = new RegExp(
-      marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+'),
-      'i',
-    );
-    const match = text.match(markerRegex);
-    if (match) {
-      const startIdx = match.index! + match[0].length;
-      // Get text after the start marker
-      const afterMarker = text.slice(startIdx);
-
-      const mergedLines = parseFromSection(afterMarker);
-      if (mergedLines.length > 0) {
-        return mergedLines;
-      }
+  if (tripSection) {
+    const tripLines = parseTripLinesFromSection(tripSection);
+    if (tripLines.length > 0) {
+      return tripLines;
     }
   }
 
-  // Fallback: scan the entire text for trip-looking lines
-  return parseFromSection(text);
+  return parseTripLinesFromSection(text);
+}
+
+function findTripSection(text: string): string | undefined {
+  for (const pattern of TRIP_START_PATTERNS) {
+    const match = pattern.exec(text);
+    if (match) {
+      return text.slice(match.index + match[0].length);
+    }
+  }
+
+  return undefined;
+}
+
+function parseTripLinesFromSection(section: string): string[] {
+  const rawLines = buildTripCandidateLines(section);
+  if (rawLines.length === 0) {
+    return [];
+  }
+
+  return mergeTripLines(rawLines);
 }
 
 /**
