@@ -32,9 +32,9 @@
     "rss-parser": "^3.13.0"
   },
   "devDependencies": {
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.3.2",
     "@types/xml2js": "^0.4.14",
-    "c8": "^10.1.3",
+    "c8": "^11.0.0",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
