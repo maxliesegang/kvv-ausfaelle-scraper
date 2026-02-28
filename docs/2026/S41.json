@@ -178,5 +178,53 @@
     "toTime": "09:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263444",
     "capturedAt": "2026-02-16T05:24:06.569Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-02-28",
+    "stand": "2026-02-28T10:25:00.000Z",
+    "trainNumber": "80945",
+    "fromStop": "Heilbronn Hbf/Vorplatz",
+    "fromTime": "14:03",
+    "toStop": "Heilbronn Kaufland",
+    "toTime": "14:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
+    "capturedAt": "2026-02-28T12:37:01.250Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-02-28",
+    "stand": "2026-02-28T10:25:00.000Z",
+    "trainNumber": "80954",
+    "fromStop": "Heilbronn Kaufland",
+    "fromTime": "14:31",
+    "toStop": "Heilbronn Hbf/Vorplatz",
+    "toTime": "14:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
+    "capturedAt": "2026-02-28T12:37:01.250Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-02-28",
+    "stand": "2026-02-28T10:25:00.000Z",
+    "trainNumber": "80949",
+    "fromStop": "Heilbronn Hbf/Vorplatz",
+    "fromTime": "15:03",
+    "toStop": "Heilbronn Kaufland",
+    "toTime": "15:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
+    "capturedAt": "2026-02-28T12:37:01.250Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-02-28",
+    "stand": "2026-02-28T10:25:00.000Z",
+    "trainNumber": "80658",
+    "fromStop": "Heilbronn Kaufland",
+    "fromTime": "15:31",
+    "toStop": "Heilbronn Hbf/Vorplatz",
+    "toTime": "15:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
+    "capturedAt": "2026-02-28T12:37:01.250Z"
   }
 ]
