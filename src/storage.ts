@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join } from 'node:path';
 import type { Cancellation } from './types.js';
 import { readJsonFile, writeJsonFile } from './utils/fs.js';
 import { getFahrplanYear } from './fahrplan.js';

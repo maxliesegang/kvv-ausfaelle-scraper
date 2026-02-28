@@ -1,5 +1,5 @@
-import { readdir } from 'fs/promises';
-import { join } from 'path';
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
 import { ensureDirectory, exists, listFiles, writeTextFile } from './utils/fs.js';
 
 const BASE_PAGE_STYLES = `

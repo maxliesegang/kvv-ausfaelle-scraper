@@ -3,6 +3,8 @@
  * @module config
  */
 
+import { FETCH_TIMEOUT } from './utils/constants.js';
+
 /**
  * Configuration interface with validated values.
  */
@@ -31,7 +33,7 @@ function validateTimeout(value: string | undefined, defaultValue: number): numbe
 
   if (Number.isNaN(parsed)) {
     throw new Error(
-      `Invalid FETCH_TIMEOUT_MS: "${raw}" is not a valid number. Must be a positive integer between 1000 and 120000.`,
+      `Invalid FETCH_TIMEOUT_MS: "${raw}" is not a valid number. Must be a positive integer between ${FETCH_TIMEOUT.MIN} and ${FETCH_TIMEOUT.MAX}.`,
     );
   }
 
@@ -41,15 +43,15 @@ function validateTimeout(value: string | undefined, defaultValue: number): numbe
     );
   }
 
-  if (parsed < 1000) {
+  if (parsed < FETCH_TIMEOUT.MIN) {
     throw new Error(
-      `Invalid FETCH_TIMEOUT_MS: ${parsed}ms is too short. Minimum is 1000ms (1 second).`,
+      `Invalid FETCH_TIMEOUT_MS: ${parsed}ms is too short. Minimum is ${FETCH_TIMEOUT.MIN}ms (1 second).`,
     );
   }
 
-  if (parsed > 120000) {
+  if (parsed > FETCH_TIMEOUT.MAX) {
     throw new Error(
-      `Invalid FETCH_TIMEOUT_MS: ${parsed}ms is too long. Maximum is 120000ms (2 minutes).`,
+      `Invalid FETCH_TIMEOUT_MS: ${parsed}ms is too long. Maximum is ${FETCH_TIMEOUT.MAX}ms (2 minutes).`,
     );
   }
 
@@ -96,7 +98,7 @@ function loadConfig(): AppConfig {
   return {
     rssUrl: validateUrl(process.env.RSS_URL, 'RSS_URL', 'https://www.kvv.de/ticker_rss.xml'),
     dataDir: validateDirectory(process.env.DATA_DIR, 'DATA_DIR', 'docs'),
-    fetchTimeoutMs: validateTimeout(process.env.FETCH_TIMEOUT_MS, 15000),
+    fetchTimeoutMs: validateTimeout(process.env.FETCH_TIMEOUT_MS, FETCH_TIMEOUT.DEFAULT),
   };
 }
 

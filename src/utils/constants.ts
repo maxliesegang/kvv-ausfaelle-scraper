@@ -8,11 +8,6 @@
 export const ISO_DATE_LENGTH = 10;
 
 /**
- * ISO year format length (YYYY)
- */
-export const ISO_YEAR_LENGTH = 4;
-
-/**
  * Maximum number of consecutive lines to attempt combining when parsing trip entries.
  * Based on observed KVV HTML formatting where trip data can span up to 3 lines.
  */

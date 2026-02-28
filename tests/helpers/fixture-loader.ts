@@ -48,24 +48,3 @@ export function loadAllFixtures(): TestFixture[] {
     return loadFixture(articleName);
   });
 }
-
-/**
- * Gets the path to the test-data directory.
- */
-export function getTestDataDir(): string {
-  return TEST_DATA_DIR;
-}
-
-/**
- * Gets the path to the articles directory.
- */
-export function getArticlesDir(): string {
-  return ARTICLES_DIR;
-}
-
-/**
- * Gets the path to the expected directory.
- */
-export function getExpectedDir(): string {
-  return EXPECTED_DIR;
-}

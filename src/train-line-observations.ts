@@ -2,6 +2,7 @@ import { join } from 'node:path';
 import { exists, ensureDirectory, readJsonFile, writeJsonFile } from './utils/fs.js';
 import { normalizeLine, normalizeTrainNumber } from './utils/normalization.js';
 import { getCurrentFahrplanYear } from './fahrplan.js';
+import type { TrainLineDefinition } from './train-line-definitions/types.js';
 
 function getTrainLineDataDir(fahrplanYear?: number): string {
   const year = fahrplanYear ?? getCurrentFahrplanYear();
@@ -45,11 +46,6 @@ export function createTrainLineObservationRecorder(): {
   return { observations, record };
 }
 
-interface LineDefinition {
-  readonly line: string;
-  readonly trainNumbers: string[];
-}
-
 function slugifyLineId(line: string): string {
   return line
     .trim()
@@ -65,13 +61,13 @@ function slugifyLineId(line: string): string {
 async function loadExistingLineDefinition(
   filePath: string,
   line: string,
-): Promise<LineDefinition | null> {
+): Promise<TrainLineDefinition | null> {
   if (!(await exists(filePath))) {
     return { line, trainNumbers: [] };
   }
 
   try {
-    const data = await readJsonFile<LineDefinition>(filePath);
+    const data = await readJsonFile<TrainLineDefinition>(filePath);
     return data || { line, trainNumbers: [] };
   } catch (error) {
     console.warn(`⚠️  Failed to read ${filePath}:`, error);
@@ -146,7 +142,7 @@ export async function updateTrainLineDefinitionsFromObservations(
     }
 
     // Save updated definition
-    const updated: LineDefinition = {
+    const updated: TrainLineDefinition = {
       line,
       trainNumbers: merged,
     };
