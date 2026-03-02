@@ -2494,5 +2494,29 @@
     "toTime": "20:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264409",
     "capturedAt": "2026-02-28T16:21:16.819Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-02",
+    "stand": "2026-03-02T16:22:00.000Z",
+    "trainNumber": "84782",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "00:02",
+    "toStop": "Karlsruhe Rheinbergstraße",
+    "toTime": "00:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264583",
+    "capturedAt": "2026-03-02T16:39:50.683Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-02",
+    "stand": "2026-03-02T16:22:00.000Z",
+    "trainNumber": "84784",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "01:01",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "01:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264583",
+    "capturedAt": "2026-03-02T16:39:50.683Z"
   }
 ]

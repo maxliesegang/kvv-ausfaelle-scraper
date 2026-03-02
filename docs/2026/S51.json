@@ -142,5 +142,41 @@
     "toTime": "00:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264409",
     "capturedAt": "2026-02-28T16:21:16.819Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-02",
+    "stand": "2026-03-02T16:22:00.000Z",
+    "trainNumber": "84934",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "21:56",
+    "toStop": "Germersheim Bf",
+    "toTime": "23:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264591",
+    "capturedAt": "2026-03-02T16:39:50.441Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-02",
+    "stand": "2026-03-02T16:22:00.000Z",
+    "trainNumber": "84945",
+    "fromStop": "Germersheim Bf",
+    "fromTime": "23:30",
+    "toStop": "Söllingen Bf",
+    "toTime": "00:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264591",
+    "capturedAt": "2026-03-02T16:39:50.441Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-02",
+    "stand": "2026-03-02T16:22:00.000Z",
+    "trainNumber": "84943",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "23:37",
+    "toStop": "Söllingen Bf",
+    "toTime": "23:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264591",
+    "capturedAt": "2026-03-02T16:39:50.441Z"
   }
 ]
