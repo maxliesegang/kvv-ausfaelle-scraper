@@ -178,5 +178,29 @@
     "toTime": "23:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264591",
     "capturedAt": "2026-03-02T16:39:50.441Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-05",
+    "stand": "2026-03-05T15:40:00.000Z",
+    "trainNumber": "84924",
+    "fromStop": "Karlsruhe Lameyplatz",
+    "fromTime": "20:17",
+    "toStop": "Germersheim Bahnhof",
+    "toTime": "21:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
+    "capturedAt": "2026-03-05T20:33:22.431Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-05",
+    "stand": "2026-03-05T15:40:00.000Z",
+    "trainNumber": "84939",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "21:50",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "22:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
+    "capturedAt": "2026-03-05T20:33:22.431Z"
   }
 ]

@@ -2518,5 +2518,53 @@
     "toTime": "01:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264583",
     "capturedAt": "2026-03-02T16:39:50.683Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-05",
+    "stand": "2026-03-05T15:40:00.000Z",
+    "trainNumber": "84866",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "00:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "00:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
+    "capturedAt": "2026-03-05T20:33:22.431Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-05",
+    "stand": "2026-03-05T15:40:00.000Z",
+    "trainNumber": "84787",
+    "fromStop": "Knielingen Rheinbergstraße",
+    "fromTime": "00:41",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "01:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
+    "capturedAt": "2026-03-05T20:33:22.431Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-05",
+    "stand": "2026-03-05T15:40:00.000Z",
+    "trainNumber": "84865",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "01:05",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "01:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
+    "capturedAt": "2026-03-05T20:33:22.431Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-05",
+    "stand": "2026-03-05T15:40:00.000Z",
+    "trainNumber": "85090",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "23:30",
+    "toStop": "Knielingen Rheinbergstraße",
+    "toTime": "23:54",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
+    "capturedAt": "2026-03-05T20:33:22.431Z"
   }
 ]
