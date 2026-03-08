@@ -2566,5 +2566,41 @@
     "toTime": "23:54",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264763",
     "capturedAt": "2026-03-05T20:33:22.431Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T02:35:00.000Z",
+    "trainNumber": "84707",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "05:07",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "05:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264863",
+    "capturedAt": "2026-03-08T05:07:17.931Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T02:35:00.000Z",
+    "trainNumber": "84808",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "06:01",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264863",
+    "capturedAt": "2026-03-08T05:07:17.931Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T02:35:00.000Z",
+    "trainNumber": "85055",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:45",
+    "toStop": "Lameyplatz",
+    "toTime": "08:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264863",
+    "capturedAt": "2026-03-08T05:07:17.931Z"
   }
 ]
