@@ -58,5 +58,101 @@
     "toTime": "19:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
     "capturedAt": "2026-01-09T12:36:39.527Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "86017",
+    "fromStop": "Forbach Bf.",
+    "fromTime": "14:17",
+    "toStop": "Bondorf Bf.",
+    "toTime": "15:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "85653",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "14:57",
+    "toStop": "Rastatt Bf.",
+    "toTime": "15:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "86028",
+    "fromStop": "Bondorf Bf.",
+    "fromTime": "16:02",
+    "toStop": "Freudenstadt Bf.",
+    "toTime": "16:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "85650",
+    "fromStop": "Rastatt Bf.",
+    "fromTime": "16:22",
+    "toStop": "KA Tullastraße",
+    "toTime": "17:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "86021",
+    "fromStop": "Freudenstadt Bf.",
+    "fromTime": "17:15",
+    "toStop": "Bondorf Bf.",
+    "toTime": "17:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "85661",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "17:57",
+    "toStop": "Rastatt Bf.",
+    "toTime": "18:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "86032",
+    "fromStop": "Bondorf",
+    "fromTime": "18:02",
+    "toStop": "Freudenstadt Bf.",
+    "toTime": "18:43",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-08",
+    "stand": "2026-03-08T09:56:00.000Z",
+    "trainNumber": "85662",
+    "fromStop": "Rastatt Bf.",
+    "fromTime": "19:22",
+    "toStop": "KA Tullastraße",
+    "toTime": "20:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
+    "capturedAt": "2026-03-08T12:39:27.114Z"
   }
 ]
