@@ -190,5 +190,17 @@
     "toTime": "20:31",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264250",
     "capturedAt": "2026-02-26T20:32:26.297Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-12",
+    "stand": "2026-03-12T14:18:00.000Z",
+    "trainNumber": "20065",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "21:15",
+    "toStop": "Rheinhafen",
+    "toTime": "21:59",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265085",
+    "capturedAt": "2026-03-12T20:29:36.556Z"
   }
 ]
