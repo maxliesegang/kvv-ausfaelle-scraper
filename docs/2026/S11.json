@@ -202,5 +202,41 @@
     "toTime": "21:59",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265085",
     "capturedAt": "2026-03-12T20:29:36.556Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-13",
+    "stand": "2026-03-13T02:52:00.000Z",
+    "trainNumber": "20002",
+    "fromStop": "Hochstetten",
+    "fromTime": "03:42",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "05:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265170",
+    "capturedAt": "2026-03-13T05:11:02.567Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-13",
+    "stand": "2026-03-13T02:52:00.000Z",
+    "trainNumber": "20003",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "05:21",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "06:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265170",
+    "capturedAt": "2026-03-13T05:11:02.567Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-13",
+    "stand": "2026-03-13T02:52:00.000Z",
+    "trainNumber": "10010",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "06:50",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "07:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265170",
+    "capturedAt": "2026-03-13T05:11:02.567Z"
   }
 ]
