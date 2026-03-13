@@ -1042,5 +1042,17 @@
     "toTime": "20:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264400",
     "capturedAt": "2026-02-28T12:37:01.627Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-13",
+    "stand": "2026-03-13T07:35:00.000Z",
+    "trainNumber": "85509",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "08:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "09:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265186",
+    "capturedAt": "2026-03-13T08:34:48.633Z"
   }
 ]
