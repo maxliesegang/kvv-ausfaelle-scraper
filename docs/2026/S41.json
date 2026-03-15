@@ -226,5 +226,53 @@
     "toTime": "15:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
     "capturedAt": "2026-02-28T12:37:01.250Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T12:05:00.000Z",
+    "trainNumber": "85723",
+    "fromStop": "Bad Friedrichshall Bf.",
+    "fromTime": "14:48",
+    "toStop": "Mosbach Bf.",
+    "toTime": "15:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
+    "capturedAt": "2026-03-15T12:42:50.268Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T12:05:00.000Z",
+    "trainNumber": "85768",
+    "fromStop": "Mosbach Bf.",
+    "fromTime": "15:20",
+    "toStop": "Neckarelz Bf.",
+    "toTime": "15:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
+    "capturedAt": "2026-03-15T12:42:50.268Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T12:05:00.000Z",
+    "trainNumber": "85767",
+    "fromStop": "Neckarelz Bf.",
+    "fromTime": "15:34",
+    "toStop": "Mosbach Bf.",
+    "toTime": "15:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
+    "capturedAt": "2026-03-15T12:42:50.268Z"
+  },
+  {
+    "line": "S41",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T12:05:00.000Z",
+    "trainNumber": "85728",
+    "fromStop": "Mosbach Bf.",
+    "fromTime": "15:42",
+    "toStop": "Bad Friedrichshall Bf.",
+    "toTime": "16:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
+    "capturedAt": "2026-03-15T12:42:50.268Z"
   }
 ]
