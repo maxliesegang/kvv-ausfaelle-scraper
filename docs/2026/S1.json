@@ -574,5 +574,53 @@
     "toTime": "22:25",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264250",
     "capturedAt": "2026-02-26T20:32:26.297Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T22:14:00.000Z",
+    "trainNumber": "30002",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "05:31",
+    "toStop": "Bad Herrenalb Bf.",
+    "toTime": "05:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265385",
+    "capturedAt": "2026-03-16T05:47:07.251Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T22:14:00.000Z",
+    "trainNumber": "30003",
+    "fromStop": "Bad Herrenalb Bf.",
+    "fromTime": "06:03",
+    "toStop": "KA Neureut/Kirchfeld",
+    "toTime": "07:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265385",
+    "capturedAt": "2026-03-16T05:47:07.251Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T22:14:00.000Z",
+    "trainNumber": "10018",
+    "fromStop": "KA Neureut/Kirchfeld",
+    "fromTime": "07:28",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "08:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265385",
+    "capturedAt": "2026-03-16T05:47:07.251Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T22:14:00.000Z",
+    "trainNumber": "10032",
+    "fromStop": "KA Neureut/Kirchfeld",
+    "fromTime": "10:13",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "10:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265385",
+    "capturedAt": "2026-03-16T05:47:07.251Z"
   }
 ]

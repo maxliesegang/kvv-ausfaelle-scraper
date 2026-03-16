@@ -238,5 +238,17 @@
     "toTime": "07:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265170",
     "capturedAt": "2026-03-13T05:11:02.567Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-15",
+    "stand": "2026-03-15T22:14:00.000Z",
+    "trainNumber": "20017",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "09:18",
+    "toStop": "KA Neureut/Kirchfeld",
+    "toTime": "10:01",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265385",
+    "capturedAt": "2026-03-16T05:47:07.251Z"
   }
 ]
