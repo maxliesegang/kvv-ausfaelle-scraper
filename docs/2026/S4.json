@@ -1150,5 +1150,41 @@
     "toTime": "19:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265306",
     "capturedAt": "2026-03-15T16:27:28.215Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-16",
+    "stand": "2026-03-16T11:15:00.000Z",
+    "trainNumber": "85521",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "14:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "15:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265433",
+    "capturedAt": "2026-03-16T13:01:59.268Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-16",
+    "stand": "2026-03-16T11:15:00.000Z",
+    "trainNumber": "85530",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "16:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "17:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265433",
+    "capturedAt": "2026-03-16T13:01:59.268Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-16",
+    "stand": "2026-03-16T11:15:00.000Z",
+    "trainNumber": "85459",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "18:15",
+    "toStop": "Eppingen Bf",
+    "toTime": "19:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265433",
+    "capturedAt": "2026-03-16T13:01:59.268Z"
   }
 ]
