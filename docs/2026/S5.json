@@ -2986,5 +2986,29 @@
     "toTime": "11:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265393",
     "capturedAt": "2026-03-16T05:47:07.035Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-19",
+    "stand": "2026-03-19T05:27:00.000Z",
+    "trainNumber": "84729",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "09:11",
+    "toStop": "Berghausen Bahnhof",
+    "toTime": "09:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265610",
+    "capturedAt": "2026-03-19T08:37:17.158Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-19",
+    "stand": "2026-03-19T05:27:00.000Z",
+    "trainNumber": "85934",
+    "fromStop": "Berghausen Bahnhof",
+    "fromTime": "09:53",
+    "toStop": "KA Rheinhafen",
+    "toTime": "10:39",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265610",
+    "capturedAt": "2026-03-19T08:37:17.158Z"
   }
 ]
