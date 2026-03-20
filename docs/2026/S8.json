@@ -154,5 +154,29 @@
     "toTime": "20:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
     "capturedAt": "2026-03-08T12:39:27.114Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T16:16:00.000Z",
+    "trainNumber": "85686",
+    "fromStop": "Freudenstadt Hbf.",
+    "fromTime": "00:15",
+    "toStop": "KA Tullastr.",
+    "toTime": "02:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265828",
+    "capturedAt": "2026-03-20T16:38:11.887Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T16:16:00.000Z",
+    "trainNumber": "85675",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "21:53",
+    "toStop": "Freudenstadt Hbf.",
+    "toTime": "00:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265828",
+    "capturedAt": "2026-03-20T16:38:11.887Z"
   }
 ]
