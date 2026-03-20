@@ -334,5 +334,41 @@
     "toTime": "23:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264274",
     "capturedAt": "2026-02-26T20:32:26.276Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T07:18:00.000Z",
+    "trainNumber": "85573",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "12:17",
+    "toStop": "Achern",
+    "toTime": "13:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265755",
+    "capturedAt": "2026-03-20T08:35:43.416Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T07:18:00.000Z",
+    "trainNumber": "85574",
+    "fromStop": "Achern",
+    "fromTime": "13:30",
+    "toStop": "KA Tullastr.",
+    "toTime": "14:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265755",
+    "capturedAt": "2026-03-20T08:35:43.416Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T07:18:00.000Z",
+    "trainNumber": "85579",
+    "fromStop": "KA Tullastr. - Achern (16:25 Uhr) 85580 Achern",
+    "fromTime": "16:33",
+    "toStop": "KA Tullastr.",
+    "toTime": "17:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265755",
+    "capturedAt": "2026-03-20T08:35:43.416Z"
   }
 ]
