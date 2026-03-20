@@ -3010,5 +3010,101 @@
     "toTime": "10:39",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265610",
     "capturedAt": "2026-03-19T08:37:17.158Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84983",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "12:07",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "12:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84982",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "13:06",
+    "toStop": "KA Tullastr.",
+    "toTime": "13:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84834",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "14:10",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84831",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "15:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "16:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84838",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "15:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84835",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "16:05",
+    "toStop": "KA Tullastr.(16:47 Uhr) 84912 Söllingen Bf.",
+    "toTime": "16:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "84850",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "18:06",
+    "toStop": "Wörth Badepark",
+    "toTime": "18:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:39:00.000Z",
+    "trainNumber": "85919",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "19:05",
+    "toStop": "KA Tullastr.",
+    "toTime": "19:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265771",
+    "capturedAt": "2026-03-20T12:51:39.075Z"
   }
 ]

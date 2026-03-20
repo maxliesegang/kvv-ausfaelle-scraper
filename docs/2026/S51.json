@@ -226,5 +226,53 @@
     "toTime": "13:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265315",
     "capturedAt": "2026-03-15T12:42:50.605Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:42:00.000Z",
+    "trainNumber": "85481",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "14:09",
+    "toStop": "KA Marktplatz",
+    "toTime": "14:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265779",
+    "capturedAt": "2026-03-20T12:51:38.744Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:42:00.000Z",
+    "trainNumber": "84938",
+    "fromStop": "KA Marktplatz",
+    "fromTime": "14:37",
+    "toStop": "Germersheim Bf.",
+    "toTime": "15:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265779",
+    "capturedAt": "2026-03-20T12:51:38.744Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:42:00.000Z",
+    "trainNumber": "84917",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "15:50",
+    "toStop": "Söllingen Bf.",
+    "toTime": "17:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265779",
+    "capturedAt": "2026-03-20T12:51:38.744Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-20",
+    "stand": "2026-03-20T08:42:00.000Z",
+    "trainNumber": "84916",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "17:38",
+    "toStop": "KA Marktplatz U",
+    "toTime": "18:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265779",
+    "capturedAt": "2026-03-20T12:51:38.744Z"
   }
 ]
