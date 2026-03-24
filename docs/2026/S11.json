@@ -250,5 +250,17 @@
     "toTime": "10:01",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265385",
     "capturedAt": "2026-03-16T05:47:07.251Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-24",
+    "stand": "2026-03-24T07:01:00.000Z",
+    "trainNumber": "20044",
+    "fromStop": "Hochstetten",
+    "fromTime": "14:12",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "15:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266101",
+    "capturedAt": "2026-03-24T16:56:26.672Z"
   }
 ]
