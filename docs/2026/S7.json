@@ -442,5 +442,29 @@
     "toTime": "18:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265901",
     "capturedAt": "2026-03-21T12:39:14.167Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-24",
+    "stand": "2026-03-24T07:27:00.000Z",
+    "trainNumber": "85567",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "09:17",
+    "toStop": "Achern Bahnhof",
+    "toTime": "10:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266109",
+    "capturedAt": "2026-03-24T08:46:18.460Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-24",
+    "stand": "2026-03-24T07:27:00.000Z",
+    "trainNumber": "85568",
+    "fromStop": "Achern Bahnhof",
+    "fromTime": "10:33",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "11:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266109",
+    "capturedAt": "2026-03-24T08:46:18.460Z"
   }
 ]
