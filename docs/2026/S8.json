@@ -178,5 +178,17 @@
     "toTime": "00:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265828",
     "capturedAt": "2026-03-20T16:38:11.887Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T07:50:00.000Z",
+    "trainNumber": "85641",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "11:57",
+    "toStop": "Freudenstadt Hbf.",
+    "toTime": "14:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266214",
+    "capturedAt": "2026-03-25T08:43:54.510Z"
   }
 ]

@@ -3411,6 +3411,18 @@
     "line": "S5",
     "date": "2026-03-25",
     "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "85051",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "08:17",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "08:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T08:43:54.920Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
     "trainNumber": "84888",
     "fromStop": "Söllingen Bf",
     "fromTime": "08:38",
@@ -3418,5 +3430,41 @@
     "toTime": "09:05",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
     "capturedAt": "2026-03-25T01:52:21.693Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "85054",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "09:05",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "09:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T08:43:54.920Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "85058",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "12:31",
+    "toStop": "Wörth Badepark",
+    "toTime": "13:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T08:43:54.920Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "84991",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "13:23",
+    "toStop": "Knielingen Rheinbergstr.",
+    "toTime": "13:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T08:43:54.920Z"
   }
 ]
