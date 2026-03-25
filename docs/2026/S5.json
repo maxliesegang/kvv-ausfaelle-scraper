@@ -3447,6 +3447,18 @@
     "line": "S5",
     "date": "2026-03-25",
     "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "84983",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "12:06",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "12:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T12:59:55.180Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
     "trainNumber": "85058",
     "fromStop": "KA Tullastr.",
     "fromTime": "12:31",
@@ -3459,6 +3471,18 @@
     "line": "S5",
     "date": "2026-03-25",
     "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "84982",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "13:06",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T12:59:55.180Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
     "trainNumber": "84991",
     "fromStop": "Wörth Badepark",
     "fromTime": "13:23",
@@ -3466,5 +3490,17 @@
     "toTime": "13:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
     "capturedAt": "2026-03-25T08:43:54.920Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:09:00.000Z",
+    "trainNumber": "85077",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "14:45",
+    "toStop": "KA Tullastr.",
+    "toTime": "15:27",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266169",
+    "capturedAt": "2026-03-25T12:59:55.180Z"
   }
 ]

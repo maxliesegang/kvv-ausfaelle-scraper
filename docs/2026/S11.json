@@ -322,5 +322,53 @@
     "toTime": "14:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266177",
     "capturedAt": "2026-03-25T08:43:54.905Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:22:00.000Z",
+    "trainNumber": "20048",
+    "fromStop": "Hochstetten",
+    "fromTime": "15:12",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "16:45",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266177",
+    "capturedAt": "2026-03-25T12:59:55.150Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:22:00.000Z",
+    "trainNumber": "20049",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "16:51",
+    "toStop": "Hochstetten",
+    "toTime": "18:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266177",
+    "capturedAt": "2026-03-25T12:59:55.150Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:22:00.000Z",
+    "trainNumber": "20064",
+    "fromStop": "Hochstetten",
+    "fromTime": "19:12",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "20:45",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266177",
+    "capturedAt": "2026-03-25T12:59:55.150Z"
+  },
+  {
+    "line": "S11",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:22:00.000Z",
+    "trainNumber": "20065",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "20:51",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "21:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266177",
+    "capturedAt": "2026-03-25T12:59:55.150Z"
   }
 ]
