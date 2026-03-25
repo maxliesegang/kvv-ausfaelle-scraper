@@ -466,5 +466,29 @@
     "toTime": "11:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266109",
     "capturedAt": "2026-03-24T08:46:18.460Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:07:00.000Z",
+    "trainNumber": "85557",
+    "fromStop": "Karlsruhe Tullastraße/Alter Schlachthof",
+    "fromTime": "05:57",
+    "toStop": "Baden Baden Bf",
+    "toTime": "06:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266181",
+    "capturedAt": "2026-03-25T01:52:21.272Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-25",
+    "stand": "2026-03-25T00:07:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Baden Baden Bf",
+    "fromTime": "07:00",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "07:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266181",
+    "capturedAt": "2026-03-25T01:52:21.272Z"
   }
 ]
