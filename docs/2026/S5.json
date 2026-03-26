@@ -3543,6 +3543,18 @@
     "line": "S5",
     "date": "2026-03-26",
     "stand": "2026-03-26T01:16:00.000Z",
+    "trainNumber": "84704",
+    "fromStop": "Wilferdingen Bahnhof",
+    "fromTime": "05:25",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "06:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
+    "capturedAt": "2026-03-26T05:39:26.985Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:16:00.000Z",
     "trainNumber": "84793",
     "fromStop": "Wörth Badepark",
     "fromTime": "05:45",
@@ -3567,6 +3579,30 @@
     "line": "S5",
     "date": "2026-03-26",
     "stand": "2026-03-26T01:16:00.000Z",
+    "trainNumber": "80503",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "06:30",
+    "toStop": "KA-Mühlburger-Tor",
+    "toTime": "06:45",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
+    "capturedAt": "2026-03-26T05:39:26.985Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:16:00.000Z",
+    "trainNumber": "84810",
+    "fromStop": "KA-Mühlburger-Tor",
+    "fromTime": "06:50",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
+    "capturedAt": "2026-03-26T05:39:26.985Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:16:00.000Z",
     "trainNumber": "84710",
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "07:18",
@@ -3579,6 +3615,18 @@
     "line": "S5",
     "date": "2026-03-26",
     "stand": "2026-03-26T01:16:00.000Z",
+    "trainNumber": "84805",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:35",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
+    "capturedAt": "2026-03-26T05:39:26.985Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:16:00.000Z",
     "trainNumber": "84725",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "08:32",
@@ -3586,5 +3634,17 @@
     "toTime": "09:01",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
     "capturedAt": "2026-03-26T01:58:38.808Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:16:00.000Z",
+    "trainNumber": "84820",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "08:48",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "09:34",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
+    "capturedAt": "2026-03-26T05:39:26.985Z"
   }
 ]
