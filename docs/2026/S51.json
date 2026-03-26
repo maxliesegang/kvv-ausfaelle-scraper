@@ -274,5 +274,17 @@
     "toTime": "18:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265779",
     "capturedAt": "2026-03-20T12:51:38.744Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:27:00.000Z",
+    "trainNumber": "84883",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "06:56",
+    "toStop": "KA Tullastraße",
+    "toTime": "08:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266358",
+    "capturedAt": "2026-03-26T01:58:38.571Z"
   }
 ]

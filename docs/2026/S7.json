@@ -514,5 +514,29 @@
     "toTime": "13:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266181",
     "capturedAt": "2026-03-25T08:43:54.894Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:26:00.000Z",
+    "trainNumber": "85557",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "05:53",
+    "toStop": "Baden Baden Bahnhof",
+    "toTime": "06:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266349",
+    "capturedAt": "2026-03-26T01:58:38.820Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-03-26",
+    "stand": "2026-03-26T01:26:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Baden Baden Bahnhof",
+    "fromTime": "07:00",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266349",
+    "capturedAt": "2026-03-26T01:58:38.820Z"
   }
 ]
