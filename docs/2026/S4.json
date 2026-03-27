@@ -1474,5 +1474,65 @@
     "toTime": "14:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266398",
     "capturedAt": "2026-03-26T08:49:00.999Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T07:18:00.000Z",
+    "trainNumber": "85411",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "06:30",
+    "toStop": "Heilbronn Pfühlpark 08:04 Uhr) 85595 KA Albtalbahnhof",
+    "toTime": "06:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266489",
+    "capturedAt": "2026-03-27T08:44:03.587Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T07:18:00.000Z",
+    "trainNumber": "85512",
+    "fromStop": "Eppingen Bf.",
+    "fromTime": "08:07",
+    "toStop": "KA Tullastraße",
+    "toTime": "09:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266489",
+    "capturedAt": "2026-03-27T08:44:03.587Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T07:18:00.000Z",
+    "trainNumber": "85394",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "08:25",
+    "toStop": "Heilbronn Kaufland",
+    "toTime": "08:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266489",
+    "capturedAt": "2026-03-27T08:44:03.587Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T07:18:00.000Z",
+    "trainNumber": "85513",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "10:35",
+    "toStop": "Flehingen Bf. 11:37 Uhr) 85522 Flehingen Bf.",
+    "toTime": "12:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266489",
+    "capturedAt": "2026-03-27T08:44:03.587Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T07:18:00.000Z",
+    "trainNumber": "85480",
+    "fromStop": "Heilbronn Kaufland",
+    "fromTime": "15:46",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "17:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266489",
+    "capturedAt": "2026-03-27T08:44:03.587Z"
   }
 ]
