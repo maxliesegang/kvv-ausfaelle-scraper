@@ -934,5 +934,77 @@
     "toTime": "17:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266374",
     "capturedAt": "2026-03-26T13:04:49.983Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T02:30:00.000Z",
+    "trainNumber": "30010",
+    "fromStop": "Hochstetten Bf.",
+    "fromTime": "07:00",
+    "toStop": "Bad Herrenalb Bf.",
+    "toTime": "08:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
+    "capturedAt": "2026-03-27T20:33:47.415Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T02:30:00.000Z",
+    "trainNumber": "30007",
+    "fromStop": "Marxzell",
+    "fromTime": "07:07",
+    "toStop": "Rheinhafen",
+    "toTime": "08:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
+    "capturedAt": "2026-03-27T20:33:47.415Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T02:30:00.000Z",
+    "trainNumber": "30012",
+    "fromStop": "Hochstetten Bf.",
+    "fromTime": "07:22",
+    "toStop": "Bad Herrenalb Bf.",
+    "toTime": "08:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
+    "capturedAt": "2026-03-27T20:33:47.415Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T02:30:00.000Z",
+    "trainNumber": "30017",
+    "fromStop": "Bad Herrenalb Bf.",
+    "fromTime": "08:43",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "09:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
+    "capturedAt": "2026-03-27T20:33:47.415Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T02:30:00.000Z",
+    "trainNumber": "30019",
+    "fromStop": "Bad Herrenalb Bf.",
+    "fromTime": "09:03",
+    "toStop": "Hochstetten Bf.",
+    "toTime": "10:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
+    "capturedAt": "2026-03-27T20:33:47.415Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-03-27",
+    "stand": "2026-03-27T02:30:00.000Z",
+    "trainNumber": "10038",
+    "fromStop": "Hochstetten Bf.",
+    "fromTime": "11:32",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "12:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
+    "capturedAt": "2026-03-27T20:33:47.415Z"
   }
 ]
