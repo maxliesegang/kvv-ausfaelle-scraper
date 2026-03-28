@@ -3754,5 +3754,41 @@
     "toTime": "19:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266333",
     "capturedAt": "2026-03-26T16:56:16.414Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:46:00.000Z",
+    "trainNumber": "80506",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "03:50",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "04:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266610",
+    "capturedAt": "2026-03-28T05:19:16.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:46:00.000Z",
+    "trainNumber": "84955",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "04:37",
+    "toStop": "Pforzheim",
+    "toTime": "05:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266610",
+    "capturedAt": "2026-03-28T05:19:16.075Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:46:00.000Z",
+    "trainNumber": "84952",
+    "fromStop": "Pforzheim",
+    "fromTime": "07:06",
+    "toStop": "KA Tullastraße",
+    "toTime": "07:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266610",
+    "capturedAt": "2026-03-28T05:19:16.075Z"
   }
 ]

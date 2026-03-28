@@ -190,5 +190,53 @@
     "toTime": "14:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266214",
     "capturedAt": "2026-03-25T08:43:54.510Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:48:00.000Z",
+    "trainNumber": "85607",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "07:15",
+    "toStop": "Bondorf",
+    "toTime": "07:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
+    "capturedAt": "2026-03-28T05:19:15.689Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:48:00.000Z",
+    "trainNumber": "85630",
+    "fromStop": "Bondorf",
+    "fromTime": "08:02",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "08:43",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
+    "capturedAt": "2026-03-28T05:19:15.689Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:48:00.000Z",
+    "trainNumber": "85619",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "09:15",
+    "toStop": "Bondorf",
+    "toTime": "09:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
+    "capturedAt": "2026-03-28T05:19:15.689Z"
+  },
+  {
+    "line": "S8",
+    "date": "2026-03-28",
+    "stand": "2026-03-28T02:48:00.000Z",
+    "trainNumber": "85636",
+    "fromStop": "Bondorf",
+    "fromTime": "10:02",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "10:43",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
+    "capturedAt": "2026-03-28T05:19:15.689Z"
   }
 ]
