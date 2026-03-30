@@ -1546,5 +1546,65 @@
     "toTime": "18:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266708",
     "capturedAt": "2026-03-29T12:45:38.795Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-30",
+    "stand": "2026-03-30T06:59:00.000Z",
+    "trainNumber": "85313",
+    "fromStop": "Eschenau",
+    "fromTime": "08:04",
+    "toStop": "Öhringen-Cappel",
+    "toTime": "08:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266756",
+    "capturedAt": "2026-03-30T09:06:30.452Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-30",
+    "stand": "2026-03-30T06:59:00.000Z",
+    "trainNumber": "85393",
+    "fromStop": "Eppingen Bf.",
+    "fromTime": "08:15",
+    "toStop": "Gemmingen Bf.",
+    "toTime": "08:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266756",
+    "capturedAt": "2026-03-30T09:06:30.452Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-30",
+    "stand": "2026-03-30T06:59:00.000Z",
+    "trainNumber": "85351",
+    "fromStop": "Gemmingen Bf.",
+    "fromTime": "08:25",
+    "toStop": "Heilbronn Kaufland",
+    "toTime": "09:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266756",
+    "capturedAt": "2026-03-30T09:06:30.452Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-30",
+    "stand": "2026-03-30T06:59:00.000Z",
+    "trainNumber": "85324",
+    "fromStop": "Öhringen-Cappel",
+    "fromTime": "08:33",
+    "toStop": "Eschenau",
+    "toTime": "08:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266756",
+    "capturedAt": "2026-03-30T09:06:30.452Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-03-30",
+    "stand": "2026-03-30T06:59:00.000Z",
+    "trainNumber": "80928",
+    "fromStop": "Heilbronn Kaufland",
+    "fromTime": "09:11",
+    "toStop": "Heilbronn Hbf. Vorplatz",
+    "toTime": "09:27",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266756",
+    "capturedAt": "2026-03-30T09:06:30.452Z"
   }
 ]
