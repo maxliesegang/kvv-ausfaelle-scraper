@@ -3970,5 +3970,53 @@
     "toTime": "23:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266610",
     "capturedAt": "2026-03-28T12:44:11.322Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-04-02",
+    "stand": "2026-04-02T15:47:00.000Z",
+    "trainNumber": "84945",
+    "fromStop": "Tullastrasse",
+    "fromTime": "00:37",
+    "toStop": "Durlach Trumberg",
+    "toTime": "00:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267006",
+    "capturedAt": "2026-04-02T16:52:57.768Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-04-02",
+    "stand": "2026-04-02T15:47:00.000Z",
+    "trainNumber": "84868",
+    "fromStop": "Durlach Trumberg",
+    "fromTime": "01:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "02:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267006",
+    "capturedAt": "2026-04-02T16:52:57.768Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-04-02",
+    "stand": "2026-04-02T15:47:00.000Z",
+    "trainNumber": "84867",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "02:20",
+    "toStop": "Durlach Trumberg",
+    "toTime": "03:13",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267006",
+    "capturedAt": "2026-04-02T16:52:57.768Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-04-02",
+    "stand": "2026-04-02T15:47:00.000Z",
+    "trainNumber": "70034",
+    "fromStop": "Durlach Trumberg",
+    "fromTime": "04:05",
+    "toStop": "Tullastrasse",
+    "toTime": "04:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267006",
+    "capturedAt": "2026-04-02T16:52:57.768Z"
   }
 ]
