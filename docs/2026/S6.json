@@ -322,5 +322,29 @@
     "toTime": "23:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266509",
     "capturedAt": "2026-03-27T16:50:18.487Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-04-10",
+    "stand": "2026-04-10T03:21:00.000Z",
+    "trainNumber": "86091",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "06:45",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "07:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267207",
+    "capturedAt": "2026-04-10T05:54:44.417Z"
+  },
+  {
+    "line": "S6",
+    "date": "2026-04-10",
+    "stand": "2026-04-10T03:21:00.000Z",
+    "trainNumber": "85048",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "07:35",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "08:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267207",
+    "capturedAt": "2026-04-10T05:54:44.417Z"
   }
 ]
