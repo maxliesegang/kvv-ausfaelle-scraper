@@ -1606,5 +1606,29 @@
     "toTime": "09:27",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266756",
     "capturedAt": "2026-03-30T09:06:30.452Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-04-17",
+    "stand": "2026-04-17T02:45:00.000Z",
+    "trainNumber": "80005",
+    "fromStop": "Heilbronn Hbf Vorplatz",
+    "fromTime": "04:25",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "04:34",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267385",
+    "capturedAt": "2026-04-17T02:08:23.762Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-04-17",
+    "stand": "2026-04-17T02:45:00.000Z",
+    "trainNumber": "85400",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "04:42",
+    "toStop": "Heilbronn Hbf Vorplatz",
+    "toTime": "04:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267385",
+    "capturedAt": "2026-04-17T02:08:23.762Z"
   }
 ]
