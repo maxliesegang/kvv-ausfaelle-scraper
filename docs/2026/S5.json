@@ -4066,5 +4066,41 @@
     "toTime": "07:08",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267198",
     "capturedAt": "2026-04-10T05:54:44.742Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-18",
+    "stand": "2026-05-18T16:15:00.000Z",
+    "trainNumber": "84782",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "00:02",
+    "toStop": "Rheinbergstraße",
+    "toTime": "00:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267489",
+    "capturedAt": "2026-04-18T16:34:50.896Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-18",
+    "stand": "2026-05-18T16:15:00.000Z",
+    "trainNumber": "84849",
+    "fromStop": "Tullastraße",
+    "fromTime": "21:47",
+    "toStop": "Söllingen Bf",
+    "toTime": "22:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267489",
+    "capturedAt": "2026-04-18T16:34:50.896Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-18",
+    "stand": "2026-05-18T16:15:00.000Z",
+    "trainNumber": "84864",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "22:51",
+    "toStop": "Tullastraße (23:10 Uhr 84943  Tullastraße",
+    "toTime": "23:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267489",
+    "capturedAt": "2026-04-18T16:34:50.896Z"
   }
 ]
