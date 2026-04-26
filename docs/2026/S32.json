@@ -34,5 +34,29 @@
     "toTime": "10:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
     "capturedAt": "2026-04-26T06:03:49.835Z"
+  },
+  {
+    "line": "S32",
+    "date": "2026-04-26",
+    "stand": "2026-04-26T09:35:00.000Z",
+    "trainNumber": "85697",
+    "fromStop": "Ubstadt Ort",
+    "fromTime": "15:40",
+    "toStop": "Bad Herrenalb",
+    "toTime": "16:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
+    "capturedAt": "2026-04-26T08:55:29.057Z"
+  },
+  {
+    "line": "S32",
+    "date": "2026-04-26",
+    "stand": "2026-04-26T09:35:00.000Z",
+    "trainNumber": "85698",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "17:03",
+    "toStop": "Ubstadt Ort",
+    "toTime": "18:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
+    "capturedAt": "2026-04-26T08:55:29.057Z"
   }
 ]
