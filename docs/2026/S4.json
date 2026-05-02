@@ -1690,5 +1690,29 @@
     "toTime": "08:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268003",
     "capturedAt": "2026-04-30T02:34:52.622Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-02",
+    "stand": "2026-05-02T09:41:00.000Z",
+    "trainNumber": "85438",
+    "fromStop": "Bretten",
+    "fromTime": "14:59",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "15:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268030",
+    "capturedAt": "2026-05-02T09:01:22.838Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-02",
+    "stand": "2026-05-02T09:41:00.000Z",
+    "trainNumber": "85525",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "16:35",
+    "toStop": "Bretten",
+    "toTime": "17:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268030",
+    "capturedAt": "2026-05-02T09:01:22.838Z"
   }
 ]

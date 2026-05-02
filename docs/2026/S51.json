@@ -322,5 +322,29 @@
     "toTime": "00:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267813",
     "capturedAt": "2026-04-26T20:34:08.847Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-05-02",
+    "stand": "2026-05-02T09:49:00.000Z",
+    "trainNumber": "84900",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "14:01",
+    "toStop": "Germersheim",
+    "toTime": "15:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268039",
+    "capturedAt": "2026-05-02T09:01:22.805Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-05-02",
+    "stand": "2026-05-02T09:49:00.000Z",
+    "trainNumber": "84915",
+    "fromStop": "Germersheim",
+    "fromTime": "15:50",
+    "toStop": "KA Tullastraße",
+    "toTime": "16:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268039",
+    "capturedAt": "2026-05-02T09:01:22.805Z"
   }
 ]
