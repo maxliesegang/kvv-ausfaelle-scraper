@@ -1006,5 +1006,17 @@
     "toTime": "12:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266471",
     "capturedAt": "2026-03-27T20:33:47.415Z"
+  },
+  {
+    "line": "S1",
+    "date": "2026-05-02",
+    "stand": "2026-05-02T09:53:00.000Z",
+    "trainNumber": "16038",
+    "fromStop": "Hochstetten",
+    "fromTime": "14:32",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "15:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268047",
+    "capturedAt": "2026-05-02T13:00:40.540Z"
   }
 ]
