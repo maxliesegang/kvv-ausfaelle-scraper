@@ -4477,6 +4477,42 @@
   },
   {
     "line": "S5",
+    "date": "2026-05-13",
+    "stand": "2026-05-13T15:26:00.000Z",
+    "trainNumber": "85019",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "18:29",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "19:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268481",
+    "capturedAt": "2026-05-13T17:57:20.150Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-13",
+    "stand": "2026-05-13T15:26:00.000Z",
+    "trainNumber": "85088",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "21:40",
+    "toStop": "Wörth Badepark",
+    "toTime": "23:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268481",
+    "capturedAt": "2026-05-13T17:57:20.150Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-13",
+    "stand": "2026-05-13T15:26:00.000Z",
+    "trainNumber": "84859",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "23:35",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "00:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268481",
+    "capturedAt": "2026-05-13T17:57:20.150Z"
+  },
+  {
+    "line": "S5",
     "date": "2026-05-18",
     "stand": "2026-05-18T16:15:00.000Z",
     "trainNumber": "84782",
