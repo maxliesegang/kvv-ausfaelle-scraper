@@ -574,5 +574,29 @@
     "toTime": "10:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268230",
     "capturedAt": "2026-05-08T05:53:23.939Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-05-15",
+    "stand": "2026-05-15T15:15:00.000Z",
+    "trainNumber": "85597",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "22:17",
+    "toStop": "Rastatt Bf.",
+    "toTime": "22:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268588",
+    "capturedAt": "2026-05-15T17:24:18.066Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-05-15",
+    "stand": "2026-05-15T15:15:00.000Z",
+    "trainNumber": "85590",
+    "fromStop": "Rastatt Bf.",
+    "fromTime": "23:10",
+    "toStop": "KA Tullastr.",
+    "toTime": "23:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268588",
+    "capturedAt": "2026-05-15T17:24:18.066Z"
   }
 ]
