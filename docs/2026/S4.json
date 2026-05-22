@@ -1786,5 +1786,17 @@
     "toTime": "22:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268660",
     "capturedAt": "2026-05-16T16:54:29.294Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-22",
+    "stand": "2026-05-22T07:13:00.000Z",
+    "trainNumber": "85408",
+    "fromStop": "Weinsberg Bf",
+    "fromTime": "06:12",
+    "toStop": "KA Albtal Bf",
+    "toTime": "08:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268884",
+    "capturedAt": "2026-05-22T07:39:50.956Z"
   }
 ]
