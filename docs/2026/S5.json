@@ -4618,5 +4618,17 @@
     "toTime": "23:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267489",
     "capturedAt": "2026-04-18T16:34:50.896Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-23",
+    "stand": "2026-05-23T02:29:00.000Z",
+    "trainNumber": "85506",
+    "fromStop": "Karlsruhe Tullastr.(03:45 Uhr) - Karlsruhe Rheinbergstr. (04:17 Uhr) 84955 Karlsruhe Rheinbergstr.",
+    "fromTime": "04:37",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "05:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269001",
+    "capturedAt": "2026-05-23T02:38:02.814Z"
   }
 ]
