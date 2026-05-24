@@ -1,0 +1,12 @@
+[
+  {
+    "line": "S7",
+    "date": "2026-05-23",
+    "stand": "2026-05-23T21:12:00.000Z",
+    "trainNumber": "85599",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "08:24",
+    "toStop": "Rastatt Bahnhof",
+    "toTime": "08:56"
+  }
+]

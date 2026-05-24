@@ -1,21 +1,14 @@
 import type { Item } from './types.js';
 import { stripHtml } from './parser/text-extraction.js';
-import { buildTripCandidateLines, isValidTripLine } from './parser/trip-parsing.js';
+import { extractTripLines } from './parser/trip-parsing.js';
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
 
 interface KeywordGroup {
   readonly keywords: readonly string[];
   readonly weight: number;
-}
-
-interface TextAnalysis {
-  readonly score: number;
-  readonly keywordMatches: string[];
-  readonly structureMatches: string[];
-  readonly constructionMatches: string[];
-  readonly lineMentioned: boolean;
-  readonly excludeAsConstruction: boolean;
-  readonly reasons: string[];
-  readonly normalizedText: string;
 }
 
 export interface RelevanceResult {
@@ -27,6 +20,10 @@ export interface RelevanceResult {
   readonly tripLineSamples: string[];
   readonly tripLineCount: number;
 }
+
+// ---------------------------------------------------------------------------
+// Keyword definitions
+// ---------------------------------------------------------------------------
 
 const CANCELLATION_KEYWORDS: readonly KeywordGroup[] = [
   {
@@ -73,52 +70,51 @@ const STRUCTURE_MARKERS: readonly KeywordGroup[] = [
   },
 ];
 
-const TRIP_SECTION_HINTS: readonly KeywordGroup[] = [
-  { weight: 1, keywords: ['betroffene fahrten', 'folgende fahrten', 'fahrten betroffen'] },
+// Plain keyword lists for cause detection — not scored, only used for classification.
+
+const CONSTRUCTION_CAUSE_KEYWORDS: readonly string[] = [
+  'wegen bauarbeiten',
+  'bauarbeiten',
+  'baustelle',
+  'baubedingt',
+  'baumassnahme',
+  'baumassnahmen',
+  'gleisbauarbeiten',
+  'gleisarbeiten',
+  'kanalsanierung',
+  'kanalsanierungsarbeiten',
+  'sperrung',
 ];
 
-const CONSTRUCTION_CAUSE_MARKERS: readonly KeywordGroup[] = [
-  {
-    weight: 0,
-    keywords: [
-      'wegen bauarbeiten',
-      'bauarbeiten',
-      'baustelle',
-      'baubedingt',
-      'baumassnahme',
-      'baumassnahmen',
-      'gleisbauarbeiten',
-      'gleisarbeiten',
-      'kanalsanierung',
-      'kanalsanierungsarbeiten',
-      'sperrung',
-    ],
-  },
+// Signals that the disruption stems from personnel/operational shortages rather
+// than construction. "fahrpersonal" covers phrasing like "Engpässen beim Fahrpersonal".
+const PERSONNEL_CAUSE_KEYWORDS: readonly string[] = [
+  'personalmangel',
+  'personalausfall',
+  'krankheitsbedingt',
+  'krankheitsausfall',
+  'betriebsbedingt',
+  'fahrpersonal',
 ];
 
-const PERSONNEL_CAUSE_MARKERS: readonly KeywordGroup[] = [
-  {
-    weight: 0,
-    keywords: [
-      'personalmangel',
-      'personalausfall',
-      'krankheitsbedingt',
-      'krankheitsausfall',
-      'betriebsbedingt',
-    ],
-  },
-];
-
-const LINE_MENTION_PATTERN = /\blinie[n]?\s+[a-z]+\d{1,3}\b/;
+// ---------------------------------------------------------------------------
+// Thresholds
+// ---------------------------------------------------------------------------
 
 const RSS_RELEVANCE_THRESHOLD = 2;
 const DETAIL_RELEVANCE_THRESHOLD = 3;
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+const LINE_MENTION_PATTERN = /\blinie[n]?\s+[a-z]+\d{1,3}\b/;
 
 function normalizeForSearch(text: string): string {
   return text
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[̀-ͯ]/g, '')
     .replace(/ß/g, 'ss')
     .replace(/[^a-z0-9\s-]/g, ' ')
     .replace(/\s+/g, ' ')
@@ -128,79 +124,86 @@ function normalizeForSearch(text: string): string {
 function collectMatches(
   text: string,
   groups: readonly KeywordGroup[],
-): {
-  score: number;
-  matches: string[];
-} {
+): { score: number; matches: string[] } {
   let score = 0;
   const matches = new Set<string>();
-
   for (const group of groups) {
-    const hits = group.keywords.filter((keyword) => text.includes(keyword));
+    const hits = group.keywords.filter((k) => text.includes(k));
     if (hits.length > 0) {
       score += group.weight;
-      hits.forEach((hit) => matches.add(hit));
+      hits.forEach((h) => matches.add(h));
     }
   }
-
   return { score, matches: Array.from(matches) };
 }
 
-function analyzeTextSegments(segments: string[]): TextAnalysis {
+function matchesAny(text: string, keywords: readonly string[]): string[] {
+  return keywords.filter((k) => text.includes(k));
+}
+
+/**
+ * Returns true when the text signals a construction-caused disruption with no
+ * personnel/operational shortage signals. Such notices are not trip cancellations
+ * we want to track.
+ */
+function isConstructionOnlyNotice(text: string): boolean {
+  const constructionHits = matchesAny(text, CONSTRUCTION_CAUSE_KEYWORDS);
+  if (constructionHits.length === 0) return false;
+  const personnelHits = matchesAny(text, PERSONNEL_CAUSE_KEYWORDS);
+  return personnelHits.length === 0;
+}
+
+// ---------------------------------------------------------------------------
+// Core scoring
+// ---------------------------------------------------------------------------
+
+interface TextScore {
+  readonly score: number;
+  readonly keywordMatches: string[];
+  readonly structureMatches: string[];
+  readonly isConstructionOnly: boolean;
+  readonly reasons: string[];
+  readonly normalizedText: string;
+}
+
+function scoreText(segments: string[]): TextScore {
   const normalizedText = normalizeForSearch(segments.join(' '));
-
-  const keywordResult = collectMatches(normalizedText, CANCELLATION_KEYWORDS);
-  const structureResult = collectMatches(normalizedText, STRUCTURE_MARKERS);
-  const constructionResult = collectMatches(normalizedText, CONSTRUCTION_CAUSE_MARKERS);
-  const personnelResult = collectMatches(normalizedText, PERSONNEL_CAUSE_MARKERS);
-
   const reasons: string[] = [];
-  let score = keywordResult.score + structureResult.score;
 
-  if (keywordResult.matches.length > 0) {
-    reasons.push(`keywords: ${keywordResult.matches.join(', ')}`);
-  }
+  const { score: kwScore, matches: keywordMatches } = collectMatches(
+    normalizedText,
+    CANCELLATION_KEYWORDS,
+  );
+  const { score: stScore, matches: structureMatches } = collectMatches(
+    normalizedText,
+    STRUCTURE_MARKERS,
+  );
 
-  if (structureResult.matches.length > 0) {
-    reasons.push(`structure: ${structureResult.matches.join(', ')}`);
-  }
+  let score = kwScore + stScore;
 
-  if (constructionResult.matches.length > 0) {
-    reasons.push(`construction markers: ${constructionResult.matches.join(', ')}`);
-  }
+  if (keywordMatches.length > 0) reasons.push(`keywords: ${keywordMatches.join(', ')}`);
+  if (structureMatches.length > 0) reasons.push(`structure: ${structureMatches.join(', ')}`);
 
-  const lineMentioned = LINE_MENTION_PATTERN.test(normalizedText);
-  if (lineMentioned) {
+  if (LINE_MENTION_PATTERN.test(normalizedText)) {
     score += 1;
     reasons.push('mentions a line identifier');
   }
 
-  const hasCancellationSignal =
-    keywordResult.matches.length > 0 || structureResult.matches.length > 0;
-  const excludeAsConstruction =
-    constructionResult.matches.length > 0 &&
-    hasCancellationSignal &&
-    personnelResult.matches.length === 0;
-
-  if (excludeAsConstruction) {
+  const isConstructionOnly = isConstructionOnlyNotice(normalizedText);
+  if (isConstructionOnly) {
     reasons.push('excluded: construction-related notice without personnel shortage signal');
   }
 
-  return {
-    score,
-    keywordMatches: keywordResult.matches,
-    structureMatches: structureResult.matches,
-    constructionMatches: constructionResult.matches,
-    lineMentioned,
-    excludeAsConstruction,
-    reasons,
-    normalizedText,
-  };
+  return { score, keywordMatches, structureMatches, isConstructionOnly, reasons, normalizedText };
 }
+
+// ---------------------------------------------------------------------------
+// Public API
+// ---------------------------------------------------------------------------
 
 export function analyzeRssItem(item: Item): RelevanceResult {
   const segments = [item.title, item.contentSnippet, item.content].filter(
-    (value): value is string => typeof value === 'string' && value.trim().length > 0,
+    (v): v is string => typeof v === 'string' && v.trim().length > 0,
   );
 
   if (segments.length === 0) {
@@ -215,14 +218,15 @@ export function analyzeRssItem(item: Item): RelevanceResult {
     };
   }
 
-  const analysis = analyzeTextSegments(segments);
+  const { score, isConstructionOnly, reasons, keywordMatches, structureMatches } =
+    scoreText(segments);
 
   return {
-    score: analysis.score,
-    isRelevant: analysis.score >= RSS_RELEVANCE_THRESHOLD && !analysis.excludeAsConstruction,
-    reasons: analysis.reasons,
-    keywordMatches: analysis.keywordMatches,
-    structureMatches: analysis.structureMatches,
+    score,
+    isRelevant: score >= RSS_RELEVANCE_THRESHOLD && !isConstructionOnly,
+    reasons,
+    keywordMatches,
+    structureMatches,
     tripLineSamples: [],
     tripLineCount: 0,
   };
@@ -230,33 +234,30 @@ export function analyzeRssItem(item: Item): RelevanceResult {
 
 export function analyzeDetailPage(html: string): RelevanceResult {
   const text = stripHtml(html);
-  const analysis = analyzeTextSegments([text]);
+  const {
+    score: baseScore,
+    isConstructionOnly,
+    reasons: baseReasons,
+    keywordMatches,
+    structureMatches,
+  } = scoreText([text]);
 
-  const tripCandidates = buildTripCandidateLines(text);
-  const tripLike = tripCandidates.filter(isValidTripLine);
+  const reasons = [...baseReasons];
+  let score = baseScore;
 
-  const detailStructure = collectMatches(analysis.normalizedText, TRIP_SECTION_HINTS);
-  let score = analysis.score + detailStructure.score;
-  const reasons = [...analysis.reasons];
-
-  if (detailStructure.matches.length > 0) {
-    reasons.push(`trip section markers: ${detailStructure.matches.join(', ')}`);
-  }
+  const tripLike = extractTripLines(text);
 
   if (tripLike.length > 0) {
     score += 3;
     reasons.push(`found ${tripLike.length} trip-like lines`);
   }
 
-  const isRelevant =
-    (score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0) && !analysis.excludeAsConstruction;
-
   return {
     score,
-    isRelevant,
+    isRelevant: (score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0) && !isConstructionOnly,
     reasons,
-    keywordMatches: analysis.keywordMatches,
-    structureMatches: [...analysis.structureMatches, ...detailStructure.matches],
+    keywordMatches,
+    structureMatches,
     tripLineSamples: tripLike.slice(0, 3),
     tripLineCount: tripLike.length,
   };
