@@ -1798,5 +1798,29 @@
     "toTime": "08:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268884",
     "capturedAt": "2026-05-22T07:39:50.956Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-24",
+    "stand": "2026-05-24T00:51:00.000Z",
+    "trainNumber": "85407",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "05:15",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "07:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269057",
+    "capturedAt": "2026-05-24T02:49:46.969Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-24",
+    "stand": "2026-05-24T00:51:00.000Z",
+    "trainNumber": "85416",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "07:40",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "09:27",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269057",
+    "capturedAt": "2026-05-24T02:49:46.969Z"
   }
 ]

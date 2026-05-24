@@ -598,5 +598,17 @@
     "toTime": "23:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268588",
     "capturedAt": "2026-05-15T17:24:18.066Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-05-23",
+    "stand": "2026-05-23T23:12:00.000Z",
+    "trainNumber": "85599",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "08:24",
+    "toStop": "Rastatt Bahnhof",
+    "toTime": "08:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269033",
+    "capturedAt": "2026-05-24T02:49:47.304Z"
   }
 ]
