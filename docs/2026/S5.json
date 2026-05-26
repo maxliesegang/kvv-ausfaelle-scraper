@@ -4774,5 +4774,101 @@
     "toTime": "08:20",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269084",
     "capturedAt": "2026-05-26T02:45:57.236Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84838",
+    "fromStop": "Knielingen Rheinbergstrasse",
+    "fromTime": "15:37",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84835",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "16:05",
+    "toStop": "Karlsruhe Rheinhafen(16:28 Uhr) 85924 Karlsruhe Rheinhafen",
+    "toTime": "16:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84773",
+    "fromStop": "Wörth Bahnhof",
+    "fromTime": "17:02",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "17:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84846",
+    "fromStop": "Karlsruhe Rheinhafen",
+    "fromTime": "17:27",
+    "toStop": "Wörth Badepark",
+    "toTime": "17:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84843",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "18:05",
+    "toStop": "Knielingen Rheinbergstrasse",
+    "toTime": "18:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84850",
+    "fromStop": "Knielingen Rheinbergstrasse",
+    "fromTime": "18:37",
+    "toStop": "Wörth Badepark",
+    "toTime": "18:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "85919",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "19:05",
+    "toStop": "Knielingen Rheinbergstrasse",
+    "toTime": "19:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T13:06:00.000Z",
+    "trainNumber": "84854",
+    "fromStop": "Knielingen Rheinbergstrasse",
+    "fromTime": "19:37",
+    "toStop": "Wörth Badepark",
+    "toTime": "19:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269135",
+    "capturedAt": "2026-05-26T14:58:01.578Z"
   }
 ]
