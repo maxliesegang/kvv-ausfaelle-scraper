@@ -4714,5 +4714,65 @@
     "toTime": "09:30",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269025",
     "capturedAt": "2026-05-24T06:55:55.228Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T03:19:00.000Z",
+    "trainNumber": "84961",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:20",
+    "toStop": "KA Rheinhafen",
+    "toTime": "05:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269084",
+    "capturedAt": "2026-05-26T02:45:57.236Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T03:19:00.000Z",
+    "trainNumber": "84802",
+    "fromStop": "KA Rheinhafen",
+    "fromTime": "06:07",
+    "toStop": "Wörth Badepark",
+    "toTime": "06:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269084",
+    "capturedAt": "2026-05-26T02:45:57.236Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T03:19:00.000Z",
+    "trainNumber": "85051",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "06:45",
+    "toStop": "KA Rheinhafen",
+    "toTime": "07:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269084",
+    "capturedAt": "2026-05-26T02:45:57.236Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T03:19:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "KA Rheinhafen",
+    "fromTime": "07:27",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269084",
+    "capturedAt": "2026-05-26T02:45:57.236Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T03:19:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "08:05",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "08:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269084",
+    "capturedAt": "2026-05-26T02:45:57.236Z"
   }
 ]
