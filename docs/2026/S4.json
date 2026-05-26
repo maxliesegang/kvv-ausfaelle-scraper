@@ -1822,5 +1822,29 @@
     "toTime": "09:27",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269057",
     "capturedAt": "2026-05-24T02:49:46.969Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T07:41:00.000Z",
+    "trainNumber": "85313",
+    "fromStop": "Heilbronn Willy-Brandt-Platz",
+    "fromTime": "07:34",
+    "toStop": "Öhringen Cappel",
+    "toTime": "08:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269108",
+    "capturedAt": "2026-05-26T07:40:28.622Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-05-26",
+    "stand": "2026-05-26T07:41:00.000Z",
+    "trainNumber": "85324",
+    "fromStop": "Öhringen Cappel",
+    "fromTime": "08:33",
+    "toStop": "Heilbronn Willy-Brandt-Platz",
+    "toTime": "09:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269108",
+    "capturedAt": "2026-05-26T07:40:28.622Z"
   }
 ]
