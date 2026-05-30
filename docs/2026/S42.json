@@ -22,5 +22,41 @@
     "toTime": "09:48",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262432",
     "capturedAt": "2026-02-02T08:37:51.969Z"
+  },
+  {
+    "line": "S42",
+    "date": "2026-05-30",
+    "stand": "2026-05-30T13:53:00.000Z",
+    "trainNumber": "85842",
+    "fromStop": "Bad Rappenau",
+    "fromTime": "13:33",
+    "toStop": "Heilbronn Bahnhof Vorplatz",
+    "toTime": "14:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
+    "capturedAt": "2026-05-30T13:19:20.308Z"
+  },
+  {
+    "line": "S42",
+    "date": "2026-05-30",
+    "stand": "2026-05-30T13:53:00.000Z",
+    "trainNumber": "85849",
+    "fromStop": "Heilbronn Bahnhof Vorplatz",
+    "fromTime": "14:38",
+    "toStop": "Bad Rappenau",
+    "toTime": "15:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
+    "capturedAt": "2026-05-30T13:19:20.308Z"
+  },
+  {
+    "line": "S42",
+    "date": "2026-05-30",
+    "stand": "2026-05-30T13:53:00.000Z",
+    "trainNumber": "85852",
+    "fromStop": "Bad Rappenau",
+    "fromTime": "15:33",
+    "toStop": "Heilbronn Bahnhof Vorplatz",
+    "toTime": "16:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
+    "capturedAt": "2026-05-30T13:19:20.308Z"
   }
 ]
