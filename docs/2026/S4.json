@@ -1882,5 +1882,53 @@
     "toTime": "04:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269654",
     "capturedAt": "2026-06-07T03:27:22.705Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-07",
+    "stand": "2026-06-07T13:47:00.000Z",
+    "trainNumber": "85519",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "13:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "14:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269662",
+    "capturedAt": "2026-06-07T13:42:57.160Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-07",
+    "stand": "2026-06-07T13:47:00.000Z",
+    "trainNumber": "85528",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "15:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "16:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269662",
+    "capturedAt": "2026-06-07T13:42:57.160Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-07",
+    "stand": "2026-06-07T13:47:00.000Z",
+    "trainNumber": "85527",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "17:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "18:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269662",
+    "capturedAt": "2026-06-07T13:42:57.160Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-07",
+    "stand": "2026-06-07T13:47:00.000Z",
+    "trainNumber": "85536",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "19:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "20:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269662",
+    "capturedAt": "2026-06-07T13:42:57.160Z"
   }
 ]
