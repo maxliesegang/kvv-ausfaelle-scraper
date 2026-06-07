@@ -1870,5 +1870,17 @@
     "toTime": "10:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269334",
     "capturedAt": "2026-06-01T03:35:40.696Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-07",
+    "stand": "2026-06-07T02:30:00.000Z",
+    "trainNumber": "85547",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "03:15",
+    "toStop": "Gölshausen Bf.",
+    "toTime": "04:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269654",
+    "capturedAt": "2026-06-07T03:27:22.705Z"
   }
 ]
