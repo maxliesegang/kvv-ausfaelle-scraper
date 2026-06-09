@@ -4894,5 +4894,29 @@
     "toTime": "21:20",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269732",
     "capturedAt": "2026-06-08T15:40:32.284Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-09",
+    "stand": "2026-06-09T14:55:00.000Z",
+    "trainNumber": "84838",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "15:37",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269859",
+    "capturedAt": "2026-06-09T14:39:32.806Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-09",
+    "stand": "2026-06-09T14:55:00.000Z",
+    "trainNumber": "84835",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "16:05",
+    "toStop": "Rheinhafen",
+    "toTime": "16:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269859",
+    "capturedAt": "2026-06-09T14:39:32.806Z"
   }
 ]
