@@ -4918,5 +4918,65 @@
     "toTime": "16:28",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269859",
     "capturedAt": "2026-06-09T14:39:32.806Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-11",
+    "stand": "2026-06-11T01:26:00.000Z",
+    "trainNumber": "84802",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "05:50",
+    "toStop": "Wörth Badepark",
+    "toTime": "06:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269949",
+    "capturedAt": "2026-06-11T03:31:36.044Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-11",
+    "stand": "2026-06-11T01:26:00.000Z",
+    "trainNumber": "85051",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "06:45",
+    "toStop": "Karlsruhe Rheinhafen",
+    "toTime": "07:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269949",
+    "capturedAt": "2026-06-11T03:31:36.044Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-11",
+    "stand": "2026-06-11T01:26:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "Karlsruhe Rheinhafen",
+    "fromTime": "07:27",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269949",
+    "capturedAt": "2026-06-11T03:31:36.044Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-11",
+    "stand": "2026-06-11T01:26:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "08:05",
+    "toStop": "Knielingen Rheinbergstr.",
+    "toTime": "08:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269949",
+    "capturedAt": "2026-06-11T03:31:36.044Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-11",
+    "stand": "2026-06-11T01:26:00.000Z",
+    "trainNumber": "84735",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "11:02",
+    "toStop": "Söllingen Bf.",
+    "toTime": "11:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269949",
+    "capturedAt": "2026-06-11T03:31:36.044Z"
   }
 ]
