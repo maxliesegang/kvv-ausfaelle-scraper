@@ -370,5 +370,65 @@
     "toTime": "22:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269973",
     "capturedAt": "2026-06-11T18:43:48.683Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-13",
+    "stand": "2026-06-13T10:46:00.000Z",
+    "trainNumber": "84907",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "14:53",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "15:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269993",
+    "capturedAt": "2026-06-13T10:24:13.221Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-13",
+    "stand": "2026-06-13T10:46:00.000Z",
+    "trainNumber": "84908",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "15:46",
+    "toStop": "Germersheim Bahnhof",
+    "toTime": "17:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269993",
+    "capturedAt": "2026-06-13T10:24:13.221Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-13",
+    "stand": "2026-06-13T10:46:00.000Z",
+    "trainNumber": "84923",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "17:50",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "19:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269993",
+    "capturedAt": "2026-06-13T10:24:13.221Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-13",
+    "stand": "2026-06-13T10:46:00.000Z",
+    "trainNumber": "84926",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "19:38",
+    "toStop": "Germersheim Bahnhof",
+    "toTime": "21:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269993",
+    "capturedAt": "2026-06-13T10:24:13.221Z"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-13",
+    "stand": "2026-06-13T10:46:00.000Z",
+    "trainNumber": "84939",
+    "fromStop": "Germersheim Bahnhof",
+    "fromTime": "21:50",
+    "toStop": "Betriebshof Gerwigstr.",
+    "toTime": "23:01",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269993",
+    "capturedAt": "2026-06-13T10:24:13.221Z"
   }
 ]
