@@ -58,5 +58,29 @@
     "toTime": "16:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
     "capturedAt": "2026-05-30T13:19:20.308Z"
+  },
+  {
+    "line": "S42",
+    "date": "2026-06-18",
+    "stand": "2026-06-18T13:56:00.000Z",
+    "trainNumber": "85861",
+    "fromStop": "Schwaigern West",
+    "fromTime": "17:18",
+    "toStop": "Bad Rappenau Bahnhof",
+    "toTime": "18:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270185",
+    "capturedAt": "2026-06-18T14:57:41.721Z"
+  },
+  {
+    "line": "S42",
+    "date": "2026-06-18",
+    "stand": "2026-06-18T13:56:00.000Z",
+    "trainNumber": "85868",
+    "fromStop": "Bad Rappenau Bahnhof",
+    "fromTime": "18:33",
+    "toStop": "Heilbronn Willy-Brandt-Platz",
+    "toTime": "19:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270185",
+    "capturedAt": "2026-06-18T14:57:41.721Z"
   }
 ]

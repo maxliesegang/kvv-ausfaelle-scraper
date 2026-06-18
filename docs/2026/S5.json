@@ -5002,5 +5002,53 @@
     "toTime": "05:05",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269981",
     "capturedAt": "2026-06-13T02:56:11.047Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-18",
+    "stand": "2026-06-18T11:23:00.000Z",
+    "trainNumber": "85580",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "17:25",
+    "toStop": "Söllingen Bf",
+    "toTime": "18:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270149",
+    "capturedAt": "2026-06-18T14:57:41.679Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-18",
+    "stand": "2026-06-18T11:23:00.000Z",
+    "trainNumber": "84770",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "18:18",
+    "toStop": "KA Albtal Bf",
+    "toTime": "18:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270149",
+    "capturedAt": "2026-06-18T14:57:41.679Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-18",
+    "stand": "2026-06-18T11:23:00.000Z",
+    "trainNumber": "84850",
+    "fromStop": "KA Rheinberg Str.",
+    "fromTime": "18:37",
+    "toStop": "Wörth Badepark",
+    "toTime": "18:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270149",
+    "capturedAt": "2026-06-18T14:57:41.679Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-18",
+    "stand": "2026-06-18T11:23:00.000Z",
+    "trainNumber": "85919",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "19:05",
+    "toStop": "KA Rheinberg Str.",
+    "toTime": "19:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270149",
+    "capturedAt": "2026-06-18T14:57:41.679Z"
   }
 ]
