@@ -682,5 +682,17 @@
     "toTime": "20:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270233",
     "capturedAt": "2026-06-18T18:23:10.600Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-19",
+    "stand": "2026-06-19T19:12:00.000Z",
+    "trainNumber": "85591",
+    "fromStop": "Ka Tullastraße",
+    "fromTime": "20:17",
+    "toStop": "Baden-Baden Bf.",
+    "toTime": "21:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270410",
+    "capturedAt": "2026-06-19T21:05:39.002Z"
   }
 ]
