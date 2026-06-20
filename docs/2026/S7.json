@@ -694,5 +694,101 @@
     "toTime": "21:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270410",
     "capturedAt": "2026-06-19T21:05:39.002Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85572",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "13:25",
+    "toStop": "Söllingen Bf",
+    "toTime": "14:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85577",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "14:35",
+    "toStop": "Achern",
+    "toTime": "15:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85579",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "14:56",
+    "toStop": "Albtalbahnhof",
+    "toTime": "15:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85576",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "15:25",
+    "toStop": "Söllingen Bf",
+    "toTime": "16:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85578",
+    "fromStop": "Achern",
+    "fromTime": "15:33",
+    "toStop": "Albtalbahnhof",
+    "toTime": "16:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85581",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "16:35",
+    "toStop": "Achern",
+    "toTime": "17:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85583",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "16:56",
+    "toStop": "Albtalbahnhof",
+    "toTime": "17:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-20",
+    "stand": "2026-06-20T11:11:00.000Z",
+    "trainNumber": "85582",
+    "fromStop": "Achern",
+    "fromTime": "17:33",
+    "toStop": "Albtalbahnhof",
+    "toTime": "18:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270469",
+    "capturedAt": "2026-06-20T13:51:34.485Z"
   }
 ]
