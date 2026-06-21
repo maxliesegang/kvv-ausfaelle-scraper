@@ -5170,5 +5170,65 @@
     "toTime": "23:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270386",
     "capturedAt": "2026-06-19T17:51:43.966Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-21",
+    "stand": "2026-06-21T12:29:00.000Z",
+    "trainNumber": "84989",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "13:06",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "13:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270562",
+    "capturedAt": "2026-06-21T13:59:47.253Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-21",
+    "stand": "2026-06-21T12:29:00.000Z",
+    "trainNumber": "85060",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "13:30",
+    "toStop": "Wörth Badepark",
+    "toTime": "14:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270562",
+    "capturedAt": "2026-06-21T13:59:47.253Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-21",
+    "stand": "2026-06-21T12:29:00.000Z",
+    "trainNumber": "84988",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "14:06",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "14:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270562",
+    "capturedAt": "2026-06-21T13:59:47.253Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-21",
+    "stand": "2026-06-21T12:29:00.000Z",
+    "trainNumber": "85077",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "14:45",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "16:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270562",
+    "capturedAt": "2026-06-21T13:59:47.253Z"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-21",
+    "stand": "2026-06-21T12:29:00.000Z",
+    "trainNumber": "85074",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "16:46",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "17:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270562",
+    "capturedAt": "2026-06-21T13:59:47.253Z"
   }
 ]
