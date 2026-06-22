@@ -2098,5 +2098,41 @@
     "toTime": "22:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270477",
     "capturedAt": "2026-06-20T10:29:03.617Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-22",
+    "stand": "2026-06-22T05:28:00.000Z",
+    "trainNumber": "85409",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "05:35",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "07:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270595",
+    "capturedAt": "2026-06-22T09:44:52.652Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-22",
+    "stand": "2026-06-22T05:28:00.000Z",
+    "trainNumber": "80000",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "07:46",
+    "toStop": "Heilbronn Willy-Brandt-Platz",
+    "toTime": "07:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270595",
+    "capturedAt": "2026-06-22T09:44:52.652Z"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-22",
+    "stand": "2026-06-22T05:28:00.000Z",
+    "trainNumber": "85418",
+    "fromStop": "Heilbronn Willy-Brand-Platz",
+    "fromTime": "8:50",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "10:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270595",
+    "capturedAt": "2026-06-22T09:44:52.652Z"
   }
 ]
