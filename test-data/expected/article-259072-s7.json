@@ -7,7 +7,8 @@
     "fromStop": "Albtalbahnhof",
     "fromTime": "18:24",
     "toStop": "Tullastraße",
-    "toTime": "18:44"
+    "toTime": "18:44",
+    "cause": "personnel"
   },
   {
     "line": "S7",
@@ -17,7 +18,8 @@
     "fromStop": "Tullastraße",
     "fromTime": "19:13",
     "toStop": "Achern",
-    "toTime": "20:25"
+    "toTime": "20:25",
+    "cause": "personnel"
   },
   {
     "line": "S7",
@@ -27,6 +29,7 @@
     "fromStop": "Achern",
     "fromTime": "20:50",
     "toStop": "Karlsruhe Hauptbahnhof",
-    "toTime": "21:47"
+    "toTime": "21:47",
+    "cause": "personnel"
   }
 ]

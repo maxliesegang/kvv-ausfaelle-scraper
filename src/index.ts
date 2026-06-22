@@ -1,6 +1,6 @@
 import { DATA_DIR } from './config.js';
 import { saveCancellations } from './storage.js';
-import { generateSiteIndices } from './siteIndex.js';
+import { generateSiteIndices } from './site-index.js';
 import { fetchRelevantItems, collectTrips, type CollectTripsResult } from './workflow.js';
 
 /**

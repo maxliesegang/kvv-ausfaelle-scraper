@@ -7,7 +7,8 @@
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "05:21",
     "toStop": "Söllingen Bahnhof",
-    "toTime": "05:55"
+    "toTime": "05:55",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -17,7 +18,8 @@
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "06:01",
     "toStop": "Wörth Badepark",
-    "toTime": "07:05"
+    "toTime": "07:05",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -27,7 +29,8 @@
     "fromStop": "Wörth Bahnhof",
     "fromTime": "07:45",
     "toStop": "Karlsruhe Albtalbahnhof",
-    "toTime": "08:10"
+    "toTime": "08:10",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -37,7 +40,8 @@
     "fromStop": "Karlsruhe Tullastr.",
     "fromTime": "04:15",
     "toStop": "Wörth Badepark",
-    "toTime": "05:05"
+    "toTime": "05:05",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -47,7 +51,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "05:20",
     "toStop": "Pforzheim Bahnhof",
-    "toTime": "06:48"
+    "toTime": "06:48",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -57,7 +62,8 @@
     "fromStop": "Pforzheim Bahnhof",
     "fromTime": "06:57",
     "toStop": "Bad Wildbad Kurpark",
-    "toTime": "07:32"
+    "toTime": "07:32",
+    "cause": "personnel"
   },
   {
     "line": "S6",
@@ -67,7 +73,8 @@
     "fromStop": "Bad Wildbad Kurpark",
     "fromTime": "07:47",
     "toStop": "Pforzheim Bahnhof",
-    "toTime": "08:22"
+    "toTime": "08:22",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -77,6 +84,7 @@
     "fromStop": "Pforzheim Bahnhof",
     "fromTime": "08:46",
     "toStop": "Karlsruhe Tullastr.",
-    "toTime": "09:30"
+    "toTime": "09:30",
+    "cause": "personnel"
   }
 ]

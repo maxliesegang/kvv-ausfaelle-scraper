@@ -7,6 +7,7 @@
     "fromStop": "Karlsruhe Rheinhafen",
     "fromTime": "15:25",
     "toStop": "Ittersbach Rathaus",
-    "toTime": "16:29"
+    "toTime": "16:29",
+    "cause": "personnel"
   }
 ]

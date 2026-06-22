@@ -77,30 +77,25 @@ export interface StandInfo {
  * @param text - Plain text content to search
  * @returns Status info with ISO timestamp and date, or current time if not found
  */
+/**
+ * "Stand" timestamp formats, tried in order. The alternative format omits seconds,
+ * so each entry normalizes its captured time to HH:MM:SS before parsing.
+ */
+const STAND_FORMATS: readonly { pattern: RegExp; toTime: (time: string) => string }[] = [
+  // "Nach aktuellem Stand DD.MM.YYYY HH:MM:SS"
+  { pattern: PATTERNS.STAND, toTime: (time) => time },
+  // "DD.MM.YYYY, HH:MM Uhr" — seconds absent, default to :00
+  { pattern: PATTERNS.STAND_ALT, toTime: (time) => `${time}:00` },
+];
+
 export function extractStand(text: string): StandInfo {
-  // Try primary format: "Nach aktuellem Stand DD.MM.YYYY HH:MM:SS"
-  let match = text.match(PATTERNS.STAND);
-
-  if (match) {
-    const dateStr = match[1];
-    const timeStr = match[2];
+  for (const { pattern, toTime } of STAND_FORMATS) {
+    const match = text.match(pattern);
+    const dateStr = match?.[1];
+    const timeStr = match?.[2];
     if (dateStr && timeStr) {
-      const standIso = parseGermanDateTime(dateStr, timeStr);
-      const dateForTrips = standIso.slice(0, ISO_DATE_LENGTH);
-      return { standIso, dateForTrips };
-    }
-  }
-
-  // Try alternative format: "DD.MM.YYYY, HH:MM Uhr"
-  match = text.match(PATTERNS.STAND_ALT);
-  if (match) {
-    const dateStr = match[1];
-    const timeStr = match[2];
-    if (dateStr && timeStr) {
-      // Add seconds since alternative format doesn't include them
-      const standIso = parseGermanDateTime(dateStr, `${timeStr}:00`);
-      const dateForTrips = standIso.slice(0, ISO_DATE_LENGTH);
-      return { standIso, dateForTrips };
+      const standIso = parseGermanDateTime(dateStr, toTime(timeStr));
+      return { standIso, dateForTrips: standIso.slice(0, ISO_DATE_LENGTH) };
     }
   }
 

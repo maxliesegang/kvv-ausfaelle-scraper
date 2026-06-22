@@ -10,6 +10,8 @@
  */
 
 import type { Cancellation } from '../types.js';
+import { classifyCause } from '../cause.js';
+import { TRIP_TIME_PAIR_PATTERN } from './patterns.js';
 import { stripHtml, extractLine, extractStand } from './text-extraction.js';
 import {
   extractMentionedLines,
@@ -52,6 +54,7 @@ export function parseDetailPage(
   const lineMentionCount = mentionedLines.length;
   const { standIso, dateForTrips } = extractStand(text);
   const capturedAt = new Date().toISOString();
+  const cause = classifyCause(text);
 
   const metadata = {
     line,
@@ -60,6 +63,7 @@ export function parseDetailPage(
     stand: standIso,
     sourceUrl: url,
     capturedAt,
+    cause,
     lineMentionCount,
     ...(options?.onTrainLineObserved ? { onTrainLineObserved: options.onTrainLineObserved } : {}),
   };
@@ -68,12 +72,17 @@ export function parseDetailPage(
   const tripLines = extractTripLines(text);
   const trips: Cancellation[] = [];
   const unmappedTrainNumbers = new Set<string>();
+  const unparsedTripLikeLines: string[] = [];
 
   for (const tripLine of tripLines) {
     try {
       const trip = parseTripLine(tripLine, metadata);
       if (trip) {
         trips.push(trip);
+      } else if (TRIP_TIME_PAIR_PATTERN.test(tripLine)) {
+        // Looks like a trip (two times) but matched no known format — keep it visible
+        // so a varying human-written row is not silently dropped.
+        unparsedTripLikeLines.push(tripLine);
       }
     } catch (error) {
       if (error instanceof MultiLineMappingError) {
@@ -82,6 +91,13 @@ export function parseDetailPage(
       }
       throw error;
     }
+  }
+
+  if (unparsedTripLikeLines.length > 0) {
+    console.warn(
+      `  -> ${unparsedTripLikeLines.length} trip-like line(s) in ${url} matched no parser format:`,
+      unparsedTripLikeLines.slice(0, 5),
+    );
   }
 
   if (unmappedTrainNumbers.size > 0) {

@@ -7,7 +7,8 @@
     "fromStop": "Pforzheim Bf",
     "fromTime": "12:46",
     "toStop": "Wörth Badepark",
-    "toTime": "14:15"
+    "toTime": "14:15",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -17,7 +18,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "14:45",
     "toStop": "Pforzheim Bf",
-    "toTime": "16:10"
+    "toTime": "16:10",
+    "cause": "personnel"
   },
   {
     "line": "S6",
@@ -27,7 +29,8 @@
     "fromStop": "Pforzheim Bf",
     "fromTime": "18:17",
     "toStop": "Bad Wildbad Kurpark",
-    "toTime": "18:52"
+    "toTime": "18:52",
+    "cause": "personnel"
   },
   {
     "line": "S6",
@@ -37,7 +40,8 @@
     "fromStop": "Bad Wildbad Kurpark",
     "fromTime": "19:05",
     "toStop": "Pforzheim Bf",
-    "toTime": "19:40"
+    "toTime": "19:40",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -47,7 +51,8 @@
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "14:52",
     "toStop": "Sollingen Bf",
-    "toTime": "15:37"
+    "toTime": "15:37",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -57,7 +62,8 @@
     "fromStop": "Söllingen Bf",
     "fromTime": "15:51",
     "toStop": "Wörth Badepark",
-    "toTime": "16:53"
+    "toTime": "16:53",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -67,7 +73,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "17:05",
     "toStop": "Söllingen Bf",
-    "toTime": "18:06"
+    "toTime": "18:06",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -77,6 +84,7 @@
     "fromStop": "Söllingen Bf",
     "fromTime": "18:18",
     "toStop": "KA Lameyplatz",
-    "toTime": "18:58"
+    "toTime": "18:58",
+    "cause": "personnel"
   }
 ]

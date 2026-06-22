@@ -98,3 +98,10 @@ export const LINE_MENTION_SECTION_PATTERN = /Linien?\s+([^.\n]+)/gi;
  * Matches: Letter(s) followed by 1-3 digits (e.g., S1, S11, STR1).
  */
 export const LINE_IDENTIFIER_PATTERN = /\b[A-Za-z]+\d{1,3}\b/g;
+
+/**
+ * Heuristic for "this line looks like a trip listing": two HH:MM times on one line
+ * (departure + arrival). Used to detect trip-like content the parser failed to
+ * structure, so it can be surfaced as a warning instead of being silently dropped.
+ */
+export const TRIP_TIME_PAIR_PATTERN = /\d{1,2}:\d{2}.*\d{1,2}:\d{2}/;

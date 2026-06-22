@@ -7,7 +7,8 @@
     "fromStop": "Heilbronn Hbf",
     "fromTime": "15:34",
     "toStop": "Cappel",
-    "toTime": "16:20"
+    "toTime": "16:20",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -17,7 +18,8 @@
     "fromStop": "Cappel",
     "fromTime": "16:33",
     "toStop": "Heilbronn Hbf",
-    "toTime": "17:20"
+    "toTime": "17:20",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -27,7 +29,8 @@
     "fromStop": "Heilbronn Hbf",
     "fromTime": "17:34",
     "toStop": "Cappel",
-    "toTime": "18:20"
+    "toTime": "18:20",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -37,7 +40,8 @@
     "fromStop": "Cappel",
     "fromTime": "18:33",
     "toStop": "Schwaigern West",
-    "toTime": "19:40"
+    "toTime": "19:40",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -47,7 +51,8 @@
     "fromStop": "Schwaigern West",
     "fromTime": "20:16",
     "toStop": "Heilbronn Hbf",
-    "toTime": "20:34"
+    "toTime": "20:34",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -57,7 +62,8 @@
     "fromStop": "Heilbronn Hbf",
     "fromTime": "21:20",
     "toStop": "Schwaigern West",
-    "toTime": "21:40"
+    "toTime": "21:40",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -67,7 +73,8 @@
     "fromStop": "Schwaigern West",
     "fromTime": "22:14",
     "toStop": "Heilbronn Hbf",
-    "toTime": "22:40"
+    "toTime": "22:40",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -77,7 +84,8 @@
     "fromStop": "Heilbronn Hbf",
     "fromTime": "23:15",
     "toStop": "Cappel",
-    "toTime": "23:57"
+    "toTime": "23:57",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -87,7 +95,8 @@
     "fromStop": "Albtalbahnhof",
     "fromTime": "23:15",
     "toStop": "Pfühlpark",
-    "toTime": "01:18"
+    "toTime": "01:18",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -97,7 +106,8 @@
     "fromStop": "Cappel",
     "fromTime": "00:30",
     "toStop": "Heilbronn Hbf",
-    "toTime": "01:17"
+    "toTime": "01:17",
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -107,6 +117,7 @@
     "fromStop": "Pfühlpark",
     "fromTime": "01:25",
     "toStop": "Albtalbahnhof",
-    "toTime": "03:23"
+    "toTime": "03:23",
+    "cause": "personnel"
   }
 ]

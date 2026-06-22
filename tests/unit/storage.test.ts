@@ -18,6 +18,7 @@ function createCancellation(overrides: Partial<Cancellation> = {}): Cancellation
     toTime: '09:00',
     sourceUrl: 'test://article',
     capturedAt: '2024-12-16T12:05:00.000Z',
+    cause: 'personnel',
     ...overrides,
   };
 }
@@ -73,6 +74,33 @@ describe('Storage', () => {
       const secondBucket = await readJsonFile<Cancellation[]>(join(tempDir, '2026', 'S2.json'));
       assert.strictEqual(secondBucket.length, 1);
       assert.strictEqual(secondBucket[0]?.trainNumber, '20001');
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  it('should stamp legacy records that have no cause field as unknown', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+
+    try {
+      console.log = () => undefined;
+
+      // A record written before cause classification existed (no `cause` field).
+      const { cause: _omitted, ...legacyRecord } = createCancellation({ trainNumber: '10009' });
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify([legacyRecord], null, 2));
+
+      // Saving an unrelated trip triggers a load+merge+write of the existing bucket.
+      await saveCancellations(tempDir, [
+        createCancellation({ trainNumber: '10010', fromTime: '07:30', toTime: '08:30' }),
+      ]);
+
+      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      const legacy = storedTrips.find((trip) => trip.trainNumber === '10009');
+      assert.strictEqual(legacy?.cause, 'unknown');
     } finally {
       console.log = originalConsoleLog;
       await rm(tempDir, { recursive: true, force: true });

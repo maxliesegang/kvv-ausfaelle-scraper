@@ -7,7 +7,8 @@
     "fromStop": "Ettlingen Stadt",
     "fromTime": "12:08",
     "toStop": "Neureut Kirchfeld",
-    "toTime": "12:51"
+    "toTime": "12:51",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -17,7 +18,8 @@
     "fromStop": "Ettlingen Stadt",
     "fromTime": "12:11",
     "toStop": "Bad-Herrenalb",
-    "toTime": "12:33"
+    "toTime": "12:33",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -27,7 +29,8 @@
     "fromStop": "Bad-Herrenalb",
     "fromTime": "12:43",
     "toStop": "Hochstetten",
-    "toTime": "14:15"
+    "toTime": "14:15",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -37,7 +40,8 @@
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "13:05",
     "toStop": "Ittersbach Rathaus",
-    "toTime": "14:15"
+    "toTime": "14:15",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -47,7 +51,8 @@
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "14:21",
     "toStop": "Ettlingen Albgaubad",
-    "toTime": "14:44"
+    "toTime": "14:44",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -57,7 +62,8 @@
     "fromStop": "Ettlingen Stadt",
     "fromTime": "14:28",
     "toStop": "Neureut Kirchfeld",
-    "toTime": "15:11"
+    "toTime": "15:11",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -67,7 +73,8 @@
     "fromStop": "Ettlingen Stadt",
     "fromTime": "15:21",
     "toStop": "Ittersbach Rathaus",
-    "toTime": "15:45"
+    "toTime": "15:45",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -77,7 +84,8 @@
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "15:25",
     "toStop": "Bad-Herrenalb",
-    "toTime": "16:33"
+    "toTime": "16:33",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -87,7 +95,8 @@
     "fromStop": "Ettlingnen Albgaubad",
     "fromTime": "15:34",
     "toStop": "Hochstetten",
-    "toTime": "16:47"
+    "toTime": "16:47",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -97,7 +106,8 @@
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "15:51",
     "toStop": "Ettlingen Stadt",
-    "toTime": "16:15"
+    "toTime": "16:15",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -107,7 +117,8 @@
     "fromStop": "Bad-Herrenalb",
     "fromTime": "16:43",
     "toStop": "Hochstetten",
-    "toTime": "18:15"
+    "toTime": "18:15",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -117,7 +128,8 @@
     "fromStop": "Hochstetten",
     "fromTime": "16:52",
     "toStop": "Ettlingen Albgaubad",
-    "toTime": "18:02"
+    "toTime": "18:02",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -127,7 +139,8 @@
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "17:54",
     "toStop": "Hochstetten",
-    "toTime": "19:07"
+    "toTime": "19:07",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -137,7 +150,8 @@
     "fromStop": "Hochstetten",
     "fromTime": "18:52",
     "toStop": "Ettlingen Albgaubad",
-    "toTime": "20:02"
+    "toTime": "20:02",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -147,7 +161,8 @@
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "19:04",
     "toStop": "Neureut Kirchfeld",
-    "toTime": "19:51"
+    "toTime": "19:51",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -157,7 +172,8 @@
     "fromStop": "Hochstetten",
     "fromTime": "19:12",
     "toStop": "Ittersbach Rathaus",
-    "toTime": "20:45"
+    "toTime": "20:45",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -167,7 +183,8 @@
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "20:05",
     "toStop": "Ittersbach Rathaus",
-    "toTime": "21:15"
+    "toTime": "21:15",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -177,7 +194,8 @@
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "20:51",
     "toStop": "Karlsruhe Rheinhafen",
-    "toTime": "21:55"
+    "toTime": "21:55",
+    "cause": "personnel"
   },
   {
     "line": "S11",
@@ -187,6 +205,7 @@
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "21:21",
     "toStop": "Ettlingen Stadt",
-    "toTime": "21:45"
+    "toTime": "21:45",
+    "cause": "personnel"
   }
 ]

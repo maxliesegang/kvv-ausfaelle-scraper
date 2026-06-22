@@ -1,10 +1,11 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { analyzeDetailPage, analyzeRssItem } from '../../src/relevance.js';
+import { classifyCause } from '../../src/cause.js';
 import { loadFixture } from '../helpers/fixture-loader.js';
 
-describe('Relevance - Construction False Positives', () => {
-  it('should exclude RSS items that are cancellations due to construction work', () => {
+describe('Relevance - Construction Notices', () => {
+  it('should now keep RSS items that are cancellations due to construction work', () => {
     const result = analyzeRssItem({
       title: 'Linie 116 - Gaistal: Fahrtausfall wegen Bauarbeiten',
       contentSnippet: 'Fahrtausfall wegen Bauarbeiten',
@@ -12,14 +13,13 @@ describe('Relevance - Construction False Positives', () => {
       link: 'test://construction-rss',
     });
 
-    assert.strictEqual(result.isRelevant, false);
-    assert.match(
-      result.reasons.join(' '),
-      /construction-related notice without personnel shortage signal/i,
-    );
+    // Cause is no longer used for filtering: construction cancellations are relevant.
+    assert.strictEqual(result.isRelevant, true);
+    // The intent of the old veto is now expressed via cause classification instead.
+    assert.strictEqual(classifyCause('Fahrtausfall wegen Bauarbeiten'), 'construction');
   });
 
-  it('should exclude detail pages where cancellation is caused by construction', () => {
+  it('should now keep detail pages where cancellation is caused by construction', () => {
     const html = `
       <html>
         <body>
@@ -35,11 +35,8 @@ describe('Relevance - Construction False Positives', () => {
     `;
 
     const result = analyzeDetailPage(html);
-    assert.strictEqual(result.isRelevant, false);
-    assert.match(
-      result.reasons.join(' '),
-      /construction-related notice without personnel shortage signal/i,
-    );
+    assert.strictEqual(result.isRelevant, true);
+    assert.strictEqual(classifyCause(html), 'construction');
   });
 
   it('should keep personnel-related cancellations relevant', () => {

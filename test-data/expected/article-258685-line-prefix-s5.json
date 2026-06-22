@@ -7,7 +7,8 @@
     "fromStop": "Rheinbergstraße",
     "fromTime": "05:02",
     "toStop": "Pforzheim",
-    "toTime": "06:11"
+    "toTime": "06:11",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -17,7 +18,8 @@
     "fromStop": "Pforzheim",
     "fromTime": "06:25",
     "toStop": "Wörth Badepark",
-    "toTime": "07:52"
+    "toTime": "07:52",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -27,7 +29,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "07:52",
     "toStop": "Söllingen Bahnhof",
-    "toTime": "09:09"
+    "toTime": "09:09",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -37,6 +40,7 @@
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "09:18",
     "toStop": "Rheinbergstraße",
-    "toTime": "09:58"
+    "toTime": "09:58",
+    "cause": "personnel"
   }
 ]

@@ -7,7 +7,8 @@
     "fromStop": "Tullastraße / Alter Schlachthof",
     "fromTime": "04:10",
     "toStop": "Wörth Badepark",
-    "toTime": "04:51"
+    "toTime": "04:51",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -17,7 +18,8 @@
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "05:02",
     "toStop": "Söllingen Bahnhof",
-    "toTime": "05:38"
+    "toTime": "05:38",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -27,7 +29,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "05:05",
     "toStop": "Söllingen Bahnhof",
-    "toTime": "06:07"
+    "toTime": "06:07",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -37,7 +40,8 @@
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "05:58",
     "toStop": "Wörth Badepark",
-    "toTime": "07:05"
+    "toTime": "07:05",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -47,7 +51,8 @@
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "06:18",
     "toStop": "Wörth Badepark",
-    "toTime": "07:22"
+    "toTime": "07:22",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -57,7 +62,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "07:15",
     "toStop": "Söllingen Bahnhof",
-    "toTime": "08:17"
+    "toTime": "08:17",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -67,7 +73,8 @@
     "fromStop": "Wörth Badepark",
     "fromTime": "07:35",
     "toStop": "Söllingen Bahnhof",
-    "toTime": "08:37"
+    "toTime": "08:37",
+    "cause": "personnel"
   },
   {
     "line": "S5",
@@ -77,6 +84,7 @@
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "08:48",
     "toStop": "Karlsruhe Weinweg",
-    "toTime": "09:09"
+    "toTime": "09:09",
+    "cause": "personnel"
   }
 ]

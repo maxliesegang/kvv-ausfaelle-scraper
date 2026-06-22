@@ -7,7 +7,8 @@
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "08:38",
     "toStop": "Germersheim Bahnhof",
-    "toTime": "10:07"
+    "toTime": "10:07",
+    "cause": "personnel"
   },
   {
     "line": "S51",
@@ -17,6 +18,7 @@
     "fromStop": "Germersheim Bahnhof",
     "fromTime": "10:50",
     "toStop": "Karlsruhe Rheinbergstraße",
-    "toTime": "11:30"
+    "toTime": "11:30",
+    "cause": "personnel"
   }
 ]

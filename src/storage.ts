@@ -3,15 +3,22 @@ import type { Cancellation } from './types.js';
 import { readJsonFile, writeJsonFile } from './utils/fs.js';
 import { getFahrplanYear } from './fahrplan.js';
 
+/** Records written before cause classification existed have no `cause` field. */
+type StoredCancellation = Omit<Cancellation, 'cause'> & { cause?: Cancellation['cause'] };
+
 /**
  * Loads existing cancellation data from a JSON file.
  * Returns empty array if file doesn't exist or cannot be parsed.
+ *
+ * Records written before cause classification lack a `cause` field. Their cause cannot
+ * be recomputed (the source article text is not stored), so they are stamped `unknown`
+ * to honestly reflect that while satisfying the now-required field.
  */
-export async function loadExisting(filePath: string): Promise<Cancellation[]> {
+export async function loadExistingCancellations(filePath: string): Promise<Cancellation[]> {
   try {
-    const data = await readJsonFile<Cancellation[]>(filePath);
+    const data = await readJsonFile<StoredCancellation[]>(filePath);
     if (data && Array.isArray(data)) {
-      return data;
+      return data.map((entry) => ({ ...entry, cause: entry.cause ?? 'unknown' }));
     }
   } catch (error) {
     console.warn('Failed to read/parse existing file', filePath, error);
@@ -79,7 +86,7 @@ async function findOrCreateBucket(
   let bucket = buckets.get(key);
   if (!bucket) {
     const filePath = join(baseDir, year, `${line}.json`);
-    const entries = await loadExisting(filePath);
+    const entries = await loadExistingCancellations(filePath);
     bucket = {
       key,
       year,

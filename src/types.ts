@@ -1,3 +1,5 @@
+import type { CancellationCause } from './cause.js';
+
 /**
  * Represents a single trip cancellation entry.
  * All cancellations are organized by line and year in the storage layer.
@@ -32,6 +34,9 @@ export interface Cancellation {
 
   /** ISO timestamp when this entry was captured by the scraper */
   readonly capturedAt: string;
+
+  /** Best-effort category for why the trip was cancelled (article-level). */
+  readonly cause: CancellationCause;
 }
 
 /**
@@ -49,6 +54,8 @@ export interface TripParsingMetadata {
   readonly sourceUrl: string;
   /** ISO timestamp when captured */
   readonly capturedAt: string;
+  /** Best-effort cause category for the article (applied to every trip it lists) */
+  readonly cause: CancellationCause;
   /** Lines explicitly mentioned in the article */
   readonly mentionedLines: readonly string[];
   /** Count of distinct lines mentioned */

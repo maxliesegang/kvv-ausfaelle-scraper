@@ -109,37 +109,134 @@ export function resolveLineForTrip(
   return normalizedLine;
 }
 
+/** Trip fields extracted from a matched format, before validation. */
+interface ParsedTripFields {
+  readonly trainNumber?: string | undefined;
+  readonly fromStop?: string | undefined;
+  readonly fromTime?: string | undefined;
+  readonly toStop?: string | undefined;
+  readonly toTime?: string | undefined;
+  /** Line identifier carried inline by the trip line (line-prefix format only). */
+  readonly lineId?: string | undefined;
+}
+
+/**
+ * A trip-line format: its regex plus how to map the captured groups onto trip fields.
+ * The KVV pages use several human-written layouts that differ only in field order, so
+ * each is described once here and processed by a single matcher loop. Order matters —
+ * the most specific format (line-prefix) is tried first, the loosest (old) last.
+ */
+interface TripFormat {
+  readonly pattern: RegExp;
+  /** `'new'` formats reject stops captured as the literal "Uhr" (incomplete lines). */
+  readonly validation: 'new' | 'old';
+  readonly extract: (match: RegExpMatchArray) => ParsedTripFields;
+}
+
+const TRIP_FORMATS: readonly TripFormat[] = [
+  // <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
+  {
+    pattern: PATTERNS.TRIP_LINE_PREFIX_FORMAT,
+    validation: 'new',
+    extract: (m) => ({
+      lineId: m[1]?.toUpperCase(),
+      trainNumber: m[2],
+      fromStop: m[3],
+      fromTime: m[4],
+      toStop: m[5],
+      toTime: m[6],
+    }),
+  },
+  // <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
+  {
+    pattern: PATTERNS.TRIP_AB_BIS_FORMAT,
+    validation: 'new',
+    extract: (m) => ({
+      trainNumber: m[1],
+      fromStop: m[2],
+      fromTime: m[3],
+      toStop: m[4],
+      toTime: m[5],
+    }),
+  },
+  // <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
+  {
+    pattern: PATTERNS.TRIP_STOP_TIME_FORMAT,
+    validation: 'new',
+    extract: (m) => ({
+      trainNumber: m[1],
+      fromStop: m[2],
+      fromTime: m[3],
+      toStop: m[4],
+      toTime: m[5],
+    }),
+  },
+  // <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
+  {
+    pattern: PATTERNS.TRIP_NEW_FORMAT,
+    validation: 'new',
+    extract: (m) => ({
+      trainNumber: m[1],
+      fromTime: m[2],
+      fromStop: m[3],
+      toTime: m[4],
+      toStop: m[5],
+    }),
+  },
+  // <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
+  {
+    pattern: PATTERNS.TRIP_OLD_FORMAT,
+    validation: 'old',
+    extract: (m) => ({
+      trainNumber: m[1],
+      fromStop: m[2],
+      fromTime: m[3],
+      toStop: m[4],
+      toTime: m[5],
+    }),
+  },
+];
+
+/** A trip line whose fields are present and valid (the five core fields are non-null). */
+interface ValidTripFields extends ParsedTripFields {
+  readonly trainNumber: string;
+  readonly fromStop: string;
+  readonly fromTime: string;
+  readonly toStop: string;
+  readonly toTime: string;
+}
+
+/**
+ * Matches a line against the known trip formats, returning the fields of the first
+ * format whose regex matches and whose captured fields pass validation.
+ */
+function matchTripFormat(line: string): ValidTripFields | null {
+  for (const { pattern, validation, extract } of TRIP_FORMATS) {
+    const match = line.match(pattern);
+    if (!match) continue;
+
+    const fields = extract(match);
+    if (
+      isValidTripFields(
+        fields.trainNumber,
+        fields.fromStop,
+        fields.fromTime,
+        fields.toStop,
+        fields.toTime,
+        validation,
+      )
+    ) {
+      return fields as ValidTripFields;
+    }
+  }
+  return null;
+}
+
 /**
  * Checks whether a line of text looks like a parsable trip entry.
  */
 export function isValidTripLine(line: string): boolean {
-  // Try line-prefix format first (e.g., "S5 84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr")
-  if (PATTERNS.TRIP_LINE_PREFIX_FORMAT.test(line)) {
-    return true;
-  }
-
-  // Handle "ab/bis/an" variant
-  if (PATTERNS.TRIP_AB_BIS_FORMAT.test(line)) {
-    return true;
-  }
-
-  // Handle "<stop> <time> - <stop> <time>" variant
-  if (PATTERNS.TRIP_STOP_TIME_FORMAT.test(line)) {
-    return true;
-  }
-
-  // Try new format
-  const newMatch = line.match(PATTERNS.TRIP_NEW_FORMAT);
-  if (newMatch) {
-    const toStop = newMatch[5];
-    const fromStop = newMatch[3];
-    if (toStop?.trim() !== 'Uhr' && fromStop?.trim() !== 'Uhr') {
-      return true;
-    }
-  }
-
-  // Fallback to the old "<from> (<time>) - <to> (<time>)" format
-  return Boolean(line.match(PATTERNS.TRIP_OLD_FORMAT));
+  return matchTripFormat(line) !== null;
 }
 
 /**
@@ -336,6 +433,7 @@ function buildCancellation(
     toTime,
     sourceUrl: metadata.sourceUrl,
     capturedAt: metadata.capturedAt,
+    cause: metadata.cause,
   };
 }
 
@@ -347,92 +445,23 @@ function buildCancellation(
  * @returns Cancellation object or null if parsing fails
  */
 export function parseTripLine(line: string, metadata: TripParsingMetadata): Cancellation | null {
-  // Try line-prefix format first: <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
-  let match = line.match(PATTERNS.TRIP_LINE_PREFIX_FORMAT);
-  if (match) {
-    const lineId = match[1]?.toUpperCase();
-    const trainNumber = match[2];
-    const fromStop = match[3];
-    const fromTime = match[4];
-    const toStop = match[5];
-    const toTime = match[6];
-
-    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
-      // Override the line from metadata with the line from the trip line itself
-      // Mark it as explicitly provided so train mappings aren't required
-      const overriddenMetadata = {
-        ...metadata,
-        line: lineId || metadata.line,
-        lineExplicitlyProvided: true,
-      };
-      return buildCancellation(
-        trainNumber!,
-        fromStop!,
-        fromTime!,
-        toStop!,
-        toTime!,
-        overriddenMetadata,
-      );
-    }
+  const fields = matchTripFormat(line);
+  if (!fields) {
+    return null;
   }
 
-  // Try "ab/bis/an" format: <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
-  match = line.match(PATTERNS.TRIP_AB_BIS_FORMAT);
-  if (match) {
-    const trainNumber = match[1];
-    const fromStop = match[2];
-    const fromTime = match[3];
-    const toStop = match[4];
-    const toTime = match[5];
+  // The line-prefix format carries its own line identifier; prefer it over the
+  // article-level line and mark it explicit so train-number mappings aren't required.
+  const effectiveMetadata: TripParsingMetadata = fields.lineId
+    ? { ...metadata, line: fields.lineId, lineExplicitlyProvided: true }
+    : metadata;
 
-    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
-      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
-    }
-  }
-
-  // Try "<stop> <time> - <stop> <time>" format
-  match = line.match(PATTERNS.TRIP_STOP_TIME_FORMAT);
-  if (match) {
-    const trainNumber = match[1];
-    const fromStop = match[2];
-    const fromTime = match[3];
-    const toStop = match[4];
-    const toTime = match[5];
-
-    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
-      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
-    }
-  }
-
-  // Try new format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
-  match = line.match(PATTERNS.TRIP_NEW_FORMAT);
-  if (match) {
-    const trainNumber = match[1];
-    const fromTime = match[2];
-    const fromStop = match[3];
-    const toTime = match[4];
-    const toStop = match[5];
-
-    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'new')) {
-      // Type assertion is safe here because isValidTripFields ensures all are defined
-      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
-    }
-  }
-
-  // Try old format: <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
-  match = line.match(PATTERNS.TRIP_OLD_FORMAT);
-  if (match) {
-    const trainNumber = match[1];
-    const fromStop = match[2];
-    const fromTime = match[3];
-    const toStop = match[4];
-    const toTime = match[5];
-
-    if (isValidTripFields(trainNumber, fromStop, fromTime, toStop, toTime, 'old')) {
-      // Type assertion is safe here because isValidTripFields ensures all are defined
-      return buildCancellation(trainNumber!, fromStop!, fromTime!, toStop!, toTime!, metadata);
-    }
-  }
-
-  return null;
+  return buildCancellation(
+    fields.trainNumber,
+    fields.fromStop,
+    fields.fromTime,
+    fields.toStop,
+    fields.toTime,
+    effectiveMetadata,
+  );
 }

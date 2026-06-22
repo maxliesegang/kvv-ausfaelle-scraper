@@ -7,6 +7,7 @@
     "fromStop": "Karlsruhe Marktplatz",
     "fromTime": "08:24",
     "toStop": "Rastatt Bahnhof",
-    "toTime": "08:56"
+    "toTime": "08:56",
+    "cause": "personnel"
   }
 ]

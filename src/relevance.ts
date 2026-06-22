@@ -1,6 +1,7 @@
 import type { Item } from './types.js';
 import { stripHtml } from './parser/text-extraction.js';
 import { extractTripLines } from './parser/trip-parsing.js';
+import { normalizeGermanText } from './utils/normalization.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -70,33 +71,6 @@ const STRUCTURE_MARKERS: readonly KeywordGroup[] = [
   },
 ];
 
-// Plain keyword lists for cause detection — not scored, only used for classification.
-
-const CONSTRUCTION_CAUSE_KEYWORDS: readonly string[] = [
-  'wegen bauarbeiten',
-  'bauarbeiten',
-  'baustelle',
-  'baubedingt',
-  'baumassnahme',
-  'baumassnahmen',
-  'gleisbauarbeiten',
-  'gleisarbeiten',
-  'kanalsanierung',
-  'kanalsanierungsarbeiten',
-  'sperrung',
-];
-
-// Signals that the disruption stems from personnel/operational shortages rather
-// than construction. "fahrpersonal" covers phrasing like "Engpässen beim Fahrpersonal".
-const PERSONNEL_CAUSE_KEYWORDS: readonly string[] = [
-  'personalmangel',
-  'personalausfall',
-  'krankheitsbedingt',
-  'krankheitsausfall',
-  'betriebsbedingt',
-  'fahrpersonal',
-];
-
 // ---------------------------------------------------------------------------
 // Thresholds
 // ---------------------------------------------------------------------------
@@ -109,17 +83,6 @@ const DETAIL_RELEVANCE_THRESHOLD = 3;
 // ---------------------------------------------------------------------------
 
 const LINE_MENTION_PATTERN = /\blinie[n]?\s+[a-z]+\d{1,3}\b/;
-
-function normalizeForSearch(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/ß/g, 'ss')
-    .replace(/[^a-z0-9\s-]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
 
 function collectMatches(
   text: string,
@@ -137,22 +100,6 @@ function collectMatches(
   return { score, matches: Array.from(matches) };
 }
 
-function matchesAny(text: string, keywords: readonly string[]): string[] {
-  return keywords.filter((k) => text.includes(k));
-}
-
-/**
- * Returns true when the text signals a construction-caused disruption with no
- * personnel/operational shortage signals. Such notices are not trip cancellations
- * we want to track.
- */
-function isConstructionOnlyNotice(text: string): boolean {
-  const constructionHits = matchesAny(text, CONSTRUCTION_CAUSE_KEYWORDS);
-  if (constructionHits.length === 0) return false;
-  const personnelHits = matchesAny(text, PERSONNEL_CAUSE_KEYWORDS);
-  return personnelHits.length === 0;
-}
-
 // ---------------------------------------------------------------------------
 // Core scoring
 // ---------------------------------------------------------------------------
@@ -161,25 +108,23 @@ interface TextScore {
   readonly score: number;
   readonly keywordMatches: string[];
   readonly structureMatches: string[];
-  readonly isConstructionOnly: boolean;
   readonly reasons: string[];
-  readonly normalizedText: string;
 }
 
 function scoreText(segments: string[]): TextScore {
-  const normalizedText = normalizeForSearch(segments.join(' '));
+  const normalizedText = normalizeGermanText(segments.join(' '));
   const reasons: string[] = [];
 
-  const { score: kwScore, matches: keywordMatches } = collectMatches(
+  const { score: keywordScore, matches: keywordMatches } = collectMatches(
     normalizedText,
     CANCELLATION_KEYWORDS,
   );
-  const { score: stScore, matches: structureMatches } = collectMatches(
+  const { score: structureScore, matches: structureMatches } = collectMatches(
     normalizedText,
     STRUCTURE_MARKERS,
   );
 
-  let score = kwScore + stScore;
+  let score = keywordScore + structureScore;
 
   if (keywordMatches.length > 0) reasons.push(`keywords: ${keywordMatches.join(', ')}`);
   if (structureMatches.length > 0) reasons.push(`structure: ${structureMatches.join(', ')}`);
@@ -189,12 +134,7 @@ function scoreText(segments: string[]): TextScore {
     reasons.push('mentions a line identifier');
   }
 
-  const isConstructionOnly = isConstructionOnlyNotice(normalizedText);
-  if (isConstructionOnly) {
-    reasons.push('excluded: construction-related notice without personnel shortage signal');
-  }
-
-  return { score, keywordMatches, structureMatches, isConstructionOnly, reasons, normalizedText };
+  return { score, keywordMatches, structureMatches, reasons };
 }
 
 // ---------------------------------------------------------------------------
@@ -218,12 +158,11 @@ export function analyzeRssItem(item: Item): RelevanceResult {
     };
   }
 
-  const { score, isConstructionOnly, reasons, keywordMatches, structureMatches } =
-    scoreText(segments);
+  const { score, reasons, keywordMatches, structureMatches } = scoreText(segments);
 
   return {
     score,
-    isRelevant: score >= RSS_RELEVANCE_THRESHOLD && !isConstructionOnly,
+    isRelevant: score >= RSS_RELEVANCE_THRESHOLD,
     reasons,
     keywordMatches,
     structureMatches,
@@ -236,7 +175,6 @@ export function analyzeDetailPage(html: string): RelevanceResult {
   const text = stripHtml(html);
   const {
     score: baseScore,
-    isConstructionOnly,
     reasons: baseReasons,
     keywordMatches,
     structureMatches,
@@ -254,7 +192,7 @@ export function analyzeDetailPage(html: string): RelevanceResult {
 
   return {
     score,
-    isRelevant: (score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0) && !isConstructionOnly,
+    isRelevant: score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0,
     reasons,
     keywordMatches,
     structureMatches,

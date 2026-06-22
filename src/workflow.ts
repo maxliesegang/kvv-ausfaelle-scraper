@@ -3,15 +3,16 @@ import { RSS_URL } from './config.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage, ParseError } from './parser/index.js';
 import { extractTripSectionCandidates } from './parser/trip-parsing.js';
+import { TRIP_TIME_PAIR_PATTERN } from './parser/patterns.js';
 import { stripHtml } from './parser/text-extraction.js';
 import {
   createTrainLineObservationRecorder,
   updateTrainLineDefinitionsFromObservations,
 } from './train-line-observations.js';
+import { classifyCause } from './cause.js';
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
 const MIN_ARTICLE_AGE_MS = 60 * 60 * 1000; // 1 hour
-const TRIP_TIME_PAIR_PATTERN = /\d{1,2}:\d{2}.*\d{1,2}:\d{2}/;
 
 /**
  * Fetches and filters the RSS feed for relevant cancellation items.
@@ -98,6 +99,18 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
         await updateTrainLineDefinitionsFromObservations(observations);
         console.warn(
           `  -> skipping article because no trip details were listed despite relevance signals (${reasons})`,
+        );
+        return [];
+      }
+
+      // Construction notices are newly admitted (they were filtered out before cause
+      // classification replaced the construction veto). We do not yet parse their trip
+      // formats, so a failure here is not a regression — warn and skip instead of
+      // failing CI. Any other cause is something we already parse, so stay loud.
+      if (classifyCause(text) === 'construction') {
+        await updateTrainLineDefinitionsFromObservations(observations);
+        console.warn(
+          `  -> skipping construction notice with unparsed trip-like lines: ${url} (signals: ${reasons})`,
         );
         return [];
       }

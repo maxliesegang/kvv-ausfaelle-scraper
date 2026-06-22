@@ -7,7 +7,8 @@
     "fromStop": "Wörth Bahnhof",
     "fromTime": "06:20",
     "toStop": "KA Marktplatz",
-    "toTime": "06:52"
+    "toTime": "06:52",
+    "cause": "personnel"
   },
   {
     "line": "S51",
@@ -17,6 +18,7 @@
     "fromStop": "KA Marktplatz",
     "fromTime": "07:00",
     "toStop": "Germersheim",
-    "toTime": "08:07"
+    "toTime": "08:07",
+    "cause": "personnel"
   }
 ]

@@ -7,7 +7,8 @@
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "12:34",
     "toStop": "Hochstetten",
-    "toTime": "13:46"
+    "toTime": "13:46",
+    "cause": "personnel"
   },
   {
     "line": "S1",
@@ -17,6 +18,7 @@
     "fromStop": "Hochstetten",
     "fromTime": "13:52",
     "toStop": "Ettlingen Albgaubad",
-    "toTime": "15:02"
+    "toTime": "15:02",
+    "cause": "personnel"
   }
 ]
