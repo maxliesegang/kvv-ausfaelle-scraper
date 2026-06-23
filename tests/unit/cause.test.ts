@@ -37,6 +37,12 @@ describe('classifyCause - categories', () => {
       'construction',
     );
     assert.strictEqual(classifyCause('wegen einer Sperrung'), 'construction');
+    assert.strictEqual(classifyCause('Instandhaltungsarbeiten an der Oberleitung'), 'construction');
+    assert.strictEqual(
+      classifyCause('Instandhaltungsarbeiten (Gleiserneuerung) der AVG'),
+      'construction',
+    );
+    assert.strictEqual(classifyCause('die AVG sperrt die Enztalbahn'), 'construction');
   });
 
   it('falls back to unknown when no cause keyword is present', () => {
