@@ -3,8 +3,8 @@
  */
 
 import type { Cancellation, TripParsingMetadata } from '../types.js';
-import { lookupLineForTrain, isLineValidForMentionedLines } from '../train-lines.js';
-import { normalizeLine } from '../utils/normalization.js';
+import { lookupLinesForTrip, type TripDescriptor } from '../train-lines.js';
+import { normalizeLineUppercase } from '../utils/normalization.js';
 import { MAX_LINES_TO_COMBINE } from '../utils/constants.js';
 import {
   PATTERNS,
@@ -47,66 +47,55 @@ export function isAmbiguousLine(line: string): boolean {
 }
 
 /**
- * Resolves the effective line for a trip, falling back to train-number overrides.
- * @throws {Error} When a multi-line article is parsed but no train number mapping is found
- * @throws {Error} When a train number is mapped to a line that's not connected to the mentioned lines
+ * Resolves the line(s) a trip should be reported under.
+ *
+ * Explicit (line-prefix) and single-line-mention articles yield exactly that line. For a
+ * multi-line article the train number is resolved against the train-line mapping: a shared
+ * number is disambiguated by the article's date and the trip's departure/arrival times
+ * (see `train-lines.ts`), reporting one line for a recycled run and several for a
+ * through-run.
+ *
+ * @throws {MultiLineMappingError} When a multi-line article references a train number
+ *   that maps to none of the mentioned lines (unknown, or needs an override).
  */
-export function resolveLineForTrip(
-  trainNumber: string,
+export function resolveLinesForTrip(
+  trip: TripDescriptor,
   metadata: Pick<
     TripParsingMetadata,
-    | 'line'
-    | 'mentionedLines'
-    | 'lineMentionCount'
-    | 'onTrainLineObserved'
-    | 'lineExplicitlyProvided'
+    'line' | 'date' | 'mentionedLines' | 'lineMentionCount' | 'lineExplicitlyProvided'
   >,
-): string {
-  const normalizedLine = normalizeLine(metadata.line) || DEFAULT_LINE;
-  const isAmbiguous = isAmbiguousLine(normalizedLine);
+): string[] {
+  const articleLine = normalizeLineUppercase(metadata.line) || DEFAULT_LINE;
+  const canUseArticleLine = !isAmbiguousLine(articleLine) && articleLine !== DEFAULT_LINE;
   const hasSingleLineMention = metadata.lineMentionCount === 1;
   const isMultiLineArticle = metadata.lineMentionCount > 1;
 
-  // If line is explicitly provided in the trip line (line-prefix format),
-  // use it directly without requiring train mappings
-  if (metadata.lineExplicitlyProvided && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
-    metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
-    return normalizedLine;
+  // If the line is explicit (line-prefix format) or the article mentions a single line,
+  // use it directly without consulting the train-number mapping.
+  if (metadata.lineExplicitlyProvided && canUseArticleLine) {
+    return [articleLine];
   }
-
-  // For articles with a single line mention, use it directly
-  if (hasSingleLineMention && !isAmbiguous && normalizedLine !== DEFAULT_LINE) {
-    metadata.onTrainLineObserved?.(normalizedLine, trainNumber);
-    return normalizedLine;
+  if (hasSingleLineMention && canUseArticleLine) {
+    return [articleLine];
   }
 
   if (metadata.lineMentionCount > 0) {
-    const mapped = lookupLineForTrain(trainNumber, metadata.mentionedLines);
-    if (mapped) {
-      // Validate that the mapped line is actually valid for the mentioned lines
-      if (!isLineValidForMentionedLines(mapped, metadata.mentionedLines)) {
-        throw new Error(
-          `Train number ${trainNumber} is mapped to line ${mapped}, ` +
-            `but this line is not mentioned in the article (${metadata.mentionedLines.join(', ')}) ` +
-            `and is not connected to any of the mentioned lines. ` +
-            `Please correct the train number mapping in the line definition files.`,
-        );
-      }
-      return mapped;
+    const lines = lookupLinesForTrip({ ...trip, date: metadata.date }, metadata.mentionedLines);
+    if (lines.length > 0) {
+      return lines;
     }
 
-    // Throw error if multi-line article has no mapping for this train number
     if (isMultiLineArticle) {
       throw new MultiLineMappingError(
         `Multi-line article detected (${metadata.lineMentionCount} lines: ${metadata.mentionedLines.join(', ')}) ` +
-          `but no train number mapping found for train ${trainNumber}. ` +
-          `Please add this train number to the appropriate line definition.`,
-        trainNumber,
+          `but train ${trip.trainNumber} maps to none of them. Add it to a line definition for the ` +
+          `current Fahrplan year, or to src/train-line-definitions/overrides.ts.`,
+        trip.trainNumber,
       );
     }
   }
 
-  return normalizedLine;
+  return [articleLine];
 }
 
 /** Trip fields extracted from a matched format, before validation. */
@@ -412,25 +401,22 @@ function isValidTripFields(
 }
 
 /**
- * Builds a Cancellation object from parsed trip fields.
+ * Builds a Cancellation object for a single resolved line from parsed trip fields.
  */
 function buildCancellation(
-  trainNumber: string,
-  fromStop: string,
-  fromTime: string,
-  toStop: string,
-  toTime: string,
+  line: string,
+  fields: ValidTripFields,
   metadata: TripParsingMetadata,
 ): Cancellation {
   return {
-    line: resolveLineForTrip(trainNumber, metadata),
+    line,
     date: metadata.date,
     stand: metadata.stand,
-    trainNumber,
-    fromStop: fromStop.trim(),
-    fromTime,
-    toStop: toStop.trim(),
-    toTime,
+    trainNumber: fields.trainNumber,
+    fromStop: fields.fromStop.trim(),
+    fromTime: fields.fromTime,
+    toStop: fields.toStop.trim(),
+    toTime: fields.toTime,
     sourceUrl: metadata.sourceUrl,
     capturedAt: metadata.capturedAt,
     cause: metadata.cause,
@@ -438,16 +424,18 @@ function buildCancellation(
 }
 
 /**
- * Parses a single trip line into a Cancellation object.
+ * Parses a single trip line into Cancellation objects — one per line the trip is
+ * reported under (usually one; several when a number runs on multiple mentioned lines).
  *
  * @param line - Trip line text to parse
  * @param metadata - Common metadata for all trips
- * @returns Cancellation object or null if parsing fails
+ * @returns Cancellations for this trip line, or an empty array if it is not a trip line
+ * @throws {MultiLineMappingError} via {@link resolveLinesForTrip} for unmappable numbers
  */
-export function parseTripLine(line: string, metadata: TripParsingMetadata): Cancellation | null {
+export function parseTripLine(line: string, metadata: TripParsingMetadata): Cancellation[] {
   const fields = matchTripFormat(line);
   if (!fields) {
-    return null;
+    return [];
   }
 
   // The line-prefix format carries its own line identifier; prefer it over the
@@ -456,12 +444,9 @@ export function parseTripLine(line: string, metadata: TripParsingMetadata): Canc
     ? { ...metadata, line: fields.lineId, lineExplicitlyProvided: true }
     : metadata;
 
-  return buildCancellation(
-    fields.trainNumber,
-    fields.fromStop,
-    fields.fromTime,
-    fields.toStop,
-    fields.toTime,
+  const lines = resolveLinesForTrip(
+    { trainNumber: fields.trainNumber, fromTime: fields.fromTime, toTime: fields.toTime },
     effectiveMetadata,
   );
+  return lines.map((resolvedLine) => buildCancellation(resolvedLine, fields, effectiveMetadata));
 }

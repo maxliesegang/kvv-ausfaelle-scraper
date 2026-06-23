@@ -61,11 +61,10 @@ TypeScript/Node script that fetches the public KVV RSS feed, parses the “Betri
 - `npm run test:coverage` — Run tests with coverage report
 - `npm run test:parser` — Run just parser tests
 - `npm run test:train-lines` — Run just train lines tests
-- `npm run test:fallback <number>` — Manual test for fallback matching
 
 **Data Management:**
 
-- `npm run train-lines:from-tests` — Extract train-number ↔ line mappings from parser fixtures
+- `npm run seed-train-lines -- <gtfs.zip>` — Seed train-number → line mappings from a GTFS feed (see `gtfs-data/README.md`)
 - `npm run fetch-article <url>` — Fetch a live article and save as test data
 
 ## Testing
@@ -92,20 +91,24 @@ npm run test:coverage
 
 ```
 tests/
-├── unit/           # Fast, isolated tests (33 tests)
-│   ├── parser.test.ts        # Parser logic (22 tests)
-│   └── train-lines.test.ts   # Train line lookups (10 tests)
+├── unit/           # Fast, isolated tests
+│   ├── parser.test.ts          # Parser logic
+│   ├── train-lines.test.ts     # Train-number → line resolution (incl. ambiguous-trip timing)
+│   ├── seed-train-lines.test.ts # GTFS seeding + ambiguous-trip sidecar
+│   ├── relevance.test.ts        # Relevance scoring
+│   ├── cause.test.ts            # Cause classification
+│   ├── storage.test.ts          # Bucketing / dedup / write
+│   ├── site-index.test.ts       # Index page generation
+│   └── normalization.test.ts    # Line/number normalization
 ├── integration/    # Full workflow tests
-│   └── fallback-matching.ts  # Fallback matching verification
 └── helpers/        # Shared test utilities
 ```
 
 **Current test coverage:**
 
-- ✅ 33 passing tests
-- ✅ Parser: 92% coverage (all real-world formats)
-- ✅ Train lines: 70% coverage (exact match & fallback)
-- ✅ Execution time: ~250ms
+- ✅ 89 passing unit tests
+- ✅ Parser: all real-world formats
+- ✅ Train lines: exact match, GTFS-seeded multi-line resolution, and timing-based disambiguation
 
 ### Adding Test Articles
 

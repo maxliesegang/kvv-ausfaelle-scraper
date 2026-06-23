@@ -8,9 +8,9 @@ This directory contains all tests for the KVV Ausfälle Scraper project, organiz
 tests/
 ├── unit/               # Unit tests (fast, isolated, no I/O)
 │   ├── parser.test.ts
+│   ├── seed-train-lines.test.ts
 │   └── train-lines.test.ts
 ├── integration/        # Integration tests (may modify files, slower)
-│   └── fallback-matching.test.ts
 ├── helpers/            # Shared test utilities
 │   ├── test-utils.ts
 │   └── fixture-loader.ts
@@ -52,9 +52,6 @@ npm run test:parser
 
 # Train lines tests
 npm run test:train-lines
-
-# Fallback matching (WARNING: modifies files)
-npm run test:fallback <trainNumber>
 ```
 
 ### Watch Mode
@@ -233,12 +230,12 @@ describe('Parser', () => {
 ```typescript
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { lookupLineForTrain } from '../../src/train-lines.js';
+import { lookupLinesForTrip } from '../../src/train-lines.js';
 
 describe('Train Lines', () => {
-  it('should return correct line', () => {
-    const result = lookupLineForTrain('10001');
-    assert.strictEqual(result, 'S1');
+  it('reports a number under every mentioned line it runs on', () => {
+    const result = lookupLinesForTrip({ trainNumber: '10001' }, ['S1']);
+    assert.deepStrictEqual(result, ['S1']);
   });
 });
 ```

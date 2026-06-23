@@ -2,10 +2,6 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fetchText } from './rss.js';
 import { parseDetailPage } from './parser/index.js';
-import {
-  createTrainLineObservationRecorder,
-  updateTrainLineDefinitionsFromObservations,
-} from './train-line-observations.js';
 import { normalizeCancellationsForTest } from './utils/test-data.js';
 
 /**
@@ -79,11 +75,7 @@ async function main() {
 
     // Parse it
     console.log('Parsing HTML...');
-    const { observations, record } = createTrainLineObservationRecorder();
-    const cancellations = parseDetailPage(html, url, {
-      onTrainLineObserved: record,
-    });
-    await updateTrainLineDefinitionsFromObservations(observations);
+    const cancellations = parseDetailPage(html, url);
 
     if (cancellations.length === 0) {
       console.warn('Warning: No cancellations parsed from HTML!');

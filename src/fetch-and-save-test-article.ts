@@ -1,10 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseDetailPage } from './parser/index.js';
-import {
-  createTrainLineObservationRecorder,
-  updateTrainLineDefinitionsFromObservations,
-} from './train-line-observations.js';
 import { normalizeCancellationsForTest } from './utils/test-data.js';
 
 /**
@@ -30,10 +26,7 @@ try {
 
   // Parse it
   console.log('Parsing HTML...');
-  const { observations, record } = createTrainLineObservationRecorder();
-  const cancellations = parseDetailPage(html, `https://www.kvv.de/test/${testName}`, {
-    onTrainLineObserved: record,
-  });
+  const cancellations = parseDetailPage(html, `https://www.kvv.de/test/${testName}`);
 
   if (cancellations.length === 0) {
     console.warn('Warning: No cancellations parsed from HTML!');
@@ -59,8 +52,6 @@ try {
   console.log(`  HTML: ${htmlOutputPath}`);
   console.log(`  JSON: ${jsonOutputPath}`);
   console.log(`  Trips: ${cancellations.length}`);
-
-  await updateTrainLineDefinitionsFromObservations(observations);
 
   // Print first cancellation as sample
   if (cancellations.length > 0) {

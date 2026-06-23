@@ -1,0 +1,4 @@
+# Local GTFS drop folder — keep the folder, ignore the (large, licensed) data.
+*
+!.gitignore
+!README.md

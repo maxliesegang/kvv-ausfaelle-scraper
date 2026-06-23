@@ -6,7 +6,6 @@
  * - Extracts metadata (line, timestamp, etc.)
  * - Identifies and parses trip listings
  * - Handles multiple format variations
- * - Supports train-to-line mapping observations
  */
 
 import type { Cancellation } from '../types.js';
@@ -19,10 +18,6 @@ import {
   MultiLineMappingError,
   parseTripLine,
 } from './trip-parsing.js';
-
-export interface ParseDetailOptions {
-  readonly onTrainLineObserved?: (line: string, trainNumber: string) => void;
-}
 
 /** Error thrown when the parser cannot extract any trips from an article. */
 export class ParseError extends Error {
@@ -37,15 +32,10 @@ export class ParseError extends Error {
  *
  * @param html - Raw HTML content of the detail page
  * @param url - Source URL for reference
- * @param options - Optional callbacks and configuration
  * @returns Array of parsed cancellations (empty if parsing fails or no trips found)
  * @throws Error if no trips are found in the article
  */
-export function parseDetailPage(
-  html: string,
-  url: string,
-  options?: ParseDetailOptions,
-): Cancellation[] {
+export function parseDetailPage(html: string, url: string): Cancellation[] {
   const text = stripHtml(html);
 
   // Extract metadata
@@ -65,7 +55,6 @@ export function parseDetailPage(
     capturedAt,
     cause,
     lineMentionCount,
-    ...(options?.onTrainLineObserved ? { onTrainLineObserved: options.onTrainLineObserved } : {}),
   };
 
   // Extract and parse trip lines
@@ -76,9 +65,9 @@ export function parseDetailPage(
 
   for (const tripLine of tripLines) {
     try {
-      const trip = parseTripLine(tripLine, metadata);
-      if (trip) {
-        trips.push(trip);
+      const parsed = parseTripLine(tripLine, metadata);
+      if (parsed.length > 0) {
+        trips.push(...parsed);
       } else if (TRIP_TIME_PAIR_PATTERN.test(tripLine)) {
         // Looks like a trip (two times) but matched no known format — keep it visible
         // so a varying human-written row is not silently dropped.
@@ -125,4 +114,3 @@ export function parseDetailPage(
 
 // Re-export types and utilities that may be useful for consumers
 export type { StandInfo } from './text-extraction.js';
-export type { ParseDetailOptions as ParserOptions };

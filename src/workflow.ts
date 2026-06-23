@@ -5,10 +5,6 @@ import { parseDetailPage, ParseError } from './parser/index.js';
 import { extractTripSectionCandidates } from './parser/trip-parsing.js';
 import { TRIP_TIME_PAIR_PATTERN } from './parser/patterns.js';
 import { stripHtml } from './parser/text-extraction.js';
-import {
-  createTrainLineObservationRecorder,
-  updateTrainLineDefinitionsFromObservations,
-} from './train-line-observations.js';
 import { classifyCause } from './cause.js';
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
@@ -77,13 +73,8 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     }
   }
 
-  const { observations, record } = createTrainLineObservationRecorder();
-
   try {
-    const trips = parseDetailPage(html, url, {
-      onTrainLineObserved: record,
-    });
-    await updateTrainLineDefinitionsFromObservations(observations);
+    const trips = parseDetailPage(html, url);
     console.log(`  -> parsed ${trips.length} trips`);
     return trips;
   } catch (error) {
@@ -96,7 +87,6 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
       const hasTripLikeTimes = tripCandidates.some((line) => TRIP_TIME_PAIR_PATTERN.test(line));
 
       if (!hasTripLikeTimes) {
-        await updateTrainLineDefinitionsFromObservations(observations);
         console.warn(
           `  -> skipping article because no trip details were listed despite relevance signals (${reasons})`,
         );
@@ -108,7 +98,6 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
       // formats, so a failure here is not a regression — warn and skip instead of
       // failing CI. Any other cause is something we already parse, so stay loud.
       if (classifyCause(text) === 'construction') {
-        await updateTrainLineDefinitionsFromObservations(observations);
         console.warn(
           `  -> skipping construction notice with unparsed trip-like lines: ${url} (signals: ${reasons})`,
         );

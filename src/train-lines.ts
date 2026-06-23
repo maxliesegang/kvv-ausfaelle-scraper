@@ -1,202 +1,160 @@
-import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
 import type { TrainLineDefinition } from './train-line-definitions/types.js';
 import { TRAIN_LINE_DEFINITIONS } from './train-line-definitions/index.js';
-import { normalizeLine, normalizeLines } from './utils/normalization.js';
+import { TRAIN_LINE_OVERRIDES } from './train-line-definitions/overrides.js';
+import {
+  loadAmbiguousTrips,
+  resolveAmbiguousTrip,
+  type TripSignature,
+} from './train-line-definitions/ambiguous-trips.js';
 import { getCurrentFahrplanYear } from './fahrplan.js';
-
-interface TrainLineMappingEntry {
-  readonly primaryLine: string;
-  readonly lines: readonly string[];
-}
-
-type TrainLineMapping = Readonly<Record<string, TrainLineMappingEntry>>;
+import {
+  normalizeLineUppercase,
+  normalizeLines,
+  normalizeTrainNumber,
+} from './utils/normalization.js';
 
 /**
- * Builds a mapping from train numbers to their canonical line identifiers.
- * Allows train numbers to appear in multiple line definitions.
- */
-function buildTrainLineMapping(definitions: readonly TrainLineDefinition[]): TrainLineMapping {
-  const map: Record<string, { primaryLine: string; lines: string[] }> = {};
-
-  for (const { line, trainNumbers } of definitions) {
-    for (const trainNumber of trainNumbers) {
-      const existing = map[trainNumber];
-      if (!existing) {
-        map[trainNumber] = { primaryLine: line, lines: [line] };
-        continue;
-      }
-
-      if (existing.lines.includes(line)) {
-        continue;
-      }
-
-      existing.lines.push(line);
-    }
-  }
-
-  return map;
-}
-
-const TRAIN_LINE_MAPPING = buildTrainLineMapping(TRAIN_LINE_DEFINITIONS);
-const LINE_TRAIN_COUNT: Readonly<Record<string, number>> = Object.freeze(
-  Object.fromEntries(TRAIN_LINE_DEFINITIONS.map((def) => [def.line, def.trainNumbers.length])),
-);
-
-/**
- * Checks if a line is valid within the context of mentioned lines.
- * A line is valid if it's one of the mentioned lines.
- */
-export function isLineValidForMentionedLines(
-  line: string,
-  mentionedLines: readonly string[],
-): boolean {
-  const normalizedLine = normalizeLine(line);
-  if (!normalizedLine) return false;
-
-  const normalizedMentioned = normalizeLines(mentionedLines);
-
-  return normalizedMentioned.includes(normalizedLine);
-}
-
-/**
- * Finds matching train numbers by removing the last digit from both
- * the search number and all existing train numbers.
- */
-function findMatchingTrainsWithoutLastDigit(trainNumber: string): string[] {
-  if (trainNumber.length < 2) return [];
-
-  const searchPrefix = trainNumber.slice(0, -1);
-  const matches: string[] = [];
-
-  for (const existingTrainNumber of Object.keys(TRAIN_LINE_MAPPING)) {
-    const existingPrefix = existingTrainNumber.slice(0, -1);
-    if (existingPrefix === searchPrefix) {
-      matches.push(existingTrainNumber);
-    }
-  }
-
-  return matches;
-}
-
-/**
- * Adds a train number to a line definition file and persists it to disk.
- * Keeps train numbers sorted numerically.
- */
-function addTrainNumberToLineDefinition(line: string, trainNumber: string): void {
-  const year = getCurrentFahrplanYear();
-  if (!year) {
-    throw new Error('Cannot determine current Fahrplan year');
-  }
-
-  const fileName = `${line.toLowerCase()}.json`;
-  const filePath = join(process.cwd(), 'docs', String(year), 'train-line-definitions', fileName);
-
-  // Read the existing definition
-  const fileContent = readFileSync(filePath, 'utf-8');
-  const definition = JSON.parse(fileContent) as TrainLineDefinition;
-
-  // Check if train number already exists
-  if (definition.trainNumbers.includes(trainNumber)) {
-    return; // Already present, nothing to do
-  }
-
-  // Add and sort train numbers
-  const updatedTrainNumbers = [...definition.trainNumbers, trainNumber].sort((a, b) => {
-    const numA = parseInt(a, 10);
-    const numB = parseInt(b, 10);
-    return numA - numB;
-  });
-
-  // Create updated definition
-  const updatedDefinition: TrainLineDefinition = {
-    ...definition,
-    trainNumbers: updatedTrainNumbers,
-  };
-
-  // Write back to file with pretty formatting
-  writeFileSync(filePath, JSON.stringify(updatedDefinition, null, 2) + '\n', 'utf-8');
-}
-
-/**
- * Selects the best line from an entry based on preferred lines.
- * Returns the selected line and whether it was found via preferences.
- */
-function selectLineFromEntry(
-  entry: TrainLineMappingEntry,
-  preferredLines?: readonly string[],
-): string {
-  const normalizedPreferences = preferredLines ? normalizeLines(preferredLines) : [];
-
-  if (normalizedPreferences.length > 0) {
-    const matches = normalizedPreferences
-      .map((preferred) => entry.lines.find((candidate) => candidate.toUpperCase() === preferred))
-      .filter((line): line is string => line !== undefined);
-
-    if (matches.length === 1) {
-      return matches[0]!;
-    }
-
-    if (matches.length > 1) {
-      // Prefer the line with the fewest train numbers (most specific definition)
-      return matches.reduce((best, current) => {
-        const bestSize = LINE_TRAIN_COUNT[best] ?? Number.MAX_SAFE_INTEGER;
-        const currentSize = LINE_TRAIN_COUNT[current] ?? Number.MAX_SAFE_INTEGER;
-        if (currentSize < bestSize) return current;
-        return best;
-      });
-    }
-  }
-
-  return entry.primaryLine;
-}
-
-/**
- * Returns the canonical line for a given train number, if known.
+ * Reverse index: train number → the line(s) that own it.
  *
- * If no exact match is found, attempts a fallback search by removing
- * the last digit from the train number and finding matching trains.
- * When fallback matching succeeds, throws an error for manual verification.
+ * A number may belong to several lines — sibling lines such as S5/S51/S52 share number
+ * blocks, and GTFS reuses the same Zugnummer for distinct trips on connected lines
+ * (e.g. S5/S6 at Pforzheim). For these shared numbers the flat index only says "one of
+ * these lines"; {@link AmbiguousTripIndex} disambiguates by date + time.
  */
-export function lookupLineForTrain(
+export interface TrainLineIndex {
+  readonly exact: Readonly<Record<string, readonly string[]>>;
+}
+
+/** train number → its trip signatures (only numbers that run on more than one line). */
+export type AmbiguousTripIndex = Readonly<Record<string, readonly TripSignature[]>>;
+
+/** The trip fields the resolver needs to disambiguate a shared number. */
+export interface TripDescriptor {
+  readonly trainNumber: string;
+  readonly fromTime?: string;
+  readonly toTime?: string;
+  /** Article ISO date `YYYY-MM-DD`. */
+  readonly date?: string;
+}
+
+/** Builds the train number → lines index from a set of definitions. */
+export function buildTrainLineIndex(definitions: readonly TrainLineDefinition[]): TrainLineIndex {
+  const exact: Record<string, string[]> = {};
+  for (const { line, trainNumbers } of definitions) {
+    const normalizedLine = normalizeLineUppercase(line);
+    if (!normalizedLine) continue;
+
+    for (const rawTrainNumber of trainNumbers) {
+      const trainNumber = normalizeTrainNumber(rawTrainNumber);
+      if (!trainNumber) continue;
+
+      const lines = (exact[trainNumber] ??= []);
+      if (!lines.includes(normalizedLine)) lines.push(normalizedLine);
+    }
+  }
+  return { exact };
+}
+
+const TRAIN_LINE_INDEX = buildTrainLineIndex(TRAIN_LINE_DEFINITIONS);
+const AMBIGUOUS_TRIPS: AmbiguousTripIndex = loadAmbiguousTrips();
+const OVERRIDES: Readonly<Record<string, string>> =
+  TRAIN_LINE_OVERRIDES[getCurrentFahrplanYear() ?? -1] ?? {};
+
+/**
+ * Resolves a curated override for a number, or `undefined` if there is none. An override
+ * still only applies when the article mentions its line (it forces a number onto a line,
+ * it does not invent a cancellation on an unmentioned line).
+ */
+function resolveOverride(
   trainNumber: string,
-  preferredLines?: readonly string[],
-): string | undefined {
-  // Try exact match first
-  const entry = TRAIN_LINE_MAPPING[trainNumber];
-  if (entry) {
-    return selectLineFromEntry(entry, preferredLines);
+  mentioned: ReadonlySet<string>,
+  overrides: Readonly<Record<string, string>>,
+): string[] | undefined {
+  const override = overrides[trainNumber];
+  if (!override) return undefined;
+  const normalizedOverride = normalizeLineUppercase(override);
+  if (!normalizedOverride) return [];
+  return mentioned.has(normalizedOverride) ? [normalizedOverride] : [];
+}
+
+/**
+ * Resolves the line(s) a train number should be reported under in a multi-line article,
+ * using only the flat index (no timing signatures).
+ *
+ * The number's GTFS lines are intersected with the lines the article mentions: the
+ * result is EVERY mentioned line the number runs on. GTFS reuses one Zugnummer across
+ * connected lines (e.g. an S5 trip and an S6 trip), so a cancellation can legitimately
+ * belong to several of the mentioned lines and is reported under each. A curated override
+ * wins over GTFS, but only if that override line is mentioned by the article. Empty means
+ * the number maps to none of the mentioned lines, or is unknown.
+ */
+export function resolveLinesInIndex(
+  index: TrainLineIndex,
+  trainNumber: string,
+  mentionedLines: readonly string[],
+  overrides: Readonly<Record<string, string>> = {},
+): string[] {
+  const normalizedTrainNumber = normalizeTrainNumber(trainNumber);
+  if (!normalizedTrainNumber) return [];
+
+  const mentioned = new Set(normalizeLines(mentionedLines));
+
+  const fromOverride = resolveOverride(normalizedTrainNumber, mentioned, overrides);
+  if (fromOverride) return fromOverride;
+
+  const lines = index.exact[normalizedTrainNumber];
+  if (!lines || lines.length === 0) return [];
+
+  return lines.filter((line) => mentioned.has(line));
+}
+
+/**
+ * Resolves the line(s) for a trip against both the timing-signature sidecar and the flat
+ * index. Pure (all data passed in) so it can be unit-tested without disk.
+ *
+ * Order of evidence:
+ *  1. A curated override wins (still must be a mentioned line).
+ *  2. If the number has timing signatures, match date + departure/arrival times. A
+ *     confident match is authoritative — it may report a line the article did not
+ *     explicitly mention, because the signature is stronger evidence than mention
+ *     extraction (it both fixes recycled over-reporting and keeps through-running). An
+ *     unconfident match falls back to intersecting the candidate lines with the mentioned
+ *     ones, matching the flat-index behavior.
+ *  3. Otherwise fall back to the flat index intersected with the mentioned lines.
+ */
+export function resolveLines(
+  index: TrainLineIndex,
+  ambiguous: AmbiguousTripIndex,
+  trip: TripDescriptor,
+  mentionedLines: readonly string[],
+  overrides: Readonly<Record<string, string>> = {},
+): string[] {
+  const normalizedTrainNumber = normalizeTrainNumber(trip.trainNumber);
+  if (!normalizedTrainNumber) return [];
+
+  const mentioned = new Set(normalizeLines(mentionedLines));
+
+  const fromOverride = resolveOverride(normalizedTrainNumber, mentioned, overrides);
+  if (fromOverride) return fromOverride;
+
+  const signatures = ambiguous[normalizedTrainNumber];
+  if (signatures && signatures.length > 0) {
+    const { lines, confident } = resolveAmbiguousTrip(signatures, trip);
+    if (confident) return lines;
+    return lines.filter((line) => mentioned.has(line));
   }
 
-  // Fallback: Try matching without the last digit
-  const matchingTrains = findMatchingTrainsWithoutLastDigit(trainNumber);
+  return resolveLinesInIndex(index, normalizedTrainNumber, mentionedLines, overrides);
+}
 
-  if (matchingTrains.length === 0) {
-    return undefined;
-  }
-
-  // Use the first matching train's entry and apply the same selection logic
-  const firstMatch = matchingTrains[0];
-  if (!firstMatch) {
-    return undefined;
-  }
-
-  const fallbackEntry = TRAIN_LINE_MAPPING[firstMatch];
-  if (!fallbackEntry) {
-    return undefined;
-  }
-
-  const selectedLine = selectLineFromEntry(fallbackEntry, preferredLines);
-
-  // Persist the train number to the line definition file
-  addTrainNumberToLineDefinition(selectedLine, trainNumber);
-
-  // Throw error for manual verification (causes build to fail and notify)
-  throw new Error(
-    `Train number ${trainNumber} not found - used fallback matching by removing last digit. ` +
-      `Matched with: ${matchingTrains.join(', ')}. ` +
-      `Selected line: ${selectedLine}. ` +
-      `Train number has been added to ${selectedLine.toLowerCase()}.json. ` +
-      `Please verify this match is correct and re-run if needed.`,
-  );
+/**
+ * Returns the line(s) a trip should be reported under, using the definitions, timing
+ * signatures and overrides loaded for the current Fahrplan year. Empty means it could not
+ * be resolved (see {@link resolveLines}).
+ */
+export function lookupLinesForTrip(
+  trip: TripDescriptor,
+  mentionedLines: readonly string[],
+): string[] {
+  return resolveLines(TRAIN_LINE_INDEX, AMBIGUOUS_TRIPS, trip, mentionedLines, OVERRIDES);
 }

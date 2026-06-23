@@ -21,8 +21,7 @@
     "test:coverage": "c8 npm test",
     "test:parser": "node --import tsx --test tests/unit/parser.test.ts",
     "test:train-lines": "node --import tsx --test tests/unit/train-lines.test.ts",
-    "test:fallback": "tsx tests/integration/fallback-matching.ts",
-    "train-lines:from-tests": "tsx scripts/train-lines-from-tests.ts",
+    "seed-train-lines": "tsx scripts/seed-train-lines-from-gtfs.ts",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -35,6 +34,7 @@
     "@types/node": "^25.3.2",
     "@types/xml2js": "^0.4.14",
     "c8": "^11.0.0",
+    "fflate": "^0.8.3",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
