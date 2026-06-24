@@ -2338,5 +2338,31 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270771",
     "capturedAt": "2026-06-24T07:35:53.015Z",
     "cause": "personnel"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-24",
+    "stand": "2026-06-24T17:44:00.000Z",
+    "trainNumber": "85501",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "17:40",
+    "toStop": "Eppingen Bf.",
+    "toTime": "17:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270827",
+    "capturedAt": "2026-06-24T17:50:12.588Z",
+    "cause": "technical"
+  },
+  {
+    "line": "S4",
+    "date": "2026-06-24",
+    "stand": "2026-06-24T17:44:00.000Z",
+    "trainNumber": "85548",
+    "fromStop": "Eppingen Bf.",
+    "fromTime": "18:05",
+    "toStop": "Flehingen Bf.",
+    "toTime": "18:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270827",
+    "capturedAt": "2026-06-24T17:50:12.588Z",
+    "cause": "technical"
   }
 ]
