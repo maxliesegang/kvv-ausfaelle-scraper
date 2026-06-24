@@ -9,7 +9,8 @@
     "toStop": "Freudenstadt Hbf",
     "toTime": "07:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260380",
-    "capturedAt": "2025-12-22T08:25:29.288Z"
+    "capturedAt": "2025-12-22T08:25:29.288Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -21,7 +22,8 @@
     "toStop": "KA Tullastraße",
     "toTime": "10:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260380",
-    "capturedAt": "2025-12-22T08:25:29.288Z"
+    "capturedAt": "2025-12-22T08:25:29.288Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -33,7 +35,8 @@
     "toStop": "Tullastraße",
     "toTime": "13:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
-    "capturedAt": "2026-01-09T12:36:39.527Z"
+    "capturedAt": "2026-01-09T12:36:39.527Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -45,7 +48,8 @@
     "toStop": "Freudenstadt Hbf.",
     "toTime": "16:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
-    "capturedAt": "2026-01-09T12:36:39.527Z"
+    "capturedAt": "2026-01-09T12:36:39.527Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -57,7 +61,8 @@
     "toStop": "Karlsruhe Hbf",
     "toTime": "19:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261245",
-    "capturedAt": "2026-01-09T12:36:39.527Z"
+    "capturedAt": "2026-01-09T12:36:39.527Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -69,7 +74,8 @@
     "toStop": "Bondorf Bf.",
     "toTime": "15:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -81,7 +87,8 @@
     "toStop": "Rastatt Bf.",
     "toTime": "15:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -93,7 +100,8 @@
     "toStop": "Freudenstadt Bf.",
     "toTime": "16:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -105,7 +113,8 @@
     "toStop": "KA Tullastraße",
     "toTime": "17:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -117,7 +126,8 @@
     "toStop": "Bondorf Bf.",
     "toTime": "17:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -129,7 +139,8 @@
     "toStop": "Rastatt Bf.",
     "toTime": "18:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -141,7 +152,8 @@
     "toStop": "Freudenstadt Bf.",
     "toTime": "18:43",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -153,7 +165,8 @@
     "toStop": "KA Tullastraße",
     "toTime": "20:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264871",
-    "capturedAt": "2026-03-08T12:39:27.114Z"
+    "capturedAt": "2026-03-08T12:39:27.114Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -165,7 +178,8 @@
     "toStop": "KA Tullastr.",
     "toTime": "02:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265828",
-    "capturedAt": "2026-03-20T16:38:11.887Z"
+    "capturedAt": "2026-03-20T16:38:11.887Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -177,7 +191,8 @@
     "toStop": "Freudenstadt Hbf.",
     "toTime": "00:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265828",
-    "capturedAt": "2026-03-20T16:38:11.887Z"
+    "capturedAt": "2026-03-20T16:38:11.887Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -189,7 +204,8 @@
     "toStop": "Freudenstadt Hbf.",
     "toTime": "14:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266214",
-    "capturedAt": "2026-03-25T08:43:54.510Z"
+    "capturedAt": "2026-03-25T08:43:54.510Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -201,7 +217,8 @@
     "toStop": "Bondorf",
     "toTime": "07:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
-    "capturedAt": "2026-03-28T05:19:15.689Z"
+    "capturedAt": "2026-03-28T05:19:15.689Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -213,7 +230,8 @@
     "toStop": "Freudenstadt Hbf",
     "toTime": "08:43",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
-    "capturedAt": "2026-03-28T05:19:15.689Z"
+    "capturedAt": "2026-03-28T05:19:15.689Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -225,7 +243,8 @@
     "toStop": "Bondorf",
     "toTime": "09:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
-    "capturedAt": "2026-03-28T05:19:15.689Z"
+    "capturedAt": "2026-03-28T05:19:15.689Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -237,7 +256,8 @@
     "toStop": "Freudenstadt Hbf",
     "toTime": "10:43",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
-    "capturedAt": "2026-03-28T05:19:15.689Z"
+    "capturedAt": "2026-03-28T05:19:15.689Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -249,7 +269,8 @@
     "toStop": "KA Tullastr.",
     "toTime": "14:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
-    "capturedAt": "2026-03-28T12:44:11.421Z"
+    "capturedAt": "2026-03-28T12:44:11.421Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -261,7 +282,8 @@
     "toStop": "Freudenstadt",
     "toTime": "17:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266618",
-    "capturedAt": "2026-03-28T12:44:11.421Z"
+    "capturedAt": "2026-03-28T12:44:11.421Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -273,7 +295,8 @@
     "toStop": "Tullastraße",
     "toTime": "22:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267763",
-    "capturedAt": "2026-04-25T16:36:03.404Z"
+    "capturedAt": "2026-04-25T16:36:03.404Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -285,7 +308,8 @@
     "toStop": "Albtalbahnhof",
     "toTime": "23:12",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267763",
-    "capturedAt": "2026-04-25T16:36:03.404Z"
+    "capturedAt": "2026-04-25T16:36:03.404Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -297,7 +321,8 @@
     "toStop": "Forbach Bf.",
     "toTime": "01:34",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268596",
-    "capturedAt": "2026-05-15T17:24:18.024Z"
+    "capturedAt": "2026-05-15T17:24:18.024Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -309,7 +334,8 @@
     "toStop": "Freudenstadt Bahnhof",
     "toTime": "07:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269351",
-    "capturedAt": "2026-06-01T03:35:40.462Z"
+    "capturedAt": "2026-06-01T03:35:40.462Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -321,7 +347,8 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "09:45",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269351",
-    "capturedAt": "2026-06-01T03:35:40.462Z"
+    "capturedAt": "2026-06-01T03:35:40.462Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -333,7 +360,8 @@
     "toStop": "Freudenstadt Stadtbahnhof",
     "toTime": "00:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270257",
-    "capturedAt": "2026-06-18T18:23:10.234Z"
+    "capturedAt": "2026-06-18T18:23:10.234Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -345,7 +373,8 @@
     "toStop": "Freudenstadt Bahnhof",
     "toTime": "00:19",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270257",
-    "capturedAt": "2026-06-18T18:23:10.234Z"
+    "capturedAt": "2026-06-18T18:23:10.234Z",
+    "cause": "unknown"
   },
   {
     "line": "S8",
@@ -357,6 +386,33 @@
     "toStop": "Freudenstadt Bahnhof",
     "toTime": "23:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270257",
-    "capturedAt": "2026-06-18T18:23:10.234Z"
+    "capturedAt": "2026-06-18T18:23:10.234Z",
+    "cause": "unknown"
+  },
+  {
+    "line": "S8",
+    "date": "2026-06-24",
+    "stand": "2026-06-24T03:18:00.000Z",
+    "trainNumber": "85611",
+    "fromStop": "Tullastraße",
+    "fromTime": "05:21",
+    "toStop": "Freudenstadt Bf.",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270739",
+    "capturedAt": "2026-06-24T02:49:08.460Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S8",
+    "date": "2026-06-24",
+    "stand": "2026-06-24T03:18:00.000Z",
+    "trainNumber": "85622",
+    "fromStop": "Freudenstadt Bf.",
+    "fromTime": "07:46",
+    "toStop": "Tullastraße",
+    "toTime": "10:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270739",
+    "capturedAt": "2026-06-24T02:49:08.460Z",
+    "cause": "personnel"
   }
 ]
