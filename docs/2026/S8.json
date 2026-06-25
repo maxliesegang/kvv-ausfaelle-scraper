@@ -414,5 +414,44 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270739",
     "capturedAt": "2026-06-24T02:49:08.460Z",
     "cause": "operational"
+  },
+  {
+    "line": "S8",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T10:05:00.000Z",
+    "trainNumber": "85636",
+    "fromStop": "Karlsruhe Hbf.",
+    "fromTime": "12:44",
+    "toStop": "Ka. Tullastrasse",
+    "toTime": "13:02",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270879",
+    "capturedAt": "2026-06-25T10:38:12.923Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S8",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T10:05:00.000Z",
+    "trainNumber": "85647",
+    "fromStop": "Ka. Tullastrasse",
+    "fromTime": "13:57",
+    "toStop": "Freudenstadt Hbf.",
+    "toTime": "16:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270879",
+    "capturedAt": "2026-06-25T10:38:12.923Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S8",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T10:05:00.000Z",
+    "trainNumber": "85660",
+    "fromStop": "Freudenstadt Hbf.",
+    "fromTime": "17:23",
+    "toStop": "Ka. Tullastrasse",
+    "toTime": "19:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270879",
+    "capturedAt": "2026-06-25T10:38:12.923Z",
+    "cause": "personnel"
   }
 ]
