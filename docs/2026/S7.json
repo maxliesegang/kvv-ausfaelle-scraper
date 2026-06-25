@@ -882,5 +882,57 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270644",
     "capturedAt": "2026-06-22T09:44:52.299Z",
     "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T13:05:00.000Z",
+    "trainNumber": "85576",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "15:24",
+    "toStop": "Ka. Tullastrasse",
+    "toTime": "15:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270910",
+    "capturedAt": "2026-06-25T14:21:32.792Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T13:05:00.000Z",
+    "trainNumber": "85581",
+    "fromStop": "Ka. Tullastrasse",
+    "fromTime": "16:11",
+    "toStop": "Achern Bf.",
+    "toTime": "17:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270910",
+    "capturedAt": "2026-06-25T14:21:32.792Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T13:05:00.000Z",
+    "trainNumber": "85582",
+    "fromStop": "Achern Bf.",
+    "fromTime": "17:33",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "18:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270910",
+    "capturedAt": "2026-06-25T14:21:32.792Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T13:05:00.000Z",
+    "trainNumber": "85584",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "19:15",
+    "toStop": "Tullastraße an 19.40 Uhr 85591 Tullastraße ab 20:17 Uhr bis Albtalbahnhof",
+    "toTime": "20:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270910",
+    "capturedAt": "2026-06-25T14:21:32.792Z",
+    "cause": "personnel"
   }
 ]
