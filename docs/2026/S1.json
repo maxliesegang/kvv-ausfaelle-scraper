@@ -1285,5 +1285,44 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270709",
     "capturedAt": "2026-06-23T02:48:46.421Z",
     "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T05:57:00.000Z",
+    "trainNumber": "30002",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "05:18",
+    "toStop": "Bad Herrenalb Bf",
+    "toTime": "05:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
+    "capturedAt": "2026-06-25T07:38:01.549Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S1",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T05:57:00.000Z",
+    "trainNumber": "30003",
+    "fromStop": "Bad Herrenalb Bf",
+    "fromTime": "06:03",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "07:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
+    "capturedAt": "2026-06-25T07:38:01.549Z",
+    "cause": "personnel"
+  },
+  {
+    "line": "S1",
+    "date": "2026-06-25",
+    "stand": "2026-06-25T05:57:00.000Z",
+    "trainNumber": "10018",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "07:30",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "08:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
+    "capturedAt": "2026-06-25T07:38:01.549Z",
+    "cause": "personnel"
   }
 ]
