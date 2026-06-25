@@ -4,12 +4,13 @@ import { generateSiteIndices } from './site-index.js';
 import { fetchRelevantItems, collectTrips, type CollectTripsResult } from './workflow.js';
 
 /**
- * Handles parse errors by logging them and exiting with error code.
- * This ensures CI fails while still allowing successful trips to be saved first.
+ * Logs parse errors. Returns true if any were present.
+ * Reporting is decoupled from exiting so valid data is always saved first and CI
+ * fails afterwards (see {@link main}).
  */
-function handleParseErrors(result: CollectTripsResult): void {
+function reportParseErrors(result: CollectTripsResult): boolean {
   if (result.parseErrors.length === 0) {
-    return;
+    return false;
   }
 
   const errorCount = result.parseErrors.length;
@@ -24,7 +25,30 @@ function handleParseErrors(result: CollectTripsResult): void {
     console.error('');
   });
 
-  process.exit(1);
+  return true;
+}
+
+/**
+ * Logs any cancellations whose cause could not be classified. An unknown cause never
+ * invalidates the data — it's saved either way — but it signals the keyword lists in
+ * `classifyCause` (`src/cause.ts`) need extending. Surfacing it lets CI fail as a
+ * notification while the good data is still published. Returns true if any were present.
+ */
+function reportUnknownCauses(result: CollectTripsResult): boolean {
+  const unknown = result.cancellations.filter((c) => c.cause === 'unknown');
+  if (unknown.length === 0) {
+    return false;
+  }
+
+  const sources = [...new Set(unknown.map((c) => c.sourceUrl))];
+  console.error(
+    `\nUnknown cause: ${unknown.length} cancellation(s) across ${sources.length} article(s) could not be classified.`,
+  );
+  console.error('Extend the keyword lists in src/cause.ts. Affected articles:');
+  sources.forEach((url) => console.error(`  ${url}`));
+  console.error('');
+
+  return true;
 }
 
 /**
@@ -39,24 +63,25 @@ async function main(): Promise<void> {
   // Fetch details concurrently; tolerate individual failures
   const result = await collectTrips(relevant);
 
-  if (result.cancellations.length === 0) {
+  if (result.cancellations.length > 0) {
+    // Write directly into docs/ so GitHub Pages can serve a single source of truth
+    await saveCancellations(DATA_DIR, result.cancellations);
+  } else {
     console.log('No cancellations parsed, nothing to save.');
-    // Still (re)generate static index pages so the site reflects current files
-    await generateSiteIndices(DATA_DIR);
-    handleParseErrors(result);
-    return;
   }
 
-  // Write directly into docs/ so GitHub Pages can serve a single source of truth
-  await saveCancellations(DATA_DIR, result.cancellations);
-
-  // Update indices after writing files
+  // Always (re)generate static index pages so the site reflects current files
   await generateSiteIndices(DATA_DIR);
 
   console.log('Done');
 
-  // Exit with error after saving if there were parse errors
-  handleParseErrors(result);
+  // Surface problems only AFTER persisting data: CI fails loudly (parse regressions, or
+  // notices we couldn't classify) while good data is still saved and committed.
+  const hadParseErrors = reportParseErrors(result);
+  const hadUnknownCauses = reportUnknownCauses(result);
+  if (hadParseErrors || hadUnknownCauses) {
+    process.exit(1);
+  }
 }
 
 main().catch((err) => {

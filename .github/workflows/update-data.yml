@@ -49,5 +49,6 @@ jobs:
       - name: Fail if scraper had errors
         if: steps.scraper.outcome == 'failure'
         run: |
-          echo "Scraper encountered parse errors. Check logs above for details."
+          echo "Scraper exited non-zero (parse errors or unclassified 'unknown' causes)."
+          echo "Data was still committed above; check logs for affected articles."
           exit 1

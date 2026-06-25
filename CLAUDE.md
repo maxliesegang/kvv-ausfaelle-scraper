@@ -31,7 +31,7 @@ Train-number → line mapping (`src/train-lines.ts`, `src/train-line-definitions
 ### Key invariants
 
 - **Fahrplan year, not calendar year.** All storage and train-line definitions are organized by Fahrplan (timetable) year, defined in `src/fahrplan.ts`. Never substitute calendar year.
-- **Error visibility is deliberate.** Transient/article-specific issues are logged and skipped so stored data stays intact, but genuine parser regressions (`ParseError` with trip-like times present but no parsed trips) are re-thrown. `index.ts` saves valid data first, then `process.exit(1)` if any `parseError` occurred — so CI fails loudly while still publishing good data.
+- **Error visibility is deliberate.** Transient/article-specific issues are logged and skipped so stored data stays intact, but genuine parser regressions (`ParseError` with trip-like times present but no parsed trips) are re-thrown. `index.ts` saves valid data first, then `process.exit(1)` if any `parseError` occurred **or** any saved cancellation has an `unknown` cause — so CI fails loudly (as a notification to extend `classifyCause`) while still publishing the good data it just committed.
 - `docs/` is the published artifact served by GitHub Pages; the scraper writes directly into it as the single source of truth.
 
 ### Config (env vars, see `src/config.ts`)
