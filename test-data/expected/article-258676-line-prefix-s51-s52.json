@@ -8,7 +8,7 @@
     "fromTime": "06:20",
     "toStop": "KA Marktplatz",
     "toTime": "06:52",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S51",
@@ -19,6 +19,6 @@
     "fromTime": "07:00",
     "toStop": "Germersheim",
     "toTime": "08:07",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]

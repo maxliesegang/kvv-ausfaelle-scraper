@@ -8,7 +8,7 @@
     "fromTime": "4:46",
     "toStop": "Wörth Badepark",
     "toTime": "6:13",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -19,6 +19,6 @@
     "fromTime": "6:23",
     "toStop": "Pforzheim Bahnhof",
     "toTime": "7:50",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]

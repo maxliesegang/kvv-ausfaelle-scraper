@@ -12,7 +12,11 @@ describe('classifyCause - categories', () => {
     assert.strictEqual(classifyCause('Fahrtausfälle wegen Personalmangel'), 'personnel');
     assert.strictEqual(classifyCause('krankheitsbedingter Ausfall'), 'personnel');
     assert.strictEqual(classifyCause('Engpass beim Fahrpersonal'), 'personnel');
-    assert.strictEqual(classifyCause('betriebsbedingte Fahrtausfälle'), 'personnel');
+  });
+
+  it('classifies generic betriebsbedingt as operational, not personnel', () => {
+    assert.strictEqual(classifyCause('betriebsbedingte Fahrtausfälle'), 'operational');
+    assert.strictEqual(classifyCause('betriebsbedingter Ausfall'), 'operational');
   });
 
   it('classifies strike', () => {
@@ -52,7 +56,7 @@ describe('classifyCause - categories', () => {
 });
 
 describe('classifyCause - priority ordering', () => {
-  it('prefers strike over the generic betriebsbedingt (personnel)', () => {
+  it('prefers strike over the generic betriebsbedingt (operational)', () => {
     assert.strictEqual(
       classifyCause('betriebsbedingte Fahrtausfälle wegen eines Streiks'),
       'strike',
@@ -66,6 +70,13 @@ describe('classifyCause - priority ordering', () => {
     );
   });
 
+  it('prefers an explicit personnel shortage over the generic betriebsbedingt', () => {
+    assert.strictEqual(
+      classifyCause('betriebsbedingter Ausfall wegen Personalmangel'),
+      'personnel',
+    );
+  });
+
   it('prefers a specific technical cause over the generic sperrung (construction)', () => {
     assert.strictEqual(
       classifyCause('Fahrzeugstörung führt zur Sperrung der Strecke'),
@@ -73,7 +84,10 @@ describe('classifyCause - priority ordering', () => {
     );
   });
 
-  it('prefers personnel (betriebsbedingt) over construction (sperrung)', () => {
-    assert.strictEqual(classifyCause('betriebsbedingter Ausfall, dazu eine Sperrung'), 'personnel');
+  it('prefers operational (betriebsbedingt) over construction (sperrung)', () => {
+    assert.strictEqual(
+      classifyCause('betriebsbedingter Ausfall, dazu eine Sperrung'),
+      'operational',
+    );
   });
 });

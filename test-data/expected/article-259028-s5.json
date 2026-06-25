@@ -8,7 +8,7 @@
     "fromTime": "09:38",
     "toStop": "Wörth Badepark",
     "toTime": "09:15",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -19,7 +19,7 @@
     "fromTime": "09:45",
     "toStop": "Tullastraße",
     "toTime": "11:26",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -30,7 +30,7 @@
     "fromTime": "12:40",
     "toStop": "Rheinbergstraße",
     "toTime": "13:04",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -41,7 +41,7 @@
     "fromTime": "13:12",
     "toStop": "Berghausen",
     "toTime": "13:53",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -52,7 +52,7 @@
     "fromTime": "14:03",
     "toStop": "Rheinbergstraße",
     "toTime": "14:44",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -63,7 +63,7 @@
     "fromTime": "14:52",
     "toStop": "Söllingen",
     "toTime": "15:37",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -74,7 +74,7 @@
     "fromTime": "15:51",
     "toStop": "Wörth Badepark",
     "toTime": "16:53",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -85,7 +85,7 @@
     "fromTime": "17:05",
     "toStop": "Söllingen",
     "toTime": "18:06",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -96,7 +96,7 @@
     "fromTime": "18:18",
     "toStop": "Rheinbergstraße",
     "toTime": "19:04",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -107,6 +107,6 @@
     "fromTime": "19:12",
     "toStop": "Tullastraße",
     "toTime": "19:56",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]

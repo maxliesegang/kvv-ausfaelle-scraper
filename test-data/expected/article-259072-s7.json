@@ -8,7 +8,7 @@
     "fromTime": "18:24",
     "toStop": "Tullastraße",
     "toTime": "18:44",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S7",
@@ -19,7 +19,7 @@
     "fromTime": "19:13",
     "toStop": "Achern",
     "toTime": "20:25",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S7",
@@ -30,6 +30,6 @@
     "fromTime": "20:50",
     "toStop": "Karlsruhe Hauptbahnhof",
     "toTime": "21:47",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]

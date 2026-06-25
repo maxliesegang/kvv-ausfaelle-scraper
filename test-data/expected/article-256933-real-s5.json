@@ -8,7 +8,7 @@
     "fromTime": "04:10",
     "toStop": "Wörth Badepark",
     "toTime": "04:51",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -19,7 +19,7 @@
     "fromTime": "05:02",
     "toStop": "Söllingen Bahnhof",
     "toTime": "05:38",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -30,7 +30,7 @@
     "fromTime": "05:05",
     "toStop": "Söllingen Bahnhof",
     "toTime": "06:07",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -41,7 +41,7 @@
     "fromTime": "05:58",
     "toStop": "Wörth Badepark",
     "toTime": "07:05",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -52,7 +52,7 @@
     "fromTime": "06:18",
     "toStop": "Wörth Badepark",
     "toTime": "07:22",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -63,7 +63,7 @@
     "fromTime": "07:15",
     "toStop": "Söllingen Bahnhof",
     "toTime": "08:17",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -74,7 +74,7 @@
     "fromTime": "07:35",
     "toStop": "Söllingen Bahnhof",
     "toTime": "08:37",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S5",
@@ -85,6 +85,6 @@
     "fromTime": "08:48",
     "toStop": "Karlsruhe Weinweg",
     "toTime": "09:09",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]

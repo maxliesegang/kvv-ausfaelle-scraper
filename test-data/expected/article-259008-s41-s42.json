@@ -8,7 +8,7 @@
     "fromTime": "10:16",
     "toStop": "Mosbach Bf.",
     "toTime": "11:16",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -19,7 +19,7 @@
     "fromTime": "11:20",
     "toStop": "Mosbach-Neckarelz Bf.",
     "toTime": "11:24",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -30,7 +30,7 @@
     "fromTime": "11:34",
     "toStop": "Mosbach Bf.",
     "toTime": "11:38",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -41,7 +41,7 @@
     "fromTime": "11:42",
     "toStop": "Heilbronn Hbf. Vorplatz",
     "toTime": "12:37",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S42",
@@ -52,7 +52,7 @@
     "fromTime": "13:03",
     "toStop": "Sinsheim Bf.",
     "toTime": "14:07",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S42",
@@ -63,7 +63,7 @@
     "fromTime": "14:46",
     "toStop": "Heilbronn Hbf. Vorplatz",
     "toTime": "15:46",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -74,7 +74,7 @@
     "fromTime": "15:09",
     "toStop": "Mosbach",
     "toTime": "16:16",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -85,7 +85,7 @@
     "fromTime": "16:20",
     "toStop": "Neckarelz",
     "toTime": "16:24",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -96,7 +96,7 @@
     "fromTime": "16:34",
     "toStop": "Mosbach",
     "toTime": "16:38",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S41",
@@ -107,7 +107,7 @@
     "fromTime": "16:42",
     "toStop": "Heilbronn Hbf",
     "toTime": "17:37",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S42",
@@ -118,7 +118,7 @@
     "fromTime": "18:02",
     "toStop": "Sinsheim",
     "toTime": "19:08",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S42",
@@ -129,6 +129,6 @@
     "fromTime": "19:45",
     "toStop": "Heilbronn Hbf",
     "toTime": "20:47",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]

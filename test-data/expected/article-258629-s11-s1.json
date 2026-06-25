@@ -8,7 +8,7 @@
     "fromTime": "17:05",
     "toStop": "Ittersbach Rathaus",
     "toTime": "18:15",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S11",
@@ -19,7 +19,7 @@
     "fromTime": "18:21",
     "toStop": "Neureut Kirchfeld",
     "toTime": "19:31",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S1",
@@ -30,7 +30,7 @@
     "fromTime": "19:34",
     "toStop": "Hochstetten",
     "toTime": "20:47",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S1",
@@ -41,7 +41,7 @@
     "fromTime": "19:45",
     "toStop": "Bad Herrenalb",
     "toTime": "20:53",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S1",
@@ -52,7 +52,7 @@
     "fromTime": "21:02",
     "toStop": "Ettlingen Freibad",
     "toTime": "22:12",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S1",
@@ -63,7 +63,7 @@
     "fromTime": "21:03",
     "toStop": "Hochstetten",
     "toTime": "22:37",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S11",
@@ -74,7 +74,7 @@
     "fromTime": "22:42",
     "toStop": "Ittersbach Rathaus",
     "toTime": "00:15",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S1",
@@ -85,7 +85,7 @@
     "fromTime": "23:04",
     "toStop": "Neureut Kirchfeld",
     "toTime": "23:51",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S1",
@@ -96,6 +96,6 @@
     "fromTime": "00:25",
     "toStop": "Ettlingen Freibad",
     "toTime": "01:12",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]
