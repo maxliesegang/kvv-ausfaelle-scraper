@@ -18,7 +18,7 @@ function createCancellation(overrides: Partial<Cancellation> = {}): Cancellation
     toTime: '09:00',
     sourceUrl: 'test://article',
     capturedAt: '2024-12-16T12:05:00.000Z',
-    cause: 'personnel',
+    cause: 'operational',
     ...overrides,
   };
 }

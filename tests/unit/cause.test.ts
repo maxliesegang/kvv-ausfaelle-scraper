@@ -8,13 +8,13 @@ import assert from 'node:assert';
 import { classifyCause } from '../../src/cause.js';
 
 describe('classifyCause - categories', () => {
-  it('classifies personnel shortage', () => {
-    assert.strictEqual(classifyCause('Fahrtausfälle wegen Personalmangel'), 'personnel');
-    assert.strictEqual(classifyCause('krankheitsbedingter Ausfall'), 'personnel');
-    assert.strictEqual(classifyCause('Engpass beim Fahrpersonal'), 'personnel');
+  it('classifies personnel/staffing shortages as operational', () => {
+    assert.strictEqual(classifyCause('Fahrtausfälle wegen Personalmangel'), 'operational');
+    assert.strictEqual(classifyCause('krankheitsbedingter Ausfall'), 'operational');
+    assert.strictEqual(classifyCause('Engpass beim Fahrpersonal'), 'operational');
   });
 
-  it('classifies generic betriebsbedingt as operational, not personnel', () => {
+  it('classifies generic betriebsbedingt as operational', () => {
     assert.strictEqual(classifyCause('betriebsbedingte Fahrtausfälle'), 'operational');
     assert.strictEqual(classifyCause('betriebsbedingter Ausfall'), 'operational');
   });
@@ -67,13 +67,6 @@ describe('classifyCause - priority ordering', () => {
     assert.strictEqual(
       classifyCause('betriebsbedingter Ausfall aufgrund eines Unwetters'),
       'weather',
-    );
-  });
-
-  it('prefers an explicit personnel shortage over the generic betriebsbedingt', () => {
-    assert.strictEqual(
-      classifyCause('betriebsbedingter Ausfall wegen Personalmangel'),
-      'personnel',
     );
   });
 

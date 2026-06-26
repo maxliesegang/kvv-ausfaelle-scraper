@@ -7,10 +7,8 @@
  * cancellation and attach a best-effort category so consumers can filter downstream.
  *
  * The classifier is intentionally a simple ordered keyword match: the first category
- * whose keywords appear in the (normalized) text wins. Order encodes priority for
- * notices that mention several causes — specific causes (strike, weather, technical,
- * explicit personnel shortages) outrank the broad `betriebsbedingt` (`operational`),
- * which in turn outranks the very broad construction term `sperrung`.
+ * whose keywords appear in the (normalized) text wins, so list order encodes priority
+ * for notices that mention several causes (see {@link CAUSE_CLASSIFIERS}).
  *
  * Extending it is deliberately trivial: add a keyword to an existing group, or add a
  * new `{ cause, keywords }` entry in the desired priority position.
@@ -20,7 +18,6 @@ import { normalizeGermanText } from './utils/normalization.js';
 
 /** Best-effort category for why a trip was cancelled. */
 export type CancellationCause =
-  | 'personnel'
   | 'operational'
   | 'strike'
   | 'technical'
@@ -35,11 +32,9 @@ interface CauseClassifier {
 }
 
 /**
- * Ordered by priority — first match wins. Keep specific causes above generic ones:
- * `streik`, weather/technical terms, and explicit personnel shortages (`personalmangel`,
- * `krankheit…`) are unambiguous; `betriebsbedingt` (`operational`) is the generic
- * operational catch-all KVV uses for these notices and sits just above construction terms
- * like `sperrung`, which are the broadest and so come last.
+ * Ordered by priority — first match wins. Keep specific, unambiguous causes (strike,
+ * weather, technical) above the generic `operational` catch-all, which in turn sits above
+ * the broad construction terms (`sperrung` etc.) that come last.
  */
 const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
   {
@@ -77,8 +72,11 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
     ],
   },
   {
-    cause: 'personnel',
+    // KVV's catch-all for these notices: the generic `betriebsbedingt` umbrella term
+    // plus explicit personnel/staffing shortages (formerly a separate `personnel` cause).
+    cause: 'operational',
     keywords: [
+      'betriebsbedingt',
       'personalmangel',
       'personalausfall',
       'krankheitsbedingt',
@@ -86,10 +84,6 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
       'erkrankung',
       'fahrpersonal',
     ],
-  },
-  {
-    cause: 'operational',
-    keywords: ['betriebsbedingt'],
   },
   {
     cause: 'construction',

@@ -504,7 +504,7 @@
     "toTime": "15:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
     "capturedAt": "2026-06-25T14:21:33.325Z",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S11",
@@ -517,7 +517,7 @@
     "toTime": "16:55",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
     "capturedAt": "2026-06-25T14:21:33.325Z",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S11",
@@ -530,7 +530,7 @@
     "toTime": "19:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
     "capturedAt": "2026-06-25T14:21:33.325Z",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S11",
@@ -543,7 +543,7 @@
     "toTime": "20:31",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
     "capturedAt": "2026-06-25T14:21:33.325Z",
-    "cause": "personnel"
+    "cause": "operational"
   },
   {
     "line": "S11",
@@ -556,6 +556,6 @@
     "toTime": "00:31",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270867",
     "capturedAt": "2026-06-25T14:21:33.325Z",
-    "cause": "personnel"
+    "cause": "operational"
   }
 ]
