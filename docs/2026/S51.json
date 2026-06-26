@@ -505,5 +505,31 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270851",
     "capturedAt": "2026-06-25T07:38:01.772Z",
     "cause": "operational"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-26",
+    "stand": "2026-06-26T14:02:00.000Z",
+    "trainNumber": "84913",
+    "fromStop": "Germersheim",
+    "fromTime": "14:50",
+    "toStop": "Söllingen",
+    "toTime": "16:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271013",
+    "capturedAt": "2026-06-26T14:13:43.738Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-26",
+    "stand": "2026-06-26T14:02:00.000Z",
+    "trainNumber": "84912",
+    "fromStop": "Söllingen",
+    "fromTime": "16:38",
+    "toStop": "Germersheim",
+    "toTime": "18:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271013",
+    "capturedAt": "2026-06-26T14:13:43.738Z",
+    "cause": "operational"
   }
 ]
