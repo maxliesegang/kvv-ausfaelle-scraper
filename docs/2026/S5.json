@@ -6914,5 +6914,70 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270960",
     "capturedAt": "2026-06-26T14:13:44.159Z",
     "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-27",
+    "stand": "2026-06-27T03:06:00.000Z",
+    "trainNumber": "84812",
+    "fromStop": "KA-Tullastr.",
+    "fromTime": "07:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271059",
+    "capturedAt": "2026-06-27T02:44:02.009Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-27",
+    "stand": "2026-06-27T03:06:00.000Z",
+    "trainNumber": "84807",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "08:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "09:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271059",
+    "capturedAt": "2026-06-27T02:44:02.009Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-27",
+    "stand": "2026-06-27T03:06:00.000Z",
+    "trainNumber": "84722",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "09:18",
+    "toStop": "KA-Rheinbergstr.",
+    "toTime": "10:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271059",
+    "capturedAt": "2026-06-27T02:44:02.009Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-27",
+    "stand": "2026-06-27T03:06:00.000Z",
+    "trainNumber": "84733",
+    "fromStop": "KA-Rheinbergstr.",
+    "fromTime": "10:12",
+    "toStop": "Berghausen Bf.",
+    "toTime": "10:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271059",
+    "capturedAt": "2026-06-27T02:44:02.009Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-27",
+    "stand": "2026-06-27T03:06:00.000Z",
+    "trainNumber": "84728",
+    "fromStop": "Berghausen Bf.",
+    "fromTime": "11:05",
+    "toStop": "KA Tullastr.",
+    "toTime": "11:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271059",
+    "capturedAt": "2026-06-27T02:44:02.009Z",
+    "cause": "operational"
   }
 ]
