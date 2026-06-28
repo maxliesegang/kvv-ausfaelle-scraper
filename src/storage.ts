@@ -31,9 +31,9 @@ function getCancellationKey(cancellation: Cancellation): string {
 }
 
 /**
- * Sorts cancellations deterministically for consistent output.
+ * Comparator that orders cancellations deterministically for stable file output.
  */
-function sortDeterministic(a: Cancellation, b: Cancellation): number {
+function compareCancellations(a: Cancellation, b: Cancellation): number {
   return (
     a.date.localeCompare(b.date) ||
     a.fromTime.localeCompare(b.fromTime) ||
@@ -42,62 +42,87 @@ function sortDeterministic(a: Cancellation, b: Cancellation): number {
 }
 
 interface BucketStats {
-  added: number;
+  /** Trips newly stored this run (not previously present). */
+  addedTrips: Cancellation[];
+  /** Count of incoming trips that were already stored (unchanged). */
   duplicates: number;
+  /** Stored trips dropped this run because their source article no longer lists them. */
+  removedTrips: Cancellation[];
+}
+
+/** One-line, human-readable identity of a trip for run logs. */
+function formatTrip(trip: Cancellation): string {
+  return `${trip.line} ${trip.trainNumber} ${trip.date} ${trip.fromTime}→${trip.toTime} ${trip.fromStop}→${trip.toStop}`;
 }
 
 interface CancellationBucket {
-  readonly key: string;
-  readonly year: string;
-  readonly line: string;
   readonly filePath: string;
   readonly seenKeys: Set<string>;
+  /** Keys of every trip this run produced for this bucket (new and duplicate alike). */
+  readonly freshKeys: Set<string>;
   entries: Cancellation[];
   stats: BucketStats;
 }
 
-/**
- * Creates a unique key for bucketing cancellations by year and line.
- */
-function bucketKey(year: string, line: string): string {
-  return `${year}/${line}`;
+/** A bucket before its existing file is loaded: this run's trips plus their target path. */
+interface PendingBucket {
+  readonly filePath: string;
+  readonly freshTrips: Cancellation[];
 }
 
-/**
- * Finds or creates a bucket for the given trip, loading existing data if necessary.
- */
-async function findOrCreateBucket(
-  buckets: Map<string, CancellationBucket>,
-  baseDir: string,
-  trip: Cancellation,
-): Promise<CancellationBucket> {
-  const fahrplanYear = getFahrplanYear(trip.date);
-  if (fahrplanYear === undefined) {
+/** Resolves the Fahrplan (timetable) year a date belongs to, or throws if unknown. */
+function resolveFahrplanYear(date: string): string {
+  const year = getFahrplanYear(date);
+  if (year === undefined) {
     throw new Error(
-      `Cannot determine Fahrplan year for date ${trip.date}. ` +
+      `Cannot determine Fahrplan year for date ${date}. ` +
         `This date may be outside of known Fahrplan periods. ` +
         `Please update the Fahrplan definitions in src/fahrplan.ts.`,
     );
   }
-  const year = String(fahrplanYear);
-  const line = trip.line;
-  const key = bucketKey(year, line);
+  return String(year);
+}
 
-  let bucket = buckets.get(key);
-  if (!bucket) {
-    const filePath = join(baseDir, year, `${line}.json`);
-    const entries = await loadExistingCancellations(filePath);
-    bucket = {
-      key,
-      year,
-      line,
-      filePath,
-      seenKeys: new Set(entries.map((entry) => getCancellationKey(entry))),
-      entries,
-      stats: { added: 0, duplicates: 0 },
-    };
-    buckets.set(key, bucket);
+/**
+ * Groups trips by their destination file (`<year>/<line>.json`). Pure — performs no
+ * I/O — so grouping (and any bad-date error) happens before a single file is touched.
+ */
+function groupTripsIntoBuckets(baseDir: string, trips: Cancellation[]): PendingBucket[] {
+  const pendingByPath = new Map<string, PendingBucket>();
+
+  for (const trip of trips) {
+    const year = resolveFahrplanYear(trip.date);
+    const filePath = join(baseDir, year, `${trip.line}.json`);
+    let pending = pendingByPath.get(filePath);
+    if (!pending) {
+      pending = { filePath, freshTrips: [] };
+      pendingByPath.set(filePath, pending);
+    }
+    pending.freshTrips.push(trip);
   }
+
+  return [...pendingByPath.values()];
+}
+
+/** Loads a bucket's existing file, merges this run's trips into it, and prunes ghosts. */
+async function buildBucket(
+  pending: PendingBucket,
+  refetchedSourceUrls: ReadonlySet<string>,
+): Promise<CancellationBucket> {
+  const entries = await loadExistingCancellations(pending.filePath);
+  const bucket: CancellationBucket = {
+    filePath: pending.filePath,
+    seenKeys: new Set(entries.map(getCancellationKey)),
+    freshKeys: new Set(),
+    entries,
+    stats: { addedTrips: [], duplicates: 0, removedTrips: [] },
+  };
+
+  for (const trip of pending.freshTrips) {
+    mergeTrip(bucket, trip);
+  }
+  reconcileBucket(bucket, refetchedSourceUrls);
+
   return bucket;
 }
 
@@ -106,6 +131,8 @@ async function findOrCreateBucket(
  */
 function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
   const tripKey = getCancellationKey(trip);
+  bucket.freshKeys.add(tripKey);
+
   if (bucket.seenKeys.has(tripKey)) {
     bucket.stats.duplicates += 1;
     return;
@@ -113,7 +140,47 @@ function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
 
   bucket.seenKeys.add(tripKey);
   bucket.entries.push(trip);
-  bucket.stats.added += 1;
+  bucket.stats.addedTrips.push(trip);
+}
+
+/**
+ * Drops stored entries that disappeared from their source article this run.
+ *
+ * KVV edits detail pages in place — sometimes without bumping their `Stand`
+ * timestamp — so a trip stored from an earlier version of an article can
+ * silently vanish from the current version, leaving a "ghost" in our data.
+ * For every article we successfully re-fetched this run (`refetchedSourceUrls`),
+ * we treat its fresh trip set as authoritative: a stored entry from that same
+ * article that was not seen again is stale and gets removed.
+ *
+ * Entries from articles we did *not* re-fetch this run — transient fetch
+ * failures, articles skipped as too young, or simply unrelated articles — are
+ * never in `refetchedSourceUrls`, so they are always kept. This makes pruning
+ * safe: a hiccup fetching one article can never delete its stored data.
+ *
+ * Scope: reconciliation only sees buckets loaded for this run's trips. If a
+ * revised article drops *every* trip on one of its lines, that line's bucket is
+ * not loaded and its ghost survives until the bucket is touched again. The
+ * common case (an article that keeps listing trips on the same lines) is fully
+ * covered.
+ */
+function reconcileBucket(
+  bucket: CancellationBucket,
+  refetchedSourceUrls: ReadonlySet<string>,
+): void {
+  const kept: Cancellation[] = [];
+
+  for (const entry of bucket.entries) {
+    const isGhost =
+      refetchedSourceUrls.has(entry.sourceUrl) && !bucket.freshKeys.has(getCancellationKey(entry));
+    if (isGhost) {
+      bucket.stats.removedTrips.push(entry);
+    } else {
+      kept.push(entry);
+    }
+  }
+
+  bucket.entries = kept;
 }
 
 /**
@@ -121,21 +188,38 @@ function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
  */
 async function writeBucket(bucket: CancellationBucket): Promise<void> {
   const { filePath, entries, stats } = bucket;
-  entries.sort(sortDeterministic);
+  entries.sort(compareCancellations);
   await writeJsonFile(filePath, entries);
-  console.log('Updated', filePath, `(added: ${stats.added}, duplicates: ${stats.duplicates})`);
+  console.log(
+    'Updated',
+    filePath,
+    `(added: ${stats.addedTrips.length}, duplicates: ${stats.duplicates}, ` +
+      `removed: ${stats.removedTrips.length}, total: ${entries.length})`,
+  );
+  for (const trip of stats.addedTrips) {
+    console.log('  + added  ', formatTrip(trip));
+  }
+  for (const trip of stats.removedTrips) {
+    console.log('  - removed', formatTrip(trip));
+  }
 }
 
-function summarizeBuckets(buckets: Iterable<CancellationBucket>): BucketStats {
+function summarizeBuckets(buckets: Iterable<CancellationBucket>): {
+  added: number;
+  duplicates: number;
+  removed: number;
+} {
   let added = 0;
   let duplicates = 0;
+  let removed = 0;
 
   for (const bucket of buckets) {
-    added += bucket.stats.added;
+    added += bucket.stats.addedTrips.length;
     duplicates += bucket.stats.duplicates;
+    removed += bucket.stats.removedTrips.length;
   }
 
-  return { added, duplicates };
+  return { added, duplicates, removed };
 }
 
 /**
@@ -143,21 +227,19 @@ function summarizeBuckets(buckets: Iterable<CancellationBucket>): BucketStats {
  * Merges with existing data and reports statistics.
  */
 export async function saveCancellations(baseDir: string, trips: Cancellation[]): Promise<void> {
-  const buckets = new Map<string, CancellationBucket>();
+  // Articles we successfully re-fetched this run; their fresh trip set is authoritative.
+  const refetchedSourceUrls = new Set(trips.map((trip) => trip.sourceUrl));
 
-  // Group trips into buckets and merge with existing data
-  for (const trip of trips) {
-    const bucket = await findOrCreateBucket(buckets, baseDir, trip);
-    mergeTrip(bucket, trip);
-  }
+  // Group by destination file first (pure), then load + merge + write each in parallel.
+  const pendingBuckets = groupTripsIntoBuckets(baseDir, trips);
+  const buckets = await Promise.all(
+    pendingBuckets.map((pending) => buildBucket(pending, refetchedSourceUrls)),
+  );
+  await Promise.all(buckets.map(writeBucket));
 
-  // Write all buckets to disk
-  await Promise.all(Array.from(buckets.values()).map((bucket) => writeBucket(bucket)));
-
-  // Report summary statistics
-  const totals = summarizeBuckets(buckets.values());
-
+  const totals = summarizeBuckets(buckets);
   console.log(
-    `Summary: added ${totals.added} new cancellations, skipped ${totals.duplicates} duplicates.`,
+    `Summary: added ${totals.added} new cancellations, ` +
+      `skipped ${totals.duplicates} duplicates, removed ${totals.removed} stale entries.`,
   );
 }

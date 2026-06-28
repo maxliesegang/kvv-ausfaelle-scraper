@@ -33,15 +33,37 @@ export async function fetchRelevantItems(rssUrl: string = RSS_URL): Promise<Item
 }
 
 /**
+ * Why an article produced no trips this run. Used for the per-run summary so the
+ * GitHub Actions log shows at a glance how each relevant item was handled.
+ */
+export type SkipReason =
+  | 'no-link'
+  | 'fetch-failed'
+  | 'low-relevance'
+  | 'too-young'
+  | 'no-trip-details'
+  | 'construction';
+
+/** Outcome of processing a single RSS item: either parsed trips or a skip reason. */
+export type ItemOutcome =
+  | { readonly status: 'parsed'; readonly trips: Cancellation[] }
+  | { readonly status: 'skipped'; readonly reason: SkipReason };
+
+function skipped(reason: SkipReason): ItemOutcome {
+  return { status: 'skipped', reason };
+}
+
+/**
  * Fetches and parses cancellation details from a single RSS item.
  *
  * @param item - RSS feed item to process
- * @returns Array of parsed cancellations (empty if no link or parsing fails)
+ * @returns The trips parsed from the article, or the reason it produced none
+ * @throws {ParseError} On a genuine parser regression (re-thrown for CI visibility)
  */
-export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
+export async function fetchTripsFromItem(item: Item): Promise<ItemOutcome> {
   const url = item.link;
   if (!url) {
-    return [];
+    return skipped('no-link');
   }
 
   console.log('Fetching detail:', url);
@@ -51,14 +73,14 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
     html = await fetchText(url);
   } catch (error) {
     console.warn('Failed to fetch detail page:', url, error);
-    return [];
+    return skipped('fetch-failed');
   }
 
   const detailRelevance = analyzeDetailPage(html);
   if (!detailRelevance.isRelevant) {
     const reason = detailRelevance.reasons.join('; ') || 'no cancellation signals found';
     console.warn(`  -> skipping article due to low relevance (${reason})`);
-    return [];
+    return skipped('low-relevance');
   }
 
   const publishedMs = getArticlePublishedMs(item);
@@ -69,14 +91,14 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
       console.log(
         `  -> skipping article because it is only ${ageMinutes} minutes old (needs 60 minutes)`,
       );
-      return [];
+      return skipped('too-young');
     }
   }
 
   try {
     const trips = parseDetailPage(html, url);
     console.log(`  -> parsed ${trips.length} trips`);
-    return trips;
+    return { status: 'parsed', trips };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
 
@@ -90,7 +112,7 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
         console.warn(
           `  -> skipping article because no trip details were listed despite relevance signals (${reasons})`,
         );
-        return [];
+        return skipped('no-trip-details');
       }
 
       // Construction notices are newly admitted (they were filtered out before cause
@@ -101,7 +123,7 @@ export async function fetchTripsFromItem(item: Item): Promise<Cancellation[]> {
         console.warn(
           `  -> skipping construction notice with unparsed trip-like lines: ${url} (signals: ${reasons})`,
         );
-        return [];
+        return skipped('construction');
       }
 
       throw new ParseError(
@@ -145,9 +167,27 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
   const cancellations: Cancellation[] = [];
   const parseErrors: ParseError[] = [];
 
+  // Count how each item was handled so the run summary explains where trips went.
+  let parsedItems = 0;
+  const skips: Record<SkipReason, number> = {
+    'no-link': 0,
+    'fetch-failed': 0,
+    'low-relevance': 0,
+    'too-young': 0,
+    'no-trip-details': 0,
+    construction: 0,
+  };
+  let unexpectedErrors = 0;
+
   for (const res of results) {
     if (res.status === 'fulfilled') {
-      cancellations.push(...res.value);
+      const outcome = res.value;
+      if (outcome.status === 'parsed') {
+        parsedItems += 1;
+        cancellations.push(...outcome.trips);
+      } else {
+        skips[outcome.reason] += 1;
+      }
       continue;
     }
 
@@ -156,10 +196,64 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
       continue;
     }
 
+    unexpectedErrors += 1;
     console.warn('Detail fetch failed:', res.reason);
   }
 
+  logItemOutcomes(items.length, {
+    parsedItems,
+    trips: cancellations.length,
+    skips,
+    parseErrors: parseErrors.length,
+    unexpectedErrors,
+  });
+
   return { cancellations, parseErrors };
+}
+
+interface ItemOutcomeSummary {
+  readonly parsedItems: number;
+  readonly trips: number;
+  readonly skips: Record<SkipReason, number>;
+  readonly parseErrors: number;
+  readonly unexpectedErrors: number;
+}
+
+/** Human-readable labels for each skip reason, in the order shown in the summary. */
+const SKIP_LABELS: Record<SkipReason, string> = {
+  'too-young': 'too young (<60 min)',
+  'low-relevance': 'low relevance',
+  'no-trip-details': 'no trip details listed',
+  construction: 'construction (unparsed)',
+  'fetch-failed': 'fetch failed',
+  'no-link': 'no link',
+};
+
+/** Logs a one-block breakdown of how every relevant item was handled this run. */
+function logItemOutcomes(total: number, summary: ItemOutcomeSummary): void {
+  // Build only the non-empty rows, then pad labels to a shared width so values align.
+  const rows: Array<[label: string, value: string]> = [
+    ['parsed', `${summary.parsedItems} (${summary.trips} trip(s))`],
+  ];
+
+  for (const reason of Object.keys(SKIP_LABELS) as SkipReason[]) {
+    if (summary.skips[reason] > 0) {
+      rows.push([SKIP_LABELS[reason], String(summary.skips[reason])]);
+    }
+  }
+  if (summary.parseErrors > 0) {
+    rows.push(['parse errors', String(summary.parseErrors)]);
+  }
+  if (summary.unexpectedErrors > 0) {
+    rows.push(['unexpected errors', String(summary.unexpectedErrors)]);
+  }
+
+  const labelWidth = Math.max(...rows.map(([label]) => label.length)) + 1; // +1 for the colon
+
+  console.log(`\nItem outcomes (${total} relevant item(s)):`);
+  for (const [label, value] of rows) {
+    console.log(`  ${`${label}:`.padEnd(labelWidth + 2)}${value}`);
+  }
 }
 
 function getArticlePublishedMs(item: Item): number | undefined {

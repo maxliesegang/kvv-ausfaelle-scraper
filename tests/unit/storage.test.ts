@@ -35,8 +35,15 @@ describe('Storage', () => {
     try {
       console.log = () => undefined;
 
+      // 10003 comes from a different article that is not re-fetched this run, so it
+      // must persist; 10001 shares the source with the incoming batch and is deduped.
       const existingTrips = [
-        createCancellation({ trainNumber: '10003', fromTime: '10:00', toTime: '11:00' }),
+        createCancellation({
+          trainNumber: '10003',
+          fromTime: '10:00',
+          toTime: '11:00',
+          sourceUrl: 'test://older-article',
+        }),
         createCancellation(),
       ];
       const existingFilePath = join(tempDir, '2025', 'S1.json');
@@ -80,6 +87,46 @@ describe('Storage', () => {
     }
   });
 
+  it('should prune ghost trips that vanished from a re-fetched source article', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+
+    try {
+      console.log = () => undefined;
+
+      // Existing data captured from an earlier version of the article: it listed
+      // both 10001 and 10003. A second, unrelated article contributed 99999.
+      const existingTrips = [
+        createCancellation({ trainNumber: '10001', fromTime: '08:00' }),
+        createCancellation({ trainNumber: '10003', fromTime: '10:00' }),
+        createCancellation({
+          trainNumber: '99999',
+          fromTime: '20:00',
+          sourceUrl: 'test://other-article',
+        }),
+      ];
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+
+      // KVV edited the article in place: it now lists only 10001 (10003 is gone).
+      // The other article was not re-fetched this run.
+      await saveCancellations(tempDir, [
+        createCancellation({ trainNumber: '10001', fromTime: '08:00' }),
+      ]);
+
+      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      const trainNumbers = storedTrips.map((trip) => trip.trainNumber).sort();
+
+      // 10003 pruned (ghost from same source); 10001 kept (still listed);
+      // 99999 kept (its article was not re-fetched, so never reconciled).
+      assert.deepStrictEqual(trainNumbers, ['10001', '99999']);
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
   it('should stamp legacy records that have no cause field as unknown', async () => {
     const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
     const originalConsoleLog = console.log;
@@ -93,9 +140,15 @@ describe('Storage', () => {
       await mkdir(join(tempDir, '2025'), { recursive: true });
       await writeFile(existingFilePath, JSON.stringify([legacyRecord], null, 2));
 
-      // Saving an unrelated trip triggers a load+merge+write of the existing bucket.
+      // Saving an unrelated trip (different source) triggers a load+merge+write of the
+      // existing bucket without reconciling the legacy record out of it.
       await saveCancellations(tempDir, [
-        createCancellation({ trainNumber: '10010', fromTime: '07:30', toTime: '08:30' }),
+        createCancellation({
+          trainNumber: '10010',
+          fromTime: '07:30',
+          toTime: '08:30',
+          sourceUrl: 'test://other-article',
+        }),
       ]);
 
       const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
