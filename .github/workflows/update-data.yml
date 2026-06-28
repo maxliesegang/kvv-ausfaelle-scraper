@@ -5,11 +5,22 @@ on:
     - cron: '0 */4 * * *' # run at 00:00, 04:00, 08:00, 12:00, 16:00, 20:00 (UTC)
   workflow_dispatch: {}
 
+# Allow only one publish at a time; let an in-progress run finish so we never
+# cancel a scrape mid-flight (runs are 4h apart, so overlap is unlikely anyway).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # commit/push docs/
+      pages: write # deploy to GitHub Pages
+      id-token: write # OIDC token for deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
 
     steps:
       - uses: actions/checkout@v5
@@ -45,6 +56,24 @@ jobs:
           else
             echo "No changes"
           fi
+
+      # Publish docs/ to GitHub Pages. !cancelled() runs even when the scraper
+      # reported errors so the good data committed above still goes live; only a
+      # cancelled run skips publishing.
+      - name: Configure Pages
+        if: ${{ !cancelled() }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: ${{ !cancelled() }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        if: ${{ !cancelled() }}
+        uses: actions/deploy-pages@v4
 
       - name: Fail if scraper had errors
         if: steps.scraper.outcome == 'failure'
