@@ -9,7 +9,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "18:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
-    "capturedAt": "2025-12-19T21:21:10.649Z"
+    "capturedAt": "2025-12-19T21:21:10.649Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -21,7 +22,8 @@
     "toStop": "KA Tullastraße",
     "toTime": "20:30",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
-    "capturedAt": "2025-12-19T21:21:10.649Z"
+    "capturedAt": "2025-12-19T21:21:10.649Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -33,7 +35,8 @@
     "toStop": "Wörth Badepark",
     "toTime": "23:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_260192",
-    "capturedAt": "2025-12-19T21:21:10.649Z"
+    "capturedAt": "2025-12-19T21:21:10.649Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -45,7 +48,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "18:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261607",
-    "capturedAt": "2026-01-17T16:18:48.998Z"
+    "capturedAt": "2026-01-17T16:18:48.998Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -57,7 +61,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "19:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_261607",
-    "capturedAt": "2026-01-17T16:18:48.998Z"
+    "capturedAt": "2026-01-17T16:18:48.998Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -69,7 +74,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "13:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
-    "capturedAt": "2026-02-13T08:37:39.096Z"
+    "capturedAt": "2026-02-13T08:37:39.096Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -81,7 +87,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "14:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
-    "capturedAt": "2026-02-13T08:37:39.096Z"
+    "capturedAt": "2026-02-13T08:37:39.096Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -93,7 +100,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "16:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
-    "capturedAt": "2026-02-13T08:37:39.096Z"
+    "capturedAt": "2026-02-13T08:37:39.096Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -105,7 +113,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "17:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
-    "capturedAt": "2026-02-13T08:37:39.096Z"
+    "capturedAt": "2026-02-13T08:37:39.096Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -117,7 +126,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "18:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
-    "capturedAt": "2026-02-13T08:37:39.096Z"
+    "capturedAt": "2026-02-13T08:37:39.096Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -129,7 +139,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "00:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263140",
-    "capturedAt": "2026-02-13T16:40:20.756Z"
+    "capturedAt": "2026-02-13T16:40:20.756Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -141,7 +152,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "13:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
-    "capturedAt": "2026-02-19T12:56:38.805Z"
+    "capturedAt": "2026-02-19T12:56:38.805Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -153,7 +165,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "14:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
-    "capturedAt": "2026-02-19T12:56:38.805Z"
+    "capturedAt": "2026-02-19T12:56:38.805Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -165,7 +178,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "17:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
-    "capturedAt": "2026-02-19T12:56:38.805Z"
+    "capturedAt": "2026-02-19T12:56:38.805Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -177,7 +191,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "18:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263630",
-    "capturedAt": "2026-02-19T12:56:38.805Z"
+    "capturedAt": "2026-02-19T12:56:38.805Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -189,7 +204,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "15:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263819",
-    "capturedAt": "2026-02-21T16:23:38.846Z"
+    "capturedAt": "2026-02-21T16:23:38.846Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -201,7 +217,8 @@
     "toStop": "Pforzheim Bf.",
     "toTime": "16:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263819",
-    "capturedAt": "2026-02-21T16:23:38.846Z"
+    "capturedAt": "2026-02-21T16:23:38.846Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -213,7 +230,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "22:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263819",
-    "capturedAt": "2026-02-21T16:23:38.846Z"
+    "capturedAt": "2026-02-21T16:23:38.846Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -225,7 +243,8 @@
     "toStop": "Pforzheim Bf.",
     "toTime": "23:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263819",
-    "capturedAt": "2026-02-21T16:23:38.846Z"
+    "capturedAt": "2026-02-21T16:23:38.846Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -237,7 +256,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "04:39",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266151",
-    "capturedAt": "2026-03-25T01:52:21.726Z"
+    "capturedAt": "2026-03-25T01:52:21.726Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -249,7 +269,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "05:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266151",
-    "capturedAt": "2026-03-25T01:52:21.726Z"
+    "capturedAt": "2026-03-25T01:52:21.726Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -261,7 +282,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "06:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266151",
-    "capturedAt": "2026-03-25T01:52:21.726Z"
+    "capturedAt": "2026-03-25T01:52:21.726Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -273,7 +295,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "07:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266151",
-    "capturedAt": "2026-03-25T01:52:21.726Z"
+    "capturedAt": "2026-03-25T01:52:21.726Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -285,7 +308,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "08:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266151",
-    "capturedAt": "2026-03-25T08:43:54.902Z"
+    "capturedAt": "2026-03-25T08:43:54.902Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -297,7 +321,8 @@
     "toStop": "Pforzheim Hbf.",
     "toTime": "09:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266151",
-    "capturedAt": "2026-03-25T08:43:54.902Z"
+    "capturedAt": "2026-03-25T08:43:54.902Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -309,7 +334,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "22:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266509",
-    "capturedAt": "2026-03-27T16:50:18.487Z"
+    "capturedAt": "2026-03-27T16:50:18.487Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -321,7 +347,8 @@
     "toStop": "Pforzheim Bahnhof",
     "toTime": "23:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266509",
-    "capturedAt": "2026-03-27T16:50:18.487Z"
+    "capturedAt": "2026-03-27T16:50:18.487Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -333,7 +360,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "07:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267207",
-    "capturedAt": "2026-04-10T05:54:44.417Z"
+    "capturedAt": "2026-04-10T05:54:44.417Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -345,7 +373,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "08:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267207",
-    "capturedAt": "2026-04-10T05:54:44.417Z"
+    "capturedAt": "2026-04-10T05:54:44.417Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -357,7 +386,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "08:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268377",
-    "capturedAt": "2026-05-11T02:44:32.555Z"
+    "capturedAt": "2026-05-11T02:44:32.555Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -369,7 +399,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "09:08",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268377",
-    "capturedAt": "2026-05-11T02:44:32.555Z"
+    "capturedAt": "2026-05-11T02:44:32.555Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -381,7 +412,8 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "14:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268453",
-    "capturedAt": "2026-05-11T10:56:52.738Z"
+    "capturedAt": "2026-05-11T10:56:52.738Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -393,7 +425,8 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "15:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268453",
-    "capturedAt": "2026-05-11T10:56:52.738Z"
+    "capturedAt": "2026-05-11T10:56:52.738Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -405,7 +438,8 @@
     "toStop": "Pforzheim Bahnhof",
     "toTime": "08:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269025",
-    "capturedAt": "2026-05-24T06:55:55.228Z"
+    "capturedAt": "2026-05-24T06:55:55.228Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -417,7 +451,8 @@
     "toStop": "Bad Wildbad Bf.",
     "toTime": "14:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269724",
-    "capturedAt": "2026-06-08T15:40:32.434Z"
+    "capturedAt": "2026-06-08T15:40:32.434Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -429,7 +464,8 @@
     "toStop": "Pforzheim",
     "toTime": "16:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269724",
-    "capturedAt": "2026-06-08T15:40:32.434Z"
+    "capturedAt": "2026-06-08T15:40:32.434Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -441,7 +477,8 @@
     "toStop": "Bad Wildbad Bf.",
     "toTime": "17:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269724",
-    "capturedAt": "2026-06-08T15:40:32.434Z"
+    "capturedAt": "2026-06-08T15:40:32.434Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -453,7 +490,8 @@
     "toStop": "Pforzheim",
     "toTime": "18:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269724",
-    "capturedAt": "2026-06-08T15:40:32.434Z"
+    "capturedAt": "2026-06-08T15:40:32.434Z",
+    "cause": "unknown"
   },
   {
     "line": "S6",
@@ -465,6 +503,72 @@
     "toStop": "Bad Wildbad Bf.",
     "toTime": "19:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269724",
-    "capturedAt": "2026-06-08T15:40:32.434Z"
+    "capturedAt": "2026-06-08T15:40:32.434Z",
+    "cause": "unknown"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-29",
+    "stand": "2026-06-29T12:38:00.000Z",
+    "trainNumber": "85065",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "12:47",
+    "toStop": "Bad Wildbad Bahnhof",
+    "toTime": "13:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271189",
+    "capturedAt": "2026-06-29T15:38:23.822Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-29",
+    "stand": "2026-06-29T12:38:00.000Z",
+    "trainNumber": "85066",
+    "fromStop": "Bad Wildbad Bahnhof",
+    "fromTime": "13:35",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "14:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271189",
+    "capturedAt": "2026-06-29T15:38:23.822Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-29",
+    "stand": "2026-06-29T12:38:00.000Z",
+    "trainNumber": "85075",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "15:47",
+    "toStop": "Bad Wildbad Bahnhof",
+    "toTime": "16:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271189",
+    "capturedAt": "2026-06-29T15:38:23.822Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-29",
+    "stand": "2026-06-29T12:38:00.000Z",
+    "trainNumber": "85076",
+    "fromStop": "Bad Wildbad Bahnhof",
+    "fromTime": "16:35",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "17:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271189",
+    "capturedAt": "2026-06-29T15:38:23.822Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-29",
+    "stand": "2026-06-29T12:38:00.000Z",
+    "trainNumber": "85083",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "17:47",
+    "toStop": "Bad Wildbad Bahnhof",
+    "toTime": "18:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271189",
+    "capturedAt": "2026-06-29T15:38:23.822Z",
+    "cause": "operational"
   }
 ]
