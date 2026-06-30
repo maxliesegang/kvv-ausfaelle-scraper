@@ -934,5 +934,83 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270910",
     "capturedAt": "2026-06-25T14:21:32.792Z",
     "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T06:00:00.000Z",
+    "trainNumber": "85553",
+    "fromStop": "Karlsruhe Hbf.",
+    "fromTime": "05:16",
+    "toStop": "Achern Bf.",
+    "toTime": "06:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271224",
+    "capturedAt": "2026-06-30T07:49:56.752Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T06:00:00.000Z",
+    "trainNumber": "85557",
+    "fromStop": "Tullastr.",
+    "fromTime": "05:57",
+    "toStop": "Baden-Baden Bf",
+    "toTime": "06:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271224",
+    "capturedAt": "2026-06-30T07:49:56.752Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T06:00:00.000Z",
+    "trainNumber": "85473",
+    "fromStop": "Achern Bf.",
+    "fromTime": "06:17",
+    "toStop": "Ka Albtalbahnhof",
+    "toTime": "07:13",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271224",
+    "capturedAt": "2026-06-30T07:49:56.752Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T06:00:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Baden-Baden Bf",
+    "fromTime": "07:00",
+    "toStop": "Flehingen Bf",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271224",
+    "capturedAt": "2026-06-30T07:49:56.752Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T06:00:00.000Z",
+    "trainNumber": "85516",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "09:20",
+    "toStop": "Albtahlbahnhof",
+    "toTime": "10:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271224",
+    "capturedAt": "2026-06-30T07:49:56.752Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S7",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T06:00:00.000Z",
+    "trainNumber": "85433",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "11:15",
+    "toStop": "Tullastr.",
+    "toTime": "11:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271224",
+    "capturedAt": "2026-06-30T07:49:56.752Z",
+    "cause": "operational"
   }
 ]

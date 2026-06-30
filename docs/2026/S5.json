@@ -7070,5 +7070,83 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271119",
     "capturedAt": "2026-06-28T02:59:06.970Z",
     "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84957",
+    "fromStop": "Ka Rheinbergstraße",
+    "fromTime": "05:01",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "06:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T07:49:56.681Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "06:25",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T07:49:56.681Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84717",
+    "fromStop": "Berghausen Bf",
+    "fromTime": "07:34",
+    "toStop": "Söllingen",
+    "toTime": "07:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T07:49:56.681Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84818",
+    "fromStop": "Söllingen",
+    "fromTime": "07:48",
+    "toStop": "Berghausen Bf",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T07:49:56.681Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "08:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "09:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T07:49:56.681Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84722",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "09:18",
+    "toStop": "Ka Rheinbergstraße",
+    "toTime": "10:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T07:49:56.681Z",
+    "cause": "operational"
   }
 ]

@@ -570,5 +570,70 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271189",
     "capturedAt": "2026-06-29T15:38:23.822Z",
     "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T07:18:00.000Z",
+    "trainNumber": "85065",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "12:47",
+    "toStop": "Bad Wildbad Bf",
+    "toTime": "13:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271240",
+    "capturedAt": "2026-06-30T07:49:56.153Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T07:18:00.000Z",
+    "trainNumber": "85066",
+    "fromStop": "Bad Wildbad",
+    "fromTime": "13:35",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "14:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271240",
+    "capturedAt": "2026-06-30T07:49:56.153Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T07:18:00.000Z",
+    "trainNumber": "85075",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "15:47",
+    "toStop": "Bad Wildbad",
+    "toTime": "16:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271240",
+    "capturedAt": "2026-06-30T07:49:56.153Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T07:18:00.000Z",
+    "trainNumber": "85076",
+    "fromStop": "Bad Wildbad",
+    "fromTime": "16:35",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "17:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271240",
+    "capturedAt": "2026-06-30T07:49:56.153Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S6",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T07:18:00.000Z",
+    "trainNumber": "85083",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "17:47",
+    "toStop": "Bad Wildbad",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271240",
+    "capturedAt": "2026-06-30T07:49:56.153Z",
+    "cause": "operational"
   }
 ]
