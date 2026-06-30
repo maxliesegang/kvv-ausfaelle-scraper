@@ -531,5 +531,31 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271013",
     "capturedAt": "2026-06-26T14:13:43.738Z",
     "cause": "operational"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84897",
+    "fromStop": "Rheinbergstr.",
+    "fromTime": "11:32",
+    "toStop": "Berghausen Bf",
+    "toTime": "12:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T10:53:03.993Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S51",
+    "date": "2026-06-30",
+    "stand": "2026-06-30T05:58:00.000Z",
+    "trainNumber": "84898",
+    "fromStop": "Berghausen Bf",
+    "fromTime": "12:41",
+    "toStop": "Starkstr.",
+    "toTime": "13:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271216",
+    "capturedAt": "2026-06-30T10:53:03.993Z",
+    "cause": "operational"
   }
 ]
