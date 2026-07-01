@@ -7291,5 +7291,31 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271317",
     "capturedAt": "2026-07-01T03:23:05.655Z",
     "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-01",
+    "stand": "2026-07-01T02:52:00.000Z",
+    "trainNumber": "84737",
+    "fromStop": "Ka. Rheinbergstr.",
+    "fromTime": "11:12",
+    "toStop": "Berghausen Bf",
+    "toTime": "11:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271317",
+    "capturedAt": "2026-07-01T14:25:45.727Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-01",
+    "stand": "2026-07-01T02:52:00.000Z",
+    "trainNumber": "84732",
+    "fromStop": "Berghausen Bf",
+    "fromTime": "12:04",
+    "toStop": "Ka. Rheinbergstr.",
+    "toTime": "12:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271317",
+    "capturedAt": "2026-07-01T14:25:45.727Z",
+    "cause": "operational"
   }
 ]
