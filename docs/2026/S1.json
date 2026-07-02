@@ -1519,5 +1519,83 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271127",
     "capturedAt": "2026-06-28T07:46:50.866Z",
     "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-02",
+    "stand": "2026-07-02T14:44:00.000Z",
+    "trainNumber": "30048",
+    "fromStop": "KIT",
+    "fromTime": "16:29",
+    "toStop": "Bad Herrenalb Bf",
+    "toTime": "17:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271412",
+    "capturedAt": "2026-07-02T13:49:36.002Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-02",
+    "stand": "2026-07-02T14:44:00.000Z",
+    "trainNumber": "30055",
+    "fromStop": "Bad Herrenalb Bf",
+    "fromTime": "18:03",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "19:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271412",
+    "capturedAt": "2026-07-02T13:49:36.002Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-02",
+    "stand": "2026-07-02T14:44:00.000Z",
+    "trainNumber": "10070",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "19:25",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "20:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271412",
+    "capturedAt": "2026-07-02T13:49:36.002Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-02",
+    "stand": "2026-07-02T14:44:00.000Z",
+    "trainNumber": "10081",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "21:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "21:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271412",
+    "capturedAt": "2026-07-02T13:49:36.002Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-02",
+    "stand": "2026-07-02T14:44:00.000Z",
+    "trainNumber": "10082",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "22:25",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "23:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271412",
+    "capturedAt": "2026-07-02T13:49:36.002Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-02",
+    "stand": "2026-07-02T14:44:00.000Z",
+    "trainNumber": "30065",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "23:25",
+    "toStop": "Hochstetten",
+    "toTime": "00:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271412",
+    "capturedAt": "2026-07-02T13:49:36.002Z",
+    "cause": "operational"
   }
 ]

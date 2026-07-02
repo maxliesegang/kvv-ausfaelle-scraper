@@ -2408,32 +2408,6 @@
     "line": "S4",
     "date": "2026-07-02",
     "stand": "2026-07-02T11:27:00.000Z",
-    "trainNumber": "85518",
-    "fromStop": "Ka. Tullastrasse",
-    "fromTime": "11:07",
-    "toStop": "Ka. Albtalbahnhof",
-    "toTime": "11:22",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271402",
-    "capturedAt": "2026-07-02T10:33:01.425Z",
-    "cause": "unknown"
-  },
-  {
-    "line": "S4",
-    "date": "2026-07-02",
-    "stand": "2026-07-02T11:27:00.000Z",
-    "trainNumber": "85517",
-    "fromStop": "Ka. Albtalbahnhof",
-    "fromTime": "12:31",
-    "toStop": "Ka. Tullastrasse",
-    "toTime": "12:49",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271402",
-    "capturedAt": "2026-07-02T10:33:01.425Z",
-    "cause": "unknown"
-  },
-  {
-    "line": "S4",
-    "date": "2026-07-02",
-    "stand": "2026-07-02T11:27:00.000Z",
     "trainNumber": "85526",
     "fromStop": "Ka. Tullastrasse",
     "fromTime": "15:07",
@@ -2441,7 +2415,7 @@
     "toTime": "15:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271402",
     "capturedAt": "2026-07-02T10:33:01.425Z",
-    "cause": "unknown"
+    "cause": "disruption"
   },
   {
     "line": "S4",
@@ -2454,6 +2428,6 @@
     "toTime": "16:29",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271402",
     "capturedAt": "2026-07-02T10:33:01.425Z",
-    "cause": "unknown"
+    "cause": "disruption"
   }
 ]
