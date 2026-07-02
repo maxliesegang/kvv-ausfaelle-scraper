@@ -19,6 +19,13 @@ describe('classifyCause - categories', () => {
     assert.strictEqual(classifyCause('betriebsbedingter Ausfall'), 'operational');
   });
 
+  it('classifies a generic Betriebsstörung as an (unspecified) disruption', () => {
+    assert.strictEqual(
+      classifyCause('Betriebsstörung. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen.'),
+      'disruption',
+    );
+  });
+
   it('classifies strike', () => {
     assert.strictEqual(classifyCause('Fahrtausfälle wegen eines Streiks'), 'strike');
     assert.strictEqual(classifyCause('Aufgrund eines Warnstreiks entfällt die Fahrt'), 'strike');
@@ -82,5 +89,13 @@ describe('classifyCause - priority ordering', () => {
       classifyCause('betriebsbedingter Ausfall, dazu eine Sperrung'),
       'operational',
     );
+  });
+
+  it('prefers a named technical fault over a generic Betriebsstörung', () => {
+    assert.strictEqual(classifyCause('Betriebsstörung wegen einer Fahrzeugstörung'), 'technical');
+  });
+
+  it('prefers explicit staffing (operational) over a bare Betriebsstörung', () => {
+    assert.strictEqual(classifyCause('Betriebsstörung wegen Personalmangel'), 'operational');
   });
 });

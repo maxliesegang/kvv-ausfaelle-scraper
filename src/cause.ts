@@ -21,6 +21,7 @@ export type CancellationCause =
   | 'operational'
   | 'strike'
   | 'technical'
+  | 'disruption'
   | 'weather'
   | 'construction'
   | 'unknown';
@@ -33,8 +34,9 @@ interface CauseClassifier {
 
 /**
  * Ordered by priority — first match wins. Keep specific, unambiguous causes (strike,
- * weather, technical) above the generic `operational` catch-all, which in turn sits above
- * the broad construction terms (`sperrung` etc.) that come last.
+ * weather, technical) first; then `operational` (the `betriebsbedingt`/staffing
+ * euphemism); then `disruption` (a bare `Betriebsstörung`, deliberately below `technical`
+ * so a named fault wins); with the broad construction terms (`sperrung` etc.) last.
  */
 const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
   {
@@ -84,6 +86,14 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
       'erkrankung',
       'fahrpersonal',
     ],
+  },
+  {
+    // Unspecified acute operational disruption (`Betriebsstörung`): KVV reports a
+    // disruption without naming its cause. Kept distinct from `operational` (the
+    // `betriebsbedingt` staffing euphemism) so it never pollutes that signal, and below
+    // `technical` so a named fault ('Betriebsstörung wegen Fahrzeugstörung') still wins.
+    cause: 'disruption',
+    keywords: ['betriebsstoerung'],
   },
   {
     cause: 'construction',

@@ -87,6 +87,33 @@ describe('Storage', () => {
     }
   });
 
+  it('should overwrite a stored cause when a re-parse reclassifies the same trip', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+
+    try {
+      console.log = () => undefined;
+
+      // Stored from an earlier run when the classifier could not categorize the article.
+      const existingTrips = [createCancellation({ trainNumber: '10001', cause: 'unknown' })];
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+
+      // Same trip (same key), re-parsed this run with an improved cause classification.
+      await saveCancellations(tempDir, [
+        createCancellation({ trainNumber: '10001', cause: 'operational' }),
+      ]);
+
+      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      assert.strictEqual(storedTrips.length, 1);
+      assert.strictEqual(storedTrips[0]?.cause, 'operational');
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
   it('should prune ghost trips that vanished from a re-fetched source article', async () => {
     const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
     const originalConsoleLog = console.log;
