@@ -7343,5 +7343,31 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271366",
     "capturedAt": "2026-07-02T02:49:45.915Z",
     "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-03",
+    "stand": "2026-07-03T19:51:00.000Z",
+    "trainNumber": "84870",
+    "fromStop": "Lameyplatz",
+    "fromTime": "02:41",
+    "toStop": "Wörth Badepark",
+    "toTime": "03:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271469",
+    "capturedAt": "2026-07-03T20:59:17.115Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-03",
+    "stand": "2026-07-03T19:51:00.000Z",
+    "trainNumber": "84869",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "03:20",
+    "toStop": "Rheinbergstraße",
+    "toTime": "03:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271469",
+    "capturedAt": "2026-07-03T20:59:17.115Z",
+    "cause": "operational"
   }
 ]
