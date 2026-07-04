@@ -1653,6 +1653,32 @@
   {
     "line": "S1",
     "date": "2026-07-04",
+    "stand": "2026-07-04T15:43:00.000Z",
+    "trainNumber": "56007",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "02:29",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "03:19",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271583",
+    "capturedAt": "2026-07-04T20:50:54.052Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T15:43:00.000Z",
+    "trainNumber": "56012",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "03:35",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "04:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271583",
+    "capturedAt": "2026-07-04T20:50:54.052Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-04",
     "stand": "2026-07-04T06:30:00.000Z",
     "trainNumber": "16016",
     "fromStop": "Hochstetten",
@@ -1661,19 +1687,6 @@
     "toTime": "11:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271501",
     "capturedAt": "2026-07-04T06:43:46.270Z",
-    "cause": "operational"
-  },
-  {
-    "line": "S1",
-    "date": "2026-07-04",
-    "stand": "2026-07-04T15:43:00.000Z",
-    "trainNumber": "16017",
-    "fromStop": "Neureut Kirchfeld",
-    "fromTime": "12:43",
-    "toStop": "Hochstetten Bf.",
-    "toTime": "13:06",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271583",
-    "capturedAt": "2026-07-04T16:59:37.866Z",
     "cause": "operational"
   },
   {
