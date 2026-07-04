@@ -7369,5 +7369,83 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271469",
     "capturedAt": "2026-07-03T20:59:17.115Z",
     "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "84732",
+    "fromStop": "Berghausen Bf.",
+    "fromTime": "12:04",
+    "toStop": "Starckstraße",
+    "toTime": "12:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-04T10:04:10.988Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "84844",
+    "fromStop": "Tullastraße",
+    "fromTime": "16:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "16:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-04T10:04:10.988Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "84837",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "17:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "18:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-04T10:04:10.988Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "84770",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "18:18",
+    "toStop": "Tullastraße",
+    "toTime": "18:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-04T10:04:10.988Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "85078",
+    "fromStop": "Tullastraße",
+    "fromTime": "18:31",
+    "toStop": "Wörth Badepark",
+    "toTime": "19:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-04T10:04:10.988Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "85093",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "19:45",
+    "toStop": "Tullastraße",
+    "toTime": "20:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-04T10:04:10.988Z",
+    "cause": "operational"
   }
 ]
