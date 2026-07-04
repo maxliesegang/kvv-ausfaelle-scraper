@@ -3,6 +3,22 @@
  */
 
 /**
+ * Extracts the KVV `detailID` (e.g. `Nettro_CMS_271521`) that uniquely identifies an
+ * article from its detail-page URL. The parameter appears both plain and URL-encoded
+ * (`detailID=` / `detailID%5D=`). Returns undefined when no id is present.
+ *
+ * This is the full, stable identifier used to scope per-article train-line overrides (see
+ * `train-line-definitions/overrides.ts`) — distinct from the numeric short id that
+ * `fetch-article.ts` derives for fixture filenames.
+ */
+export function extractDetailId(url: string | undefined | null): string | undefined {
+  if (!url) return undefined;
+  const match = url.match(/detailID(?:%5D|\])?=([^&#]+)/i);
+  const id = match?.[1]?.trim();
+  return id || undefined;
+}
+
+/**
  * Normalizes a line identifier by trimming whitespace.
  * Returns undefined if the input is empty or only whitespace.
  */

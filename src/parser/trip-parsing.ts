@@ -4,7 +4,7 @@
 
 import type { Cancellation, TripParsingMetadata } from '../types.js';
 import { lookupLinesForTrip, type TripDescriptor } from '../train-lines.js';
-import { normalizeLineUppercase } from '../utils/normalization.js';
+import { extractDetailId, normalizeLineUppercase } from '../utils/normalization.js';
 import { MAX_LINES_TO_COMBINE } from '../utils/constants.js';
 import {
   PATTERNS,
@@ -62,7 +62,7 @@ export function resolveLinesForTrip(
   trip: TripDescriptor,
   metadata: Pick<
     TripParsingMetadata,
-    'line' | 'date' | 'mentionedLines' | 'lineMentionCount' | 'lineExplicitlyProvided'
+    'line' | 'date' | 'mentionedLines' | 'lineMentionCount' | 'lineExplicitlyProvided' | 'sourceUrl'
   >,
 ): string[] {
   const articleLine = normalizeLineUppercase(metadata.line) || DEFAULT_LINE;
@@ -80,7 +80,12 @@ export function resolveLinesForTrip(
   }
 
   if (metadata.lineMentionCount > 0) {
-    const lines = lookupLinesForTrip({ ...trip, date: metadata.date }, metadata.mentionedLines);
+    const detailId = extractDetailId(metadata.sourceUrl);
+    const lines = lookupLinesForTrip(
+      { ...trip, date: metadata.date },
+      metadata.mentionedLines,
+      detailId,
+    );
     if (lines.length > 0) {
       return lines;
     }
@@ -89,7 +94,8 @@ export function resolveLinesForTrip(
       throw new MultiLineMappingError(
         `Multi-line article detected (${metadata.lineMentionCount} lines: ${metadata.mentionedLines.join(', ')}) ` +
           `but train ${trip.trainNumber} maps to none of them. Add it to a line definition for the ` +
-          `current Fahrplan year, or to src/train-line-definitions/overrides.ts.`,
+          `current Fahrplan year, or add an article-scoped entry (detailID ${detailId ?? '?'}) ` +
+          `to src/train-line-definitions/overrides.ts.`,
         trip.trainNumber,
       );
     }

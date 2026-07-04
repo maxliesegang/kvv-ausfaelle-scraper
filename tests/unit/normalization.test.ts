@@ -9,7 +9,7 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { normalizeGermanText } from '../../src/utils/normalization.js';
+import { extractDetailId, normalizeGermanText } from '../../src/utils/normalization.js';
 import { analyzeDetailPage, analyzeRssItem } from '../../src/relevance.js';
 
 describe('normalizeGermanText - umlaut expansion', () => {
@@ -23,6 +23,32 @@ describe('normalizeGermanText - umlaut expansion', () => {
 
   it('expands all umlauts and ß', () => {
     assert.strictEqual(normalizeGermanText('Größe über Straße'), 'groesse ueber strasse');
+  });
+});
+
+describe('extractDetailId', () => {
+  it('extracts the detailID from a URL-encoded KVV detail URL', () => {
+    const url =
+      'https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail' +
+      '&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521';
+    assert.strictEqual(extractDetailId(url), 'Nettro_CMS_271521');
+  });
+
+  it('extracts the detailID from a plain (un-encoded) parameter', () => {
+    assert.strictEqual(
+      extractDetailId('https://x/?detailID=Nettro_CMS_999&foo=1'),
+      'Nettro_CMS_999',
+    );
+  });
+
+  it('stops at the next query parameter or fragment', () => {
+    assert.strictEqual(extractDetailId('https://x/?detailID=ABC#frag'), 'ABC');
+  });
+
+  it('returns undefined when there is no detailID or no URL', () => {
+    assert.strictEqual(extractDetailId('https://www.kvv.de/'), undefined);
+    assert.strictEqual(extractDetailId(''), undefined);
+    assert.strictEqual(extractDetailId(undefined), undefined);
   });
 });
 

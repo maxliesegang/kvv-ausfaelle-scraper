@@ -17,6 +17,7 @@ import {
   type TripSignature,
 } from '../../src/train-line-definitions/ambiguous-trips.js';
 import type { TrainLineDefinition } from '../../src/train-line-definitions/types.js';
+import { getCurrentFahrplanYear } from '../../src/fahrplan.js';
 
 describe('Train Lines - Loaded definitions', () => {
   it('maps a known train number to its line when that line is mentioned', () => {
@@ -29,6 +30,32 @@ describe('Train Lines - Loaded definitions', () => {
 
   it('returns empty when the line the number runs on is not mentioned', () => {
     assert.deepStrictEqual(lookupLinesForTrip({ trainNumber: '10001' }, ['S9']), []);
+  });
+});
+
+describe('Train Lines - Article-scoped overrides (real data)', () => {
+  // Article Nettro_CMS_271521 (2026 S5/S51 notice) forces 85758/85855/85096 onto S5, which
+  // GTFS does NOT list them on for that year. Guarded so it self-skips once 2026 is stale.
+  const is2026 = getCurrentFahrplanYear() === 2026;
+  const detailId = 'Nettro_CMS_271521';
+  const mentioned = ['S5', 'S51'];
+
+  it('forces the number onto S5 for the exact article that needs it', { skip: !is2026 }, () => {
+    assert.deepStrictEqual(lookupLinesForTrip({ trainNumber: '85758' }, mentioned, detailId), [
+      'S5',
+    ]);
+  });
+
+  it('does not apply the override without the detailID', { skip: !is2026 }, () => {
+    // 85758 is only on S41 in GTFS, which the article does not mention → unresolved.
+    assert.deepStrictEqual(lookupLinesForTrip({ trainNumber: '85758' }, mentioned), []);
+  });
+
+  it('does not apply the override for a different article', { skip: !is2026 }, () => {
+    assert.deepStrictEqual(
+      lookupLinesForTrip({ trainNumber: '85758' }, mentioned, 'Nettro_CMS_000000'),
+      [],
+    );
   });
 });
 

@@ -57,7 +57,8 @@ export function buildTrainLineIndex(definitions: readonly TrainLineDefinition[])
 
 const TRAIN_LINE_INDEX = buildTrainLineIndex(TRAIN_LINE_DEFINITIONS);
 const AMBIGUOUS_TRIPS: AmbiguousTripIndex = loadAmbiguousTrips();
-const OVERRIDES: Readonly<Record<string, string>> =
+/** Per-article overrides for the current Fahrplan year: detailID → train number → line. */
+const OVERRIDES: Readonly<Record<string, Readonly<Record<string, string>>>> =
   TRAIN_LINE_OVERRIDES[getCurrentFahrplanYear() ?? -1] ?? {};
 
 /**
@@ -155,6 +156,10 @@ export function resolveLines(
 export function lookupLinesForTrip(
   trip: TripDescriptor,
   mentionedLines: readonly string[],
+  detailId?: string,
 ): string[] {
-  return resolveLines(TRAIN_LINE_INDEX, AMBIGUOUS_TRIPS, trip, mentionedLines, OVERRIDES);
+  // Overrides are scoped to a single article, so select this article's map (if any) before
+  // resolving; a number with no entry for this article resolves purely from GTFS.
+  const overrides = (detailId && OVERRIDES[detailId]) || {};
+  return resolveLines(TRAIN_LINE_INDEX, AMBIGUOUS_TRIPS, trip, mentionedLines, overrides);
 }

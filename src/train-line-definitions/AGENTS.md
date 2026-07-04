@@ -48,7 +48,12 @@ same seed script, and is the reason through-running needs no override.
 
 `overrides.ts` is a small lookup-time escape hatch (normally empty) for the rare number
 GTFS maps to none of an article's mentioned lines — a feed gap or KVV-vs-GTFS conflict
-that would otherwise be a hard parse error. It is not for through-running trains.
+that would otherwise be a hard parse error. It is not for through-running trains. Entries
+are keyed by Fahrplan year → KVV `detailID` (e.g. `Nettro_CMS_271521`) → train number →
+line, so an override is **scoped to the one article that needs it**: such a conflict is
+usually a one-off KVV typo, and a line-wide force would misfile a different article where
+the same number is correct in GTFS. The detailID is derived from the source URL via
+`extractDetailId` (`src/utils/normalization.ts`).
 
 ## Core Rules
 
