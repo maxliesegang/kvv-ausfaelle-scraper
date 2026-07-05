@@ -97,3 +97,20 @@ export async function listFiles(path: string): Promise<string[]> {
     throw new Error(wrapError(`Failed to read directory ${path}`, error));
   }
 }
+
+/**
+ * Lists the immediate subdirectory names of a directory.
+ *
+ * @returns Array of directory names, or empty array if the directory doesn't exist
+ */
+export async function listSubdirectories(path: string): Promise<string[]> {
+  try {
+    const entries = await readdir(path, { withFileTypes: true });
+    return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+      return [];
+    }
+    throw new Error(wrapError(`Failed to read directory ${path}`, error));
+  }
+}

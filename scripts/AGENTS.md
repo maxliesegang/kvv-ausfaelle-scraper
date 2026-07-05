@@ -10,6 +10,17 @@ This is the most specific guidance for maintenance scripts.
 
 ## Scripts
 
+- `reparse-archives.ts` (`npm run reparse-archives`) — **read-only** report. Walks
+  `docs/<year>/articles/*.txt` (the text archive written by `src/article-archive.ts`),
+  feeds each body back through `parseDetailPage` + cause classification, and diffs the
+  result against the stored `docs/<year>/<line>.json` (matched by the `Quelle:` source URL,
+  keyed by `date|trainNumber|fromTime`). Surfaces parser/classifier improvements (archive
+  now yields trips/causes the stored data lacks) and regressions (archive no longer yields
+  stored trips). Writes nothing; always exits 0. Flags: `--year=N`, `--verbose`. Reuses
+  `renderArchive`/`parseArchive` from `src/article-archive.ts` so the archive format lives
+  in one place; the `tests/unit/article-archive.test.ts` "reparse fidelity" suite locks the
+  property that archived text reparses to the same trips as the original HTML.
+
 - `seed-train-lines-from-gtfs.ts` (`npm run seed-train-lines`) — (re)generate
   `docs/<year>/train-line-definitions/*.json` from a GTFS `.zip`: a flat per-line list of
   train numbers (`<line>.json`, a number kept on every line GTFS runs it on) **plus** the

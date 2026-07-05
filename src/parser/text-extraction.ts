@@ -69,6 +69,11 @@ export interface StandInfo {
   readonly standIso: string;
   /** ISO date (YYYY-MM-DD) extracted from the status */
   readonly dateForTrips: string;
+  /**
+   * Whether the page actually stated a "Stand". When false, `standIso` is the
+   * current-time fallback rather than a value read from the article.
+   */
+  readonly hasStand: boolean;
 }
 
 /**
@@ -95,7 +100,7 @@ export function extractStand(text: string): StandInfo {
     const timeStr = match?.[2];
     if (dateStr && timeStr) {
       const standIso = parseGermanDateTime(dateStr, toTime(timeStr));
-      return { standIso, dateForTrips: standIso.slice(0, ISO_DATE_LENGTH) };
+      return { standIso, dateForTrips: standIso.slice(0, ISO_DATE_LENGTH), hasStand: true };
     }
   }
 
@@ -104,5 +109,6 @@ export function extractStand(text: string): StandInfo {
   return {
     standIso: now,
     dateForTrips: now.slice(0, ISO_DATE_LENGTH),
+    hasStand: false,
   };
 }

@@ -14,13 +14,14 @@ TypeScript/Node script that fetches the public KVV (Karlsruhe transit) RSS feed,
 - Single test file: `npm run test:parser`, `npm run test:train-lines`, or `node --import tsx --test tests/unit/<file>.test.ts`
 - Watch mode: `npm run test:watch`; coverage: `npm run test:coverage`
 - Fetch a live article as a test fixture: `npm run fetch-article "<url>"` (writes to `test-data/articles/` + `test-data/expected/`)
+- Reparse the text archive vs stored data (read-only report): `npm run reparse-archives [-- --year=N --verbose]`
 
 ## Architecture
 
 The pipeline runs end-to-end from `src/index.ts` → `src/workflow.ts`:
 
 1. **Fetch + filter RSS** (`src/rss.ts`, `src/relevance.ts`) — download the feed, score each item with multi-criteria relevance scoring, keep only cancellation notices.
-2. **Fetch detail pages** (`src/workflow.ts`) — for each relevant item, fetch the HTML, re-check relevance, and skip articles younger than 1 hour (`MIN_ARTICLE_AGE_MS`). Uses `Promise.allSettled` so one bad article never aborts the run.
+2. **Fetch detail pages** (`src/workflow.ts`) — for each relevant item, fetch the HTML, re-check relevance, and skip articles younger than 1 hour (`MIN_ARTICLE_AGE_MS`). Uses `Promise.allSettled` so one bad article never aborts the run. Every relevant article that passes the relevance check is also archived as plain text (`src/article-archive.ts` → `docs/<year>/articles/<detailID>.txt`) _before_ the age/parse decision, so even too-young or unparsable notices leave a record. The file scopes to the page's `<main>` region and carries only stable content (source URL + parsed `Stand` header + article body, no per-run timestamp), so an unchanged article yields a byte-identical file — turning the committed `docs/` git history into a timeline of KVV's in-place edits. Archiving is best-effort and never fails the run.
 3. **Parse trips** (`src/parser/**`) — extract individual structured trip cancellations from the HTML, and classify the article-level cause (`src/cause.ts`) which is stamped onto every trip.
 4. **Store + index** (`src/storage.ts`, `src/site-index.ts`) — bucket by line, deduplicate, **reconcile** (drop stored trips whose re-fetched source article no longer lists them — KVV edits detail pages in place, sometimes without bumping `Stand`, so trips can silently vanish), write `docs/<year>/<line>.json`, and regenerate root/year HTML + JSON index pages. Reconciliation only prunes entries whose `sourceUrl` was successfully re-fetched this run, so a transient fetch failure never deletes stored data.
 

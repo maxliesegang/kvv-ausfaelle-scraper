@@ -22,6 +22,7 @@
     "test:parser": "node --import tsx --test tests/unit/parser.test.ts",
     "test:train-lines": "node --import tsx --test tests/unit/train-lines.test.ts",
     "seed-train-lines": "tsx scripts/seed-train-lines-from-gtfs.ts",
+    "reparse-archives": "tsx scripts/reparse-archives.ts",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

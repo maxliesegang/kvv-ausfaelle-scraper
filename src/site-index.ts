@@ -1,6 +1,6 @@
-import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { ensureDirectory, exists, listFiles, writeTextFile } from './utils/fs.js';
+import { ensureDirectory, listFiles, writeTextFile } from './utils/fs.js';
+import { listFahrplanYearDirs } from './fahrplan.js';
 
 const BASE_PAGE_STYLES = `
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 2rem; line-height: 1.5; }
@@ -134,20 +134,6 @@ function buildYearIndexJson(year: string, files: readonly string[], generatedAt:
   return buildIndexJson({ year, files: files.slice().sort() }, generatedAt);
 }
 
-const YEAR_PATTERN = /^\d{4}$/;
-
-/**
- * Finds all year directories (4-digit names) in the base directory.
- */
-async function findYears(baseDir: string): Promise<string[]> {
-  if (!(await exists(baseDir))) {
-    return [];
-  }
-
-  const entries = await readdir(baseDir, { withFileTypes: true });
-  return entries.filter((d) => d.isDirectory() && YEAR_PATTERN.test(d.name)).map((d) => d.name);
-}
-
 /**
  * Lists all JSON files in a directory.
  */
@@ -164,7 +150,7 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
   // Ensure base directory exists
   await ensureDirectory(baseDir);
 
-  const years = await findYears(baseDir);
+  const years = await listFahrplanYearDirs(baseDir);
   const generatedAt = new Date().toISOString();
 
   // Generate root indices (HTML and JSON)

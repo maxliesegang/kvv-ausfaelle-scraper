@@ -26,7 +26,12 @@ export async function loadExistingCancellations(filePath: string): Promise<Cance
   return [];
 }
 
-function getCancellationKey(cancellation: Cancellation): string {
+/**
+ * Trip identity used for dedup, cause updates, and reconciliation: `date|trainNumber|fromTime`.
+ * Exported so offline tooling (e.g. `scripts/reparse-archives.ts`) diffs against exactly the
+ * same key the live store uses, instead of maintaining a hand-synced copy.
+ */
+export function getCancellationKey(cancellation: Cancellation): string {
   return `${cancellation.date}|${cancellation.trainNumber}|${cancellation.fromTime}`;
 }
 

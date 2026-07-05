@@ -1,5 +1,6 @@
 import type { Cancellation, Item } from './types.js';
-import { RSS_URL } from './config.js';
+import { DATA_DIR, RSS_URL } from './config.js';
+import { archiveArticleText } from './article-archive.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage, ParseError } from './parser/index.js';
 import { extractTripSectionCandidates } from './parser/trip-parsing.js';
@@ -81,6 +82,15 @@ export async function fetchTripsFromItem(item: Item): Promise<ItemOutcome> {
     const reason = detailRelevance.reasons.join('; ') || 'no cancellation signals found';
     console.warn(`  -> skipping article due to low relevance (${reason})`);
     return skipped('low-relevance');
+  }
+
+  // Archive the raw article text for traceability before any skip/parse decision, so even
+  // too-young or unparsable articles leave a record. Never fatal — the run must not fail
+  // because we couldn't write an archive file.
+  try {
+    await archiveArticleText(DATA_DIR, url, html);
+  } catch (error) {
+    console.warn('Failed to archive article text:', url, error);
   }
 
   const publishedMs = getArticlePublishedMs(item);

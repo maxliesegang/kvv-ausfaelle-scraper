@@ -17,6 +17,8 @@ This is the most specific guidance for published artifacts.
   - `docs/<year>/<line>.json`
 - Per year train mappings:
   - `docs/<year>/train-line-definitions/*.json`
+- Per article text archive (traceability):
+  - `docs/<year>/articles/<detailID>.txt`
 
 ## Data Organization Rule
 

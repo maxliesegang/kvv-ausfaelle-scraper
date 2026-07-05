@@ -4,6 +4,8 @@
  * mid-December to mid-December.
  */
 
+import { listSubdirectories } from './utils/fs.js';
+
 export interface FahrplanPeriod {
   readonly year: number;
   readonly season: 'Winter' | 'Sommer';
@@ -100,6 +102,23 @@ export const FAHRPLAN_YEARS: readonly FahrplanYear[] = [
     ],
   },
 ];
+
+/** A Fahrplan-year storage folder is named by its 4-digit year (e.g. `docs/2026/`). */
+const FAHRPLAN_YEAR_DIR_PATTERN = /^\d{4}$/;
+
+/** Whether a directory name is a Fahrplan-year bucket (a bare 4-digit year). */
+function isFahrplanYearDirName(name: string): boolean {
+  return FAHRPLAN_YEAR_DIR_PATTERN.test(name);
+}
+
+/**
+ * Lists the Fahrplan-year bucket directories (4-digit names) directly under `baseDir`, sorted.
+ * The single source of truth for "which folders under `docs/` are year buckets", shared by the
+ * site-index generator and the offline reparse tooling so they never drift apart.
+ */
+export async function listFahrplanYearDirs(baseDir: string): Promise<string[]> {
+  return (await listSubdirectories(baseDir)).filter(isFahrplanYearDirName).sort();
+}
 
 /**
  * Determines which Fahrplan year a given date belongs to.
