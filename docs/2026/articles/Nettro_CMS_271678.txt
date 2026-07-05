@@ -10,8 +10,13 @@ Linie S4: Kurzfristiger betriebsbedingter Ausfall bei der AVG
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen. 
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen. 
-Betroffen ist der Bereich zwischen Bretten Bahnhof und Eppingen Bahnhof. 
+Betroffen ist der Bereich zwischen Karlsruhe Albtalbahnhof und Heilbronn Pfühlpark. 
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. 
+85457 Eppingen Bf. (18:29 Uhr) - Heilbronn Pfühlpark (19:15 Uhr)
+85462 Heilbronn Pfühlpark (19:44 Uhr) - Karlsruhe Albtalbahnhof (21:42 Uhr)
 74361 Bretten Bf (22:21 Uhr) - Eppingen Bf. (22:52 Uhr)
 74362 Eppingen Bf. (23:05 Uhr) - Bretten Bf (23:36 Uhr)
+85469 Karlsruhe Albtalbahnhof (23:15 Uhr) - Heilbronn Pfühlpark (1:18 Uhr)
+06.07.2026
+85498 Heilbronn Pfühlpark (1:25 Uhr) - Eppingen Bf. (2:08 Uhr)
 Zurück zur Übersicht
