@@ -5,16 +5,17 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { classifyCause } from '../../src/cause.js';
+import { classifyCause, classifyCauseWithEvidence } from '../../src/cause.js';
 
 describe('classifyCause - categories', () => {
-  it('classifies personnel/staffing shortages as operational', () => {
-    assert.strictEqual(classifyCause('Fahrtausfälle wegen Personalmangel'), 'operational');
-    assert.strictEqual(classifyCause('krankheitsbedingter Ausfall'), 'operational');
-    assert.strictEqual(classifyCause('Engpass beim Fahrpersonal'), 'operational');
+  it('classifies a *named* staffing/sickness cause as personnel', () => {
+    assert.strictEqual(classifyCause('Fahrtausfälle wegen Personalmangel'), 'personnel');
+    assert.strictEqual(classifyCause('krankheitsbedingter Ausfall'), 'personnel');
+    assert.strictEqual(classifyCause('Engpass beim Fahrpersonal'), 'personnel');
   });
 
-  it('classifies generic betriebsbedingt as operational', () => {
+  it('classifies a bare betriebsbedingt as the (unspecified) operational residual', () => {
+    // No specifics beyond the euphemism — must NOT be promoted to personnel.
     assert.strictEqual(classifyCause('betriebsbedingte Fahrtausfälle'), 'operational');
     assert.strictEqual(classifyCause('betriebsbedingter Ausfall'), 'operational');
   });
@@ -36,10 +37,33 @@ describe('classifyCause - categories', () => {
     assert.strictEqual(classifyCause('wegen Sturm fällt die Fahrt aus'), 'weather');
   });
 
-  it('classifies technical faults', () => {
-    assert.strictEqual(classifyCause('Fahrzeugstörung auf der Strecke'), 'technical');
-    assert.strictEqual(classifyCause('wegen einer Stellwerkstörung'), 'technical');
-    assert.strictEqual(classifyCause('Oberleitungsschaden'), 'technical');
+  it('classifies a vehicle (rolling-stock) fault', () => {
+    assert.strictEqual(classifyCause('Fahrzeugstörung auf der Strecke'), 'vehicle');
+    assert.strictEqual(classifyCause('wegen eines Fahrzeugschadens'), 'vehicle');
+    assert.strictEqual(classifyCause('aufgrund eines Fahrzeugdefekts'), 'vehicle');
+  });
+
+  it('classifies vehicle keywords robustly across German declension', () => {
+    // Compound-noun keywords must match every declined form, not just the nominative —
+    // otherwise the same fault buckets differently depending on grammar (the fixed bug).
+    for (const s of ['ein Fahrzeugdefekt', 'eines Fahrzeugdefekts', 'die Fahrzeugstörung']) {
+      assert.strictEqual(classifyCause(s), 'vehicle', s);
+    }
+    // The adjective+noun phrasing "defektes Fahrzeug" is deliberately NOT a vehicle keyword
+    // (it cannot match declined forms robustly); it lands consistently in `technical` instead.
+    assert.strictEqual(classifyCause('ein defektes Fahrzeug'), 'technical');
+    assert.strictEqual(classifyCause('wegen eines defekten Fahrzeugs'), 'technical');
+  });
+
+  it('classifies an infrastructure fault', () => {
+    assert.strictEqual(classifyCause('wegen einer Stellwerkstörung'), 'infrastructure');
+    assert.strictEqual(classifyCause('Oberleitungsschaden bei Durlach'), 'infrastructure');
+    assert.strictEqual(classifyCause('eine Weichenstörung'), 'infrastructure');
+  });
+
+  it('classifies a generically-named technical fault', () => {
+    assert.strictEqual(classifyCause('wegen einer technischen Störung'), 'technical');
+    assert.strictEqual(classifyCause('aufgrund eines technischen Defekts'), 'technical');
   });
 
   it('classifies construction', () => {
@@ -77,10 +101,19 @@ describe('classifyCause - priority ordering', () => {
     );
   });
 
-  it('prefers a specific technical cause over the generic sperrung (construction)', () => {
+  it('prefers a named vehicle fault over the generic sperrung (construction)', () => {
+    assert.strictEqual(classifyCause('Fahrzeugstörung führt zur Sperrung der Strecke'), 'vehicle');
+  });
+
+  it('prefers a specific fault over the generic technical bucket', () => {
+    // "Fahrzeugstörung" (vehicle) sits above the generic "technische Störung" (technical).
+    assert.strictEqual(classifyCause('technische Störung: eine Fahrzeugstörung'), 'vehicle');
+  });
+
+  it('prefers named personnel over the bare betriebsbedingt euphemism', () => {
     assert.strictEqual(
-      classifyCause('Fahrzeugstörung führt zur Sperrung der Strecke'),
-      'technical',
+      classifyCause('betriebsbedingter Ausfall wegen Personalmangel'),
+      'personnel',
     );
   });
 
@@ -92,10 +125,34 @@ describe('classifyCause - priority ordering', () => {
   });
 
   it('prefers a named technical fault over a generic Betriebsstörung', () => {
-    assert.strictEqual(classifyCause('Betriebsstörung wegen einer Fahrzeugstörung'), 'technical');
+    assert.strictEqual(classifyCause('Betriebsstörung wegen einer Fahrzeugstörung'), 'vehicle');
   });
 
-  it('prefers explicit staffing (operational) over a bare Betriebsstörung', () => {
-    assert.strictEqual(classifyCause('Betriebsstörung wegen Personalmangel'), 'operational');
+  it('prefers named personnel over a bare Betriebsstörung', () => {
+    assert.strictEqual(classifyCause('Betriebsstörung wegen Personalmangel'), 'personnel');
+  });
+});
+
+describe('classifyCauseWithEvidence - matched keyword', () => {
+  it('reports the normalized keyword that drove the classification', () => {
+    assert.deepStrictEqual(classifyCauseWithEvidence('Engpass beim Fahrpersonal'), {
+      cause: 'personnel',
+      causeKeyword: 'fahrpersonal',
+    });
+    assert.deepStrictEqual(classifyCauseWithEvidence('betriebsbedingter Ausfall'), {
+      cause: 'operational',
+      causeKeyword: 'betriebsbedingt',
+    });
+    assert.deepStrictEqual(classifyCauseWithEvidence('wegen einer Stellwerkstörung'), {
+      cause: 'infrastructure',
+      causeKeyword: 'stellwerkstoerung',
+    });
+  });
+
+  it('reports a null keyword for unknown', () => {
+    assert.deepStrictEqual(classifyCauseWithEvidence('nichts passendes hier'), {
+      cause: 'unknown',
+      causeKeyword: null,
+    });
   });
 });

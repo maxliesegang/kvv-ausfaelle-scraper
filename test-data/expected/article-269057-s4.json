@@ -8,7 +8,7 @@
     "fromTime": "05:15",
     "toStop": "Heilbronn Pfühlpark",
     "toTime": "07:15",
-    "cause": "operational"
+    "cause": "personnel"
   },
   {
     "line": "S4",
@@ -19,6 +19,6 @@
     "fromTime": "07:40",
     "toStop": "Karlsruhe Tullastr.",
     "toTime": "09:27",
-    "cause": "operational"
+    "cause": "personnel"
   }
 ]

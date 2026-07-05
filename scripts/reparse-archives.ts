@@ -10,15 +10,22 @@
  *     lacks), and
  *   - parser *regressions* (archive no longer yields trips that are stored).
  *
- * This is a read-only report — it writes nothing. It is the offline counterpart to a live
- * scraper run: same parsing, but against the frozen archive instead of the network.
+ * By default this is a read-only report — it writes nothing. It is the offline counterpart to
+ * a live scraper run: same parsing, but against the frozen archive instead of the network.
+ *
+ * With `--write` it also *backfills*: for every stored trip whose source article is archived,
+ * it re-stamps `cause` + `causeKeyword` with what the current classifier makes of the archived
+ * text. This is how a cause-taxonomy change reaches history — but only as far as the archive
+ * reaches. Trips whose article was never archived (most of the pre-archive backlog) keep their
+ * stored cause; only `cause`/`causeKeyword` are touched, never trip identity (no add/remove).
  *
  * Usage:
- *   npm run reparse-archives                # all Fahrplan years under docs/
+ *   npm run reparse-archives                # all Fahrplan years under docs/ (report only)
  *   npm run reparse-archives -- --year=2026 # only that year's archives
  *   npm run reparse-archives -- --verbose   # list every differing trip, not just counts
+ *   npm run reparse-archives -- --write     # re-stamp cause/causeKeyword on archived trips
  *
- * Exit code is 0 regardless of findings (it is a report). Pipe/read the summary to act on it.
+ * Exit code is 0 regardless of findings. Pipe/read the summary to act on it.
  */
 
 import { basename, join } from 'node:path';
@@ -27,7 +34,8 @@ import { getCancellationKey, loadExistingCancellations } from '../src/storage.js
 import { parseDetailPage, ParseError } from '../src/parser/index.js';
 import { ARCHIVE_SUBDIR, parseArchive } from '../src/article-archive.js';
 import { listFahrplanYearDirs } from '../src/fahrplan.js';
-import { listFiles, readTextFile } from '../src/utils/fs.js';
+import { listFiles, readTextFile, writeJsonFile } from '../src/utils/fs.js';
+import type { CauseClassification } from '../src/cause.js';
 import type { Cancellation } from '../src/types.js';
 
 /** One-line, human-readable identity of a trip for the diff report. */
@@ -38,19 +46,22 @@ function formatTrip(trip: Cancellation): string {
 interface Options {
   readonly year?: string;
   readonly verbose: boolean;
+  readonly write: boolean;
 }
 
 function parseArgs(argv: string[]): Options {
   let year: string | undefined;
   let verbose = false;
+  let write = false;
   for (const arg of argv) {
     if (arg === '--')
       continue; // tolerate the npm `--` separator if it slips through
     else if (arg.startsWith('--year=')) year = arg.slice('--year='.length).trim();
     else if (arg === '--verbose') verbose = true;
+    else if (arg === '--write') write = true;
     else throw new Error(`Unknown argument: ${arg}`);
   }
-  return { year, verbose };
+  return { year, verbose, write };
 }
 
 /** Directory names under `docs/` that are Fahrplan-year buckets, optionally filtered to one. */
@@ -87,6 +98,10 @@ interface Totals {
   removed: number;
   causeChanged: number;
   articlesWithDiffs: number;
+  /** Write mode: stored trips whose cause/causeKeyword was re-stamped. */
+  restamped: number;
+  /** Write mode: line JSON files rewritten. */
+  filesWritten: number;
 }
 
 function newTotals(): Totals {
@@ -99,7 +114,47 @@ function newTotals(): Totals {
     removed: 0,
     causeChanged: 0,
     articlesWithDiffs: 0,
+    restamped: 0,
+    filesWritten: 0,
   };
+}
+
+/** One archived article reparsed with the current parser. */
+interface ReparsedArchive {
+  readonly url: string;
+  readonly trips: readonly Cancellation[];
+}
+
+/**
+ * Reparses one archive file into its source URL + trips, updating the parse totals and warning
+ * on any skip. Returns `null` when the file is unreadable, carries no `Quelle` URL, or fails to
+ * parse — the single place both report and backfill modes turn frozen text back into trips.
+ */
+async function reparseArchiveFile(
+  filePath: string,
+  totals: Totals,
+): Promise<ReparsedArchive | null> {
+  totals.articles += 1;
+  const content = await readTextFile(filePath);
+  if (content === null) return null;
+
+  const { url, body } = parseArchive(content);
+  if (!url) {
+    totals.noUrl += 1;
+    console.warn(`  ? ${basename(filePath)}: no Quelle header, cannot map to stored data`);
+    return null;
+  }
+
+  try {
+    const trips = parseDetailPage(body, url);
+    totals.parsedOk += 1;
+    return { url, trips };
+  } catch (error) {
+    totals.parseErrors += 1;
+    const kind = error instanceof ParseError ? 'ParseError' : 'error';
+    console.warn(`  ! ${basename(filePath)}: ${kind}: ${(error as Error).message.split('\n')[0]}`);
+    return null;
+  }
 }
 
 /** Reparses one archive file and reports how it differs from what is stored for its URL. */
@@ -109,27 +164,9 @@ async function reportArticle(
   options: Options,
   totals: Totals,
 ): Promise<void> {
-  totals.articles += 1;
-  const content = await readTextFile(filePath);
-  if (content === null) return;
-
-  const { url, body } = parseArchive(content);
-  if (!url) {
-    totals.noUrl += 1;
-    console.warn(`  ? ${basename(filePath)}: no Quelle header, cannot map to stored data`);
-    return;
-  }
-
-  let reparsed: Cancellation[];
-  try {
-    reparsed = parseDetailPage(body, url);
-    totals.parsedOk += 1;
-  } catch (error) {
-    totals.parseErrors += 1;
-    const kind = error instanceof ParseError ? 'ParseError' : 'error';
-    console.warn(`  ! ${basename(filePath)}: ${kind}: ${(error as Error).message.split('\n')[0]}`);
-    return;
-  }
+  const parsed = await reparseArchiveFile(filePath, totals);
+  if (!parsed) return;
+  const { url, trips: reparsed } = parsed;
 
   const stored = storedByUrl.get(url) ?? new Map<string, Cancellation>();
   const reparsedKeys = new Map(reparsed.map((t) => [getCancellationKey(t), t]));
@@ -161,6 +198,74 @@ async function reportArticle(
   }
 }
 
+/**
+ * Reparses every archive in a year into a lookup of the {@link CauseClassification} it yields,
+ * keyed by source URL then trip key. Parse failures are skipped (they can't inform a re-stamp),
+ * so backfill never invents or drops trips — it only refines cause.
+ */
+async function reparseClassificationsByUrl(
+  archiveDir: string,
+  files: readonly string[],
+  totals: Totals,
+): Promise<Map<string, Map<string, CauseClassification>>> {
+  const byUrl = new Map<string, Map<string, CauseClassification>>();
+  for (const file of files) {
+    const parsed = await reparseArchiveFile(join(archiveDir, file), totals);
+    if (!parsed) continue;
+    const perTrip = new Map<string, CauseClassification>();
+    for (const t of parsed.trips) {
+      perTrip.set(getCancellationKey(t), { cause: t.cause, causeKeyword: t.causeKeyword });
+    }
+    byUrl.set(parsed.url, perTrip);
+  }
+  return byUrl;
+}
+
+/**
+ * Backfills one year: re-stamps `cause`/`causeKeyword` on every stored trip whose article is
+ * archived and reparses to the same trip key. Only these two fields change; trip identity and
+ * order are preserved, so an unaffected file stays byte-identical.
+ */
+async function backfillYear(yearDir: string, options: Options, totals: Totals): Promise<void> {
+  const archiveDir = join(yearDir, ARCHIVE_SUBDIR);
+  const files = (await listFiles(archiveDir)).filter((f) => f.endsWith('.txt')).sort();
+  if (files.length === 0) return;
+
+  const reclassifiedByUrl = await reparseClassificationsByUrl(archiveDir, files, totals);
+  const lineFiles = (await listFiles(yearDir)).filter(
+    (name) => name.endsWith('.json') && name !== 'index.json',
+  );
+
+  for (const file of lineFiles) {
+    const filePath = join(yearDir, file);
+    const trips = await loadExistingCancellations(filePath);
+    let changed = false;
+    const next = trips.map((trip) => {
+      const reclassified = reclassifiedByUrl.get(trip.sourceUrl)?.get(getCancellationKey(trip));
+      if (
+        !reclassified ||
+        (reclassified.cause === trip.cause && reclassified.causeKeyword === trip.causeKeyword)
+      ) {
+        return trip;
+      }
+      changed = true;
+      totals.restamped += 1;
+      if (options.verbose) {
+        console.log(
+          `      ~ ${formatTrip(trip)} → ${reclassified.cause}` +
+            `${reclassified.causeKeyword ? ` [${reclassified.causeKeyword}]` : ''}`,
+        );
+      }
+      return { ...trip, cause: reclassified.cause, causeKeyword: reclassified.causeKeyword };
+    });
+    if (changed) {
+      await writeJsonFile(filePath, next);
+      totals.filesWritten += 1;
+      console.log(`  ~ ${file}: re-stamped cause on affected trip(s)`);
+    }
+  }
+}
+
 async function main(): Promise<void> {
   const options = parseArgs(process.argv.slice(2));
   const years = await findYearDirs(DATA_DIR, options.year);
@@ -171,20 +276,36 @@ async function main(): Promise<void> {
 
   const totals = newTotals();
   for (const year of years) {
-    const archiveDir = join(DATA_DIR, year, ARCHIVE_SUBDIR);
+    const yearDir = join(DATA_DIR, year);
+    const archiveDir = join(yearDir, ARCHIVE_SUBDIR);
     const files = (await listFiles(archiveDir)).filter((f) => f.endsWith('.txt'));
     if (files.length === 0) continue;
 
     console.log(`\n${year} (${files.length} archived article(s)):`);
-    const storedByUrl = await loadStoredByUrl(join(DATA_DIR, year));
+    if (options.write) {
+      await backfillYear(yearDir, options, totals);
+      continue;
+    }
+    const storedByUrl = await loadStoredByUrl(yearDir);
     for (const file of files.sort()) {
       await reportArticle(join(archiveDir, file), storedByUrl, options, totals);
     }
   }
 
-  console.log(
+  const parseSummary =
     `\nSummary: ${totals.articles} archived article(s) — ${totals.parsedOk} parsed, ` +
-      `${totals.parseErrors} parse error(s), ${totals.noUrl} without a URL.\n` +
+    `${totals.parseErrors} parse error(s), ${totals.noUrl} without a URL.\n`;
+
+  if (options.write) {
+    console.log(
+      parseSummary +
+        `Backfill: re-stamped ${totals.restamped} trip(s) across ${totals.filesWritten} file(s).`,
+    );
+    return;
+  }
+
+  console.log(
+    parseSummary +
       `Diffs vs stored: ${totals.articlesWithDiffs} article(s) — +${totals.added} would-add, ` +
       `-${totals.removed} would-remove, ${totals.causeChanged} cause change(s).`,
   );

@@ -9,7 +9,7 @@
  */
 
 import type { Cancellation } from '../types.js';
-import { classifyCause } from '../cause.js';
+import { classifyCauseWithEvidence } from '../cause.js';
 import { TRIP_TIME_PAIR_PATTERN } from './patterns.js';
 import { stripHtml, extractLine, extractStand } from './text-extraction.js';
 import {
@@ -44,7 +44,7 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
   const lineMentionCount = mentionedLines.length;
   const { standIso, dateForTrips } = extractStand(text);
   const capturedAt = new Date().toISOString();
-  const cause = classifyCause(text);
+  const { cause, causeKeyword } = classifyCauseWithEvidence(text);
 
   const metadata = {
     line,
@@ -54,6 +54,7 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     sourceUrl: url,
     capturedAt,
     cause,
+    causeKeyword,
     lineMentionCount,
   };
 

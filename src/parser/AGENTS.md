@@ -6,7 +6,7 @@ This is the most specific guidance for parser files.
 ## Scope
 
 - Parse KVV detail-page text into structured trip cancellations.
-- Compute the article-level cause via `classifyCause` (`src/cause.ts`) and stamp it on the `cause` field of every `Cancellation` produced from that article.
+- Compute the article-level cause via `classifyCauseWithEvidence` (`src/cause.ts`) and stamp both the `cause` and its `causeKeyword` (matched keyword, evidence) on every `Cancellation` produced from that article.
 - Keep support for known format variants:
   - line-prefix trip format
   - stop/time variants

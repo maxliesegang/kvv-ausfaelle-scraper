@@ -426,6 +426,7 @@ function buildCancellation(
     sourceUrl: metadata.sourceUrl,
     capturedAt: metadata.capturedAt,
     cause: metadata.cause,
+    causeKeyword: metadata.causeKeyword,
   };
 }
 

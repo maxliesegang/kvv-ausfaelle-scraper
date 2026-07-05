@@ -3,22 +3,33 @@ import type { Cancellation } from './types.js';
 import { readJsonFile, writeJsonFile } from './utils/fs.js';
 import { getFahrplanYear } from './fahrplan.js';
 
-/** Records written before cause classification existed have no `cause` field. */
-type StoredCancellation = Omit<Cancellation, 'cause'> & { cause?: Cancellation['cause'] };
+/**
+ * Older records lack fields added over time: `cause` (pre-classification) and `causeKeyword`
+ * (pre-evidence). Both are optional on disk and backfilled on load.
+ */
+type StoredCancellation = Omit<Cancellation, 'cause' | 'causeKeyword'> & {
+  cause?: Cancellation['cause'];
+  causeKeyword?: Cancellation['causeKeyword'];
+};
 
 /**
  * Loads existing cancellation data from a JSON file.
  * Returns empty array if file doesn't exist or cannot be parsed.
  *
  * Records written before cause classification lack a `cause` field. Their cause cannot
- * be recomputed (the source article text is not stored), so they are stamped `unknown`
- * to honestly reflect that while satisfying the now-required field.
+ * be recomputed (the source article text is not stored, only archived when available), so
+ * they are stamped `unknown` to honestly reflect that while satisfying the now-required
+ * field. `causeKeyword` defaults to `null` for the same reason.
  */
 export async function loadExistingCancellations(filePath: string): Promise<Cancellation[]> {
   try {
     const data = await readJsonFile<StoredCancellation[]>(filePath);
     if (data && Array.isArray(data)) {
-      return data.map((entry) => ({ ...entry, cause: entry.cause ?? 'unknown' }));
+      return data.map((entry) => ({
+        ...entry,
+        cause: entry.cause ?? 'unknown',
+        causeKeyword: entry.causeKeyword ?? null,
+      }));
     }
   } catch (error) {
     console.warn('Failed to read/parse existing file', filePath, error);
@@ -158,7 +169,8 @@ function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
     return;
   }
 
-  const updated = { ...existing, cause: trip.cause };
+  // Cause changed on a re-fetch — carry its evidence keyword along so the two never drift.
+  const updated = { ...existing, cause: trip.cause, causeKeyword: trip.causeKeyword };
   bucket.entries.set(tripKey, updated);
   bucket.stats.updatedTrips.push(updated);
 }

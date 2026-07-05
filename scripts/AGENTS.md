@@ -10,13 +10,18 @@ This is the most specific guidance for maintenance scripts.
 
 ## Scripts
 
-- `reparse-archives.ts` (`npm run reparse-archives`) — **read-only** report. Walks
+- `reparse-archives.ts` (`npm run reparse-archives`) — **read-only** report by default. Walks
   `docs/<year>/articles/*.txt` (the text archive written by `src/article-archive.ts`),
   feeds each body back through `parseDetailPage` + cause classification, and diffs the
   result against the stored `docs/<year>/<line>.json` (matched by the `Quelle:` source URL,
   keyed by `date|trainNumber|fromTime`). Surfaces parser/classifier improvements (archive
   now yields trips/causes the stored data lacks) and regressions (archive no longer yields
-  stored trips). Writes nothing; always exits 0. Flags: `--year=N`, `--verbose`. Reuses
+  stored trips). Flags: `--year=N`, `--verbose`, and `--write`. Without `--write` it writes
+  nothing and always exits 0. With `--write` it **backfills**: re-stamps `cause`/`causeKeyword`
+  on every stored trip whose article is archived and reparses to the same trip key — the
+  channel by which a cause-taxonomy change reaches history, but only as far as the archive
+  reaches (pre-archive trips keep their stored cause). It touches only those two fields, never
+  trip identity/order, so unaffected files stay byte-identical. Reuses
   `renderArchive`/`parseArchive` from `src/article-archive.ts` so the archive format lives
   in one place; the `tests/unit/article-archive.test.ts` "reparse fidelity" suite locks the
   property that archived text reparses to the same trips as the original HTML.

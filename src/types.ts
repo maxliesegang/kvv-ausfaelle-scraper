@@ -37,6 +37,13 @@ export interface Cancellation {
 
   /** Best-effort category for why the trip was cancelled (article-level). */
   readonly cause: CancellationCause;
+
+  /**
+   * Normalized keyword that drove the {@link cause} classification (`null` when `unknown`).
+   * Kept as evidence so the ambiguous buckets (`operational`, `unknown`) stay auditable
+   * without re-reading the article archive. See `src/cause.ts`.
+   */
+  readonly causeKeyword: string | null;
 }
 
 /**
@@ -56,6 +63,8 @@ export interface TripParsingMetadata {
   readonly capturedAt: string;
   /** Best-effort cause category for the article (applied to every trip it lists) */
   readonly cause: CancellationCause;
+  /** Normalized keyword behind {@link cause} (`null` when `unknown`); stamped on every trip */
+  readonly causeKeyword: string | null;
   /** Lines explicitly mentioned in the article */
   readonly mentionedLines: readonly string[];
   /** Count of distinct lines mentioned */
