@@ -7790,6 +7790,58 @@
     "line": "S5",
     "date": "2026-07-05",
     "stand": "2026-07-05T11:08:00.000Z",
+    "trainNumber": "84863",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "0:05",
+    "toStop": "Karlsruhe Tullatr.",
+    "toTime": "0:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
+    "capturedAt": "2026-07-05T11:22:13.519Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-05",
+    "stand": "2026-07-05T11:08:00.000Z",
+    "trainNumber": "84800",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "04:45",
+    "toStop": "Wörth Badepark",
+    "toTime": "05:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
+    "capturedAt": "2026-07-05T11:22:13.519Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-05",
+    "stand": "2026-07-05T11:08:00.000Z",
+    "trainNumber": "84795",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:50",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "06:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
+    "capturedAt": "2026-07-05T11:22:13.519Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-05",
+    "stand": "2026-07-05T11:08:00.000Z",
+    "trainNumber": "84816",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "07:09",
+    "toStop": "KA Tullastraße",
+    "toTime": "07:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
+    "capturedAt": "2026-07-05T11:22:13.519Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-05",
+    "stand": "2026-07-05T11:08:00.000Z",
     "trainNumber": "84832",
     "fromStop": "Karlsruhe Tullastr.",
     "fromTime": "13:10",
@@ -7810,6 +7862,19 @@
     "toTime": "14:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
     "capturedAt": "2026-07-05T10:07:35.528Z",
+    "cause": "operational"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-05",
+    "stand": "2026-07-05T11:08:00.000Z",
+    "trainNumber": "84864",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "23:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "23:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
+    "capturedAt": "2026-07-05T11:22:13.519Z",
     "cause": "operational"
   }
 ]
