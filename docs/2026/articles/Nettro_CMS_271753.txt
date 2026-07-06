@@ -16,7 +16,7 @@ Betroffene Fahrten:
 84792 KA Tullastraße 04:06 Uhr - Wörth Badepark 04:51 Uhr
 84796 KA Tullastraße 04:36 Uhr - Wörth Badepark 05:21 Uhr
 84791 Wörth Badepark 05:05 Uhr - Söllingen Bahnhof 06:07 Uhr
-84793 Wörth Badepark 05:45 Uhr - KA Tullastraße 06:26 Uhr
+84793 Wörth Badepark 05:45 Uhr - Lameyplatz 06:09 Uhr
 84810 Söllingen Bahnhof 06:18 Uhr - Wörth Badepark 07:22 Uhr
 84805 Wörth Badepark 07:35 Uhr - Söllingen Bahnhof 08:37 Uhr
 84820 Söllingen Bahnhof 08:37 Uhr - KA Tullastraße 09:10 Uhr
