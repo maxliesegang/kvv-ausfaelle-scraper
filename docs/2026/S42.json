@@ -9,7 +9,9 @@
     "toStop": "Sinsheim Bf.",
     "toTime": "08:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262432",
-    "capturedAt": "2026-02-02T08:37:51.969Z"
+    "capturedAt": "2026-02-02T08:37:51.969Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -21,7 +23,9 @@
     "toStop": "Heilbronn Hbf.",
     "toTime": "09:48",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262432",
-    "capturedAt": "2026-02-02T08:37:51.969Z"
+    "capturedAt": "2026-02-02T08:37:51.969Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -33,7 +37,9 @@
     "toStop": "Heilbronn Bahnhof Vorplatz",
     "toTime": "14:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
-    "capturedAt": "2026-05-30T13:19:20.308Z"
+    "capturedAt": "2026-05-30T13:19:20.308Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -45,7 +51,9 @@
     "toStop": "Bad Rappenau",
     "toTime": "15:21",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
-    "capturedAt": "2026-05-30T13:19:20.308Z"
+    "capturedAt": "2026-05-30T13:19:20.308Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -57,7 +65,9 @@
     "toStop": "Heilbronn Bahnhof Vorplatz",
     "toTime": "16:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_269300",
-    "capturedAt": "2026-05-30T13:19:20.308Z"
+    "capturedAt": "2026-05-30T13:19:20.308Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -69,7 +79,9 @@
     "toStop": "Bad Rappenau Bahnhof",
     "toTime": "18:21",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270185",
-    "capturedAt": "2026-06-18T14:57:41.721Z"
+    "capturedAt": "2026-06-18T14:57:41.721Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -81,6 +93,36 @@
     "toStop": "Heilbronn Willy-Brandt-Platz",
     "toTime": "19:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_270185",
-    "capturedAt": "2026-06-18T14:57:41.721Z"
+    "capturedAt": "2026-06-18T14:57:41.721Z",
+    "cause": "unknown",
+    "causeKeyword": null
+  },
+  {
+    "line": "S42",
+    "date": "2026-07-06",
+    "stand": "2026-07-06T18:03:00.000Z",
+    "trainNumber": "85861",
+    "fromStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "fromTime": "17:36",
+    "toStop": "Bad Rappenau Bf",
+    "toTime": "18:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271891",
+    "capturedAt": "2026-07-06T18:07:45.555Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S42",
+    "date": "2026-07-06",
+    "stand": "2026-07-06T18:03:00.000Z",
+    "trainNumber": "85868",
+    "fromStop": "Bad Rappenau Bf",
+    "fromTime": "18:33",
+    "toStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "toTime": "19:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271891",
+    "capturedAt": "2026-07-06T18:07:45.555Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
