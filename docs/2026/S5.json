@@ -8860,5 +8860,47 @@
     "capturedAt": "2026-07-06T02:44:38.743Z",
     "cause": "operational",
     "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-07",
+    "stand": "2026-07-07T16:51:00.000Z",
+    "trainNumber": "84850",
+    "fromStop": "Ka. Lameyplatz",
+    "fromTime": "18:27",
+    "toStop": "Wörth Badepark",
+    "toTime": "18:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271949",
+    "capturedAt": "2026-07-07T17:55:00.438Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-07",
+    "stand": "2026-07-07T16:51:00.000Z",
+    "trainNumber": "84845",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "19:05",
+    "toStop": "Söllingen",
+    "toTime": "20:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271949",
+    "capturedAt": "2026-07-07T17:55:00.438Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-07",
+    "stand": "2026-07-07T16:51:00.000Z",
+    "trainNumber": "84780",
+    "fromStop": "Söllingen",
+    "fromTime": "20:18",
+    "toStop": "Ka. Rheinbergstraße",
+    "toTime": "21:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271949",
+    "capturedAt": "2026-07-07T17:55:00.438Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
