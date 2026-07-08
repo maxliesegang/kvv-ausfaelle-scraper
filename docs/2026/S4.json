@@ -2756,5 +2756,33 @@
     "capturedAt": "2026-07-06T18:07:45.524Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-08",
+    "stand": "2026-07-08T01:00:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Bühl",
+    "fromTime": "05:42",
+    "toStop": "Eppingen",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271972",
+    "capturedAt": "2026-07-08T02:13:30.918Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-08",
+    "stand": "2026-07-08T01:00:00.000Z",
+    "trainNumber": "85512",
+    "fromStop": "Eppingen",
+    "fromTime": "08:07",
+    "toStop": "KA Albtalbf.",
+    "toTime": "09:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271972",
+    "capturedAt": "2026-07-08T02:13:30.918Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
