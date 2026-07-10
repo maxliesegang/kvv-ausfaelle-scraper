@@ -6,14 +6,20 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 10.07.2026, 09:13 Uhr
-Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51
-Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
+Betriebsbedingte Fahrtausfälle auf der Linie S5
+Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
+Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 10.07.2026 09:12:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85052 Karlsruhe Rheinbergstraße (09:57 Uhr) - Wörth (Rhein) Badepark (10:15 Uhr)
 84979 Wörth (Rhein) Badepark (10:23 Uhr) - Pforzheim Hbf (11:50 Uhr)
+84828 Karlsruhe Lameyplatz (12:28 Uhr) - Wörth (Rhein) Badepark (12:53 Uhr)
+84823 Wörth (Rhein) Badepark (13:05 Uhr) - Söllingen Bf (14:09 Uhr)
+84746 Söllingen Bf (14:18 Uhr) - Karlsruhe Rheinbergstraße (15:04 Uhr)
+84763 Karlsruhe Rheinbergstraße (15:52 Uhr) - Söllingen Bf (16:37 Uhr)
+84846 Söllingen Bf (16:48 Uhr) - Wörth (Rhein) Badepark (17:53 Uhr)
+84843 Wörth (Rhein) Badepark (18:05 Uhr) - Söllingen Bf (19:09 Uhr)
+84776 Söllingen Bf (19:18 Uhr) - Karlsruhe Rheinbergstraße (20:04 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
