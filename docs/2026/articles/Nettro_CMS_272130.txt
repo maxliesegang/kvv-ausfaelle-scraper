@@ -12,8 +12,9 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S7 und S71 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Hauptbahnhof und Achern Bahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 10.07.2026 02:01:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85553 Karlsruhe Hbf (05:16 Uhr) - Achern Bf. (06:08 Uhr)
 85473 Achern Bf. (06:17 Uhr) - KA-Albtalbahnhof (07:13 Uhr)
+85567 Karlsruhe Tullastraße (09:17 Uhr) - Achern (10:25 Uhr)
+85568 Achern (10:33 Uhr) - Karlsruhe Tullastraße (11:40 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
