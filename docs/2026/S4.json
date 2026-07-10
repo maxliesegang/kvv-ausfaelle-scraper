@@ -2826,5 +2826,47 @@
     "capturedAt": "2026-07-10T02:34:37.556Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-10",
+    "stand": "2026-07-10T18:03:00.000Z",
+    "trainNumber": "85529",
+    "fromStop": "KA-Albtalbahnhof",
+    "fromTime": "18:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "19:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272228",
+    "capturedAt": "2026-07-10T17:43:50.449Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-10",
+    "stand": "2026-07-10T18:03:00.000Z",
+    "trainNumber": "85538",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "20:20",
+    "toStop": "KA-Albtalbahnhof",
+    "toTime": "21:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272228",
+    "capturedAt": "2026-07-10T17:43:50.449Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-10",
+    "stand": "2026-07-10T18:03:00.000Z",
+    "trainNumber": "85537",
+    "fromStop": "KA-Albtalbahnhof",
+    "fromTime": "22:35",
+    "toStop": "Gölshausen Bf.",
+    "toTime": "23:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272228",
+    "capturedAt": "2026-07-10T17:43:50.449Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

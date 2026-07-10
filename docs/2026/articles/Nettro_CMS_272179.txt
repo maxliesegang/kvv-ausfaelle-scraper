@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272179
-Stand:  2026-07-10T09:12:00.000Z
+Stand:  2026-07-10T17:09:00.000Z
 ========================================================================
 
 KVV
@@ -7,19 +7,23 @@ Fahrplan
 Verkehrsmeldungen
 10.07.2026, 09:13 Uhr
 Betriebsbedingte Fahrtausfälle auf der Linie S5
-Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
+Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Bad Wildbad Kurpark 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 10.07.2026 09:12:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84979 Wörth (Rhein) Badepark (10:23 Uhr) - Pforzheim Hbf (11:50 Uhr)
-84828 Karlsruhe Lameyplatz (12:28 Uhr) - Wörth (Rhein) Badepark (12:53 Uhr)
-84823 Wörth (Rhein) Badepark (13:05 Uhr) - Söllingen Bf (14:09 Uhr)
-84746 Söllingen Bf (14:18 Uhr) - Karlsruhe Rheinbergstraße (15:04 Uhr)
+Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Bad Wildbad Kurpark. Wir bitten um Entschuldigung.
+Nach aktuellem Stand 10.07.2026 17:09:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 84763 Karlsruhe Rheinbergstraße (15:52 Uhr) - Söllingen Bf (16:37 Uhr)
 84846 Söllingen Bf (16:48 Uhr) - Wörth (Rhein) Badepark (17:53 Uhr)
+85085 KA-Tullastr. (17:26 Uhr) - Pforzheim Hbf (18:10 Uhr)
 84843 Wörth (Rhein) Badepark (18:05 Uhr) - Söllingen Bf (19:09 Uhr)
 84776 Söllingen Bf (19:18 Uhr) - Karlsruhe Rheinbergstraße (20:04 Uhr)
+85084 Pforzheim Hbf (19:46 Uhr) - Wörth Badepark (21:15 Uhr)
+85095 Karlsruhe Lameyplatz (21:07 Uhr) - Bad Wildbad Kurpark (22:52 Uhr)
+85097 Wörth Badepark (21:45 Uhr) - KA-Tullastr. (22:26 Uhr)
+85092 Bad Wildbad Kurpark (23:05 Uhr) - Pforzheim Hbf (23:40 Uhr)
+85026 Pforzheim Hbf (00:06 Uhr) - Karlsruhe Rheinbergstraße (01:14 Uhr)
+84789 Karlsruhe Rheinbergstraße (02:07 Uhr) - Söllingen Bf. (02:55 Uhr)
+84788 Söllingen Bf. (03:01 Uhr) - Karlsruhe Rheinbergstraße (03:47 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
