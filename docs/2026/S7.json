@@ -1202,5 +1202,61 @@
     "capturedAt": "2026-07-10T07:30:43.786Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-11",
+    "stand": "2026-07-11T13:54:00.000Z",
+    "trainNumber": "85574",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "14:21",
+    "toStop": "Tullastraße",
+    "toTime": "14:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272285",
+    "capturedAt": "2026-07-11T13:08:13.173Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-11",
+    "stand": "2026-07-11T13:54:00.000Z",
+    "trainNumber": "85579",
+    "fromStop": "Tullastraße",
+    "fromTime": "15:17",
+    "toStop": "Baden-Baden",
+    "toTime": "16:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272285",
+    "capturedAt": "2026-07-11T13:08:13.173Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-11",
+    "stand": "2026-07-11T13:54:00.000Z",
+    "trainNumber": "85580",
+    "fromStop": "Baden-Baden",
+    "fromTime": "16:54",
+    "toStop": "Tullastraße",
+    "toTime": "17:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272285",
+    "capturedAt": "2026-07-11T13:08:13.173Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-11",
+    "stand": "2026-07-11T13:54:00.000Z",
+    "trainNumber": "85585",
+    "fromStop": "Tullastraße",
+    "fromTime": "18:17",
+    "toStop": "Albtalbahnhof",
+    "toTime": "18:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272285",
+    "capturedAt": "2026-07-11T13:08:13.173Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
