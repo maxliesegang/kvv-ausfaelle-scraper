@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272367
-Stand:  2026-07-13T09:51:00.000Z
+Stand:  2026-07-13T15:52:00.000Z
 ========================================================================
 
 KVV
@@ -11,13 +11,18 @@ Betriebsbedingte Fahrtausfälle auf den Linien S1 und S11 zwischen Ettlingen Alb
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S1 und S11 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Ettlingen Albgaubad und Hochstetten. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 13.07.2026 09:51:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+Nach aktuellem Stand 13.07.2026 15:52:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 20025 Ettlingen Stadt (11:18 Uhr) - Hochstetten (12:26 Uhr)
 10042 Hochstetten (12:32 Uhr) - Ettlingen Albgaubad (13:42 Uhr)
 10045 Ettlingen Albgaubad (12:34 Uhr) - Hochstetten (13:46 Uhr)
 10048 Hochstetten (13:52 Uhr) - Ettlingen Stadt (14:58 Uhr)
 10057 Ettlingen Albgaubad (15:34 Uhr) - Hochstetten (16:46 Uhr)
 10060 Hochstetten (16:52 Uhr) - Ettlingen Stadt (17:58 Uhr)
+10058 Hochstetten (16:32 Uhr) - Ettlingen Albgaubad (17:42 Uhr) 
+10069 Ettlingen Albgaubad (18:34 Uhr) - Hochstetten (19:46 Uhr)
+10074 Hochstetten (19:52) - Ettlingen (21:02) 
+10083 Ettlingen (22:05) - Neureut Kirchfeld (22:51)
+10084 Neureut Kirchfeld (23:25) - Ettlingen Albgaubad (00:12)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
