@@ -36,9 +36,31 @@ export const PATTERNS = {
   /**
    * Matches trip format using "ab/bis/an": <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
    * Example: "85715 Heilbronn Hbf. Vorplatz ab 10:16 Uhr bis Mosbach Bf. an 11:16 Uhr"
+   * A trailing parenthesized annotation (e.g. "(LT)" for Linientaxi) is tolerated.
    */
   TRIP_AB_BIS_FORMAT:
-    /^(\d+)\s+(.+?)\s+ab\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+an\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
+    /^(\d+)\s+(.+?)\s+ab\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+an\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
+
+  /**
+   * Matches the prose "entfällt zwischen" form KVV sometimes uses instead of a tabular row:
+   * <trainNumber> entfällt zwischen <fromStop> (<fromTime> Uhr) und <toStop> (<toTime> Uhr).
+   * Example: "84892 entfällt zwischen Karlsruhe Tullastraße (10:01 Uhr) und Karlsruhe
+   * Rheinbergstraße (10:26 Uhr). Dieser Zug wird verspätet …"
+   * Deliberately un-anchored at the end so trailing explanatory prose does not defeat it.
+   */
+  TRIP_ENTFAELLT_ZWISCHEN_FORMAT:
+    /^(\d+)\s+entf(?:ä|ae)llt\s+zwischen\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+und\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)/i,
+
+  /**
+   * Loose stop/time format tolerating optional parentheses around EITHER time independently:
+   * <trainNumber> <fromStop> [(]<fromTime> Uhr[)] - <toStop> [(]<toTime> Uhr[)]
+   * Example (asymmetric parens): "85879 Heilbronn Hbf (23:50 Uhr) - Sinsheim Hbf 00:48 Uhr"
+   * A superset of the stricter stop/time and old formats, so it is tried LAST — only lines
+   * every stricter format rejects reach it. Still requires a leading train number, which
+   * keeps parenthesized date-ranges (no leading number) from matching.
+   */
+  TRIP_STOP_TIME_PARENS_FORMAT:
+    /^(\d+)\s+(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*[-–]+\s*(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*$/,
 
   /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>

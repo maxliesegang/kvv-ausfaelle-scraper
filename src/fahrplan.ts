@@ -116,7 +116,7 @@ function isFahrplanYearDirName(name: string): boolean {
  * The single source of truth for "which folders under `docs/` are year buckets", shared by the
  * site-index generator and the offline reparse tooling so they never drift apart.
  */
-export async function listFahrplanYearDirs(baseDir: string): Promise<string[]> {
+export async function listFahrplanYearDirectories(baseDir: string): Promise<string[]> {
   return (await listSubdirectories(baseDir)).filter(isFahrplanYearDirName).sort();
 }
 

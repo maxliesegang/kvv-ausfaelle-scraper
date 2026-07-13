@@ -10,11 +10,11 @@
 
 import type { Cancellation } from '../types.js';
 import { classifyCauseWithEvidence } from '../cause.js';
-import { TRIP_TIME_PAIR_PATTERN } from './patterns.js';
 import { stripHtml, extractLine, extractStand } from './text-extraction.js';
 import {
   extractMentionedLines,
   extractTripLines,
+  findUnparsedTripLikeLines,
   MultiLineMappingError,
   parseTripLine,
 } from './trip-parsing.js';
@@ -62,18 +62,11 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
   const tripLines = extractTripLines(text);
   const trips: Cancellation[] = [];
   const unmappedTrainNumbers = new Set<string>();
-  const unparsedTripLikeLines: string[] = [];
 
   for (const tripLine of tripLines) {
     try {
       const parsed = parseTripLine(tripLine, metadata);
-      if (parsed.length > 0) {
-        trips.push(...parsed);
-      } else if (TRIP_TIME_PAIR_PATTERN.test(tripLine)) {
-        // Looks like a trip (two times) but matched no known format — keep it visible
-        // so a varying human-written row is not silently dropped.
-        unparsedTripLikeLines.push(tripLine);
-      }
+      trips.push(...parsed);
     } catch (error) {
       if (error instanceof MultiLineMappingError) {
         unmappedTrainNumbers.add(error.trainNumber);
@@ -83,6 +76,12 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     }
   }
 
+  // Surface trip-like rows the parser silently dropped (`extractTripLines` merges/filters,
+  // so an unparsable row never reaches the loop above). This only warns — the workflow
+  // decides whether a dropped row is a hard error (see `findMissedKnownTripsError`), so good
+  // trips are still saved when one is.
+  const parsedNumbers = new Set(trips.map((trip) => trip.trainNumber));
+  const unparsedTripLikeLines = findUnparsedTripLikeLines(text, parsedNumbers);
   if (unparsedTripLikeLines.length > 0) {
     console.warn(
       `  -> ${unparsedTripLikeLines.length} trip-like line(s) in ${url} matched no parser format:`,

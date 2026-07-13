@@ -6,9 +6,45 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { parseDetailPage } from '../../src/parser/index.js';
-import { extractTripLines, extractTripSectionCandidates } from '../../src/parser/trip-parsing.js';
+import {
+  extractTripLines,
+  extractTripSectionCandidates,
+  isValidTripLine,
+  parseTripLine,
+} from '../../src/parser/trip-parsing.js';
+import type { TripParsingMetadata } from '../../src/types.js';
+import { findMissedKnownTripsError } from '../../src/workflow.js';
 import { loadAllFixtures, loadFixture } from '../helpers/fixture-loader.js';
 import { assertCancellationsEqual, assertThrows } from '../helpers/test-utils.js';
+
+/**
+ * Parses a single trip line and returns just the extracted trip fields (line resolution is
+ * exercised elsewhere). Uses single-line-mention metadata so the article line is used
+ * directly without consulting the train-number mapping.
+ */
+function parseTripLineFields(
+  line: string,
+): { trainNumber: string; fromStop: string; fromTime: string; toStop: string; toTime: string }[] {
+  const metadata: TripParsingMetadata = {
+    line: 'S42',
+    mentionedLines: ['S42'],
+    lineMentionCount: 1,
+    lineExplicitlyProvided: false,
+    date: '2026-07-04',
+    stand: '2026-07-04T12:30:00.000Z',
+    sourceUrl: 'test://trip-line',
+    capturedAt: '2026-07-04T12:30:00.000Z',
+    cause: 'operational',
+    causeKeyword: null,
+  };
+  return parseTripLine(line, metadata).map((t) => ({
+    trainNumber: t.trainNumber,
+    fromStop: t.fromStop,
+    fromTime: t.fromTime,
+    toStop: t.toStop,
+    toTime: t.toTime,
+  }));
+}
 
 describe('Parser - Detail Page Parsing', () => {
   describe('Real-world articles', () => {
@@ -107,6 +143,101 @@ describe('Parser - Detail Page Parsing', () => {
         const actual = parseDetailPage(fixture.html, `test://${fixture.name}`);
         assertCancellationsEqual(actual, fixture.expected, `Multi-line: ${fixture.name}`);
       }
+    });
+  });
+
+  describe('Hardened format variants', () => {
+    // Each of these appeared in a live article and previously matched no parser format.
+    it('parses "ab/bis/an" rows with a trailing (LT) annotation', () => {
+      const line = '85096 Söllingen Bf. ab 23:19 Uhr bis Tullastraße an 23:36 Uhr (LT)';
+      assert.ok(isValidTripLine(line));
+      const [trip] = parseTripLineFields(line);
+      assert.deepStrictEqual(trip, {
+        trainNumber: '85096',
+        fromStop: 'Söllingen Bf.',
+        fromTime: '23:19',
+        toStop: 'Tullastraße',
+        toTime: '23:36',
+      });
+    });
+
+    it('parses stop/time rows with parentheses on only one side', () => {
+      const line = '85879 Heilbronn Hbf/Willy-Brandt-Platz (23:50 Uhr) - Sinsheim Hbf  00:48 Uhr';
+      assert.ok(isValidTripLine(line));
+      const [trip] = parseTripLineFields(line);
+      assert.deepStrictEqual(trip, {
+        trainNumber: '85879',
+        fromStop: 'Heilbronn Hbf/Willy-Brandt-Platz',
+        fromTime: '23:50',
+        toStop: 'Sinsheim Hbf',
+        toTime: '00:48',
+      });
+    });
+
+    it('parses the prose "entfällt zwischen X (t) und Y (t)" form with trailing prose', () => {
+      const line =
+        '84892 entfällt zwischen Karlsruhe Tullastraße (10:01 Uhr) und Karlsruhe ' +
+        'Rheinbergstraße (10:26 Uhr). Dieser Zug wird verspätet ab Karlsruhe Albtalbahnhof ' +
+        '(10:34 Uhr) über Karlsruhe West eingesetzt.';
+      assert.ok(isValidTripLine(line));
+      const [trip] = parseTripLineFields(line);
+      assert.deepStrictEqual(trip, {
+        trainNumber: '84892',
+        fromStop: 'Karlsruhe Tullastraße',
+        fromTime: '10:01',
+        toStop: 'Karlsruhe Rheinbergstraße',
+        toTime: '10:26',
+      });
+    });
+
+    it('does not treat parenthesized date-ranges as trips (no leading train number)', () => {
+      assert.equal(
+        isValidTripLine('Donnerstag 30.07. (04:30 Uhr) bis Donnerstag 06.08.2026 (04:10 Uhr)'),
+        false,
+      );
+      assert.equal(
+        isValidTripLine('ab Donnerstag 06.08. (04:10 Uhr) bis Montag 17.08.2026 (04:30 Uhr)'),
+        false,
+      );
+    });
+  });
+
+  describe('Known-train-number tripwire', () => {
+    // 85879 is a known 2026 S-line number; the second row is trip-like (two times) but
+    // matches no format. It must be surfaced as an error WITHOUT discarding the good trip.
+    const html = `
+      <html><body>
+        <p>Betriebsbedingte Fahrtausfälle auf der Linie S42</p>
+        <p>Nach aktuellem Stand 04.07.2026 12:30:00</p>
+        <p>Betroffene Fahrten:</p>
+        <p>84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr</p>
+        <p>85879 Heilbronn Hbf 10:00 Uhr nach Sinsheim Hbf 11:00 Uhr</p>
+        <p>Ob deine Verbindung aktuell fährt</p>
+      </body></html>
+    `;
+
+    it('keeps the good trip and still reports the dropped known-number row', () => {
+      const trips = parseDetailPage(html, 'test://known-number-miss');
+      // The parseable row is retained rather than thrown away.
+      assert.equal(trips.length, 1);
+      assert.equal(trips[0]?.trainNumber, '84957');
+
+      // The dropped known-number row is surfaced so CI fails as a notification.
+      const error = findMissedKnownTripsError(html, trips, 'test://known-number-miss');
+      assert.ok(error, 'expected a ParseError for the dropped known-number row');
+      assert.match(error.message, /known train number/i);
+      assert.match(error.message, /85879/);
+    });
+
+    it('does not report a dropped row whose number is not in the official data', () => {
+      // 99999 is not a known Zugnummer — absence is not proof it is not a trip, so it must
+      // not fail CI (it only warns in parseDetailPage).
+      const unknownHtml = html.replace('85879', '99999');
+      const trips = parseDetailPage(unknownHtml, 'test://unknown-number-miss');
+      assert.equal(
+        findMissedKnownTripsError(unknownHtml, trips, 'test://unknown-number-miss'),
+        undefined,
+      );
     });
   });
 

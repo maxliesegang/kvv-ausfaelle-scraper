@@ -3,10 +3,15 @@ import { DATA_DIR, RSS_URL } from './config.js';
 import { archiveArticleText } from './article-archive.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage, ParseError } from './parser/index.js';
-import { extractTripSectionCandidates } from './parser/trip-parsing.js';
+import {
+  extractTripSectionCandidates,
+  findUnparsedTripLikeLines,
+  leadingTrainNumber,
+} from './parser/trip-parsing.js';
 import { TRIP_TIME_PAIR_PATTERN } from './parser/patterns.js';
 import { stripHtml } from './parser/text-extraction.js';
 import { classifyCause } from './cause.js';
+import { isKnownTrainNumber } from './train-lines.js';
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
 const MIN_ARTICLE_AGE_MS = 60 * 60 * 1000; // 1 hour
@@ -45,13 +50,53 @@ export type SkipReason =
   | 'no-trip-details'
   | 'construction';
 
-/** Outcome of processing a single RSS item: either parsed trips or a skip reason. */
+/**
+ * Outcome of processing a single RSS item: either parsed trips or a skip reason. A parsed
+ * outcome may still carry a non-fatal `parseError` (a known-number trip we dropped) — the
+ * trips are saved and the error is surfaced so CI fails as a notification, not by throwing
+ * away the good trips. See {@link findMissedKnownTripsError}.
+ */
 export type ItemOutcome =
-  | { readonly status: 'parsed'; readonly trips: Cancellation[] }
+  | { readonly status: 'parsed'; readonly trips: Cancellation[]; readonly parseError?: ParseError }
   | { readonly status: 'skipped'; readonly reason: SkipReason };
 
 function skipped(reason: SkipReason): ItemOutcome {
   return { status: 'skipped', reason };
+}
+
+/**
+ * Returns a ParseError when the article dropped a trip-like row whose leading number KVV's
+ * own GTFS knows — a real cancellation in a format the parser does not cover yet. It is
+ * threaded alongside the parsed trips (not thrown), so the good trips are still saved while
+ * CI fails loudly as a notification to add the format + fixture. Construction notices are
+ * exempt: their trip formats are knowingly unparsed. A dropped row whose number GTFS does
+ * not list only warns in `parseDetailPage` — absence is not proof it isn't a trip.
+ */
+export function findMissedKnownTripsError(
+  html: string,
+  trips: Cancellation[],
+  url: string,
+): ParseError | undefined {
+  const text = stripHtml(html);
+  if (classifyCause(text) === 'construction') {
+    return undefined;
+  }
+
+  const parsedNumbers = new Set(trips.map((trip) => trip.trainNumber));
+  const missed = findUnparsedTripLikeLines(text, parsedNumbers).filter((line) => {
+    const number = leadingTrainNumber(line);
+    return number !== undefined && isKnownTrainNumber(number);
+  });
+  if (missed.length === 0) {
+    return undefined;
+  }
+
+  return new ParseError(
+    `Unparsed trip line(s) carrying a known train number in ${url}: ` +
+      `${JSON.stringify(missed.slice(0, 5))}. ` +
+      `This is a real cancellation in a format the parser does not cover — add a trip ` +
+      `format in src/parser/patterns.ts (with a regression fixture) so it parses.`,
+  );
 }
 
 /**
@@ -108,7 +153,8 @@ export async function fetchTripsFromItem(item: Item): Promise<ItemOutcome> {
   try {
     const trips = parseDetailPage(html, url);
     console.log(`  -> parsed ${trips.length} trips`);
-    return { status: 'parsed', trips };
+    const parseError = findMissedKnownTripsError(html, trips, url);
+    return { status: 'parsed', trips, ...(parseError ? { parseError } : {}) };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
 
@@ -195,6 +241,11 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
       if (outcome.status === 'parsed') {
         parsedItems += 1;
         cancellations.push(...outcome.trips);
+        // A parsed article can still report a dropped known-number trip: keep its good
+        // trips (already pushed) and surface the error so CI fails as a notification.
+        if (outcome.parseError) {
+          parseErrors.push(outcome.parseError);
+        }
       } else {
         skips[outcome.reason] += 1;
       }

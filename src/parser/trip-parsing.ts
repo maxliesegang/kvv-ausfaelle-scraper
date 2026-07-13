@@ -14,6 +14,7 @@ import {
   MULTI_LINE_RANGE_PATTERN,
   LINE_MENTION_SECTION_PATTERN,
   LINE_IDENTIFIER_PATTERN,
+  TRIP_TIME_PAIR_PATTERN,
 } from './patterns.js';
 
 export class MultiLineMappingError extends Error {
@@ -128,67 +129,63 @@ interface TripFormat {
   readonly extract: (match: RegExpMatchArray) => ParsedTripFields;
 }
 
+/**
+ * Group extractors shared by formats with the same capture-group layout. Most trip formats
+ * capture the same five fields in one of two orders, so naming the two orders keeps the
+ * format table below a compact spec: a new same-shaped format is one line.
+ */
+const EXTRACT = {
+  /** `<num> <fromStop> <fromTime> <toStop> <toTime>` — the common human-written order. */
+  stopThenTime: (m: RegExpMatchArray): ParsedTripFields => ({
+    trainNumber: m[1],
+    fromStop: m[2],
+    fromTime: m[3],
+    toStop: m[4],
+    toTime: m[5],
+  }),
+  /** `<num> <fromTime> <fromStop> <toTime> <toStop>` — time before stop on each side. */
+  timeThenStop: (m: RegExpMatchArray): ParsedTripFields => ({
+    trainNumber: m[1],
+    fromTime: m[2],
+    fromStop: m[3],
+    toTime: m[4],
+    toStop: m[5],
+  }),
+  /** `<line> <num> <fromStop> <fromTime> <toStop> <toTime>` — line-prefixed variant. */
+  linePrefix: (m: RegExpMatchArray): ParsedTripFields => ({
+    lineId: m[1]?.toUpperCase(),
+    trainNumber: m[2],
+    fromStop: m[3],
+    fromTime: m[4],
+    toStop: m[5],
+    toTime: m[6],
+  }),
+} as const;
+
 const TRIP_FORMATS: readonly TripFormat[] = [
   // <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
-  {
-    pattern: PATTERNS.TRIP_LINE_PREFIX_FORMAT,
-    validation: 'new',
-    extract: (m) => ({
-      lineId: m[1]?.toUpperCase(),
-      trainNumber: m[2],
-      fromStop: m[3],
-      fromTime: m[4],
-      toStop: m[5],
-      toTime: m[6],
-    }),
-  },
+  { pattern: PATTERNS.TRIP_LINE_PREFIX_FORMAT, validation: 'new', extract: EXTRACT.linePrefix },
   // <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
+  { pattern: PATTERNS.TRIP_AB_BIS_FORMAT, validation: 'new', extract: EXTRACT.stopThenTime },
+  // <trainNumber> entfällt zwischen <fromStop> (<time>) und <toStop> (<time>)
   {
-    pattern: PATTERNS.TRIP_AB_BIS_FORMAT,
+    pattern: PATTERNS.TRIP_ENTFAELLT_ZWISCHEN_FORMAT,
     validation: 'new',
-    extract: (m) => ({
-      trainNumber: m[1],
-      fromStop: m[2],
-      fromTime: m[3],
-      toStop: m[4],
-      toTime: m[5],
-    }),
+    extract: EXTRACT.stopThenTime,
   },
   // <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
-  {
-    pattern: PATTERNS.TRIP_STOP_TIME_FORMAT,
-    validation: 'new',
-    extract: (m) => ({
-      trainNumber: m[1],
-      fromStop: m[2],
-      fromTime: m[3],
-      toStop: m[4],
-      toTime: m[5],
-    }),
-  },
+  { pattern: PATTERNS.TRIP_STOP_TIME_FORMAT, validation: 'new', extract: EXTRACT.stopThenTime },
   // <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
-  {
-    pattern: PATTERNS.TRIP_NEW_FORMAT,
-    validation: 'new',
-    extract: (m) => ({
-      trainNumber: m[1],
-      fromTime: m[2],
-      fromStop: m[3],
-      toTime: m[4],
-      toStop: m[5],
-    }),
-  },
+  { pattern: PATTERNS.TRIP_NEW_FORMAT, validation: 'new', extract: EXTRACT.timeThenStop },
   // <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
+  { pattern: PATTERNS.TRIP_OLD_FORMAT, validation: 'old', extract: EXTRACT.stopThenTime },
+  // Loosest fallback: <trainNumber> <fromStop> [(]<time>[)] - <toStop> [(]<time>[)]
+  // (optional parens on either time). Superset of the stricter stop/time + old formats, so
+  // it must stay LAST — it only catches lines every stricter format above rejected.
   {
-    pattern: PATTERNS.TRIP_OLD_FORMAT,
-    validation: 'old',
-    extract: (m) => ({
-      trainNumber: m[1],
-      fromStop: m[2],
-      fromTime: m[3],
-      toStop: m[4],
-      toTime: m[5],
-    }),
+    pattern: PATTERNS.TRIP_STOP_TIME_PARENS_FORMAT,
+    validation: 'new',
+    extract: EXTRACT.stopThenTime,
   },
 ];
 
@@ -342,6 +339,32 @@ export function mergeTripLines(rawLines: string[]): string[] {
 export function extractTripSectionCandidates(text: string): string[] {
   const tripSection = findTripSection(text);
   return buildTripCandidateLines(tripSection ?? text);
+}
+
+/** The leading train number of a trip line (`85879 …` → `85879`), or `undefined`. */
+export function leadingTrainNumber(line: string): string | undefined {
+  return line.match(/^(\d+)\b/)?.[1];
+}
+
+/**
+ * Raw, pre-merge trip-like rows the parser could not structure.
+ *
+ * `extractTripLines` merges and filters candidate lines, so a row it cannot parse never
+ * reaches parsing and is silently dropped. This scans the RAW candidates instead and
+ * returns every trip-like row (two clock times) that matches no known format and whose
+ * leading number was not already captured elsewhere (e.g. via a multi-line merge) — i.e.
+ * rows genuinely lost during parsing. Used both to warn and to drive the known-number
+ * tripwire (`src/workflow.ts`).
+ */
+export function findUnparsedTripLikeLines(
+  text: string,
+  parsedTrainNumbers: ReadonlySet<string>,
+): string[] {
+  return extractTripSectionCandidates(text).filter((line) => {
+    if (!TRIP_TIME_PAIR_PATTERN.test(line) || isValidTripLine(line)) return false;
+    const number = leadingTrainNumber(line);
+    return number === undefined || !parsedTrainNumbers.has(number);
+  });
 }
 
 /**

@@ -149,6 +149,21 @@ export function resolveLines(
 }
 
 /**
+ * Whether a train number appears in any line definition for the current Fahrplan year.
+ *
+ * This is the high-precision "official data" signal used to harden error visibility: a
+ * trip-like line the parser could not structure but whose leading number KVV's own GTFS
+ * knows is a genuine missed trip (a format the parser doesn't cover yet), not noise like a
+ * parenthesized date-range. Absence is NOT proof it isn't a trip — GTFS omits Zugnummern
+ * for some runs (e.g. tram-train lines) — so callers must only use a positive result to
+ * escalate, never a negative one to dismiss.
+ */
+export function isKnownTrainNumber(trainNumber: string): boolean {
+  const normalized = normalizeTrainNumber(trainNumber);
+  return normalized ? normalized in TRAIN_LINE_INDEX.exact : false;
+}
+
+/**
  * Returns the line(s) a trip should be reported under, using the definitions, timing
  * signatures and overrides loaded for the current Fahrplan year. Empty means it could not
  * be resolved (see {@link resolveLines}).

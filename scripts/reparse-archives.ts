@@ -33,7 +33,7 @@ import { DATA_DIR } from '../src/config.js';
 import { getCancellationKey, loadExistingCancellations } from '../src/storage.js';
 import { parseDetailPage, ParseError } from '../src/parser/index.js';
 import { ARCHIVE_SUBDIR, parseArchive } from '../src/article-archive.js';
-import { listFahrplanYearDirs } from '../src/fahrplan.js';
+import { listFahrplanYearDirectories } from '../src/fahrplan.js';
 import { listFiles, readTextFile, writeJsonFile } from '../src/utils/fs.js';
 import type { CauseClassification } from '../src/cause.js';
 import type { Cancellation } from '../src/types.js';
@@ -66,7 +66,7 @@ function parseArgs(argv: string[]): Options {
 
 /** Directory names under `docs/` that are Fahrplan-year buckets, optionally filtered to one. */
 async function findYearDirs(baseDir: string, only?: string): Promise<string[]> {
-  const dirs = await listFahrplanYearDirs(baseDir);
+  const dirs = await listFahrplanYearDirectories(baseDir);
   return only ? dirs.filter((name) => name === only) : dirs;
 }
 

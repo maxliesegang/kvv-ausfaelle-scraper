@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import { ensureDirectory, listFiles, writeTextFile } from './utils/fs.js';
-import { listFahrplanYearDirs } from './fahrplan.js';
+import { listFahrplanYearDirectories } from './fahrplan.js';
 
 const BASE_PAGE_STYLES = `
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 2rem; line-height: 1.5; }
@@ -150,7 +150,7 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
   // Ensure base directory exists
   await ensureDirectory(baseDir);
 
-  const years = await listFahrplanYearDirs(baseDir);
+  const years = await listFahrplanYearDirectories(baseDir);
   const generatedAt = new Date().toISOString();
 
   // Generate root indices (HTML and JSON)
