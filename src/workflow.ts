@@ -43,12 +43,7 @@ export async function fetchRelevantItems(rssUrl: string = RSS_URL): Promise<Item
  * GitHub Actions log shows at a glance how each relevant item was handled.
  */
 export type SkipReason =
-  | 'no-link'
-  | 'fetch-failed'
-  | 'low-relevance'
-  | 'too-young'
-  | 'no-trip-details'
-  | 'construction';
+  'no-link' | 'fetch-failed' | 'low-relevance' | 'too-young' | 'no-trip-details' | 'construction';
 
 /**
  * Outcome of processing a single RSS item: either parsed trips or a skip reason. A parsed
