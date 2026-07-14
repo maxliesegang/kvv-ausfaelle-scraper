@@ -2896,5 +2896,33 @@
     "capturedAt": "2026-07-11T16:51:42.119Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-14",
+    "stand": "2026-07-14T07:23:00.000Z",
+    "trainNumber": "85478",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "14:27",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "14:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272434",
+    "capturedAt": "2026-07-14T09:53:17.837Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-14",
+    "stand": "2026-07-14T07:23:00.000Z",
+    "trainNumber": "85549",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "15:35",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "15:49",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272434",
+    "capturedAt": "2026-07-14T09:53:17.837Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
