@@ -2924,5 +2924,33 @@
     "capturedAt": "2026-07-14T09:53:17.837Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-15",
+    "stand": "2026-07-15T17:10:00.000Z",
+    "trainNumber": "85530",
+    "fromStop": "Bretten Bf",
+    "fromTime": "16:39",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "17:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272535",
+    "capturedAt": "2026-07-15T17:12:47.233Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-15",
+    "stand": "2026-07-15T17:10:00.000Z",
+    "trainNumber": "85459",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "18:15",
+    "toStop": "Bretten Bf",
+    "toTime": "18:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272535",
+    "capturedAt": "2026-07-15T17:12:47.233Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
