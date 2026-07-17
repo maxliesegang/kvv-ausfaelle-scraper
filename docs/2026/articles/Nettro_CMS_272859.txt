@@ -12,16 +12,19 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S5, S51 und S6 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Pforzheim Hauptbahnhof und Germersheim Bahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 17.07.2026 14:23:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85067 Pforzheim Bahnhof (13:17 Uhr) - Bad Wildbad Kurpark (13:52 Uhr)
-85068 Bad Wildbad Kurpark (14:05 Uhr) - Pforzheim Bahnhof (14:40 Uhr)
 85013 Karlsruhe Albtalbahnhof (17:29 Uhr) - Pforzheim Bahnhof (18:20 Uhr)
 85012 Pforzheim Bahnhof (18:37 Uhr) - Karlsruhe Hauptbahnhof (19:11 Uhr)
 85091 Pforzheim Bahnhof (20:17 Uhr) - Bad Wildbad Kurpark (20:52 Uhr)
+84847 Karlsruhe Tullastr. (20:47 Uhr) - Söllingen Bahnhof (21:06 Uhr)
 74352 Bad Wildbad Kurpark (21:05 Uhr) - Pforzheim Bahnhof (21:40 Uhr)
 85029 Knielingen Rheinbergstr. (21:42 Uhr) - Pforzheim Bahnhof (22:50 Uhr)
+84862 Söllingen Bahnhof (21:51 Uhr) - Wörth Badepark (22:53 Uhr)
 74351 Pforzheim Bahnhof (22:17 Uhr) - Bad Wildbad Kurpark (22:52 Uhr)
 85092 Bad Wildbad Kurpark (23:05 Uhr) - Pforzheim Bahnhof (23:40 Uhr)
+84855 Wörth Badepark (23:07 Uhr) - Karlsruhe Tullastr. (23:57 Uhr)
 85024 Pforzheim Bahnhof (23:06 Uhr) - Germersheim Bahnhof (00:57 Uhr)
+85031 Knielingen Rheinbergstr. (23:41 Uhr) - Pforzheim Bahnhof (00:50 Uhr)
+85030 Pforzheim Bahnhof (01:09 Uhr) - Knielingen Rheinbergstr. (02:17 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
