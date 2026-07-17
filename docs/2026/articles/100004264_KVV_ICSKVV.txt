@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004264_KVV_ICSKVV
+Stand:  unbekannt
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 25.07.2026 bis 25.07.2026
+Linien S8, SEV
+Karlsruhe - Gaggenau: Ersatzverkehr für ersten Zug im Frühverkehr
+(AVG)
+Linie(n): S8
+Zeitraum: Samstag., 25.07.2025 (ca. 05:00 Uhr bis 06:00 Uhr)
+Entfall Stadtbahn: der erste Zug je Richtung entfällt Karlsruhe &lt;-&gt; Gaggenau
+•    S8 KA Marktplatz (05:03) - Rastatt (05:38) - Gaggenau (05:51) - Freudenstadt
+•    S8 Forbach (Schwarzw) (05:09) - Gaggenau (05:33) - Rastatt (05:49) - KA Tullastraße (06:27)
+Ersatzverkehr: jeweils Ersatzbus Karlsruhe Hbf (Vorpl.) &lt;-&gt; Durmersheim &lt;-&gt; Gaggenau
+Grund: DB InfraGO - kurzfristige Weichenarbeiten im Bf Rastatt
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
