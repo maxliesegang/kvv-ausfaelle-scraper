@@ -2210,5 +2210,19 @@
     "capturedAt": "2026-07-14T13:23:20.248Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T06:39:00.000Z",
+    "trainNumber": "30020",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "09:45",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "10:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272784",
+    "capturedAt": "2026-07-17T06:11:04.474Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
