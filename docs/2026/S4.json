@@ -3050,5 +3050,47 @@
     "capturedAt": "2026-07-16T06:12:47.172Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T10:24:00.000Z",
+    "trainNumber": "85636",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "12:45",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "13:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272832",
+    "capturedAt": "2026-07-17T09:52:06.664Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T10:24:00.000Z",
+    "trainNumber": "85529",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "18:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "19:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272832",
+    "capturedAt": "2026-07-17T09:52:06.664Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T10:24:00.000Z",
+    "trainNumber": "85538",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "20:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "21:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272832",
+    "capturedAt": "2026-07-17T09:52:06.664Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

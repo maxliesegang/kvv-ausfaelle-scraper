@@ -13,8 +13,13 @@ Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf den Linien S1 und S11 k
 Betroffen ist der Bereich zwischen Hochstetten und Ittersbach Rathaus. 
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. 
 Nach aktuellem Stand sind folgende Fahrten betroffen:
-20014 Hochstetten (06:43 Uhr) - Ittersbach Rathaus (08:15 Uhr)
-20015 Ittersbach Rathaus (08:21 Uhr) - Neureut Kirchfeld (09:31 Uhr)
 30020 Neureut Kirchfeld (09:45 Uhr) - Ettlingen Stadt (10:31 Uhr)
+10039 Ettlingen Albgaubad (10:54 Uhr) - Karlsruhe Moltkestraße (11:30 Uhr)
+10044 Hochstetten (12:52 Uhr) - Ettlingen Stadt (13:58 Uhr)
+30037 Bad Herrenalb (13:43 Uhr) - Ettlingen Stadt (14:08 Uhr)
+20039 Ettlingen Stadt (14:48 Uhr) - Neureut Kirchfeld (15:31 Uhr)
+30044 Neureut Kirchfeld (15:45 Uhr) - Bad Herrenalb (16:53 Uhr)
+30051 Bad Herrenalb (17:03 Uhr) - Neureut Kirchfeld (18:11 Uhr)
+30054 Neureut Kirchfeld (18:25 Uhr) - Bad Herrenalb (19:33 Uhr)
 Wir bitten um Verständnis.
 Zurück zur Übersicht
