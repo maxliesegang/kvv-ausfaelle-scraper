@@ -9630,5 +9630,47 @@
     "capturedAt": "2026-07-16T13:39:55.549Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-18",
+    "stand": "2026-07-18T00:54:00.000Z",
+    "trainNumber": "84800",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "4:45",
+    "toStop": "Wörth Badepark",
+    "toTime": "5:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272931",
+    "capturedAt": "2026-07-18T02:01:16.360Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-18",
+    "stand": "2026-07-18T00:54:00.000Z",
+    "trainNumber": "84795",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "5:50",
+    "toStop": "Söllingen Bahnhof -",
+    "toTime": "6:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272931",
+    "capturedAt": "2026-07-18T02:01:16.360Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-18",
+    "stand": "2026-07-18T00:54:00.000Z",
+    "trainNumber": "84816",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "7:09",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "7:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272931",
+    "capturedAt": "2026-07-18T02:01:16.360Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
