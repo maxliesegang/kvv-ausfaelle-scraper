@@ -782,5 +782,33 @@
     "capturedAt": "2026-07-16T10:03:32.369Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S6",
+    "date": "2026-07-18",
+    "stand": "2026-07-18T10:00:00.000Z",
+    "trainNumber": "85085",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "18:17",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "18:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272959",
+    "capturedAt": "2026-07-18T09:19:13.844Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S6",
+    "date": "2026-07-18",
+    "stand": "2026-07-18T10:00:00.000Z",
+    "trainNumber": "85084",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "19:05",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "19:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272959",
+    "capturedAt": "2026-07-18T09:19:13.844Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
