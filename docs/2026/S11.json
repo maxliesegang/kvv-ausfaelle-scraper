@@ -880,5 +880,19 @@
     "capturedAt": "2026-07-18T09:19:13.697Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-07-20",
+    "stand": "2026-07-20T06:00:00.000Z",
+    "trainNumber": "20022",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "09:06",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "09:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273037",
+    "capturedAt": "2026-07-20T06:41:24.094Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

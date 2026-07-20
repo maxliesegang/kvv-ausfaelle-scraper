@@ -2378,5 +2378,47 @@
     "capturedAt": "2026-07-18T09:19:13.697Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-20",
+    "stand": "2026-07-20T06:00:00.000Z",
+    "trainNumber": "10013",
+    "fromStop": "Albgaubad",
+    "fromTime": "06:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "06:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273037",
+    "capturedAt": "2026-07-20T06:41:24.094Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-20",
+    "stand": "2026-07-20T06:00:00.000Z",
+    "trainNumber": "10014",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "07:10",
+    "toStop": "Albgaubad",
+    "toTime": "07:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273037",
+    "capturedAt": "2026-07-20T06:41:24.094Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-20",
+    "stand": "2026-07-20T06:00:00.000Z",
+    "trainNumber": "10027",
+    "fromStop": "Albgaubad",
+    "fromTime": "08:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "08:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273037",
+    "capturedAt": "2026-07-20T06:41:24.094Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
