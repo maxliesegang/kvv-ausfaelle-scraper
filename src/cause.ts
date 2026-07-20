@@ -166,6 +166,7 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
       'gleisbauarbeiten',
       'gleisarbeiten',
       'gleiserneuerung',
+      'weichenarbeiten',
       'instandhaltung',
       'instandhaltungsarbeiten',
       'kanalsanierung',

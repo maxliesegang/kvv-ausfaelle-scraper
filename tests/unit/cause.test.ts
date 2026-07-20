@@ -77,6 +77,10 @@ describe('classifyCause - categories', () => {
       classifyCause('Instandhaltungsarbeiten (Gleiserneuerung) der AVG'),
       'construction',
     );
+    assert.strictEqual(
+      classifyCause('Grund: DB InfraGO - kurzfristige Weichenarbeiten im Bf Rastatt'),
+      'construction',
+    );
     assert.strictEqual(classifyCause('die AVG sperrt die Enztalbahn'), 'construction');
   });
 
