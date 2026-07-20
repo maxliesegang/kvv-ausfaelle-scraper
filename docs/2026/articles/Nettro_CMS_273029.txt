@@ -12,14 +12,26 @@ Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. 
 Betroffen ist der Bereich zwischen Wörth Badepark und Söllingen Bahnhof. 
 Folgende Fahrten sind betroffen: 
-84820 Söllingen (08:48 Uhr) - KA Tullastraße (09:10 Uhr) 
+84761 KA Rheinbergstraße (15:12 Uhr) - Söllingen Bf. (15:56 Uhr)
 84831 KA Tullastr. (15:47 Uhr) - Söllingen Bf. (16:09 Uhr)
+84754 Söllingen Bf. (16:01 Uhr) - Wörth Bf. (16:56 Uhr)
 84758 Söllingen Bf. (16:18 Uhr) - Knielingen Rheinbergstr. (17:04 Uhr)
+84773 Wörth Bf. (17:02 Uhr) - KA Rheinbergstraße (17:10 Uhr)
 84775 Knielingen Rheinbergstr. (17:51 Uhr) - Söllingen Bf. (18:37 Uhr)
+84779 KA Rheinbergstraße (18:11 Uhr) - Söllingen Bf. (18:56 Uhr)
 84854 Söllingen Bf. (18:48 Uhr) - Wörth Badepark (19:53 Uhr)
+84781 KA Rheinbergstraße (18:51 Uhr) - Söllingen Bf. (19:37 Uhr)
+84772 Söllingen Bf. (19:01 Uhr) - KA Rheinbergstraße (19:44 Uhr)
+84785 KA Rheinbergstraße (19:51 Uhr) - Söllingen Bf. (20:37 Uhr)
+84858 Söllingen Bf. (19:51 Uhr) - Wörth Badepark (20:53 Uhr)
 84847 Wörth Badepark (20:05 Uhr) - Söllingen Bf. (21:06 Uhr)
+84860 Söllingen Bf. (20:51 Uhr) - Wörth Badepark (21:53 Uhr)
+84849 Wörth Badepark (21:07 Uhr) - Söllingen Bf. (22:06 Uhr)
 84862 Söllingen Bf. (21:51 Uhr) - Wörth Badepark (22:53 Uhr)
+84851 Wörth Badepark (22:05 Uhr) - Söllingen Bf. (23:06 Uhr)
+84864 Söllingen Bf. (22:51 Uhr) - Wörth Badepark (23:53 Uhr)
 84855 Wörth Badepark (23:07 Uhr) - KA Tullastr. (23:57 Uhr)
+84863 Wörth Badepark (00:05 Uhr) - KA Tullastraße (00:47 Uhr)
 Wir bitten um Entschuldigung. 
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
