@@ -1286,5 +1286,33 @@
     "capturedAt": "2026-07-16T06:12:46.984Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-21",
+    "stand": "2026-07-21T05:59:00.000Z",
+    "trainNumber": "85553",
+    "fromStop": "Karlsruhe Hbf.",
+    "fromTime": "05:16",
+    "toStop": "Achern Bf.",
+    "toTime": "06:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273106",
+    "capturedAt": "2026-07-21T06:24:04.101Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-21",
+    "stand": "2026-07-21T05:59:00.000Z",
+    "trainNumber": "85473",
+    "fromStop": "Achern Bf.",
+    "fromTime": "06:17",
+    "toStop": "Albtalbahnhof",
+    "toTime": "07:13",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273106",
+    "capturedAt": "2026-07-21T06:24:04.101Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung"
   }
 ]

@@ -12,8 +12,9 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Knielingen Rheinbergstraße und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 21.07.2026 02:00:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84957 Karlsruhe Rheinbergstraße ab 05:02 Uhr - Pforzheim Hbf an 06:11 Uhr 
-84950 Pforzheim Hbf ab 06:25 Uhr - Karlsruhe Tullastraße an 07:10 Uhr 
+84950 Pforzheim Hbf (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
+84809 Wörth Badepark (08:05 Uhr) - Söllingen Bf (09:09 Uhr)
+84722 Söllingen Bf (09:18 Uhr) - KA-Rheinbergstraße (10:04 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
