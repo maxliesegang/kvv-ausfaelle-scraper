@@ -1,0 +1,18 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004255_KVV_ICSKVV
+Stand:  unbekannt
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 15.08.2026 bis 16.08.2026
+Linien: S51
+Knielingen Rheinbergstraße - Germersheim: S51 einzelne Züge entfallen ab 22:00 Uhr auf Teilabschnitt
+(AVG) Knielingen Rheinbergstraße - Germersheim: S51 einzelne Züge entfallen ab 22:00 Uhr auf Teilabschnitt
+Linie(n): S51
+Zeitraum: Nacht 15./16.08.2026 (22:00 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn: Knielingen Rheinbergstraße  &lt;-&gt; Germersheim
+Ersatzverkehr: es wird kein SEV eingerichtet
+Grund: DB InfraGO - Zeitfenster für Instandhaltung 
+Ausnahmen/Sonstiges: die vorletzte Fahrt Richtung Germersheim endet 00:14 Uhr in der Rheinbergstraße, ersatzweise wird eine Fahrt 30 Minuten später angeboten - bitte Auskunft beachten
+Zurück zur Übersicht
