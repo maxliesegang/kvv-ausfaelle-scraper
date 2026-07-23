@@ -1,7 +1,7 @@
 import { DATA_DIR } from './config.js';
 import { saveCancellations } from './storage.js';
 import { generateSiteIndices } from './site-index.js';
-import { fetchRelevantItems, collectTrips, type CollectTripsResult } from './workflow.js';
+import { fetchRssItems, collectTrips, type CollectTripsResult } from './workflow.js';
 
 /**
  * Logs parse errors. Returns true if any were present.
@@ -57,11 +57,12 @@ function reportUnknownCauses(result: CollectTripsResult): boolean {
  */
 async function main(): Promise<void> {
   console.log('Fetching RSS…');
-  const relevant = await fetchRelevantItems();
-  console.log(`Found ${relevant.length} relevant RSS items.`);
+  const items = await fetchRssItems();
+  console.log(`Found ${items.length} RSS items.`);
 
-  // Fetch details concurrently; tolerate individual failures
-  const result = await collectTrips(relevant);
+  // Fetch details concurrently; tolerate individual failures. Old-enough pages are archived
+  // before relevance filtering so false negatives remain available for auditing.
+  const result = await collectTrips(items);
 
   if (result.cancellations.length > 0) {
     // Write directly into docs/ so GitHub Pages can serve a single source of truth

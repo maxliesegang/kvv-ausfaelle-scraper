@@ -3,7 +3,8 @@
  *
  * Motivation: the structured JSON only keeps the trips we could parse. To keep a full,
  * auditable record of what KVV actually published — and how it changed — we also dump the
- * plain-text body of every relevant article we fetch to `<baseDir>/<year>/articles/<id>.txt`.
+ * plain-text body of every old-enough linked RSS article we fetch to
+ * `<baseDir>/<year>/articles/<id>.txt`.
  *
  * Because `docs/` is committed on every run, a *stable* filename (the article's KVV
  * `detailID`) plus *stable* file content turns git history into a timeline of KVV's

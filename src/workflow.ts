@@ -17,33 +17,30 @@ import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 const MIN_ARTICLE_AGE_MS = 60 * 60 * 1000; // 1 hour
 
 /**
- * Fetches and filters the RSS feed for relevant cancellation items.
+ * Fetches all RSS items. Relevance is evaluated only after an old-enough linked detail page has
+ * been archived, so false negatives from either relevance stage remain available for auditing.
  *
  * @param rssUrl - RSS feed URL (defaults to configured RSS_URL)
- * @returns Array of relevant RSS items
+ * @returns Every RSS item in the feed
  * @throws {FetchError} If fetching or parsing the RSS feed fails
  */
-export async function fetchRelevantItems(rssUrl: string = RSS_URL): Promise<Item[]> {
+export async function fetchRssItems(rssUrl: string = RSS_URL): Promise<Item[]> {
   const rssXml = await fetchText(rssUrl);
-  const items = await parseRss(rssXml);
-
-  const scored = items.map((item) => ({ item, relevance: analyzeRssItem(item) }));
-  const relevant = scored.filter(({ relevance }) => relevance.isRelevant).map(({ item }) => item);
-
-  const skipped = scored.length - relevant.length;
-  if (skipped > 0) {
-    console.log(`Filtered out ${skipped} non-cancellation RSS items based on relevance scoring.`);
-  }
-
-  return relevant;
+  return parseRss(rssXml);
 }
 
 /**
  * Why an article produced no trips this run. Used for the per-run summary so the
- * GitHub Actions log shows at a glance how each relevant item was handled.
+ * GitHub Actions log shows at a glance how each RSS item was handled.
  */
 export type SkipReason =
-  'no-link' | 'fetch-failed' | 'low-relevance' | 'too-young' | 'no-trip-details' | 'construction';
+  | 'no-link'
+  | 'fetch-failed'
+  | 'low-rss-relevance'
+  | 'low-detail-relevance'
+  | 'too-young'
+  | 'no-trip-details'
+  | 'construction';
 
 /**
  * Outcome of processing a single RSS item: either parsed trips or a skip reason. A parsed
@@ -94,55 +91,73 @@ export function findMissedKnownTripsError(
   );
 }
 
+export interface ProcessRssItemOptions {
+  /** Archive root; injectable so workflow/archive behavior can be tested in isolation. */
+  readonly dataDir?: string;
+  /** Detail-page fetcher; injectable for deterministic unit tests. */
+  readonly fetchDetail?: (url: string) => Promise<string>;
+  /** Current time used by the article-age gate; injectable for deterministic unit tests. */
+  readonly nowMs?: number;
+}
+
 /**
- * Fetches and parses cancellation details from a single RSS item.
+ * Processes one RSS item: rejects young notices, fetches and archives old-enough detail pages,
+ * applies both relevance gates, then parses relevant cancellation trips.
  *
  * @param item - RSS feed item to process
  * @returns The trips parsed from the article, or the reason it produced none
  * @throws {ParseError} On a genuine parser regression (re-thrown for CI visibility)
  */
-export async function fetchTripsFromItem(item: Item): Promise<ItemOutcome> {
+export async function processRssItem(
+  item: Item,
+  options: ProcessRssItemOptions = {},
+): Promise<ItemOutcome> {
   const url = item.link;
   if (!url) {
     return skipped('no-link');
+  }
+
+  const ageMs = getArticleAgeMs(item, options.nowMs ?? Date.now());
+  if (ageMs !== undefined && ageMs < MIN_ARTICLE_AGE_MS) {
+    const ageMinutes = Math.max(0, Math.floor(ageMs / 60_000));
+    console.log(
+      `Skipping detail because article is only ${ageMinutes} minutes old (needs 60 minutes):`,
+      url,
+    );
+    return skipped('too-young');
   }
 
   console.log('Fetching detail:', url);
 
   let html: string;
   try {
-    html = await fetchText(url);
+    html = await (options.fetchDetail ?? fetchText)(url);
   } catch (error) {
     console.warn('Failed to fetch detail page:', url, error);
     return skipped('fetch-failed');
   }
 
-  const detailRelevance = analyzeDetailPage(html);
-  if (!detailRelevance.isRelevant) {
-    const reason = detailRelevance.reasons.join('; ') || 'no cancellation signals found';
-    console.warn(`  -> skipping article due to low relevance (${reason})`);
-    return skipped('low-relevance');
-  }
-
-  // Archive the raw article text for traceability before any skip/parse decision, so even
-  // too-young or unparsable articles leave a record. Never fatal — the run must not fail
-  // because we couldn't write an archive file.
+  // Preserve every old-enough linked RSS notice before either relevance decision. This makes the
+  // archive an audit corpus for improving both algorithms. Never archive young notices: KVV may
+  // retract provisional mistakes shortly after publishing them.
   try {
-    await archiveArticleText(DATA_DIR, url, html);
+    await archiveArticleText(options.dataDir ?? DATA_DIR, url, html);
   } catch (error) {
     console.warn('Failed to archive article text:', url, error);
   }
 
-  const publishedMs = getArticlePublishedMs(item);
-  if (publishedMs !== undefined) {
-    const ageMs = Date.now() - publishedMs;
-    if (ageMs < MIN_ARTICLE_AGE_MS) {
-      const ageMinutes = Math.floor(ageMs / 60_000);
-      console.log(
-        `  -> skipping article because it is only ${ageMinutes} minutes old (needs 60 minutes)`,
-      );
-      return skipped('too-young');
-    }
+  const rssRelevance = analyzeRssItem(item);
+  if (!rssRelevance.isRelevant) {
+    const reason = rssRelevance.reasons.join('; ') || 'no cancellation signals found';
+    console.warn(`  -> skipping article due to low RSS relevance (${reason})`);
+    return skipped('low-rss-relevance');
+  }
+
+  const detailRelevance = analyzeDetailPage(html);
+  if (!detailRelevance.isRelevant) {
+    const reason = detailRelevance.reasons.join('; ') || 'no cancellation signals found';
+    console.warn(`  -> skipping article due to low detail relevance (${reason})`);
+    return skipped('low-detail-relevance');
   }
 
   try {
@@ -213,7 +228,7 @@ export interface CollectTripsResult {
  * @returns Object containing successfully parsed cancellations and any parse errors encountered
  */
 export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
-  const results = await Promise.allSettled(items.map((item) => fetchTripsFromItem(item)));
+  const results = await Promise.allSettled(items.map((item) => processRssItem(item)));
 
   const cancellations: Cancellation[] = [];
   const parseErrors: ParseError[] = [];
@@ -223,7 +238,8 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
   const skips: Record<SkipReason, number> = {
     'no-link': 0,
     'fetch-failed': 0,
-    'low-relevance': 0,
+    'low-rss-relevance': 0,
+    'low-detail-relevance': 0,
     'too-young': 0,
     'no-trip-details': 0,
     construction: 0,
@@ -278,14 +294,15 @@ interface ItemOutcomeSummary {
 /** Human-readable labels for each skip reason, in the order shown in the summary. */
 const SKIP_LABELS: Record<SkipReason, string> = {
   'too-young': 'too young (<60 min)',
-  'low-relevance': 'low relevance',
+  'low-rss-relevance': 'low RSS relevance',
+  'low-detail-relevance': 'low detail relevance',
   'no-trip-details': 'no trip details listed',
   construction: 'construction (unparsed)',
   'fetch-failed': 'fetch failed',
   'no-link': 'no link',
 };
 
-/** Logs a one-block breakdown of how every relevant item was handled this run. */
+/** Logs a one-block breakdown of how every RSS item was handled this run. */
 function logItemOutcomes(total: number, summary: ItemOutcomeSummary): void {
   // Build only the non-empty rows, then pad labels to a shared width so values align.
   const rows: Array<[label: string, value: string]> = [
@@ -306,7 +323,7 @@ function logItemOutcomes(total: number, summary: ItemOutcomeSummary): void {
 
   const labelWidth = Math.max(...rows.map(([label]) => label.length)) + 1; // +1 for the colon
 
-  console.log(`\nItem outcomes (${total} relevant item(s)):`);
+  console.log(`\nItem outcomes (${total} RSS item(s)):`);
   for (const [label, value] of rows) {
     console.log(`  ${`${label}:`.padEnd(labelWidth + 2)}${value}`);
   }
@@ -320,4 +337,9 @@ function getArticlePublishedMs(item: Item): number | undefined {
 
   const rssMs = Date.parse(rssDate);
   return Number.isFinite(rssMs) ? rssMs : undefined;
+}
+
+function getArticleAgeMs(item: Item, nowMs: number): number | undefined {
+  const publishedMs = getArticlePublishedMs(item);
+  return publishedMs === undefined ? undefined : nowMs - publishedMs;
 }
