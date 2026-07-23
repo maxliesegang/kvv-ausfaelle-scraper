@@ -1,4 +1,62 @@
 {
+  "schemaVersion": 1,
   "years": ["2025", "2026"],
-  "generatedAt": "2026-07-23T06:26:08.979Z"
+  "causes": [
+    {
+      "id": "strike",
+      "label": "Streik",
+      "description": "Arbeitskampf, Streik oder Warnstreik."
+    },
+    {
+      "id": "weather",
+      "label": "Witterung",
+      "description": "Witterungseinflüsse wie Unwetter, Sturm, Eis oder Hochwasser."
+    },
+    {
+      "id": "emergency",
+      "label": "Einsatz von Rettungskräften",
+      "description": "Ein gemeldeter Einsatz von Feuerwehr oder anderen Rettungskräften."
+    },
+    {
+      "id": "vehicle",
+      "label": "Fahrzeugstörung",
+      "description": "Eine benannte Störung oder ein Schaden am eingesetzten Fahrzeug."
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastrukturstörung",
+      "description": "Eine benannte Störung an Stellwerk, Signal, Oberleitung, Weiche oder Gleis."
+    },
+    {
+      "id": "technical",
+      "label": "Technischer Defekt",
+      "description": "Eine technische Störung, ohne dass Fahrzeug oder Infrastruktur benannt sind."
+    },
+    {
+      "id": "personnel",
+      "label": "Personalmangel",
+      "description": "Ein ausdrücklich genannter Personalengpass oder krankheitsbedingter Ausfall."
+    },
+    {
+      "id": "operational",
+      "label": "Betriebsbedingt",
+      "description": "Ein betrieblicher Grund ohne zuverlässige Benennung einer konkreteren Ursache."
+    },
+    {
+      "id": "disruption",
+      "label": "Betriebsstörung",
+      "description": "Eine gemeldete Betriebsstörung ohne näher benannte Ursache."
+    },
+    {
+      "id": "construction",
+      "label": "Bauarbeiten",
+      "description": "Bau-, Instandhaltungs- oder Sperrmaßnahmen an der Strecke."
+    },
+    {
+      "id": "unknown",
+      "label": "Unbekannt",
+      "description": "Aus dem Artikel konnte keine Ursache zuverlässig bestimmt werden."
+    }
+  ],
+  "generatedAt": "2026-07-23T07:04:30.827Z"
 }

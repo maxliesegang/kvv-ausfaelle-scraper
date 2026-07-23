@@ -5,7 +5,25 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { classifyCause, classifyCauseWithEvidence } from '../../src/cause.js';
+import {
+  classifyCause,
+  classifyCauseWithEvidence,
+  PUBLIC_CAUSE_DEFINITIONS,
+} from '../../src/cause.js';
+
+describe('cause taxonomy contract', () => {
+  it('publishes every category once, with unknown last', () => {
+    const publicIds = PUBLIC_CAUSE_DEFINITIONS.map(({ id }) => id);
+
+    assert.strictEqual(new Set(publicIds).size, publicIds.length);
+    assert.strictEqual(publicIds.at(-1), 'unknown');
+    assert.ok(
+      PUBLIC_CAUSE_DEFINITIONS.every(
+        ({ label, description }) => label.length > 0 && description.length > 0,
+      ),
+    );
+  });
+});
 
 describe('classifyCause - categories', () => {
   it('classifies a *named* staffing/sickness cause as personnel', () => {

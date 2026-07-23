@@ -1,6 +1,10 @@
 import { join } from 'node:path';
 import { ensureDirectory, listFiles, writeTextFile } from './utils/fs.js';
 import { listFahrplanYearDirectories } from './fahrplan.js';
+import { PUBLIC_CAUSE_DEFINITIONS } from './cause.js';
+
+/** Version of the public root-index contract. Increment only for breaking changes. */
+export const ROOT_INDEX_SCHEMA_VERSION = 1;
 
 const BASE_PAGE_STYLES = `
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 2rem; line-height: 1.5; }
@@ -70,6 +74,11 @@ function buildRootIndex(years: readonly string[]): string {
     (year) => `      <li><a href="./${htmlEscape(year)}/">${htmlEscape(year)}</a></li>`,
     '      <li><em>No years yet</em></li>',
   );
+  const causeDefinitions = PUBLIC_CAUSE_DEFINITIONS.map(
+    ({ id, label, description }) =>
+      `      <dt><code>${htmlEscape(id)}</code> — ${htmlEscape(label)}</dt>\n` +
+      `      <dd>${htmlEscape(description)}</dd>`,
+  ).join('\n');
 
   return renderPage({
     title: 'KVV Ausfälle — Data Index',
@@ -83,6 +92,14 @@ function buildRootIndex(years: readonly string[]): string {
     <ul>
 ${yearLinks}
     </ul>
+
+    <h2>Cancellation causes</h2>
+    <p class="desc">
+      Ordered cause taxonomy published in <code>index.json</code> for downstream consumers.
+    </p>
+    <dl>
+${causeDefinitions}
+    </dl>
 
     <footer>
       <p>Site root is <code>docs/</code>. If a directory doesn't list files, try navigating directly by URL.</p>
@@ -124,7 +141,14 @@ ${fileLinks}
  * Builds the root index JSON listing all available years.
  */
 function buildRootIndexJson(years: readonly string[], generatedAt: string): string {
-  return buildIndexJson({ years: years.slice().sort() }, generatedAt);
+  return buildIndexJson(
+    {
+      schemaVersion: ROOT_INDEX_SCHEMA_VERSION,
+      years: years.slice().sort(),
+      causes: PUBLIC_CAUSE_DEFINITIONS,
+    },
+    generatedAt,
+  );
 }
 
 /**

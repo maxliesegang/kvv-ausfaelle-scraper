@@ -38,9 +38,13 @@ docs/
 ```
 
 - Root index JSON:
-  `{ "years": ["2025", ...], "generatedAt": "..." }`
+  `{ "schemaVersion": 1, "years": ["2025", ...], "causes": [...], "generatedAt": "..." }`
 - Fahrplan-year index JSON:
   `{ "year": "2025", "files": ["S1.json", ...], "generatedAt": "..." }`
+
+The ordered root `causes` array is the public cause taxonomy for consumers. Each entry has a
+stable `id`, German `label`, and German `description`; its array position is the recommended
+display order. `schemaVersion` changes only when the root contract changes incompatibly.
 
 Each line file contains cancellation records:
 

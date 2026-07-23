@@ -3,10 +3,13 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
-import { generateSiteIndices } from '../../src/site-index.js';
+import { generateSiteIndices, ROOT_INDEX_SCHEMA_VERSION } from '../../src/site-index.js';
+import { PUBLIC_CAUSE_DEFINITIONS, type PublicCauseDefinition } from '../../src/cause.js';
 
 interface RootIndexData {
+  readonly schemaVersion: number;
   readonly years: readonly string[];
+  readonly causes: readonly PublicCauseDefinition[];
   readonly generatedAt: string;
 }
 
@@ -43,7 +46,15 @@ describe('Site index generation', () => {
       const year2025Index = await readJsonFile<YearIndexData>(join(year2025Dir, 'index.json'));
       const year2026Index = await readJsonFile<YearIndexData>(join(year2026Dir, 'index.json'));
 
+      assert.strictEqual(rootIndex.schemaVersion, ROOT_INDEX_SCHEMA_VERSION);
       assert.deepStrictEqual(rootIndex.years, ['2025', '2026']);
+      assert.deepStrictEqual(rootIndex.causes, PUBLIC_CAUSE_DEFINITIONS);
+      assert.ok(
+        rootIndex.causes.every(
+          ({ label, description }) => label.length > 0 && description.length > 0,
+        ),
+      );
+      assert.ok(rootIndex.causes.every((cause) => !('keywords' in cause)));
       assert.deepStrictEqual(year2025Index.files, ['S1.json', 'S2.json']);
       assert.deepStrictEqual(year2026Index.files, ['S5.json']);
       assert.strictEqual(year2025Index.generatedAt, rootIndex.generatedAt);
@@ -52,6 +63,8 @@ describe('Site index generation', () => {
       const rootHtml = await readFile(join(tempDir, 'index.html'), 'utf-8');
       assert.match(rootHtml, /<a href="\.\/2025\/">2025<\/a>/);
       assert.match(rootHtml, /<a href="\.\/2026\/">2026<\/a>/);
+      assert.match(rootHtml, /<code>emergency<\/code> — Einsatz von Rettungskräften/);
+      assert.match(rootHtml, /<code>unknown<\/code> — Unbekannt/);
 
       const yearHtml = await readFile(join(year2025Dir, 'index.html'), 'utf-8');
       assert.match(yearHtml, /<a href="\.\/S1\.json"><code>S1\.json<\/code><\/a>/);

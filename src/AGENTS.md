@@ -26,10 +26,12 @@ Guidance in this file applies to `src/**` unless a deeper `AGENTS.md` overrides 
   - hard parser regressions should remain visible
 - Relevance should avoid non-cancellation noise while preserving true cancellation notices. It does not filter by cause — every true cancellation is kept and tagged with a `cause` (`CancellationCause`, see `src/types.ts` / `src/cause.ts`).
 - Cause classification (`classifyCauseWithEvidence` in `src/cause.ts`, with `classifyCause` a
-  thin category accessor) is an ordered first-match scan over `CAUSE_CLASSIFICATION_RULES`. It
-  returns the category plus the most-specific (longest) matching `causeKeyword` within that
-  category. Priority is: strike → weather → emergency → vehicle → infrastructure → technical →
-  personnel → operational → disruption → construction → unknown.
+  thin category accessor) is an ordered first-match scan over
+  `CANCELLATION_CAUSE_DEFINITIONS`. Those definitions are the single source for classification
+  priority and the public root-index taxonomy; never maintain a second category list. The
+  classifier returns the category plus the most-specific (longest) matching `causeKeyword`
+  within that category. Priority is: strike → weather → emergency → vehicle → infrastructure
+  → technical → personnel → operational → disruption → construction → unknown.
   - **`betriebsbedingt` is a euphemism, not a personnel signal.** `personnel` requires named
     staffing/sickness evidence (`personalmangel`, `krankheit…`, `fahrpersonal`); the bare phrase
     remains `operational`.

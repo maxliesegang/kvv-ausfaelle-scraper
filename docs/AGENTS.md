@@ -9,7 +9,8 @@ This is the most specific guidance for published artifacts.
 
 - Root:
   - `docs/index.html`
-  - `docs/index.json`
+  - `docs/index.json` — root contract with `schemaVersion`, Fahrplan years, and the ordered
+    public cause taxonomy (`causes`)
 - Per Fahrplan year:
   - `docs/<fahrplan-year>/index.html`
   - `docs/<fahrplan-year>/index.json`
@@ -27,6 +28,9 @@ Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` 
 ## Cancellation Contract
 
 - Per-line JSON files contain `Cancellation` records from `src/types.ts`.
+- Root `index.json` is the machine-readable discovery contract for consumers. Its ordered
+  `causes` array is generated from `CANCELLATION_CAUSE_DEFINITIONS`; array order is display
+  order, and matching keywords remain an internal implementation detail.
 - `cause` and `causeKeyword` are a paired article-level classification. `causeKeyword` is `null`
   when no evidence is available, either because no rule matched or because the stored record
   predates evidence capture.
