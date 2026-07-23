@@ -124,7 +124,8 @@ See [tests/README.md](tests/README.md) for test organization and
 
 ### Data maintenance
 
-- `npm run fetch-article -- <url>` — fetch a live detail page and create matching parser fixtures
+- `npm run fetch-html-fixture -- <url>` — create a raw-HTML fixture when a regression depends on
+  markup or the notice has not entered the committed article archive
 - `npm run seed-train-lines -- <gtfs.zip> [--year=N]` — regenerate a Fahrplan year's line
   definitions and ambiguous-trip timing sidecar; see [gtfs-data/README.md](gtfs-data/README.md)
 - `npm run reparse-archives -- [--year=N] [--verbose]` — read-only comparison of archived

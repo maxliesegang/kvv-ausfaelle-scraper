@@ -60,8 +60,12 @@ the UTC representation falls on the preceding calendar day.
 
 ## Adding a fixture
 
+Prefer an archive-backed test when the notice already exists under
+`docs/<fahrplan-year>/articles/`. Create a fixture here only when the regression depends on the
+original HTML markup or the live notice has not entered the archive:
+
 ```bash
-npm run fetch-article -- "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?..."
+npm run fetch-html-fixture -- "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?..."
 ```
 
 Review both generated files before committing them:

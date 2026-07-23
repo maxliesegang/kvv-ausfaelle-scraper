@@ -21,6 +21,7 @@ npm run test:coverage
 tests/
 ├── unit/
 │   ├── archive-corpus.test.ts
+│   ├── archive-regressions.test.ts
 │   ├── article-archive.test.ts
 │   ├── cause.test.ts
 │   ├── normalization.test.ts
@@ -59,24 +60,34 @@ and verifies that:
 
 This corpus audit is intentionally broader than the curated HTML fixture suite.
 
+`archive-regressions.test.ts` uses selected committed archives for focused assertions that the
+corpus audit cannot make reliably, such as exact stop names, line resolution, classification,
+article metadata, cancellation counts, and false-positive boundaries. Prefer one of these focused
+tests when the real notice is already archived; do not copy the same input into `test-data/`.
+
 ## Shared helpers
 
 - `loadFixture(name)` loads one HTML/expected-JSON pair.
 - `loadAllFixtures()` discovers all matching pairs.
+- `loadArchivedArticle(year, id)` loads a committed text archive and its source URL.
 - `assertCancellationsEqual(actual, expected, message?)` normalizes runtime-only fields before
   comparing records.
 - `assertThrows(fn, pattern, message?)` checks expected parser failures.
 - `assertSorted(array, comparator, message?)` verifies deterministic ordering.
 
-## Adding a parser fixture
+## Adding a parser regression
 
-Use the fetch helper when the source page is available:
+When the notice already exists under `docs/<fahrplan-year>/articles/`, add a focused assertion to
+`archive-regressions.test.ts` and load it with `loadArchivedArticle(year, id)`.
+
+Create an HTML fixture only when the regression depends on source markup or the live notice has not
+entered the committed archive:
 
 ```bash
-npm run fetch-article -- "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?..."
+npm run fetch-html-fixture -- "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?..."
 ```
 
-Then:
+For an HTML fixture:
 
 1. Review the saved HTML under `test-data/articles/`.
 2. Review the matching expected JSON under `test-data/expected/`.

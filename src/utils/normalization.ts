@@ -9,7 +9,7 @@
  *
  * This is the full, stable identifier used to scope per-article train-line overrides (see
  * `train-line-definitions/overrides.ts`) — distinct from the numeric short id that
- * `fetch-article.ts` derives for fixture filenames.
+ * `fetch-html-fixture.ts` derives for fixture filenames.
  */
 export function extractDetailId(url: string | undefined | null): string | undefined {
   if (!url) return undefined;

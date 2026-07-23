@@ -13,7 +13,7 @@ TypeScript/Node script that fetches the public KVV (Karlsruhe transit) RSS feed,
 - All tests: `npm test` — unit only (fast): `npm run test:unit`
 - Single test file: `npm run test:parser`, `npm run test:train-lines`, or `node --import tsx --test tests/unit/<file>.test.ts`
 - Watch mode: `npm run test:watch`; coverage: `npm run test:coverage`
-- Fetch a live article as a test fixture: `npm run fetch-article -- "<url>"` (writes to `test-data/articles/` + `test-data/expected/`)
+- Fetch a raw-HTML fixture when needed: `npm run fetch-html-fixture -- "<url>"` (writes to `test-data/articles/` + `test-data/expected/`; prefer archive-backed regressions for already archived notices)
 - Reparse the text archive vs stored data: `npm run reparse-archives -- [--year=N] [--verbose]` is read-only; add `--write` to backfill classifications only, or `--write-trips` for full successful-archive reconciliation (the write modes are mutually exclusive)
 
 ## Architecture

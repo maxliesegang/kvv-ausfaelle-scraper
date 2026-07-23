@@ -5,10 +5,12 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import type { Cancellation } from '../../src/types.js';
+import { parseArchive } from '../../src/article-archive.js';
 
 const TEST_DATA_DIR = join(process.cwd(), 'test-data');
 const ARTICLES_DIR = join(TEST_DATA_DIR, 'articles');
 const EXPECTED_DIR = join(TEST_DATA_DIR, 'expected');
+const DOCS_DIR = join(process.cwd(), 'docs');
 
 export interface TestFixture {
   readonly name: string;
@@ -16,6 +18,14 @@ export interface TestFixture {
   readonly expected: Partial<Cancellation>[];
   readonly htmlPath: string;
   readonly expectedPath: string;
+}
+
+export interface ArchivedArticle {
+  readonly id: string;
+  readonly year: string;
+  readonly body: string;
+  readonly url: string;
+  readonly filePath: string;
 }
 
 /**
@@ -47,4 +57,21 @@ export function loadAllFixtures(): TestFixture[] {
     const articleName = basename(file, '.html');
     return loadFixture(articleName);
   });
+}
+
+/**
+ * Loads one committed, byte-stable article archive as parser input.
+ *
+ * Archive-backed regressions can use the real notice without duplicating it under test-data/.
+ * The source URL is required because a missing archive header would weaken source identity tests.
+ */
+export function loadArchivedArticle(year: string, id: string): ArchivedArticle {
+  const filePath = join(DOCS_DIR, year, 'articles', `${id}.txt`);
+  const { body, url } = parseArchive(readFileSync(filePath, 'utf-8'));
+
+  if (!url) {
+    throw new Error(`Archived article ${id} has no source URL: ${filePath}`);
+  }
+
+  return { id, year, body, url, filePath };
 }

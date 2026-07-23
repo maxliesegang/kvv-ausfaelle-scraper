@@ -5,19 +5,21 @@ import { parseDetailPage } from './parser/index.js';
 import { normalizeCancellationsForTest } from './utils/test-data.js';
 
 /**
- * Automated script to fetch a KVV article from a URL, parse it, and save as test data.
+ * Fetches a KVV article from a URL and saves a raw-HTML parser fixture with expected output.
+ * Use this only when a regression depends on HTML markup or the notice is not in the committed
+ * text archive. Prefer an archive-backed regression for notices already under docs/.
  * Uses the naming format: article-<id>-<line>
  *
  * Usage:
- *   tsx src/fetch-article.ts <url>
- *   tsx src/fetch-article.ts "https://www.kvv.de/...detailID=Nettro_CMS_257073"
+ *   npm run fetch-html-fixture -- <url>
+ *   npm run fetch-html-fixture -- "https://www.kvv.de/...detailID=Nettro_CMS_257073"
  */
 
 const args = process.argv.slice(2);
 if (args.length < 1) {
-  console.error('Usage: tsx src/fetch-article.ts <url>');
+  console.error('Usage: npm run fetch-html-fixture -- <url>');
   console.error(
-    'Example: tsx src/fetch-article.ts "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073"',
+    'Example: npm run fetch-html-fixture -- "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073"',
   );
   process.exit(1);
 }

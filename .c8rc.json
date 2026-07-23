@@ -3,8 +3,7 @@
   "include": ["src/**/*.ts"],
   "exclude": [
     "src/**/*.test.ts",
-    "src/fetch-article.ts",
-    "src/fetch-and-save-test-article.ts",
+    "src/fetch-html-fixture.ts",
     "src/index.ts",
     "src/workflow.ts",
     "src/storage.ts",
