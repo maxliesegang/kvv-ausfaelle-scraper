@@ -6,6 +6,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { parseDetailPage } from '../../src/parser/index.js';
+import { extractStand, parseGermanDateTime } from '../../src/parser/text-extraction.js';
 import {
   extractTripLines,
   extractTripSectionCandidates,
@@ -199,6 +200,80 @@ describe('Parser - Detail Page Parsing', () => {
         isValidTripLine('ab Donnerstag 06.08. (04:10 Uhr) bis Montag 17.08.2026 (04:30 Uhr)'),
         false,
       );
+    });
+
+    it('parses ab/bis rows when KVV omits the "ab" token', () => {
+      assert.deepStrictEqual(
+        parseTripLineFields('10075 Ettlingen Albgaubad 19:34 Uhr bis Hochstetten an 20:46 Uhr'),
+        [
+          {
+            trainNumber: '10075',
+            fromStop: 'Ettlingen Albgaubad',
+            fromTime: '19:34',
+            toStop: 'Hochstetten',
+            toTime: '20:46',
+          },
+        ],
+      );
+    });
+
+    it('parses lowercase Uhr and parentheses inside stop names', () => {
+      assert.deepStrictEqual(
+        parseTripLineFields(
+          '85630 Bondorf (b. Herrenberg) (08:02 uhr) - Ka. Tullastrasse (11:00 Uhr)',
+        ),
+        [
+          {
+            trainNumber: '85630',
+            fromStop: 'Bondorf (b. Herrenberg)',
+            fromTime: '08:02',
+            toStop: 'Ka. Tullastrasse',
+            toTime: '11:00',
+          },
+        ],
+      );
+    });
+
+    it('parses a parenthesized row whose separator is missing', () => {
+      assert.deepStrictEqual(
+        parseTripLineFields(
+          '85029 Knielingen Rheinbergstr. (21:41 Uhr) Pforzheim Hbf. (22:50 Uhr)',
+        ),
+        [
+          {
+            trainNumber: '85029',
+            fromStop: 'Knielingen Rheinbergstr.',
+            fromTime: '21:41',
+            toStop: 'Pforzheim Hbf.',
+            toTime: '22:50',
+          },
+        ],
+      );
+    });
+
+    it('never merges adjacent rows that each start with a train number', () => {
+      const text = [
+        'Betroffene Fahrten:',
+        '99991 malformed row',
+        '99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)',
+      ].join('\n');
+      assert.deepStrictEqual(extractTripLines(text), [
+        '99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)',
+      ]);
+    });
+  });
+
+  describe('Stand date extraction', () => {
+    it('keeps a midnight German article date independent of the process timezone', () => {
+      assert.deepStrictEqual(extractStand('Nach aktuellem Stand 06.07.2026 00:17:00'), {
+        standIso: '2026-07-05T22:17:00.000Z',
+        dateForTrips: '2026-07-06',
+        hasStand: true,
+      });
+    });
+
+    it('applies the Europe/Berlin winter offset', () => {
+      assert.strictEqual(parseGermanDateTime('06.01.2026', '12:17:00'), '2026-01-06T11:17:00.000Z');
     });
   });
 

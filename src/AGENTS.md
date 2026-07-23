@@ -25,8 +25,24 @@ Guidance in this file applies to `src/**` unless a deeper `AGENTS.md` overrides 
   - transient article issues should not corrupt stored data
   - hard parser regressions should remain visible
 - Relevance should avoid non-cancellation noise while preserving true cancellation notices. It does not filter by cause — every true cancellation is kept and tagged with a `cause` (`CancellationCause`, see `src/types.ts` / `src/cause.ts`).
-- Cause classification (`classifyCauseWithEvidence` in `src/cause.ts`, with `classifyCause` a thin accessor for just the category) is an ordered first-match keyword scan that returns both the `cause` and the `causeKeyword` that matched (priority: strike → weather → vehicle → infrastructure → technical → personnel → operational → disruption → construction → unknown). The key distinction: **`betriebsbedingt` is a euphemism, not a cause.** So `personnel` (a KVV-_named_ staffing/sickness cause: `personalmangel`, `krankheit…`, `fahrpersonal`) is split from and ordered above `operational` (the bare `betriebsbedingt` residual) — never promote a bare `betriebsbedingt` to `personnel`, that would fabricate a signal. The technical family splits by what broke: `vehicle` (`fahrzeugstoerung`), `infrastructure` (`stellwerk`/`oberleitung`/`weiche`), `technical` (a generically-named fault). `disruption` (a bare `Betriebsstörung`) sits below the named technical causes and apart from `operational`. Extend it by adding keywords to a group or a new `{ cause, keywords }` entry; a rising share of `unknown` means the keyword lists need extending.
+- Cause classification (`classifyCauseWithEvidence` in `src/cause.ts`, with `classifyCause` a
+  thin category accessor) is an ordered first-match scan over `CAUSE_CLASSIFICATION_RULES`. It
+  returns the category plus the most-specific (longest) matching `causeKeyword` within that
+  category. Priority is: strike → weather → emergency → vehicle → infrastructure → technical →
+  personnel → operational → disruption → construction → unknown.
+  - **`betriebsbedingt` is a euphemism, not a personnel signal.** `personnel` requires named
+    staffing/sickness evidence (`personalmangel`, `krankheit…`, `fahrpersonal`); the bare phrase
+    remains `operational`.
+  - The technical family identifies what broke: `vehicle` for rolling stock,
+    `infrastructure` for track/signals/power, and `technical` for a generic named fault.
+  - `emergency` is a named emergency-services intervention. `disruption` is the otherwise
+    unspecified `Betriebsstörung`.
+  - Extension rule: add normalized keywords or a deliberately positioned category. A rising
+    share of `unknown` indicates missing classification rules.
 - `normalizeGermanText` (`src/utils/normalization.ts`) is the canonical normalizer for German-text keyword matching, used by both `relevance.ts` and `cause.ts`. It lowercases and expands umlauts (ä→ae, ö→oe, ü→ue, ß→ss) **before** NFD diacritic stripping, then strips non-alphanumerics — so keywords spelled `ae/oe/ue` match source spellings with umlauts. Always route German keyword matching through it.
+- Storage treats `cause` and `causeKeyword` as one classification. A refetch must update both
+  when either changes. Use `compareCancellationsBySchedule` anywhere cancellation files are
+  rewritten so output ordering remains consistent.
 
 ## Runtime Configuration
 

@@ -1,297 +1,95 @@
-# Testing Guide
+# Test Guide
 
-This directory contains all tests for the KVV Ausfälle Scraper project, organized following modern TypeScript/Node.js best practices.
+Tests use Node.js's built-in `node:test` runner and `node:assert`. TypeScript runs directly
+through `tsx`.
 
-## Directory Structure
-
-```
-tests/
-├── unit/               # Unit tests (fast, isolated, no I/O)
-│   ├── parser.test.ts
-│   ├── seed-train-lines.test.ts
-│   └── train-lines.test.ts
-├── integration/        # Integration tests (may modify files, slower)
-├── helpers/            # Shared test utilities
-│   ├── test-utils.ts
-│   └── fixture-loader.ts
-├── fixtures/           # Test fixtures (if needed)
-└── README.md           # This file
-```
-
-## Running Tests
-
-### All Tests
+## Commands
 
 ```bash
 npm test
-```
-
-Runs all unit and integration tests.
-
-### Unit Tests Only
-
-```bash
 npm run test:unit
-```
-
-Runs only unit tests (fast, safe, no file modifications).
-
-### Integration Tests Only
-
-```bash
 npm run test:integration
-```
-
-Runs integration tests (may modify files).
-
-### Specific Test Files
-
-```bash
-# Parser tests
 npm run test:parser
-
-# Train lines tests
 npm run test:train-lines
+npm run test:watch
+npm run test:coverage
 ```
 
-### Watch Mode
+## Organization
+
+```text
+tests/
+├── unit/
+│   ├── archive-corpus.test.ts
+│   ├── article-archive.test.ts
+│   ├── cause.test.ts
+│   ├── normalization.test.ts
+│   ├── parser.test.ts
+│   ├── relevance.test.ts
+│   ├── seed-train-lines.test.ts
+│   ├── site-index.test.ts
+│   ├── storage.test.ts
+│   └── train-lines.test.ts
+├── integration/
+└── helpers/
+    ├── fixture-loader.ts
+    └── test-utils.ts
+```
+
+Unit tests are deterministic and do not use the network. Some filesystem-oriented unit tests use
+temporary directories or read committed repository fixtures; they must not mutate published
+`docs/` data.
+
+## Parser coverage
+
+`parser.test.ts` loads matching HTML and expected JSON from `test-data/`. New parser syntax should
+have a focused regression assertion or real fixture.
+
+`article-archive.test.ts` verifies:
+
+- stable archive paths and content;
+- safe article identifiers;
+- HTML/archive reparse fidelity.
+
+`archive-corpus.test.ts` scans committed article archives under `docs/<fahrplan-year>/articles/`
+and verifies that:
+
+- every occurrence of a GTFS-known train number is represented in parsed output;
+- every explicit numbered trip row is parsed, including numbers absent from GTFS.
+
+This corpus audit is intentionally broader than the curated HTML fixture suite.
+
+## Shared helpers
+
+- `loadFixture(name)` loads one HTML/expected-JSON pair.
+- `loadAllFixtures()` discovers all matching pairs.
+- `assertCancellationsEqual(actual, expected, message?)` normalizes runtime-only fields before
+  comparing records.
+- `assertThrows(fn, pattern, message?)` checks expected parser failures.
+- `assertSorted(array, comparator, message?)` verifies deterministic ordering.
+
+## Adding a parser fixture
+
+Use the fetch helper when the source page is available:
 
 ```bash
-npm run test:watch
+npm run fetch-article -- "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?..."
 ```
 
-Watches for file changes and re-runs tests automatically.
-
-## Test Framework
-
-We use **Node.js built-in test runner** (`node:test` module) because:
-
-- ✅ No additional dependencies
-- ✅ Fast and lightweight
-- ✅ Built into Node 18+
-- ✅ Full TypeScript support via `tsx`
-- ✅ Modern features (describe, it, mock, etc.)
-
-## Writing Tests
-
-### Basic Test Structure
-
-```typescript
-import { describe, it } from 'node:test';
-import assert from 'node:assert';
-
-describe('Feature Name', () => {
-  it('should do something', () => {
-    const result = myFunction();
-    assert.strictEqual(result, expected);
-  });
-});
-```
-
-### Using Shared Utilities
-
-```typescript
-import { assertCancellationsEqual, assertThrows } from '../helpers/test-utils.js';
-import { loadFixture } from '../helpers/fixture-loader.js';
-
-describe('Parser', () => {
-  it('should parse article', () => {
-    const fixture = loadFixture('article-123');
-    const result = parseDetailPage(fixture.html, 'test://url');
-    assertCancellationsEqual(result, fixture.expected);
-  });
-});
-```
-
-### Test Organization
-
-**Unit Tests** (`tests/unit/`)
-
-- Test individual functions in isolation
-- Mock external dependencies
-- Fast execution (< 1s total)
-- No file system modifications
-- No network requests
-
-**Integration Tests** (`tests/integration/`)
-
-- Test complete workflows
-- May interact with file system
-- May modify data files
-- Slower execution
-- Test real-world scenarios
-
-## Shared Test Utilities
-
-### `test-utils.ts`
-
-**`normalizeCancellation(cancellation)`**
-
-- Removes dynamic fields (sourceUrl, capturedAt)
-- Use for comparing test results
-
-**`assertCancellationsEqual(actual, expected, message?)`**
-
-- Deep comparison with detailed error messages
-- Automatically normalizes cancellations
-
-**`assertThrows(fn, pattern, message?)`**
-
-- Asserts function throws matching error
-- Supports string or RegExp pattern
-
-**`assertSorted(array, comparator, message?)`**
-
-- Verifies array is sorted
-- Custom comparator function
-
-### `fixture-loader.ts`
-
-**`loadFixture(name)`**
-
-- Loads HTML and expected JSON for a test
-- Returns `{ name, html, expected, htmlPath, expectedPath }`
-
-**`loadAllFixtures()`**
-
-- Loads all test fixtures from `test-data/`
-- Returns array of fixtures
-
-## Test Data
-
-Test data is organized in `test-data/`:
-
-```
-test-data/
-├── articles/     # HTML files (input)
-│   └── article-*.html
-└── expected/     # JSON files (expected output)
-    └── article-*.json
-```
-
-### Adding New Test Cases
-
-1. **Save HTML file**
-
-   ```bash
-   npm run fetch-article <articleId>
-   ```
-
-2. **Create expected output**
-   - Run parser manually
-   - Verify output is correct
-   - Save to `test-data/expected/article-<id>.json`
-
-3. **Tests automatically discover new fixtures**
-   - No code changes needed
-   - Run `npm test` to verify
-
-## Best Practices
-
-### ✅ DO
-
-- Write descriptive test names
-- Test one thing per test
-- Use shared utilities for common operations
-- Add comments for complex test logic
-- Keep tests fast and focused
-- Test both happy path and error cases
-
-### ❌ DON'T
-
-- Don't duplicate test utilities
-- Don't test implementation details
-- Don't make tests depend on each other
-- Don't commit failing tests
-- Don't skip tests without good reason
-- Don't modify production code just for tests
-
-## Examples
-
-### Testing Parser
-
-```typescript
-import { describe, it } from 'node:test';
-import { parseDetailPage } from '../../src/parser/index.js';
-import { loadFixture } from '../helpers/fixture-loader.js';
-import { assertCancellationsEqual } from '../helpers/test-utils.js';
-
-describe('Parser', () => {
-  it('should parse S1 article', () => {
-    const fixture = loadFixture('article-256933-real-s5');
-    const result = parseDetailPage(fixture.html, 'test://test');
-    assertCancellationsEqual(result, fixture.expected);
-  });
-});
-```
-
-### Testing Train Lines
-
-```typescript
-import { describe, it } from 'node:test';
-import assert from 'node:assert';
-import { lookupLinesForTrip } from '../../src/train-lines.js';
-
-describe('Train Lines', () => {
-  it('reports a number under every mentioned line it runs on', () => {
-    const result = lookupLinesForTrip({ trainNumber: '10001' }, ['S1']);
-    assert.deepStrictEqual(result, ['S1']);
-  });
-});
-```
-
-### Testing Error Handling
-
-```typescript
-import { assertThrows } from '../helpers/test-utils.js';
-
-describe('Error Handling', () => {
-  it('should throw on invalid input', () => {
-    assertThrows(() => parseDetailPage('', 'test://empty'), 'Incorrect parse');
-  });
-});
-```
-
-## Continuous Integration
-
-Tests run automatically on:
-
-- Every push to main
-- Every pull request
-- Before deployment
-
-### CI Requirements
-
-- All tests must pass
-- TypeScript must compile
-- Code must be formatted (Prettier)
-
-## Troubleshooting
-
-### Tests fail locally but pass in CI
-
-- Clear node_modules and reinstall
-- Check Node.js version (>= 18.0.0)
-- Verify test-data files exist
-
-### Tests are slow
-
-- Run only unit tests: `npm run test:unit`
-- Use watch mode: `npm run test:watch`
-- Check for unnecessary file I/O
-
-### TypeScript errors in tests
-
-- Ensure tsx is installed: `npm install`
-- Check tsconfig.json includes tests
-- Verify imports use .js extension
-
-## Resources
-
-- [Node.js Test Runner](https://nodejs.org/api/test.html)
-- [Node.js Assert API](https://nodejs.org/api/assert.html)
-- [TypeScript Testing Best Practices](https://typescript-eslint.io/docs/linting/troubleshooting/)
-
-## Questions?
-
-Check the main [README.md](../README.md) or open an issue.
+Then:
+
+1. Review the saved HTML under `test-data/articles/`.
+2. Review the matching expected JSON under `test-data/expected/`.
+3. Ensure `cause` and `causeKeyword` reflect the article-level classification.
+4. Run `npm run test:parser` and `npm run test:unit`.
+
+See [../test-data/README.md](../test-data/README.md) for the fixture contract.
+
+## Expectations
+
+- Keep unit tests deterministic, fast, and independent.
+- Test public behavior and domain invariants instead of private implementation details.
+- Use descriptive domain terminology: article, trip, cancellation, classification, and Fahrplan
+  year.
+- Add a regression test whenever a parser pattern or cause rule changes.
+- Document any integration-test side effects.

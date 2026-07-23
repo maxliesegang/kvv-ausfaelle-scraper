@@ -31,5 +31,11 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
       '85855': 'S5',
       '85096': 'S5',
     },
+    // DB-Regio S6 runs in this staffing notice. GTFS reuses these numbers on unrelated
+    // S4/S8/S41/S71/S81 services and has no matching S6 signature for the reported times.
+    Nettro_CMS_272859: {
+      '74351': 'S6',
+      '74352': 'S6',
+    },
   },
 };

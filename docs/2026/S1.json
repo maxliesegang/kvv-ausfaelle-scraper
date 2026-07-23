@@ -1878,7 +1878,7 @@
   {
     "line": "S1",
     "date": "2026-07-09",
-    "stand": "2026-07-09T00:10:00.000Z",
+    "stand": "2026-07-08T22:10:00.000Z",
     "trainNumber": "10020",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "07:43",
@@ -1892,7 +1892,7 @@
   {
     "line": "S1",
     "date": "2026-07-09",
-    "stand": "2026-07-09T09:27:00.000Z",
+    "stand": "2026-07-09T07:27:00.000Z",
     "trainNumber": "30031",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "12:28",
@@ -1906,7 +1906,7 @@
   {
     "line": "S1",
     "date": "2026-07-09",
-    "stand": "2026-07-09T09:27:00.000Z",
+    "stand": "2026-07-09T07:27:00.000Z",
     "trainNumber": "30034",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "13:25",
@@ -1920,7 +1920,7 @@
   {
     "line": "S1",
     "date": "2026-07-12",
-    "stand": "2026-07-12T16:10:00.000Z",
+    "stand": "2026-07-12T14:10:00.000Z",
     "trainNumber": "37048",
     "fromStop": "Hochstetten",
     "fromTime": "21:21",
@@ -1934,7 +1934,7 @@
   {
     "line": "S1",
     "date": "2026-07-12",
-    "stand": "2026-07-12T16:10:00.000Z",
+    "stand": "2026-07-12T14:10:00.000Z",
     "trainNumber": "30065",
     "fromStop": "Bad Herrenalb",
     "fromTime": "23:03",
@@ -1948,7 +1948,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T20:25:00.000Z",
+    "stand": "2026-07-13T18:25:00.000Z",
     "trainNumber": "10087",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "00:04",
@@ -1962,7 +1962,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T20:25:00.000Z",
+    "stand": "2026-07-13T18:25:00.000Z",
     "trainNumber": "10086",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "00:25",
@@ -1976,7 +1976,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T09:51:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10042",
     "fromStop": "Hochstetten",
     "fromTime": "12:32",
@@ -1990,7 +1990,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T09:51:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10045",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "12:34",
@@ -2004,7 +2004,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T09:51:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10048",
     "fromStop": "Hochstetten",
     "fromTime": "13:52",
@@ -2018,7 +2018,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T09:51:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10057",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "15:34",
@@ -2032,7 +2032,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T15:52:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10058",
     "fromStop": "Hochstetten",
     "fromTime": "16:32",
@@ -2046,7 +2046,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T09:51:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10060",
     "fromStop": "Hochstetten",
     "fromTime": "16:52",
@@ -2060,7 +2060,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T15:52:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10069",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "18:34",
@@ -2074,7 +2074,21 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T15:52:00.000Z",
+    "stand": "2026-07-13T18:25:00.000Z",
+    "trainNumber": "10075",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "19:34",
+    "toStop": "Hochstetten",
+    "toTime": "20:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272417",
+    "capturedAt": "2026-07-23T05:29:08.089Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-13",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10074",
     "fromStop": "Hochstetten",
     "fromTime": "19:52",
@@ -2088,21 +2102,21 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T20:25:00.000Z",
-    "trainNumber": "10075",
-    "fromStop": "Ettlingen Albgaubad 19:34 Uhr bis Hochstetten an 20:46 Uhr 10074 Hochstetten",
+    "stand": "2026-07-13T18:25:00.000Z",
+    "trainNumber": "10074",
+    "fromStop": "Hochstetten",
     "fromTime": "19:52",
     "toStop": "Ettlingen",
     "toTime": "21:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272417",
-    "capturedAt": "2026-07-13T20:53:28.764Z",
+    "capturedAt": "2026-07-13T14:23:15.648Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T20:25:00.000Z",
+    "stand": "2026-07-13T18:25:00.000Z",
     "trainNumber": "10080",
     "fromStop": "Hochstetten",
     "fromTime": "21:02",
@@ -2116,7 +2130,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T15:52:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10083",
     "fromStop": "Ettlingen",
     "fromTime": "22:05",
@@ -2130,7 +2144,21 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T20:25:00.000Z",
+    "stand": "2026-07-13T18:25:00.000Z",
+    "trainNumber": "10083",
+    "fromStop": "Ettlingen",
+    "fromTime": "22:05",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "22:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272417",
+    "capturedAt": "2026-07-13T14:23:15.648Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-13",
+    "stand": "2026-07-13T18:25:00.000Z",
     "trainNumber": "10085",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "23:04",
@@ -2144,7 +2172,7 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T15:52:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "10084",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "23:25",
@@ -2157,8 +2185,22 @@
   },
   {
     "line": "S1",
+    "date": "2026-07-13",
+    "stand": "2026-07-13T18:25:00.000Z",
+    "trainNumber": "10084",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "23:25",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "00:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272417",
+    "capturedAt": "2026-07-13T14:23:15.648Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
     "date": "2026-07-14",
-    "stand": "2026-07-14T12:39:00.000Z",
+    "stand": "2026-07-14T10:39:00.000Z",
     "trainNumber": "10057",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "15:34",
@@ -2172,7 +2214,7 @@
   {
     "line": "S1",
     "date": "2026-07-14",
-    "stand": "2026-07-14T12:39:00.000Z",
+    "stand": "2026-07-14T10:39:00.000Z",
     "trainNumber": "10060",
     "fromStop": "Hochstetten",
     "fromTime": "16:52",
@@ -2186,7 +2228,7 @@
   {
     "line": "S1",
     "date": "2026-07-14",
-    "stand": "2026-07-14T12:39:00.000Z",
+    "stand": "2026-07-14T10:39:00.000Z",
     "trainNumber": "10073",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "19:04",
@@ -2200,7 +2242,7 @@
   {
     "line": "S1",
     "date": "2026-07-14",
-    "stand": "2026-07-14T12:39:00.000Z",
+    "stand": "2026-07-14T10:39:00.000Z",
     "trainNumber": "30061",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "21:28",
@@ -2214,7 +2256,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "30020",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "09:45",
@@ -2228,7 +2270,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "10039",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "10:54",
@@ -2242,7 +2284,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "10044",
     "fromStop": "Hochstetten",
     "fromTime": "12:52",
@@ -2256,7 +2298,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "30037",
     "fromStop": "Bad Herrenalb",
     "fromTime": "13:43",
@@ -2270,7 +2312,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "30044",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "15:45",
@@ -2284,7 +2326,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "30051",
     "fromStop": "Bad Herrenalb",
     "fromTime": "17:03",
@@ -2298,7 +2340,7 @@
   {
     "line": "S1",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "30054",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "18:25",
@@ -2312,7 +2354,7 @@
   {
     "line": "S1",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "56003",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "01:29",
@@ -2326,7 +2368,7 @@
   {
     "line": "S1",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "56008",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "02:35",
@@ -2340,7 +2382,7 @@
   {
     "line": "S1",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "16046",
     "fromStop": "Hochstetten",
     "fromTime": "15:52",
@@ -2354,7 +2396,7 @@
   {
     "line": "S1",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "16056",
     "fromStop": "Hochstetten",
     "fromTime": "17:32",
@@ -2368,7 +2410,7 @@
   {
     "line": "S1",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "16068",
     "fromStop": "Hochstetten",
     "fromTime": "21:02",
@@ -2382,7 +2424,7 @@
   {
     "line": "S1",
     "date": "2026-07-20",
-    "stand": "2026-07-20T06:00:00.000Z",
+    "stand": "2026-07-20T04:00:00.000Z",
     "trainNumber": "10013",
     "fromStop": "Albgaubad",
     "fromTime": "06:04",
@@ -2396,7 +2438,7 @@
   {
     "line": "S1",
     "date": "2026-07-20",
-    "stand": "2026-07-20T06:00:00.000Z",
+    "stand": "2026-07-20T04:00:00.000Z",
     "trainNumber": "10014",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "07:10",
@@ -2410,7 +2452,7 @@
   {
     "line": "S1",
     "date": "2026-07-20",
-    "stand": "2026-07-20T06:00:00.000Z",
+    "stand": "2026-07-20T04:00:00.000Z",
     "trainNumber": "10027",
     "fromStop": "Albgaubad",
     "fromTime": "08:04",

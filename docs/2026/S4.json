@@ -2648,7 +2648,7 @@
   {
     "line": "S4",
     "date": "2026-07-05",
-    "stand": "2026-07-05T13:11:00.000Z",
+    "stand": "2026-07-05T11:11:00.000Z",
     "trainNumber": "85498",
     "fromStop": "Heilbronn Pfühlpark",
     "fromTime": "1:25",
@@ -2662,7 +2662,7 @@
   {
     "line": "S4",
     "date": "2026-07-05",
-    "stand": "2026-07-05T13:11:00.000Z",
+    "stand": "2026-07-05T11:11:00.000Z",
     "trainNumber": "85457",
     "fromStop": "Eppingen Bf.",
     "fromTime": "18:29",
@@ -2676,7 +2676,7 @@
   {
     "line": "S4",
     "date": "2026-07-05",
-    "stand": "2026-07-05T13:11:00.000Z",
+    "stand": "2026-07-05T11:11:00.000Z",
     "trainNumber": "85462",
     "fromStop": "Heilbronn Pfühlpark",
     "fromTime": "19:44",
@@ -2690,7 +2690,7 @@
   {
     "line": "S4",
     "date": "2026-07-05",
-    "stand": "2026-07-05T13:11:00.000Z",
+    "stand": "2026-07-05T11:11:00.000Z",
     "trainNumber": "74361",
     "fromStop": "Bretten Bf",
     "fromTime": "22:21",
@@ -2704,7 +2704,7 @@
   {
     "line": "S4",
     "date": "2026-07-05",
-    "stand": "2026-07-05T13:11:00.000Z",
+    "stand": "2026-07-05T11:11:00.000Z",
     "trainNumber": "74362",
     "fromStop": "Eppingen Bf.",
     "fromTime": "23:05",
@@ -2718,7 +2718,7 @@
   {
     "line": "S4",
     "date": "2026-07-05",
-    "stand": "2026-07-05T13:11:00.000Z",
+    "stand": "2026-07-05T11:11:00.000Z",
     "trainNumber": "85469",
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "23:15",
@@ -2732,7 +2732,7 @@
   {
     "line": "S4",
     "date": "2026-07-06",
-    "stand": "2026-07-06T18:00:00.000Z",
+    "stand": "2026-07-06T16:00:00.000Z",
     "trainNumber": "85531",
     "fromStop": "Ka. Albtalbahnhof",
     "fromTime": "19:35",
@@ -2746,7 +2746,7 @@
   {
     "line": "S4",
     "date": "2026-07-06",
-    "stand": "2026-07-06T18:00:00.000Z",
+    "stand": "2026-07-06T16:00:00.000Z",
     "trainNumber": "85540",
     "fromStop": "Flehingen Bf",
     "fromTime": "21:20",
@@ -2760,7 +2760,7 @@
   {
     "line": "S4",
     "date": "2026-07-08",
-    "stand": "2026-07-08T01:00:00.000Z",
+    "stand": "2026-07-07T23:00:00.000Z",
     "trainNumber": "85595",
     "fromStop": "Bühl",
     "fromTime": "05:42",
@@ -2774,7 +2774,7 @@
   {
     "line": "S4",
     "date": "2026-07-08",
-    "stand": "2026-07-08T01:00:00.000Z",
+    "stand": "2026-07-07T23:00:00.000Z",
     "trainNumber": "85512",
     "fromStop": "Eppingen",
     "fromTime": "08:07",
@@ -2788,7 +2788,7 @@
   {
     "line": "S4",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:56:00.000Z",
+    "stand": "2026-07-09T23:56:00.000Z",
     "trainNumber": "85401",
     "fromStop": "KA-Albtalbahnhof",
     "fromTime": "03:55",
@@ -2802,7 +2802,7 @@
   {
     "line": "S4",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:56:00.000Z",
+    "stand": "2026-07-09T23:56:00.000Z",
     "trainNumber": "85473",
     "fromStop": "KA-Albtalbahnhof",
     "fromTime": "07:15",
@@ -2816,7 +2816,7 @@
   {
     "line": "S4",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:56:00.000Z",
+    "stand": "2026-07-09T23:56:00.000Z",
     "trainNumber": "85408",
     "fromStop": "KA-Tullastr.",
     "fromTime": "08:07",
@@ -2830,7 +2830,7 @@
   {
     "line": "S4",
     "date": "2026-07-10",
-    "stand": "2026-07-10T18:03:00.000Z",
+    "stand": "2026-07-10T16:03:00.000Z",
     "trainNumber": "85529",
     "fromStop": "KA-Albtalbahnhof",
     "fromTime": "18:35",
@@ -2844,7 +2844,7 @@
   {
     "line": "S4",
     "date": "2026-07-10",
-    "stand": "2026-07-10T18:03:00.000Z",
+    "stand": "2026-07-10T16:03:00.000Z",
     "trainNumber": "85538",
     "fromStop": "Flehingen Bf.",
     "fromTime": "20:20",
@@ -2858,7 +2858,7 @@
   {
     "line": "S4",
     "date": "2026-07-10",
-    "stand": "2026-07-10T18:03:00.000Z",
+    "stand": "2026-07-10T16:03:00.000Z",
     "trainNumber": "85537",
     "fromStop": "KA-Albtalbahnhof",
     "fromTime": "22:35",
@@ -2872,7 +2872,7 @@
   {
     "line": "S4",
     "date": "2026-07-11",
-    "stand": "2026-07-11T14:15:00.000Z",
+    "stand": "2026-07-11T12:15:00.000Z",
     "trainNumber": "85531",
     "fromStop": "Albtalbahnhof",
     "fromTime": "19:35",
@@ -2886,7 +2886,7 @@
   {
     "line": "S4",
     "date": "2026-07-11",
-    "stand": "2026-07-11T14:15:00.000Z",
+    "stand": "2026-07-11T12:15:00.000Z",
     "trainNumber": "85540",
     "fromStop": "Flehingen",
     "fromTime": "21:20",
@@ -2900,7 +2900,7 @@
   {
     "line": "S4",
     "date": "2026-07-14",
-    "stand": "2026-07-14T07:23:00.000Z",
+    "stand": "2026-07-14T05:23:00.000Z",
     "trainNumber": "85478",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "14:27",
@@ -2914,7 +2914,7 @@
   {
     "line": "S4",
     "date": "2026-07-14",
-    "stand": "2026-07-14T07:23:00.000Z",
+    "stand": "2026-07-14T05:23:00.000Z",
     "trainNumber": "85549",
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "15:35",
@@ -2928,7 +2928,7 @@
   {
     "line": "S4",
     "date": "2026-07-15",
-    "stand": "2026-07-15T17:10:00.000Z",
+    "stand": "2026-07-15T15:10:00.000Z",
     "trainNumber": "85530",
     "fromStop": "Bretten Bf",
     "fromTime": "16:39",
@@ -2942,7 +2942,7 @@
   {
     "line": "S4",
     "date": "2026-07-15",
-    "stand": "2026-07-15T17:10:00.000Z",
+    "stand": "2026-07-15T15:10:00.000Z",
     "trainNumber": "85459",
     "fromStop": "Ka. Albtalbahnhof",
     "fromTime": "18:15",
@@ -2956,7 +2956,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85300",
     "fromStop": "Heilbronn Pfühlpark",
     "fromTime": "05:18",
@@ -2970,7 +2970,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85307",
     "fromStop": "Schwaigern West",
     "fromTime": "06:01",
@@ -2984,7 +2984,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85305",
     "fromStop": "Heilbronn Willy-Brandt Pl.",
     "fromTime": "06:32",
@@ -2998,7 +2998,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85320",
     "fromStop": "Öhringen Cappel",
     "fromTime": "07:33",
@@ -3012,7 +3012,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85507",
     "fromStop": "Albtalbahnhof",
     "fromTime": "07:35",
@@ -3026,7 +3026,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85391",
     "fromStop": "Schwaigern West",
     "fromTime": "08:46",
@@ -3040,7 +3040,7 @@
   {
     "line": "S4",
     "date": "2026-07-16",
-    "stand": "2026-07-16T04:35:00.000Z",
+    "stand": "2026-07-16T02:35:00.000Z",
     "trainNumber": "85516",
     "fromStop": "Flehingen Bf.",
     "fromTime": "09:20",
@@ -3054,7 +3054,7 @@
   {
     "line": "S4",
     "date": "2026-07-17",
-    "stand": "2026-07-17T10:24:00.000Z",
+    "stand": "2026-07-17T08:24:00.000Z",
     "trainNumber": "85636",
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "12:45",
@@ -3068,7 +3068,7 @@
   {
     "line": "S4",
     "date": "2026-07-17",
-    "stand": "2026-07-17T10:24:00.000Z",
+    "stand": "2026-07-17T08:24:00.000Z",
     "trainNumber": "85529",
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "18:35",
@@ -3082,7 +3082,7 @@
   {
     "line": "S4",
     "date": "2026-07-17",
-    "stand": "2026-07-17T10:24:00.000Z",
+    "stand": "2026-07-17T08:24:00.000Z",
     "trainNumber": "85538",
     "fromStop": "Flehingen Bf",
     "fromTime": "20:20",

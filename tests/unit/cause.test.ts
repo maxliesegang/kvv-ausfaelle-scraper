@@ -20,6 +20,13 @@ describe('classifyCause - categories', () => {
     assert.strictEqual(classifyCause('betriebsbedingter Ausfall'), 'operational');
   });
 
+  it('classifies a named operational traffic condition as operational', () => {
+    assert.strictEqual(
+      classifyCause('Dichte Zugfolge. Auf der Linie S4 kommt es zu Fahrtausfällen.'),
+      'operational',
+    );
+  });
+
   it('classifies a generic Betriebsstörung as an (unspecified) disruption', () => {
     assert.strictEqual(
       classifyCause('Betriebsstörung. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen.'),
@@ -35,6 +42,10 @@ describe('classifyCause - categories', () => {
   it('classifies weather', () => {
     assert.strictEqual(classifyCause('aufgrund eines Unwetters'), 'weather');
     assert.strictEqual(classifyCause('wegen Sturm fällt die Fahrt aus'), 'weather');
+  });
+
+  it('classifies a named emergency-services intervention', () => {
+    assert.strictEqual(classifyCause('Feuerwehreinsatz im Bereich Forbach Bahnhof'), 'emergency');
   });
 
   it('classifies a vehicle (rolling-stock) fault', () => {
@@ -57,6 +68,8 @@ describe('classifyCause - categories', () => {
 
   it('classifies an infrastructure fault', () => {
     assert.strictEqual(classifyCause('wegen einer Stellwerkstörung'), 'infrastructure');
+    assert.strictEqual(classifyCause('Stellwerkausfall im Bereich Rastatt'), 'infrastructure');
+    assert.strictEqual(classifyCause('Stellwerksstörung bei Bretten'), 'infrastructure');
     assert.strictEqual(classifyCause('Oberleitungsschaden bei Durlach'), 'infrastructure');
     assert.strictEqual(classifyCause('eine Weichenstörung'), 'infrastructure');
   });
@@ -105,6 +118,13 @@ describe('classifyCause - priority ordering', () => {
     );
   });
 
+  it('prefers a named emergency over generic closure wording', () => {
+    assert.strictEqual(
+      classifyCause('Streckensperrung wegen eines Feuerwehreinsatzes'),
+      'emergency',
+    );
+  });
+
   it('prefers a named vehicle fault over the generic sperrung (construction)', () => {
     assert.strictEqual(classifyCause('Fahrzeugstörung führt zur Sperrung der Strecke'), 'vehicle');
   });
@@ -150,6 +170,17 @@ describe('classifyCauseWithEvidence - matched keyword', () => {
     assert.deepStrictEqual(classifyCauseWithEvidence('wegen einer Stellwerkstörung'), {
       cause: 'infrastructure',
       causeKeyword: 'stellwerkstoerung',
+    });
+  });
+
+  it('reports the most specific matching keyword within the winning category', () => {
+    assert.deepStrictEqual(classifyCauseWithEvidence('Witterungsbedingte Störung'), {
+      cause: 'weather',
+      causeKeyword: 'witterungsbedingt',
+    });
+    assert.deepStrictEqual(classifyCauseWithEvidence('Gleisbauarbeiten im Bahnhof'), {
+      cause: 'construction',
+      causeKeyword: 'gleisbauarbeiten',
     });
   });
 

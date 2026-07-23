@@ -17,6 +17,12 @@ This is the most specific guidance for parser files.
 - Prefer additive parsing improvements over breaking existing patterns.
 - Keep regex updates paired with regression tests/fixtures.
 - If relevance and parser behavior diverge, favor explicit relevance filtering over silent parser leniency.
+- Name trip formats by their observable field layout and constraints, not by when KVV introduced
+  them. Keep specific formats before permissive fallbacks in `TRIP_FORMATS`.
+- Treat a new leading train number as a row boundary during multiline recovery; a malformed row
+  must not consume the following valid row.
+- KVV timestamps are Europe/Berlin wall-clock values. Preserve the article's local calendar date
+  for trip dates while storing `stand` as UTC ISO time.
 
 ## Required Validation
 

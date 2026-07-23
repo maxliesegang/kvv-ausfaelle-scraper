@@ -24,13 +24,19 @@
  *   npm run reparse-archives -- --year=2026 # only that year's archives
  *   npm run reparse-archives -- --verbose   # list every differing trip, not just counts
  *   npm run reparse-archives -- --write     # re-stamp cause/causeKeyword on archived trips
+ *   npm run reparse-archives -- --write-trips # reconcile stored trips from parsed archives
  *
  * Exit code is 0 regardless of findings. Pipe/read the summary to act on it.
  */
 
 import { basename, join } from 'node:path';
+import { isDeepStrictEqual } from 'node:util';
 import { DATA_DIR } from '../src/config.js';
-import { getCancellationKey, loadExistingCancellations } from '../src/storage.js';
+import {
+  compareCancellationsBySchedule,
+  getCancellationKey,
+  loadExistingCancellations,
+} from '../src/storage.js';
 import { parseDetailPage, ParseError } from '../src/parser/index.js';
 import { ARCHIVE_SUBDIR, parseArchive } from '../src/article-archive.js';
 import { listFahrplanYearDirectories } from '../src/fahrplan.js';
@@ -43,86 +49,122 @@ function formatTrip(trip: Cancellation): string {
   return `${trip.line} ${trip.trainNumber} ${trip.date} ${trip.fromTime}→${trip.toTime} (${trip.cause})`;
 }
 
-interface Options {
-  readonly year?: string;
+type ArchiveOperation = 'report' | 'backfill-classifications' | 'reconcile-trips';
+
+interface ArchiveCommandOptions {
+  readonly fahrplanYear?: string;
   readonly verbose: boolean;
-  readonly write: boolean;
+  readonly operation: ArchiveOperation;
 }
 
-function parseArgs(argv: string[]): Options {
-  let year: string | undefined;
+function parseCommandOptions(args: string[]): ArchiveCommandOptions {
+  let fahrplanYear: string | undefined;
   let verbose = false;
-  let write = false;
-  for (const arg of argv) {
+  let operation: ArchiveOperation = 'report';
+  for (const arg of args) {
     if (arg === '--')
       continue; // tolerate the npm `--` separator if it slips through
-    else if (arg.startsWith('--year=')) year = arg.slice('--year='.length).trim();
-    else if (arg === '--verbose') verbose = true;
-    else if (arg === '--write') write = true;
-    else throw new Error(`Unknown argument: ${arg}`);
+    else if (arg.startsWith('--year=')) {
+      fahrplanYear = arg.slice('--year='.length).trim();
+    } else if (arg === '--verbose') verbose = true;
+    else if (arg === '--write') {
+      if (operation !== 'report') throw new Error('Use only one write mode.');
+      operation = 'backfill-classifications';
+    } else if (arg === '--write-trips') {
+      if (operation !== 'report') throw new Error('Use only one write mode.');
+      operation = 'reconcile-trips';
+    } else throw new Error(`Unknown argument: ${arg}`);
   }
-  return { year, verbose, write };
+  return { fahrplanYear, verbose, operation };
 }
 
 /** Directory names under `docs/` that are Fahrplan-year buckets, optionally filtered to one. */
-async function findYearDirs(baseDir: string, only?: string): Promise<string[]> {
-  const dirs = await listFahrplanYearDirectories(baseDir);
-  return only ? dirs.filter((name) => name === only) : dirs;
+async function findFahrplanYearDirectories(
+  baseDir: string,
+  requestedYear?: string,
+): Promise<string[]> {
+  const yearDirectories = await listFahrplanYearDirectories(baseDir);
+  return requestedYear
+    ? yearDirectories.filter((yearDirectory) => yearDirectory === requestedYear)
+    : yearDirectories;
 }
 
-/** Loads every stored cancellation for a year, indexed by source URL then by trip key. */
-async function loadStoredByUrl(yearDir: string): Promise<Map<string, Map<string, Cancellation>>> {
-  const byUrl = new Map<string, Map<string, Cancellation>>();
-  const files = (await listFiles(yearDir)).filter(
+/** Trip identity within an article report, including the destination line file. */
+function getLineScopedTripKey(trip: Cancellation): string {
+  return JSON.stringify([trip.line, getCancellationKey(trip)]);
+}
+
+/** Loads every stored cancellation for a year, indexed by source URL then by line/trip key. */
+async function loadStoredTripsBySourceUrl(
+  fahrplanYearDirectory: string,
+): Promise<Map<string, Map<string, Cancellation>>> {
+  const tripsBySourceUrl = new Map<string, Map<string, Cancellation>>();
+  const lineFilenames = (await listFiles(fahrplanYearDirectory)).filter(
     (name) => name.endsWith('.json') && name !== 'index.json',
   );
-  for (const file of files) {
-    for (const trip of await loadExistingCancellations(join(yearDir, file))) {
-      let trips = byUrl.get(trip.sourceUrl);
-      if (!trips) {
-        trips = new Map();
-        byUrl.set(trip.sourceUrl, trips);
+  for (const filename of lineFilenames) {
+    for (const trip of await loadExistingCancellations(join(fahrplanYearDirectory, filename))) {
+      let sourceTrips = tripsBySourceUrl.get(trip.sourceUrl);
+      if (!sourceTrips) {
+        sourceTrips = new Map();
+        tripsBySourceUrl.set(trip.sourceUrl, sourceTrips);
       }
-      trips.set(getCancellationKey(trip), trip);
+      sourceTrips.set(getLineScopedTripKey(trip), trip);
     }
   }
-  return byUrl;
+  return tripsBySourceUrl;
 }
 
-interface Totals {
-  articles: number;
-  parsedOk: number;
-  parseErrors: number;
-  noUrl: number;
-  added: number;
-  removed: number;
-  causeChanged: number;
-  articlesWithDiffs: number;
+interface ArchiveProcessingTotals {
+  articlesProcessed: number;
+  articlesParsed: number;
+  articlesWithParseErrors: number;
+  articlesWithoutStructuredTrips: number;
+  articlesWithoutSourceUrl: number;
+  tripsAdded: number;
+  tripsRemoved: number;
+  classificationsChanged: number;
+  articlesWithDifferences: number;
   /** Write mode: stored trips whose cause/causeKeyword was re-stamped. */
-  restamped: number;
+  classificationsUpdated: number;
   /** Write mode: line JSON files rewritten. */
-  filesWritten: number;
+  lineFilesWritten: number;
+  /** Trip-reconciliation mode: newly restored trips. */
+  tripsRestored: number;
+  /** Trip-reconciliation mode: stale/corrupted trips removed. */
+  staleTripsRemoved: number;
+  /** Trip-reconciliation mode: same-key records whose parsed fields were corrected. */
+  tripsCorrected: number;
 }
 
-function newTotals(): Totals {
+function createArchiveProcessingTotals(): ArchiveProcessingTotals {
   return {
-    articles: 0,
-    parsedOk: 0,
-    parseErrors: 0,
-    noUrl: 0,
-    added: 0,
-    removed: 0,
-    causeChanged: 0,
-    articlesWithDiffs: 0,
-    restamped: 0,
-    filesWritten: 0,
+    articlesProcessed: 0,
+    articlesParsed: 0,
+    articlesWithParseErrors: 0,
+    articlesWithoutStructuredTrips: 0,
+    articlesWithoutSourceUrl: 0,
+    tripsAdded: 0,
+    tripsRemoved: 0,
+    classificationsChanged: 0,
+    articlesWithDifferences: 0,
+    classificationsUpdated: 0,
+    lineFilesWritten: 0,
+    tripsRestored: 0,
+    staleTripsRemoved: 0,
+    tripsCorrected: 0,
   };
 }
 
 /** One archived article reparsed with the current parser. */
-interface ReparsedArchive {
-  readonly url: string;
+interface ParsedArchivedArticle {
+  readonly sourceUrl: string;
   readonly trips: readonly Cancellation[];
+}
+
+/** Trip identity scoped to its source article, safe to use across line files. */
+function getSourceScopedTripKey(trip: Cancellation): string {
+  return JSON.stringify([trip.sourceUrl, getCancellationKey(trip)]);
 }
 
 /**
@@ -130,70 +172,96 @@ interface ReparsedArchive {
  * on any skip. Returns `null` when the file is unreadable, carries no `Quelle` URL, or fails to
  * parse — the single place both report and backfill modes turn frozen text back into trips.
  */
-async function reparseArchiveFile(
-  filePath: string,
-  totals: Totals,
-): Promise<ReparsedArchive | null> {
-  totals.articles += 1;
-  const content = await readTextFile(filePath);
-  if (content === null) return null;
+async function parseArchivedArticle(
+  archiveFilePath: string,
+  totals: ArchiveProcessingTotals,
+): Promise<ParsedArchivedArticle | null> {
+  totals.articlesProcessed += 1;
+  const archiveContent = await readTextFile(archiveFilePath);
+  if (archiveContent === null) return null;
 
-  const { url, body } = parseArchive(content);
-  if (!url) {
-    totals.noUrl += 1;
-    console.warn(`  ? ${basename(filePath)}: no Quelle header, cannot map to stored data`);
+  const { url: sourceUrl, body: articleBody } = parseArchive(archiveContent);
+  if (!sourceUrl) {
+    totals.articlesWithoutSourceUrl += 1;
+    console.warn(`  ? ${basename(archiveFilePath)}: no Quelle header, cannot map to stored data`);
     return null;
   }
 
   try {
-    const trips = parseDetailPage(body, url);
-    totals.parsedOk += 1;
-    return { url, trips };
+    const trips = parseDetailPage(articleBody, sourceUrl);
+    totals.articlesParsed += 1;
+    return { sourceUrl, trips };
   } catch (error) {
-    totals.parseErrors += 1;
-    const kind = error instanceof ParseError ? 'ParseError' : 'error';
-    console.warn(`  ! ${basename(filePath)}: ${kind}: ${(error as Error).message.split('\n')[0]}`);
+    const errorMessage = (error as Error).message;
+    const hasNumberedTripRow = articleBody
+      .split(/\r?\n/)
+      .some((line) => /^\s*\d{4,6}\b/.test(line));
+    if (
+      error instanceof ParseError &&
+      errorMessage.includes('Incorrect parse: no trips were found') &&
+      !hasNumberedTripRow
+    ) {
+      totals.articlesWithoutStructuredTrips += 1;
+      console.log(`  - ${basename(archiveFilePath)}: no structured train-number trip rows`);
+      return null;
+    }
+    totals.articlesWithParseErrors += 1;
+    const errorType = error instanceof ParseError ? 'ParseError' : 'error';
+    console.warn(`  ! ${basename(archiveFilePath)}: ${errorType}: ${errorMessage.split('\n')[0]}`);
     return null;
   }
 }
 
 /** Reparses one archive file and reports how it differs from what is stored for its URL. */
-async function reportArticle(
+async function reportArchivedArticleDifferences(
   filePath: string,
-  storedByUrl: Map<string, Map<string, Cancellation>>,
-  options: Options,
-  totals: Totals,
+  storedTripsBySourceUrl: Map<string, Map<string, Cancellation>>,
+  options: ArchiveCommandOptions,
+  totals: ArchiveProcessingTotals,
 ): Promise<void> {
-  const parsed = await reparseArchiveFile(filePath, totals);
-  if (!parsed) return;
-  const { url, trips: reparsed } = parsed;
+  const archivedArticle = await parseArchivedArticle(filePath, totals);
+  if (!archivedArticle) return;
+  const { sourceUrl, trips: reparsedTrips } = archivedArticle;
 
-  const stored = storedByUrl.get(url) ?? new Map<string, Cancellation>();
-  const reparsedKeys = new Map(reparsed.map((t) => [getCancellationKey(t), t]));
+  const storedTrips = storedTripsBySourceUrl.get(sourceUrl) ?? new Map<string, Cancellation>();
+  const reparsedTripsByKey = new Map(
+    reparsedTrips.map((trip) => [getLineScopedTripKey(trip), trip]),
+  );
 
-  const added = reparsed.filter((t) => !stored.has(getCancellationKey(t)));
-  const removed = [...stored.values()].filter((t) => !reparsedKeys.has(getCancellationKey(t)));
-  const causeChanged = reparsed.filter((t) => {
-    const prev = stored.get(getCancellationKey(t));
-    return prev && prev.cause !== t.cause;
+  const addedTrips = reparsedTrips.filter((trip) => !storedTrips.has(getLineScopedTripKey(trip)));
+  const removedTrips = [...storedTrips.values()].filter(
+    (trip) => !reparsedTripsByKey.has(getLineScopedTripKey(trip)),
+  );
+  const reclassifiedTrips = reparsedTrips.filter((trip) => {
+    const storedTrip = storedTrips.get(getLineScopedTripKey(trip));
+    return (
+      storedTrip &&
+      (storedTrip.cause !== trip.cause || storedTrip.causeKeyword !== trip.causeKeyword)
+    );
   });
 
-  if (added.length === 0 && removed.length === 0 && causeChanged.length === 0) return;
+  if (addedTrips.length === 0 && removedTrips.length === 0 && reclassifiedTrips.length === 0) {
+    return;
+  }
 
-  totals.articlesWithDiffs += 1;
-  totals.added += added.length;
-  totals.removed += removed.length;
-  totals.causeChanged += causeChanged.length;
+  totals.articlesWithDifferences += 1;
+  totals.tripsAdded += addedTrips.length;
+  totals.tripsRemoved += removedTrips.length;
+  totals.classificationsChanged += reclassifiedTrips.length;
 
   console.log(
-    `  ~ ${basename(filePath)}: +${added.length} added, -${removed.length} removed, ` +
-      `${causeChanged.length} cause change(s)`,
+    `  ~ ${basename(filePath)}: +${addedTrips.length} added, -${removedTrips.length} removed, ` +
+      `${reclassifiedTrips.length} classification change(s)`,
   );
   if (options.verbose) {
-    for (const t of added) console.log(`      + ${formatTrip(t)}`);
-    for (const t of removed) console.log(`      - ${formatTrip(t)}`);
-    for (const t of causeChanged) {
-      console.log(`      ~ ${formatTrip(t)} (was ${stored.get(getCancellationKey(t))?.cause})`);
+    for (const trip of addedTrips) console.log(`      + ${formatTrip(trip)}`);
+    for (const trip of removedTrips) console.log(`      - ${formatTrip(trip)}`);
+    for (const trip of reclassifiedTrips) {
+      const storedTrip = storedTrips.get(getLineScopedTripKey(trip));
+      console.log(
+        `      ~ ${formatTrip(trip)} [${trip.causeKeyword ?? 'no keyword'}] ` +
+          `(was ${storedTrip?.cause} [${storedTrip?.causeKeyword ?? 'no keyword'}])`,
+      );
     }
   }
 }
@@ -203,22 +271,25 @@ async function reportArticle(
  * keyed by source URL then trip key. Parse failures are skipped (they can't inform a re-stamp),
  * so backfill never invents or drops trips — it only refines cause.
  */
-async function reparseClassificationsByUrl(
-  archiveDir: string,
-  files: readonly string[],
-  totals: Totals,
+async function loadReparsedClassificationsBySourceUrl(
+  archiveDirectory: string,
+  archiveFilenames: readonly string[],
+  totals: ArchiveProcessingTotals,
 ): Promise<Map<string, Map<string, CauseClassification>>> {
-  const byUrl = new Map<string, Map<string, CauseClassification>>();
-  for (const file of files) {
-    const parsed = await reparseArchiveFile(join(archiveDir, file), totals);
-    if (!parsed) continue;
-    const perTrip = new Map<string, CauseClassification>();
-    for (const t of parsed.trips) {
-      perTrip.set(getCancellationKey(t), { cause: t.cause, causeKeyword: t.causeKeyword });
+  const classificationsBySourceUrl = new Map<string, Map<string, CauseClassification>>();
+  for (const filename of archiveFilenames) {
+    const archivedArticle = await parseArchivedArticle(join(archiveDirectory, filename), totals);
+    if (!archivedArticle) continue;
+    const classificationsByTripKey = new Map<string, CauseClassification>();
+    for (const trip of archivedArticle.trips) {
+      classificationsByTripKey.set(getCancellationKey(trip), {
+        cause: trip.cause,
+        causeKeyword: trip.causeKeyword,
+      });
     }
-    byUrl.set(parsed.url, perTrip);
+    classificationsBySourceUrl.set(archivedArticle.sourceUrl, classificationsByTripKey);
   }
-  return byUrl;
+  return classificationsBySourceUrl;
 }
 
 /**
@@ -226,89 +297,224 @@ async function reparseClassificationsByUrl(
  * archived and reparses to the same trip key. Only these two fields change; trip identity and
  * order are preserved, so an unaffected file stays byte-identical.
  */
-async function backfillYear(yearDir: string, options: Options, totals: Totals): Promise<void> {
-  const archiveDir = join(yearDir, ARCHIVE_SUBDIR);
-  const files = (await listFiles(archiveDir)).filter((f) => f.endsWith('.txt')).sort();
-  if (files.length === 0) return;
+async function backfillClassificationsForYear(
+  fahrplanYearDirectory: string,
+  options: ArchiveCommandOptions,
+  totals: ArchiveProcessingTotals,
+): Promise<void> {
+  const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
+  const archiveFilenames = (await listFiles(archiveDirectory))
+    .filter((filename) => filename.endsWith('.txt'))
+    .sort();
+  if (archiveFilenames.length === 0) return;
 
-  const reclassifiedByUrl = await reparseClassificationsByUrl(archiveDir, files, totals);
-  const lineFiles = (await listFiles(yearDir)).filter(
+  const classificationsBySourceUrl = await loadReparsedClassificationsBySourceUrl(
+    archiveDirectory,
+    archiveFilenames,
+    totals,
+  );
+  const lineFilenames = (await listFiles(fahrplanYearDirectory)).filter(
     (name) => name.endsWith('.json') && name !== 'index.json',
   );
 
-  for (const file of lineFiles) {
-    const filePath = join(yearDir, file);
+  for (const filename of lineFilenames) {
+    const filePath = join(fahrplanYearDirectory, filename);
     const trips = await loadExistingCancellations(filePath);
-    let changed = false;
-    const next = trips.map((trip) => {
-      const reclassified = reclassifiedByUrl.get(trip.sourceUrl)?.get(getCancellationKey(trip));
+    let hasClassificationUpdates = false;
+    const classificationUpdatedTrips = trips.map((trip) => {
+      const classification = classificationsBySourceUrl
+        .get(trip.sourceUrl)
+        ?.get(getCancellationKey(trip));
       if (
-        !reclassified ||
-        (reclassified.cause === trip.cause && reclassified.causeKeyword === trip.causeKeyword)
+        !classification ||
+        (classification.cause === trip.cause && classification.causeKeyword === trip.causeKeyword)
       ) {
         return trip;
       }
-      changed = true;
-      totals.restamped += 1;
+      hasClassificationUpdates = true;
+      totals.classificationsUpdated += 1;
       if (options.verbose) {
         console.log(
-          `      ~ ${formatTrip(trip)} → ${reclassified.cause}` +
-            `${reclassified.causeKeyword ? ` [${reclassified.causeKeyword}]` : ''}`,
+          `      ~ ${formatTrip(trip)} → ${classification.cause}` +
+            `${classification.causeKeyword ? ` [${classification.causeKeyword}]` : ''}`,
         );
       }
-      return { ...trip, cause: reclassified.cause, causeKeyword: reclassified.causeKeyword };
+      return {
+        ...trip,
+        cause: classification.cause,
+        causeKeyword: classification.causeKeyword,
+      };
     });
-    if (changed) {
-      await writeJsonFile(filePath, next);
-      totals.filesWritten += 1;
-      console.log(`  ~ ${file}: re-stamped cause on affected trip(s)`);
+    if (hasClassificationUpdates) {
+      await writeJsonFile(filePath, classificationUpdatedTrips);
+      totals.lineFilesWritten += 1;
+      console.log(`  ~ ${filename}: re-stamped classification on affected trip(s)`);
+    }
+  }
+}
+
+/**
+ * Reconciles stored trips for successfully parsed archives. A parse failure is deliberately
+ * absent from `reparsedTripsBySourceUrl`, so it can never delete that article's existing data.
+ */
+async function reconcileTripsForYear(
+  fahrplanYearDirectory: string,
+  options: ArchiveCommandOptions,
+  totals: ArchiveProcessingTotals,
+): Promise<void> {
+  const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
+  const archiveFilenames = (await listFiles(archiveDirectory))
+    .filter((filename) => filename.endsWith('.txt'))
+    .sort();
+  const reparsedTripsBySourceUrl = new Map<string, readonly Cancellation[]>();
+  for (const filename of archiveFilenames) {
+    const archivedArticle = await parseArchivedArticle(join(archiveDirectory, filename), totals);
+    if (archivedArticle) {
+      reparsedTripsBySourceUrl.set(archivedArticle.sourceUrl, archivedArticle.trips);
+    }
+  }
+
+  const lineFilenames = (await listFiles(fahrplanYearDirectory)).filter(
+    (name) => name.endsWith('.json') && name !== 'index.json',
+  );
+  const storedTripsByLine = new Map<string, Cancellation[]>();
+  const storedTripsBySourceKey = new Map<string, Cancellation>();
+  for (const filename of lineFilenames) {
+    const line = filename.slice(0, -'.json'.length);
+    const trips = await loadExistingCancellations(join(fahrplanYearDirectory, filename));
+    storedTripsByLine.set(line, trips);
+    for (const trip of trips) {
+      storedTripsBySourceKey.set(getSourceScopedTripKey(trip), trip);
+    }
+  }
+
+  const reconciledTripsByLine = new Map<string, Cancellation[]>();
+  for (const [line, trips] of storedTripsByLine) {
+    reconciledTripsByLine.set(
+      line,
+      trips.filter((trip) => !reparsedTripsBySourceUrl.has(trip.sourceUrl)),
+    );
+  }
+
+  for (const trips of reparsedTripsBySourceUrl.values()) {
+    for (const trip of trips) {
+      const storedTrip = storedTripsBySourceKey.get(getSourceScopedTripKey(trip));
+      const reconciledTrip = storedTrip ? { ...trip, capturedAt: storedTrip.capturedAt } : trip;
+      const lineTrips = reconciledTripsByLine.get(trip.line) ?? [];
+      lineTrips.push(reconciledTrip);
+      reconciledTripsByLine.set(trip.line, lineTrips);
+    }
+  }
+
+  for (const [line, unsortedReconciledTrips] of reconciledTripsByLine) {
+    const storedTrips = storedTripsByLine.get(line) ?? [];
+    const reconciledTrips = [...unsortedReconciledTrips].sort(compareCancellationsBySchedule);
+    const storedTripsByKey = new Map(
+      storedTrips.map((trip) => [getSourceScopedTripKey(trip), trip]),
+    );
+    const reconciledTripKeys = new Set(reconciledTrips.map(getSourceScopedTripKey));
+    const restoredTrips = reconciledTrips.filter(
+      (trip) => !storedTripsByKey.has(getSourceScopedTripKey(trip)),
+    );
+    const removedTrips = storedTrips.filter(
+      (trip) => !reconciledTripKeys.has(getSourceScopedTripKey(trip)),
+    );
+    const correctedTrips = reconciledTrips.filter((trip) => {
+      const storedTrip = storedTripsByKey.get(getSourceScopedTripKey(trip));
+      return storedTrip !== undefined && !isDeepStrictEqual(storedTrip, trip);
+    });
+    if (restoredTrips.length === 0 && removedTrips.length === 0 && correctedTrips.length === 0) {
+      continue;
+    }
+
+    await writeJsonFile(join(fahrplanYearDirectory, `${line}.json`), reconciledTrips);
+    totals.lineFilesWritten += 1;
+    totals.tripsRestored += restoredTrips.length;
+    totals.staleTripsRemoved += removedTrips.length;
+    totals.tripsCorrected += correctedTrips.length;
+    console.log(
+      `  ~ ${line}.json: +${restoredTrips.length} restored, ` +
+        `~${correctedTrips.length} corrected, -${removedTrips.length} removed`,
+    );
+    if (options.verbose) {
+      for (const trip of restoredTrips) console.log(`      + ${formatTrip(trip)}`);
+      for (const trip of correctedTrips) console.log(`      ~ ${formatTrip(trip)}`);
+      for (const trip of removedTrips) console.log(`      - ${formatTrip(trip)}`);
     }
   }
 }
 
 async function main(): Promise<void> {
-  const options = parseArgs(process.argv.slice(2));
-  const years = await findYearDirs(DATA_DIR, options.year);
-  if (years.length === 0) {
+  const options = parseCommandOptions(process.argv.slice(2));
+  const fahrplanYearDirectories = await findFahrplanYearDirectories(DATA_DIR, options.fahrplanYear);
+  if (fahrplanYearDirectories.length === 0) {
     console.log(`No Fahrplan-year archives found under ${DATA_DIR}.`);
     return;
   }
 
-  const totals = newTotals();
-  for (const year of years) {
-    const yearDir = join(DATA_DIR, year);
-    const archiveDir = join(yearDir, ARCHIVE_SUBDIR);
-    const files = (await listFiles(archiveDir)).filter((f) => f.endsWith('.txt'));
-    if (files.length === 0) continue;
+  const totals = createArchiveProcessingTotals();
+  for (const fahrplanYear of fahrplanYearDirectories) {
+    const fahrplanYearDirectory = join(DATA_DIR, fahrplanYear);
+    const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
+    const archiveFilenames = (await listFiles(archiveDirectory)).filter((filename) =>
+      filename.endsWith('.txt'),
+    );
+    if (archiveFilenames.length === 0) continue;
 
-    console.log(`\n${year} (${files.length} archived article(s)):`);
-    if (options.write) {
-      await backfillYear(yearDir, options, totals);
-      continue;
-    }
-    const storedByUrl = await loadStoredByUrl(yearDir);
-    for (const file of files.sort()) {
-      await reportArticle(join(archiveDir, file), storedByUrl, options, totals);
+    console.log(`\n${fahrplanYear} (${archiveFilenames.length} archived article(s)):`);
+    switch (options.operation) {
+      case 'backfill-classifications':
+        await backfillClassificationsForYear(fahrplanYearDirectory, options, totals);
+        continue;
+      case 'reconcile-trips':
+        await reconcileTripsForYear(fahrplanYearDirectory, options, totals);
+        continue;
+      case 'report': {
+        const storedTripsBySourceUrl = await loadStoredTripsBySourceUrl(fahrplanYearDirectory);
+        for (const filename of archiveFilenames.sort()) {
+          await reportArchivedArticleDifferences(
+            join(archiveDirectory, filename),
+            storedTripsBySourceUrl,
+            options,
+            totals,
+          );
+        }
+        continue;
+      }
     }
   }
 
   const parseSummary =
-    `\nSummary: ${totals.articles} archived article(s) — ${totals.parsedOk} parsed, ` +
-    `${totals.parseErrors} parse error(s), ${totals.noUrl} without a URL.\n`;
+    `\nSummary: ${totals.articlesProcessed} archived article(s) — ` +
+    `${totals.articlesParsed} parsed, ` +
+    `${totals.articlesWithoutStructuredTrips} without structured trip rows, ` +
+    `${totals.articlesWithParseErrors} parse error(s), ` +
+    `${totals.articlesWithoutSourceUrl} without a URL.\n`;
 
-  if (options.write) {
-    console.log(
-      parseSummary +
-        `Backfill: re-stamped ${totals.restamped} trip(s) across ${totals.filesWritten} file(s).`,
-    );
-    return;
+  switch (options.operation) {
+    case 'backfill-classifications':
+      console.log(
+        parseSummary +
+          `Backfill: re-stamped ${totals.classificationsUpdated} trip(s) across ` +
+          `${totals.lineFilesWritten} file(s).`,
+      );
+      return;
+    case 'reconcile-trips':
+      console.log(
+        parseSummary +
+          `Reconciled trips: +${totals.tripsRestored} restored, ` +
+          `~${totals.tripsCorrected} corrected, -${totals.staleTripsRemoved} removed across ` +
+          `${totals.lineFilesWritten} file(s).`,
+      );
+      return;
+    case 'report':
+      console.log(
+        parseSummary +
+          `Diffs vs stored: ${totals.articlesWithDifferences} article(s) — ` +
+          `+${totals.tripsAdded} would-add, -${totals.tripsRemoved} would-remove, ` +
+          `${totals.classificationsChanged} classification change(s).`,
+      );
   }
-
-  console.log(
-    parseSummary +
-      `Diffs vs stored: ${totals.articlesWithDiffs} article(s) — +${totals.added} would-add, ` +
-      `-${totals.removed} would-remove, ${totals.causeChanged} cause change(s).`,
-  );
 }
 
 main().catch((err) => {

@@ -2,145 +2,156 @@
 
 Live data index: https://maxliesegang.github.io/kvv-ausfaelle-scraper/
 
-TypeScript/Node script that fetches the public KVV RSS feed, parses the “Betriebsbedingte Fahrtausfälle” detail pages, and publishes structured cancellation data for GitHub Pages to host.
+A TypeScript/Node.js scraper that reads public KVV cancellation notices, extracts affected
+trips, classifies their reported cause, and publishes versioned JSON data through GitHub Pages.
 
 ## What it does
 
-- Downloads the RSS ticker (`RSS_URL`, defaults to `https://www.kvv.de/ticker_rss.xml`) and keeps only cancellation items.
-- Follows every relevant detail page, extracts individual trip cancellations, and deduplicates per run.
-- Writes JSON snapshots into `docs/<year>/<line>.json` and regenerates simple HTML indexes so the data can be browsed online.
+- Reads the KVV RSS ticker and selects cancellation notices.
+- Fetches each relevant detail page and parses the supported human-written trip layouts.
+- Resolves train numbers to lines using Fahrplan-year GTFS definitions, timing signatures, and
+  narrowly scoped overrides for known source conflicts.
+- Applies one article-level `cause` and its matching `causeKeyword` evidence to every parsed trip.
+- Reconciles successfully refetched articles with stored data so updated classifications replace
+  old ones and trips removed from an article do not survive as stale records.
+- Archives stable, readable article text under `docs/<fahrplan-year>/articles/` for traceability
+  and offline parser regression checks.
+- Regenerates the JSON and HTML indices served by GitHub Pages.
 
-## Live data & format
+## Published data
 
-- GitHub Pages serves the contents of `docs/`. The root `index.html` lists available years; each year directory has its own index and JSON files grouped by line.
-- **Navigation**: Both HTML and JSON indices are automatically generated:
-  - `docs/index.html` and `docs/index.json` — Root index listing all years
-  - `docs/<year>/index.html` and `docs/<year>/index.json` — Year-specific index listing all data files
-- **Index JSON format**:
-  - Root index: `{ "years": ["2025", ...], "generatedAt": "..." }`
-  - Year index: `{ "year": "2025", "files": ["S1.json", "S11.json", ...], "generatedAt": "..." }`
-- Sample data entry (see `docs/2025/S5.json`):
+Cancellation data is organized by **Fahrplan year**, not calendar year. For example, a trip on
+2024-12-16 belongs to the 2025 Fahrplan year.
+
+```text
+docs/
+├── index.html
+├── index.json
+└── <fahrplan-year>/
+    ├── index.html
+    ├── index.json
+    ├── <line>.json
+    ├── articles/<detailID>.txt
+    └── train-line-definitions/
+        ├── <line>.json
+        └── ambiguous-trips.json
+```
+
+- Root index JSON:
+  `{ "years": ["2025", ...], "generatedAt": "..." }`
+- Fahrplan-year index JSON:
+  `{ "year": "2025", "files": ["S1.json", ...], "generatedAt": "..." }`
+
+Each line file contains cancellation records:
 
 ```json
 {
   "line": "S5",
   "date": "2025-11-11",
-  "stand": "2025-11-11T09:00:00.000Z",
+  "stand": "2025-11-11T08:00:00.000Z",
   "trainNumber": "84763",
   "fromStop": "Rheinbergstraße",
   "fromTime": "15:51",
   "toStop": "Söllingen",
   "toTime": "16:37",
   "sourceUrl": "https://www.kvv.de/…detailID=Nettro_CMS_256858",
-  "capturedAt": "2025-11-11T17:33:38.985Z"
+  "capturedAt": "2025-11-11T17:33:38.985Z",
+  "cause": "operational",
+  "causeKeyword": "betriebsbedingt"
 }
 ```
 
+`cause` is a best-effort article-level category:
+
+`strike`, `weather`, `emergency`, `vehicle`, `infrastructure`, `technical`, `personnel`,
+`operational`, `disruption`, `construction`, or `unknown`.
+
+`causeKeyword` is the normalized keyword that selected the category. It is `null` when no evidence
+is available, including `unknown` classifications and legacy records that predate evidence
+storage. The field preserves classifier evidence without requiring consumers to re-read the
+archived article.
+
 ## Running locally
 
-1. Requirements: Node 22+
-2. Install deps: `npm ci`
-3. Build TypeScript: `npm run build`
-4. Run the scraper: `npm start` (writes output into `docs/` and refreshes the HTML indexes)
-
-## Useful scripts
-
-**Development:**
-
-- `npm run dev` — Build and run the scraper in one command
-- `npm run build:clean` — Clean dist folder and rebuild from scratch
-- `npm run format` / `npm run format:check` — Prettier formatting
-- `npm run type-check` — TypeScript type checking without emitting files
-- `npm run lint` — Run type-check and format:check together
-
-**Testing:**
-
-- `npm test` — Run all tests
-- `npm run test:unit` — Run only unit tests (fast)
-- `npm run test:watch` — Watch mode - auto-rerun tests on changes
-- `npm run test:coverage` — Run tests with coverage report
-- `npm run test:parser` — Run just parser tests
-- `npm run test:train-lines` — Run just train lines tests
-
-**Data Management:**
-
-- `npm run seed-train-lines -- <gtfs.zip>` — Seed train-number → line mappings from a GTFS feed (see `gtfs-data/README.md`)
-- `npm run fetch-article <url>` — Fetch a live article and save as test data
-
-## Testing
-
-The project uses Node.js built-in test runner with comprehensive test coverage for parser and train line logic.
-
-### Quick Start
+Requirements: Node.js 22 or newer.
 
 ```bash
-# Run all tests
-npm test
-
-# Watch mode (best for development)
-npm run test:watch
-
-# Unit tests only (fast)
-npm run test:unit
-
-# With coverage report
-npm run test:coverage
+npm ci
+npm run dev
 ```
 
-### Test Organization
+`npm run dev` builds and runs the scraper. By default it updates `docs/`; set `DATA_DIR` to use
+another output directory.
 
-```
-tests/
-├── unit/           # Fast, isolated tests
-│   ├── parser.test.ts          # Parser logic
-│   ├── train-lines.test.ts     # Train-number → line resolution (incl. ambiguous-trip timing)
-│   ├── seed-train-lines.test.ts # GTFS seeding + ambiguous-trip sidecar
-│   ├── relevance.test.ts        # Relevance scoring
-│   ├── cause.test.ts            # Cause classification
-│   ├── storage.test.ts          # Bucketing / dedup / write
-│   ├── site-index.test.ts       # Index page generation
-│   └── normalization.test.ts    # Line/number normalization
-├── integration/    # Full workflow tests
-└── helpers/        # Shared test utilities
-```
-
-**Current test coverage:**
-
-- ✅ 89 passing unit tests
-- ✅ Parser: all real-world formats
-- ✅ Train lines: exact match, GTFS-seeded multi-line resolution, and timing-based disambiguation
-
-### Adding Test Articles
-
-Fetch and save a live article as test data:
+To build and run separately:
 
 ```bash
-npm run fetch-article "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?..."
+npm run build
+npm start
 ```
 
-This will:
+## Commands
 
-1. Fetch the HTML from the URL
-2. Parse it to extract line numbers and trips
-3. Save to `test-data/articles/article-<id>-<line>.html`
-4. Generate expected output in `test-data/expected/`
+### Development and validation
 
-New test files are automatically discovered and run with `npm test`.
+- `npm run dev` — build and run the scraper
+- `npm run build` — compile TypeScript
+- `npm run build:clean` — remove `dist/` and rebuild
+- `npm run type-check` — type-check without emitting files
+- `npm run format` / `npm run format:check` — write or verify Prettier formatting
+- `npm run lint` — run type-check and formatting checks
 
-For detailed testing guide, see **[tests/README.md](tests/README.md)**.
+### Tests
+
+- `npm test` — run every test
+- `npm run test:unit` — run the unit suite
+- `npm run test:integration` — run integration tests
+- `npm run test:parser` — run parser regression tests
+- `npm run test:train-lines` — run train-line resolution tests
+- `npm run test:watch` — rerun tests on changes
+- `npm run test:coverage` — generate a coverage report
+
+The unit suite includes real article fixtures, archive/reparse fidelity, the preserved-article
+corpus audit, cause classification, storage reconciliation, Fahrplan-year train-line resolution,
+GTFS seeding, relevance, normalization, and site-index generation.
+
+See [tests/README.md](tests/README.md) for test organization and
+[test-data/README.md](test-data/README.md) for fixture conventions.
+
+### Data maintenance
+
+- `npm run fetch-article -- <url>` — fetch a live detail page and create matching parser fixtures
+- `npm run seed-train-lines -- <gtfs.zip> [--year=N]` — regenerate a Fahrplan year's line
+  definitions and ambiguous-trip timing sidecar; see [gtfs-data/README.md](gtfs-data/README.md)
+- `npm run reparse-archives -- [--year=N] [--verbose]` — read-only comparison of archived
+  articles against stored trips
+- `npm run reparse-archives -- --write [--year=N]` — backfill only `cause` and `causeKeyword`
+  for stored trips that reparse to the same identity
+- `npm run reparse-archives -- --write-trips [--year=N]` — fully reconcile successfully parsed
+  archived articles with stored trips
+
+`--write` and `--write-trips` are mutually exclusive. Parse failures never authorize deletion:
+only successfully parsed archives participate in reconciliation.
 
 ## Configuration
 
-- `RSS_URL` — RSS source URL (default: `https://www.kvv.de/ticker_rss.xml`)
-- `DATA_DIR` — Output directory that GitHub Pages serves (default: `docs`)
-- `FETCH_TIMEOUT_MS` — HTTP timeout in milliseconds (default: `15000`)
+- `RSS_URL` — RSS source URL; default `https://www.kvv.de/ticker_rss.xml`
+- `DATA_DIR` — data and publication root; default `docs`
+- `FETCH_TIMEOUT_MS` — HTTP timeout in milliseconds; default `15000`
 
 ## Automation
 
-`.github/workflows/update-data.yml` runs every 4 hours (UTC) and on manual dispatch. The workflow installs dependencies, builds the scraper, runs it, formats the working tree via `npm run format`, and commits any changes under `docs/` so the published data and HTML indexes stay current.
+`.github/workflows/update-data.yml` runs every four hours and on manual dispatch. It builds and
+runs the scraper, formats generated files, commits changes under `docs/`, and deploys that same
+directory to GitHub Pages. The scraper step may fail visibly after safe data has been committed
+and deployed, keeping parser regressions observable without discarding valid results.
 
-For detailed documentation about the automation agents and workflow, see [AGENTS.md](AGENTS.md).
+## Repository guidance
+
+Path-scoped `AGENTS.md` files document the invariants and validation commands for source,
+parser, train-line definitions, scripts, tests, fixtures, workflows, and generated artifacts.
+Start with [AGENTS.md](AGENTS.md).
 
 ## License
 
-Released under the MIT License. See the `LICENSE` file for details.
+Released under the MIT License. See [LICENSE](LICENSE).

@@ -40,19 +40,5 @@
     "capturedAt": "2026-04-25T16:36:03.901Z",
     "cause": "unknown",
     "causeKeyword": null
-  },
-  {
-    "line": "S71",
-    "date": "2026-07-10",
-    "stand": "2026-07-10T02:01:00.000Z",
-    "trainNumber": "85553",
-    "fromStop": "Karlsruhe Hbf",
-    "fromTime": "05:16",
-    "toStop": "Achern Bf.",
-    "toTime": "06:08",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272130",
-    "capturedAt": "2026-07-10T02:34:37.225Z",
-    "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
   }
 ]

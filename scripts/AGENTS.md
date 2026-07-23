@@ -11,23 +11,27 @@ This is the most specific guidance for maintenance scripts.
 ## Scripts
 
 - `reparse-archives.ts` (`npm run reparse-archives`) — **read-only** report by default. Walks
-  `docs/<year>/articles/*.txt` (the text archive written by `src/article-archive.ts`),
+  `docs/<fahrplan-year>/articles/*.txt` (the text archive written by `src/article-archive.ts`),
   feeds each body back through `parseDetailPage` + cause classification, and diffs the
-  result against the stored `docs/<year>/<line>.json` (matched by the `Quelle:` source URL,
-  keyed by `date|trainNumber|fromTime`). Surfaces parser/classifier improvements (archive
-  now yields trips/causes the stored data lacks) and regressions (archive no longer yields
-  stored trips). Flags: `--year=N`, `--verbose`, and `--write`. Without `--write` it writes
-  nothing and always exits 0. With `--write` it **backfills**: re-stamps `cause`/`causeKeyword`
-  on every stored trip whose article is archived and reparses to the same trip key — the
-  channel by which a cause-taxonomy change reaches history, but only as far as the archive
-  reaches (pre-archive trips keep their stored cause). It touches only those two fields, never
-  trip identity/order, so unaffected files stay byte-identical. Reuses
-  `renderArchive`/`parseArchive` from `src/article-archive.ts` so the archive format lives
-  in one place; the `tests/unit/article-archive.test.ts` "reparse fidelity" suite locks the
-  property that archived text reparses to the same trips as the original HTML.
+  result against stored `docs/<fahrplan-year>/<line>.json`, matched by the `Quelle:` source
+  URL. The base trip identity is `date|trainNumber|fromTime`; report/reconciliation lookups add
+  the appropriate line or source scope when crossing files. Surfaces parser/classifier
+  improvements and regressions. Flags: `--year=N`, `--verbose`, `--write`, and
+  `--write-trips`. The two write flags are mutually exclusive.
+  - No write flag: reports differences, writes nothing, and exits 0 regardless of findings.
+  - `--write`: backfills only `cause`/`causeKeyword` for stored trips that reparse to the same
+    identity. Pre-archive trips retain their stored classification.
+  - `--write-trips`: fully reconciles each successfully parsed archived article with stored
+    trips from the same source URL. It preserves an existing trip's `capturedAt` and uses the
+    canonical storage ordering.
+  - Safety: parse failures and articles without structured train-number rows never participate
+    in deletion.
+    The script reuses `renderArchive`/`parseArchive` from `src/article-archive.ts` so the archive
+    format lives in one place; the `tests/unit/article-archive.test.ts` "reparse fidelity" suite
+    locks the property that archived text reparses to the same trips as the original HTML.
 
 - `seed-train-lines-from-gtfs.ts` (`npm run seed-train-lines`) — (re)generate
-  `docs/<year>/train-line-definitions/*.json` from a GTFS `.zip`: a flat per-line list of
+  `docs/<fahrplan-year>/train-line-definitions/*.json` from a GTFS `.zip`: a flat per-line list of
   train numbers (`<line>.json`, a number kept on every line GTFS runs it on) **plus** the
   `ambiguous-trips.json` timing sidecar for numbers that run on more than one line (per-trip
   `{ line, dep, arr, dates }` from `stop_times.txt` + `calendar_dates.txt`, used to
@@ -46,6 +50,8 @@ This is the most specific guidance for maintenance scripts.
 - Prefer idempotent behavior where possible.
 - Document expected inputs/outputs in script header comments.
 - Avoid hidden writes outside intended targets.
+- Model mutually exclusive command behavior as one named operation internally rather than a set
+  of overlapping booleans; preserve established CLI flags unless intentionally migrating them.
 
 ## Required Validation
 

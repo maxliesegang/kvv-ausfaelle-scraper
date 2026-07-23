@@ -48,8 +48,9 @@ export function getCancellationKey(cancellation: Cancellation): string {
 
 /**
  * Comparator that orders cancellations deterministically for stable file output.
+ * Exported so maintenance scripts produce the same ordering as the live store.
  */
-function compareCancellations(a: Cancellation, b: Cancellation): number {
+export function compareCancellationsBySchedule(a: Cancellation, b: Cancellation): number {
   return (
     a.date.localeCompare(b.date) ||
     a.fromTime.localeCompare(b.fromTime) ||
@@ -57,13 +58,13 @@ function compareCancellations(a: Cancellation, b: Cancellation): number {
   );
 }
 
-interface BucketStats {
+interface CancellationBucketStats {
   /** Trips newly stored this run (not previously present). */
   addedTrips: Cancellation[];
   /** Count of incoming trips that were already stored unchanged. */
   duplicates: number;
-  /** Stored trips whose cause a re-parse reclassified this run. */
-  updatedTrips: Cancellation[];
+  /** Stored trips whose cause or evidence keyword changed this run. */
+  classificationUpdatedTrips: Cancellation[];
   /** Stored trips dropped this run because their source article no longer lists them. */
   removedTrips: Cancellation[];
 }
@@ -75,18 +76,18 @@ function formatTrip(trip: Cancellation): string {
 
 interface CancellationBucket {
   readonly filePath: string;
-  /** Stored entries keyed by trip identity — the single store dedup, cause updates, and
+  /** Stored trips keyed by trip identity — the single store dedup, classification updates, and
    *  ghost-pruning all operate on. */
-  readonly entries: Map<string, Cancellation>;
+  readonly tripsByKey: Map<string, Cancellation>;
   /** Keys of every trip this run produced for this bucket (added, updated, and duplicate alike). */
-  readonly freshKeys: Set<string>;
-  stats: BucketStats;
+  readonly refetchedTripKeys: Set<string>;
+  stats: CancellationBucketStats;
 }
 
 /** A bucket before its existing file is loaded: this run's trips plus their target path. */
-interface PendingBucket {
+interface PendingCancellationBucket {
   readonly filePath: string;
-  readonly freshTrips: Cancellation[];
+  readonly refetchedTrips: Cancellation[];
 }
 
 /** Resolves the Fahrplan (timetable) year a date belongs to, or throws if unknown. */
@@ -106,37 +107,45 @@ function resolveFahrplanYear(date: string): string {
  * Groups trips by their destination file (`<year>/<line>.json`). Pure — performs no
  * I/O — so grouping (and any bad-date error) happens before a single file is touched.
  */
-function groupTripsIntoBuckets(baseDir: string, trips: Cancellation[]): PendingBucket[] {
-  const pendingByPath = new Map<string, PendingBucket>();
+function groupTripsIntoBuckets(
+  baseDir: string,
+  trips: Cancellation[],
+): PendingCancellationBucket[] {
+  const pendingBucketsByPath = new Map<string, PendingCancellationBucket>();
 
   for (const trip of trips) {
     const year = resolveFahrplanYear(trip.date);
     const filePath = join(baseDir, year, `${trip.line}.json`);
-    let pending = pendingByPath.get(filePath);
-    if (!pending) {
-      pending = { filePath, freshTrips: [] };
-      pendingByPath.set(filePath, pending);
+    let pendingBucket = pendingBucketsByPath.get(filePath);
+    if (!pendingBucket) {
+      pendingBucket = { filePath, refetchedTrips: [] };
+      pendingBucketsByPath.set(filePath, pendingBucket);
     }
-    pending.freshTrips.push(trip);
+    pendingBucket.refetchedTrips.push(trip);
   }
 
-  return [...pendingByPath.values()];
+  return [...pendingBucketsByPath.values()];
 }
 
 /** Loads a bucket's existing file, merges this run's trips into it, and prunes ghosts. */
 async function buildBucket(
-  pending: PendingBucket,
+  pendingBucket: PendingCancellationBucket,
   refetchedSourceUrls: ReadonlySet<string>,
 ): Promise<CancellationBucket> {
-  const loaded = await loadExistingCancellations(pending.filePath);
+  const storedTrips = await loadExistingCancellations(pendingBucket.filePath);
   const bucket: CancellationBucket = {
-    filePath: pending.filePath,
-    entries: new Map(loaded.map((entry) => [getCancellationKey(entry), entry])),
-    freshKeys: new Set(),
-    stats: { addedTrips: [], duplicates: 0, updatedTrips: [], removedTrips: [] },
+    filePath: pendingBucket.filePath,
+    tripsByKey: new Map(storedTrips.map((trip) => [getCancellationKey(trip), trip])),
+    refetchedTripKeys: new Set(),
+    stats: {
+      addedTrips: [],
+      duplicates: 0,
+      classificationUpdatedTrips: [],
+      removedTrips: [],
+    },
   };
 
-  for (const trip of pending.freshTrips) {
+  for (const trip of pendingBucket.refetchedTrips) {
     mergeTrip(bucket, trip);
   }
   reconcileBucket(bucket, refetchedSourceUrls);
@@ -155,24 +164,29 @@ async function buildBucket(
  */
 function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
   const tripKey = getCancellationKey(trip);
-  bucket.freshKeys.add(tripKey);
+  bucket.refetchedTripKeys.add(tripKey);
 
-  const existing = bucket.entries.get(tripKey);
-  if (existing === undefined) {
-    bucket.entries.set(tripKey, trip);
+  const storedTrip = bucket.tripsByKey.get(tripKey);
+  if (storedTrip === undefined) {
+    bucket.tripsByKey.set(tripKey, trip);
     bucket.stats.addedTrips.push(trip);
     return;
   }
 
-  if (existing.cause === trip.cause) {
+  if (storedTrip.cause === trip.cause && storedTrip.causeKeyword === trip.causeKeyword) {
     bucket.stats.duplicates += 1;
     return;
   }
 
-  // Cause changed on a re-fetch — carry its evidence keyword along so the two never drift.
-  const updated = { ...existing, cause: trip.cause, causeKeyword: trip.causeKeyword };
-  bucket.entries.set(tripKey, updated);
-  bucket.stats.updatedTrips.push(updated);
+  // Classification changed on a re-fetch — update both fields so the category and its
+  // evidence never drift. This includes evidence-only refinements within the same category.
+  const classificationUpdatedTrip = {
+    ...storedTrip,
+    cause: trip.cause,
+    causeKeyword: trip.causeKeyword,
+  };
+  bucket.tripsByKey.set(tripKey, classificationUpdatedTrip);
+  bucket.stats.classificationUpdatedTrips.push(classificationUpdatedTrip);
 }
 
 /**
@@ -200,11 +214,12 @@ function reconcileBucket(
   bucket: CancellationBucket,
   refetchedSourceUrls: ReadonlySet<string>,
 ): void {
-  for (const [key, entry] of bucket.entries) {
-    const isGhost = refetchedSourceUrls.has(entry.sourceUrl) && !bucket.freshKeys.has(key);
+  for (const [tripKey, storedTrip] of bucket.tripsByKey) {
+    const isGhost =
+      refetchedSourceUrls.has(storedTrip.sourceUrl) && !bucket.refetchedTripKeys.has(tripKey);
     if (isGhost) {
-      bucket.entries.delete(key);
-      bucket.stats.removedTrips.push(entry);
+      bucket.tripsByKey.delete(tripKey);
+      bucket.stats.removedTrips.push(storedTrip);
     }
   }
 }
@@ -214,19 +229,20 @@ function reconcileBucket(
  */
 async function writeBucket(bucket: CancellationBucket): Promise<void> {
   const { filePath, stats } = bucket;
-  const entries = [...bucket.entries.values()].sort(compareCancellations);
-  await writeJsonFile(filePath, entries);
+  const trips = [...bucket.tripsByKey.values()].sort(compareCancellationsBySchedule);
+  await writeJsonFile(filePath, trips);
   console.log(
     'Updated',
     filePath,
-    `(added: ${stats.addedTrips.length}, updated: ${stats.updatedTrips.length}, ` +
+    `(added: ${stats.addedTrips.length}, classifications updated: ` +
+      `${stats.classificationUpdatedTrips.length}, ` +
       `duplicates: ${stats.duplicates}, removed: ${stats.removedTrips.length}, ` +
-      `total: ${entries.length})`,
+      `total: ${trips.length})`,
   );
   for (const trip of stats.addedTrips) {
     console.log('  + added  ', formatTrip(trip));
   }
-  for (const trip of stats.updatedTrips) {
+  for (const trip of stats.classificationUpdatedTrips) {
     console.log('  ~ updated', formatTrip(trip), `→ ${trip.cause}`);
   }
   for (const trip of stats.removedTrips) {
@@ -235,24 +251,24 @@ async function writeBucket(bucket: CancellationBucket): Promise<void> {
 }
 
 function summarizeBuckets(buckets: Iterable<CancellationBucket>): {
-  added: number;
-  updated: number;
-  duplicates: number;
-  removed: number;
+  tripsAdded: number;
+  classificationsUpdated: number;
+  duplicateTrips: number;
+  staleTripsRemoved: number;
 } {
-  let added = 0;
-  let updated = 0;
-  let duplicates = 0;
-  let removed = 0;
+  let tripsAdded = 0;
+  let classificationsUpdated = 0;
+  let duplicateTrips = 0;
+  let staleTripsRemoved = 0;
 
   for (const bucket of buckets) {
-    added += bucket.stats.addedTrips.length;
-    updated += bucket.stats.updatedTrips.length;
-    duplicates += bucket.stats.duplicates;
-    removed += bucket.stats.removedTrips.length;
+    tripsAdded += bucket.stats.addedTrips.length;
+    classificationsUpdated += bucket.stats.classificationUpdatedTrips.length;
+    duplicateTrips += bucket.stats.duplicates;
+    staleTripsRemoved += bucket.stats.removedTrips.length;
   }
 
-  return { added, updated, duplicates, removed };
+  return { tripsAdded, classificationsUpdated, duplicateTrips, staleTripsRemoved };
 }
 
 /**
@@ -260,20 +276,21 @@ function summarizeBuckets(buckets: Iterable<CancellationBucket>): {
  * Merges with existing data and reports statistics.
  */
 export async function saveCancellations(baseDir: string, trips: Cancellation[]): Promise<void> {
-  // Articles we successfully re-fetched this run; their fresh trip set is authoritative.
+  // Articles we successfully re-fetched this run; their refetched trip set is authoritative.
   const refetchedSourceUrls = new Set(trips.map((trip) => trip.sourceUrl));
 
   // Group by destination file first (pure), then load + merge + write each in parallel.
   const pendingBuckets = groupTripsIntoBuckets(baseDir, trips);
   const buckets = await Promise.all(
-    pendingBuckets.map((pending) => buildBucket(pending, refetchedSourceUrls)),
+    pendingBuckets.map((pendingBucket) => buildBucket(pendingBucket, refetchedSourceUrls)),
   );
   await Promise.all(buckets.map(writeBucket));
 
   const totals = summarizeBuckets(buckets);
   console.log(
-    `Summary: added ${totals.added} new cancellations, ` +
-      `updated ${totals.updated} causes, ` +
-      `skipped ${totals.duplicates} duplicates, removed ${totals.removed} stale entries.`,
+    `Summary: added ${totals.tripsAdded} new cancellations, ` +
+      `updated ${totals.classificationsUpdated} classifications, ` +
+      `skipped ${totals.duplicateTrips} duplicates, ` +
+      `removed ${totals.staleTripsRemoved} stale entries.`,
   );
 }

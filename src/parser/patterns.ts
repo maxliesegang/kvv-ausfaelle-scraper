@@ -23,15 +23,15 @@ export const PATTERNS = {
    * Handles optional "Uhr" suffix after times
    * Example: "123 Karlsruhe Hbf (10:30 Uhr) - Bruchsal (11:00)"
    */
-  TRIP_OLD_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*[-–]+\s*(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)/,
+  TRIP_STOP_TIME_REQUIRED_PARENTHESES_FORMAT:
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*[-–]+\s*(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)/i,
 
   /**
    * Matches trip format: <trainNumber> <fromStop> <fromTime> Uhr - <toStop> <toTime> Uhr
    * Example: "85582 Albtalbahnhof 18:24 Uhr - Tullastraße 18:44 Uhr"
    */
   TRIP_STOP_TIME_FORMAT:
-    /^(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/,
+    /^(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
 
   /**
    * Matches trip format using "ab/bis/an": <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
@@ -39,7 +39,7 @@ export const PATTERNS = {
    * A trailing parenthesized annotation (e.g. "(LT)" for Linientaxi) is tolerated.
    */
   TRIP_AB_BIS_FORMAT:
-    /^(\d+)\s+(.+?)\s+ab\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+an\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
+    /^(\d+)\s+(.+?)\s+(?:ab\s+)?(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+an\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
 
   /**
    * Matches the prose "entfällt zwischen" form KVV sometimes uses instead of a tabular row:
@@ -55,18 +55,26 @@ export const PATTERNS = {
    * Loose stop/time format tolerating optional parentheses around EITHER time independently:
    * <trainNumber> <fromStop> [(]<fromTime> Uhr[)] - <toStop> [(]<toTime> Uhr[)]
    * Example (asymmetric parens): "85879 Heilbronn Hbf (23:50 Uhr) - Sinsheim Hbf 00:48 Uhr"
-   * A superset of the stricter stop/time and old formats, so it is tried LAST — only lines
-   * every stricter format rejects reach it. Still requires a leading train number, which
-   * keeps parenthesized date-ranges (no leading number) from matching.
+   * A superset of the stricter stop/time formats, so it is tried LAST — only lines every
+   * stricter format rejects reach it. Still requires a leading train number, which keeps
+   * parenthesized date-ranges (no leading number) from matching.
    */
-  TRIP_STOP_TIME_PARENS_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*[-–]+\s*(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*$/,
+  TRIP_STOP_TIME_OPTIONAL_PARENTHESES_FORMAT:
+    /^(\d+)\s+(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*[-–]+\s*(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*$/i,
+
+  /**
+   * Same parenthesized stop/time layout with the separator accidentally omitted.
+   * Example: "85029 Knielingen (21:41 Uhr) Pforzheim (22:50 Uhr)".
+   * Both times must be parenthesized, keeping this typo-tolerant form narrow.
+   */
+  TRIP_STOP_TIME_REQUIRED_PARENTHESES_MISSING_SEPARATOR_FORMAT:
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
 
   /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
    * Example: "84888 08:38 Uhr Söllingen Bahnhof - 10:07 Uhr Germersheim Bahnhof"
    */
-  TRIP_NEW_FORMAT:
+  TRIP_TIME_STOP_FORMAT:
     /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
 
   /**

@@ -11,18 +11,28 @@ This is the most specific guidance for published artifacts.
   - `docs/index.html`
   - `docs/index.json`
 - Per Fahrplan year:
-  - `docs/<year>/index.html`
-  - `docs/<year>/index.json`
+  - `docs/<fahrplan-year>/index.html`
+  - `docs/<fahrplan-year>/index.json`
 - Per line data:
-  - `docs/<year>/<line>.json`
+  - `docs/<fahrplan-year>/<line>.json`
 - Per year train mappings:
-  - `docs/<year>/train-line-definitions/*.json`
+  - `docs/<fahrplan-year>/train-line-definitions/*.json`
 - Per article text archive (traceability):
-  - `docs/<year>/articles/<detailID>.txt`
+  - `docs/<fahrplan-year>/articles/<detailID>.txt`
 
 ## Data Organization Rule
 
 Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` belongs to Fahrplan year `2025`.
+
+## Cancellation Contract
+
+- Per-line JSON files contain `Cancellation` records from `src/types.ts`.
+- `cause` and `causeKeyword` are a paired article-level classification. `causeKeyword` is `null`
+  when no evidence is available, either because no rule matched or because the stored record
+  predates evidence capture.
+- `stand` is the source article's Europe/Berlin timestamp represented as UTC ISO time.
+- `date` is the source-local trip date and must not change because of a UTC date rollover.
+- Keep `capturedAt` stable when offline reconciliation corrects an already stored trip.
 
 ## Change Expectations
 

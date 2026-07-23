@@ -7,11 +7,29 @@ When multiple files apply, use the closest file to the edited path as the most s
 
 - Project goal: scrape KVV cancellation-style notices, extract structured trip cancellation data, and publish generated artifacts under `docs/`.
 - Data model rule: cancellation data and train-line definitions are organized by **Fahrplan year**, not calendar year.
+- Published records use the `Cancellation` contract in `src/types.ts`; keep persisted field names
+  backward-compatible unless a migration is explicitly part of the task.
+- Terminology:
+  - **article/notice**: one KVV detail page and source URL
+  - **trip**: one parsed journey affected by that article
+  - **cancellation**: the persisted structured trip record
+  - **classification**: the paired `cause` and `causeKeyword` evidence
+  - **Fahrplan year**: the timetable-period bucket used for storage and mappings
 - Primary commands:
   - `npm run dev`
   - `npm run test:unit`
   - `npm run type-check`
   - `npm run format:check`
+
+## Naming
+
+- Prefer domain names over chronology or implementation history. Name parser formats by field
+  shape (for example, stop/time order and required parentheses), not "old" or "new".
+- Include scope in lookup names when identity changes across boundaries, such as source-scoped or
+  line-scoped trip keys.
+- Name counters by the entity and outcome they count (`tripsRestored`,
+  `articlesWithParseErrors`, `classificationsUpdated`), not generic verbs such as `changed` or
+  `written`.
 
 ## Path Map
 

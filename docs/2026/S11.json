@@ -674,7 +674,7 @@
   {
     "line": "S11",
     "date": "2026-07-11",
-    "stand": "2026-07-11T11:55:00.000Z",
+    "stand": "2026-07-11T09:55:00.000Z",
     "trainNumber": "56001",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "01:02",
@@ -688,7 +688,7 @@
   {
     "line": "S11",
     "date": "2026-07-11",
-    "stand": "2026-07-11T11:55:00.000Z",
+    "stand": "2026-07-11T09:55:00.000Z",
     "trainNumber": "56010",
     "fromStop": "Hochstetten",
     "fromTime": "02:42",
@@ -702,7 +702,7 @@
   {
     "line": "S11",
     "date": "2026-07-13",
-    "stand": "2026-07-13T09:51:00.000Z",
+    "stand": "2026-07-13T13:52:00.000Z",
     "trainNumber": "20025",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "11:18",
@@ -716,7 +716,7 @@
   {
     "line": "S11",
     "date": "2026-07-14",
-    "stand": "2026-07-14T12:39:00.000Z",
+    "stand": "2026-07-14T10:39:00.000Z",
     "trainNumber": "20066",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "20:05",
@@ -730,7 +730,7 @@
   {
     "line": "S11",
     "date": "2026-07-14",
-    "stand": "2026-07-14T12:39:00.000Z",
+    "stand": "2026-07-14T10:39:00.000Z",
     "trainNumber": "20074",
     "fromStop": "Hochstetten",
     "fromTime": "22:42",
@@ -744,7 +744,7 @@
   {
     "line": "S11",
     "date": "2026-07-16",
-    "stand": "2026-07-16T11:01:00.000Z",
+    "stand": "2026-07-16T09:01:00.000Z",
     "trainNumber": "20033",
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "12:51",
@@ -758,7 +758,7 @@
   {
     "line": "S11",
     "date": "2026-07-16",
-    "stand": "2026-07-16T11:01:00.000Z",
+    "stand": "2026-07-16T09:01:00.000Z",
     "trainNumber": "10050",
     "fromStop": "Hochstetten",
     "fromTime": "14:32",
@@ -772,7 +772,7 @@
   {
     "line": "S11",
     "date": "2026-07-16",
-    "stand": "2026-07-16T11:01:00.000Z",
+    "stand": "2026-07-16T09:01:00.000Z",
     "trainNumber": "20045",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "16:15",
@@ -786,7 +786,7 @@
   {
     "line": "S11",
     "date": "2026-07-16",
-    "stand": "2026-07-16T11:01:00.000Z",
+    "stand": "2026-07-16T09:01:00.000Z",
     "trainNumber": "10062",
     "fromStop": "Hochstetten",
     "fromTime": "17:32",
@@ -800,7 +800,7 @@
   {
     "line": "S11",
     "date": "2026-07-16",
-    "stand": "2026-07-16T11:01:00.000Z",
+    "stand": "2026-07-16T09:01:00.000Z",
     "trainNumber": "10071",
     "fromStop": "Ettlingen Freibad",
     "fromTime": "18:54",
@@ -814,7 +814,7 @@
   {
     "line": "S11",
     "date": "2026-07-16",
-    "stand": "2026-07-16T11:01:00.000Z",
+    "stand": "2026-07-16T09:01:00.000Z",
     "trainNumber": "20068",
     "fromStop": "Hochstetten",
     "fromTime": "20:12",
@@ -828,7 +828,7 @@
   {
     "line": "S11",
     "date": "2026-07-17",
-    "stand": "2026-07-17T06:39:00.000Z",
+    "stand": "2026-07-17T04:39:00.000Z",
     "trainNumber": "20039",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "14:48",
@@ -842,7 +842,7 @@
   {
     "line": "S11",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "26039",
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "15:51",
@@ -856,7 +856,7 @@
   {
     "line": "S11",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "26048",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "18:48",
@@ -870,7 +870,7 @@
   {
     "line": "S11",
     "date": "2026-07-18",
-    "stand": "2026-07-18T07:30:00.000Z",
+    "stand": "2026-07-18T05:30:00.000Z",
     "trainNumber": "26053",
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "19:21",
@@ -884,7 +884,7 @@
   {
     "line": "S11",
     "date": "2026-07-20",
-    "stand": "2026-07-20T06:00:00.000Z",
+    "stand": "2026-07-20T04:00:00.000Z",
     "trainNumber": "20022",
     "fromStop": "Neureut Kirchfeld",
     "fromTime": "09:06",
@@ -898,7 +898,7 @@
   {
     "line": "S11",
     "date": "2026-07-21",
-    "stand": "2026-07-21T12:06:00.000Z",
+    "stand": "2026-07-21T10:06:00.000Z",
     "trainNumber": "20029",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "12:15",
@@ -912,7 +912,7 @@
   {
     "line": "S11",
     "date": "2026-07-21",
-    "stand": "2026-07-21T12:06:00.000Z",
+    "stand": "2026-07-21T10:06:00.000Z",
     "trainNumber": "20042",
     "fromStop": "Hochstetten",
     "fromTime": "13:42",
@@ -926,7 +926,7 @@
   {
     "line": "S11",
     "date": "2026-07-21",
-    "stand": "2026-07-21T12:06:00.000Z",
+    "stand": "2026-07-21T10:06:00.000Z",
     "trainNumber": "20043",
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "15:21",
@@ -940,7 +940,7 @@
   {
     "line": "S11",
     "date": "2026-07-21",
-    "stand": "2026-07-21T12:06:00.000Z",
+    "stand": "2026-07-21T10:06:00.000Z",
     "trainNumber": "20044",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "15:21",
@@ -954,7 +954,7 @@
   {
     "line": "S11",
     "date": "2026-07-21",
-    "stand": "2026-07-21T12:06:00.000Z",
+    "stand": "2026-07-21T10:06:00.000Z",
     "trainNumber": "20045",
     "fromStop": "Ittersbach Rathaus",
     "fromTime": "15:51",

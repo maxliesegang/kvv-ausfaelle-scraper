@@ -7,8 +7,9 @@
  * cancellation and attach a best-effort category so consumers can filter downstream.
  *
  * The classifier is intentionally a simple ordered keyword match: the first category
- * whose keywords appear in the (normalized) text wins, so list order encodes priority
- * for notices that mention several causes (see {@link CAUSE_CLASSIFIERS}).
+ * whose keywords appear in the (normalized) text wins, so category order encodes priority
+ * for notices that mention several causes (see {@link CAUSE_CLASSIFICATION_RULES}). Within that
+ * category, the longest matching keyword is retained as the most specific evidence.
  *
  * Every classification also reports *which* keyword matched ({@link CauseClassification}).
  * That evidence is stored alongside each cancellation so the ambiguous buckets — chiefly
@@ -29,11 +30,13 @@ import { normalizeGermanText } from './utils/normalization.js';
  * and `technical` (a fault KVV named only generically). The staffing family is split into
  * `personnel` (KVV *named* a staffing/sickness cause — the high-precision signal) and
  * `operational` (a bare `betriebsbedingt` with no specifics — an ambiguous euphemism that
- * is often, but not provably, staffing). `disruption` is a bare `Betriebsstörung`.
+ * is often, but not provably, staffing). `emergency` covers a named emergency-services
+ * intervention, while `disruption` is a bare `Betriebsstörung`.
  */
 export type CancellationCause =
   | 'strike'
   | 'weather'
+  | 'emergency'
   | 'vehicle'
   | 'infrastructure'
   | 'technical'
@@ -55,7 +58,7 @@ export interface CauseClassification {
   readonly causeKeyword: string | null;
 }
 
-interface CauseClassifier {
+interface CauseClassificationRule {
   readonly cause: Exclude<CancellationCause, 'unknown'>;
   /** Keywords in normalized form (umlauts expanded to ae/oe/ue, see normalizeGermanText). */
   readonly keywords: readonly string[];
@@ -65,7 +68,7 @@ interface CauseClassifier {
  * Ordered by priority — first match wins. The order encodes "most specific / most certain
  * cause first":
  *
- *   strike, weather        — unambiguous external causes.
+ *   strike, weather, emergency — unambiguous external causes.
  *   vehicle, infrastructure — a *named* technical fault, split by what broke.
  *   technical              — a fault KVV named only generically (`technischer Defekt`).
  *   personnel              — KVV *named* a staffing/sickness cause. Sits ABOVE `operational`
@@ -76,7 +79,7 @@ interface CauseClassifier {
  *                            "Betriebsstörung wegen Fahrzeugstörung" still resolves to vehicle.
  *   construction           — broad building/closure terms (`sperrung` etc.), matched last.
  */
-const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
+const CAUSE_CLASSIFICATION_RULES: readonly CauseClassificationRule[] = [
   {
     cause: 'strike',
     keywords: ['streik', 'arbeitskampf', 'warnstreik'],
@@ -95,6 +98,12 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
       'witterungsbedingt',
       'hochwasser',
     ],
+  },
+  {
+    // A named emergency-services intervention is more informative than the generic
+    // disruption or closure language that commonly accompanies it.
+    cause: 'emergency',
+    keywords: ['feuerwehreinsatz'],
   },
   {
     // A named fault on the rolling stock (the train itself). Keywords are compound nouns on
@@ -117,6 +126,8 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
       'weichenschaden',
       'gleisschaden',
       'bahnuebergangsstoerung',
+      'stellwerkausfall',
+      'stellwerksstoerung',
     ],
   },
   {
@@ -146,7 +157,7 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
     // with `personnel`: it is often staffing, but KVV did not say so, and inferring it would
     // fabricate a signal. Kept as the honest ambiguous residual.
     cause: 'operational',
-    keywords: ['betriebsbedingt'],
+    keywords: ['betriebsbedingt', 'dichte zugfolge'],
   },
   {
     // Unspecified acute operational disruption (`Betriebsstörung`): KVV reports a disruption
@@ -178,6 +189,23 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
   },
 ];
 
+/** Returns the longest matching keyword without allocating an intermediate matches array. */
+function findMostSpecificMatchingKeyword(
+  normalizedText: string,
+  keywords: readonly string[],
+): string | undefined {
+  let mostSpecific: string | undefined;
+  for (const keyword of keywords) {
+    if (
+      normalizedText.includes(keyword) &&
+      (mostSpecific === undefined || keyword.length > mostSpecific.length)
+    ) {
+      mostSpecific = keyword;
+    }
+  }
+  return mostSpecific;
+}
+
 /**
  * Classifies the cause of a cancellation from free article text, reporting both the category
  * and the keyword that matched.
@@ -189,8 +217,8 @@ const CAUSE_CLASSIFIERS: readonly CauseClassifier[] = [
  */
 export function classifyCauseWithEvidence(text: string): CauseClassification {
   const normalized = normalizeGermanText(text);
-  for (const { cause, keywords } of CAUSE_CLASSIFIERS) {
-    const causeKeyword = keywords.find((k) => normalized.includes(k));
+  for (const { cause, keywords } of CAUSE_CLASSIFICATION_RULES) {
+    const causeKeyword = findMostSpecificMatchingKeyword(normalized, keywords);
     if (causeKeyword !== undefined) {
       return { cause, causeKeyword };
     }

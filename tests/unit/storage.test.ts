@@ -19,6 +19,7 @@ function createCancellation(overrides: Partial<Cancellation> = {}): Cancellation
     sourceUrl: 'test://article',
     capturedAt: '2024-12-16T12:05:00.000Z',
     cause: 'operational',
+    causeKeyword: 'betriebsbedingt',
     ...overrides,
   };
 }
@@ -108,6 +109,31 @@ describe('Storage', () => {
       const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
       assert.strictEqual(storedTrips.length, 1);
       assert.strictEqual(storedTrips[0]?.cause, 'operational');
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  it('should overwrite refined evidence when the cause category stays the same', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+
+    try {
+      console.log = () => undefined;
+
+      const existingTrips = [createCancellation({ cause: 'weather', causeKeyword: 'witterung' })];
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+
+      await saveCancellations(tempDir, [
+        createCancellation({ cause: 'weather', causeKeyword: 'witterungsbedingt' }),
+      ]);
+
+      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      assert.strictEqual(storedTrips[0]?.cause, 'weather');
+      assert.strictEqual(storedTrips[0]?.causeKeyword, 'witterungsbedingt');
     } finally {
       console.log = originalConsoleLog;
       await rm(tempDir, { recursive: true, force: true });

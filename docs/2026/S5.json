@@ -7940,7 +7940,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84868",
     "fromStop": "Söllingen Bf.",
     "fromTime": "01:01",
@@ -7954,7 +7954,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84867",
     "fromStop": "Wörth Badepark",
     "fromTime": "02:20",
@@ -7968,7 +7968,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84813",
     "fromStop": "Karlsruhe-Marktplatz",
     "fromTime": "10:40",
@@ -7982,7 +7982,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84726",
     "fromStop": "Lameyplatz",
     "fromTime": "10:58",
@@ -7996,7 +7996,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84737",
     "fromStop": "Rheinbergstraße",
     "fromTime": "11:12",
@@ -8010,7 +8010,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84730",
     "fromStop": "Söllingen Bf.",
     "fromTime": "11:18",
@@ -8038,7 +8038,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84836",
     "fromStop": "Tullastraße",
     "fromTime": "14:10",
@@ -8052,7 +8052,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84829",
     "fromStop": "Wörth Badepark",
     "fromTime": "15:05",
@@ -8080,7 +8080,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85758",
     "fromStop": "Söllingen Bf.",
     "fromTime": "16:18",
@@ -8108,7 +8108,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84771",
     "fromStop": "Rheinbergstraße",
     "fromTime": "17:12",
@@ -8122,7 +8122,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84764",
     "fromStop": "Tullastraße",
     "fromTime": "17:41",
@@ -8136,7 +8136,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85015",
     "fromStop": "Starkstr.",
     "fromTime": "17:47",
@@ -8150,7 +8150,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84777",
     "fromStop": "Rheinbergstraße",
     "fromTime": "18:12",
@@ -8192,7 +8192,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84774",
     "fromStop": "Berghausen Bf.",
     "fromTime": "19:04",
@@ -8206,7 +8206,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85014",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "19:06",
@@ -8220,7 +8220,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84856",
     "fromStop": "Tullastraße",
     "fromTime": "19:11",
@@ -8234,7 +8234,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84776",
     "fromStop": "Karlsruhe Tullatr.",
     "fromTime": "19:41",
@@ -8262,7 +8262,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84785",
     "fromStop": "Rheinbergstraße",
     "fromTime": "19:52",
@@ -8276,7 +8276,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84847",
     "fromStop": "Wörth Badepark",
     "fromTime": "20:05",
@@ -8290,7 +8290,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85018",
     "fromStop": "Karlsruhe Tullatr.",
     "fromTime": "20:46",
@@ -8304,7 +8304,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84860",
     "fromStop": "Söllingen Bf.",
     "fromTime": "20:51",
@@ -8318,7 +8318,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85029",
     "fromStop": "Knielingen Rheinbergstr",
     "fromTime": "21:42",
@@ -8332,7 +8332,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84862",
     "fromStop": "Söllingen Bf.",
     "fromTime": "21:50",
@@ -8346,7 +8346,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "84851",
     "fromStop": "Wörth Badepark",
     "fromTime": "22:05",
@@ -8360,7 +8360,7 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85855",
     "fromStop": "Wörth Badepark",
     "fromTime": "23:09",
@@ -8374,12 +8374,12 @@
   {
     "line": "S5",
     "date": "2026-07-04",
-    "stand": "2026-07-04T12:30:00.000Z",
+    "stand": "2026-07-04T10:30:00.000Z",
     "trainNumber": "85096",
     "fromStop": "Söllingen Bf.",
     "fromTime": "23:19",
-    "toStop": "Tullastraße an 23:36 Uhr (LT) Sonntag, 05.07.2026: 84945 Tullastraße ab 00:37 Uhr bis Söllingen Bf.",
-    "toTime": "00:56",
+    "toStop": "Tullastraße",
+    "toTime": "23:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
     "capturedAt": "2026-07-05T02:39:45.556Z",
     "cause": "personnel",
@@ -8388,7 +8388,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84863",
     "fromStop": "Wörth Badepark",
     "fromTime": "0:05",
@@ -8402,7 +8402,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84787",
     "fromStop": "Knielingen Rheinbergstr",
     "fromTime": "0:42",
@@ -8416,7 +8416,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84784",
     "fromStop": "Söllingen Bf",
     "fromTime": "01:01",
@@ -8430,7 +8430,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84800",
     "fromStop": "KA Tullastraße",
     "fromTime": "04:45",
@@ -8444,7 +8444,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84795",
     "fromStop": "Wörth Badepark",
     "fromTime": "05:50",
@@ -8458,7 +8458,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84816",
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "07:09",
@@ -8472,7 +8472,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84832",
     "fromStop": "Karlsruhe Tullastr.",
     "fromTime": "13:10",
@@ -8486,12 +8486,12 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84825",
     "fromStop": "Wörth Badepark",
     "fromTime": "14:05",
-    "toStop": "Karlsruhe Tullastr.",
-    "toTime": "14:46",
+    "toStop": "Söllingen Bf",
+    "toTime": "15:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271645",
     "capturedAt": "2026-07-05T10:07:35.528Z",
     "cause": "personnel",
@@ -8500,7 +8500,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84829",
     "fromStop": "Karlsruhe Tullatr.",
     "fromTime": "15:46",
@@ -8514,7 +8514,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84844",
     "fromStop": "Söllingen Bf",
     "fromTime": "15:50",
@@ -8528,7 +8528,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84994",
     "fromStop": "Karlsruhe Tullatr.",
     "fromTime": "15:50",
@@ -8542,7 +8542,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "85009",
     "fromStop": "Knielingen Rheinbergstr",
     "fromTime": "16:42",
@@ -8556,7 +8556,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84848",
     "fromStop": "Söllingen Bf",
     "fromTime": "16:51",
@@ -8570,7 +8570,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84837",
     "fromStop": "Wörth Badepark",
     "fromTime": "17:05",
@@ -8584,7 +8584,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84841",
     "fromStop": "Wörth Badepark",
     "fromTime": "18:05",
@@ -8598,7 +8598,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "85008",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "18:06",
@@ -8612,7 +8612,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84856",
     "fromStop": "Söllingen Bf",
     "fromTime": "18:50",
@@ -8626,7 +8626,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84858",
     "fromStop": "Söllingen Bf",
     "fromTime": "19:50",
@@ -8640,7 +8640,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84847",
     "fromStop": "Wörth Badepark",
     "fromTime": "20:05",
@@ -8654,7 +8654,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "85095",
     "fromStop": "Knielingen Rheinbergstr",
     "fromTime": "21:00",
@@ -8668,7 +8668,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84849",
     "fromStop": "Wörth Badepark",
     "fromTime": "21:07",
@@ -8682,7 +8682,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84862",
     "fromStop": "Söllingen Bf",
     "fromTime": "21:51",
@@ -8696,7 +8696,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "85090",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "22:46",
@@ -8710,7 +8710,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84864",
     "fromStop": "Söllingen Bf",
     "fromTime": "22:50",
@@ -8724,7 +8724,7 @@
   {
     "line": "S5",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84855",
     "fromStop": "Wörth Badepark",
     "fromTime": "23:09",
@@ -8738,7 +8738,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T19:03:00.000Z",
+    "stand": "2026-07-06T17:03:00.000Z",
     "trainNumber": "84782",
     "fromStop": "Söllingen",
     "fromTime": "00:02",
@@ -8752,7 +8752,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84792",
     "fromStop": "KA Tullastraße",
     "fromTime": "04:06",
@@ -8766,7 +8766,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84796",
     "fromStop": "KA Tullastraße",
     "fromTime": "04:36",
@@ -8780,7 +8780,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84791",
     "fromStop": "Wörth Badepark",
     "fromTime": "05:05",
@@ -8794,12 +8794,12 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84793",
     "fromStop": "Wörth Badepark",
     "fromTime": "05:45",
-    "toStop": "KA Tullastraße",
-    "toTime": "06:26",
+    "toStop": "Lameyplatz",
+    "toTime": "06:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271753",
     "capturedAt": "2026-07-06T02:44:38.743Z",
     "cause": "operational",
@@ -8808,7 +8808,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84711",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "05:52",
@@ -8822,7 +8822,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84810",
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "06:18",
@@ -8836,7 +8836,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84805",
     "fromStop": "Wörth Badepark",
     "fromTime": "07:35",
@@ -8850,7 +8850,7 @@
   {
     "line": "S5",
     "date": "2026-07-06",
-    "stand": "2026-07-06T00:17:00.000Z",
+    "stand": "2026-07-05T22:17:00.000Z",
     "trainNumber": "84820",
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "08:37",
@@ -8864,7 +8864,7 @@
   {
     "line": "S5",
     "date": "2026-07-07",
-    "stand": "2026-07-07T16:51:00.000Z",
+    "stand": "2026-07-07T14:51:00.000Z",
     "trainNumber": "84850",
     "fromStop": "Ka. Lameyplatz",
     "fromTime": "18:27",
@@ -8878,7 +8878,7 @@
   {
     "line": "S5",
     "date": "2026-07-07",
-    "stand": "2026-07-07T16:51:00.000Z",
+    "stand": "2026-07-07T14:51:00.000Z",
     "trainNumber": "84845",
     "fromStop": "Wörth Badepark",
     "fromTime": "19:05",
@@ -8892,7 +8892,7 @@
   {
     "line": "S5",
     "date": "2026-07-07",
-    "stand": "2026-07-07T16:51:00.000Z",
+    "stand": "2026-07-07T14:51:00.000Z",
     "trainNumber": "84780",
     "fromStop": "Söllingen",
     "fromTime": "20:18",
@@ -8906,7 +8906,7 @@
   {
     "line": "S5",
     "date": "2026-07-09",
-    "stand": "2026-07-09T03:10:00.000Z",
+    "stand": "2026-07-09T01:10:00.000Z",
     "trainNumber": "84796",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "04:40",
@@ -8920,7 +8920,7 @@
   {
     "line": "S5",
     "date": "2026-07-09",
-    "stand": "2026-07-09T03:10:00.000Z",
+    "stand": "2026-07-09T01:10:00.000Z",
     "trainNumber": "84793",
     "fromStop": "Wörth Badepark",
     "fromTime": "05:45",
@@ -8934,7 +8934,7 @@
   {
     "line": "S5",
     "date": "2026-07-09",
-    "stand": "2026-07-09T03:10:00.000Z",
+    "stand": "2026-07-09T01:10:00.000Z",
     "trainNumber": "84710",
     "fromStop": "Söllingen Bf.",
     "fromTime": "07:18",
@@ -8948,7 +8948,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "85026",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "00:06",
@@ -8962,7 +8962,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "84789",
     "fromStop": "Karlsruhe Rheinbergstraße",
     "fromTime": "02:07",
@@ -8976,7 +8976,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "84788",
     "fromStop": "Söllingen Bf.",
     "fromTime": "03:01",
@@ -8990,7 +8990,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84792",
     "fromStop": "KA-Tullastr.",
     "fromTime": "04:10",
@@ -9004,7 +9004,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84940",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "04:46",
@@ -9018,7 +9018,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84791",
     "fromStop": "Wörth Badepark",
     "fromTime": "05:05",
@@ -9032,7 +9032,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84711",
     "fromStop": "KA-Rheinbergstr.",
     "fromTime": "05:52",
@@ -9046,7 +9046,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84810",
     "fromStop": "Söllingen Bf.",
     "fromTime": "06:18",
@@ -9060,7 +9060,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84814",
     "fromStop": "Söllingen Bf.",
     "fromTime": "07:09",
@@ -9074,7 +9074,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84805",
     "fromStop": "Wörth Badepark",
     "fromTime": "07:35",
@@ -9088,7 +9088,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84971",
     "fromStop": "Wörth Badepark",
     "fromTime": "08:23",
@@ -9102,7 +9102,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T01:58:00.000Z",
+    "stand": "2026-07-09T23:58:00.000Z",
     "trainNumber": "84820",
     "fromStop": "Söllingen Bf.",
     "fromTime": "08:48",
@@ -9116,7 +9116,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T09:12:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "84763",
     "fromStop": "Karlsruhe Rheinbergstraße",
     "fromTime": "15:52",
@@ -9130,7 +9130,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T09:12:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "84846",
     "fromStop": "Söllingen Bf",
     "fromTime": "16:48",
@@ -9144,7 +9144,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "85085",
     "fromStop": "KA-Tullastr.",
     "fromTime": "17:26",
@@ -9158,7 +9158,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T09:12:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "84843",
     "fromStop": "Wörth (Rhein) Badepark",
     "fromTime": "18:05",
@@ -9172,7 +9172,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T09:12:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "84776",
     "fromStop": "Söllingen Bf",
     "fromTime": "19:18",
@@ -9186,7 +9186,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "85084",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "19:46",
@@ -9200,7 +9200,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "85095",
     "fromStop": "Karlsruhe Lameyplatz",
     "fromTime": "21:07",
@@ -9214,7 +9214,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "85097",
     "fromStop": "Wörth Badepark",
     "fromTime": "21:45",
@@ -9228,7 +9228,7 @@
   {
     "line": "S5",
     "date": "2026-07-10",
-    "stand": "2026-07-10T17:09:00.000Z",
+    "stand": "2026-07-10T15:09:00.000Z",
     "trainNumber": "85092",
     "fromStop": "Bad Wildbad Kurpark",
     "fromTime": "23:05",
@@ -9242,7 +9242,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84866",
     "fromStop": "Tullastraße",
     "fromTime": "00:11",
@@ -9256,7 +9256,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85035",
     "fromStop": "Wörth Badepark",
     "fromTime": "00:25",
@@ -9270,7 +9270,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85033",
     "fromStop": "Wörth Badepark",
     "fromTime": "01:20",
@@ -9284,7 +9284,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85032",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "02:09",
@@ -9298,7 +9298,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "80501",
     "fromStop": "Rheinhafen",
     "fromTime": "03:13",
@@ -9312,7 +9312,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85060",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "12:46",
@@ -9326,7 +9326,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85077",
     "fromStop": "Wörth Badepark",
     "fromTime": "14:45",
@@ -9340,7 +9340,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85004",
     "fromStop": "Tullastraße",
     "fromTime": "17:51",
@@ -9354,7 +9354,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85021",
     "fromStop": "Rheinbergstraße",
     "fromTime": "18:42",
@@ -9368,7 +9368,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85018",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "20:06",
@@ -9382,7 +9382,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84853",
     "fromStop": "Starckstraße",
     "fromTime": "23:07",
@@ -9396,7 +9396,7 @@
   {
     "line": "S5",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84864",
     "fromStop": "Tullastraße",
     "fromTime": "23:11",
@@ -9410,7 +9410,7 @@
   {
     "line": "S5",
     "date": "2026-07-13",
-    "stand": "2026-07-13T16:46:00.000Z",
+    "stand": "2026-07-13T14:46:00.000Z",
     "trainNumber": "84782",
     "fromStop": "Karlsruhe Tullastr.",
     "fromTime": "00:21",
@@ -9424,7 +9424,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84782",
     "fromStop": "Söllingen",
     "fromTime": "00:02",
@@ -9438,7 +9438,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84866",
     "fromStop": "Ka Tullastrasse",
     "fromTime": "00:10",
@@ -9452,7 +9452,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84865",
     "fromStop": "Wörth Badepark",
     "fromTime": "01:05",
@@ -9466,7 +9466,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84925",
     "fromStop": "Ka Tullastrasse",
     "fromTime": "18:57",
@@ -9480,7 +9480,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84924",
     "fromStop": "Söllingen",
     "fromTime": "19:38",
@@ -9494,7 +9494,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84929",
     "fromStop": "Ka Tullastrasse",
     "fromTime": "19:57",
@@ -9508,7 +9508,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84928",
     "fromStop": "Berghausen Bf",
     "fromTime": "20:45",
@@ -9522,7 +9522,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84939",
     "fromStop": "Germersheim Bf",
     "fromTime": "21:50",
@@ -9536,7 +9536,7 @@
   {
     "line": "S5",
     "date": "2026-07-14",
-    "stand": "2026-07-14T04:32:00.000Z",
+    "stand": "2026-07-14T02:32:00.000Z",
     "trainNumber": "84943",
     "fromStop": "Germersheim Bf",
     "fromTime": "22:30",
@@ -9550,7 +9550,7 @@
   {
     "line": "S5",
     "date": "2026-07-16",
-    "stand": "2026-07-16T15:22:06.000Z",
+    "stand": "2026-07-16T13:22:06.000Z",
     "trainNumber": "85094",
     "fromStop": "Bad Wildbad Kurpark",
     "fromTime": "00:15",
@@ -9564,7 +9564,7 @@
   {
     "line": "S5",
     "date": "2026-07-16",
-    "stand": "2026-07-16T15:22:06.000Z",
+    "stand": "2026-07-16T13:22:06.000Z",
     "trainNumber": "84945",
     "fromStop": "KA Marktplatz",
     "fromTime": "00:31",
@@ -9578,7 +9578,7 @@
   {
     "line": "S5",
     "date": "2026-07-16",
-    "stand": "2026-07-16T15:22:06.000Z",
+    "stand": "2026-07-16T13:22:06.000Z",
     "trainNumber": "84784",
     "fromStop": "Söllingen Bf.",
     "fromTime": "01:01",
@@ -9592,7 +9592,7 @@
   {
     "line": "S5",
     "date": "2026-07-16",
-    "stand": "2026-07-16T07:52:00.000Z",
+    "stand": "2026-07-16T05:52:00.000Z",
     "trainNumber": "84909",
     "fromStop": "KA Tullastr.",
     "fromTime": "14:57",
@@ -9606,7 +9606,21 @@
   {
     "line": "S5",
     "date": "2026-07-16",
-    "stand": "2026-07-16T07:52:00.000Z",
+    "stand": "2026-07-16T13:22:06.000Z",
+    "trainNumber": "84909",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "14:57",
+    "toStop": "Söllingen Bf.",
+    "toTime": "15:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272642",
+    "capturedAt": "2026-07-16T10:03:32.336Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-16",
+    "stand": "2026-07-16T05:52:00.000Z",
     "trainNumber": "84906",
     "fromStop": "Söllingen Bf.",
     "fromTime": "15:38",
@@ -9620,21 +9634,161 @@
   {
     "line": "S5",
     "date": "2026-07-16",
-    "stand": "2026-07-16T15:22:06.000Z",
+    "stand": "2026-07-16T13:22:06.000Z",
+    "trainNumber": "84906",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "15:38",
+    "toStop": "KA Tullastr.",
+    "toTime": "16:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272642",
+    "capturedAt": "2026-07-16T10:03:32.336Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-16",
+    "stand": "2026-07-16T13:22:06.000Z",
     "trainNumber": "85029",
-    "fromStop": "Knielingen Rheinbergstr. (21:41 Uhr) Pforzheim Hbf. (22:50 Uhr) 74391 Pforzheim Hbf.",
+    "fromStop": "Knielingen Rheinbergstr.",
+    "fromTime": "21:41",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "22:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272642",
+    "capturedAt": "2026-07-23T05:29:08.092Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-16",
+    "stand": "2026-07-16T13:22:06.000Z",
+    "trainNumber": "74391",
+    "fromStop": "Pforzheim Hbf.",
     "fromTime": "23:17",
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "23:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272642",
-    "capturedAt": "2026-07-16T13:39:55.549Z",
+    "capturedAt": "2026-07-23T05:29:08.092Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "85030",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "01:09",
+    "toStop": "Knielingen Rheinbergstr.",
+    "toTime": "02:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "85013",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "17:29",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "18:20",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "85012",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "18:37",
+    "toStop": "Karlsruhe Hauptbahnhof",
+    "toTime": "19:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "84847",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "20:47",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "21:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "85029",
+    "fromStop": "Knielingen Rheinbergstr.",
+    "fromTime": "21:42",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "22:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "84862",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "21:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "22:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "84855",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "23:07",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "23:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "85031",
+    "fromStop": "Knielingen Rheinbergstr.",
+    "fromTime": "23:41",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "00:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S5",
     "date": "2026-07-18",
-    "stand": "2026-07-18T10:00:00.000Z",
+    "stand": "2026-07-18T08:00:00.000Z",
     "trainNumber": "84756",
     "fromStop": "Tullastraße",
     "fromTime": "16:20",
@@ -9648,7 +9802,7 @@
   {
     "line": "S5",
     "date": "2026-07-18",
-    "stand": "2026-07-18T10:00:00.000Z",
+    "stand": "2026-07-18T08:00:00.000Z",
     "trainNumber": "84769",
     "fromStop": "Rheinbergstraße",
     "fromTime": "16:52",
@@ -9662,7 +9816,7 @@
   {
     "line": "S5",
     "date": "2026-07-18",
-    "stand": "2026-07-18T00:54:00.000Z",
+    "stand": "2026-07-17T22:54:00.000Z",
     "trainNumber": "84800",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "4:45",
@@ -9676,7 +9830,7 @@
   {
     "line": "S5",
     "date": "2026-07-18",
-    "stand": "2026-07-18T00:54:00.000Z",
+    "stand": "2026-07-17T22:54:00.000Z",
     "trainNumber": "84795",
     "fromStop": "Wörth Badepark",
     "fromTime": "5:50",
@@ -9690,7 +9844,7 @@
   {
     "line": "S5",
     "date": "2026-07-18",
-    "stand": "2026-07-18T00:54:00.000Z",
+    "stand": "2026-07-17T22:54:00.000Z",
     "trainNumber": "84816",
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "7:09",
@@ -9704,7 +9858,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84863",
     "fromStop": "Wörth Badepark",
     "fromTime": "00:05",
@@ -9718,7 +9872,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84761",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "15:12",
@@ -9732,7 +9886,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84831",
     "fromStop": "KA Tullastr.",
     "fromTime": "15:47",
@@ -9746,7 +9900,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84754",
     "fromStop": "Söllingen Bf.",
     "fromTime": "16:01",
@@ -9760,7 +9914,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84758",
     "fromStop": "Söllingen Bf.",
     "fromTime": "16:18",
@@ -9774,7 +9928,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84773",
     "fromStop": "Wörth Bf.",
     "fromTime": "17:02",
@@ -9788,7 +9942,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84775",
     "fromStop": "Knielingen Rheinbergstr.",
     "fromTime": "17:51",
@@ -9802,7 +9956,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84779",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "18:11",
@@ -9816,7 +9970,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84854",
     "fromStop": "Söllingen Bf.",
     "fromTime": "18:48",
@@ -9830,7 +9984,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84781",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "18:51",
@@ -9844,7 +9998,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84772",
     "fromStop": "Söllingen Bf.",
     "fromTime": "19:01",
@@ -9858,7 +10012,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84785",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "19:51",
@@ -9872,7 +10026,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84858",
     "fromStop": "Söllingen Bf.",
     "fromTime": "19:51",
@@ -9886,7 +10040,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84847",
     "fromStop": "Wörth Badepark",
     "fromTime": "20:05",
@@ -9900,7 +10054,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84860",
     "fromStop": "Söllingen Bf.",
     "fromTime": "20:51",
@@ -9914,7 +10068,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84849",
     "fromStop": "Wörth Badepark",
     "fromTime": "21:07",
@@ -9928,7 +10082,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84862",
     "fromStop": "Söllingen Bf.",
     "fromTime": "21:51",
@@ -9942,7 +10096,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84851",
     "fromStop": "Wörth Badepark",
     "fromTime": "22:05",
@@ -9956,7 +10110,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84864",
     "fromStop": "Söllingen Bf.",
     "fromTime": "22:51",
@@ -9970,7 +10124,7 @@
   {
     "line": "S5",
     "date": "2026-07-20",
-    "stand": "2026-07-20T02:57:00.000Z",
+    "stand": "2026-07-20T00:57:00.000Z",
     "trainNumber": "84855",
     "fromStop": "Wörth Badepark",
     "fromTime": "23:07",
@@ -9984,12 +10138,12 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T02:00:00.000Z",
+    "stand": "2026-07-21T00:00:00.000Z",
     "trainNumber": "84950",
-    "fromStop": "Pforzheim Hbf ab",
+    "fromStop": "Pforzheim Hbf",
     "fromTime": "06:25",
-    "toStop": "Karlsruhe Tullastraße an",
-    "toTime": "07:10",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273097",
     "capturedAt": "2026-07-21T02:11:31.317Z",
     "cause": "personnel",
@@ -9998,7 +10152,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T02:00:00.000Z",
+    "stand": "2026-07-21T00:00:00.000Z",
     "trainNumber": "84809",
     "fromStop": "Wörth Badepark",
     "fromTime": "08:05",
@@ -10012,7 +10166,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T02:00:00.000Z",
+    "stand": "2026-07-21T00:00:00.000Z",
     "trainNumber": "84722",
     "fromStop": "Söllingen Bf",
     "fromTime": "09:18",
@@ -10026,7 +10180,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84761",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "15:12",
@@ -10040,7 +10194,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84754",
     "fromStop": "Söllingen Bf.",
     "fromTime": "16:01",
@@ -10054,7 +10208,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84773",
     "fromStop": "Wörth Bf.",
     "fromTime": "17:02",
@@ -10068,7 +10222,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84779",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "18:11",
@@ -10082,7 +10236,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84772",
     "fromStop": "Söllingen Bf.",
     "fromTime": "19:01",
@@ -10096,7 +10250,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84785",
     "fromStop": "KA Rheinbergstraße",
     "fromTime": "19:51",
@@ -10110,7 +10264,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84860",
     "fromStop": "Söllingen Bf.",
     "fromTime": "20:51",
@@ -10124,7 +10278,7 @@
   {
     "line": "S5",
     "date": "2026-07-21",
-    "stand": "2026-07-21T14:19:00.000Z",
+    "stand": "2026-07-21T12:19:00.000Z",
     "trainNumber": "84851",
     "fromStop": "Wörth Badepark",
     "fromTime": "22:05",

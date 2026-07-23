@@ -39,9 +39,10 @@ export interface Cancellation {
   readonly cause: CancellationCause;
 
   /**
-   * Normalized keyword that drove the {@link cause} classification (`null` when `unknown`).
-   * Kept as evidence so the ambiguous buckets (`operational`, `unknown`) stay auditable
-   * without re-reading the article archive. See `src/cause.ts`.
+   * Normalized keyword that drove the {@link cause} classification. `null` means evidence is
+   * unavailable, either because the cause is `unknown` or because a legacy stored record predates
+   * evidence capture. Kept so ambiguous categories remain auditable without re-reading the
+   * article archive. See `src/cause.ts`.
    */
   readonly causeKeyword: string | null;
 }

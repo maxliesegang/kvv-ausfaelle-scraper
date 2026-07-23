@@ -603,8 +603,22 @@
   },
   {
     "line": "S51",
+    "date": "2026-07-04",
+    "stand": "2026-07-04T10:30:00.000Z",
+    "trainNumber": "84945",
+    "fromStop": "Tullastraße",
+    "fromTime": "00:37",
+    "toStop": "Söllingen Bf.",
+    "toTime": "00:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_271521",
+    "capturedAt": "2026-07-23T05:29:08.079Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84894",
     "fromStop": "Karlsruhe Tullastr.",
     "fromTime": "11:01",
@@ -618,7 +632,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84903",
     "fromStop": "Germersheim Bahnhof",
     "fromTime": "12:50",
@@ -632,7 +646,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84904",
     "fromStop": "Berghausen Bahnhof",
     "fromTime": "14:42",
@@ -646,7 +660,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84919",
     "fromStop": "Germersheim Bahnhof",
     "fromTime": "16:50",
@@ -660,7 +674,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84922",
     "fromStop": "Berghausen Bahnhof",
     "fromTime": "18:45",
@@ -674,7 +688,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84935",
     "fromStop": "Germersheim Bahnhof",
     "fromTime": "20:50",
@@ -688,7 +702,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84932",
     "fromStop": "Karlsruhe Tullatr.",
     "fromTime": "21:56",
@@ -702,7 +716,7 @@
   {
     "line": "S51",
     "date": "2026-07-05",
-    "stand": "2026-07-05T11:08:00.000Z",
+    "stand": "2026-07-05T09:08:00.000Z",
     "trainNumber": "84945",
     "fromStop": "Germersheim Bf",
     "fromTime": "23:07",
@@ -716,7 +730,7 @@
   {
     "line": "S51",
     "date": "2026-07-06",
-    "stand": "2026-07-06T19:03:00.000Z",
+    "stand": "2026-07-06T17:03:00.000Z",
     "trainNumber": "84929",
     "fromStop": "Ka Tullastrasse",
     "fromTime": "19:56",
@@ -730,7 +744,7 @@
   {
     "line": "S51",
     "date": "2026-07-06",
-    "stand": "2026-07-06T19:03:00.000Z",
+    "stand": "2026-07-06T17:03:00.000Z",
     "trainNumber": "84928",
     "fromStop": "Berghausen Bf",
     "fromTime": "20:45",
@@ -744,7 +758,7 @@
   {
     "line": "S51",
     "date": "2026-07-06",
-    "stand": "2026-07-06T19:03:00.000Z",
+    "stand": "2026-07-06T17:03:00.000Z",
     "trainNumber": "84943",
     "fromStop": "Germersheim Bf",
     "fromTime": "22:30",
@@ -758,7 +772,7 @@
   {
     "line": "S51",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84947",
     "fromStop": "Germersheim Hbf",
     "fromTime": "00:26",
@@ -772,7 +786,7 @@
   {
     "line": "S51",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84919",
     "fromStop": "Rheinbergstraße",
     "fromTime": "17:32",
@@ -786,7 +800,7 @@
   {
     "line": "S51",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84922",
     "fromStop": "Berghausen Bf",
     "fromTime": "18:45",
@@ -800,7 +814,7 @@
   {
     "line": "S51",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "84935",
     "fromStop": "Germersheim Hbf",
     "fromTime": "20:50",
@@ -814,7 +828,7 @@
   {
     "line": "S51",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:05:00.000Z",
+    "stand": "2026-07-11T11:05:00.000Z",
     "trainNumber": "85022",
     "fromStop": "Rheinbergstraße",
     "fromTime": "23:15",
@@ -822,6 +836,34 @@
     "toTime": "00:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272277",
     "capturedAt": "2026-07-11T13:08:13.233Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-13",
+    "stand": "2026-07-13T04:13:00.000Z",
+    "trainNumber": "84892",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "10:01",
+    "toStop": "Karlsruhe Rheinbergstraße",
+    "toTime": "10:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272351",
+    "capturedAt": "2026-07-23T05:29:08.088Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-17",
+    "stand": "2026-07-17T12:23:00.000Z",
+    "trainNumber": "85024",
+    "fromStop": "Pforzheim Bahnhof",
+    "fromTime": "23:06",
+    "toStop": "Germersheim Bahnhof",
+    "toTime": "00:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272859",
+    "capturedAt": "2026-07-23T05:29:08.093Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }

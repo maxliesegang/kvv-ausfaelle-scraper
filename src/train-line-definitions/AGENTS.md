@@ -37,7 +37,7 @@ number's GTFS lines). A number that maps to none of the mentioned lines fails lo
 ## Ambiguous-trip sidecar
 
 ~10% of numbers run on more than one line, and the flat lists cannot say which line a
-given cancellation belongs to. `docs/<year>/train-line-definitions/ambiguous-trips.json`
+given cancellation belongs to. `docs/<fahrplan-year>/train-line-definitions/ambiguous-trips.json`
 (schema and matcher in `ambiguous-trips.ts`) records, per shared number, every GTFS trip's
 `{ line, dep, arr, dates }` signature. `resolveAmbiguousTrip` matches the article's date
 and the trip's departure/arrival times (±2 min tolerance, midnight-aware) to report

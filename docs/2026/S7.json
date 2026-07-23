@@ -1108,7 +1108,7 @@
   {
     "line": "S7",
     "date": "2026-07-05",
-    "stand": "2026-07-05T12:16:00.000Z",
+    "stand": "2026-07-05T10:16:00.000Z",
     "trainNumber": "85577",
     "fromStop": "Karlsruhe Tullatr.",
     "fromTime": "14:13",
@@ -1122,7 +1122,7 @@
   {
     "line": "S7",
     "date": "2026-07-05",
-    "stand": "2026-07-05T12:16:00.000Z",
+    "stand": "2026-07-05T10:16:00.000Z",
     "trainNumber": "85578",
     "fromStop": "Achern Bf.",
     "fromTime": "15:33",
@@ -1136,7 +1136,7 @@
   {
     "line": "S7",
     "date": "2026-07-08",
-    "stand": "2026-07-08T01:00:00.000Z",
+    "stand": "2026-07-07T23:00:00.000Z",
     "trainNumber": "85551",
     "fromStop": "Rastatt",
     "fromTime": "04:55",
@@ -1150,7 +1150,7 @@
   {
     "line": "S7",
     "date": "2026-07-08",
-    "stand": "2026-07-08T01:00:00.000Z",
+    "stand": "2026-07-07T23:00:00.000Z",
     "trainNumber": "85595",
     "fromStop": "Bühl",
     "fromTime": "05:42",
@@ -1164,7 +1164,7 @@
   {
     "line": "S7",
     "date": "2026-07-10",
-    "stand": "2026-07-10T02:01:00.000Z",
+    "stand": "2026-07-10T00:01:00.000Z",
     "trainNumber": "85473",
     "fromStop": "Achern Bf.",
     "fromTime": "06:17",
@@ -1178,7 +1178,7 @@
   {
     "line": "S7",
     "date": "2026-07-10",
-    "stand": "2026-07-10T02:01:00.000Z",
+    "stand": "2026-07-10T00:01:00.000Z",
     "trainNumber": "85567",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "09:17",
@@ -1192,7 +1192,7 @@
   {
     "line": "S7",
     "date": "2026-07-10",
-    "stand": "2026-07-10T02:01:00.000Z",
+    "stand": "2026-07-10T00:01:00.000Z",
     "trainNumber": "85568",
     "fromStop": "Achern",
     "fromTime": "10:33",
@@ -1206,7 +1206,7 @@
   {
     "line": "S7",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:54:00.000Z",
+    "stand": "2026-07-11T11:54:00.000Z",
     "trainNumber": "85574",
     "fromStop": "Albtalbahnhof",
     "fromTime": "14:21",
@@ -1220,7 +1220,7 @@
   {
     "line": "S7",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:54:00.000Z",
+    "stand": "2026-07-11T11:54:00.000Z",
     "trainNumber": "85579",
     "fromStop": "Tullastraße",
     "fromTime": "15:17",
@@ -1234,7 +1234,7 @@
   {
     "line": "S7",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:54:00.000Z",
+    "stand": "2026-07-11T11:54:00.000Z",
     "trainNumber": "85580",
     "fromStop": "Baden-Baden",
     "fromTime": "16:54",
@@ -1248,7 +1248,7 @@
   {
     "line": "S7",
     "date": "2026-07-11",
-    "stand": "2026-07-11T13:54:00.000Z",
+    "stand": "2026-07-11T11:54:00.000Z",
     "trainNumber": "85585",
     "fromStop": "Tullastraße",
     "fromTime": "18:17",
@@ -1262,7 +1262,7 @@
   {
     "line": "S7",
     "date": "2026-07-16",
-    "stand": "2026-07-16T05:28:00.000Z",
+    "stand": "2026-07-16T03:28:00.000Z",
     "trainNumber": "85557",
     "fromStop": "KA Tullastraße",
     "fromTime": "05:53",
@@ -1276,7 +1276,7 @@
   {
     "line": "S7",
     "date": "2026-07-16",
-    "stand": "2026-07-16T05:28:00.000Z",
+    "stand": "2026-07-16T03:28:00.000Z",
     "trainNumber": "85507",
     "fromStop": "Baden Baden Bf.",
     "fromTime": "07:00",
@@ -1290,7 +1290,7 @@
   {
     "line": "S7",
     "date": "2026-07-21",
-    "stand": "2026-07-21T05:59:00.000Z",
+    "stand": "2026-07-21T03:59:00.000Z",
     "trainNumber": "85553",
     "fromStop": "Karlsruhe Hbf.",
     "fromTime": "05:16",
@@ -1304,7 +1304,7 @@
   {
     "line": "S7",
     "date": "2026-07-21",
-    "stand": "2026-07-21T05:59:00.000Z",
+    "stand": "2026-07-21T03:59:00.000Z",
     "trainNumber": "85473",
     "fromStop": "Achern Bf.",
     "fromTime": "06:17",

@@ -36,27 +36,46 @@ describe('Train Lines - Loaded definitions', () => {
 describe('Train Lines - Article-scoped overrides (real data)', () => {
   // Article Nettro_CMS_271521 (2026 S5/S51 notice) forces 85758/85855/85096 onto S5, which
   // GTFS does NOT list them on for that year. Guarded so it self-skips once 2026 is stale.
-  const is2026 = getCurrentFahrplanYear() === 2026;
+  const is2026ScheduleActive = getCurrentFahrplanYear() === 2026;
   const detailId = 'Nettro_CMS_271521';
-  const mentioned = ['S5', 'S51'];
+  const mentionedLines = ['S5', 'S51'];
 
-  it('forces the number onto S5 for the exact article that needs it', { skip: !is2026 }, () => {
-    assert.deepStrictEqual(lookupLinesForTrip({ trainNumber: '85758' }, mentioned, detailId), [
-      'S5',
-    ]);
-  });
+  it(
+    'forces the number onto S5 for the exact article that needs it',
+    { skip: !is2026ScheduleActive },
+    () => {
+      assert.deepStrictEqual(
+        lookupLinesForTrip({ trainNumber: '85758' }, mentionedLines, detailId),
+        ['S5'],
+      );
+    },
+  );
 
-  it('does not apply the override without the detailID', { skip: !is2026 }, () => {
+  it('does not apply the override without the detailID', { skip: !is2026ScheduleActive }, () => {
     // 85758 is only on S41 in GTFS, which the article does not mention → unresolved.
-    assert.deepStrictEqual(lookupLinesForTrip({ trainNumber: '85758' }, mentioned), []);
+    assert.deepStrictEqual(lookupLinesForTrip({ trainNumber: '85758' }, mentionedLines), []);
   });
 
-  it('does not apply the override for a different article', { skip: !is2026 }, () => {
+  it('does not apply the override for a different article', { skip: !is2026ScheduleActive }, () => {
     assert.deepStrictEqual(
-      lookupLinesForTrip({ trainNumber: '85758' }, mentioned, 'Nettro_CMS_000000'),
+      lookupLinesForTrip({ trainNumber: '85758' }, mentionedLines, 'Nettro_CMS_000000'),
       [],
     );
   });
+
+  it(
+    'maps the two DB-Regio conflicts in article 272859 to S6',
+    { skip: !is2026ScheduleActive },
+    () => {
+      const multiLineArticleLines = ['S5', 'S51', 'S6'];
+      for (const trainNumber of ['74351', '74352']) {
+        assert.deepStrictEqual(
+          lookupLinesForTrip({ trainNumber }, multiLineArticleLines, 'Nettro_CMS_272859'),
+          ['S6'],
+        );
+      }
+    },
+  );
 });
 
 describe('Train Lines - Multi-line resolution', () => {

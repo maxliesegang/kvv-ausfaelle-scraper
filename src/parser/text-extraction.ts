@@ -5,6 +5,28 @@
 import { PATTERNS, DEFAULT_LINE } from './patterns.js';
 import { ISO_DATE_LENGTH } from '../utils/constants.js';
 
+/** Last Sunday of a UTC month, expressed as its one-based day number. */
+function getLastSundayOfMonth(year: number, monthIndex: number): number {
+  const lastDayOfMonth = new Date(Date.UTC(year, monthIndex + 1, 0));
+  return lastDayOfMonth.getUTCDate() - lastDayOfMonth.getUTCDay();
+}
+
+/**
+ * Europe/Berlin UTC offset for the years represented by the archive corpus.
+ * CEST starts at 02:00 local time on March's final Sunday and ends at 03:00
+ * local time on October's final Sunday.
+ */
+function getBerlinUtcOffsetHours(year: number, month: number, day: number, hour: number): number {
+  if (month > 3 && month < 10) return 2;
+  if (month < 3 || month > 10) return 1;
+
+  const transitionDay = getLastSundayOfMonth(year, month - 1);
+  if (month === 3) {
+    return day > transitionDay || (day === transitionDay && hour >= 2) ? 2 : 1;
+  }
+  return day < transitionDay || (day === transitionDay && hour < 3) ? 2 : 1;
+}
+
 /**
  * Strips HTML tags from a string and normalizes whitespace.
  * Converts <br> and </p> tags to line breaks before stripping.
@@ -45,12 +67,25 @@ export function parseGermanDateTime(dateStr: string, timeStr: string): string {
   const day = dateParts[0] ?? 1;
   const month = dateParts[1] ?? 1;
   const year = dateParts[2] ?? new Date().getFullYear();
-  const hh = timeParts[0] ?? 0;
-  const mm = timeParts[1] ?? 0;
-  const ss = timeParts[2] ?? 0;
+  const hour = timeParts[0] ?? 0;
+  const minute = timeParts[1] ?? 0;
+  const second = timeParts[2] ?? 0;
 
-  const date = new Date(year, month - 1, day, hh, mm, ss);
-  return date.toISOString();
+  // KVV publishes Europe/Berlin wall-clock time. Convert it explicitly instead of using
+  // the process-local Date constructor, which changes behavior between developer machines
+  // and UTC CI. Germany observes CET (UTC+1) and CEST (UTC+2), with transitions on the
+  // final Sundays of March and October.
+  const utcOffsetHours = getBerlinUtcOffsetHours(year, month, day, hour);
+  const utcDateTime = new Date(
+    Date.UTC(year, month - 1, day, hour - utcOffsetHours, minute, second),
+  );
+  return utcDateTime.toISOString();
+}
+
+/** Converts DD.MM.YYYY to the trip-date shape without a timezone round-trip. */
+function convertGermanDateToIsoDate(dateStr: string): string {
+  const [day = '', month = '', year = ''] = dateStr.split('.');
+  return `${year}-${month}-${day}`;
 }
 
 /**
@@ -100,7 +135,7 @@ export function extractStand(text: string): StandInfo {
     const timeStr = match?.[2];
     if (dateStr && timeStr) {
       const standIso = parseGermanDateTime(dateStr, toTime(timeStr));
-      return { standIso, dateForTrips: standIso.slice(0, ISO_DATE_LENGTH), hasStand: true };
+      return { standIso, dateForTrips: convertGermanDateToIsoDate(dateStr), hasStand: true };
     }
   }
 

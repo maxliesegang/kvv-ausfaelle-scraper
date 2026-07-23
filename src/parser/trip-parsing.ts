@@ -120,12 +120,12 @@ interface ParsedTripFields {
  * A trip-line format: its regex plus how to map the captured groups onto trip fields.
  * The KVV pages use several human-written layouts that differ only in field order, so
  * each is described once here and processed by a single matcher loop. Order matters —
- * the most specific format (line-prefix) is tried first, the loosest (old) last.
+ * the most specific format (line-prefix) is tried first and the loosest fallback last.
  */
 interface TripFormat {
   readonly pattern: RegExp;
-  /** `'new'` formats reject stops captured as the literal "Uhr" (incomplete lines). */
-  readonly validation: 'new' | 'old';
+  /** Rejects incomplete rows where a stop capture contains only the time suffix "Uhr". */
+  readonly rejectUhrOnlyStops: boolean;
   readonly extract: (match: RegExpMatchArray) => ParsedTripFields;
 }
 
@@ -164,27 +164,53 @@ const EXTRACT = {
 
 const TRIP_FORMATS: readonly TripFormat[] = [
   // <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
-  { pattern: PATTERNS.TRIP_LINE_PREFIX_FORMAT, validation: 'new', extract: EXTRACT.linePrefix },
+  {
+    pattern: PATTERNS.TRIP_LINE_PREFIX_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.linePrefix,
+  },
   // <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
-  { pattern: PATTERNS.TRIP_AB_BIS_FORMAT, validation: 'new', extract: EXTRACT.stopThenTime },
+  {
+    pattern: PATTERNS.TRIP_AB_BIS_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.stopThenTime,
+  },
   // <trainNumber> entfällt zwischen <fromStop> (<time>) und <toStop> (<time>)
   {
     pattern: PATTERNS.TRIP_ENTFAELLT_ZWISCHEN_FORMAT,
-    validation: 'new',
+    rejectUhrOnlyStops: true,
     extract: EXTRACT.stopThenTime,
   },
   // <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
-  { pattern: PATTERNS.TRIP_STOP_TIME_FORMAT, validation: 'new', extract: EXTRACT.stopThenTime },
-  // <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
-  { pattern: PATTERNS.TRIP_NEW_FORMAT, validation: 'new', extract: EXTRACT.timeThenStop },
-  // <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
-  { pattern: PATTERNS.TRIP_OLD_FORMAT, validation: 'old', extract: EXTRACT.stopThenTime },
-  // Loosest fallback: <trainNumber> <fromStop> [(]<time>[)] - <toStop> [(]<time>[)]
-  // (optional parens on either time). Superset of the stricter stop/time + old formats, so
-  // it must stay LAST — it only catches lines every stricter format above rejected.
   {
-    pattern: PATTERNS.TRIP_STOP_TIME_PARENS_FORMAT,
-    validation: 'new',
+    pattern: PATTERNS.TRIP_STOP_TIME_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.stopThenTime,
+  },
+  // <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
+  {
+    pattern: PATTERNS.TRIP_TIME_STOP_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.timeThenStop,
+  },
+  // <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
+  {
+    pattern: PATTERNS.TRIP_STOP_TIME_REQUIRED_PARENTHESES_FORMAT,
+    rejectUhrOnlyStops: false,
+    extract: EXTRACT.stopThenTime,
+  },
+  // A narrowly tolerated KVV typo: both times parenthesized but the separator is absent.
+  {
+    pattern: PATTERNS.TRIP_STOP_TIME_REQUIRED_PARENTHESES_MISSING_SEPARATOR_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.stopThenTime,
+  },
+  // Loosest fallback: <trainNumber> <fromStop> [(]<time>[)] - <toStop> [(]<time>[)]
+  // (optional parentheses on either time). It must stay LAST because it is a superset of the
+  // stricter stop/time formats and only catches lines every earlier format rejected.
+  {
+    pattern: PATTERNS.TRIP_STOP_TIME_OPTIONAL_PARENTHESES_FORMAT,
+    rejectUhrOnlyStops: true,
     extract: EXTRACT.stopThenTime,
   },
 ];
@@ -203,7 +229,7 @@ interface ValidTripFields extends ParsedTripFields {
  * format whose regex matches and whose captured fields pass validation.
  */
 function matchTripFormat(line: string): ValidTripFields | null {
-  for (const { pattern, validation, extract } of TRIP_FORMATS) {
+  for (const { pattern, rejectUhrOnlyStops, extract } of TRIP_FORMATS) {
     const match = line.match(pattern);
     if (!match) continue;
 
@@ -215,7 +241,7 @@ function matchTripFormat(line: string): ValidTripFields | null {
         fields.fromTime,
         fields.toStop,
         fields.toTime,
-        validation,
+        rejectUhrOnlyStops,
       )
     ) {
       return fields as ValidTripFields;
@@ -289,7 +315,16 @@ function tryMergeWithNext(
     offset <= maxLinesToCombine && startIndex + offset < rawLines.length;
     offset++
   ) {
-    combined = `${combined} ${rawLines[startIndex + offset] || ''}`.trim();
+    const nextLine = rawLines[startIndex + offset] || '';
+    // A new leading train number is a hard row boundary. Without this guard, one malformed
+    // row can consume one or more valid following rows until the concatenation happens to
+    // satisfy a loose format, producing a corrupted trip and silently losing the rest.
+    const nextLineStartsTripRow = /^(?:[A-Za-z]+\d+\s+)?\d{4,6}(?:\s|$)/.test(nextLine);
+    const combinedLineIsStandaloneLinePrefix = /^[A-Za-z]+\d+\s*$/.test(combined);
+    if (nextLineStartsTripRow && !combinedLineIsStandaloneLinePrefix) {
+      break;
+    }
+    combined = `${combined} ${nextLine}`.trim();
     if (isValidTripLine(combined)) {
       return { combinedLine: combined, linesConsumed: offset + 1 };
     }
@@ -415,14 +450,13 @@ function isValidTripFields(
   fromTime: string | undefined,
   toStop: string | undefined,
   toTime: string | undefined,
-  format: 'new' | 'old',
+  rejectUhrOnlyStops: boolean,
 ): boolean {
   if (!trainNumber || !fromStop || !fromTime || !toStop || !toTime) {
     return false;
   }
 
-  // New format requires stops not to be just "Uhr" (indicates incomplete line)
-  if (format === 'new') {
+  if (rejectUhrOnlyStops) {
     return toStop.trim() !== 'Uhr' && fromStop.trim() !== 'Uhr';
   }
 
