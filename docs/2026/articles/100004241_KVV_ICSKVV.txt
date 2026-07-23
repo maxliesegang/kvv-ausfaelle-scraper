@@ -1,0 +1,21 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004241_KVV_ICSKVV
+Stand:  unbekannt
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 14.08.2026 bis 15.08.2026
+Linien: S5, SEV
+Pforzheim Hbf - Söllingen (b Karlsruhe): S5 - Einzelne Züge entfallen nachts
+(AVG) Pforzheim Hbf - Söllingen (b Karlsruhe): S5 - Einzelne Züge entfallen nachts
+Linie(n): S5
+Zeitraum: Nacht 14./15.08.2026 (ca. 21:00 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn: ca. jede zweite Verbindung Pforzheim Hbf &lt;-&gt; Söllingen (b Karlsruhe)
+Ersatzverkehr: für die entfallenden Verbindungen jeweils Pforzheim Hbf &lt;-&gt;Söllingen Reetztstraße
+Grund: DB InfraGO - Zeitfenster für Instandhaltung
+Ausnahmen/Sonstiges:
+•    S5 zwischen Söllingen und Pforzheim verkehrt im 1- bis 2-Stundentakt
+•    Kein Umstieg zwischen Ersatzverkehr und Stadtbahn in Söllingen Bahnhof! 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
