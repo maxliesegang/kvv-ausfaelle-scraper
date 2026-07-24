@@ -10,7 +10,7 @@ Linien S8, SEV
 Karlsruhe - Gaggenau: Ersatzverkehr für ersten Zug im Frühverkehr
 (AVG)
 Linie(n): S8
-Zeitraum: Samstag., 25.07.2025 (ca. 05:00 Uhr bis 06:00 Uhr)
+Zeitraum: Samstag., 25.07.2025
 Entfall Stadtbahn: der erste Zug je Richtung entfällt Karlsruhe &lt;-&gt; Gaggenau
 •    S8 KA Marktplatz (05:03) - Rastatt (05:38) - Gaggenau (05:51) - Freudenstadt
 •    S8 Forbach (Schwarzw) (05:09) - Gaggenau (05:33) - Rastatt (05:49) - KA Tullastraße (06:27)

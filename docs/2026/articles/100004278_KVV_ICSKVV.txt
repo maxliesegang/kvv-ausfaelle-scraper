@@ -7,7 +7,7 @@ Fahrplan
 Verkehrsmeldungen
 Vom 30.07.2026 bis 05.08.2026
 Linie 134, 136, 137, 138, 139
-SEV S31/S32: angepasste Fahrpläne der Buslinien
+Kraichtal: angepasste Fahrpläne der Buslinien
 (lou) Aufgrund von Bauarbeiten fährt
 von Donnerstag, den 30. Juli 2026
 bis Mittwoch, den 5. August 2026
