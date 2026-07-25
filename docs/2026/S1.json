@@ -2088,20 +2088,6 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T13:52:00.000Z",
-    "trainNumber": "10074",
-    "fromStop": "Hochstetten",
-    "fromTime": "19:52",
-    "toStop": "Ettlingen",
-    "toTime": "21:02",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272367",
-    "capturedAt": "2026-07-13T14:23:15.648Z",
-    "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
-  },
-  {
-    "line": "S1",
-    "date": "2026-07-13",
     "stand": "2026-07-13T18:25:00.000Z",
     "trainNumber": "10074",
     "fromStop": "Hochstetten",
@@ -2130,20 +2116,6 @@
   {
     "line": "S1",
     "date": "2026-07-13",
-    "stand": "2026-07-13T13:52:00.000Z",
-    "trainNumber": "10083",
-    "fromStop": "Ettlingen",
-    "fromTime": "22:05",
-    "toStop": "Neureut Kirchfeld",
-    "toTime": "22:51",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272367",
-    "capturedAt": "2026-07-13T14:23:15.648Z",
-    "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
-  },
-  {
-    "line": "S1",
-    "date": "2026-07-13",
     "stand": "2026-07-13T18:25:00.000Z",
     "trainNumber": "10083",
     "fromStop": "Ettlingen",
@@ -2166,20 +2138,6 @@
     "toTime": "23:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272417",
     "capturedAt": "2026-07-13T20:53:28.764Z",
-    "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
-  },
-  {
-    "line": "S1",
-    "date": "2026-07-13",
-    "stand": "2026-07-13T13:52:00.000Z",
-    "trainNumber": "10084",
-    "fromStop": "Neureut Kirchfeld",
-    "fromTime": "23:25",
-    "toStop": "Ettlingen Albgaubad",
-    "toTime": "00:12",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272367",
-    "capturedAt": "2026-07-13T14:23:15.648Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   },
@@ -2460,6 +2418,34 @@
     "toTime": "08:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273037",
     "capturedAt": "2026-07-20T06:41:24.094Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-25",
+    "stand": "2026-07-25T09:21:00.000Z",
+    "trainNumber": "36029",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "17:28",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "18:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273261",
+    "capturedAt": "2026-07-25T13:14:30.363Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-07-25",
+    "stand": "2026-07-25T09:21:00.000Z",
+    "trainNumber": "16020",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "18:25",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "19:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273261",
+    "capturedAt": "2026-07-25T13:14:30.363Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }
