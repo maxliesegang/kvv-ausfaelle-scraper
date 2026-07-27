@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004252_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien: S31, S32 - Karlsruhe Hbf - Karlsruhe-Durlach: S31/S32 - 2 Nächtliche Teilausfälle im Stadtgebiet (07.08.2026 bis 07.08.2026)
+Datum:  2026-07-16T10:36:00.000Z
 ========================================================================
 
 KVV

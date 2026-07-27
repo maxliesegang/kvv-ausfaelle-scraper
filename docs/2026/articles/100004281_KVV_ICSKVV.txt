@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004281_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien: S2, 1, 2, 3, 4, 5, 21, 22, 23, 24, 27, 30, 31, 32, 42, 47, 50, 62, 70, 71, 72, 73, 74, 75 - Karlsruhe: Anpassungen im Fahrplanangebot ab 30. Juli 2026 (30.07.2026 bis 30.08.2026)
+Datum:  2026-07-23T13:14:00.000Z
 ========================================================================
 
 KVV

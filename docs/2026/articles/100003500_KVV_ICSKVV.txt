@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003500_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 120, 122, 159 - Weingarten: Umleitung wegen Bauarbeiten (06.10.2025 bis 12.12.2026)
+Datum:  2025-10-01T08:00:00.000Z
 ========================================================================
 
 KVV

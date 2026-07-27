@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004053_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien: 22 - Durlach: Haltestelle "Turmberg" wird verlegt (26.05.2026 bis 16.08.2026)
+Datum:  2026-05-22T12:03:00.000Z
 ========================================================================
 
 KVV

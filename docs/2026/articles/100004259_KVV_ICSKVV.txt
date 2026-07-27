@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004259_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 128 - Oberhausen: Haltestelle Marienkapelle aufgehoben (03.08.2026 bis 13.08.2026)
+Datum:  2026-07-17T06:55:00.000Z
 ========================================================================
 
 KVV

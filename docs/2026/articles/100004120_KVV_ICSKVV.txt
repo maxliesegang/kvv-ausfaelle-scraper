@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004120_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie: S51 - Knielingen Rheinbergstraße - Wörth (Rhein) : S51 - Eine Verbindung fährt ca. 5 Minuten früher (11.07.2026 bis 17.10.2026)
+Datum:  2026-06-17T09:48:00.000Z
 ========================================================================
 
 KVV

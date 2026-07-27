@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=110004737_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien S1, S11 - Ettlingen: Regelung bei Einsatz von Zugverbänden Haltestelle Wasen (23.12.2019 bis auf weiteres)
+Datum:  2019-12-23T02:00:00.000Z
 ========================================================================
 
 KVV

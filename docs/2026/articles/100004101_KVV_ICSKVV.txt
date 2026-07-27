@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004101_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien 559, 596 - Zeiskam: Umleitung wegen Bauarbeiten (15.06.2026 bis 31.07.2026)
+Datum:  2026-06-10T07:33:00.000Z
 ========================================================================
 
 KVV

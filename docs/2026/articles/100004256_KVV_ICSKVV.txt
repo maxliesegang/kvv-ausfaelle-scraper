@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004256_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien: S51, SEV - Germersheim - Söllingen: S51 ein Zug entfällt nachts (16.08.2026 bis 18.08.2026)
+Datum:  2026-07-16T11:51:00.000Z
 ========================================================================
 
 KVV

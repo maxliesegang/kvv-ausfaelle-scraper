@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003583_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 101, 102, 103 - Schöllbronn: Haltestelle Schule teilweise verlegt (27.10.2025 bis 30.10.2026)
+Datum:  2025-10-24T09:30:00.000Z
 ========================================================================
 
 KVV

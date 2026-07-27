@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003925_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 215 - Kartung: Haltestellen Kreuzstraße und Am Markbach verlegt (08.04.2026 bis 11.09.2026)
+Datum:  2026-03-31T07:06:00.000Z
 ========================================================================
 
 KVV

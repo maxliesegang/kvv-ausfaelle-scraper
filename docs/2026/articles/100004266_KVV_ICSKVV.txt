@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004266_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 125 - Neuthard: Umleitung wegen Veranstaltung (09.08.2026 bis 09.08.2026)
+Datum:  2026-07-17T14:17:00.000Z
 ========================================================================
 
 KVV

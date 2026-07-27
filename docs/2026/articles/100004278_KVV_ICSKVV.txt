@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004278_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 134, 136, 137, 138, 139 - Kraichtal: angepasste Fahrpläne der Buslinien (30.07.2026 bis 05.08.2026)
+Datum:  2026-07-23T12:31:00.000Z
 ========================================================================
 
 KVV

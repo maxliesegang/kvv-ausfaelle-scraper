@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004011_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 123 - Hambrücken: Vorübergehende Fahrwegsänderung Linie 123 (04.05.2026 bis 12.12.2026)
+Datum:  2026-04-30T11:43:00.000Z
 ========================================================================
 
 KVV

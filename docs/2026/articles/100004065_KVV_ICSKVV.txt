@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004065_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 164 - Ruit: Umleitung wegen Bauarbeiten (08.06.2026 bis 16.08.2026)
+Datum:  2026-05-29T09:51:00.000Z
 ========================================================================
 
 KVV

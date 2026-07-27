@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=110009851_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien 590, 599 - Weingarten: Sperrung der Hauptstraße erfordert Umleitung (22.06.2025 bis auf weiteres)
+Datum:  2025-06-24T13:10:00.000Z
 ========================================================================
 
 KVV

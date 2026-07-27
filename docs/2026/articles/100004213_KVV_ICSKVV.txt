@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004213_KVV_ICSKVV
 Stand:  2026-07-31T19:00:00.000Z
+Titel:  Linien: S41, S42, SEV - Neckarsulm - Mosbach/Sinsheim: Stadtbahnen entfallen in den Sommerferien (31.07.2026 bis 11.09.2026)
+Datum:  2026-07-06T07:05:00.000Z
 ========================================================================
 
 KVV

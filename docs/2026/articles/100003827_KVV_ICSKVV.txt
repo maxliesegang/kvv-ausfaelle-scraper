@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003827_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien 548, 552, 557, 595 - Leimersheim - Kuhardt: Baustellenfahrplan wieder aufgenommen (18.02.2026 bis auf weiteres)
+Datum:  2026-02-13T09:03:00.000Z
 ========================================================================
 
 KVV

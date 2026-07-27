@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004253_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien: S31, S32, SEV - Karlsruhe Hbf - Bruchsal: S31/S32 - Nächtliche Teilausfälle im August (19.08.2026 bis 20.08.2026)
+Datum:  2026-07-16T10:48:00.000Z
 ========================================================================
 
 KVV

@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003990_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 222 - Karlsruhe: Umleitung wegen Bauarbeiten (11.05.2026 bis 30.07.2026)
+Datum:  2026-04-23T06:32:00.000Z
 ========================================================================
 
 KVV

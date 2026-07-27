@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004130_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 231 - Seltz: Haltestelle Le Seltzbach verlegt (22.06.2026 bis 14.08.2026)
+Datum:  2026-06-19T09:09:00.000Z
 ========================================================================
 
 KVV

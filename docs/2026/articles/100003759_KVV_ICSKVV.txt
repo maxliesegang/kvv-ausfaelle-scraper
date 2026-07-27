@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003759_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linie 232, 259 - Rauental: Haltestelle Kirche aufgehoben (09.02.2026 bis auf weiteres)
+Datum:  2026-01-27T05:51:00.000Z
 ========================================================================
 
 KVV

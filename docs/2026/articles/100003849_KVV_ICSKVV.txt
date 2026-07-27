@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003849_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien: 214, 216 - Baden - Baden: Kanalsanierung in der Fremersbergstraße (23.02.2026 bis auf weiteres)
+Datum:  2026-02-19T06:28:00.000Z
 ========================================================================
 
 KVV

@@ -1,5 +1,7 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003707_KVV_ICSKVV
 Stand:  unbekannt
+Titel:  Linien 553, 554, 558 - Insheim: Sperrung der Bahnhofstraße (12.01.2026 bis 31.08.2026)
+Datum:  2026-01-05T09:44:00.000Z
 ========================================================================
 
 KVV
