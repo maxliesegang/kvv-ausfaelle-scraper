@@ -15,6 +15,7 @@ import {
   LINE_MENTION_SECTION_PATTERN,
   LINE_IDENTIFIER_PATTERN,
   TRIP_TIME_PAIR_PATTERN,
+  TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
 } from './patterns.js';
 
 export class MultiLineMappingError extends Error {
@@ -268,7 +269,9 @@ export function buildTripCandidateLines(text: string): string[] {
         // Replace HTML entities / non-breaking spaces before trimming
         .replace(/&nbsp;/gi, ' ')
         .replace(/\u00a0/g, ' ')
-        .trim(),
+        .trim()
+        // Drop the colon KVV sometimes puts after the leading train number
+        .replace(TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN, '$1 '),
     )
     .filter((line) => {
       if (!line) return false;

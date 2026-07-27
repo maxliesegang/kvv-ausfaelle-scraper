@@ -227,6 +227,83 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('parses trip rows whose train number carries a trailing colon', () => {
+    const trips = parseArchivedArticle('Nettro_CMS_273364');
+
+    assert.deepEqual(trips.map(routeOf), [
+      {
+        trainNumber: '10013',
+        line: 'S1',
+        fromStop: 'Ettlingen Stadt',
+        fromTime: '06:04',
+        toStop: 'Neureut Kirchfeld',
+        toTime: '06:51',
+      },
+      {
+        trainNumber: '10014',
+        line: 'S1',
+        fromStop: 'Neureut Kirchfeld',
+        fromTime: '07:10',
+        toStop: 'Ettlingen Albgaubad',
+        toTime: '07:57',
+      },
+      {
+        trainNumber: '10027',
+        line: 'S1',
+        fromStop: 'Ettlingen Albgaubad',
+        fromTime: '08:04',
+        toStop: 'Neureut Kirchfeld',
+        toTime: '08:51',
+      },
+      {
+        trainNumber: '20022',
+        line: 'S11',
+        fromStop: 'Neureut Kirchfeld',
+        fromTime: '09:05',
+        toStop: 'Ettlingen Stadt',
+        toTime: '09:48',
+      },
+      {
+        trainNumber: '20023',
+        line: 'S11',
+        fromStop: 'Ettlingen Stadt',
+        fromTime: '10:48',
+        toStop: 'Neureut Kirchfeld',
+        toTime: '11:31',
+      },
+      {
+        trainNumber: '30028',
+        line: 'S1',
+        fromStop: 'Neureut Kirchfeld',
+        fromTime: '11:45',
+        toStop: 'Ettlingen Stadt',
+        toTime: '12:28',
+      },
+      {
+        trainNumber: '10047',
+        line: 'S1',
+        fromStop: 'Ettlingen Albgaubad',
+        fromTime: '12:54',
+        toStop: 'Hochstetten',
+        toTime: '14:06',
+      },
+      {
+        trainNumber: '20044',
+        line: 'S11',
+        fromStop: 'Hochstetten',
+        fromTime: '14:12',
+        toStop: 'Ettlingen Stadt',
+        toTime: '15:18',
+      },
+    ]);
+    assert.ok(
+      trips.every(
+        ({ cause, causeKeyword }) => cause === 'personnel' && causeKeyword === 'fahrpersonal',
+      ),
+      'the "S1/S11:" group header must not disturb the article classification',
+    );
+  });
+
   test('does not invent trips from an unnumbered multi-stop replacement-service notice', (t) => {
     t.mock.method(console, 'warn', () => undefined);
     assert.throws(() => parseArchivedArticle('100004264_KVV_ICSKVV'), ParseError);

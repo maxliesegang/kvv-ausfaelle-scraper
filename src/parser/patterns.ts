@@ -87,6 +87,16 @@ export const PATTERNS = {
 } as const;
 
 /**
+ * A leading train number followed by a colon separator, as in
+ * "10013: Ettlingen Stadt (06:04 Uhr) - Neureut Kirchfeld (06:51 Uhr)".
+ * The colon is punctuation KVV sometimes adds, not part of any field layout, so candidate
+ * lines drop it before format matching instead of every trip format tolerating it.
+ * Requires at least three digits plus trailing whitespace so a leading clock time
+ * ("10:30 Uhr Söllingen …") can never match.
+ */
+export const TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN = /^(\d{3,})\s*:\s+/;
+
+/**
  * Text markers used to identify sections in the HTML.
  */
 export const MARKERS = {
