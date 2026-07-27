@@ -37,5 +37,11 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
       '74351': 'S6',
       '74352': 'S6',
     },
+    // AVG staffing notice for S1/S11 (Ettlingen Albgaubad–Hochstetten), 2026-07-27. The
+    // KA Tullastraße–Ittersbach Rathaus run 40014 is an S12 in GTFS — S12 is the
+    // reinforcement line on the S11 Ittersbach corridor, so KVV reports it under S11.
+    Nettro_CMS_273364: {
+      '40014': 'S11',
+    },
   },
 };

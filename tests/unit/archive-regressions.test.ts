@@ -230,65 +230,9 @@ describe('archived article parser regressions', () => {
   test('parses trip rows whose train number carries a trailing colon', () => {
     const trips = parseArchivedArticle('Nettro_CMS_273364');
 
+    // KVV keeps rewriting this notice in place — earlier revisions listed the morning runs
+    // and later ones dropped them as they passed — so the list tracks the archive as stored.
     assert.deepEqual(trips.map(routeOf), [
-      {
-        trainNumber: '10013',
-        line: 'S1',
-        fromStop: 'Ettlingen Stadt',
-        fromTime: '06:04',
-        toStop: 'Neureut Kirchfeld',
-        toTime: '06:51',
-      },
-      {
-        // KVV inserted this row into the published article after the fact, without bumping
-        // `Stand` — the in-place edit the text archive exists to record.
-        trainNumber: '30007',
-        line: 'S1',
-        fromStop: 'Marxzell',
-        fromTime: '07:07',
-        toStop: 'Karlsruhe Rheinhafen',
-        toTime: '08:05',
-      },
-      {
-        trainNumber: '10014',
-        line: 'S1',
-        fromStop: 'Neureut Kirchfeld',
-        fromTime: '07:10',
-        toStop: 'Ettlingen Albgaubad',
-        toTime: '07:57',
-      },
-      {
-        trainNumber: '10027',
-        line: 'S1',
-        fromStop: 'Ettlingen Albgaubad',
-        fromTime: '08:04',
-        toStop: 'Neureut Kirchfeld',
-        toTime: '08:51',
-      },
-      {
-        trainNumber: '20022',
-        line: 'S11',
-        fromStop: 'Neureut Kirchfeld',
-        fromTime: '09:05',
-        toStop: 'Ettlingen Stadt',
-        toTime: '09:48',
-      },
-      {
-        trainNumber: '20023',
-        line: 'S11',
-        fromStop: 'Ettlingen Stadt',
-        fromTime: '10:48',
-        toStop: 'Neureut Kirchfeld',
-        toTime: '11:31',
-      },
-      {
-        trainNumber: '30028',
-        line: 'S1',
-        fromStop: 'Neureut Kirchfeld',
-        fromTime: '11:45',
-        toStop: 'Ettlingen Stadt',
-        toTime: '12:28',
-      },
       {
         trainNumber: '10047',
         line: 'S1',
@@ -304,6 +248,16 @@ describe('archived article parser regressions', () => {
         fromTime: '14:12',
         toStop: 'Ettlingen Stadt',
         toTime: '15:18',
+      },
+      {
+        // GTFS knows 40014 only as an S12 — the reinforcement line on the S11 Ittersbach
+        // corridor — which the S1/S11 article never mentions, so an override maps it to S11.
+        trainNumber: '40014',
+        line: 'S11',
+        fromStop: 'KA Tullastraße',
+        fromTime: '15:36',
+        toStop: 'Ittersbach Rathaus',
+        toTime: '16:29',
       },
     ]);
     assert.ok(
