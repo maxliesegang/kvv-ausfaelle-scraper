@@ -168,6 +168,15 @@ function getSourceScopedTripKey(trip: Cancellation): string {
 }
 
 /**
+ * Physical-trip identity, ignoring which notice reported it — the key the live store deduplicates
+ * by. `line` is passed in so a stored trip is keyed by the file it lives in, exactly as
+ * `storage.ts` bucketed it.
+ */
+function toTripIdentity(line: string, trip: Cancellation): string {
+  return JSON.stringify([line, getCancellationKey(trip)]);
+}
+
+/**
  * Reparses one archive file into its source URL + trips, updating the parse totals and warning
  * on any skip. Returns `null` when the file is unreadable, carries no `Quelle` URL, or fails to
  * parse — the single place both report and backfill modes turn frozen text back into trips.
@@ -388,21 +397,48 @@ async function reconcileTripsForYear(
     }
   }
 
-  const reconciledTripsByLine = new Map<string, Cancellation[]>();
+  // KVV republishes the same cancellation across successive notices, so two archived articles can
+  // reparse to one physical trip under different `sourceUrl`s. The live store keys by trip
+  // identity (`mergeTrip`) and therefore holds it once; collecting by source-scoped key alone
+  // would keep it once per article and write duplicates this store never had. So the reconciled
+  // set is keyed by identity — line plus `getCancellationKey` — and each identity is filled once.
+  const reconciledTripsByIdentity = new Map<string, { line: string; trip: Cancellation }>();
+
+  // Stored trips whose article was not reparsed this run: nothing re-read them, so they stand.
   for (const [line, trips] of storedTripsByLine) {
-    reconciledTripsByLine.set(
-      line,
-      trips.filter((trip) => !reparsedTripsBySourceUrl.has(trip.sourceUrl)),
-    );
+    for (const trip of trips) {
+      if (!reparsedTripsBySourceUrl.has(trip.sourceUrl)) {
+        reconciledTripsByIdentity.set(toTripIdentity(line, trip), { line, trip });
+      }
+    }
   }
 
+  // Reparsed trips. First writer wins — archives are processed in sorted order — except that a
+  // trip the store already published under *this* article always displaces an earlier duplicate,
+  // so the published `sourceUrl` and `capturedAt` stay put.
   for (const trips of reparsedTripsBySourceUrl.values()) {
     for (const trip of trips) {
+      const identity = toTripIdentity(trip.line, trip);
       const storedTrip = storedTripsBySourceKey.get(getSourceScopedTripKey(trip));
+      if (storedTrip === undefined && reconciledTripsByIdentity.has(identity)) {
+        continue;
+      }
+
       const reconciledTrip = storedTrip ? { ...trip, capturedAt: storedTrip.capturedAt } : trip;
-      const lineTrips = reconciledTripsByLine.get(trip.line) ?? [];
-      lineTrips.push(reconciledTrip);
-      reconciledTripsByLine.set(trip.line, lineTrips);
+      reconciledTripsByIdentity.set(identity, { line: trip.line, trip: reconciledTrip });
+    }
+  }
+
+  // Every stored line starts empty so a line that lost all its trips is still rewritten.
+  const reconciledTripsByLine = new Map<string, Cancellation[]>(
+    [...storedTripsByLine.keys()].map((line) => [line, []]),
+  );
+  for (const { line, trip } of reconciledTripsByIdentity.values()) {
+    const lineTrips = reconciledTripsByLine.get(line);
+    if (lineTrips) {
+      lineTrips.push(trip);
+    } else {
+      reconciledTripsByLine.set(line, [trip]);
     }
   }
 

@@ -240,6 +240,16 @@ describe('archived article parser regressions', () => {
         toTime: '06:51',
       },
       {
+        // KVV inserted this row into the published article after the fact, without bumping
+        // `Stand` — the in-place edit the text archive exists to record.
+        trainNumber: '30007',
+        line: 'S1',
+        fromStop: 'Marxzell',
+        fromTime: '07:07',
+        toStop: 'Karlsruhe Rheinhafen',
+        toTime: '08:05',
+      },
+      {
         trainNumber: '10014',
         line: 'S1',
         fromStop: 'Neureut Kirchfeld',

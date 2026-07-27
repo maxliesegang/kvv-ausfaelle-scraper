@@ -74,6 +74,62 @@ describe('Article archive', () => {
     assert.match(content, /entfallen folgende Fahrten\./);
   });
 
+  it('records the feed item title and publication date, folding the multi-line title', async () => {
+    const url = DETAIL_URL.replace('257073', '257074');
+    // KVV's ticker packs headline, lead and validity range into one multi-line <title>.
+    await archiveArticleText(tempDir, url, HTML_WITH_STAND, {
+      rssTitle:
+        'Betriebsbedingte Fahrtausfälle auf der Linie S1 - Betriebsbedingte Fahrtausfälle\n' +
+        'zwischen Ettlingen und Hochstetten\n  (05.01.2026 bis 05.01.2026)',
+      rssPublishedIso: '2026-01-05T13:30:00.000Z',
+    });
+
+    const content = await findArchivedFile(tempDir, 'Nettro_CMS_257074.txt');
+    assert.match(
+      content,
+      /^Titel: {2}Betriebsbedingte Fahrtausfälle auf der Linie S1 - Betriebsbedingte Fahrtausfälle zwischen Ettlingen und Hochstetten \(05\.01\.2026 bis 05\.01\.2026\)$/m,
+    );
+    assert.match(content, /^Datum: {2}2026-01-05T13:30:00\.000Z$/m);
+
+    const parsed = parseArchive(content);
+    assert.strictEqual(parsed.rssPublishedIso, '2026-01-05T13:30:00.000Z');
+    assert.match(parsed.rssTitle ?? '', /^Betriebsbedingte Fahrtausfälle auf der Linie S1 - /);
+    assert.doesNotMatch(parsed.rssTitle ?? '', /\n/, 'title must round-trip as a single line');
+  });
+
+  it('records "unbekannt" for feed fields the item did not supply, and reads them back as absent', async () => {
+    const url = DETAIL_URL.replace('257073', '257075');
+    await archiveArticleText(tempDir, url, HTML_WITH_STAND);
+
+    const content = await findArchivedFile(tempDir, 'Nettro_CMS_257075.txt');
+    assert.match(content, /^Titel: {2}unbekannt$/m);
+    assert.match(content, /^Datum: {2}unbekannt$/m);
+
+    const parsed = parseArchive(content);
+    assert.strictEqual(parsed.rssTitle, undefined);
+    assert.strictEqual(parsed.rssPublishedIso, undefined);
+  });
+
+  it('reads a legacy archive that predates the feed-metadata header', () => {
+    // Committed archives written before `Titel:`/`Datum:` existed must still parse: their
+    // articles have left the RSS feed, so the fields can never be backfilled.
+    const legacy = [
+      `Quelle: ${DETAIL_URL}`,
+      'Stand:  2026-01-05T13:30:00.000Z',
+      '='.repeat(72),
+      '',
+      'Linie S1',
+      'Titel: this prose line must not be mistaken for a header field',
+      '',
+    ].join('\n');
+
+    const parsed = parseArchive(legacy);
+    assert.strictEqual(parsed.url, DETAIL_URL);
+    assert.strictEqual(parsed.rssTitle, undefined);
+    assert.strictEqual(parsed.rssPublishedIso, undefined);
+    assert.match(parsed.body, /^Linie S1/);
+  });
+
   it('records Stand "unbekannt" when the page states none', async () => {
     const url = DETAIL_URL.replace('257073', '999999');
     await archiveArticleText(tempDir, url, '<html><body><p>Linie S1 faellt aus.</p></body></html>');

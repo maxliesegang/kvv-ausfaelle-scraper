@@ -49,6 +49,21 @@ describe('Relevance - Construction Notices', () => {
 
     assert.strictEqual(result.isRelevant, true);
   });
+
+  it('should keep an item whose only cancellation signal is the plural "entfallen"', () => {
+    // A headline naming no cancellation term at all, with the plural verb carrying the whole
+    // signal — the wording that silently lost two S7 trips before `entfallen` was a keyword.
+    const result = analyzeRssItem({
+      title: 'S7: Abweichungen im Betriebsablauf',
+      contentSnippet:
+        'Einzelne Fahrten der Linie S7 entfallen zwischen Karlsruhe Poststraße und ' +
+        'Karlsruhe Tullastraße/Alter Schlachthof',
+      content: '',
+      link: 'test://entfallen-plural-rss',
+    });
+
+    assert.strictEqual(result.isRelevant, true);
+  });
 });
 
 describe('Relevance - Real Article Fixtures', () => {

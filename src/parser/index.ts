@@ -10,7 +10,8 @@
 
 import type { Cancellation } from '../types.js';
 import { classifyCauseWithEvidence } from '../cause.js';
-import { stripHtml, extractLine, extractStand } from './text-extraction.js';
+import { toArticleText } from './article-corrections.js';
+import { extractLine, extractStand } from './text-extraction.js';
 import {
   extractMentionedLines,
   extractTripLines,
@@ -36,7 +37,7 @@ export class ParseError extends Error {
  * @throws Error if no trips are found in the article
  */
 export function parseDetailPage(html: string, url: string): Cancellation[] {
-  const text = stripHtml(html);
+  const text = toArticleText(html, url);
 
   // Extract metadata
   const line = extractLine(text);

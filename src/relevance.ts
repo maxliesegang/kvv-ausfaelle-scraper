@@ -41,7 +41,18 @@ const CANCELLATION_KEYWORDS: readonly KeywordGroup[] = [
   },
   {
     weight: 2,
-    keywords: ['faellt aus', 'entfaellt', 'verkehrseinstellung', 'verkehrsunterbrechung'],
+    // `entfallen` is the plural KVV uses whenever a notice lists several trips ("Einzelne
+    // Fahrten der Linie S7 entfallen zwischen …"). It is not a superstring of `entfaellt`, so
+    // without it such a notice scored below RSS_RELEVANCE_THRESHOLD on title + snippet alone and
+    // was dropped before parsing — see the archive-backed regression in
+    // tests/unit/archive-relevance.test.ts.
+    keywords: [
+      'faellt aus',
+      'entfaellt',
+      'entfallen',
+      'verkehrseinstellung',
+      'verkehrsunterbrechung',
+    ],
   },
   {
     weight: 1,

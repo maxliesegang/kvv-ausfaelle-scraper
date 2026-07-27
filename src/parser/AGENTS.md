@@ -15,6 +15,11 @@ This is the most specific guidance for parser files.
 ## Change Rules
 
 - Prefer additive parsing improvements over breaking existing patterns.
+- A corrupt value in the published text (not an unsupported layout) belongs in
+  `article-corrections.ts`, which repairs the article text before parsing, scoped to one
+  `detailID`. Add an entry only when an external source (GTFS) resolves the value _uniquely_ and
+  the evidence is in the comment; if two readings are plausible, leave the row unparsed rather
+  than publish a guess. Never correct the text archive — it stays a faithful copy of KVV's page.
 - Keep regex updates paired with regression tests/fixtures.
 - If relevance and parser behavior diverge, favor explicit relevance filtering over silent parser leniency.
 - Name trip formats by their observable field layout and constraints, not by when KVV introduced

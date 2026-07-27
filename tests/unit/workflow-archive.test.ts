@@ -62,6 +62,9 @@ describe('Workflow article archive eligibility', () => {
     assert.deepStrictEqual(outcome, { status: 'skipped', reason: 'low-detail-relevance' });
     const archived = await readFile(join(tempDir, ...ARCHIVE_PATH), 'utf-8');
     assert.match(archived, /Allgemeine Fahrgastinformation\./);
+    // The gates' own inputs are archived with the article, so a rejection stays auditable.
+    assert.match(archived, /^Titel: {2}Betriebsbedingte Fahrtausfälle$/m);
+    assert.match(archived, /^Datum: {2}2026-07-23T10:00:00\.000Z$/m);
   });
 
   it('does not archive an article younger than one hour', async () => {

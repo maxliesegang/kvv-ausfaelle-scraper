@@ -21,6 +21,23 @@ This is the most specific guidance for published artifacts.
 - Per article text archive (traceability):
   - `docs/<fahrplan-year>/articles/<detailID>.txt`
 
+## Article Archive Contract
+
+Each archive is a `Label: value` header (`Quelle:`, `Stand:`, `Titel:`, `Datum:`), a `=` rule, and
+the article body. Every field is stable for an unchanged article, so a diff means KVV edited
+something — never add a per-run value such as a capture timestamp.
+
+- `Titel:` and `Datum:` are the RSS item's title and publication date, i.e. the inputs the
+  relevance gates and the article-age gate judged the article by. The detail page does not contain
+  them, so without them a gate decision cannot be replayed. `Titel:` is folded to a single line
+  (the feed's `<title>` is multi-line); folding is lossless for relevance scoring, which matches
+  normalized substrings.
+- Both are `unbekannt` when the feed omitted them, and are absent entirely from archives written
+  before the fields existed. Those articles have left the feed and cannot be backfilled, so
+  consumers must tolerate their absence rather than assume every archive carries them.
+- A re-worded ticker entry now diffs the header of a file whose body is unchanged. That is a real
+  KVV edit, just a different one than a body edit — read the diff accordingly.
+
 ## Data Organization Rule
 
 Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` belongs to Fahrplan year `2025`.

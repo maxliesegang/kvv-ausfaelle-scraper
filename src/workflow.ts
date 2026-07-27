@@ -9,7 +9,7 @@ import {
   leadingTrainNumber,
 } from './parser/trip-parsing.js';
 import { TRIP_TIME_PAIR_PATTERN } from './parser/patterns.js';
-import { stripHtml } from './parser/text-extraction.js';
+import { toArticleText } from './parser/article-corrections.js';
 import { classifyCause } from './cause.js';
 import { isKnownTrainNumber } from './train-lines.js';
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
@@ -69,7 +69,8 @@ export function findMissedKnownTripsError(
   trips: Cancellation[],
   url: string,
 ): ParseError | undefined {
-  const text = stripHtml(html);
+  // Same text the parser saw, so a corrected row is not re-reported as a parser gap.
+  const text = toArticleText(html, url);
   if (classifyCause(text) === 'construction') {
     return undefined;
   }
@@ -139,9 +140,14 @@ export async function processRssItem(
 
   // Preserve every old-enough linked RSS notice before either relevance decision. This makes the
   // archive an audit corpus for improving both algorithms. Never archive young notices: KVV may
-  // retract provisional mistakes shortly after publishing them.
+  // retract provisional mistakes shortly after publishing them. The feed item's title and
+  // publication date go into the archive too — they are the inputs the gates below and the age
+  // gate above judge the article by, and the detail page does not contain them.
   try {
-    await archiveArticleText(options.dataDir ?? DATA_DIR, url, html);
+    await archiveArticleText(options.dataDir ?? DATA_DIR, url, html, {
+      rssTitle: item.title,
+      rssPublishedIso: toIsoPublishedDate(item),
+    });
   } catch (error) {
     console.warn('Failed to archive article text:', url, error);
   }
@@ -170,7 +176,7 @@ export async function processRssItem(
 
     if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
       const reasons = detailRelevance.reasons.join('; ') || 'no relevance reasons recorded';
-      const text = stripHtml(html);
+      const text = toArticleText(html, url);
       const tripCandidates = extractTripSectionCandidates(text);
       const hasTripLikeTimes = tripCandidates.some((line) => TRIP_TIME_PAIR_PATTERN.test(line));
 
@@ -337,6 +343,16 @@ function getArticlePublishedMs(item: Item): number | undefined {
 
   const rssMs = Date.parse(rssDate);
   return Number.isFinite(rssMs) ? rssMs : undefined;
+}
+
+/**
+ * The item's publication date as ISO, or undefined when the feed states none the archive should
+ * record. Normalizing here (rather than storing the raw RFC-822 string) keeps the archived
+ * `Datum:` comparable with `Stand:` and stable regardless of how KVV formats the field.
+ */
+function toIsoPublishedDate(item: Item): string | undefined {
+  const publishedMs = getArticlePublishedMs(item);
+  return publishedMs === undefined ? undefined : new Date(publishedMs).toISOString();
 }
 
 function getArticleAgeMs(item: Item, nowMs: number): number | undefined {

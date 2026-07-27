@@ -28,6 +28,11 @@ export const ARCHIVE_SUBDIR = 'articles';
 /** Header field labels. Kept as constants so writing and reading stay in lock-step. */
 const HEADER_QUELLE = 'Quelle: ';
 const HEADER_STAND = 'Stand:  ';
+const HEADER_TITEL = 'Titel:  ';
+const HEADER_DATUM = 'Datum:  ';
+
+/** Written for a header field the feed item did not supply. */
+const HEADER_UNKNOWN = 'unbekannt';
 
 /** Rule under the header, separating metadata from the archived body. */
 const HEADER_RULE = '='.repeat(72);
@@ -79,15 +84,53 @@ function resolveArchiveYear(dateIso: string): string {
 }
 
 /**
- * Header prepended to each archive file. Carries only stable values — the source URL and
- * the article's own Stand (or `unbekannt` when absent) — so an unchanged article stays
- * byte-identical run to run. A per-run value here (e.g. a capture timestamp) would diff
- * every file every run and drown out real edits.
+ * The feed-item values recorded alongside the article. Both are optional: a legacy caller or a
+ * feed item missing the field simply archives `unbekannt` rather than failing the run.
  */
-function buildHeader(url: string, stand: string | undefined): string {
-  return [`${HEADER_QUELLE}${url}`, `${HEADER_STAND}${stand ?? 'unbekannt'}`, HEADER_RULE, ''].join(
-    '\n',
-  );
+export interface ArchiveItemMetadata {
+  /** Raw RSS `<title>`; folded to one line on write. */
+  readonly rssTitle?: string | undefined;
+  /** RSS publication date, normalized to ISO so it sorts and compares like `Stand:`. */
+  readonly rssPublishedIso?: string | undefined;
+}
+
+/**
+ * Collapses the feed's multi-line `<title>` into one header line.
+ *
+ * The KVV ticker packs headline, lead sentence and validity range into a single `<title>`
+ * element containing real newlines, but the header is a line-oriented `Label: value` format.
+ * Folding to single spaces is lossless for every consumer that matters: relevance scoring
+ * matches normalized substrings, so whitespace shape never changes a verdict.
+ */
+function foldToSingleLine(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Header prepended to each archive file. Carries only stable values — the source URL, the
+ * article's own Stand, and the feed item's title and publication date (each `unbekannt` when
+ * absent) — so an unchanged article stays byte-identical run to run. A per-run value here
+ * (e.g. a capture timestamp) would diff every file every run and drown out real edits.
+ *
+ * Title and pubDate are the *inputs the scraper judged the article by*: `analyzeRssItem` scores
+ * the title (the KVV feed carries no `<description>`, so it is the entire RSS-gate input) and
+ * the age gate reads pubDate. Recording them makes both decisions auditable after the fact and
+ * replayable in tests, which a copy of the detail page alone cannot do. The trade-off is that a
+ * re-worded ticker entry now diffs a file whose article body is unchanged — that is a real KVV
+ * edit, but a different one than a body edit (see `docs/AGENTS.md`).
+ */
+function buildHeader(url: string, stand: string | undefined, item: ArchiveItemMetadata): string {
+  // A title that folds to nothing (empty or whitespace-only) is as absent as a missing one.
+  const title = foldToSingleLine(item.rssTitle ?? '');
+
+  return [
+    `${HEADER_QUELLE}${url}`,
+    `${HEADER_STAND}${stand ?? HEADER_UNKNOWN}`,
+    `${HEADER_TITEL}${title || HEADER_UNKNOWN}`,
+    `${HEADER_DATUM}${item.rssPublishedIso ?? HEADER_UNKNOWN}`,
+    HEADER_RULE,
+    '',
+  ].join('\n');
 }
 
 /** A rendered archive file: where it belongs and its full text content. */
@@ -105,7 +148,11 @@ export interface RenderedArchive {
  * from writing lets the reparse tooling and tests exercise the exact archived text without
  * touching the filesystem.
  */
-export function renderArchive(url: string, html: string): RenderedArchive {
+export function renderArchive(
+  url: string,
+  html: string,
+  item: ArchiveItemMetadata = {},
+): RenderedArchive {
   const body = toArchiveBody(html);
 
   // `standIso` is the article's Stand, or a current-time fallback when absent (`hasStand`
@@ -117,7 +164,7 @@ export function renderArchive(url: string, html: string): RenderedArchive {
   return {
     year,
     slug: toArchiveSlug(url),
-    content: `${buildHeader(url, hasStand ? standIso : undefined)}\n${body}\n`,
+    content: `${buildHeader(url, hasStand ? standIso : undefined, item)}\n${body}\n`,
   };
 }
 
@@ -125,22 +172,38 @@ export function renderArchive(url: string, html: string): RenderedArchive {
 export interface ParsedArchive {
   /** Source URL from the `Quelle:` header, or undefined if the header is missing. */
   readonly url: string | undefined;
+  /**
+   * Folded RSS title from the `Titel:` header, or undefined when the field is missing or
+   * `unbekannt`. Archives written before the field existed never carry it, and their articles
+   * have long left the feed, so it cannot be backfilled — consumers must handle its absence.
+   */
+  readonly rssTitle: string | undefined;
+  /** ISO publication date from the `Datum:` header, absent under the same conditions. */
+  readonly rssPublishedIso: string | undefined;
   /** The article body below the header rule — a valid input to `parseDetailPage`. */
   readonly body: string;
 }
 
+/** Reads one `Label: value` header field, treating `unbekannt` as absent. */
+function readHeaderField(lines: readonly string[], label: string): string | undefined {
+  const value = lines
+    .find((line) => line.startsWith(label))
+    ?.slice(label.length)
+    .trim();
+  return !value || value === HEADER_UNKNOWN ? undefined : value;
+}
+
 /**
- * Inverse of {@link renderArchive}: recovers the source URL and body from an archive file's
- * content, so the body can be fed back through the parser. Falls back to treating the whole
- * content as the body when no header rule is present.
+ * Inverse of {@link renderArchive}: recovers the source URL, the recorded feed metadata and the
+ * body from an archive file's content, so the body can be fed back through the parser. Falls
+ * back to treating the whole content as the body when no header rule is present.
  */
 export function parseArchive(content: string): ParsedArchive {
   const lines = content.split('\n');
-  const quelle = lines
-    .find((line) => line.startsWith(HEADER_QUELLE))
-    ?.slice(HEADER_QUELLE.length)
-    .trim();
   const ruleIndex = lines.indexOf(HEADER_RULE);
+  // Scope field lookup to the header: `Titel:` could otherwise match a line of article prose.
+  // With no rule the file predates the header entirely, so scanning it all changes nothing.
+  const headerLines = ruleIndex >= 0 ? lines.slice(0, ruleIndex) : lines;
   const body =
     ruleIndex >= 0
       ? lines
@@ -148,7 +211,13 @@ export function parseArchive(content: string): ParsedArchive {
           .join('\n')
           .trim()
       : content.trim();
-  return { url: quelle || undefined, body };
+
+  return {
+    url: readHeaderField(headerLines, HEADER_QUELLE),
+    rssTitle: readHeaderField(headerLines, HEADER_TITEL),
+    rssPublishedIso: readHeaderField(headerLines, HEADER_DATUM),
+    body,
+  };
 }
 
 /**
@@ -157,12 +226,14 @@ export function parseArchive(content: string): ParsedArchive {
  * @param baseDir - Data directory root (e.g. `docs`)
  * @param url - Source detail-page URL (used for the filename and header)
  * @param html - Raw HTML of the detail page
+ * @param item - Feed-item values to record alongside the article (title, publication date)
  */
 export async function archiveArticleText(
   baseDir: string,
   url: string,
   html: string,
+  item: ArchiveItemMetadata = {},
 ): Promise<void> {
-  const { year, slug, content } = renderArchive(url, html);
+  const { year, slug, content } = renderArchive(url, html, item);
   await writeTextFile(join(baseDir, year, ARCHIVE_SUBDIR, `${slug}.txt`), content);
 }

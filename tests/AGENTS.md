@@ -17,6 +17,11 @@ This is the most specific guidance for test code.
 - Keep tests deterministic and fast in `tests/unit/**`.
 - `tests/unit/archive-corpus.test.ts` audits every preserved archive for GTFS-known and explicit
   train-number rows. Parser changes must keep this corpus audit green, not only fixture tests.
+- `tests/unit/archive-relevance.test.ts` audits the same corpus for relevance recall: archives are
+  written before either gate runs, so any archive that parses into trips must pass both
+  `analyzeRssItem` (scored on a headline + lead-sentence reconstruction of the ticker item) and
+  `analyzeDetailPage`. A gate rejecting one is silent data loss. Keyword or threshold changes in
+  `src/relevance.ts` must keep it green, including its trip-less-notice precision guard.
 - `tests/unit/article-archive.test.ts` verifies byte-stable archives and HTML/archive reparse
   fidelity.
 - Integration tests may be slower or interact with real files; document side effects clearly.
