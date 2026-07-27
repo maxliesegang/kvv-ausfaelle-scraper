@@ -1,6 +1,7 @@
 import { join } from 'node:path';
 import type { Cancellation } from './types.js';
 import { readJsonFile, writeJsonFile } from './utils/fs.js';
+import { getBerlinWallClockMs } from './utils/berlin-time.js';
 import { getFahrplanYear } from './fahrplan.js';
 
 /**
@@ -47,6 +48,15 @@ export function getCancellationKey(cancellation: Cancellation): string {
 }
 
 /**
+ * Whether a trip's scheduled departure (Europe/Berlin wall clock) already lies in the past.
+ * An unparsable date/time yields `NaN`, which compares false — treated as "not yet departed",
+ * the conservative answer for the retention rule below.
+ */
+export function hasDeparted(cancellation: Cancellation, nowMs: number): boolean {
+  return getBerlinWallClockMs(cancellation.date, cancellation.fromTime) < nowMs;
+}
+
+/**
  * Comparator that orders cancellations deterministically for stable file output.
  * Exported so maintenance scripts produce the same ordering as the live store.
  */
@@ -67,6 +77,8 @@ interface CancellationBucketStats {
   classificationUpdatedTrips: Cancellation[];
   /** Stored trips dropped this run because their source article no longer lists them. */
   removedTrips: Cancellation[];
+  /** Stored trips their article stopped listing, kept because they had already departed. */
+  retainedDepartedTrips: Cancellation[];
 }
 
 /** One-line, human-readable identity of a trip for run logs. */
@@ -131,6 +143,7 @@ function groupTripsIntoBuckets(
 async function buildBucket(
   pendingBucket: PendingCancellationBucket,
   refetchedSourceUrls: ReadonlySet<string>,
+  nowMs: number,
 ): Promise<CancellationBucket> {
   const storedTrips = await loadExistingCancellations(pendingBucket.filePath);
   const bucket: CancellationBucket = {
@@ -142,13 +155,14 @@ async function buildBucket(
       duplicates: 0,
       classificationUpdatedTrips: [],
       removedTrips: [],
+      retainedDepartedTrips: [],
     },
   };
 
   for (const trip of pendingBucket.refetchedTrips) {
     mergeTrip(bucket, trip);
   }
-  reconcileBucket(bucket, refetchedSourceUrls);
+  reconcileBucket(bucket, refetchedSourceUrls, nowMs);
 
   return bucket;
 }
@@ -209,18 +223,34 @@ function mergeTrip(bucket: CancellationBucket, trip: Cancellation): void {
  * not loaded and its ghost survives until the bucket is touched again. The
  * common case (an article that keeps listing trips on the same lines) is fully
  * covered.
+ *
+ * **Reconciliation is forward-looking only; the past is append-only.** KVV's
+ * detail pages are rolling "still upcoming" lists: on a long disruption day the
+ * article is periodically rewritten to drop trips that have already departed
+ * (observed on `Nettro_CMS_273340`, 2026-07-27, which shed ten morning trips
+ * without even bumping its `Stand`). Un-listing a *future* trip is a genuine
+ * retraction — KVV is saying it will now run — and stays prunable. Un-listing a
+ * *past* trip says nothing about whether it ran; it is garbage collection, and
+ * pruning on it destroys the only record we have. So a departed trip is never
+ * pruned. The cost is that a past entry KVV genuinely retracts stays stored;
+ * that is one stale record, against losing every real one on a disruption day.
  */
 function reconcileBucket(
   bucket: CancellationBucket,
   refetchedSourceUrls: ReadonlySet<string>,
+  nowMs: number,
 ): void {
   for (const [tripKey, storedTrip] of bucket.tripsByKey) {
-    const isGhost =
-      refetchedSourceUrls.has(storedTrip.sourceUrl) && !bucket.refetchedTripKeys.has(tripKey);
-    if (isGhost) {
-      bucket.tripsByKey.delete(tripKey);
-      bucket.stats.removedTrips.push(storedTrip);
+    if (!refetchedSourceUrls.has(storedTrip.sourceUrl)) continue;
+    if (bucket.refetchedTripKeys.has(tripKey)) continue;
+
+    if (hasDeparted(storedTrip, nowMs)) {
+      bucket.stats.retainedDepartedTrips.push(storedTrip);
+      continue;
     }
+
+    bucket.tripsByKey.delete(tripKey);
+    bucket.stats.removedTrips.push(storedTrip);
   }
 }
 
@@ -237,7 +267,7 @@ async function writeBucket(bucket: CancellationBucket): Promise<void> {
     `(added: ${stats.addedTrips.length}, classifications updated: ` +
       `${stats.classificationUpdatedTrips.length}, ` +
       `duplicates: ${stats.duplicates}, removed: ${stats.removedTrips.length}, ` +
-      `total: ${trips.length})`,
+      `departed kept: ${stats.retainedDepartedTrips.length}, total: ${trips.length})`,
   );
   for (const trip of stats.addedTrips) {
     console.log('  + added  ', formatTrip(trip));
@@ -248,6 +278,11 @@ async function writeBucket(bucket: CancellationBucket): Promise<void> {
   for (const trip of stats.removedTrips) {
     console.log('  - removed', formatTrip(trip));
   }
+  // Logged so the forward-looking rule is observable in a run: without this, a run that kept
+  // ten departed trips looks exactly like one that had nothing to keep.
+  for (const trip of stats.retainedDepartedTrips) {
+    console.log('  = kept   ', formatTrip(trip), '(departed; article no longer lists it)');
+  }
 }
 
 function summarizeBuckets(buckets: Iterable<CancellationBucket>): {
@@ -255,34 +290,50 @@ function summarizeBuckets(buckets: Iterable<CancellationBucket>): {
   classificationsUpdated: number;
   duplicateTrips: number;
   staleTripsRemoved: number;
+  departedTripsRetained: number;
 } {
   let tripsAdded = 0;
   let classificationsUpdated = 0;
   let duplicateTrips = 0;
   let staleTripsRemoved = 0;
+  let departedTripsRetained = 0;
 
   for (const bucket of buckets) {
     tripsAdded += bucket.stats.addedTrips.length;
     classificationsUpdated += bucket.stats.classificationUpdatedTrips.length;
     duplicateTrips += bucket.stats.duplicates;
     staleTripsRemoved += bucket.stats.removedTrips.length;
+    departedTripsRetained += bucket.stats.retainedDepartedTrips.length;
   }
 
-  return { tripsAdded, classificationsUpdated, duplicateTrips, staleTripsRemoved };
+  return {
+    tripsAdded,
+    classificationsUpdated,
+    duplicateTrips,
+    staleTripsRemoved,
+    departedTripsRetained,
+  };
 }
 
 /**
  * Saves cancellations to JSON files, organized by year and line.
  * Merges with existing data and reports statistics.
+ *
+ * `nowMs` is the instant departures are judged against for past-trip retention
+ * (see `reconcileBucket`); it is injectable so tests can pin it.
  */
-export async function saveCancellations(baseDir: string, trips: Cancellation[]): Promise<void> {
+export async function saveCancellations(
+  baseDir: string,
+  trips: Cancellation[],
+  nowMs: number = Date.now(),
+): Promise<void> {
   // Articles we successfully re-fetched this run; their refetched trip set is authoritative.
   const refetchedSourceUrls = new Set(trips.map((trip) => trip.sourceUrl));
 
   // Group by destination file first (pure), then load + merge + write each in parallel.
   const pendingBuckets = groupTripsIntoBuckets(baseDir, trips);
   const buckets = await Promise.all(
-    pendingBuckets.map((pendingBucket) => buildBucket(pendingBucket, refetchedSourceUrls)),
+    pendingBuckets.map((pendingBucket) => buildBucket(pendingBucket, refetchedSourceUrls, nowMs)),
   );
   await Promise.all(buckets.map(writeBucket));
 
@@ -291,6 +342,7 @@ export async function saveCancellations(baseDir: string, trips: Cancellation[]):
     `Summary: added ${totals.tripsAdded} new cancellations, ` +
       `updated ${totals.classificationsUpdated} classifications, ` +
       `skipped ${totals.duplicateTrips} duplicates, ` +
-      `removed ${totals.staleTripsRemoved} stale entries.`,
+      `removed ${totals.staleTripsRemoved} stale entries, ` +
+      `kept ${totals.departedTripsRetained} departed entries their article dropped.`,
   );
 }

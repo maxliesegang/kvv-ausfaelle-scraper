@@ -42,6 +42,14 @@ Guidance in this file applies to `src/**` unless a deeper `AGENTS.md` overrides 
   - Extension rule: add normalized keywords or a deliberately positioned category. A rising
     share of `unknown` indicates missing classification rules.
 - `normalizeGermanText` (`src/utils/normalization.ts`) is the canonical normalizer for German-text keyword matching, used by both `relevance.ts` and `cause.ts`. It lowercases and expands umlauts (ä→ae, ö→oe, ü→ue, ß→ss) **before** NFD diacritic stripping, then strips non-alphanumerics — so keywords spelled `ae/oe/ue` match source spellings with umlauts. Always route German keyword matching through it.
+- Reconciliation (`reconcileBucket` in `src/storage.ts`) is forward-looking only. Prune a stored
+  trip whose article no longer lists it **only while its departure is still ahead** — KVV's pages
+  are rolling "still upcoming" lists, so dropping a departed trip is garbage collection, not a
+  retraction, and pruning on it destroys the only record of that cancellation. A departed trip is
+  never pruned; each retention is logged so the rule is auditable in a run's output.
+  Compare trip times with `getBerlinWallClockMs` (`src/utils/berlin-time.ts`): KVV publishes
+  Europe/Berlin wall clock with no offset, so a naive `new Date()` would resolve in the runner's
+  zone. Any tool that rewrites stored trips must apply the same rule.
 - Storage treats `cause` and `causeKeyword` as one classification. A refetch must update both
   when either changes. Use `compareCancellationsBySchedule` anywhere cancellation files are
   rewritten so output ordering remains consistent.

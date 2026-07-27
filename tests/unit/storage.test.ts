@@ -24,6 +24,13 @@ function createCancellation(overrides: Partial<Cancellation> = {}): Cancellation
   };
 }
 
+/**
+ * Reconciliation instants for the 2024-12-16 fixtures, pinned so past-trip retention is
+ * judged against a fixed clock. December is CET (UTC+1), so 08:00 Berlin is 07:00Z.
+ */
+const BEFORE_DEPARTURES_MS = Date.parse('2024-12-16T05:00:00.000Z'); // 06:00 Berlin
+const MIDDAY_MS = Date.parse('2024-12-16T12:00:00.000Z'); // 13:00 Berlin
+
 async function readJsonFile<T>(filePath: string): Promise<T> {
   return JSON.parse(await readFile(filePath, 'utf-8')) as T;
 }
@@ -163,10 +170,13 @@ describe('Storage', () => {
       await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
 
       // KVV edited the article in place: it now lists only 10001 (10003 is gone).
-      // The other article was not re-fetched this run.
-      await saveCancellations(tempDir, [
-        createCancellation({ trainNumber: '10001', fromTime: '08:00' }),
-      ]);
+      // The other article was not re-fetched this run. Judged from before every
+      // departure, so all three are still retractable.
+      await saveCancellations(
+        tempDir,
+        [createCancellation({ trainNumber: '10001', fromTime: '08:00' })],
+        BEFORE_DEPARTURES_MS,
+      );
 
       const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
       const trainNumbers = storedTrips.map((trip) => trip.trainNumber).sort();
@@ -174,6 +184,78 @@ describe('Storage', () => {
       // 10003 pruned (ghost from same source); 10001 kept (still listed);
       // 99999 kept (its article was not re-fetched, so never reconciled).
       assert.deepStrictEqual(trainNumbers, ['10001', '99999']);
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  it('should keep departed trips that a re-fetched article dropped from its rolling list', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+
+    try {
+      console.log = () => undefined;
+
+      // The Nettro_CMS_273340 shape: a morning trip that already ran, plus an
+      // evening one still ahead, both from the same article.
+      const existingTrips = [
+        createCancellation({ trainNumber: '10001', fromTime: '08:00', toTime: '09:00' }),
+        createCancellation({ trainNumber: '10003', fromTime: '18:00', toTime: '19:00' }),
+      ];
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+
+      // Midday re-fetch: KVV has rewritten the article down to trips still to come,
+      // dropping the departed 10001 and the upcoming 10003 alike.
+      await saveCancellations(
+        tempDir,
+        [createCancellation({ trainNumber: '10007', fromTime: '17:00', toTime: '17:45' })],
+        MIDDAY_MS,
+      );
+
+      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      const trainNumbers = storedTrips.map((trip) => trip.trainNumber).sort();
+
+      // 10001 kept: it had already departed, so un-listing it is garbage collection,
+      // not a retraction. 10003 pruned: still in the future, so KVV un-listing it is
+      // a genuine retraction and reconciliation must still act on it.
+      assert.deepStrictEqual(trainNumbers, ['10001', '10007']);
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  it('should report a retained departed trip in the run log', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+    const logLines: string[] = [];
+
+    try {
+      console.log = (...args: unknown[]) => {
+        logLines.push(args.join(' '));
+      };
+
+      const existingTrips = [createCancellation({ trainNumber: '10001', fromTime: '08:00' })];
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+
+      await saveCancellations(
+        tempDir,
+        [createCancellation({ trainNumber: '10007', fromTime: '17:00', toTime: '17:45' })],
+        MIDDAY_MS,
+      );
+
+      // Retention must be visible in a run: a silent keep is indistinguishable from
+      // having had nothing to keep, which is what makes the rule auditable in CI logs.
+      assert.ok(
+        logLines.some((line) => line.includes('= kept') && line.includes('10001')),
+        `expected a retained-trip log line, got:\n${logLines.join('\n')}`,
+      );
+      assert.ok(logLines.some((line) => line.includes('kept 1 departed entries')));
     } finally {
       console.log = originalConsoleLog;
       await rm(tempDir, { recursive: true, force: true });

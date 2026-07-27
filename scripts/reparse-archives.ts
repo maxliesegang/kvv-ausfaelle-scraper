@@ -35,6 +35,7 @@ import { DATA_DIR } from '../src/config.js';
 import {
   compareCancellationsBySchedule,
   getCancellationKey,
+  hasDeparted,
   loadExistingCancellations,
 } from '../src/storage.js';
 import { parseDetailPage, ParseError } from '../src/parser/index.js';
@@ -238,9 +239,16 @@ async function reportArchivedArticleDifferences(
   );
 
   const addedTrips = reparsedTrips.filter((trip) => !storedTrips.has(getLineScopedTripKey(trip)));
-  const removedTrips = [...storedTrips.values()].filter(
+  const unlistedTrips = [...storedTrips.values()].filter(
     (trip) => !reparsedTripsByKey.has(getLineScopedTripKey(trip)),
   );
+
+  // A departed trip is retained, not removed (see `reconcileBucket`). Split it out so this
+  // report predicts what `--write-trips` would do rather than over-reporting removals the
+  // reconciler will not perform.
+  const nowMs = Date.now();
+  const retainedPastTrips = unlistedTrips.filter((trip) => hasDeparted(trip, nowMs));
+  const removedTrips = unlistedTrips.filter((trip) => !hasDeparted(trip, nowMs));
   const reclassifiedTrips = reparsedTrips.filter((trip) => {
     const storedTrip = storedTrips.get(getLineScopedTripKey(trip));
     return (
@@ -258,13 +266,16 @@ async function reportArchivedArticleDifferences(
   totals.tripsRemoved += removedTrips.length;
   totals.classificationsChanged += reclassifiedTrips.length;
 
+  const retainedNote =
+    retainedPastTrips.length > 0 ? `, ${retainedPastTrips.length} past trip(s) retained` : '';
   console.log(
     `  ~ ${basename(filePath)}: +${addedTrips.length} added, -${removedTrips.length} removed, ` +
-      `${reclassifiedTrips.length} classification change(s)`,
+      `${reclassifiedTrips.length} classification change(s)${retainedNote}`,
   );
   if (options.verbose) {
     for (const trip of addedTrips) console.log(`      + ${formatTrip(trip)}`);
     for (const trip of removedTrips) console.log(`      - ${formatTrip(trip)}`);
+    for (const trip of retainedPastTrips) console.log(`      = ${formatTrip(trip)} (departed)`);
     for (const trip of reclassifiedTrips) {
       const storedTrip = storedTrips.get(getLineScopedTripKey(trip));
       console.log(
@@ -405,9 +416,14 @@ async function reconcileTripsForYear(
   const reconciledTripsByIdentity = new Map<string, { line: string; trip: Cancellation }>();
 
   // Stored trips whose article was not reparsed this run: nothing re-read them, so they stand.
+  // Departed trips stand too — the archive captured KVV's rolling "still upcoming" list, and
+  // dropping a past trip from it is garbage collection, not a retraction. This mirrors
+  // `reconcileBucket` in `src/storage.ts`, so the tooling and the live scraper converge on the
+  // same stored set instead of undoing each other.
+  const nowMs = Date.now();
   for (const [line, trips] of storedTripsByLine) {
     for (const trip of trips) {
-      if (!reparsedTripsBySourceUrl.has(trip.sourceUrl)) {
+      if (!reparsedTripsBySourceUrl.has(trip.sourceUrl) || hasDeparted(trip, nowMs)) {
         reconciledTripsByIdentity.set(toTripIdentity(line, trip), { line, trip });
       }
     }

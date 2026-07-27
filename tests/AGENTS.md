@@ -24,6 +24,10 @@ This is the most specific guidance for test code.
   `src/relevance.ts` must keep it green, including its trip-less-notice precision guard.
 - `tests/unit/article-archive.test.ts` verifies byte-stable archives and HTML/archive reparse
   fidelity.
+- `tests/unit/storage.test.ts` pins the forward-looking reconciliation rule: a future trip KVV
+  un-lists is pruned, a departed one is kept. Pass an explicit `nowMs` to `saveCancellations` so
+  the fixtures' departures are judged against a fixed clock instead of the wall clock, which
+  would flip these assertions as the fixture dates age.
 - Integration tests may be slower or interact with real files; document side effects clearly.
 
 ## Useful Commands

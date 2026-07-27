@@ -25,7 +25,10 @@ This is the most specific guidance for maintenance scripts.
     trips from the same source URL. It preserves an existing trip's `capturedAt` and uses the
     canonical storage ordering.
   - Safety: parse failures and articles without structured train-number rows never participate
-    in deletion.
+    in deletion. Nor do already-departed trips — the same forward-looking rule the live
+    reconciler applies (`hasDeparted` in `src/storage.ts`), so the script and the scraper
+    cannot undo each other. The default report
+    splits those out as "past trip(s) retained" instead of counting them as would-be removals.
     The script reuses `renderArchive`/`parseArchive` from `src/article-archive.ts` so the archive
     format lives in one place; the `tests/unit/article-archive.test.ts` "reparse fidelity" suite
     locks the property that archived text reparses to the same trips as the original HTML.
