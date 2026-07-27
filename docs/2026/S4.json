@@ -3302,5 +3302,19 @@
     "capturedAt": "2026-07-26T09:54:15.654Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-27",
+    "stand": "2026-07-27T00:12:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "07:35",
+    "toStop": "KA Tullastraße",
+    "toTime": "07:49",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273356",
+    "capturedAt": "2026-07-27T02:30:15.754Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
