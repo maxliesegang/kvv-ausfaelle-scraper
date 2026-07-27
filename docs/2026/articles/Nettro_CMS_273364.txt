@@ -14,6 +14,7 @@ Betriebsbedingte Fahrtausfälle. Auf den Linien S1 und S11 kommt es wegen Engpä
 Nach aktuellem Stand 27.07.2026 02:19:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen:
 S1/S11:
 10013: Ettlingen Stadt (06:04 Uhr) - Neureut Kirchfeld (06:51 Uhr)
+30007: Marxzell (07:07 Uhr) - Karlsruhe Rheinhafen (08:05 Uhr)
 10014: Neureut Kirchfeld (07:10 Uhr) - Ettlingen Albgaubad (07:57 Uhr)
 10027: Ettlingen Albgaubad (08:04 Uhr) - Neureut Kirchfeld (08:51 Uhr)
 20022: Neureut Kirchfeld (09:05 Uhr) - Ettlingen Stadt (09:48 Uhr)
