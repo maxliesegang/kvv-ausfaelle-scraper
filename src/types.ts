@@ -45,6 +45,18 @@ export interface Cancellation {
    * article archive. See `src/cause.ts`.
    */
   readonly causeKeyword: string | null;
+
+  /**
+   * Git commit this record was recovered from, set only on entries restored by hand after they
+   * were wrongly deleted. Absent on every normally captured record, which is the overwhelming
+   * majority — consumers must treat it as optional.
+   *
+   * The record itself is the scraper's own output, restored verbatim, so this is *not* a
+   * data-quality marker: it says where the bytes came back from, not that they are less
+   * trustworthy. Its practical meaning is that the trip is no longer reproducible from the text
+   * archive, because the source article was edited to drop it (see `docs/AGENTS.md`).
+   */
+  readonly restoredFrom?: string;
 }
 
 /**

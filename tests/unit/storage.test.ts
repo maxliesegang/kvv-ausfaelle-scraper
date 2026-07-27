@@ -262,6 +262,37 @@ describe('Storage', () => {
     }
   });
 
+  it('should preserve restoredFrom when a re-parse reclassifies a recovered record', async () => {
+    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
+    const originalConsoleLog = console.log;
+
+    try {
+      console.log = () => undefined;
+
+      // A hand-recovered record (see docs/AGENTS.md). The re-parse that follows knows
+      // nothing about the recovery, so only the merge can keep the provenance.
+      const existingTrips = [
+        createCancellation({ cause: 'unknown', causeKeyword: null, restoredFrom: '372fdaba1a' }),
+      ];
+      const existingFilePath = join(tempDir, '2025', 'S1.json');
+      await mkdir(join(tempDir, '2025'), { recursive: true });
+      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+
+      await saveCancellations(
+        tempDir,
+        [createCancellation({ cause: 'personnel', causeKeyword: 'fahrpersonal' })],
+        BEFORE_DEPARTURES_MS,
+      );
+
+      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      assert.strictEqual(storedTrips[0]?.cause, 'personnel');
+      assert.strictEqual(storedTrips[0]?.restoredFrom, '372fdaba1a');
+    } finally {
+      console.log = originalConsoleLog;
+      await rm(tempDir, { recursive: true, force: true });
+    }
+  });
+
   it('should stamp legacy records that have no cause field as unknown', async () => {
     const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
     const originalConsoleLog = console.log;

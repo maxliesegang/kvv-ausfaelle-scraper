@@ -53,7 +53,24 @@ Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` 
   predates evidence capture.
 - `stand` is the source article's Europe/Berlin timestamp represented as UTC ISO time.
 - `date` is the source-local trip date and must not change because of a UTC date rollover.
-- Keep `capturedAt` stable when offline reconciliation corrects an already stored trip.
+- Keep `capturedAt` stable when offline reconciliation corrects an already stored trip. The same
+  applies to `restoredFrom`: both are provenance a reparse cannot reconstruct from article text.
+- `restoredFrom` is optional and present only on hand-recovered records — the git commit their
+  bytes came back from. It is **not** a quality marker: the record is the scraper's own output,
+  restored verbatim. What it does tell a consumer is that the trip is not reproducible from the
+  text archive, because the source article was edited to drop it. Absent on all normal records.
+
+## Recovered Data
+
+- **2026-07-27, `Nettro_CMS_273340` (S5).** KVV rewrote this notice in place during the day,
+  dropping the ten already-departed morning trips it had listed and keeping only the two still
+  upcoming — without bumping `Stand`. Reconciliation read the shortened list as authoritative and
+  deleted nine of them from `docs/2026/S5.json` in commit `cc1b28b` (the tenth, 84888, survived
+  in `S51.json`, whose bucket was not loaded). They were restored verbatim from `372fdaba1a` and
+  stamped `restoredFrom`. The archive text no longer contains them, so a rebuild from
+  `docs/2026/articles/Nettro_CMS_273340.txt` will not regenerate them. The forward-looking
+  reconciliation rule (`reconcileBucket`, `src/storage.ts`) was added in response so a departed
+  trip is never pruned again.
 
 ## Change Expectations
 

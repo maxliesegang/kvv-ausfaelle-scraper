@@ -440,7 +440,16 @@ async function reconcileTripsForYear(
         continue;
       }
 
-      const reconciledTrip = storedTrip ? { ...trip, capturedAt: storedTrip.capturedAt } : trip;
+      // `capturedAt` and `restoredFrom` are provenance the reparse cannot know: the archive says
+      // what KVV published, not when we first saw it or that the record was recovered by hand.
+      // Both must survive a correction, or reconciliation silently rewrites history.
+      const reconciledTrip = storedTrip
+        ? {
+            ...trip,
+            capturedAt: storedTrip.capturedAt,
+            ...(storedTrip.restoredFrom ? { restoredFrom: storedTrip.restoredFrom } : {}),
+          }
+        : trip;
       reconciledTripsByIdentity.set(identity, { line: trip.line, trip: reconciledTrip });
     }
   }
