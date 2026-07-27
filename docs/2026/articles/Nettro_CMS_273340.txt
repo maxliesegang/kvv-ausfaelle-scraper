@@ -14,16 +14,8 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Pforzheim Hauptbahnhof und Wörth Badepark. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 27.07.2026 01:36:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84705 KA Albtalbahnhof (05:02 Uhr) - Söllingen Bf. (05:35 Uhr)
-84957 KA Rheinbergstraße (05:02 Uhr) - Pforzheim Hbf. (06:11 Uhr)
-84806 Söllingen Bf. (05:58 Uhr) - Wörth Badepark (07:05 Uhr)
-84950 Pforzheim Hbf. (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
-84803 Wörth Badepark (07:15 Uhr) - Söllingen Bf. (08:17 Uhr)
-84809 Wörth Badepark (08:05 Uhr) - Söllingen Bf. (09:09 Uhr)
-84888 Söllingen Bf. 08:38 Uhr) - Ka Marktplatz (Kaiserstr.) U (09:06 Uhr)
-84722 Söllingen Bf. (09:18 Uhr) - KA Rheinbergstraße (10:04 Uhr)
-84826 KA Entenfang (11:26 Uhr) - Wörth Badepark 11:53 Uhr)
-84819 Wörth Badepark (12:05 Uhr) - KA Rheinbergstraße (12:20 Uhr)
+85068 KA Tullastraße (15:30 Uhr) - Wörth Badepark (16:15 Uhr)
+85005 Wörth Badepark (16:23 Uhr) - KA Tullastraße (17:06 Uhr)
 Wir bitten um Entschuldigung.
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
