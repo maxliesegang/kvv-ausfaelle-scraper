@@ -1398,5 +1398,33 @@
     "capturedAt": "2026-07-27T02:30:15.698Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-29",
+    "stand": "2026-07-28T22:23:00.000Z",
+    "trainNumber": "85551",
+    "fromStop": "Rastatt",
+    "fromTime": "04:56",
+    "toStop": "Ottersweier",
+    "toTime": "05:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273522",
+    "capturedAt": "2026-07-29T02:08:31.174Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-29",
+    "stand": "2026-07-28T22:23:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Ottersweier",
+    "fromTime": "05:42",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273522",
+    "capturedAt": "2026-07-29T02:08:31.174Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
