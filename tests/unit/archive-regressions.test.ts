@@ -227,6 +227,26 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('resolves an S52-only Germersheim run in an S5/S51 article via an override', () => {
+    const trips = parseArchivedArticle('Nettro_CMS_273506');
+
+    // GTFS files 85481 only under S52, the sibling short-working on the S51 Germersheim
+    // corridor, which this S5/S51 notice never mentions — without the override the article
+    // fails to parse with a MultiLineMappingError.
+    assert.deepEqual(routeOf(findTrip(trips, '85481')), {
+      trainNumber: '85481',
+      line: 'S51',
+      fromStop: 'Germersheim',
+      fromTime: '13:26',
+      toStop: 'KA Marktplatz',
+      toTime: '14:26',
+    });
+    assert.ok(
+      trips.every(({ line }) => line === 'S5' || line === 'S51'),
+      'every trip must resolve to one of the mentioned lines',
+    );
+  });
+
   test('parses trip rows whose train number carries a trailing colon', () => {
     const trips = parseArchivedArticle('Nettro_CMS_273364');
 
