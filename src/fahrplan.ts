@@ -148,31 +148,11 @@ export function getCurrentFahrplanYear(): number | undefined {
 }
 
 /**
- * Determines which Fahrplan period (Winter/Summer) a given date belongs to.
- *
- * @param date - ISO date string (YYYY-MM-DD) or Date object
- * @returns The Fahrplan period, or undefined if date is outside known periods
- */
-export function getFahrplanPeriod(date: string | Date): FahrplanPeriod | undefined {
-  const isoDate = typeof date === 'string' ? date : date.toISOString().slice(0, 10);
-
-  for (const fahrplanYear of FAHRPLAN_YEARS) {
-    for (const period of fahrplanYear.periods) {
-      if (isoDate >= period.startDate && isoDate <= period.endDate) {
-        return period;
-      }
-    }
-  }
-
-  return undefined;
-}
-
-/**
  * Gets the Fahrplan year definition for a specific year.
  *
  * @param year - The Fahrplan year number
  * @returns The Fahrplan year definition, or undefined if not found
  */
 export function getFahrplanYearDefinition(year: number): FahrplanYear | undefined {
-  return FAHRPLAN_YEARS.find((fy) => fy.year === year);
+  return FAHRPLAN_YEARS.find((fahrplanYear) => fahrplanYear.year === year);
 }

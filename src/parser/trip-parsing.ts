@@ -1,11 +1,15 @@
 /**
- * Trip line parsing and validation utilities.
+ * Trip row parsing and validation utilities.
+ *
+ * Naming: a **row** is one line of article text (a candidate trip entry); a **line** is
+ * always a transit line (`S5`). KVV's notices list one trip per row, so the two meanings
+ * sit side by side in this file and are kept lexically distinct on purpose.
  */
 
 import type { Cancellation, TripParsingMetadata } from '../types.js';
 import { lookupLinesForTrip, type TripDescriptor } from '../train-lines.js';
 import { extractDetailId, normalizeLineUppercase } from '../utils/normalization.js';
-import { MAX_LINES_TO_COMBINE } from '../utils/constants.js';
+import { MAX_ROWS_TO_COMBINE } from '../utils/constants.js';
 import {
   PATTERNS,
   MARKERS,
@@ -36,7 +40,7 @@ function createFlexibleMarkerPattern(marker: string): RegExp {
   return new RegExp(escapeRegexLiteral(marker).replace(/\s+/g, '\\s+'), 'i');
 }
 
-const TRIP_START_PATTERNS = MARKERS.TRIPS_START.map(createFlexibleMarkerPattern);
+const TRIP_SECTION_START_PATTERNS = MARKERS.TRIPS_START.map(createFlexibleMarkerPattern);
 
 /**
  * Determines whether the parsed line value looks ambiguous (e.g. "S1 und S11").
@@ -113,12 +117,12 @@ interface ParsedTripFields {
   readonly fromTime?: string | undefined;
   readonly toStop?: string | undefined;
   readonly toTime?: string | undefined;
-  /** Line identifier carried inline by the trip line (line-prefix format only). */
+  /** Transit line carried inline by the trip row (line-prefix format only). */
   readonly lineId?: string | undefined;
 }
 
 /**
- * A trip-line format: its regex plus how to map the captured groups onto trip fields.
+ * A trip-row format: its regex plus how to map the captured groups onto trip fields.
  * The KVV pages use several human-written layouts that differ only in field order, so
  * each is described once here and processed by a single matcher loop. Order matters —
  * the most specific format (line-prefix) is tried first and the loosest fallback last.
@@ -216,7 +220,7 @@ const TRIP_FORMATS: readonly TripFormat[] = [
   },
 ];
 
-/** A trip line whose fields are present and valid (the five core fields are non-null). */
+/** A trip row whose fields are present and valid (the five core fields are non-null). */
 interface ValidTripFields extends ParsedTripFields {
   readonly trainNumber: string;
   readonly fromStop: string;
@@ -226,42 +230,33 @@ interface ValidTripFields extends ParsedTripFields {
 }
 
 /**
- * Matches a line against the known trip formats, returning the fields of the first
+ * Matches a row against the known trip formats, returning the fields of the first
  * format whose regex matches and whose captured fields pass validation.
  */
-function matchTripFormat(line: string): ValidTripFields | null {
+function matchTripFormat(row: string): ValidTripFields | null {
   for (const { pattern, rejectUhrOnlyStops, extract } of TRIP_FORMATS) {
-    const match = line.match(pattern);
+    const match = row.match(pattern);
     if (!match) continue;
 
     const fields = extract(match);
-    if (
-      isValidTripFields(
-        fields.trainNumber,
-        fields.fromStop,
-        fields.fromTime,
-        fields.toStop,
-        fields.toTime,
-        rejectUhrOnlyStops,
-      )
-    ) {
-      return fields as ValidTripFields;
+    if (isValidTripFields(fields, rejectUhrOnlyStops)) {
+      return fields;
     }
   }
   return null;
 }
 
 /**
- * Checks whether a line of text looks like a parsable trip entry.
+ * Checks whether a row of article text looks like a parsable trip entry.
  */
-export function isValidTripLine(line: string): boolean {
-  return matchTripFormat(line) !== null;
+export function isValidTripRow(row: string): boolean {
+  return matchTripFormat(row) !== null;
 }
 
 /**
- * Splits a text block into trimmed candidate lines for trip parsing.
+ * Splits a text block into trimmed candidate rows for trip parsing.
  */
-export function buildTripCandidateLines(text: string): string[] {
+export function buildTripCandidateRows(text: string): string[] {
   return text
     .split('\n')
     .map((line) =>
@@ -303,33 +298,33 @@ export function extractMentionedLines(text: string): string[] {
 }
 
 /**
- * Attempts to combine a line with subsequent lines to create a valid trip line.
- * @returns Combined line and number of lines consumed, or null if no valid combination found
+ * Attempts to combine a row with subsequent rows to form a valid trip row.
+ * @returns Combined row and number of rows consumed, or null if no valid combination found
  */
 function tryMergeWithNext(
-  rawLines: string[],
+  rawRows: string[],
   startIndex: number,
-  maxLinesToCombine: number = MAX_LINES_TO_COMBINE,
-): { combinedLine: string; linesConsumed: number } | null {
-  let combined = rawLines[startIndex] || '';
+  maxRowsToCombine: number = MAX_ROWS_TO_COMBINE,
+): { combinedRow: string; rowsConsumed: number } | null {
+  let combined = rawRows[startIndex] || '';
 
   for (
     let offset = 1;
-    offset <= maxLinesToCombine && startIndex + offset < rawLines.length;
+    offset <= maxRowsToCombine && startIndex + offset < rawRows.length;
     offset++
   ) {
-    const nextLine = rawLines[startIndex + offset] || '';
+    const nextRow = rawRows[startIndex + offset] || '';
     // A new leading train number is a hard row boundary. Without this guard, one malformed
     // row can consume one or more valid following rows until the concatenation happens to
     // satisfy a loose format, producing a corrupted trip and silently losing the rest.
-    const nextLineStartsTripRow = /^(?:[A-Za-z]+\d+\s+)?\d{4,6}(?:\s|$)/.test(nextLine);
-    const combinedLineIsStandaloneLinePrefix = /^[A-Za-z]+\d+\s*$/.test(combined);
-    if (nextLineStartsTripRow && !combinedLineIsStandaloneLinePrefix) {
+    const nextRowStartsTripRow = /^(?:[A-Za-z]+\d+\s+)?\d{4,6}(?:\s|$)/.test(nextRow);
+    const combinedRowIsStandaloneLinePrefix = /^[A-Za-z]+\d+\s*$/.test(combined);
+    if (nextRowStartsTripRow && !combinedRowIsStandaloneLinePrefix) {
       break;
     }
-    combined = `${combined} ${nextLine}`.trim();
-    if (isValidTripLine(combined)) {
-      return { combinedLine: combined, linesConsumed: offset + 1 };
+    combined = `${combined} ${nextRow}`.trim();
+    if (isValidTripRow(combined)) {
+      return { combinedRow: combined, rowsConsumed: offset + 1 };
     }
   }
 
@@ -337,70 +332,70 @@ function tryMergeWithNext(
 }
 
 /**
- * Merges lines that belong together and filters out invalid ones.
+ * Merges rows that belong together and filters out invalid ones.
  *
- * This handles cases where trip information is split across multiple lines
- * by attempting to combine up to 3 consecutive lines to form valid trip entries.
+ * This handles cases where trip information is split across multiple rows
+ * by attempting to combine up to 3 consecutive rows to form valid trip entries.
  */
-export function mergeTripLines(rawLines: string[]): string[] {
-  const mergedLines: string[] = [];
+export function mergeTripRows(rawRows: string[]): string[] {
+  const mergedRows: string[] = [];
   let i = 0;
 
-  while (i < rawLines.length) {
-    const currentLine = rawLines[i] || '';
+  while (i < rawRows.length) {
+    const currentRow = rawRows[i] || '';
 
     // If the line is already valid, use it as-is
-    if (isValidTripLine(currentLine)) {
-      mergedLines.push(currentLine);
+    if (isValidTripRow(currentRow)) {
+      mergedRows.push(currentRow);
       i++;
       continue;
     }
 
     // Try to combine with next lines to create a valid trip line
-    const mergeResult = tryMergeWithNext(rawLines, i);
+    const mergeResult = tryMergeWithNext(rawRows, i);
     if (mergeResult) {
-      mergedLines.push(mergeResult.combinedLine);
-      i += mergeResult.linesConsumed;
+      mergedRows.push(mergeResult.combinedRow);
+      i += mergeResult.rowsConsumed;
     } else {
       // No valid combination found, skip this line
       i++;
     }
   }
 
-  return mergedLines;
+  return mergedRows;
 }
 
 /**
- * Extracts raw candidate lines from the trip section without validation or merging.
+ * Extracts raw candidate rows from the trip section without validation or merging.
  * Useful for diagnostics when no trips could be parsed.
  */
-export function extractTripSectionCandidates(text: string): string[] {
+export function extractTripSectionCandidateRows(text: string): string[] {
   const tripSection = findTripSection(text);
-  return buildTripCandidateLines(tripSection ?? text);
+  return buildTripCandidateRows(tripSection ?? text);
 }
 
-/** The leading train number of a trip line (`85879 …` → `85879`), or `undefined`. */
-export function leadingTrainNumber(line: string): string | undefined {
-  return line.match(/^(\d+)\b/)?.[1];
+/** The leading train number of a trip row (`85879 …` → `85879`), or `undefined`. */
+export function leadingTrainNumber(row: string): string | undefined {
+  return row.match(/^(\d+)\b/)?.[1];
 }
 
 /**
  * Raw, pre-merge trip-like rows the parser could not structure.
  *
- * `extractTripLines` merges and filters candidate lines, so a row it cannot parse never
+ * `extractTripRows` merges and filters candidate lines, so a row it cannot parse never
  * reaches parsing and is silently dropped. This scans the RAW candidates instead and
  * returns every trip-like row (two clock times) that matches no known format and whose
  * leading number was not already captured elsewhere (e.g. via a multi-line merge) — i.e.
  * rows genuinely lost during parsing. Used both to warn and to drive the known-number
  * tripwire (`src/workflow.ts`).
  */
-export function findUnparsedTripLikeLines(
+export function findUnparsedTripLikeRows(
   text: string,
   parsedTrainNumbers: ReadonlySet<string>,
 ): string[] {
-  return extractTripSectionCandidates(text).filter((line) => {
-    if (!TRIP_TIME_PAIR_PATTERN.test(line) || isValidTripLine(line)) return false;
-    const number = leadingTrainNumber(line);
+  return extractTripSectionCandidateRows(text).filter((row) => {
+    if (!TRIP_TIME_PAIR_PATTERN.test(row) || isValidTripRow(row)) return false;
+    const number = leadingTrainNumber(row);
     return number === undefined || !parsedTrainNumbers.has(number);
   });
 }
@@ -409,23 +404,23 @@ export function findUnparsedTripLikeLines(
  * Extracts the section of text containing trip listings.
  *
  * @param text - Full plain text content
- * @returns Array of trip lines, or empty array if section not found
+ * @returns Array of trip rows, or empty array if section not found
  */
-export function extractTripLines(text: string): string[] {
+export function extractTripRows(text: string): string[] {
   const tripSection = findTripSection(text);
 
   if (tripSection) {
-    const tripLines = parseTripLinesFromSection(tripSection);
-    if (tripLines.length > 0) {
-      return tripLines;
+    const tripRows = parseTripRowsFromSection(tripSection);
+    if (tripRows.length > 0) {
+      return tripRows;
     }
   }
 
-  return parseTripLinesFromSection(text);
+  return parseTripRowsFromSection(text);
 }
 
 function findTripSection(text: string): string | undefined {
-  for (const pattern of TRIP_START_PATTERNS) {
+  for (const pattern of TRIP_SECTION_START_PATTERNS) {
     const match = pattern.exec(text);
     if (match) {
       return text.slice(match.index + match[0].length);
@@ -435,26 +430,26 @@ function findTripSection(text: string): string | undefined {
   return undefined;
 }
 
-function parseTripLinesFromSection(section: string): string[] {
-  const rawLines = buildTripCandidateLines(section);
-  if (rawLines.length === 0) {
+function parseTripRowsFromSection(section: string): string[] {
+  const rawRows = buildTripCandidateRows(section);
+  if (rawRows.length === 0) {
     return [];
   }
 
-  return mergeTripLines(rawLines);
+  return mergeTripRows(rawRows);
 }
 
 /**
- * Validates parsed trip fields.
+ * Whether all five core fields were captured — and, for formats that need it, that neither
+ * stop is the bare time suffix "Uhr" (the signature of a row a loose format mis-split).
+ *
+ * Narrows to {@link ValidTripFields} so a passing match needs no cast at the call site.
  */
 function isValidTripFields(
-  trainNumber: string | undefined,
-  fromStop: string | undefined,
-  fromTime: string | undefined,
-  toStop: string | undefined,
-  toTime: string | undefined,
+  fields: ParsedTripFields,
   rejectUhrOnlyStops: boolean,
-): boolean {
+): fields is ValidTripFields {
+  const { trainNumber, fromStop, fromTime, toStop, toTime } = fields;
   if (!trainNumber || !fromStop || !fromTime || !toStop || !toTime) {
     return false;
   }
@@ -491,16 +486,16 @@ function buildCancellation(
 }
 
 /**
- * Parses a single trip line into Cancellation objects — one per line the trip is
+ * Parses a single trip row into Cancellation objects — one per transit line the trip is
  * reported under (usually one; several when a number runs on multiple mentioned lines).
  *
- * @param line - Trip line text to parse
+ * @param row - Trip row text to parse
  * @param metadata - Common metadata for all trips
- * @returns Cancellations for this trip line, or an empty array if it is not a trip line
+ * @returns Cancellations for this trip row, or an empty array if it is not a trip row
  * @throws {MultiLineMappingError} via {@link resolveLinesForTrip} for unmappable numbers
  */
-export function parseTripLine(line: string, metadata: TripParsingMetadata): Cancellation[] {
-  const fields = matchTripFormat(line);
+export function parseTripRow(row: string, metadata: TripParsingMetadata): Cancellation[] {
+  const fields = matchTripFormat(row);
   if (!fields) {
     return [];
   }

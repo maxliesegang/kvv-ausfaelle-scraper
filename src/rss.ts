@@ -32,15 +32,15 @@ export async function fetchText(
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const res = await fetch(url, { signal: controller.signal });
-    if (!res.ok) {
+    const response = await fetch(url, { signal: controller.signal });
+    if (!response.ok) {
       throw new FetchError(
-        `Failed to fetch ${url}: ${res.status} ${res.statusText}`,
+        `Failed to fetch ${url}: ${response.status} ${response.statusText}`,
         url,
-        res.status,
+        response.status,
       );
     }
-    return await res.text();
+    return await response.text();
   } catch (error) {
     if (error instanceof FetchError) {
       throw error;

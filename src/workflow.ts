@@ -4,8 +4,8 @@ import { archiveArticleText } from './article-archive.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage, ParseError } from './parser/index.js';
 import {
-  extractTripSectionCandidates,
-  findUnparsedTripLikeLines,
+  extractTripSectionCandidateRows,
+  findUnparsedTripLikeRows,
   leadingTrainNumber,
 } from './parser/trip-parsing.js';
 import { TRIP_TIME_PAIR_PATTERN } from './parser/patterns.js';
@@ -76,8 +76,8 @@ export function findMissedKnownTripsError(
   }
 
   const parsedNumbers = new Set(trips.map((trip) => trip.trainNumber));
-  const missed = findUnparsedTripLikeLines(text, parsedNumbers).filter((line) => {
-    const number = leadingTrainNumber(line);
+  const missed = findUnparsedTripLikeRows(text, parsedNumbers).filter((row) => {
+    const number = leadingTrainNumber(row);
     return number !== undefined && isKnownTrainNumber(number);
   });
   if (missed.length === 0) {
@@ -85,7 +85,7 @@ export function findMissedKnownTripsError(
   }
 
   return new ParseError(
-    `Unparsed trip line(s) carrying a known train number in ${url}: ` +
+    `Unparsed trip row(s) carrying a known train number in ${url}: ` +
       `${JSON.stringify(missed.slice(0, 5))}. ` +
       `This is a real cancellation in a format the parser does not cover — add a trip ` +
       `format in src/parser/patterns.ts (with a regression fixture) so it parses.`,
@@ -177,8 +177,8 @@ export async function processRssItem(
     if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
       const reasons = detailRelevance.reasons.join('; ') || 'no relevance reasons recorded';
       const text = toArticleText(html, url);
-      const tripCandidates = extractTripSectionCandidates(text);
-      const hasTripLikeTimes = tripCandidates.some((line) => TRIP_TIME_PAIR_PATTERN.test(line));
+      const candidateRows = extractTripSectionCandidateRows(text);
+      const hasTripLikeTimes = candidateRows.some((row) => TRIP_TIME_PAIR_PATTERN.test(row));
 
       if (!hasTripLikeTimes) {
         console.warn(

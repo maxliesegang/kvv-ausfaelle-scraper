@@ -39,13 +39,3 @@ function loadDefinitions(fahrplanYear?: number): readonly TrainLineDefinition[] 
  * Add new definitions here by importing the corresponding file.
  */
 export const TRAIN_LINE_DEFINITIONS: readonly TrainLineDefinition[] = loadDefinitions();
-
-/**
- * Loads train line definitions for a specific Fahrplan year.
- *
- * @param fahrplanYear - The Fahrplan year to load definitions for
- * @returns Array of train line definitions for that year
- */
-export function loadDefinitionsForYear(fahrplanYear: number): readonly TrainLineDefinition[] {
-  return loadDefinitions(fahrplanYear);
-}

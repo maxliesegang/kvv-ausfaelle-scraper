@@ -313,12 +313,12 @@ export function collectTripEndpoints(
   const header = lines.next().value;
   if (!header) return new Map();
   const cols = header.split(',').map((c: string) => c.trim().replace(/^"|"$/g, ''));
-  const idx = (name: string) => cols.indexOf(name);
-  const ti = idx('trip_id');
-  const ai = idx('arrival_time');
-  const di = idx('departure_time');
-  const si = idx('stop_sequence');
-  if (ti < 0 || ai < 0 || di < 0 || si < 0) {
+  const columnIndex = (name: string) => cols.indexOf(name);
+  const tripIdColumn = columnIndex('trip_id');
+  const arrivalColumn = columnIndex('arrival_time');
+  const departureColumn = columnIndex('departure_time');
+  const sequenceColumn = columnIndex('stop_sequence');
+  if (tripIdColumn < 0 || arrivalColumn < 0 || departureColumn < 0 || sequenceColumn < 0) {
     throw new Error(
       'stop_times.txt is missing one of trip_id/arrival_time/departure_time/stop_sequence',
     );
@@ -329,33 +329,43 @@ export function collectTripEndpoints(
   // could contain a comma, so a plain split is still safe.
   const unquote = (value: string | undefined): string => (value ?? '').replace(/^"|"$/g, '');
 
-  const acc = new Map<string, { minSeq: number; maxSeq: number; dep: string; arr: string }>();
+  const endpointsByTripId = new Map<
+    string,
+    { minSeq: number; maxSeq: number; dep: string; arr: string }
+  >();
   for (const line of lines) {
-    const f = line.split(',');
-    const tripId = unquote(f[ti]);
+    const fields = line.split(',');
+    const tripId = unquote(fields[tripIdColumn]);
     if (!tripId || !wantedTripIds.has(tripId)) continue;
-    const seq = Number(unquote(f[si]));
-    let entry = acc.get(tripId);
+    const seq = Number(unquote(fields[sequenceColumn]));
+    let entry = endpointsByTripId.get(tripId);
     if (!entry)
-      acc.set(tripId, (entry = { minSeq: Infinity, maxSeq: -Infinity, dep: '', arr: '' }));
+      endpointsByTripId.set(
+        tripId,
+        (entry = { minSeq: Infinity, maxSeq: -Infinity, dep: '', arr: '' }),
+      );
     if (seq < entry.minSeq) {
       entry.minSeq = seq;
-      entry.dep = gtfsTimeToHHMM(unquote(f[di]) || unquote(f[ai]));
+      entry.dep = gtfsTimeToHHMM(
+        unquote(fields[departureColumn]) || unquote(fields[arrivalColumn]),
+      );
     }
     if (seq > entry.maxSeq) {
       entry.maxSeq = seq;
-      entry.arr = gtfsTimeToHHMM(unquote(f[ai]) || unquote(f[di]));
+      entry.arr = gtfsTimeToHHMM(
+        unquote(fields[arrivalColumn]) || unquote(fields[departureColumn]),
+      );
     }
   }
 
   const endpoints = new Map<string, TripEndpoint>();
-  for (const [tripId, e] of acc)
-    if (e.dep && e.arr) endpoints.set(tripId, { dep: e.dep, arr: e.arr });
+  for (const [tripId, entry] of endpointsByTripId)
+    if (entry.dep && entry.arr) endpoints.set(tripId, { dep: entry.dep, arr: entry.arr });
   return endpoints;
 }
 
 /** service_id → set of operating dates (added dates minus removed), from calendar_dates.txt. */
-function serviceDates(calendarDatesTxt: string): Map<string, Set<string>> {
+function collectServiceDates(calendarDatesTxt: string): Map<string, Set<string>> {
   const dates = new Map<string, Set<string>>();
   for (const row of parseCsv(calendarDatesTxt)) {
     if (col(row, 'exception_type') !== '1') continue;
@@ -380,7 +390,7 @@ export interface AmbiguousResult {
  * the only numbers the flat per-line lists cannot disambiguate, so the only ones the
  * sidecar needs to describe.
  */
-function sharedTrainNumbers(
+function findSharedTrainNumbers(
   routeIdToLine: ReadonlyMap<string, string>,
   trips: readonly Record<string, string>[],
 ): Set<string> {
@@ -413,10 +423,10 @@ export function buildAmbiguousTrips(
   );
   const routeIdToLine = mapRoutesToLines(input.routesTxt, agencyIds);
   const trips = parseCsv(input.tripsTxt);
-  const shared = sharedTrainNumbers(routeIdToLine, trips);
+  const shared = findSharedTrainNumbers(routeIdToLine, trips);
 
-  const svcDates = serviceDates(input.calendarDatesTxt);
-  if (shared.size > 0 && [...svcDates.values()].every((dates) => dates.size === 0)) {
+  const datesByServiceId = collectServiceDates(input.calendarDatesTxt);
+  if (shared.size > 0 && [...datesByServiceId.values()].every((dates) => dates.size === 0)) {
     warnings.push(
       'calendar_dates.txt produced no service dates — this feed likely expresses regular ' +
         'service via calendar.txt (weekday flags), which the seeder does not read. The ' +
@@ -426,8 +436,8 @@ export function buildAmbiguousTrips(
   }
 
   // number → "line|dep|arr" → accumulated dates
-  type Sig = { line: string; dep: string; arr: string; dates: Set<string> };
-  const byNumber = new Map<string, Map<string, Sig>>();
+  type SignatureDraft = { line: string; dep: string; arr: string; dates: Set<string> };
+  const draftsByNumber = new Map<string, Map<string, SignatureDraft>>();
   for (const trip of trips) {
     const number = col(trip, 'trip_short_name');
     if (!shared.has(number)) continue;
@@ -436,18 +446,28 @@ export function buildAmbiguousTrips(
     if (!line || !endpoint) continue;
 
     const key = `${line}|${endpoint.dep}|${endpoint.arr}`;
-    const sigs = byNumber.get(number) ?? byNumber.set(number, new Map()).get(number)!;
-    const sig = sigs.get(key) ?? { line, dep: endpoint.dep, arr: endpoint.arr, dates: new Set() };
-    for (const date of svcDates.get(col(trip, 'service_id')) ?? []) sig.dates.add(date);
-    sigs.set(key, sig);
+    const drafts = draftsByNumber.get(number) ?? draftsByNumber.set(number, new Map()).get(number)!;
+    const draft = drafts.get(key) ?? {
+      line,
+      dep: endpoint.dep,
+      arr: endpoint.arr,
+      dates: new Set(),
+    };
+    for (const date of datesByServiceId.get(col(trip, 'service_id')) ?? []) draft.dates.add(date);
+    drafts.set(key, draft);
   }
 
   const result: Record<string, TripSignature[]> = {};
-  for (const number of [...byNumber.keys()].sort((a, b) => Number(a) - Number(b))) {
-    const signatures = [...byNumber.get(number)!.values()]
-      .filter((s) => s.dates.size > 0)
+  for (const number of [...draftsByNumber.keys()].sort((a, b) => Number(a) - Number(b))) {
+    const signatures = [...draftsByNumber.get(number)!.values()]
+      .filter((draft) => draft.dates.size > 0)
       .sort((a, b) => a.line.localeCompare(b.line) || a.dep.localeCompare(b.dep))
-      .map((s) => ({ line: s.line, dep: s.dep, arr: s.arr, dates: compressDates(s.dates) }));
+      .map((draft) => ({
+        line: draft.line,
+        dep: draft.dep,
+        arr: draft.arr,
+        dates: compressDates(draft.dates),
+      }));
     if (signatures.length > 0) result[number] = signatures;
   }
 
@@ -571,16 +591,16 @@ function parseArgs(argv: readonly string[]): CliArgs {
 }
 
 /** The `trip_id`s of every trip whose number runs on more than one S-line. */
-function sharedNumberTripIds(
+function collectSharedNumberTripIds(
   routeIdToLine: ReadonlyMap<string, string>,
   trips: readonly Record<string, string>[],
 ): Set<string> {
-  const shared = sharedTrainNumbers(routeIdToLine, trips);
-  const wanted = new Set<string>();
+  const shared = findSharedTrainNumbers(routeIdToLine, trips);
+  const sharedTripIds = new Set<string>();
   for (const trip of trips) {
-    if (shared.has(col(trip, 'trip_short_name'))) wanted.add(col(trip, 'trip_id'));
+    if (shared.has(col(trip, 'trip_short_name'))) sharedTripIds.add(col(trip, 'trip_id'));
   }
-  return wanted;
+  return sharedTripIds;
 }
 
 async function main(): Promise<void> {
@@ -634,10 +654,10 @@ async function seedAmbiguousSidecar(
 ): Promise<string[]> {
   const { ids: agencyIds } = resolveAgencies(gtfs.agencyTxt, args.agencyPattern);
   const routeIdToLine = mapRoutesToLines(gtfs.routesTxt, agencyIds);
-  const wanted = sharedNumberTripIds(routeIdToLine, parseCsv(gtfs.tripsTxt));
+  const sharedTripIds = collectSharedNumberTripIds(routeIdToLine, parseCsv(gtfs.tripsTxt));
 
-  console.log(`\nScanning stop_times.txt for ${wanted.size} shared-number trips …`);
-  const endpoints = collectTripEndpoints(gtfs.stopTimesBytes, wanted);
+  console.log(`\nScanning stop_times.txt for ${sharedTripIds.size} shared-number trips …`);
+  const endpoints = collectTripEndpoints(gtfs.stopTimesBytes, sharedTripIds);
 
   const { trips, sharedNumberCount, warnings } = buildAmbiguousTrips(gtfs, endpoints, {
     agencyPattern: args.agencyPattern,

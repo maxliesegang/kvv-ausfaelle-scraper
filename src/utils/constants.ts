@@ -11,7 +11,7 @@ export const ISO_DATE_LENGTH = 10;
  * Maximum number of consecutive lines to attempt combining when parsing trip entries.
  * Based on observed KVV HTML formatting where trip data can span up to 3 lines.
  */
-export const MAX_LINES_TO_COMBINE = 3;
+export const MAX_ROWS_TO_COMBINE = 3;
 
 /**
  * Fetch timeout bounds in milliseconds

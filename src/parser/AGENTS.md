@@ -12,6 +12,14 @@ This is the most specific guidance for parser files.
   - stop/time variants
   - multiline/merged trip rows
 
+## Vocabulary
+
+- **row** = one line of article text (a candidate trip entry). **line** = a transit line (`S5`).
+  Both meanings are unavoidable here — KVV lists one trip per row of text — so they are kept
+  lexically distinct: `isValidTripRow`, `mergeTripRows`, `parseTripRow`, `rawRows` operate on
+  text; `resolveLinesForTrip`, `mentionedLines`, `articleLine` operate on transit lines. Never
+  name a text row `line`.
+
 ## Change Rules
 
 - Prefer additive parsing improvements over breaking existing patterns.

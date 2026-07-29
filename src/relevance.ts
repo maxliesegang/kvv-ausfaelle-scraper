@@ -1,6 +1,6 @@
 import type { Item } from './types.js';
 import { stripHtml } from './parser/text-extraction.js';
-import { extractTripLines } from './parser/trip-parsing.js';
+import { extractTripRows } from './parser/trip-parsing.js';
 import { normalizeGermanText } from './utils/normalization.js';
 
 // ---------------------------------------------------------------------------
@@ -18,8 +18,8 @@ export interface RelevanceResult {
   readonly reasons: string[];
   readonly keywordMatches: string[];
   readonly structureMatches: string[];
-  readonly tripLineSamples: string[];
-  readonly tripLineCount: number;
+  readonly tripRowSamples: string[];
+  readonly tripRowCount: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -164,8 +164,8 @@ export function analyzeRssItem(item: Item): RelevanceResult {
       reasons: ['empty RSS item'],
       keywordMatches: [],
       structureMatches: [],
-      tripLineSamples: [],
-      tripLineCount: 0,
+      tripRowSamples: [],
+      tripRowCount: 0,
     };
   }
 
@@ -177,8 +177,8 @@ export function analyzeRssItem(item: Item): RelevanceResult {
     reasons,
     keywordMatches,
     structureMatches,
-    tripLineSamples: [],
-    tripLineCount: 0,
+    tripRowSamples: [],
+    tripRowCount: 0,
   };
 }
 
@@ -194,20 +194,20 @@ export function analyzeDetailPage(html: string): RelevanceResult {
   const reasons = [...baseReasons];
   let score = baseScore;
 
-  const tripLike = extractTripLines(text);
+  const tripLikeRows = extractTripRows(text);
 
-  if (tripLike.length > 0) {
+  if (tripLikeRows.length > 0) {
     score += 3;
-    reasons.push(`found ${tripLike.length} trip-like lines`);
+    reasons.push(`found ${tripLikeRows.length} trip-like rows`);
   }
 
   return {
     score,
-    isRelevant: score >= DETAIL_RELEVANCE_THRESHOLD || tripLike.length > 0,
+    isRelevant: score >= DETAIL_RELEVANCE_THRESHOLD || tripLikeRows.length > 0,
     reasons,
     keywordMatches,
     structureMatches,
-    tripLineSamples: tripLike.slice(0, 3),
-    tripLineCount: tripLike.length,
+    tripRowSamples: tripLikeRows.slice(0, 3),
+    tripRowCount: tripLikeRows.length,
   };
 }

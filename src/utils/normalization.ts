@@ -19,15 +19,6 @@ export function extractDetailId(url: string | undefined | null): string | undefi
 }
 
 /**
- * Normalizes a line identifier by trimming whitespace.
- * Returns undefined if the input is empty or only whitespace.
- */
-export function normalizeLine(line: string | undefined | null): string | undefined {
-  const trimmed = line?.trim();
-  return trimmed || undefined;
-}
-
-/**
  * Normalizes a train number by trimming whitespace.
  * Returns undefined if the input is empty or only whitespace.
  */

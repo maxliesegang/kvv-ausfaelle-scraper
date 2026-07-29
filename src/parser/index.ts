@@ -14,10 +14,10 @@ import { toArticleText } from './article-corrections.js';
 import { extractLine, extractStand } from './text-extraction.js';
 import {
   extractMentionedLines,
-  extractTripLines,
-  findUnparsedTripLikeLines,
+  extractTripRows,
+  findUnparsedTripLikeRows,
   MultiLineMappingError,
-  parseTripLine,
+  parseTripRow,
 } from './trip-parsing.js';
 
 /** Error thrown when the parser cannot extract any trips from an article. */
@@ -60,13 +60,13 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
   };
 
   // Extract and parse trip lines
-  const tripLines = extractTripLines(text);
+  const tripRows = extractTripRows(text);
   const trips: Cancellation[] = [];
   const unmappedTrainNumbers = new Set<string>();
 
-  for (const tripLine of tripLines) {
+  for (const tripRow of tripRows) {
     try {
-      const parsed = parseTripLine(tripLine, metadata);
+      const parsed = parseTripRow(tripRow, metadata);
       trips.push(...parsed);
     } catch (error) {
       if (error instanceof MultiLineMappingError) {
@@ -77,16 +77,16 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     }
   }
 
-  // Surface trip-like rows the parser silently dropped (`extractTripLines` merges/filters,
+  // Surface trip-like rows the parser silently dropped (`extractTripRows` merges/filters,
   // so an unparsable row never reaches the loop above). This only warns — the workflow
   // decides whether a dropped row is a hard error (see `findMissedKnownTripsError`), so good
   // trips are still saved when one is.
   const parsedNumbers = new Set(trips.map((trip) => trip.trainNumber));
-  const unparsedTripLikeLines = findUnparsedTripLikeLines(text, parsedNumbers);
-  if (unparsedTripLikeLines.length > 0) {
+  const unparsedTripLikeRows = findUnparsedTripLikeRows(text, parsedNumbers);
+  if (unparsedTripLikeRows.length > 0) {
     console.warn(
-      `  -> ${unparsedTripLikeLines.length} trip-like line(s) in ${url} matched no parser format:`,
-      unparsedTripLikeLines.slice(0, 5),
+      `  -> ${unparsedTripLikeRows.length} trip-like row(s) in ${url} matched no parser format:`,
+      unparsedTripLikeRows.slice(0, 5),
     );
   }
 

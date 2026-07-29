@@ -92,7 +92,7 @@ describe('Relevance - Real Article Fixtures', () => {
 
       assert.strictEqual(result.isRelevant, true, `${name} should be relevant`);
       assert.strictEqual(
-        result.tripLineCount,
+        result.tripRowCount,
         expectedTripCount,
         `${name} should have ${expectedTripCount} trip lines`,
       );

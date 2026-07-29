@@ -188,13 +188,13 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
   // Generate per-year indices (HTML and JSON)
   await Promise.all(
     years.map(async (year) => {
-      const yearDir = join(baseDir, year);
-      const files = await listJsonFiles(yearDir);
+      const fahrplanYearDirectory = join(baseDir, year);
+      const files = await listJsonFiles(fahrplanYearDirectory);
       const html = buildYearIndex(year, files);
       const json = buildYearIndexJson(year, files, generatedAt);
       await Promise.all([
-        writeTextFile(join(yearDir, 'index.html'), html),
-        writeTextFile(join(yearDir, 'index.json'), json),
+        writeTextFile(join(fahrplanYearDirectory, 'index.html'), html),
+        writeTextFile(join(fahrplanYearDirectory, 'index.json'), json),
       ]);
     }),
   );

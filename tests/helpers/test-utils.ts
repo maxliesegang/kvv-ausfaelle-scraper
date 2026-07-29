@@ -5,6 +5,44 @@
 
 import type { Cancellation } from '../../src/types.js';
 import assert from 'node:assert';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+/** What a temp-directory test body receives. */
+export interface TempDataDirContext {
+  /** Throwaway directory, removed after the test whether it passes or throws. */
+  readonly dir: string;
+  /** Everything the code under test logged, one entry per `console.log` call. */
+  readonly logLines: string[];
+}
+
+/**
+ * Runs `body` against a throwaway data directory with `console.log` captured.
+ *
+ * Storage and site-index code both write files and log a run report, so nearly every test
+ * of them needs the same three things: a temp dir, silenced output (the suite is unreadable
+ * otherwise), and cleanup that survives a failing assertion. Inlining that per test buried
+ * the actual assertions in try/finally noise; capturing rather than discarding the output
+ * also lets a test assert on what was reported.
+ */
+export async function withTempDataDir(
+  body: (context: TempDataDirContext) => Promise<void>,
+): Promise<void> {
+  const dir = await mkdtemp(join(tmpdir(), 'kvv-test-'));
+  const logLines: string[] = [];
+  const originalConsoleLog = console.log;
+  console.log = (...args: unknown[]) => {
+    logLines.push(args.join(' '));
+  };
+
+  try {
+    await body({ dir, logLines });
+  } finally {
+    console.log = originalConsoleLog;
+    await rm(dir, { recursive: true, force: true });
+  }
+}
 
 /**
  * Normalizes a cancellation object for test comparison by removing dynamic fields.

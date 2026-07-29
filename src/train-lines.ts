@@ -22,7 +22,7 @@ import {
  * these lines"; {@link AmbiguousTripIndex} disambiguates by date + time.
  */
 export interface TrainLineIndex {
-  readonly exact: Readonly<Record<string, readonly string[]>>;
+  readonly linesByTrainNumber: Readonly<Record<string, readonly string[]>>;
 }
 
 /** train number → its trip signatures (only numbers that run on more than one line). */
@@ -39,7 +39,7 @@ export interface TripDescriptor {
 
 /** Builds the train number → lines index from a set of definitions. */
 export function buildTrainLineIndex(definitions: readonly TrainLineDefinition[]): TrainLineIndex {
-  const exact: Record<string, string[]> = {};
+  const linesByTrainNumber: Record<string, string[]> = {};
   for (const { line, trainNumbers } of definitions) {
     const normalizedLine = normalizeLineUppercase(line);
     if (!normalizedLine) continue;
@@ -48,11 +48,11 @@ export function buildTrainLineIndex(definitions: readonly TrainLineDefinition[])
       const trainNumber = normalizeTrainNumber(rawTrainNumber);
       if (!trainNumber) continue;
 
-      const lines = (exact[trainNumber] ??= []);
+      const lines = (linesByTrainNumber[trainNumber] ??= []);
       if (!lines.includes(normalizedLine)) lines.push(normalizedLine);
     }
   }
-  return { exact };
+  return { linesByTrainNumber };
 }
 
 const TRAIN_LINE_INDEX = buildTrainLineIndex(TRAIN_LINE_DEFINITIONS);
@@ -103,7 +103,7 @@ export function resolveLinesInIndex(
   const fromOverride = resolveOverride(normalizedTrainNumber, mentioned, overrides);
   if (fromOverride) return fromOverride;
 
-  const lines = index.exact[normalizedTrainNumber];
+  const lines = index.linesByTrainNumber[normalizedTrainNumber];
   if (!lines || lines.length === 0) return [];
 
   return lines.filter((line) => mentioned.has(line));
@@ -160,7 +160,7 @@ export function resolveLines(
  */
 export function isKnownTrainNumber(trainNumber: string): boolean {
   const normalized = normalizeTrainNumber(trainNumber);
-  return normalized ? normalized in TRAIN_LINE_INDEX.exact : false;
+  return normalized ? normalized in TRAIN_LINE_INDEX.linesByTrainNumber : false;
 }
 
 /**

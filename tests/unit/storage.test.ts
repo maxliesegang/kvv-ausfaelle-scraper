@@ -1,10 +1,10 @@
 import assert from 'node:assert';
-import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
 import { describe, it } from 'node:test';
 import { saveCancellations } from '../../src/storage.js';
 import type { Cancellation } from '../../src/types.js';
+import { withTempDataDir } from '../helpers/test-utils.js';
 
 function createCancellation(overrides: Partial<Cancellation> = {}): Cancellation {
   return {
@@ -31,21 +31,27 @@ function createCancellation(overrides: Partial<Cancellation> = {}): Cancellation
 const BEFORE_DEPARTURES_MS = Date.parse('2024-12-16T05:00:00.000Z'); // 06:00 Berlin
 const MIDDAY_MS = Date.parse('2024-12-16T12:00:00.000Z'); // 13:00 Berlin
 
-async function readJsonFile<T>(filePath: string): Promise<T> {
-  return JSON.parse(await readFile(filePath, 'utf-8')) as T;
+/** Every fixture here is a 2024-12-16 trip, which belongs to Fahrplan year 2025. */
+const BUCKET = join('2025', 'S1.json');
+
+/** Writes a bucket file as an earlier run would have left it, and returns its path. */
+async function seedBucket(dir: string, trips: readonly unknown[]): Promise<string> {
+  const filePath = join(dir, BUCKET);
+  await mkdir(dirname(filePath), { recursive: true });
+  await writeFile(filePath, JSON.stringify(trips, null, 2));
+  return filePath;
+}
+
+async function readBucket(filePath: string): Promise<Cancellation[]> {
+  return JSON.parse(await readFile(filePath, 'utf-8')) as Cancellation[];
 }
 
 describe('Storage', () => {
   it('should deduplicate existing trips and keep stored entries sorted', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-
-    try {
-      console.log = () => undefined;
-
+    await withTempDataDir(async ({ dir }) => {
       // 10003 comes from a different article that is not re-fetched this run, so it
       // must persist; 10001 shares the source with the incoming batch and is deduped.
-      const existingTrips = [
+      const bucket = await seedBucket(dir, [
         createCancellation({
           trainNumber: '10003',
           fromTime: '10:00',
@@ -53,12 +59,9 @@ describe('Storage', () => {
           sourceUrl: 'test://older-article',
         }),
         createCancellation(),
-      ];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+      ]);
 
-      await saveCancellations(tempDir, [
+      await saveCancellations(dir, [
         createCancellation(),
         createCancellation({ trainNumber: '10002', fromTime: '07:30', toTime: '08:30' }),
         createCancellation({
@@ -72,9 +75,8 @@ describe('Storage', () => {
         }),
       ]);
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
       assert.deepStrictEqual(
-        storedTrips.map((trip) => ({
+        (await readBucket(bucket)).map((trip) => ({
           date: trip.date,
           fromTime: trip.fromTime,
           trainNumber: trip.trainNumber,
@@ -86,77 +88,47 @@ describe('Storage', () => {
         ],
       );
 
-      const secondBucket = await readJsonFile<Cancellation[]>(join(tempDir, '2026', 'S2.json'));
+      const secondBucket = await readBucket(join(dir, '2026', 'S2.json'));
       assert.strictEqual(secondBucket.length, 1);
       assert.strictEqual(secondBucket[0]?.trainNumber, '20001');
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+    });
   });
 
   it('should overwrite a stored cause when a re-parse reclassifies the same trip', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-
-    try {
-      console.log = () => undefined;
-
+    await withTempDataDir(async ({ dir }) => {
       // Stored from an earlier run when the classifier could not categorize the article.
-      const existingTrips = [createCancellation({ trainNumber: '10001', cause: 'unknown' })];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+      const bucket = await seedBucket(dir, [createCancellation({ cause: 'unknown' })]);
 
       // Same trip (same key), re-parsed this run with an improved cause classification.
-      await saveCancellations(tempDir, [
-        createCancellation({ trainNumber: '10001', cause: 'operational' }),
-      ]);
+      await saveCancellations(dir, [createCancellation({ cause: 'operational' })]);
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      const storedTrips = await readBucket(bucket);
       assert.strictEqual(storedTrips.length, 1);
       assert.strictEqual(storedTrips[0]?.cause, 'operational');
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+    });
   });
 
   it('should overwrite refined evidence when the cause category stays the same', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
+    await withTempDataDir(async ({ dir }) => {
+      const bucket = await seedBucket(dir, [
+        createCancellation({ cause: 'weather', causeKeyword: 'witterung' }),
+      ]);
 
-    try {
-      console.log = () => undefined;
-
-      const existingTrips = [createCancellation({ cause: 'weather', causeKeyword: 'witterung' })];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
-
-      await saveCancellations(tempDir, [
+      await saveCancellations(dir, [
         createCancellation({ cause: 'weather', causeKeyword: 'witterungsbedingt' }),
       ]);
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      const storedTrips = await readBucket(bucket);
       assert.strictEqual(storedTrips[0]?.cause, 'weather');
       assert.strictEqual(storedTrips[0]?.causeKeyword, 'witterungsbedingt');
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+    });
   });
 
   it('should prune ghost trips that vanished from a re-fetched source article', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-
-    try {
-      console.log = () => undefined;
-
+    await withTempDataDir(async ({ dir }) => {
       // Existing data captured from an earlier version of the article: it listed
       // both 10001 and 10003. A second, unrelated article contributed 99999.
-      const existingTrips = [
+      const bucket = await seedBucket(dir, [
         createCancellation({ trainNumber: '10001', fromTime: '08:00' }),
         createCancellation({ trainNumber: '10003', fromTime: '10:00' }),
         createCancellation({
@@ -164,87 +136,59 @@ describe('Storage', () => {
           fromTime: '20:00',
           sourceUrl: 'test://other-article',
         }),
-      ];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+      ]);
 
       // KVV edited the article in place: it now lists only 10001 (10003 is gone).
       // The other article was not re-fetched this run. Judged from before every
       // departure, so all three are still retractable.
       await saveCancellations(
-        tempDir,
+        dir,
         [createCancellation({ trainNumber: '10001', fromTime: '08:00' })],
         BEFORE_DEPARTURES_MS,
       );
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
-      const trainNumbers = storedTrips.map((trip) => trip.trainNumber).sort();
-
       // 10003 pruned (ghost from same source); 10001 kept (still listed);
       // 99999 kept (its article was not re-fetched, so never reconciled).
-      assert.deepStrictEqual(trainNumbers, ['10001', '99999']);
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+      assert.deepStrictEqual((await readBucket(bucket)).map((trip) => trip.trainNumber).sort(), [
+        '10001',
+        '99999',
+      ]);
+    });
   });
 
   it('should keep departed trips that a re-fetched article dropped from its rolling list', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-
-    try {
-      console.log = () => undefined;
-
+    await withTempDataDir(async ({ dir }) => {
       // The Nettro_CMS_273340 shape: a morning trip that already ran, plus an
       // evening one still ahead, both from the same article.
-      const existingTrips = [
+      const bucket = await seedBucket(dir, [
         createCancellation({ trainNumber: '10001', fromTime: '08:00', toTime: '09:00' }),
         createCancellation({ trainNumber: '10003', fromTime: '18:00', toTime: '19:00' }),
-      ];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+      ]);
 
       // Midday re-fetch: KVV has rewritten the article down to trips still to come,
       // dropping the departed 10001 and the upcoming 10003 alike.
       await saveCancellations(
-        tempDir,
+        dir,
         [createCancellation({ trainNumber: '10007', fromTime: '17:00', toTime: '17:45' })],
         MIDDAY_MS,
       );
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
-      const trainNumbers = storedTrips.map((trip) => trip.trainNumber).sort();
-
       // 10001 kept: it had already departed, so un-listing it is garbage collection,
       // not a retraction. 10003 pruned: still in the future, so KVV un-listing it is
       // a genuine retraction and reconciliation must still act on it.
-      assert.deepStrictEqual(trainNumbers, ['10001', '10007']);
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+      assert.deepStrictEqual((await readBucket(bucket)).map((trip) => trip.trainNumber).sort(), [
+        '10001',
+        '10007',
+      ]);
+    });
   });
 
   it('should report a retained departed trip in the run log', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-    const logLines: string[] = [];
-
-    try {
-      console.log = (...args: unknown[]) => {
-        logLines.push(args.join(' '));
-      };
-
-      const existingTrips = [createCancellation({ trainNumber: '10001', fromTime: '08:00' })];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+    await withTempDataDir(async ({ dir, logLines }) => {
+      await seedBucket(dir, [createCancellation({ trainNumber: '10001', fromTime: '08:00' })]);
 
       await saveCancellations(
-        tempDir,
+        dir,
         [createCancellation({ trainNumber: '10007', fromTime: '17:00', toTime: '17:45' })],
         MIDDAY_MS,
       );
@@ -256,59 +200,38 @@ describe('Storage', () => {
         `expected a retained-trip log line, got:\n${logLines.join('\n')}`,
       );
       assert.ok(logLines.some((line) => line.includes('kept 1 departed entries')));
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+    });
   });
 
   it('should preserve restoredFrom when a re-parse reclassifies a recovered record', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-
-    try {
-      console.log = () => undefined;
-
+    await withTempDataDir(async ({ dir }) => {
       // A hand-recovered record (see docs/AGENTS.md). The re-parse that follows knows
       // nothing about the recovery, so only the merge can keep the provenance.
-      const existingTrips = [
+      const bucket = await seedBucket(dir, [
         createCancellation({ cause: 'unknown', causeKeyword: null, restoredFrom: '372fdaba1a' }),
-      ];
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify(existingTrips, null, 2));
+      ]);
 
       await saveCancellations(
-        tempDir,
+        dir,
         [createCancellation({ cause: 'personnel', causeKeyword: 'fahrpersonal' })],
         BEFORE_DEPARTURES_MS,
       );
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
+      const storedTrips = await readBucket(bucket);
       assert.strictEqual(storedTrips[0]?.cause, 'personnel');
       assert.strictEqual(storedTrips[0]?.restoredFrom, '372fdaba1a');
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+    });
   });
 
   it('should stamp legacy records that have no cause field as unknown', async () => {
-    const tempDir = await mkdtemp(join(tmpdir(), 'kvv-storage-'));
-    const originalConsoleLog = console.log;
-
-    try {
-      console.log = () => undefined;
-
+    await withTempDataDir(async ({ dir }) => {
       // A record written before cause classification existed (no `cause` field).
       const { cause: _omitted, ...legacyRecord } = createCancellation({ trainNumber: '10009' });
-      const existingFilePath = join(tempDir, '2025', 'S1.json');
-      await mkdir(join(tempDir, '2025'), { recursive: true });
-      await writeFile(existingFilePath, JSON.stringify([legacyRecord], null, 2));
+      const bucket = await seedBucket(dir, [legacyRecord]);
 
       // Saving an unrelated trip (different source) triggers a load+merge+write of the
       // existing bucket without reconciling the legacy record out of it.
-      await saveCancellations(tempDir, [
+      await saveCancellations(dir, [
         createCancellation({
           trainNumber: '10010',
           fromTime: '07:30',
@@ -317,12 +240,8 @@ describe('Storage', () => {
         }),
       ]);
 
-      const storedTrips = await readJsonFile<Cancellation[]>(existingFilePath);
-      const legacy = storedTrips.find((trip) => trip.trainNumber === '10009');
+      const legacy = (await readBucket(bucket)).find((trip) => trip.trainNumber === '10009');
       assert.strictEqual(legacy?.cause, 'unknown');
-    } finally {
-      console.log = originalConsoleLog;
-      await rm(tempDir, { recursive: true, force: true });
-    }
+    });
   });
 });

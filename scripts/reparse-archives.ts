@@ -86,13 +86,20 @@ async function findFahrplanYearDirectories(
 ): Promise<string[]> {
   const yearDirectories = await listFahrplanYearDirectories(baseDir);
   return requestedYear
-    ? yearDirectories.filter((yearDirectory) => yearDirectory === requestedYear)
+    ? yearDirectories.filter((directory) => directory === requestedYear)
     : yearDirectories;
 }
 
-/** Trip identity within an article report, including the destination line file. */
-function getLineScopedTripKey(trip: Cancellation): string {
-  return JSON.stringify([trip.line, getCancellationKey(trip)]);
+/**
+ * Physical-trip identity, ignoring which notice reported it — the key the live store
+ * deduplicates by, widened with the line so it stays unique across line files.
+ *
+ * `line` defaults to the trip's own, and is passed explicitly only for a stored trip, which is
+ * keyed by the file it lives in exactly as `storage.ts` bucketed it. (The two agree in practice;
+ * naming the parameter keeps that assumption visible rather than implied.)
+ */
+function getLineScopedTripKey(trip: Cancellation, line: string = trip.line): string {
+  return JSON.stringify([line, getCancellationKey(trip)]);
 }
 
 /** Loads every stored cancellation for a year, indexed by source URL then by line/trip key. */
@@ -166,15 +173,6 @@ interface ParsedArchivedArticle {
 /** Trip identity scoped to its source article, safe to use across line files. */
 function getSourceScopedTripKey(trip: Cancellation): string {
   return JSON.stringify([trip.sourceUrl, getCancellationKey(trip)]);
-}
-
-/**
- * Physical-trip identity, ignoring which notice reported it — the key the live store deduplicates
- * by. `line` is passed in so a stored trip is keyed by the file it lives in, exactly as
- * `storage.ts` bucketed it.
- */
-function toTripIdentity(line: string, trip: Cancellation): string {
-  return JSON.stringify([line, getCancellationKey(trip)]);
 }
 
 /**
@@ -424,7 +422,7 @@ async function reconcileTripsForYear(
   for (const [line, trips] of storedTripsByLine) {
     for (const trip of trips) {
       if (!reparsedTripsBySourceUrl.has(trip.sourceUrl) || hasDeparted(trip, nowMs)) {
-        reconciledTripsByIdentity.set(toTripIdentity(line, trip), { line, trip });
+        reconciledTripsByIdentity.set(getLineScopedTripKey(trip, line), { line, trip });
       }
     }
   }
@@ -434,7 +432,7 @@ async function reconcileTripsForYear(
   // so the published `sourceUrl` and `capturedAt` stay put.
   for (const trips of reparsedTripsBySourceUrl.values()) {
     for (const trip of trips) {
-      const identity = toTripIdentity(trip.line, trip);
+      const identity = getLineScopedTripKey(trip);
       const storedTrip = storedTripsBySourceKey.get(getSourceScopedTripKey(trip));
       if (storedTrip === undefined && reconciledTripsByIdentity.has(identity)) {
         continue;

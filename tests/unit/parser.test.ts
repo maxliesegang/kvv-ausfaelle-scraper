@@ -8,10 +8,10 @@ import assert from 'node:assert';
 import { parseDetailPage } from '../../src/parser/index.js';
 import { extractStand, parseGermanDateTime } from '../../src/parser/text-extraction.js';
 import {
-  extractTripLines,
-  extractTripSectionCandidates,
-  isValidTripLine,
-  parseTripLine,
+  extractTripRows,
+  extractTripSectionCandidateRows,
+  isValidTripRow,
+  parseTripRow,
 } from '../../src/parser/trip-parsing.js';
 import type { TripParsingMetadata } from '../../src/types.js';
 import { findMissedKnownTripsError } from '../../src/workflow.js';
@@ -23,7 +23,7 @@ import { assertCancellationsEqual, assertThrows } from '../helpers/test-utils.js
  * exercised elsewhere). Uses single-line-mention metadata so the article line is used
  * directly without consulting the train-number mapping.
  */
-function parseTripLineFields(
+function parseTripRowFields(
   line: string,
 ): { trainNumber: string; fromStop: string; fromTime: string; toStop: string; toTime: string }[] {
   const metadata: TripParsingMetadata = {
@@ -38,7 +38,7 @@ function parseTripLineFields(
     cause: 'operational',
     causeKeyword: null,
   };
-  return parseTripLine(line, metadata).map((t) => ({
+  return parseTripRow(line, metadata).map((t) => ({
     trainNumber: t.trainNumber,
     fromStop: t.fromStop,
     fromTime: t.fromTime,
@@ -151,8 +151,8 @@ describe('Parser - Detail Page Parsing', () => {
     // Each of these appeared in a live article and previously matched no parser format.
     it('parses "ab/bis/an" rows with a trailing (LT) annotation', () => {
       const line = '85096 Söllingen Bf. ab 23:19 Uhr bis Tullastraße an 23:36 Uhr (LT)';
-      assert.ok(isValidTripLine(line));
-      const [trip] = parseTripLineFields(line);
+      assert.ok(isValidTripRow(line));
+      const [trip] = parseTripRowFields(line);
       assert.deepStrictEqual(trip, {
         trainNumber: '85096',
         fromStop: 'Söllingen Bf.',
@@ -164,8 +164,8 @@ describe('Parser - Detail Page Parsing', () => {
 
     it('parses stop/time rows with parentheses on only one side', () => {
       const line = '85879 Heilbronn Hbf/Willy-Brandt-Platz (23:50 Uhr) - Sinsheim Hbf  00:48 Uhr';
-      assert.ok(isValidTripLine(line));
-      const [trip] = parseTripLineFields(line);
+      assert.ok(isValidTripRow(line));
+      const [trip] = parseTripRowFields(line);
       assert.deepStrictEqual(trip, {
         trainNumber: '85879',
         fromStop: 'Heilbronn Hbf/Willy-Brandt-Platz',
@@ -180,8 +180,8 @@ describe('Parser - Detail Page Parsing', () => {
         '84892 entfällt zwischen Karlsruhe Tullastraße (10:01 Uhr) und Karlsruhe ' +
         'Rheinbergstraße (10:26 Uhr). Dieser Zug wird verspätet ab Karlsruhe Albtalbahnhof ' +
         '(10:34 Uhr) über Karlsruhe West eingesetzt.';
-      assert.ok(isValidTripLine(line));
-      const [trip] = parseTripLineFields(line);
+      assert.ok(isValidTripRow(line));
+      const [trip] = parseTripRowFields(line);
       assert.deepStrictEqual(trip, {
         trainNumber: '84892',
         fromStop: 'Karlsruhe Tullastraße',
@@ -193,18 +193,18 @@ describe('Parser - Detail Page Parsing', () => {
 
     it('does not treat parenthesized date-ranges as trips (no leading train number)', () => {
       assert.equal(
-        isValidTripLine('Donnerstag 30.07. (04:30 Uhr) bis Donnerstag 06.08.2026 (04:10 Uhr)'),
+        isValidTripRow('Donnerstag 30.07. (04:30 Uhr) bis Donnerstag 06.08.2026 (04:10 Uhr)'),
         false,
       );
       assert.equal(
-        isValidTripLine('ab Donnerstag 06.08. (04:10 Uhr) bis Montag 17.08.2026 (04:30 Uhr)'),
+        isValidTripRow('ab Donnerstag 06.08. (04:10 Uhr) bis Montag 17.08.2026 (04:30 Uhr)'),
         false,
       );
     });
 
     it('parses ab/bis rows when KVV omits the "ab" token', () => {
       assert.deepStrictEqual(
-        parseTripLineFields('10075 Ettlingen Albgaubad 19:34 Uhr bis Hochstetten an 20:46 Uhr'),
+        parseTripRowFields('10075 Ettlingen Albgaubad 19:34 Uhr bis Hochstetten an 20:46 Uhr'),
         [
           {
             trainNumber: '10075',
@@ -219,7 +219,7 @@ describe('Parser - Detail Page Parsing', () => {
 
     it('parses lowercase Uhr and parentheses inside stop names', () => {
       assert.deepStrictEqual(
-        parseTripLineFields(
+        parseTripRowFields(
           '85630 Bondorf (b. Herrenberg) (08:02 uhr) - Ka. Tullastrasse (11:00 Uhr)',
         ),
         [
@@ -236,9 +236,7 @@ describe('Parser - Detail Page Parsing', () => {
 
     it('parses a parenthesized row whose separator is missing', () => {
       assert.deepStrictEqual(
-        parseTripLineFields(
-          '85029 Knielingen Rheinbergstr. (21:41 Uhr) Pforzheim Hbf. (22:50 Uhr)',
-        ),
+        parseTripRowFields('85029 Knielingen Rheinbergstr. (21:41 Uhr) Pforzheim Hbf. (22:50 Uhr)'),
         [
           {
             trainNumber: '85029',
@@ -257,9 +255,7 @@ describe('Parser - Detail Page Parsing', () => {
         '99991 malformed row',
         '99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)',
       ].join('\n');
-      assert.deepStrictEqual(extractTripLines(text), [
-        '99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)',
-      ]);
+      assert.deepStrictEqual(extractTripRows(text), ['99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)']);
     });
   });
 
@@ -325,7 +321,7 @@ describe('Parser - Detail Page Parsing', () => {
         Ob deine Verbindung aktuell fährt
       `;
 
-      const candidates = extractTripSectionCandidates(text);
+      const candidates = extractTripSectionCandidateRows(text);
       assert.deepStrictEqual(candidates, ['84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr']);
     });
 
@@ -339,7 +335,7 @@ describe('Parser - Detail Page Parsing', () => {
         84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr
       `;
 
-      const tripLines = extractTripLines(text);
+      const tripLines = extractTripRows(text);
       assert.deepStrictEqual(tripLines, ['84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr']);
     });
   });

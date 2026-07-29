@@ -92,7 +92,7 @@ describe('Train Lines - Multi-line resolution', () => {
   });
 
   it('normalizes line definition casing while building the index', () => {
-    assert.deepStrictEqual(index.exact['70003'], ['S5']);
+    assert.deepStrictEqual(index.linesByTrainNumber['70003'], ['S5']);
   });
 
   it('normalizes train numbers before lookup', () => {

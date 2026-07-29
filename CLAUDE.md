@@ -47,6 +47,8 @@ Train-number → line mapping (`src/train-lines.ts`, `src/train-line-definitions
 - All built-in imports use the `node:` prefix; relative imports use `.js` extensions (ESM).
 - Shared helpers live in `src/utils/` (`fs.ts`, `constants.ts`, `normalization.ts`) — prefer them over ad-hoc reimplementation. German-text keyword matching (relevance + cause) must go through `normalizeGermanText`, which expands umlauts (ä→ae, ö→oe, ü→ue, ß→ss) before stripping diacritics so source spellings like `entfällt` match `ae/oe/ue` keyword forms.
 - Use domain-based names: describe parser formats by field layout rather than "old/new", and name counters by entity plus outcome (`tripsRestored`, `classificationsUpdated`).
+- One word, one meaning. **`line` always means a transit line** (`S5`); a line of article text is a **`row`** (`isValidTripRow`, `mergeTripRows`, `rawRows`) — see `src/parser/AGENTS.md`. A year directory is a `fahrplanYearDirectory`, never `yearDir`, so the Fahrplan-vs-calendar-year invariant is visible at every use site. Functions start with a verb (`collectServiceDates`, not `serviceDates`); maps are named `<values>By<Key>` (`linesByTrainNumber`, `datesByServiceId`) rather than by lookup strategy.
+- Published JSON field names (`dep`, `arr`, `dates` in `ambiguous-trips.json`; every `Cancellation` field) are a data contract — do not rename them for style, even where a longer internal name would read better.
 
 ## Path-scoped guidance
 
