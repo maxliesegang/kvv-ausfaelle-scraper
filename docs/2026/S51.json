@@ -950,5 +950,61 @@
     "capturedAt": "2026-07-29T02:08:32.141Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-29",
+    "stand": "2026-07-29T11:50:00.000Z",
+    "trainNumber": "84896",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "12:01",
+    "toStop": "Germersheim",
+    "toTime": "13:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273506",
+    "capturedAt": "2026-07-29T17:10:25.682Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-29",
+    "stand": "2026-07-29T11:50:00.000Z",
+    "trainNumber": "85481",
+    "fromStop": "Germersheim",
+    "fromTime": "13:26",
+    "toStop": "KA Marktplatz",
+    "toTime": "14:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273506",
+    "capturedAt": "2026-07-29T17:10:25.682Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-29",
+    "stand": "2026-07-29T11:50:00.000Z",
+    "trainNumber": "84917",
+    "fromStop": "Germersheim",
+    "fromTime": "15:50",
+    "toStop": "Söllingen (b. Karlsruhe)",
+    "toTime": "17:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273506",
+    "capturedAt": "2026-07-29T17:10:25.682Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-29",
+    "stand": "2026-07-29T11:50:00.000Z",
+    "trainNumber": "84916",
+    "fromStop": "Söllingen (b. Karlsruhe)",
+    "fromTime": "17:38",
+    "toStop": "KA Tullastraße",
+    "toTime": "18:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273506",
+    "capturedAt": "2026-07-29T17:10:25.682Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
