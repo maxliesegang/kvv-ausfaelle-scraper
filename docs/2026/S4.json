@@ -3316,5 +3316,61 @@
     "capturedAt": "2026-07-27T02:30:15.754Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-29",
+    "stand": "2026-07-28T22:21:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "06:35",
+    "toStop": "Eppingen",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273514",
+    "capturedAt": "2026-07-29T02:08:32.017Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-29",
+    "stand": "2026-07-28T22:21:00.000Z",
+    "trainNumber": "85512",
+    "fromStop": "Eppingen",
+    "fromTime": "08:07",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "09:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273514",
+    "capturedAt": "2026-07-29T02:08:32.017Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-29",
+    "stand": "2026-07-28T22:21:00.000Z",
+    "trainNumber": "85521",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "14:35",
+    "toStop": "Flehingen",
+    "toTime": "15:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273514",
+    "capturedAt": "2026-07-29T13:58:55.260Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-29",
+    "stand": "2026-07-28T22:21:00.000Z",
+    "trainNumber": "85530",
+    "fromStop": "Flehingen",
+    "fromTime": "16:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "17:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273514",
+    "capturedAt": "2026-07-29T13:58:55.260Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

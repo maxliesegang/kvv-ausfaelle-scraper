@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004294_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linien 201, 205, 206, 207, 208, 213, 218, 244, X45 - Baden-Baden: Umleitung wegen Baumaßnahme Hindenburgplatz (30.07.2026 bis auf weiteres)
+Titel:  Linien 201, 205, 206, 207, 208, 213, 218, 244, X45 - Baden-Baden: Umleitung wegen Baumaßnahme Hindenburgplatz (Phase 2) (30.07.2026 bis auf weiteres)
 Datum:  2025-04-28T08:03:00.000Z
 ========================================================================
 
@@ -9,7 +9,7 @@ Fahrplan
 Verkehrsmeldungen
 Vom 30.07.2026 bis auf weiteres
 Linien 201, 205, 206, 207, 208, 213, 218, 244, X45
-Baden-Baden: Umleitung wegen Baumaßnahme Hindenburgplatz
+Baden-Baden: Umleitung wegen Baumaßnahme Hindenburgplatz (Phase 2)
 (sie) Wegen Bauarbeiten im Bereich Hindenburgplatz 
 Ab Donnerstag, 30. Juli 2026, 
 bis auf weiteres
@@ -27,4 +27,6 @@ Linie 207 fährt stadteinwärts bis Augustaplatz regulär, stadtauswärts über 
 Linie 209 verbindet Augustaplatz, Leopoldsplatz, Friedrichshöhe und Merkurwald.
 Linie 244 fährt zwischen Wörthstraße und Leopoldsplatz in beiden Richtungen direkt durch den Michaelstunnel.
 Linie X45 fährt zwischen Wörthstraße und Augustaplatz in beiden Richtungen direkt durch den Michaelstunnel.
+Weitere Informationen
+Liniennetzplan zur Baustelle
 Zurück zur Übersicht

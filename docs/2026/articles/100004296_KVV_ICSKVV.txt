@@ -1,0 +1,76 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004296_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S2, S12, 2, 3, 4, 5, 6, 30, 31, 32, NL1, NL2, SEV - Karlsruhe: Bauarbeiten im VBK-Netz während der Sommerferien (Phase 1) (30.07.2026 bis 17.08.2026)
+Datum:  2026-07-28T01:00:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 30.07.2026 bis 17.08.2026
+Linien: S2, S12, 2, 3, 4, 5, 6, 30, 31, 32, NL1, NL2, SEV
+Karlsruhe: Bauarbeiten im VBK-Netz während der Sommerferien (Phase 1)
+(kue) In den ersten 2,5 Wochen der Sommerferien finden
+vom 30.07. (03:30 Uhr) bis 17.08.2026. (03:30 Uhr)
+umfangreiche Bauarbeiten im VBK-Netz statt. Daher kommt es zu Sperrungen, Umleitungen und Schienenersatzverkehr (SEV).
+Grund: Gleis- und Weichenerneuerungen, Sanierungsarbeiten in der Waldstadt, Erneuerung von Bahnübergängen sowie Brücken- und Gleissanierungen.
+Gesperrte Streckenabschnitte und somit kein Bahnverkehr zwischen:
+Europäische Schule - Jägerhaus - Fächerbad - Hirtenweg
+Spöck Richard-Hecht-Schule - Friedrichstal - Blankenloch - Büchig - Hagsfeld
+Durlacher Tor - Kronenplatz (Fritz-Erler-Straße) - Mendelssohnplatz
+Mathystraße - Otto-Sachs-Straße - Lessingstraße - Weinbrennerplatz
+Es ergeben sich folgende Änderungen der Linien:
+S-Bahn
+S2
+Wolfartsweier - Auer Straße - Tullastraße (Durlacher Allee) - Durlacher Tor (U) - Europaplatz (U) - Yorckstraße - Rheinstrandsiedlung/Rheinstetten
+S12
+Ittersbach - Albtalbahnhof - Kolpingplatz - Karlstor (Karlstraße und Kriegsstraße) - Rüppurrer Tor (Kriegsstraße) - Südostbahn - Tullastraße 
+Tram
+Linie 2
+Knielingen Nord - Yorckstraße - Schillerstraße - Weinbrennerplatz - Kühler Krug - Entenfang - Rheinhafen
+Linie 3
+Rintheim - Durlacher Tor - Kapellenstraße - Rüppurrer Tor - Hauptbahnhof (Vorplatz)
+Die Haltestelle "Kronenplatz (Fritz-Erler-Straße)" entfällt
+Linie 4
+Hirtenweg - Durlacher Tor - Ettlinger Tor - Karlstor - Europaplatz - Oberreut
+Kein Verkehr in Richtung Europäische Schule
+Linie 5
+Durlach Bahnhof - Südostbahn - Ettlinger Tor - Karlstor - Europaplatz
+Linie 6
+Pendelverkehr: Tivoli - Hauptbahnhof (Vorplatz) - ZKM - Arbeitsagentur
+Nightliner
+NL1
+verkehrt auf dem regulären Fahrweg nur zwischen Hirtenweg - Heide
+Kein Verkehr in Richtung Waldstadt - Europäische Schule
+NL2
+Umleitung zwischen Ebertstraße und Karlstor über die Haltestelle Kolpingplatz und Mathystraße (beiden Fahrtrichtungen)
+Schienenersatzverkehr (SEV)
+Folgende Buslinien ersetzen die Bahnen:
+Linie
+Strecke
+SEV 12
+Spöck - Blankenloch - Tullastraße (Anschluss zur Stadtbahn)
+SEV 13
+Hagsfeld - Tullastraße (Anschluss zur Stadtbahn)
+SEV 14
+Waldstadt Glogauer Straße - Zentrum - Fächerbad - Hirtenweg
+SEV 14N
+Europäische Schule - Waldstadt Zentrum - Hirtenweg (Nachtverkehr)
+SEV 15
+Europäische Schule - Fächerbad - Waldstadt Zentrum - Glogauer Straße
+Hinweis: Die Fahrradmitnahme in den SEV-Bussen ist nicht möglich.
+Änderungen bei Buslinien:
+Bus 30
+Alle Fahrten werden von der Haltestelle Elbinger Straße West bis Europäische Schule verlängert
+Bus 31
+Umleitung in Richtung Durlach Bf zwischen Waldstadt Zentrum - Fächerbad - Hallesche Allee
+Bus 32
+ab der Haltestelle Schäferstraße Umleitung über Ruschgraben - Hagsfeld Bahnhof - Julius-Bender-Straße
+Aufgrund von Umleitungen und zusätzlichem Umstieg auf Ersatzbusse planen Sie bitte mehr Fahrzeit ein.
+Direkt im Anschluss an Phase 1 beginnt ab Montag, 17. August 2026 (03:30 Uhr) Phase 2 mit zusätzlichen Bauarbeiten in Durlach über die wir separat informieren werden.
+Liniennetzplan (Phase 1) 30.07. bis 17.08.2026
+Baustellenflyer
+Weitere Informationen
+Fahrweg Umleitung Bus 31
+Fahrweg Umleitung Bus 32
+Zurück zur Übersicht
