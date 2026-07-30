@@ -18,6 +18,8 @@ Nach aktuellem Stand 30.07.2026 07:03:00 sind folgende Fahrten von einem (Teil-)
 10036 Neureut Kirchfeld (11:15 Uhr) - Ettlingen Stadt (11:58 Uhr)
 10049 Ettlingen Albgaubad (13:34 Uhr) - Hochstetten (14:46 Uhr)
 10052 Hochstetten (14:52 Uhr) - Ettlingen Stadt (15:58 Uhr)
+10061 Ettlingen Albgaubad (16:34 Uhr) - Hochstetten (17:46 Uhr)
+10064 Hochstetten (17:52 Uhr) - Ettlingen Stadt (18:58 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

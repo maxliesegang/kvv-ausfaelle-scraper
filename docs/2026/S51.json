@@ -1006,5 +1006,47 @@
     "capturedAt": "2026-07-29T17:10:25.682Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-30",
+    "stand": "2026-07-30T08:35:00.000Z",
+    "trainNumber": "84921",
+    "fromStop": "KA. Tullastraße",
+    "fromTime": "17:56",
+    "toStop": "Söllingen",
+    "toTime": "18:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273628",
+    "capturedAt": "2026-07-30T10:20:13.695Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-30",
+    "stand": "2026-07-30T08:35:00.000Z",
+    "trainNumber": "84920",
+    "fromStop": "Söllingen",
+    "fromTime": "18:37",
+    "toStop": "KA. Tullastraße",
+    "toTime": "19:01",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273628",
+    "capturedAt": "2026-07-30T10:20:13.695Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-07-30",
+    "stand": "2026-07-30T08:35:00.000Z",
+    "trainNumber": "84929",
+    "fromStop": "KA. Tullastraße",
+    "fromTime": "19:56",
+    "toStop": "Berghausen",
+    "toTime": "20:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273628",
+    "capturedAt": "2026-07-30T10:20:13.695Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
