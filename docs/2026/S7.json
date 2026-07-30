@@ -1426,5 +1426,33 @@
     "capturedAt": "2026-07-29T02:08:31.174Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-30",
+    "stand": "2026-07-29T22:31:00.000Z",
+    "trainNumber": "85551",
+    "fromStop": "Rastatt",
+    "fromTime": "04:56",
+    "toStop": "Bühl (Baden)",
+    "toTime": "05:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273570",
+    "capturedAt": "2026-07-30T01:57:58.130Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-07-30",
+    "stand": "2026-07-29T22:31:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Bühl (Baden)",
+    "fromTime": "05:45",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273570",
+    "capturedAt": "2026-07-30T01:57:58.130Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
