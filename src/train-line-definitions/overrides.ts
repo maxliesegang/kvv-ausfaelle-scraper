@@ -43,6 +43,11 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_273364: {
       '40014': 'S11',
     },
+    // Same S12-on-the-S11-corridor case as Nettro_CMS_273364, re-reported in the AVG
+    // staffing notice for S1/S11 (Ettlingen Stadt–Hochstetten) of 2026-07-30.
+    Nettro_CMS_273610: {
+      '40014': 'S11',
+    },
     // AVG staffing notice for S5/S51 (Pforzheim Hbf–Wörth Badepark bzw. Germersheim),
     // 2026-07-29. GTFS knows the Germersheim–KA Marktplatz run 85481 only as an S52 — the
     // sibling short-working on the S51 Germersheim corridor, which the article never
