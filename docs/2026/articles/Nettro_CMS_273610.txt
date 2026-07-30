@@ -20,6 +20,10 @@ Nach aktuellem Stand 30.07.2026 07:03:00 sind folgende Fahrten von einem (Teil-)
 10052 Hochstetten (14:52 Uhr) - Ettlingen Stadt (15:58 Uhr)
 10061 Ettlingen Albgaubad (16:34 Uhr) - Hochstetten (17:46 Uhr)
 10064 Hochstetten (17:52 Uhr) - Ettlingen Stadt (18:58 Uhr)
+40014 KA. Tullastraße 15:32 Uhr - Ittersbach Rathaus 16:29 Uhr
+10065 Ettlingen Stadt 17:35 Uhr - Hochstetten 18:46 Uhr
+10072 Hochstetten 19:32 Uhr - Ettlingen Albgaubad 20:42 Uhr
+20065 Ettlingen Stadt 21:15 Uhr - KA. Rheinhafen 21:59 Uhr
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

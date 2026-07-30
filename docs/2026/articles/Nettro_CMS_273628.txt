@@ -37,7 +37,8 @@ Nach aktuellem Stand 30.07.2026 10:35:00 sind folgende Fahrten von einem (Teil-)
 84920 Söllingen 18:37 Uhr - KA. Tullastraße 19:01 Uhr
 84929 KA. Tullastraße 19:56 Uhr - Berghausen 20:15 Uhr
 84828 Berghausen 20:40 Uhr - Germersheim Bf. 22:07 Uhr
-84943 Germersheim Bf. - KA. Tullastraße 
+84943 Germersheim Bf. 22:30 Uhr - Söllingen 23:56 Uhr
+84782 Söllingen 00:02 Uhr - KA. Rheinbergstraße 00:44 Uhr
 85001 KA. Albtalbahnhof 15:29 Uhr - Pforzheim Bf. 16:20 Uhr
 85000 Pforzheim Bf. 16:37 Uhr - KA. Hbf. 17:11 Uhr
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:

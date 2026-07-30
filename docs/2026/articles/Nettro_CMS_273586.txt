@@ -14,9 +14,11 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S4 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Albtalbahnhof und Eppingen Bahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 30.07.2026 00:36:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85595 KA Albtalbahnhof 06:35 - Eppingen 07:52
-85400 KA Tullastraße 06:26 - KA Albtalbahnhof 06:42
-85512 Eppingen 08:07 - KA Albtalbahnhof 09:22
+85519 Albtalbahnhof 13:35 Uhr - Flehingen Bf. 14:37 Uhr
+85528 Flehingen Bf. 15:20 Uhr - KA. Albtalbahnhof 16:22 Uhr
+85531 KA. Albtalbahnhof 19:35 Uhr - Flehingen Bf. 20:37 Uhr
+85540 Flehingen Bf 21:20 Uhr - KA. Albtalbahnhof 22:22 Uhr
+85441 Bretten Bf 02:00 Uhr - Gölshausen Bf 02:07 Uhr
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App. 
 Wir bitten um Entschuldigung!

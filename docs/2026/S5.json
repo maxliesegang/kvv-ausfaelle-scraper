@@ -11309,6 +11309,20 @@
   {
     "line": "S5",
     "date": "2026-07-30",
+    "stand": "2026-07-30T08:35:00.000Z",
+    "trainNumber": "84782",
+    "fromStop": "Söllingen",
+    "fromTime": "00:02",
+    "toStop": "KA. Rheinbergstraße",
+    "toTime": "00:44",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273628",
+    "capturedAt": "2026-07-30T13:47:46.394Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-07-30",
     "stand": "2026-07-29T22:33:00.000Z",
     "trainNumber": "84709",
     "fromStop": "KA Rheinbergstraße",
