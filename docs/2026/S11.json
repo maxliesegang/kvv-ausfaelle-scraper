@@ -1048,5 +1048,33 @@
     "capturedAt": "2026-07-30T06:22:31.768Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-07-30",
+    "stand": "2026-07-30T05:03:00.000Z",
+    "trainNumber": "40014",
+    "fromStop": "KA. Tullastraße",
+    "fromTime": "15:32",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "16:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273610",
+    "capturedAt": "2026-07-30T17:21:32.694Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-07-30",
+    "stand": "2026-07-30T05:03:00.000Z",
+    "trainNumber": "20065",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "21:15",
+    "toStop": "KA. Rheinhafen",
+    "toTime": "21:59",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273610",
+    "capturedAt": "2026-07-30T17:21:32.694Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
