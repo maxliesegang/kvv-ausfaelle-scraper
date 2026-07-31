@@ -288,6 +288,69 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('parses "bis" rows that omit the "an" arrival marker', () => {
+    const trips = parseArchivedArticle('Nettro_CMS_273728');
+
+    assert.deepEqual(trips.map(normalizeCancellation), [
+      {
+        line: 'S7',
+        date: '2026-07-31',
+        stand: '2026-07-31T06:21:00.000Z',
+        trainNumber: '85567',
+        fromStop: 'Ka Tullastrasse',
+        fromTime: '09:17',
+        toStop: 'Achern',
+        toTime: '10:25',
+        cause: 'personnel',
+        causeKeyword: 'fahrpersonal',
+      },
+      {
+        line: 'S7',
+        date: '2026-07-31',
+        stand: '2026-07-31T06:21:00.000Z',
+        trainNumber: '85568',
+        fromStop: 'Achern',
+        fromTime: '10:33',
+        toStop: 'Ka Tullastrasse',
+        toTime: '11:40',
+        cause: 'personnel',
+        causeKeyword: 'fahrpersonal',
+      },
+    ]);
+  });
+
+  test('parses an article mixing bare "bis" rows with parenthesized-time rows', () => {
+    const trips = parseArchivedArticle('Nettro_CMS_273683');
+
+    assert.equal(trips.length, 10, 'neither row layout may be dropped');
+    assert.deepEqual(trips.slice(0, 3).map(routeOf), [
+      {
+        trainNumber: '84728',
+        line: 'S5',
+        fromStop: 'Berghausen Bf',
+        fromTime: '11:05',
+        toStop: 'Ka. Rheinbergstraße',
+        toTime: '11:44',
+      },
+      {
+        trainNumber: '84743',
+        line: 'S5',
+        fromStop: 'Ka. Rheinbergstraße',
+        fromTime: '12:11',
+        toStop: 'Ka Tullastrasse',
+        toTime: '12:36',
+      },
+      {
+        trainNumber: '84828',
+        line: 'S5',
+        fromStop: 'Karlsruhe Lameyplatz',
+        fromTime: '12:28',
+        toStop: 'Wörth (Rhein) Badepark',
+        toTime: '12:53',
+      },
+    ]);
+  });
+
   test('does not invent trips from an unnumbered multi-stop replacement-service notice', (t) => {
     t.mock.method(console, 'warn', () => undefined);
     assert.throws(() => parseArchivedArticle('100004264_KVV_ICSKVV'), ParseError);

@@ -34,12 +34,15 @@ export const PATTERNS = {
     /^(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
 
   /**
-   * Matches trip format using "ab/bis/an": <trainNumber> <fromStop> ab <fromTime> Uhr bis <toStop> an <toTime> Uhr
-   * Example: "85715 Heilbronn Hbf. Vorplatz ab 10:16 Uhr bis Mosbach Bf. an 11:16 Uhr"
-   * A trailing parenthesized annotation (e.g. "(LT)" for Linientaxi) is tolerated.
+   * Matches trip format using "bis" as the separator, with optional "ab"/"an" time markers:
+   * <trainNumber> <fromStop> [ab] <fromTime> Uhr bis <toStop> [an] <toTime> Uhr
+   * Examples: "85715 Heilbronn Hbf. Vorplatz ab 10:16 Uhr bis Mosbach Bf. an 11:16 Uhr"
+   *           "84728 Berghausen Bf 11:05 Uhr bis Ka. Rheinbergstraße 11:44 Uhr"
+   * Both markers are optional and independent — KVV writes the bare "bis" variant without
+   * them. A trailing parenthesized annotation (e.g. "(LT)" for Linientaxi) is tolerated.
    */
   TRIP_AB_BIS_FORMAT:
-    /^(\d+)\s+(.+?)\s+(?:ab\s+)?(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+an\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
+    /^(\d+)\s+(.+?)\s+(?:ab\s+)?(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+(?:an\s+)?(\d{1,2}:\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
 
   /**
    * Matches the prose "entfällt zwischen" form KVV sometimes uses instead of a tabular row:
