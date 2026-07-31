@@ -1,13 +1,13 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100003562_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 104, 104s - Oberweier: Umleitung wegen Bauarbeiten (27.10.2025 bis 31.07.2026)
+Titel:  Linie 104, 104s - Oberweier: Umleitung wegen Bauarbeiten (27.10.2025 bis 31.08.2026)
 Datum:  2025-10-21T10:05:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 27.10.2025 bis 31.07.2026
+Vom 27.10.2025 bis 31.08.2026
 Linie 104, 104s
 Oberweier: Umleitung wegen Bauarbeiten
 (eic) Aufgrund von Baumaßnahmen in der Ortsmitte von Ettlingen-Oberweier müssen die Linien 104 und 104s
