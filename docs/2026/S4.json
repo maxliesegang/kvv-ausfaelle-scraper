@@ -3484,5 +3484,33 @@
     "capturedAt": "2026-07-30T13:47:46.312Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-31",
+    "stand": "2026-07-31T03:21:00.000Z",
+    "trainNumber": "85307",
+    "fromStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "fromTime": "06:19",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273703",
+    "capturedAt": "2026-07-31T11:41:44.476Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-07-31",
+    "stand": "2026-07-31T03:21:00.000Z",
+    "trainNumber": "85410",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "06:44",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "08:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273703",
+    "capturedAt": "2026-07-31T11:41:44.476Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
