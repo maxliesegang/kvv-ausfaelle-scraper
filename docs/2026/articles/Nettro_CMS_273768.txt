@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273768
-Stand:  2026-08-01T09:44:45.000Z
+Stand:  2026-08-01T09:44:00.000Z
 Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Söllingen Bahnhof und Germersheim Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (01.08.2026 bis 01.08.2026)
 Datum:  2026-07-31T22:37:00.000Z
 ========================================================================
@@ -13,21 +13,7 @@ Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Söllingen Ba
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Germersheim Bahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 01.08.2026 11:44:45 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84737 Rheinbergstrasse ab 11:12 Uhr bis Berghausen Bf. an 11:53 Uhr
-84732 Berghausen Bf. ab 12:04 Uhr bis Rheinbergstrasse an 12:44 Uhr
-84745 Rheinbergstrasse ab 12:52 Uhr bis Söllingen Bf. an 13:37 Uhr
-84734 Lameyplatz 12:58 Uhr bis Rheinbergstraße 13:04 Uhr
-84747 Rheinbergstraße 13:04 Uhr bis Berghausen Bf. 13:53 Uhr
-84832 KA Tullastraße (13:11 Uhr) - Wörth Badepark (13:53 Uhr)
-84836 Söllingen Bf. ab 13:51 Uhr bis Tullastrasse an 14:10 Uhr
-84744 Berghausen Bf. 14:03 Uhr bis Rheinbergstraße 14:44 Uhr
-84825 Wörth Badepark (14:05 Uhr) - Söllingen Bf. (15:06 Uhr)
-84757 Rheinbergstraße 14:52 Uhr bis Söllingen Bf. 15:37 Uhr
-84752 Söllingen Bf. (15:18 Uhr) - KA Rheinbergstraße (16:04 Uhr)
-84844 Söllingen Bf. 15:51 Uhr bis Wörth Badepark 16:53 Uhr
-84765 KA Rheinbergstraße (16:11 Uhr) - Berghausen Bf. (16:51 Uhr)
-84762 Berghausen Bf. (17:03 Uhr) - KA Rheinbergstraße (17:44 Uhr)
+Nach aktuellem Stand 01.08.2026 11:44:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 84837 Wörth Badepark 17:05 Uhr bis Söllingen Bahnhof 18:06 Uhr
 85015 KA Starckstraße (17:47 Uhr) - Pforzheim Hbf. (18:50 Uhr)
 84775 KA Rheinbergstraße (17:51 Uhr) - KA Tullastraße (18:16 Uhr)
