@@ -1062,5 +1062,33 @@
     "capturedAt": "2026-07-30T13:47:46.394Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-08-01",
+    "stand": "2026-07-31T22:45:00.000Z",
+    "trainNumber": "84890",
+    "fromStop": "Lameyplatz",
+    "fromTime": "09:17",
+    "toStop": "Germersheim Bf.",
+    "toTime": "10:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273768",
+    "capturedAt": "2026-08-01T02:24:10.061Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-08-01",
+    "stand": "2026-07-31T22:45:00.000Z",
+    "trainNumber": "84897",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "10:50",
+    "toStop": "Lameyplatz",
+    "toTime": "11:39",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273768",
+    "capturedAt": "2026-08-01T02:24:10.061Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
