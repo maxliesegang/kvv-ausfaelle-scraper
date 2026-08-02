@@ -46,6 +46,26 @@ function getBerlinOffsetMs(instantMs: number): number {
 }
 
 /**
+ * Reads an instant as Berlin wall clock, in the shapes the parser and storage use:
+ * `date` as `YYYY-MM-DD`, `time` as `HH:MM`. Used where an article states no timestamp of its
+ * own and "now" has to stand in for it — a naive `toISOString()` would yield the UTC date, which
+ * is the previous day for anything published after 22:00/23:00 Berlin time.
+ */
+export function formatBerlinWallClock(instantMs: number): { date: string; time: string } {
+  const parts = berlinPartsFormatter.formatToParts(new Date(instantMs));
+  const partsByType = new Map(parts.map((part) => [part.type, part.value]));
+  const readPart = (type: Intl.DateTimeFormatPartTypes): string => partsByType.get(type) ?? '';
+
+  // `hour` is `24` at midnight under some ICU versions in hour12:false mode; normalize it to
+  // `00`, which denotes the same wall clock on the same (already correct) date.
+  const hour = readPart('hour') === '24' ? '00' : readPart('hour');
+  return {
+    date: `${readPart('year')}-${readPart('month')}-${readPart('day')}`,
+    time: `${hour}:${readPart('minute')}`,
+  };
+}
+
+/**
  * Converts a Berlin wall-clock date and time (`2026-07-27`, `05:02`) to an epoch timestamp.
  * Returns `NaN` for malformed input so callers can treat an unparsable time as "unknown"
  * rather than as an accidental 1970 timestamp.

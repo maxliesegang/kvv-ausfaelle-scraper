@@ -100,6 +100,13 @@ export const PATTERNS = {
 export const TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN = /^(\d{3,})\s*:\s+/;
 
 /**
+ * A date row standing alone between trip rows — "06.07.2026", occasionally "6.7." — which KVV
+ * inserts where a list runs past midnight, dating every row that follows it. Anchored at both
+ * ends so it can only match a row that is *nothing but* a date, never a date inside prose.
+ */
+export const TRIP_LIST_DATE_ROW_PATTERN = /^(\d{1,2})\.(\d{1,2})\.(\d{4})?\.?$/;
+
+/**
  * Text markers used to identify sections in the HTML.
  */
 export const MARKERS = {

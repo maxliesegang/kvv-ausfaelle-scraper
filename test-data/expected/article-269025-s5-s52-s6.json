@@ -1,7 +1,7 @@
 [
   {
     "line": "S5",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "84707",
     "fromStop": "Karlsruhe Albtalbahnhof",
@@ -12,7 +12,7 @@
   },
   {
     "line": "S5",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "84808",
     "fromStop": "Söllingen Bahnhof",
@@ -23,7 +23,18 @@
   },
   {
     "line": "S53",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
+    "stand": "2026-05-23T21:10:00.000Z",
+    "trainNumber": "84808",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "06:01",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:05",
+    "cause": "personnel"
+  },
+  {
+    "line": "S53",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "85055",
     "fromStop": "Wörth Bahnhof",
@@ -33,8 +44,8 @@
     "cause": "personnel"
   },
   {
-    "line": "S5",
-    "date": "2026-05-23",
+    "line": "S53",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "84794",
     "fromStop": "Karlsruhe Tullastr.",
@@ -45,7 +56,18 @@
   },
   {
     "line": "S5",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
+    "stand": "2026-05-23T21:10:00.000Z",
+    "trainNumber": "84959",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:20",
+    "toStop": "Pforzheim Bahnhof",
+    "toTime": "06:48",
+    "cause": "personnel"
+  },
+  {
+    "line": "S53",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "84959",
     "fromStop": "Wörth Badepark",
@@ -56,7 +78,7 @@
   },
   {
     "line": "S6",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "85043",
     "fromStop": "Pforzheim Bahnhof",
@@ -67,7 +89,7 @@
   },
   {
     "line": "S6",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "85050",
     "fromStop": "Bad Wildbad Kurpark",
@@ -78,7 +100,7 @@
   },
   {
     "line": "S5",
-    "date": "2026-05-23",
+    "date": "2026-05-24",
     "stand": "2026-05-23T21:10:00.000Z",
     "trainNumber": "84962",
     "fromStop": "Pforzheim Bahnhof",

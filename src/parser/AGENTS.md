@@ -16,7 +16,7 @@ This is the most specific guidance for parser files.
 
 - **row** = one line of article text (a candidate trip entry). **line** = a transit line (`S5`).
   Both meanings are unavoidable here — KVV lists one trip per row of text — so they are kept
-  lexically distinct: `isValidTripRow`, `mergeTripRows`, `parseTripRow`, `rawRows` operate on
+  lexically distinct: `isValidTripRow`, `mergeTripRowsWithPositions`, `parseTripRow`, `rawRows` operate on
   text; `resolveLinesForTrip`, `mentionedLines`, `articleLine` operate on transit lines. Never
   name a text row `line`.
 
@@ -34,8 +34,14 @@ This is the most specific guidance for parser files.
   them. Keep specific formats before permissive fallbacks in `TRIP_FORMATS`.
 - Treat a new leading train number as a row boundary during multiline recovery; a malformed row
   must not consume the following valid row.
-- KVV timestamps are Europe/Berlin wall-clock values. Preserve the article's local calendar date
-  for trip dates while storing `stand` as UTC ISO time.
+- KVV timestamps are Europe/Berlin wall-clock values. Trip dates are local calendar dates; `stand`
+  is stored as UTC ISO time.
+- Trip dating lives in `trip-dates.ts` and is a property of the **list**, not of a row: the
+  article's publication timestamp dates the list, an explicit date row inside the list overrides
+  it, and a late-evening → early-morning step opens an after-midnight tail. Never date a row from
+  its own time being "in the past" — notices keep listing trips that have already departed, so
+  that reads as tomorrow and invents cancellations on a day KVV never mentioned. Any change here
+  must be checked against the whole text archive, not just fixtures.
 
 ## Required Validation
 

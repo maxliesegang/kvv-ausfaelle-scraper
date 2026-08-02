@@ -9,6 +9,7 @@
 import type { Cancellation, TripParsingMetadata } from '../types.js';
 import { lookupLinesForTrip, type TripDescriptor } from '../train-lines.js';
 import { extractDetailId, normalizeLineUppercase } from '../utils/normalization.js';
+import { assignTripDates, parseTripListDateRow, type TripDateAnchor } from './trip-dates.js';
 import { MAX_ROWS_TO_COMBINE } from '../utils/constants.js';
 import {
   PATTERNS,
@@ -331,14 +332,19 @@ function tryMergeWithNext(
   return null;
 }
 
+/** A merged trip row plus the index of the raw row it starts at. */
+interface MergedTripRow {
+  readonly row: string;
+  /** Index into `rawRows` of the row this one begins at — where its date context is read. */
+  readonly rawIndex: number;
+}
+
 /**
- * Merges rows that belong together and filters out invalid ones.
- *
- * This handles cases where trip information is split across multiple rows
- * by attempting to combine up to 3 consecutive rows to form valid trip entries.
+ * Merges rows that belong together and filters out invalid ones, keeping each result's
+ * position in `rawRows` so callers can relate it back to what preceded it (a date row).
  */
-export function mergeTripRows(rawRows: string[]): string[] {
-  const mergedRows: string[] = [];
+function mergeTripRowsWithPositions(rawRows: string[]): MergedTripRow[] {
+  const mergedRows: MergedTripRow[] = [];
   let i = 0;
 
   while (i < rawRows.length) {
@@ -346,7 +352,7 @@ export function mergeTripRows(rawRows: string[]): string[] {
 
     // If the line is already valid, use it as-is
     if (isValidTripRow(currentRow)) {
-      mergedRows.push(currentRow);
+      mergedRows.push({ row: currentRow, rawIndex: i });
       i++;
       continue;
     }
@@ -354,7 +360,7 @@ export function mergeTripRows(rawRows: string[]): string[] {
     // Try to combine with next lines to create a valid trip line
     const mergeResult = tryMergeWithNext(rawRows, i);
     if (mergeResult) {
-      mergedRows.push(mergeResult.combinedRow);
+      mergedRows.push({ row: mergeResult.combinedRow, rawIndex: i });
       i += mergeResult.rowsConsumed;
     } else {
       // No valid combination found, skip this line
@@ -407,16 +413,67 @@ export function findUnparsedTripLikeRows(
  * @returns Array of trip rows, or empty array if section not found
  */
 export function extractTripRows(text: string): string[] {
+  return selectTripRows(text).mergedRows.map((merged) => merged.row);
+}
+
+/**
+ * The rows the parser works from: the trip section's when it yields any, the whole text's
+ * otherwise. Raw and merged rows are returned together because a merged row's `rawIndex` only
+ * means anything against the very list it was merged from.
+ */
+function selectTripRows(text: string): { rawRows: string[]; mergedRows: MergedTripRow[] } {
   const tripSection = findTripSection(text);
 
-  if (tripSection) {
-    const tripRows = parseTripRowsFromSection(tripSection);
-    if (tripRows.length > 0) {
-      return tripRows;
+  if (tripSection !== undefined) {
+    const rawRows = buildTripCandidateRows(tripSection);
+    const mergedRows = mergeTripRowsWithPositions(rawRows);
+    if (mergedRows.length > 0) {
+      return { rawRows, mergedRows };
     }
   }
 
-  return parseTripRowsFromSection(text);
+  const rawRows = buildTripCandidateRows(text);
+  return { rawRows, mergedRows: mergeTripRowsWithPositions(rawRows) };
+}
+
+/** A trip row together with the date the article says it departs on. */
+export interface DatedTripRow {
+  readonly row: string;
+  /** ISO date (YYYY-MM-DD) the trip departs on, per {@link assignTripDates}. */
+  readonly date: string;
+}
+
+/**
+ * Extracts the article's trip rows, each carrying the date it departs on.
+ *
+ * Dating is a property of the *list*, not of a row on its own: an explicit date row governs the
+ * rows after it, and the chronological order of the rows reveals a midnight crossing. See
+ * `trip-dates.ts` for the rules and why a row's own time can never decide its day.
+ */
+export function extractDatedTripRows(text: string, anchor: TripDateAnchor): DatedTripRow[] {
+  const { rawRows, mergedRows } = selectTripRows(text);
+
+  // An explicit date row governs every trip row after it, so each merged row inherits the last
+  // date row at or before the raw row it starts at.
+  const explicitDateByRawIndex: (string | undefined)[] = [];
+  let explicitDate: string | undefined;
+  for (const rawRow of rawRows) {
+    explicitDate = parseTripListDateRow(rawRow, anchor.date) ?? explicitDate;
+    explicitDateByRawIndex.push(explicitDate);
+  }
+
+  const dates = assignTripDates(
+    mergedRows.map((merged) => ({
+      departureTime: matchTripFormat(merged.row)?.fromTime,
+      explicitDate: explicitDateByRawIndex[merged.rawIndex],
+    })),
+    anchor,
+  );
+
+  return mergedRows.map((merged, index) => ({
+    row: merged.row,
+    date: dates[index] ?? anchor.date,
+  }));
 }
 
 function findTripSection(text: string): string | undefined {
@@ -428,15 +485,6 @@ function findTripSection(text: string): string | undefined {
   }
 
   return undefined;
-}
-
-function parseTripRowsFromSection(section: string): string[] {
-  const rawRows = buildTripCandidateRows(section);
-  if (rawRows.length === 0) {
-    return [];
-  }
-
-  return mergeTripRows(rawRows);
 }
 
 /**

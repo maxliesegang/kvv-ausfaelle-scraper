@@ -66,7 +66,7 @@ export interface Cancellation {
 export interface TripParsingMetadata {
   /** Transit line identifier */
   readonly line: string;
-  /** ISO date (YYYY-MM-DD) */
+  /** ISO date (YYYY-MM-DD) the trip being parsed departs on (see `parser/trip-dates.ts`) */
   readonly date: string;
   /** ISO timestamp of "Stand" (status timestamp from source) */
   readonly stand: string;

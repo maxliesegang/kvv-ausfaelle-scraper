@@ -7,6 +7,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { parseDetailPage } from '../../src/parser/index.js';
 import { extractStand, parseGermanDateTime } from '../../src/parser/text-extraction.js';
+import { extractTripDateAnchor } from '../../src/parser/trip-dates.js';
 import {
   extractTripRows,
   extractTripSectionCandidateRows,
@@ -270,6 +271,120 @@ describe('Parser - Detail Page Parsing', () => {
 
     it('applies the Europe/Berlin winter offset', () => {
       assert.strictEqual(parseGermanDateTime('06.01.2026', '12:17:00'), '2026-01-06T11:17:00.000Z');
+    });
+  });
+
+  describe('Trip date anchor', () => {
+    it('anchors on publication, not on a later Stand that still lists departed trips', () => {
+      // Nettro_CMS_273506: published 00:19, still listing that morning's trips at Stand 13:50.
+      assert.deepStrictEqual(
+        extractTripDateAnchor(
+          ['29.07.2026, 00:19 Uhr', 'Nach aktuellem Stand 29.07.2026 13:50:00'].join('\n'),
+        ),
+        { date: '2026-07-29', clockTime: '00:19' },
+      );
+    });
+
+    it('falls back to the Stand when the page carries no publication line', () => {
+      assert.deepStrictEqual(extractTripDateAnchor('Nach aktuellem Stand 01.08.2026 23:30:00'), {
+        date: '2026-08-01',
+        clockTime: '23:30',
+      });
+    });
+  });
+
+  describe('Trip list dating', () => {
+    /** Builds a detail page listing `rows`, published at `publishedAt` (`DD.MM.YYYY, HH:MM`). */
+    function buildArticle(publishedAt: string, rows: string[]): string {
+      return [
+        '<html><body>',
+        '<p>Betriebsbedingte Fahrtausfälle auf der Linie S5</p>',
+        `<p>${publishedAt} Uhr</p>`,
+        '<p>Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal zu Fahrtausfällen.</p>',
+        '<p>Betroffene Fahrten:</p>',
+        ...rows.map((row) => `<p>${row}</p>`),
+        '</body></html>',
+      ].join('\n');
+    }
+
+    function parseDates(html: string): [string, string][] {
+      return parseDetailPage(html, 'test://trip-list-dating').map((trip) => [
+        trip.trainNumber,
+        trip.date,
+      ]);
+    }
+
+    it('dates a late-evening notice for the coming morning on the next day', () => {
+      // Nettro_CMS_273833: published 22:50, every listed trip is the following morning's.
+      const dates = parseDates(
+        buildArticle('01.08.2026, 22:50', [
+          '84949 Rheinbergstrasse ab 03:37 Uhr bis Pforzheim Hbf. an 04:48 Uhr',
+          '84942 Pforzheim Hbf. ab 05:09 Uhr bis Wörth Badepark an 06:35 Uhr',
+        ]),
+      );
+      assert.deepStrictEqual(dates, [
+        ['84949', '2026-08-02'],
+        ['84942', '2026-08-02'],
+      ]);
+    });
+
+    it('keeps already-departed trips on the day the notice was published', () => {
+      // Nettro_CMS_271645: published 11:07, still listing that morning's 04:45 alongside the
+      // rest of the day. A per-row "it is in the past" rule would move these to the next day.
+      const dates = parseDates(
+        buildArticle('05.07.2026, 11:07', [
+          '84800 KA Tullastraße 04:45 Uhr - Wörth Badepark 05:35 Uhr',
+          '84894 Karlsruhe Tullastr. (11:01 Uhr) - Germersheim Bahnhof (12:07 Uhr)',
+          '84932 Karlsruhe Tullatr. (21:56 Uhr) - Germersheim Bf (23:07 Uhr)',
+        ]),
+      );
+      assert.deepStrictEqual(dates, [
+        ['84800', '2026-07-05'],
+        ['84894', '2026-07-05'],
+        ['84932', '2026-07-05'],
+      ]);
+    });
+
+    it('advances the day at an explicit date row', () => {
+      const dates = parseDates(
+        buildArticle('05.07.2026, 11:07', [
+          '84864 Söllingen Bf (22:50 Uhr) - Wörth Badepark (23:53 Uhr)',
+          '06.07.2026',
+          '84863 Wörth Badepark (0:05 Uhr) - Karlsruhe Tullatr. (0:51 Uhr)',
+          '84784 Söllingen Bf (01:01 Uhr) - Karlsruhe Albtalbahnhof (1:34 Uhr)',
+        ]),
+      );
+      assert.deepStrictEqual(dates, [
+        ['84864', '2026-07-05'],
+        ['84863', '2026-07-06'],
+        ['84784', '2026-07-06'],
+      ]);
+    });
+
+    it('advances the day where an undated list steps past midnight', () => {
+      const dates = parseDates(
+        buildArticle('13.07.2026, 20:25', [
+          '10085 Ettlingen Albgaubad (23:04 Uhr) - Hochstetten (23:51 Uhr)',
+          '10086 Hochstetten (00:25 Uhr) - Ettlingen Albgaubad (01:12 Uhr)',
+        ]),
+      );
+      assert.deepStrictEqual(dates, [
+        ['10085', '2026-07-13'],
+        ['10086', '2026-07-14'],
+      ]);
+    });
+
+    it('advances across a month boundary', () => {
+      const dates = parseDates(
+        buildArticle('31.08.2026, 20:25', [
+          '10085 Ettlingen Albgaubad (23:04 Uhr) - Hochstetten (23:51 Uhr)',
+          '10086 Hochstetten (00:25 Uhr) - Ettlingen Albgaubad (01:12 Uhr)',
+        ]),
+      );
+      assert.deepStrictEqual(dates, [
+        ['10085', '2026-08-31'],
+        ['10086', '2026-09-01'],
+      ]);
     });
   });
 

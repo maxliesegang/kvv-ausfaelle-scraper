@@ -16,11 +16,18 @@ This is the most specific guidance for maintenance scripts.
   result against stored `docs/<fahrplan-year>/<line>.json`, matched by the `Quelle:` source
   URL. The base trip identity is `date|trainNumber|fromTime`; report/reconciliation lookups add
   the appropriate line or source scope when crossing files. Surfaces parser/classifier
-  improvements and regressions. Flags: `--year=N`, `--verbose`, `--write`, and
-  `--write-trips`. The two write flags are mutually exclusive.
+  improvements and regressions. Flags: `--year=N`, `--verbose`, `--write`, `--write-dates`, and
+  `--write-trips`. The three write flags are mutually exclusive.
   - No write flag: reports differences, writes nothing, and exits 0 regardless of findings.
   - `--write`: backfills only `cause`/`causeKeyword` for stored trips that reparse to the same
     identity. Pre-archive trips retain their stored classification.
+  - `--write-dates`: re-stamps only `date`, matching a stored trip to its reparsed self by
+    line + train number + departure time — the identity that survives a date correction — and
+    collapsing records the new date makes identical. A redate that would leave the directory's
+    Fahrplan year is reported and skipped, never written into the wrong year. Run this _before_
+    `--write-trips` after a dating change: a changed `date` is a changed identity, so
+    reconciliation alone would keep the old (departed, hence retained) record and add the
+    corrected one beside it.
   - `--write-trips`: fully reconciles each successfully parsed archived article with stored
     trips from the same source URL. It preserves an existing trip's `capturedAt` and uses the
     canonical storage ordering.

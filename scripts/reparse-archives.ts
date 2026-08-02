@@ -25,6 +25,7 @@
  *   npm run reparse-archives -- --verbose   # list every differing trip, not just counts
  *   npm run reparse-archives -- --write     # re-stamp cause/causeKeyword on archived trips
  *   npm run reparse-archives -- --write-trips # reconcile stored trips from parsed archives
+ *   npm run reparse-archives -- --write-dates # correct stored trip dates from parsed archives
  *
  * Exit code is 0 regardless of findings. Pipe/read the summary to act on it.
  */
@@ -40,7 +41,7 @@ import {
 } from '../src/storage.js';
 import { parseDetailPage, ParseError } from '../src/parser/index.js';
 import { ARCHIVE_SUBDIR, parseArchive } from '../src/article-archive.js';
-import { listFahrplanYearDirectories } from '../src/fahrplan.js';
+import { getFahrplanYear, listFahrplanYearDirectories } from '../src/fahrplan.js';
 import { listFiles, readTextFile, writeJsonFile } from '../src/utils/fs.js';
 import type { CauseClassification } from '../src/cause.js';
 import type { Cancellation } from '../src/types.js';
@@ -50,7 +51,7 @@ function formatTrip(trip: Cancellation): string {
   return `${trip.line} ${trip.trainNumber} ${trip.date} ${trip.fromTime}→${trip.toTime} (${trip.cause})`;
 }
 
-type ArchiveOperation = 'report' | 'backfill-classifications' | 'reconcile-trips';
+type ArchiveOperation = 'report' | 'backfill-classifications' | 'reconcile-trips' | 'redate-trips';
 
 interface ArchiveCommandOptions {
   readonly fahrplanYear?: string;
@@ -74,6 +75,9 @@ function parseCommandOptions(args: string[]): ArchiveCommandOptions {
     } else if (arg === '--write-trips') {
       if (operation !== 'report') throw new Error('Use only one write mode.');
       operation = 'reconcile-trips';
+    } else if (arg === '--write-dates') {
+      if (operation !== 'report') throw new Error('Use only one write mode.');
+      operation = 'redate-trips';
     } else throw new Error(`Unknown argument: ${arg}`);
   }
   return { fahrplanYear, verbose, operation };
@@ -143,6 +147,12 @@ interface ArchiveProcessingTotals {
   staleTripsRemoved: number;
   /** Trip-reconciliation mode: same-key records whose parsed fields were corrected. */
   tripsCorrected: number;
+  /** Redate mode: stored trips moved to the date their archived article now yields. */
+  tripsRedated: number;
+  /** Redate mode: records a redate collapsed onto an already-stored trip of the same identity. */
+  tripsMergedAfterRedate: number;
+  /** Redate mode: redates skipped because the new date lies in another Fahrplan year. */
+  tripsSkippedAcrossFahrplanYears: number;
 }
 
 function createArchiveProcessingTotals(): ArchiveProcessingTotals {
@@ -161,6 +171,9 @@ function createArchiveProcessingTotals(): ArchiveProcessingTotals {
     tripsRestored: 0,
     staleTripsRemoved: 0,
     tripsCorrected: 0,
+    tripsRedated: 0,
+    tripsMergedAfterRedate: 0,
+    tripsSkippedAcrossFahrplanYears: 0,
   };
 }
 
@@ -503,6 +516,107 @@ async function reconcileTripsForYear(
   }
 }
 
+/**
+ * Trip identity that survives a date correction: the line file it lives in, the train number and
+ * the departure clock time. Unlike {@link getLineScopedTripKey} it deliberately omits the date —
+ * matching a stored trip to its reparsed self is only possible across a changed date.
+ */
+function getUndatedTripKey(trip: Cancellation, line: string = trip.line): string {
+  return JSON.stringify([line, trip.trainNumber, trip.fromTime]);
+}
+
+/**
+ * Corrects stored trip dates from their archived article.
+ *
+ * A notice never dates its trips; until `resolveTripDate` existed, every trip was stored on the
+ * article's own day, so an after-midnight departure landed a day early — colliding with the
+ * previous day's identical departure. This re-stamps `date` (and nothing else) on every stored
+ * trip whose archived article now yields a different one, then collapses any record the new date
+ * makes identical to one already stored.
+ *
+ * It is deliberately separate from `--write-trips`: changing `date` changes trip identity, so a
+ * reconciliation run sees the old records as departed (hence retained) and the corrected ones as
+ * new, and would leave both. Run this first; `--write-trips` afterwards then restores trips that
+ * the wrong date had deduplicated away.
+ */
+async function redateTripsForYear(
+  fahrplanYearDirectory: string,
+  options: ArchiveCommandOptions,
+  totals: ArchiveProcessingTotals,
+): Promise<void> {
+  const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
+  const archiveFilenames = (await listFiles(archiveDirectory))
+    .filter((filename) => filename.endsWith('.txt'))
+    .sort();
+
+  const datesBySourceUrl = new Map<string, Map<string, string>>();
+  for (const filename of archiveFilenames) {
+    const archivedArticle = await parseArchivedArticle(join(archiveDirectory, filename), totals);
+    if (!archivedArticle) continue;
+    const datesByTripKey = new Map<string, string>();
+    for (const trip of archivedArticle.trips) {
+      datesByTripKey.set(getUndatedTripKey(trip), trip.date);
+    }
+    datesBySourceUrl.set(archivedArticle.sourceUrl, datesByTripKey);
+  }
+
+  const fahrplanYear = Number(basename(fahrplanYearDirectory));
+  const lineFilenames = (await listFiles(fahrplanYearDirectory)).filter(
+    (name) => name.endsWith('.json') && name !== 'index.json',
+  );
+
+  for (const filename of lineFilenames) {
+    const line = filename.slice(0, -'.json'.length);
+    const filePath = join(fahrplanYearDirectory, filename);
+    const storedTrips = await loadExistingCancellations(filePath);
+    let redatedCount = 0;
+
+    const redatedTrips = storedTrips.map((trip) => {
+      const date = datesBySourceUrl.get(trip.sourceUrl)?.get(getUndatedTripKey(trip, line));
+      if (date === undefined || date === trip.date) return trip;
+
+      // A trip that lands in another Fahrplan year belongs in that year's files, which this
+      // per-year pass cannot write. Leave it and report it rather than store it under the
+      // wrong year.
+      if (getFahrplanYear(date) !== fahrplanYear) {
+        totals.tripsSkippedAcrossFahrplanYears += 1;
+        console.warn(
+          `  ! ${filename}: ${formatTrip(trip)} → ${date} crosses into another Fahrplan year, skipped`,
+        );
+        return trip;
+      }
+
+      redatedCount += 1;
+      totals.tripsRedated += 1;
+      if (options.verbose) console.log(`      ~ ${formatTrip(trip)} → ${date}`);
+      return { ...trip, date };
+    });
+
+    if (redatedCount === 0) continue;
+
+    // A corrected date can coincide with a trip already stored under it (the same departure
+    // reported again by the next morning's notice). Those are one physical trip, so keep the
+    // record observed first and drop the other, exactly as the live store's identity dedup would.
+    const tripsByKey = new Map<string, Cancellation>();
+    let mergedCount = 0;
+    for (const trip of redatedTrips) {
+      const key = getCancellationKey(trip);
+      const storedTrip = tripsByKey.get(key);
+      if (storedTrip === undefined) {
+        tripsByKey.set(key, trip);
+        continue;
+      }
+      mergedCount += 1;
+      if (trip.capturedAt < storedTrip.capturedAt) tripsByKey.set(key, trip);
+    }
+    totals.tripsMergedAfterRedate += mergedCount;
+
+    await writeJsonFile(filePath, [...tripsByKey.values()].sort(compareCancellationsBySchedule));
+    totals.lineFilesWritten += 1;
+    console.log(`  ~ ${filename}: ${redatedCount} redated, ${mergedCount} merged as duplicates`);
+  }
+}
+
 async function main(): Promise<void> {
   const options = parseCommandOptions(process.argv.slice(2));
   const fahrplanYearDirectories = await findFahrplanYearDirectories(DATA_DIR, options.fahrplanYear);
@@ -527,6 +641,9 @@ async function main(): Promise<void> {
         continue;
       case 'reconcile-trips':
         await reconcileTripsForYear(fahrplanYearDirectory, options, totals);
+        continue;
+      case 'redate-trips':
+        await redateTripsForYear(fahrplanYearDirectory, options, totals);
         continue;
       case 'report': {
         const storedTripsBySourceUrl = await loadStoredTripsBySourceUrl(fahrplanYearDirectory);
@@ -563,6 +680,15 @@ async function main(): Promise<void> {
         parseSummary +
           `Reconciled trips: +${totals.tripsRestored} restored, ` +
           `~${totals.tripsCorrected} corrected, -${totals.staleTripsRemoved} removed across ` +
+          `${totals.lineFilesWritten} file(s).`,
+      );
+      return;
+    case 'redate-trips':
+      console.log(
+        parseSummary +
+          `Redated trips: ${totals.tripsRedated} moved to their departure date, ` +
+          `${totals.tripsMergedAfterRedate} merged as duplicates, ` +
+          `${totals.tripsSkippedAcrossFahrplanYears} skipped across Fahrplan years, across ` +
           `${totals.lineFilesWritten} file(s).`,
       );
       return;

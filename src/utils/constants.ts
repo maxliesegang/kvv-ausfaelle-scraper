@@ -8,6 +8,16 @@
 export const ISO_DATE_LENGTH = 10;
 
 /**
+ * Clock time format length (HH:MM)
+ */
+export const CLOCK_TIME_LENGTH = 5;
+
+/**
+ * Minutes in an hour, for wall-clock arithmetic on HH:MM values.
+ */
+export const MINUTES_PER_HOUR = 60;
+
+/**
  * Maximum number of consecutive lines to attempt combining when parsing trip entries.
  * Based on observed KVV HTML formatting where trip data can span up to 3 lines.
  */

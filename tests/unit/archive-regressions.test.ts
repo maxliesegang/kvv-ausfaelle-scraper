@@ -130,7 +130,7 @@ describe('archived article parser regressions', () => {
       normalizeCancellation(findTrip(trips, '84945')),
       {
         line: 'S51',
-        date: '2026-07-04',
+        date: '2026-07-05',
         stand: '2026-07-04T10:30:00.000Z',
         trainNumber: '84945',
         fromStop: 'Tullastraße',
@@ -140,7 +140,7 @@ describe('archived article parser regressions', () => {
         cause: 'personnel',
         causeKeyword: 'fahrpersonal',
       },
-      'the after-midnight row must retain its train-number line mapping',
+      'the after-midnight row must run on the day after the Stand and retain its line mapping',
     );
   });
 

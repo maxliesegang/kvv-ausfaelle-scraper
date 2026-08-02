@@ -12,9 +12,10 @@ import type { Cancellation } from '../types.js';
 import { classifyCauseWithEvidence } from '../cause.js';
 import { toArticleText } from './article-corrections.js';
 import { extractLine, extractStand } from './text-extraction.js';
+import { extractTripDateAnchor } from './trip-dates.js';
 import {
+  extractDatedTripRows,
   extractMentionedLines,
-  extractTripRows,
   findUnparsedTripLikeRows,
   MultiLineMappingError,
   parseTripRow,
@@ -43,14 +44,16 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
   const line = extractLine(text);
   const mentionedLines = extractMentionedLines(text);
   const lineMentionCount = mentionedLines.length;
-  const { standIso, dateForTrips } = extractStand(text);
+  const { standIso } = extractStand(text);
+  const tripDateAnchor = extractTripDateAnchor(text);
+  const datedTripRows = extractDatedTripRows(text, tripDateAnchor);
   const capturedAt = new Date().toISOString();
   const { cause, causeKeyword } = classifyCauseWithEvidence(text);
 
   const metadata = {
     line,
     mentionedLines,
-    date: dateForTrips,
+    date: tripDateAnchor.date,
     stand: standIso,
     sourceUrl: url,
     capturedAt,
@@ -59,14 +62,14 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     lineMentionCount,
   };
 
-  // Extract and parse trip lines
-  const tripRows = extractTripRows(text);
   const trips: Cancellation[] = [];
   const unmappedTrainNumbers = new Set<string>();
 
-  for (const tripRow of tripRows) {
+  // Each row carries the date the list dates it to, which is the article's own day for all but
+  // an after-midnight tail (see `trip-dates.ts`).
+  for (const { row, date } of datedTripRows) {
     try {
-      const parsed = parseTripRow(tripRow, metadata);
+      const parsed = parseTripRow(row, { ...metadata, date });
       trips.push(...parsed);
     } catch (error) {
       if (error instanceof MultiLineMappingError) {

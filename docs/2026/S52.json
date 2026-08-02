@@ -1,0 +1,16 @@
+[
+  {
+    "line": "S52",
+    "date": "2026-07-12",
+    "stand": "2026-07-11T11:05:00.000Z",
+    "trainNumber": "84947",
+    "fromStop": "Germersheim Hbf",
+    "fromTime": "00:26",
+    "toStop": "Rheinbergstraße",
+    "toTime": "01:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_272277",
+    "capturedAt": "2026-07-11T13:08:13.233Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  }
+]
