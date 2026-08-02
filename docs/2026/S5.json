@@ -11883,6 +11883,20 @@
   {
     "line": "S5",
     "date": "2026-08-01",
+    "stand": "2026-08-01T21:30:00.000Z",
+    "trainNumber": "84949",
+    "fromStop": "Rheinbergstrasse",
+    "fromTime": "03:37",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "04:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273833",
+    "capturedAt": "2026-08-02T02:21:17.219Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-01",
     "stand": "2026-07-31T22:45:00.000Z",
     "trainNumber": "84800",
     "fromStop": "Tullastraße",
@@ -11897,6 +11911,20 @@
   {
     "line": "S5",
     "date": "2026-08-01",
+    "stand": "2026-08-01T21:30:00.000Z",
+    "trainNumber": "84942",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "05:09",
+    "toStop": "Wörth Badepark",
+    "toTime": "06:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273833",
+    "capturedAt": "2026-08-02T02:21:17.219Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-01",
     "stand": "2026-07-31T22:45:00.000Z",
     "trainNumber": "84795",
     "fromStop": "Wörth Badepark",
@@ -11905,6 +11933,20 @@
     "toTime": "06:55",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273768",
     "capturedAt": "2026-08-01T02:24:10.061Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-01",
+    "stand": "2026-08-01T21:30:00.000Z",
+    "trainNumber": "84801",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:06",
+    "toStop": "Tullastrasse",
+    "toTime": "07:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273833",
+    "capturedAt": "2026-08-02T02:21:17.219Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   },
