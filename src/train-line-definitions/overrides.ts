@@ -48,6 +48,12 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_273610: {
       '40014': 'S11',
     },
+    // Same S12-on-the-S11-corridor case in the AVG staffing notice for S1/S11 of 2026-08-03.
+    // The Ittersbach Rathaus–KA Tullastraße run 40015 is listed as S12 in GTFS, while KVV
+    // reports it under the S11 corridor.
+    Nettro_CMS_273841: {
+      '40015': 'S11',
+    },
     // AVG staffing notice for S5/S51 (Pforzheim Hbf–Wörth Badepark bzw. Germersheim),
     // 2026-07-29. GTFS knows the Germersheim–KA Marktplatz run 85481 only as an S52 — the
     // sibling short-working on the S51 Germersheim corridor, which the article never

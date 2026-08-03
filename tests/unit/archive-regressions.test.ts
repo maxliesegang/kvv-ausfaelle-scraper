@@ -288,6 +288,21 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('maps the S12-numbered S11 corridor run in the 2026-08-03 notice', () => {
+    const trips = parseArchivedArticle('Nettro_CMS_273841');
+
+    assert.deepEqual(trips.map(routeOf), [
+      {
+        trainNumber: '40015',
+        line: 'S11',
+        fromStop: 'Ittersbach Rathaus',
+        fromTime: '07:36',
+        toStop: 'Tullastrasse',
+        toTime: '08:32',
+      },
+    ]);
+  });
+
   test('parses "bis" rows that omit the "an" arrival marker', () => {
     const trips = parseArchivedArticle('Nettro_CMS_273728');
 
