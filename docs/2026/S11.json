@@ -1076,5 +1076,19 @@
     "capturedAt": "2026-07-30T17:21:32.694Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-08-03",
+    "stand": "2026-08-02T22:15:00.000Z",
+    "trainNumber": "40015",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "07:36",
+    "toStop": "Tullastrasse",
+    "toTime": "08:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273841",
+    "capturedAt": "2026-08-03T06:55:07.097Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

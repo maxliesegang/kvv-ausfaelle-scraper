@@ -9,7 +9,9 @@
     "toStop": "Karlsruhe Rheinhafen",
     "toTime": "08:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262521",
-    "capturedAt": "2026-02-03T05:13:14.798Z"
+    "capturedAt": "2026-02-03T05:13:14.798Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S12",
@@ -21,6 +23,22 @@
     "toStop": "Ittersbach Rathaus",
     "toTime": "13:29",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_266101",
-    "capturedAt": "2026-03-24T16:56:26.672Z"
+    "capturedAt": "2026-03-24T16:56:26.672Z",
+    "cause": "unknown",
+    "causeKeyword": null
+  },
+  {
+    "line": "S12",
+    "date": "2026-08-03",
+    "stand": "2026-08-03T03:09:00.000Z",
+    "trainNumber": "40019",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "06:36",
+    "toStop": "KA. Tullastraße",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273845",
+    "capturedAt": "2026-08-03T06:55:06.697Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
