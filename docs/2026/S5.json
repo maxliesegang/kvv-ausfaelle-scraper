@@ -12299,5 +12299,33 @@
     "capturedAt": "2026-08-02T02:21:17.219Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-03",
+    "stand": "2026-08-03T19:36:00.000Z",
+    "trainNumber": "85084",
+    "fromStop": "Wörth Bahnhof",
+    "fromTime": "21:02",
+    "toStop": "Wörth Badepark",
+    "toTime": "21:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273853",
+    "capturedAt": "2026-08-03T20:58:10.443Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-03",
+    "stand": "2026-08-03T19:36:00.000Z",
+    "trainNumber": "85097",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "21:45",
+    "toStop": "Wörth Bahnhof",
+    "toTime": "21:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273853",
+    "capturedAt": "2026-08-03T20:58:10.443Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung"
   }
 ]
