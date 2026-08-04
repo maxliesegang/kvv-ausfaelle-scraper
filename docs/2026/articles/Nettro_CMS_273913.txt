@@ -16,6 +16,8 @@ Betriebsbedingte Fahrtausfälle. Auf den Linien S1 und S11 kommt es wegen Engpä
 Nach aktuellem Stand 04.08.2026 14:01:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen:
 10057 Ettlingen Freibad (15:34 Uhr) - Hochstetten (16:45 Uhr)
 10060 Hochstetten (16:52 Uhr) - Ettlingen Freibad (18:34 Uhr)
+10073 Ettlingen Freibad  (19:04 Uhr) - Neureut (19:51 Uhr)
+20066 Neureut (20:05 Uhr) - Ettlingen Stadt (20:48 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

@@ -7,13 +7,4 @@ Datum:  2026-05-22T12:03:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 26.05.2026 bis 16.08.2026
-Linien: 22
-Durlach: Haltestelle &quot;Turmberg&quot; wird verlegt
-(sie)
-Es werden Arbeiten der Stadtwerke durchgeführt.
-Die Linie 22 wird umgeleitet:
-Vom Dienstag 26.05. bis Sonntag 16.08.2026
-Die Haltestelle "Turmberg" wird in die Lamprechtstraße verlegt.
-Verlegungsplan:
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr

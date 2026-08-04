@@ -2742,5 +2742,19 @@
     "capturedAt": "2026-08-04T13:59:18.228Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-04",
+    "stand": "2026-08-04T12:01:00.000Z",
+    "trainNumber": "10073",
+    "fromStop": "Ettlingen Freibad",
+    "fromTime": "19:04",
+    "toStop": "Neureut",
+    "toTime": "19:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273913",
+    "capturedAt": "2026-08-04T17:40:59.565Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
