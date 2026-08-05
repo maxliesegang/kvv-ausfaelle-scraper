@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004309_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S4, SEV - Schwaigern (Württ) - Heilbronn Hbf/Willy-Brandt-Pl.: Einschränkungen in einer Nacht (17.08.2026 bis 18.08.2026)
+Datum:  2026-08-05T10:39:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 17.08.2026 bis 18.08.2026
+Linien: S4, SEV
+Schwaigern (Württ) - Heilbronn Hbf/Willy-Brandt-Pl.: Einschränkungen in einer Nacht
+(AVG) Schwaigern (Württ) - Heilbronn Hbf/Willy-Brandt-Pl.: S4 - Einschränkungen in einer Nacht
+Linie(n): S4
+Zeitraum: Nacht 17./18.08.2026 (ca. 21:45 Uhr bis 04:00 Uhr)
+Entfall Stadtbahn: Schwaigern (Württ) &lt;-&gt; Heilbronn Hbf/Willy-Brandt-Pl.ö
+Ersatzverkehr: Schwaigern Bf &lt;-&gt; Heilbronn Hbf/ZOB
+Grund: DB InfraGO - wegen Bauarbeiten im Gleisvorfeld Heilbronn Hbf ist die Verbindung Kraichgaubahn &lt;-&gt; Innenstadtstrecke Heilbronn gesperrt
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht

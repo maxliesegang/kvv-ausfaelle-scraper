@@ -18,6 +18,11 @@ Zusätzliche Stadtbahnen zwischen Germersheim und Wörth (Rhein)
 Von ca. 20:00 Uhr bis 02:00 Uhr Pendelverkehr gemeinsam mit den regulären Fahrten
 Weitgehend 30-Minuten-Takt
 Alle Unterwegshalte werden bedient
+Im Abschnitt Wörth Badepark &lt;&gt; Wörth (Rhein) 
+werden jeweils 2 Pendelfahrten zusätzlich angeboten
+Bahnhof         Abfahrt Ankunft    Bahnhof
+28.+29.08.2026    Wörth Badepark    23:58    00:05    Wörth (Rhein)
+29.+30.08.2026    Wörth (Rhein)        00:10    00:17    Wörth Badepark
 Nacht Sonntag, 30.08./Montag, 31.08.
 Zusätzliche Fahrt zur Heimreise nach dem Feuerwerk:
 Germersheim ab 23:14 Uhr bis Tullastraße
