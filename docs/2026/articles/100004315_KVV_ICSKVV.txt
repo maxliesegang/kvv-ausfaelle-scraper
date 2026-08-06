@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004315_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie FEX, - Bad Herrenalb - Karlsruhe Hbf: Freizeitexpress Albtäler entfällt (30.08.2026 bis 06.09.2026)
+Datum:  2026-08-06T11:09:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 30.08.2026 bis 06.09.2026
+Linie FEX,
+Bad Herrenalb - Karlsruhe Hbf: Freizeitexpress Albtäler entfällt
+(AVG) Bad Herrenalb - Karlsruhe Hbf: Freizeitexpress Albtäler entfällt
+Linie(n): FEX
+Zeitraum:  30.08. und 06.09.2027
+Entfall Stadtbahn: Bad Herrenalb  &lt;-&gt; Karlsruhe Hbf
+Ersatzverkehr:  in der Zeitlage vom FEX verkehren ersatzweise Züge als S1 im Abschnitt Bad Herrenalb  &lt;-&gt; Ettlingen Stadt 
+Grund: Brückenarbeiten zwischen Karlsruhe - Durlach von DB InfraGo
+Ausnahmen/Sonstiges: ebenso ist auch der Abschnitt Menzingen(Baden)/Odenheim &lt;&gt; KA Hbf betroffen
+Zurück zur Übersicht

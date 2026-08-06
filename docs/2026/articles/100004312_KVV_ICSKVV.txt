@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004312_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie: S51, SEV - Wörth (Rhein) - Germersheim: S51 Teilabschnitt entfällt ab 22:00 Uhr (24.08.2026 bis 25.08.2026)
+Datum:  2026-08-06T10:33:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 24.08.2026 bis 25.08.2026
+Linie: S51, SEV
+Wörth (Rhein) - Germersheim: S51 Teilabschnitt entfällt ab 22:00 Uhr
+(AVG) Wörth (Rhein) - Germersheim: S51 Teilabschnitt entfällt ab 22:00 Uhr 
+Linie(n): S51
+Zeitraum: Nacht 24./25.08.2026 (22:00 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn:  Wörth (Rhein) Bahnhof &lt;-&gt; Germersheim 
+Ersatzverkehr:  Wörth (Rhein) Bahnhof  &lt;-&gt; Germersheim
+Grund: DB InfraGO - Zeitfenster für Instandhaltung 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
