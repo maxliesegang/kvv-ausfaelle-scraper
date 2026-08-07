@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004302_KVV_ICSKVV
-Stand:  unbekannt
+Stand:  2026-08-03T01:30:00.000Z
 Titel:  Linie: 55 - Karlsruhe: Haltestelle Weinbrennerplatz Richtung Hauptbahnhof wird verlegt (03.08.2026 bis 14.09.2026)
 Datum:  2026-07-29T06:21:00.000Z
 ========================================================================
@@ -7,4 +7,14 @@ Datum:  2026-07-29T06:21:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Diese Meldung existiert nicht mehr
+Vom 03.08.2026 bis 14.09.2026
+Linie: 55
+Karlsruhe: Haltestelle Weinbrennerplatz Richtung Hauptbahnhof wird verlegt
+(sie) Linie 55: Umleitung wegen Vollsperrung Gartenstraße
+Von 03.08.2026, 03:30 Uhr bis 14.09.2027, 03:30 Uhr 
+ist die Gartenstraße zwischen Steinhäuserstraße und Weinbrennerplatz aufgrund von Leitungsarbeiten der Stadtwerke für den Busverkehr voll gesperrt.
+Die Linie 55 wird zwischen den Haltestellen Holtzstraße und Weinbrennerplatz umgeleitet:
+Richtung Kühler Krug: Umleitung über Gartenstraße, Lessingstraße und Kriegsstraße zur regulären Haltestelle Weinbrennerplatz (Steig A).
+Richtung Hauptbahnhof: Die Haltestelle Weinbrennerplatz wird durch eine Ersatzhaltestelle etwa 100 Meter westlich der regulären Haltestelle ersetzt. Anschließend fährt die Linie über Kriegsstraße und Steinhäuserstraße zurück auf den regulären Linienweg.
+Umleitungsplan
+Zurück zur Übersicht

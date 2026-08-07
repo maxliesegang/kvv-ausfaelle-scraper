@@ -7,4 +7,16 @@ Datum:  2026-08-06T07:44:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Diese Meldung existiert nicht mehr
+Vom 10.08.2026 bis 10.08.2026
+Linie: 208
+Baden-Baden: Haltestellen werden aufgehoben
+(sie) Linie 208: Vollsperrung Schloßstraße (Baden-Baden)
+Gültig am Montag, 10.08.2026, von 08:00 bis 10:00 Uhr
+Aufgrund von Mobilkranarbeiten in der Schloßstraße 11 wird die Schloßstraße am Montag, 10.08.2026, von 08:00 Uhr bis 10:00 Uhr voll gesperrt.
+Die Linie 208 wird ab Leopoldsplatz in Richtung Herrengut über Sophienstraße - Vincentistraße - Rotenbachtalstraße - Zähringerstraße - Leopoldstraße - Herrengut umgeleitet. Die Umleitung gilt in beiden Fahrtrichtungen.
+Haltestellenänderungen:
+Bäderviertel → Ersatzhalt an der Caracalla Therme
+Marktplatz/Rathaus → entfällt
+Neues Schloss → verlegt zur Haltestelle Leopoldstraße (Herrengut)
+Umleitungsplan
+Zurück zur Übersicht
