@@ -7,23 +7,4 @@ Datum:  2026-07-30T04:53:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 29.08.2026 bis 11.09.2026
-Linien: S5, S51, S31, S32, SEV
-Karlsruhe - Bruchsal / Pforzheim: Erhebliche Einschränkungen Ende der Sommerferien 2026
-(AVG) 
-Karlsruhe - Bruchsal / Pforzheim: Erhebliche Einschränkungen bei S31, S32, S5 und S51 Ende der Sommerferien 2026
-Wegen umfangreicher Bauarbeiten der DB InfraGO kommt es in den letzten beiden Sommerferienwochen zu erheblichen Einschränkungen im Stadtbahn- und Regionalverkehr.
-S31 / S32
-29.08.2026, 21 Uhr bis 11.09.2026, 21 Uhr
-Fahrten zwischen Karlsruhe Hbf und Bruchsal entfallen.
-Es verkehrt ein Ersatzverkehr mit Bussen zwischen Karlsruhe und Bruchsal.
-In den Nächten 29./30.08. bis 03./04.09. (jeweils 21 bis 4:30 Uhr) entfallen die Linien zusätzlich zwischen Karlsruhe und Ubstadt Ort.
-Ersatzverkehr: Karlsruhe Hbf (Vorplatz) - Bruchsal - Ubstadt Ort.
-S5 / S51
-05.09.2026, 22 Uhr bis 11.09.2026, 22 Uhr
-Fahrten zwischen Söllingen (b Karlsruhe) und Wilferdingen-Singen entfallen.
-Ersatzverkehr mit Bussen zwischen Söllingen Reetzstraße und Wilferdingen-Singen.
-Die Eilzüge Pforzheim - Karlsruhe entfallen. Zwischen Pforzheim und Wilferdingen-Singen verkehren die Züge als S5.
-Hinweis Regionalverkehr
-Auch bei den Linien der DB Regio (S-Bahn Rhein-Neckar, RE45, RE73) sowie Arverio (RE1) ist aufgrund von Streckensperrungen mit größeren Einschränkungen zu rechnen. Weitere Informationen liegen derzeit noch nicht vor.
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr

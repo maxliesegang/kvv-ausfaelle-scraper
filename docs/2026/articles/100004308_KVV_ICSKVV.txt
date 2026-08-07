@@ -7,15 +7,4 @@ Datum:  2026-08-04T06:11:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 12.08.2026 bis 13.08.2026
-Linie 234, X34
-Iffezheim: Umleitung wegen Bauarbeiten
-(eic) Aufgrund einer Sanierung der Ampelanlage am Knoten B500/L75 müssen die Linien 234 und X34
-von Mittwoch, den 12. August 2026
-bis Donnerstag, den 13. August 2026
-überörtlich umgeleitet werden. In diesem Zusammenhang können die nachfolgenden Haltestellen nicht bedient werden und sind für die betroffenen Linien aufgehoben:
-Iffezheim Festhalle
-Iffezheim Bruchweg
-Hügelsheim Nord
-Die Linie X34 hält in dieser Zeit in Fahrtrichtung Rastatt an der Haltestelle "Iffezheim Tullastraße".
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr

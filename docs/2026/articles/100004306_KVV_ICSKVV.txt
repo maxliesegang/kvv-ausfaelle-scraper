@@ -7,7 +7,4 @@ Datum:  2026-07-31T11:54:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 30.07.2026 bis 12.12.2026
-Linie X45
-Baden-Baden: Haltentfall wegen Bauarbeiten
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr

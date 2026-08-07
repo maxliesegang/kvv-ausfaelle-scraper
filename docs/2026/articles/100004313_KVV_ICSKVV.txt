@@ -7,14 +7,4 @@ Datum:  2026-08-06T10:45:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 25.08.2026 bis 26.08.2026
-Linie: S5, SEV
-Wörth (Rhein) - Wörth Badepark: S5 Teilabschnitt entfällt ab 22:00 Uhr
-(AVG) Wörth (Rhein) - Wörth Badepark: S5 Teilabschnitt entfällt ab 22:00 Uhr 
-Linie(n): S5
-Zeitraum: Nacht 25.08../26.08.2026 (22:00 Uhr bis 05:00 Uhr)
-Entfall Stadtbahn:  Wörth (Rhein) Bahnhof &lt;-&gt; Wörth Badepark, stündlich eine Fahrt je Richtung betroffen
-Ersatzverkehr:  Wörth (Rhein) Bahnhof  &lt;-&gt; Wörth Berufsschule
-Grund: DB InfraGO - Zeitfenster für Instandhaltung (u.a. Schienenschleifen Wörth (Rhein))
-Fahrplan Ersatzverkehr
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr
