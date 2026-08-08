@@ -90,4 +90,29 @@ describe('Workflow article archive eligibility', () => {
     assert.strictEqual(detailFetched, false, 'young articles should not be fetched');
     await assert.rejects(access(join(tempDir, ...ARCHIVE_PATH)));
   });
+
+  it('fails on an unparsed known train number even when construction caused the cancellation', async () => {
+    const html = [
+      '<html><main>',
+      '<p>Linie: S42</p>',
+      '<p>Wegen Bauarbeiten entfällt eine Fahrt.</p>',
+      '<p>Betroffene Fahrten:</p>',
+      '<p>85879 Heilbronn Hbf 10:00 Uhr nach Sinsheim Hbf 11:00 Uhr</p>',
+      '</main></html>',
+    ].join('\n');
+    const item: Item = {
+      title: 'Linie S42: Fahrt entfällt wegen Bauarbeiten',
+      link: DETAIL_URL,
+      pubDate: 'Thu, 23 Jul 2026 10:00:00 GMT',
+    };
+
+    await assert.rejects(
+      processRssItem(item, {
+        dataDir: tempDir,
+        fetchDetail: async () => html,
+        nowMs: NOW_MS,
+      }),
+      /known train number.*85879/i,
+    );
+  });
 });

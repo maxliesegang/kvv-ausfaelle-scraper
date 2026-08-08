@@ -3,12 +3,7 @@ import { DATA_DIR, RSS_URL } from './config.js';
 import { archiveArticleText } from './article-archive.js';
 import { fetchText, parseRss } from './rss.js';
 import { parseDetailPage, ParseError } from './parser/index.js';
-import {
-  extractTripSectionCandidateRows,
-  findUnparsedTripLikeRows,
-  leadingTrainNumber,
-} from './parser/trip-parsing.js';
-import { TRIP_TIME_PAIR_PATTERN } from './parser/patterns.js';
+import { findUnparsedTripLikeRows, leadingTrainNumber } from './parser/trip-parsing.js';
 import { toArticleText } from './parser/article-corrections.js';
 import { classifyCause } from './cause.js';
 import { isKnownTrainNumber } from './train-lines.js';
@@ -60,9 +55,10 @@ function skipped(reason: SkipReason): ItemOutcome {
  * Returns a ParseError when the article dropped a trip-like row whose leading number KVV's
  * own GTFS knows — a real cancellation in a format the parser does not cover yet. It is
  * threaded alongside the parsed trips (not thrown), so the good trips are still saved while
- * CI fails loudly as a notification to add the format + fixture. Construction notices are
- * exempt: their trip formats are knowingly unparsed. A dropped row whose number GTFS does
- * not list only warns in `parseDetailPage` — absence is not proof it isn't a trip.
+ * CI fails loudly as a notification to add the format + fixture. This applies regardless of
+ * cause: construction notices may use knowingly unsupported unnumbered formats, but a known
+ * train number is still actionable evidence. A dropped row whose number GTFS does not list
+ * only warns in `parseDetailPage` — absence is not proof it isn't a trip.
  */
 export function findMissedKnownTripsError(
   html: string,
@@ -71,10 +67,6 @@ export function findMissedKnownTripsError(
 ): ParseError | undefined {
   // Same text the parser saw, so a corrected row is not re-reported as a parser gap.
   const text = toArticleText(html, url);
-  if (classifyCause(text) === 'construction') {
-    return undefined;
-  }
-
   const parsedNumbers = new Set(trips.map((trip) => trip.trainNumber));
   const missed = findUnparsedTripLikeRows(text, parsedNumbers).filter((row) => {
     const number = leadingTrainNumber(row);
@@ -177,10 +169,17 @@ export async function processRssItem(
     if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
       const reasons = detailRelevance.reasons.join('; ') || 'no relevance reasons recorded';
       const text = toArticleText(html, url);
-      const candidateRows = extractTripSectionCandidateRows(text);
-      const hasTripLikeTimes = candidateRows.some((row) => TRIP_TIME_PAIR_PATTERN.test(row));
+      const unparsedTripLikeRows = findUnparsedTripLikeRows(text, new Set());
+      const hasTripLikeRows = unparsedTripLikeRows.length > 0;
 
-      if (!hasTripLikeTimes) {
+      // Construction is exempt only for its unnumbered route formats. A GTFS-known number is
+      // actionable regardless of cause and must still fail loudly.
+      const missedKnownTripError = findMissedKnownTripsError(html, [], url);
+      if (missedKnownTripError) {
+        throw missedKnownTripError;
+      }
+
+      if (!hasTripLikeRows) {
         console.warn(
           `  -> skipping article because no trip details were listed despite relevance signals (${reasons})`,
         );

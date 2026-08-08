@@ -7,10 +7,11 @@
  */
 export const PATTERNS = {
   /**
-   * Matches "Linie <line>" to extract the transit line identifier.
-   * Requires the token to contain at least one digit to avoid words like "Regiobus".
+   * Matches "Linie <line>" and the labelled variants "Linie: <line>" / "Linie(n):
+   * <line>". Requires the token to contain at least one digit to avoid words like
+   * "Regiobus".
    */
-  LINE: /Linien?\s+([A-Za-z]+[0-9][A-Za-z0-9-]*)/i,
+  LINE: /Linien?(?:\(n\))?(?:\s*:\s*|\s+)([A-Za-z]+[0-9][A-Za-z0-9-]*)/i,
 
   /** Matches "Nach aktuellem Stand DD.MM.YYYY HH:MM:SS" to extract the status timestamp */
   STAND: /Nach aktuellem Stand\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})/,
@@ -139,9 +140,10 @@ export const MULTI_LINE_RANGE_PATTERN = /[A-Za-z]+\d+\s*-\s*[A-Za-z]*\d+/;
 
 /**
  * Pattern to extract line mention sections.
- * Matches: "Linie S1" or "Linien S1, S2" followed by text until period or newline.
+ * Matches: "Linie S1", "Linien: S1, S2", or "Linie(n): S1" followed by text until
+ * period or newline.
  */
-export const LINE_MENTION_SECTION_PATTERN = /Linien?\s+([^.\n]+)/gi;
+export const LINE_MENTION_SECTION_PATTERN = /Linien?(?:\(n\))?(?:\s*:\s*|\s+)([^.\n]+)/gi;
 
 /**
  * Pattern to extract individual line identifiers.
@@ -155,3 +157,13 @@ export const LINE_IDENTIFIER_PATTERN = /\b[A-Za-z]+\d{1,3}\b/g;
  * structure, so it can be surfaced as a warning instead of being silently dropped.
  */
 export const TRIP_TIME_PAIR_PATTERN = /\d{1,2}:\d{2}.*\d{1,2}:\d{2}/;
+
+/**
+ * A parenthesized stop time in the unnumbered route lists used by construction notices.
+ * A single stop may carry arrival and departure times ("05:09 05:11").
+ */
+export const PARENTHESIZED_ROUTE_TIME_PATTERN =
+  /\(\s*\d{1,2}:\d{2}(?:\s+\d{1,2}:\d{2})?(?:\s*Uhr)?\s*\)/gi;
+
+/** A stop-to-stop separator, deliberately requiring surrounding whitespace. */
+export const ROUTE_SEPARATOR_PATTERN = /\s[-–]\s/;

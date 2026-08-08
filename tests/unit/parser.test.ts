@@ -6,12 +6,19 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import { parseDetailPage } from '../../src/parser/index.js';
-import { extractStand, parseGermanDateTime } from '../../src/parser/text-extraction.js';
+import {
+  extractLine,
+  extractStand,
+  parseGermanDateTime,
+} from '../../src/parser/text-extraction.js';
 import { extractTripDateAnchor } from '../../src/parser/trip-dates.js';
 import {
   extractTripRows,
   extractTripSectionCandidateRows,
+  extractMentionedLines,
+  findUnparsedTripLikeRows,
   isValidTripRow,
+  leadingTrainNumber,
   parseTripRow,
 } from '../../src/parser/trip-parsing.js';
 import type { TripParsingMetadata } from '../../src/types.js';
@@ -148,6 +155,29 @@ describe('Parser - Detail Page Parsing', () => {
     });
   });
 
+  describe('Line metadata variants', () => {
+    it('extracts colon-labelled and Linie(n) line declarations', () => {
+      assert.equal(extractLine('Linie: S5, SEV'), 'S5');
+      assert.equal(extractLine('Linie(n): S51'), 'S51');
+      assert.deepStrictEqual(extractMentionedLines('Linien: S5, S51, SEV'), ['S5', 'S51']);
+      assert.deepStrictEqual(extractMentionedLines('Linie(n): S31/S32'), ['S31', 'S32']);
+    });
+
+    it('uses a Linie(n) declaration to assign an unprefixed trip row', () => {
+      const html = [
+        '<html><body>',
+        '<p>Linie(n): S5</p>',
+        '<p>Nach aktuellem Stand 04.07.2026 12:30:00</p>',
+        '<p>Betroffene Fahrten:</p>',
+        '<p>84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr</p>',
+        '</body></html>',
+      ].join('\n');
+
+      const [trip] = parseDetailPage(html, 'test://labelled-line');
+      assert.equal(trip?.line, 'S5');
+    });
+  });
+
   describe('Hardened format variants', () => {
     // Each of these appeared in a live article and previously matched no parser format.
     it('parses "ab/bis/an" rows with a trailing (LT) annotation', () => {
@@ -257,6 +287,28 @@ describe('Parser - Detail Page Parsing', () => {
         '99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)',
       ].join('\n');
       assert.deepStrictEqual(extractTripRows(text), ['99992 Start (10:00 Uhr) - Ziel (11:00 Uhr)']);
+    });
+
+    it('recognizes only plausible leading train numbers', () => {
+      assert.equal(leadingTrainNumber('85879 Start 10:00 Uhr nach Ziel 11:00 Uhr'), '85879');
+      assert.equal(leadingTrainNumber('S5 85879: Start 10:00 Uhr nach Ziel 11:00 Uhr'), '85879');
+      assert.equal(leadingTrainNumber('09:30 Uhr bis 11:00 Uhr alle 15 Minuten'), undefined);
+      assert.equal(
+        leadingTrainNumber('28.+29.08.2026 Wörth Badepark 23:58 00:05 Wörth (Rhein)'),
+        undefined,
+      );
+    });
+
+    it('reports route-shaped unnumbered rows but ignores operating periods and frequencies', () => {
+      const text = [
+        'Zeitraum: 28.08.2026 (22:00 Uhr bis 05:00 Uhr)',
+        '09:30 Uhr bis 11:00 Uhr alle 15 Minuten',
+        'Entfall Stadtbahn: S51 Germersheim (23:30) - Wörth (00:03) - Söllingen (00:56)',
+      ].join('\n');
+
+      assert.deepStrictEqual(findUnparsedTripLikeRows(text, new Set()), [
+        'Entfall Stadtbahn: S51 Germersheim (23:30) - Wörth (00:03) - Söllingen (00:56)',
+      ]);
     });
   });
 
@@ -424,6 +476,25 @@ describe('Parser - Detail Page Parsing', () => {
         findMissedKnownTripsError(unknownHtml, trips, 'test://unknown-number-miss'),
         undefined,
       );
+    });
+
+    it('reports a dropped known-number row in a construction notice', () => {
+      const constructionHtml = [
+        '<html><body>',
+        '<p>Linie: S42</p>',
+        '<p>Wegen Bauarbeiten entfällt eine Fahrt.</p>',
+        '<p>Betroffene Fahrten:</p>',
+        '<p>85879 Heilbronn Hbf 10:00 Uhr nach Sinsheim Hbf 11:00 Uhr</p>',
+        '</body></html>',
+      ].join('\n');
+
+      const error = findMissedKnownTripsError(
+        constructionHtml,
+        [],
+        'test://construction-known-number-miss',
+      );
+      assert.ok(error, 'construction must not exempt a known train number');
+      assert.match(error.message, /85879/);
     });
   });
 

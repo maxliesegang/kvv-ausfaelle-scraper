@@ -21,6 +21,8 @@ import {
   LINE_IDENTIFIER_PATTERN,
   TRIP_TIME_PAIR_PATTERN,
   TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
+  PARENTHESIZED_ROUTE_TIME_PATTERN,
+  ROUTE_SEPARATOR_PATTERN,
 } from './patterns.js';
 
 export class MultiLineMappingError extends Error {
@@ -337,6 +339,8 @@ interface MergedTripRow {
   readonly row: string;
   /** Index into `rawRows` of the row this one begins at — where its date context is read. */
   readonly rawIndex: number;
+  /** Number of raw rows represented by this merged row. */
+  readonly rowsConsumed: number;
 }
 
 /**
@@ -352,7 +356,7 @@ function mergeTripRowsWithPositions(rawRows: string[]): MergedTripRow[] {
 
     // If the line is already valid, use it as-is
     if (isValidTripRow(currentRow)) {
-      mergedRows.push({ row: currentRow, rawIndex: i });
+      mergedRows.push({ row: currentRow, rawIndex: i, rowsConsumed: 1 });
       i++;
       continue;
     }
@@ -360,7 +364,11 @@ function mergeTripRowsWithPositions(rawRows: string[]): MergedTripRow[] {
     // Try to combine with next lines to create a valid trip line
     const mergeResult = tryMergeWithNext(rawRows, i);
     if (mergeResult) {
-      mergedRows.push({ row: mergeResult.combinedRow, rawIndex: i });
+      mergedRows.push({
+        row: mergeResult.combinedRow,
+        rawIndex: i,
+        rowsConsumed: mergeResult.rowsConsumed,
+      });
       i += mergeResult.rowsConsumed;
     } else {
       // No valid combination found, skip this line
@@ -380,9 +388,22 @@ export function extractTripSectionCandidateRows(text: string): string[] {
   return buildTripCandidateRows(tripSection ?? text);
 }
 
-/** The leading train number of a trip row (`85879 …` → `85879`), or `undefined`. */
+/**
+ * The leading 4–6 digit train number of a trip row, optionally after a line prefix and/or
+ * before a colon. Clock times and dates are deliberately excluded.
+ */
 export function leadingTrainNumber(row: string): string | undefined {
-  return row.match(/^(\d+)\b/)?.[1];
+  return row.match(/^(?:[A-Za-z]+\d+\s+)?(\d{4,6})(?=\s|:|$)/)?.[1];
+}
+
+/**
+ * Whether an unnumbered row has the observable shape of a stop-to-stop route: at least two
+ * parenthesized clock times and a spaced dash separator. This keeps route listings visible
+ * without treating operating periods, frequency descriptions, and date ranges as missed trips.
+ */
+function isUnnumberedRouteRow(row: string): boolean {
+  const times = row.match(PARENTHESIZED_ROUTE_TIME_PATTERN);
+  return times !== null && times.length >= 2 && ROUTE_SEPARATOR_PATTERN.test(row);
 }
 
 /**
@@ -390,19 +411,32 @@ export function leadingTrainNumber(row: string): string | undefined {
  *
  * `extractTripRows` merges and filters candidate lines, so a row it cannot parse never
  * reaches parsing and is silently dropped. This scans the RAW candidates instead and
- * returns every trip-like row (two clock times) that matches no known format and whose
- * leading number was not already captured elsewhere (e.g. via a multi-line merge) — i.e.
- * rows genuinely lost during parsing. Used both to warn and to drive the known-number
- * tripwire (`src/workflow.ts`).
+ * returns every numbered row with two clock times, plus unnumbered rows shaped like a
+ * stop-to-stop route, that matches no known format. A numbered row already captured elsewhere
+ * (e.g. via a multi-line merge) is excluded. Used both to warn and to drive the known-number
+ * tripwire in the workflow.
  */
 export function findUnparsedTripLikeRows(
   text: string,
   parsedTrainNumbers: ReadonlySet<string>,
 ): string[] {
-  return extractTripSectionCandidateRows(text).filter((row) => {
-    if (!TRIP_TIME_PAIR_PATTERN.test(row) || isValidTripRow(row)) return false;
+  const { rawRows, mergedRows } = selectTripRows(text);
+  const consumedRawIndexes = new Set<number>();
+  for (const merged of mergedRows) {
+    for (let offset = 0; offset < merged.rowsConsumed; offset++) {
+      consumedRawIndexes.add(merged.rawIndex + offset);
+    }
+  }
+
+  return rawRows.filter((row, index) => {
+    // Do not report a continuation row that was successfully consumed into a multiline trip.
+    if (consumedRawIndexes.has(index)) return false;
+    if (isValidTripRow(row)) return false;
     const number = leadingTrainNumber(row);
-    return number === undefined || !parsedTrainNumbers.has(number);
+    if (number !== undefined) {
+      return TRIP_TIME_PAIR_PATTERN.test(row) && !parsedTrainNumbers.has(number);
+    }
+    return isUnnumberedRouteRow(row);
   });
 }
 
