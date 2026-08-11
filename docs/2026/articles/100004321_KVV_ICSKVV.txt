@@ -1,0 +1,98 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004321_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S2, S12, 1, 2, 3, 4, 5, 6, 21, 22, 23, 24, 26, 30, 31, NL1, NL2, SEV - Karlsruhe: Bauarbeiten im VBK-Netz während der Sommerferien (Phase 2) (17.08.2026 bis 21.09.2026)
+Datum:  2026-08-11T01:30:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 17.08.2026 bis 21.09.2026
+Linien: S2, S12, 1, 2, 3, 4, 5, 6, 21, 22, 23, 24, 26, 30, 31, NL1, NL2, SEV
+Karlsruhe: Bauarbeiten im VBK-Netz während der Sommerferien (Phase 2)
+(kue) In den letzten vier Sommerferienwochen sowie der ersten Schulwoche, somit
+von Montag, 17. August 2026 (03:30 Uhr),
+bis Montag, 21. September 2026 (03:30 Uhr),
+gilt Phase 2 der Bauarbeiten in der zweiten Jahreshälfte 2026.
+Grund: Gleis- und Weichenerneuerungen, Sanierungsarbeiten in der Waldstadt, Erneuerung von Bahnübergängen sowie Brücken- und Gleissanierungen.
+Gesperrte Streckenabschnitte und somit kein Bahnverkehr zwischen:
+• Durlach Turmberg über Schlossplatz und Friedrichschule - Auer Straße 
+• Europäische Schule - Jägerhaus - Fächerbad - Hirtenweg 
+• Durlacher Tor - Kronenplatz (Fritz-Erler-Straße) - Mendelssohnplatz 
+• Mathystraße - Otto-Sachs-Straße - Lessingstraße - Weinbrennerplatz
+Es ergeben sich folgende Änderungen der Linien:
+S-Bahn
+S2
+EILZUG Spöck Richard-Hecht-Schule ab 07:21 Uhr an Schultagen:
+Regulärer Fahrweg von Spöck kommend bis zur Haltestelle "Durlacher Tor (Bernhardusplatz)". Anschließend weiter über Kapellenstraße - Ettlinger Tor - Europaplatz - Yorckstraße - Entenfang - Rheinhafen.
+EILZUG Mörsch Bach-West ab 07:04 Uhr an Schultagen:
+Regulärer Fahrweg von Rheinstetten kommend bis zur Haltestelle "Europaplatz (oben)", anschließend weiter über Ettlinger Tor - Südostbahn - Tullastraße. 
+S5 
+Zug 84784 Söllingen Reetzstraße ab 01:02 Uhr; verkehrt nur in Nächten von Montag bis Freitag: 
+Wird ab "Durlacher Tor (Durlacher Allee)" über die Kapellenstraße zum "Rüppurrer Tor (Rüppurrer Straße)" umgeleitet.
+S12
+Ittersbach - Albtalbahnhof - Kolpingplatz - Karlstor (Karlstraße und Kriegsstraße) - Rüppurrer Tor (Kriegsstraße) - Südostbahn - Tullastraße
+Tram
+Linie 1
+Verkehrt von der Karlsruher Innenstadt kommend ab Auer Straße bis Wolfartsweier Nord (und zurück).
+An der Haltestelle Zündhütle kann es zu planmäßigen längeren Aufenthalten kommen.
+Linie 2
+Knielingen Nord - Yorckstraße - Schillerstraße - Weinbrennerplatz - Kühler Krug - Entenfang - Rheinhafen (und zurück)
+Linie 3
+Alle Fahrten werden zwischen Durlacher Tor (oben) und Rüppurrer Tor über die Kapellenstraße umgeleitet (und zurück). 
+Die Haltestelle Kronenplatz (Fritz-Erler-Straße) entfällt. Der Kronenplatz bleibt über die Haltestelle im Stadtbahntunnel erreichbar.
+Linie 4
+Verkehrt regulär nur zwischen Hirtenweg und Oberreut (und zurück).
+Linie 5
+Verkehrt regulär zwischen Durlach Bahnhof und Karlstor, anschließend umgeleitet zum Europaplatz (oben) (und zurück).
+Linie 6
+Pendelverkehr: Tivoli - Hauptbahnhof (Vorplatz) - ZKM - Arbeitsagentur (und zurück)
+Nightliner
+NL1
+Verkehrt auf dem regulären Fahrweg nur zwischen Hirtenweg und Neureut-Heide (und zurück). 
+Kein Verkehr in Richtung Waldstadt - Europäische Schule.
+NL2
+Von der Karlsruher Innenstadt kommend Umleitung ab Auer Straße nach Wolfartsweier Nord (und zurück). 
+Zusätzlich Umleitung zwischen Ebertstraße und Karlstor über Kolpingplatz und Mathystraße (und zurück).
+Schienenersatzverkehr (SEV)
+Folgende Buslinien ersetzen die Bahnen:
+SEV 14
+Waldstadt Zentrum - Hirtenweg
+SEV 14X
+Waldstadt Zentrum - Durlacher Tor
+SEV 14N
+Europäische Schule - Hirtenweg (Nachtverkehr)
+SEV 15
+Europäische Schule - Waldstadt Zentrum
+Hinweis: Die Fahrradmitnahme in den SEV-Bussen ist nicht möglich.
+Änderungen bei den Buslinien:
+Bus 21:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße wird die Linie 21 über die bisherige Endhaltestelle Durlach Turmberg hinaus über die Haltestellen „Ochsentorstraße“ und „An der Fayence“ bis "Durlach Bahnhof" umgeleitet.
+Bus 22:
+Die Haltestelle "Durlach Turmberg" wird weiterhin baustellenbedingt in die Lamprechtstraße verlegt.
+Bus 23:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der Gymnasiumstraße (B3) wird die Linie 23 zwischen "Dürrbachstraße" und "Durlach Turmberg" in beiden Fahrtrichtungen über die Haltestelle „Karl-Weysser-Straße“ umgeleitet.
+Bus 24:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße wird die Linie 24 zwischen "Blattwiesenstraße" und "Durlach Turmberg" über "Durlach Bahnhof" entlang des Fahrwegs der Linie 31 umgeleitet.
+Bus 24A:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der daraus resultierenden Umleitung der Linie 24 wird diese Linie zwischen "Durlach Turmberg" (Steig C) und "Durlach Bahnhof" verstärkt.
+Linie 26:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der Gymnasiumstraße wird die Linie 26 weiträumig über die Haltestelle „Rommelstraße“ umgeleitet.
+Linie 30:
+Alle Fahrten werden von der Haltestelle "Elbinger Straße West" bis zur "Europäischen Schule" verlängert.
+Linie 31:
+Umleitung in Richtung "Durlach Bahnhof" zwischen "Waldstadt Zentrum", "Fächerbad" und "Hallesche Allee".
+Baustellenbedingt kann die Haltestelle „Durlach Schlossplatz“ von den Linien 21, 23, 24, 26 und NL3 nicht bedient werden.
+Ab Montag, 14. September 2026, also zum ersten Schultag nach den Sommerferien, wird die Gymnasiumstraße (B3) wieder für den Kfz-Verkehr freigegeben. 
+Aus diesem Grund kommt es zu folgenden Änderungen:
+• Entfall der Steigverlegung an der Halltestelle "Durlach Turmberg" der Linie 22; es gilt wieder der reguläre Fahrweg. 
+• Entfall der Umleitung der Linien 23 und 26; in Fahrtrichtung Stupferich bzw. Geigersberg gilt wieder der reguläre Fahrweg. 
+• Entfall der Umleitung über die Haltestelle „Karl-Weysser-Straße“ in Richtung Stupferich. Die Linie NL3 verkehrt ab „Ochsentorstraße“ zur Haltestelle „Durlach Turmberg“ und weiter auf dem regulären Fahrweg.
+Aufgrund von Umleitungen und zusätzlichem Umstieg auf Ersatzbusse planen Sie bitte mehr Fahrzeit ein.
+Direkt im Anschluss an Phase 2 beginnt ab Montag, 21. September 2026 (03:30 Uhr) Phase 3 über die wir separat informieren werden.
+Liniennetzplan (Phase 2)
+Fahrwege der Busse und Ersatzverkehre (Phase 2)
+Umgebungsgpläne der Haltestellen (Phase 2)
+Baustellenflyer
+Weitere Informationen
+Zurück zur Übersicht
