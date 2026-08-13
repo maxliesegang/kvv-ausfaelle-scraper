@@ -62,5 +62,15 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_273506: {
       '85481': 'S51',
     },
+    // AVG staffing notice for S5/S51 (Söllingen–Germersheim), 2026-08-13. Same S52-on-the-
+    // S51-Germersheim-corridor case as Nettro_CMS_273506: GTFS knows the Germersheim–KA
+    // Marktplatz run 84885 only as an S52, while its outbound counterpart in the same
+    // notice (84874, KA Albtalbahnhof–Germersheim) is an S51. GTFS has no 80702 at all;
+    // it is the KA Marktplatz–Albtalbahnhof continuation of 84885 on the same corridor,
+    // which the S5 (Söllingen–Wörth/Pforzheim) services never touch.
+    Nettro_CMS_274370: {
+      '84885': 'S51',
+      '80702': 'S51',
+    },
   },
 };

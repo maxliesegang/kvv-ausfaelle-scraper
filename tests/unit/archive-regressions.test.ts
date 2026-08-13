@@ -247,6 +247,35 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('resolves an S52-only run and a GTFS-unknown depot run in an S5/S51 article', () => {
+    const trips = parseArchivedArticle('Nettro_CMS_274370');
+
+    // 84885 is an S52 in GTFS (the sibling short-working on the S51 Germersheim corridor)
+    // and 80702 is in no GTFS line list at all, so both need this article's overrides —
+    // otherwise the notice fails to parse with a MultiLineMappingError.
+    assert.deepEqual(routeOf(findTrip(trips, '84885')), {
+      trainNumber: '84885',
+      line: 'S51',
+      fromStop: 'Germersheim Bahnhof',
+      fromTime: '07:26',
+      toStop: 'Karlsruhe Marktplatz',
+      toTime: '08:26',
+    });
+    assert.deepEqual(routeOf(findTrip(trips, '80702')), {
+      trainNumber: '80702',
+      line: 'S51',
+      fromStop: 'Karlsruhe Marktplatz',
+      fromTime: '08:39',
+      toStop: 'Karlsruhe Albtalbahnhof',
+      toTime: '08:48',
+    });
+    assert.equal(trips.length, 14, 'every listed run must be parsed');
+    assert.ok(
+      trips.every(({ line }) => line === 'S5' || line === 'S51'),
+      'every trip must resolve to one of the mentioned lines',
+    );
+  });
+
   test('parses trip rows whose train number carries a trailing colon', () => {
     const trips = parseArchivedArticle('Nettro_CMS_273364');
 
