@@ -6,11 +6,13 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import type { Cancellation } from '../../src/types.js';
 import { parseArchive } from '../../src/article-archive.js';
+import type { JourneyDetails } from '../../src/verification/bahn-expert.js';
 
 const TEST_DATA_DIR = join(process.cwd(), 'test-data');
 const ARTICLES_DIR = join(TEST_DATA_DIR, 'articles');
 const EXPECTED_DIR = join(TEST_DATA_DIR, 'expected');
 const PINNED_ARCHIVES_DIR = join(TEST_DATA_DIR, 'archives');
+const JOURNEYS_DIR = join(TEST_DATA_DIR, 'journeys');
 const DOCS_DIR = join(process.cwd(), 'docs');
 
 export interface TestFixture {
@@ -106,6 +108,20 @@ export function loadRegressionArticle(year: string, id: string): ArchivedArticle
     throw new Error(`Pinned article ${id} has no source URL: ${pinnedPath}`);
   }
   return { id, year, body, url, filePath: pinnedPath, rssTitle, rssPublishedIso };
+}
+
+/**
+ * Loads one captured bahn.expert journey (`test-data/journeys/<journeyId>.json`) as verification
+ * input.
+ *
+ * These are real decoded responses, kept because the feed's encoding is the part that fooled the
+ * first implementation: `delay: 0` on timetable-only stops, `isRealTime` only where the vehicle
+ * was seen, and per-event `cancelled` flags at the edges of a partial cancellation. A hand-written
+ * journey literal encodes what we *believed* the feed sends; these encode what it does send.
+ */
+export function loadJourneyFixture(journeyId: string): JourneyDetails {
+  const filePath = join(JOURNEYS_DIR, `${journeyId}.json`);
+  return JSON.parse(readFileSync(filePath, 'utf-8')) as JourneyDetails;
 }
 
 /**

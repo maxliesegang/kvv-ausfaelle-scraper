@@ -1,0 +1,1186 @@
+{
+  "journeyId": "20260813-19b67970-4b65-3820-ab7b-dea40958d407",
+  "cancelled": null,
+  "train": {
+    "line": "S8",
+    "journeyNumber": 85636
+  },
+  "stops": [
+    {
+      "stopPlace": {
+        "name": "Bondorf (b Herrenberg)"
+      },
+      "cancelled": true,
+      "departure": {
+        "scheduledTime": "2026-08-13T08:02:00.000Z",
+        "time": "2026-08-13T08:04:38.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Ergenzingen"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:05:00.000Z",
+        "time": "2026-08-13T08:07:58.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:06:00.000Z",
+        "time": "2026-08-13T08:08:45.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Eutingen im Gäu"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:08:00.000Z",
+        "time": "2026-08-13T08:11:18.000Z",
+        "delay": 3,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:09:00.000Z",
+        "time": "2026-08-13T08:11:26.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Eutingen Nord"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:11:00.000Z",
+        "time": "2026-08-13T08:13:15.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:12:00.000Z",
+        "time": "2026-08-13T08:14:22.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Hochdorf (b Horb)"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:14:00.000Z",
+        "time": "2026-08-13T08:16:26.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:14:00.000Z",
+        "time": "2026-08-13T08:16:41.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Horb-Heiligenfeld"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:19:00.000Z",
+        "time": "2026-08-13T08:21:15.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:19:00.000Z",
+        "time": "2026-08-13T08:21:25.000Z",
+        "delay": 2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Bittelbronn"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:25:00.000Z",
+        "time": "2026-08-13T08:26:49.000Z",
+        "delay": 1,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:25:00.000Z",
+        "time": "2026-08-13T08:26:53.000Z",
+        "delay": 1,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Schopfloch (b Freudenstadt)"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:29:00.000Z",
+        "time": "2026-08-13T08:30:03.000Z",
+        "delay": 1,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:30:00.000Z",
+        "time": "2026-08-13T08:30:23.000Z",
+        "delay": 0,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Dornstetten"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:34:00.000Z",
+        "time": "2026-08-13T08:33:43.000Z",
+        "delay": -1,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:34:00.000Z",
+        "time": "2026-08-13T08:34:02.000Z",
+        "delay": 0,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Dornstetten-Aach"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:36:00.000Z",
+        "time": "2026-08-13T08:35:44.000Z",
+        "delay": -1,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:37:00.000Z",
+        "time": "2026-08-13T08:35:55.000Z",
+        "delay": -2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Grüntal-Wittlensweiler"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:39:00.000Z",
+        "time": "2026-08-13T08:37:43.000Z",
+        "delay": -2,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:39:00.000Z",
+        "time": "2026-08-13T08:37:46.000Z",
+        "delay": -2,
+        "isRealTime": true,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Freudenstadt Hbf"
+      },
+      "cancelled": true,
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:43:00.000Z",
+        "time": "2026-08-13T08:41:34.000Z",
+        "delay": -2,
+        "isRealTime": true,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:53:00.000Z",
+        "time": "2026-08-13T08:53:00.000Z",
+        "delay": null,
+        "isRealTime": null,
+        "cancelled": true
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Freudenstadt Industriegebiet"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:54:00.000Z",
+        "time": "2026-08-13T08:54:00.000Z",
+        "delay": null,
+        "isRealTime": null,
+        "cancelled": true
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:55:00.000Z",
+        "time": "2026-08-13T08:55:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Freudenstadt Schulzentrum"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:56:00.000Z",
+        "time": "2026-08-13T08:56:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T08:57:00.000Z",
+        "time": "2026-08-13T08:57:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Freudenstadt Stadt"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T08:58:00.000Z",
+        "time": "2026-08-13T08:58:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:03:00.000Z",
+        "time": "2026-08-13T09:03:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Friedrichstal b Freudenstadt"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:07:00.000Z",
+        "time": "2026-08-13T09:07:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:07:00.000Z",
+        "time": "2026-08-13T09:07:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Baiersbronn Bf"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:10:00.000Z",
+        "time": "2026-08-13T09:10:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:11:00.000Z",
+        "time": "2026-08-13T09:11:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Baiersbronn Schule"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:12:00.000Z",
+        "time": "2026-08-13T09:12:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:13:00.000Z",
+        "time": "2026-08-13T09:13:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Klosterreichenbach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:15:00.000Z",
+        "time": "2026-08-13T09:15:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:15:00.000Z",
+        "time": "2026-08-13T09:15:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Heselbach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:17:00.000Z",
+        "time": "2026-08-13T09:17:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:18:00.000Z",
+        "time": "2026-08-13T09:18:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Röt"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:20:00.000Z",
+        "time": "2026-08-13T09:20:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:20:00.000Z",
+        "time": "2026-08-13T09:20:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Huzenbach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:23:00.000Z",
+        "time": "2026-08-13T09:23:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:23:00.000Z",
+        "time": "2026-08-13T09:23:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Schwarzenberg"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:25:00.000Z",
+        "time": "2026-08-13T09:25:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:26:00.000Z",
+        "time": "2026-08-13T09:26:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Schönmünzach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:27:00.000Z",
+        "time": "2026-08-13T09:27:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:28:00.000Z",
+        "time": "2026-08-13T09:28:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Kirschbaumwasen"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:31:00.000Z",
+        "time": "2026-08-13T09:31:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:31:00.000Z",
+        "time": "2026-08-13T09:31:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Raumünzach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:34:00.000Z",
+        "time": "2026-08-13T09:34:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:34:00.000Z",
+        "time": "2026-08-13T09:34:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Forbach (Schwarzw)"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:39:00.000Z",
+        "time": "2026-08-13T09:39:00.000Z",
+        "delay": 0,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:42:00.000Z",
+        "time": "2026-08-13T09:53:38.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Gausbach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:43:00.000Z",
+        "time": "2026-08-13T09:54:25.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:43:00.000Z",
+        "time": "2026-08-13T09:54:55.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Langenbrand"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:46:00.000Z",
+        "time": "2026-08-13T09:57:05.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:46:00.000Z",
+        "time": "2026-08-13T09:57:31.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Au im Murgtal"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:48:00.000Z",
+        "time": "2026-08-13T09:59:13.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:48:00.000Z",
+        "time": "2026-08-13T09:59:25.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Weisenbach"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:50:00.000Z",
+        "time": "2026-08-13T10:00:37.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:50:00.000Z",
+        "time": "2026-08-13T10:01:07.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Hilpertsau"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:52:00.000Z",
+        "time": "2026-08-13T10:02:47.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:53:00.000Z",
+        "time": "2026-08-13T10:03:26.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Obertsrot"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:54:00.000Z",
+        "time": "2026-08-13T10:04:11.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:54:00.000Z",
+        "time": "2026-08-13T10:04:46.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Gernsbach Mitte"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:56:00.000Z",
+        "time": "2026-08-13T10:06:46.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T09:57:00.000Z",
+        "time": "2026-08-13T10:07:15.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Gernsbach Bf"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T09:58:00.000Z",
+        "time": "2026-08-13T10:08:03.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:00:00.000Z",
+        "time": "2026-08-13T10:08:53.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Hörden"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:01:00.000Z",
+        "time": "2026-08-13T10:10:18.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:02:00.000Z",
+        "time": "2026-08-13T10:10:54.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Ottenau"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:03:00.000Z",
+        "time": "2026-08-13T10:12:25.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:04:00.000Z",
+        "time": "2026-08-13T10:13:00.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Gaggenau Mercedes-Benz Werk"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:05:00.000Z",
+        "time": "2026-08-13T10:13:58.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:05:00.000Z",
+        "time": "2026-08-13T10:14:21.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Gaggenau Bf"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:06:00.000Z",
+        "time": "2026-08-13T10:15:16.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:07:00.000Z",
+        "time": "2026-08-13T10:16:07.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Bad Rotenfels Weinbrennerstraße"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:08:00.000Z",
+        "time": "2026-08-13T10:17:14.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:08:00.000Z",
+        "time": "2026-08-13T10:17:45.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Bad Rotenfels Bf"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:09:00.000Z",
+        "time": "2026-08-13T10:18:31.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:10:00.000Z",
+        "time": "2026-08-13T10:19:12.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Bad Rotenfels Schloss"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:11:00.000Z",
+        "time": "2026-08-13T10:19:49.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:11:00.000Z",
+        "time": "2026-08-13T10:20:18.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Bischweier"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:13:00.000Z",
+        "time": "2026-08-13T10:21:55.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:13:00.000Z",
+        "time": "2026-08-13T10:22:16.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Kuppenheim"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:15:00.000Z",
+        "time": "2026-08-13T10:23:36.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:15:00.000Z",
+        "time": "2026-08-13T10:24:14.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Rastatt Beinle"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:18:00.000Z",
+        "time": "2026-08-13T10:26:23.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:18:00.000Z",
+        "time": "2026-08-13T10:26:50.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Rastatt"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:20:00.000Z",
+        "time": "2026-08-13T10:28:29.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:22:00.000Z",
+        "time": "2026-08-13T10:32:19.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Ötigheim"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:25:00.000Z",
+        "time": "2026-08-13T10:35:09.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:26:00.000Z",
+        "time": "2026-08-13T10:35:38.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Bietigheim (Baden)"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:28:00.000Z",
+        "time": "2026-08-13T10:37:38.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:29:00.000Z",
+        "time": "2026-08-13T10:38:25.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Durmersheim"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:32:00.000Z",
+        "time": "2026-08-13T10:41:01.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:32:00.000Z",
+        "time": "2026-08-13T10:41:37.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Durmersheim Nord"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:34:00.000Z",
+        "time": "2026-08-13T10:43:07.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:35:00.000Z",
+        "time": "2026-08-13T10:43:39.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Forchheim (b Karlsruhe)"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:39:00.000Z",
+        "time": "2026-08-13T10:47:04.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:39:00.000Z",
+        "time": "2026-08-13T10:47:31.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Karlsruhe Albtalbahnhof"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:44:00.000Z",
+        "time": "2026-08-13T10:52:01.000Z",
+        "delay": 8,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:45:00.000Z",
+        "time": "2026-08-13T10:54:21.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Karlsruhe Bahnhofsvorplatz"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:46:00.000Z",
+        "time": "2026-08-13T10:55:40.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:47:00.000Z",
+        "time": "2026-08-13T10:56:33.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Poststraße, Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:48:00.000Z",
+        "time": "2026-08-13T10:57:05.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:48:00.000Z",
+        "time": "2026-08-13T10:57:51.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Augartenstraße, Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:49:00.000Z",
+        "time": "2026-08-13T10:58:41.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:50:00.000Z",
+        "time": "2026-08-13T10:59:19.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Kongresszentrum (U) , Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:50:00.000Z",
+        "time": "2026-08-13T11:00:10.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:51:00.000Z",
+        "time": "2026-08-13T11:01:05.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Ettlinger Tor/Staatstheater (U) , Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:52:00.000Z",
+        "time": "2026-08-13T11:01:26.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:52:00.000Z",
+        "time": "2026-08-13T11:02:24.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Karlsruhe Marktplatz (Pyramide)"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:53:00.000Z",
+        "time": "2026-08-13T11:02:53.000Z",
+        "delay": 9,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:54:00.000Z",
+        "time": "2026-08-13T11:04:00.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Kronenplatz (U) , Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:55:00.000Z",
+        "time": "2026-08-13T11:05:17.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:55:00.000Z",
+        "time": "2026-08-13T11:06:15.000Z",
+        "delay": 11,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Durlacher Tor/KIT-Campus Süd (U) , Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:56:00.000Z",
+        "time": "2026-08-13T11:06:45.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:57:00.000Z",
+        "time": "2026-08-13T11:07:23.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Gottesauer Platz/BGV, Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T10:58:00.000Z",
+        "time": "2026-08-13T11:08:11.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      },
+      "departure": {
+        "scheduledTime": "2026-08-13T10:58:00.000Z",
+        "time": "2026-08-13T11:08:54.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    },
+    {
+      "stopPlace": {
+        "name": "Tullastraße/Alter Schlachthof, Karlsruhe"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-13T11:00:00.000Z",
+        "time": "2026-08-13T11:10:42.000Z",
+        "delay": 10,
+        "isRealTime": null,
+        "cancelled": null
+      }
+    }
+  ]
+}

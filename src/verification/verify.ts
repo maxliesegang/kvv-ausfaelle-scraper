@@ -81,14 +81,43 @@ export interface TripVerification {
   readonly journeyId?: string;
 }
 
-/** Realtime presence. `isRealTime` is always null in this feed — `delay`/`time` are the signal. */
+function stopEvents(stop: JourneyStop): ReadonlyArray<JourneyStopEvent | null | undefined> {
+  return [stop.departure, stop.arrival];
+}
+
+/**
+ * Whether the feed actually observed the vehicle at this stop.
+ *
+ * `delay` is **not** a realtime signal: the feed emits `delay: 0` with `time === scheduledTime` on
+ * purely timetabled stops, so reading a non-null delay as "tracked" marks an untracked run as
+ * fully observed — every one of journey `20260813-19b67970`'s 62 stops carries a delay while only
+ * twelve were observed.
+ *
+ * `isRealTime` is the explicit flag, but it is not always set: journey `20260813-682647f9` leaves
+ * it null throughout and still reports second-precision times drifting from the schedule for the
+ * second half of its run. A reported time that deviates from the scheduled one is therefore kept
+ * as a fallback — a timetable row never deviates.
+ */
 function isTracked(stop: JourneyStop): boolean {
-  const events: ReadonlyArray<JourneyStopEvent | null | undefined> = [stop.departure, stop.arrival];
-  return events.some((event) => {
+  return stopEvents(stop).some((event) => {
     if (!event) return false;
-    if (event.delay !== null && event.delay !== undefined) return true;
+    if (event.isRealTime === true) return true;
     return Boolean(event.time && event.scheduledTime && event.time !== event.scheduledTime);
   });
+}
+
+/**
+ * Whether this stop was cancelled, at stop **or** event level.
+ *
+ * The feed flags the arrival and departure of a stop independently, and where a cancellation
+ * starts or ends mid-journey it sets only those: on journey `20260813-19b67970` the first stop
+ * back in service carries `arrival.cancelled` with no stop-level flag. Reading the stop flag alone
+ * leaves exactly one stop of a fully cancelled segment uncounted, which downgrades a `cancelled`
+ * verdict to `partial`.
+ */
+function isCancelled(stop: JourneyStop): boolean {
+  if (stop.cancelled === true) return true;
+  return stopEvents(stop).some((event) => event?.cancelled === true);
 }
 
 function scheduledWallClock(stop: JourneyStop): { date: string; time: string } | null {
@@ -234,7 +263,7 @@ function countSegment(
   for (let index = 0; index < stops.length; index += 1) {
     const stop = stops[index];
     if (!stop) continue;
-    const cancelled = stop.cancelled === true;
+    const cancelled = isCancelled(stop);
     const tracked = isTracked(stop);
     if (cancelled) journeyCancelledStops += 1;
 

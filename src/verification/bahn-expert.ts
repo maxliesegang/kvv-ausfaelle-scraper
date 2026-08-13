@@ -31,7 +31,19 @@ export const MAX_LOOKBACK_DAYS = 6;
 export interface JourneyStopEvent {
   readonly scheduledTime?: string;
   readonly time?: string;
+  /**
+   * Present on nearly every stop, **including purely timetabled ones** where it is `0` and `time`
+   * equals `scheduledTime`. It is therefore not a realtime signal — `isRealTime` is. Kept because
+   * it is worth reading once a stop is known to be observed.
+   */
   readonly delay?: number | null;
+  /** `true` only where the feed actually observed the vehicle; `null` on timetable-only stops. */
+  readonly isRealTime?: boolean | null;
+  /**
+   * Per-event cancellation. The feed flags a stop's arrival and departure independently, and at
+   * the boundary of a partial cancellation it sets these **without** setting the stop-level flag,
+   * so a reader that only looks at {@link JourneyStop.cancelled} undercounts.
+   */
   readonly cancelled?: boolean | null;
 }
 

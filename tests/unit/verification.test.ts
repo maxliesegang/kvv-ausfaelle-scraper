@@ -9,6 +9,7 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
 import type { Cancellation } from '../../src/types.js';
+import { loadJourneyFixture } from '../helpers/fixture-loader.js';
 import { parseDevalue, stringifyDevalue } from '../../src/verification/devalue.js';
 import type { JourneyStop } from '../../src/verification/bahn-expert.js';
 import {
@@ -46,22 +47,31 @@ function tripOn(overrides: Partial<Cancellation> = {}): Cancellation {
   } as Cancellation;
 }
 
-/** Builds a stop; `delay: null` means "no realtime", matching the feed's own encoding. */
+/**
+ * Builds a stop in the feed's own encoding.
+ *
+ * The default is a **timetable-only** stop, and it deliberately carries `delay: 0` with
+ * `isRealTime: null` — that is what bahn.expert sends for a stop it has not observed, and reading
+ * that delay as evidence of a tracked vehicle was the original bug. Pass `delay` to make the stop
+ * observed; it sets `isRealTime` too, exactly as the feed does.
+ */
 function stop(
   name: string,
   berlinClock: string,
-  options: { delay?: number | null; cancelled?: boolean } = {},
+  options: { delay?: number; cancelled?: boolean } = {},
 ): JourneyStop {
   const [hours, minutes] = berlinClock.split(':');
   // Europe/Berlin is UTC+2 on this date.
   const utcHour = String(Number(hours) - 2).padStart(2, '0');
   const scheduledTime = `2026-08-13T${utcHour}:${minutes}:00.000Z`;
+  const observed = options.delay !== undefined;
   return {
     stopPlace: { name },
     departure: {
       scheduledTime,
       time: scheduledTime,
-      delay: options.delay ?? null,
+      delay: observed ? options.delay : 0,
+      isRealTime: observed ? true : null,
       cancelled: options.cancelled ?? null,
     },
     cancelled: options.cancelled ?? null,
@@ -243,8 +253,8 @@ describe('journey classification', () => {
   });
 
   it('treats an untracked segment inside a tracked run as cancelled', () => {
-    // The 20019 case: the announced leg was never served, but the rest of the run was observed,
-    // which is what makes the silence meaningful rather than merely missing data.
+    // The announced leg was never observed while the rest of the run was, which is what makes the
+    // silence meaningful rather than merely missing data.
     const stops = [
       stop('Ittersbach Rathaus', '09:21'),
       stop('Busenbach', '09:40'),
@@ -338,5 +348,108 @@ describe('journey classification', () => {
       classifyJourney(tripOn(), { stops: [stop('Elsewhere', '18:00')] }, NOW),
       null,
     );
+  });
+
+  it('does not read a timetabled delay as realtime', () => {
+    // The feed stamps `delay: 0` on stops it never observed. Counting those as tracked reported an
+    // entirely untracked run as having run.
+    const stops = [stop('Ittersbach Rathaus', '09:21'), stop('Ettlingen Stadt', '09:48')];
+    const verdict = classifyJourney(tripOn(), { stops }, NOW);
+    assert.strictEqual(verdict?.segmentTrackedStops, 0);
+    assert.strictEqual(verdict?.status, 'no-data');
+  });
+
+  it('counts a stop the feed cancelled only at event level', () => {
+    // Partial cancellations are flagged per arrival/departure at their boundary, with no
+    // stop-level flag — the uncounted stop downgraded a full cancellation to `partial`.
+    const boundary: JourneyStop = {
+      stopPlace: { name: 'Ettlingen Stadt' },
+      arrival: { scheduledTime: '2026-08-13T07:48:00.000Z', cancelled: true },
+    };
+    const stops = [stop('Ittersbach Rathaus', '09:21', { cancelled: true }), boundary];
+    const verdict = classifyJourney(tripOn(), { stops }, NOW);
+    assert.strictEqual(verdict?.segmentCancelledStops, 2);
+    assert.strictEqual(verdict?.status, 'cancelled');
+  });
+});
+
+/**
+ * The same verdicts, against decoded responses the live feed actually returned. The hand-built
+ * journeys above assert the rules; these assert that the rules meet the wire format — which is
+ * where both original defects lived.
+ */
+describe('journey classification against captured feed responses', () => {
+  it('does not count timetabled stops of a real journey as observed', () => {
+    // Every one of 85636's 62 stops carries a `delay`, but only a dozen carry realtime — the rest
+    // are timetable rows with `delay: 0`. Delay-as-tracking reported all 16 segment stops observed.
+    const trip = tripOn({
+      line: 'S8',
+      trainNumber: '85636',
+      date: '2026-08-13',
+      fromStop: 'Freudenstadt Hbf',
+      fromTime: '10:53',
+      toStop: 'Forbach',
+      toTime: '11:39',
+    });
+    const details = loadJourneyFixture('20260813-19b67970-4b65-3820-ab7b-dea40958d407');
+    const verdict = classifyJourney(trip, details, NOW);
+    assert.strictEqual(verdict?.segmentStops, 16);
+    assert.strictEqual(verdict?.segmentTrackedStops, 2);
+  });
+
+  it('still recognises observation reported without the realtime flag', () => {
+    // 20019 carries `isRealTime: null` throughout, yet its later stops report second-precision
+    // times that drift from the schedule. That is an observed vehicle, and dropping the fallback
+    // would report a tracked run as `no-data`.
+    const trip = tripOn({
+      line: 'S11',
+      trainNumber: '20019',
+      fromStop: 'Ittersbach Rathaus',
+      fromTime: '09:21',
+      toStop: 'Ettlingen Stadt',
+      toTime: '09:45',
+    });
+    const details = loadJourneyFixture('20260813-682647f9-023f-336c-b852-2edfa1f95e75');
+    const verdict = classifyJourney(trip, details, NOW);
+    assert.strictEqual(verdict?.segmentTrackedStops, 2);
+    assert.strictEqual(verdict?.status, 'partial');
+  });
+
+  it('confirms a cancellation whose boundary stop is flagged per event', () => {
+    // 41 stop-level cancellations plus one event-level: the segment is cancelled end to end.
+    const trip = tripOn({
+      line: 'S4',
+      trainNumber: '85414',
+      date: '2026-08-13',
+      fromStop: 'Heilbronn-Willy-Brandt Platz',
+      fromTime: '08:03',
+      toStop: 'Karlsruhe Albtalbahnhof',
+      toTime: '09:42',
+    });
+    const details = loadJourneyFixture('20260813-aec8f33d-b9cf-3759-afa4-a4afcbe7c305');
+    const verdict = classifyJourney(trip, details, NOW);
+    assert.strictEqual(verdict?.status, 'cancelled');
+    assert.strictEqual(verdict?.segmentCancelledStops, verdict?.segmentStops);
+    // The feed calls this S41 where KVV publishes S4 — recorded, never used to rewrite the line.
+    assert.strictEqual(verdict?.feedLine, 'S41');
+  });
+
+  it('keeps a genuinely partial cancellation partial', () => {
+    // 85636 lost the start of its announced segment and served the rest: counting event-level
+    // cancellations must not promote that to a full cancellation.
+    const trip = tripOn({
+      line: 'S8',
+      trainNumber: '85636',
+      date: '2026-08-13',
+      fromStop: 'Freudenstadt Hbf',
+      fromTime: '10:53',
+      toStop: 'Forbach',
+      toTime: '11:39',
+    });
+    const details = loadJourneyFixture('20260813-19b67970-4b65-3820-ab7b-dea40958d407');
+    const verdict = classifyJourney(trip, details, NOW);
+    assert.strictEqual(verdict?.status, 'partial');
+    assert.strictEqual(verdict?.segmentCancelledStops, 2);
+    assert.strictEqual(verdict?.segmentStops, 16);
   });
 });
