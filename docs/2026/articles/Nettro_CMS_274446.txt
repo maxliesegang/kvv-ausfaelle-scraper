@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274446
-Stand:  2026-08-13T07:37:00.000Z
+Stand:  2026-08-13T12:40:00.000Z
 Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S7 - Betriebsbedingte Fahrtausfälle auf der Linie S7 zwischen Karlsruhe Tullastraße/Alter Schlachthof und Achern Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (13.08.2026 bis 13.08.2026)
 Datum:  2026-08-13T07:35:00.000Z
 ========================================================================
@@ -13,10 +13,9 @@ Betriebsbedingte Fahrtausfälle auf der Linie S7 zwischen Karlsruhe Tullastraße
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S7 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Tullastraße/Alter Schlachthof und Achern Bahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 13.08.2026 09:37:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85568 Karlsruhe Albtalbahnhof (11:25 Uhr) - Tullastraße (11:40 Uhr)
-85573 Tullastraße (12:17 Uhr) - Achern (13:25 Uhr)
-85574 Achern (13:30 Uhr) - Karlsruhe Albtalbahnhof (14:20 Uhr)
+Nach aktuellem Stand 13.08.2026 14:40:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+85585 KA Tullastraße (18:17 Uhr) - Achern (19:25 Uhr) 
+85586 Achern (19:55 Uhr) - Karlsruhe Hbf (20:47 Uhr) 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

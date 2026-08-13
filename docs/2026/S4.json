@@ -3652,5 +3652,33 @@
     "capturedAt": "2026-08-13T05:36:04.780Z",
     "cause": "operational",
     "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T11:49:00.000Z",
+    "trainNumber": "85519",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "13:35",
+    "toStop": "Flehingen",
+    "toTime": "14:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274493",
+    "capturedAt": "2026-08-13T12:58:26.826Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T11:49:00.000Z",
+    "trainNumber": "85528",
+    "fromStop": "Flehingen",
+    "fromTime": "15:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "16:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274493",
+    "capturedAt": "2026-08-13T12:58:26.826Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

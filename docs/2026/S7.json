@@ -1524,5 +1524,33 @@
     "capturedAt": "2026-08-13T09:06:43.503Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T12:40:00.000Z",
+    "trainNumber": "85585",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "18:17",
+    "toStop": "Achern",
+    "toTime": "19:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274446",
+    "capturedAt": "2026-08-13T12:58:27.238Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T12:40:00.000Z",
+    "trainNumber": "85586",
+    "fromStop": "Achern",
+    "fromTime": "19:55",
+    "toStop": "Karlsruhe Hbf",
+    "toTime": "20:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274446",
+    "capturedAt": "2026-08-13T12:58:27.238Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
