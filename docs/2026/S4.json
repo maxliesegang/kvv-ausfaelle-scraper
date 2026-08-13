@@ -3596,5 +3596,61 @@
     "capturedAt": "2026-08-09T12:39:38.431Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T00:29:00.000Z",
+    "trainNumber": "84805",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "05:15",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "07:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274361",
+    "capturedAt": "2026-08-13T05:36:04.780Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T00:29:00.000Z",
+    "trainNumber": "85508",
+    "fromStop": "Bretten",
+    "fromTime": "07:24",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "08:02",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274361",
+    "capturedAt": "2026-08-13T05:36:04.780Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T00:29:00.000Z",
+    "trainNumber": "85414",
+    "fromStop": "Heilbronn-Willy-Brandt Platz",
+    "fromTime": "08:03",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "09:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274361",
+    "capturedAt": "2026-08-13T05:36:04.780Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T00:29:00.000Z",
+    "trainNumber": "85509",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "08:35",
+    "toStop": "Bretten",
+    "toTime": "09:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274361",
+    "capturedAt": "2026-08-13T05:36:04.780Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
