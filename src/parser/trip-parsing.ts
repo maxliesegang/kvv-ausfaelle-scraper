@@ -7,7 +7,11 @@
  */
 
 import type { Cancellation, TripParsingMetadata } from '../types.js';
-import { lookupLinesForTrip, type TripDescriptor } from '../train-lines.js';
+import {
+  lookupLinesForTrip,
+  lookupLinesForUnmentionedTrip,
+  type TripDescriptor,
+} from '../train-lines.js';
 import { extractDetailId, normalizeLineUppercase } from '../utils/normalization.js';
 import { assignTripDates, parseTripListDateRow, type TripDateAnchor } from './trip-dates.js';
 import { MAX_ROWS_TO_COMBINE } from '../utils/constants.js';
@@ -23,6 +27,8 @@ import {
   TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
   PARENTHESIZED_ROUTE_TIME_PATTERN,
   ROUTE_SEPARATOR_PATTERN,
+  DIVERSION_STATEMENT_PATTERN,
+  CANCELLATION_STATEMENT_PATTERN,
 } from './patterns.js';
 
 export class MultiLineMappingError extends Error {
@@ -62,7 +68,11 @@ export function isAmbiguousLine(line: string): boolean {
  * multi-line article the train number is resolved against the train-line mapping: a shared
  * number is disambiguated by the article's date and the trip's departure/arrival times
  * (see `train-lines.ts`), reporting one line for a recycled run and several for a
- * through-run.
+ * through-run. An article naming no line at all resolves from the train number alone.
+ *
+ * Falls back to {@link DEFAULT_LINE} only when nothing identifies the line — GTFS does not know
+ * the number either. Those trips are still published (the cancellation is real) and reported by
+ * `index.ts` so CI flags them as a notification, the same way an unclassified cause is.
  *
  * @throws {MultiLineMappingError} When a multi-line article references a train number
  *   that maps to none of the mentioned lines (unknown, or needs an override).
@@ -107,6 +117,14 @@ export function resolveLinesForTrip(
           `to src/train-line-definitions/overrides.ts.`,
         trip.trainNumber,
       );
+    }
+  } else if (articleLine === DEFAULT_LINE) {
+    // The article names no line and none could be extracted from its text. Rather than filing
+    // the trip under DEFAULT_LINE — a bucket no consumer browsing by line looks in — resolve it
+    // from the train number alone; with no mentions there is nothing to constrain it against.
+    const lines = lookupLinesForUnmentionedTrip({ ...trip, date: metadata.date });
+    if (lines.length > 0) {
+      return lines;
     }
   }
 
@@ -407,14 +425,40 @@ function isUnnumberedRouteRow(row: string): boolean {
 }
 
 /**
+ * Whether a row states that a train is **diverted** rather than cancelled.
+ *
+ * A diverted train still runs, so there is no cancellation to parse — but construction notices
+ * name it with its GTFS-known Zugnummer ("Zug 84784 Söllingen Reetzstraße ab 01:02 Uhr:" /
+ * "Wird ab … umgeleitet."), which otherwise reads exactly like a real cancellation in a format
+ * the parser does not cover, and escalates to a hard error. KVV writes these as a heading row
+ * naming the train followed by a description row, so the following row is part of the same
+ * statement and is inspected with it — unless it starts a new numbered row, the same hard
+ * boundary multiline recovery uses.
+ *
+ * Cancellation wording wins: a notice that cancels a trip and mentions a diversion in the same
+ * statement is a cancellation, not a diversion.
+ */
+export function isDiversionRow(row: string, followingRow?: string): boolean {
+  const continuesStatement =
+    followingRow !== undefined && leadingTrainNumber(followingRow) === undefined;
+  const statement = continuesStatement ? `${row} ${followingRow}` : row;
+
+  if (CANCELLATION_STATEMENT_PATTERN.test(statement)) {
+    return false;
+  }
+  return DIVERSION_STATEMENT_PATTERN.test(statement);
+}
+
+/**
  * Raw, pre-merge trip-like rows the parser could not structure.
  *
  * `extractTripRows` merges and filters candidate lines, so a row it cannot parse never
  * reaches parsing and is silently dropped. This scans the RAW candidates instead and
  * returns every numbered row with two clock times, plus unnumbered rows shaped like a
  * stop-to-stop route, that matches no known format. A numbered row already captured elsewhere
- * (e.g. via a multi-line merge) is excluded. Used both to warn and to drive the known-number
- * tripwire in the workflow.
+ * (e.g. via a multi-line merge) is excluded, as is a row that states a **diversion** rather than
+ * a cancellation (see {@link isDiversionRow}) — that train runs, so there is nothing to parse.
+ * Used both to warn and to drive the known-number tripwire in the workflow.
  */
 export function findUnparsedTripLikeRows(
   text: string,
@@ -432,6 +476,7 @@ export function findUnparsedTripLikeRows(
     // Do not report a continuation row that was successfully consumed into a multiline trip.
     if (consumedRawIndexes.has(index)) return false;
     if (isValidTripRow(row)) return false;
+    if (isDiversionRow(row, rawRows[index + 1])) return false;
     const number = leadingTrainNumber(row);
     if (number !== undefined) {
       return TRIP_TIME_PAIR_PATTERN.test(row) && !parsedTrainNumbers.has(number);

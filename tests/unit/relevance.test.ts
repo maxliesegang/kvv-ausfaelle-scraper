@@ -99,3 +99,30 @@ describe('Relevance - Real Article Fixtures', () => {
     });
   }
 });
+
+describe('Relevance - Article Region Scoping', () => {
+  // KVV wraps every notice in ~38k characters of navigation and footer. Scoring those would let
+  // a single site-wide menu change re-gate every article at once, so only <main> is scored.
+  const CHROME = `
+    <header><nav><ul>
+      <li><a href="/bauarbeiten">Bauarbeiten und Sperrungen</a></li>
+      <li><a href="/stoerungen">Störungen: Fahrtausfälle und Zugausfälle</a></li>
+    </ul></nav></header>`;
+
+  it('ignores cancellation keywords that appear only in the site chrome', () => {
+    const html = `<html><body>${CHROME}
+      <main><h2>Allgemeine Fahrgastinformation</h2>
+      <p>Die Aufzüge am Hauptbahnhof werden gewartet.</p></main>
+    </body></html>`;
+
+    assert.strictEqual(analyzeDetailPage(html).isRelevant, false);
+  });
+
+  it('still scores a notice whose page has no main region', () => {
+    const html = `<html><body><h2>Linie S1</h2>
+      <p>Betroffene Fahrten: folgende Fahrten entfallen.</p>
+      <p>85879 Heilbronn Hbf 10:00 Uhr - Sinsheim Hbf 11:00 Uhr</p></body></html>`;
+
+    assert.strictEqual(analyzeDetailPage(html).isRelevant, true);
+  });
+});

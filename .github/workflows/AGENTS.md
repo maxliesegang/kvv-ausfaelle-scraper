@@ -5,7 +5,26 @@ This is the most specific guidance for workflow files.
 
 ## Purpose
 
-The primary automation agent is `.github/workflows/update-data.yml`, which runs the scraper on a schedule and publishes new data.
+Two workflows:
+
+- `.github/workflows/update-data.yml` — the primary automation agent: runs the scraper on a
+  schedule and publishes new data.
+- `.github/workflows/ci.yml` — lint + tests + build on pull requests and on pushes to `main`
+  that touch anything outside `docs/`. Data-only commits are skipped here because the scraper
+  workflow audits them itself (below).
+
+## Where The Suite Runs
+
+The archive audits (`tests/unit/archive-corpus.test.ts`, `archive-relevance.test.ts`) read
+`docs/`, so **committed data can turn the suite red without any code change** — this is not
+hypothetical, it has happened. That means the suite belongs in both places:
+
+- `ci.yml` covers code changes.
+- `update-data.yml` runs `npm test` _after_ committing and deploying, so newly archived
+  articles are audited on the run that produced them while the good data still publishes.
+
+Never move the scraper workflow's test step ahead of the commit/deploy steps: failing there
+would withhold data that is already valid.
 
 ## Schedule
 
@@ -31,6 +50,8 @@ The primary automation agent is `.github/workflows/update-data.yml`, which runs 
    - `actions/configure-pages` → `actions/upload-pages-artifact` (path `docs`) → `actions/deploy-pages`
    - guarded by `if: ${{ !cancelled() }}` so committed data still publishes even when the scraper reported errors
    - `docs/` stays committed to git regardless — it is the single source of truth the scraper re-reads for reconciliation; the Pages artifact is just a copy of it
+5. Post-publish audit:
+   - `npm test` against the just-committed `docs/`, guarded by `if: ${{ !cancelled() }}`
 
 ## Failure Behavior
 

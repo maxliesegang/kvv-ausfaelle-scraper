@@ -115,4 +115,33 @@ describe('Workflow article archive eligibility', () => {
       /known train number.*85879/i,
     );
   });
+
+  it('does not fail on a known train number that is only diverted', async () => {
+    // A construction notice reroutes a GTFS-known train instead of cancelling it (the shape of
+    // docs/2026/articles/100004321_KVV_ICSKVV.txt). The train runs, so there is no trip to parse
+    // and nothing to escalate — treating it as a missed cancellation would fail every run for as
+    // long as KVV keeps the notice in the feed.
+    const html = [
+      '<html><main>',
+      '<p>Linie: S42</p>',
+      '<p>Wegen Bauarbeiten kommt es zu Fahrtausfällen und Umleitungen.</p>',
+      '<p>Betroffene Fahrten:</p>',
+      '<p>85879 Heilbronn Hbf 10:00 Uhr - Sinsheim Hbf 11:00 Uhr:</p>',
+      '<p>Wird ab Heilbronn Hbf über Neckarsulm umgeleitet.</p>',
+      '</main></html>',
+    ].join('\n');
+    const item: Item = {
+      title: 'Linie S42: Bauarbeiten - Fahrtausfälle und Umleitungen',
+      link: DETAIL_URL,
+      pubDate: 'Thu, 23 Jul 2026 10:00:00 GMT',
+    };
+
+    const outcome = await processRssItem(item, {
+      dataDir: tempDir,
+      fetchDetail: async () => html,
+      nowMs: NOW_MS,
+    });
+
+    assert.deepStrictEqual(outcome, { status: 'skipped', reason: 'no-trip-details' });
+  });
 });

@@ -167,3 +167,18 @@ export const PARENTHESIZED_ROUTE_TIME_PATTERN =
 
 /** A stop-to-stop separator, deliberately requiring surrounding whitespace. */
 export const ROUTE_SEPARATOR_PATTERN = /\s[-–]\s/;
+
+/**
+ * A statement that a train takes a different route — it still runs, so there is no trip to
+ * record. Construction notices are full of these ("Zug 84784 … wird … umgeleitet"), and their
+ * train numbers are GTFS-known, which would otherwise read as a cancellation the parser missed.
+ */
+export const DIVERSION_STATEMENT_PATTERN = /\bumgeleitet\b|\bumleitung\b|\bumfahren\b/i;
+
+/**
+ * Evidence that a statement is about a trip *not running*. Checked before
+ * {@link DIVERSION_STATEMENT_PATTERN} so a notice that cancels one trip and mentions a diversion
+ * in the same breath ("… entfällt, SEV wird umgeleitet") stays a cancellation.
+ */
+export const CANCELLATION_STATEMENT_PATTERN =
+  /\bentf(?:ä|ae)ll(?:t|en)\b|\bausfall\b|\bausf(?:ä|ae)lle\b|\bf(?:ä|ae)llt\s+aus\b/i;

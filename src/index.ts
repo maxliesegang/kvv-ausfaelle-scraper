@@ -1,4 +1,5 @@
 import { DATA_DIR } from './config.js';
+import { DEFAULT_LINE } from './parser/patterns.js';
 import { saveCancellations } from './storage.js';
 import { generateSiteIndices } from './site-index.js';
 import { fetchRssItems, collectTrips, type CollectTripsResult } from './workflow.js';
@@ -52,6 +53,35 @@ function reportUnknownCauses(result: CollectTripsResult): boolean {
 }
 
 /**
+ * Logs cancellations whose transit line could not be identified. The trip is real and is saved
+ * either way, but it lands in `UNKNOWN.json`, which no consumer browsing by line looks in — so
+ * it is effectively invisible until the number is mapped. Surfacing it lets CI fail as a
+ * notification (add the number to the year's line definitions, or an article-scoped override).
+ * Returns true if any were present.
+ */
+function reportUnresolvedLines(result: CollectTripsResult): boolean {
+  const unresolved = result.cancellations.filter((c) => c.line === DEFAULT_LINE);
+  if (unresolved.length === 0) {
+    return false;
+  }
+
+  const trainNumbers = [...new Set(unresolved.map((c) => c.trainNumber))];
+  const sources = [...new Set(unresolved.map((c) => c.sourceUrl))];
+  console.error(
+    `\nUnresolved line: ${unresolved.length} cancellation(s) could not be attributed to a transit line.`,
+  );
+  console.error(`Train numbers: ${trainNumbers.join(', ')}`);
+  console.error(
+    'Add them to the current Fahrplan year under docs/<year>/train-line-definitions/, ' +
+      'or add an article-scoped entry to src/train-line-definitions/overrides.ts. Affected articles:',
+  );
+  sources.forEach((url) => console.error(`  ${url}`));
+  console.error('');
+
+  return true;
+}
+
+/**
  * Main application entry point.
  * Fetches RSS feed, parses cancellations, saves to JSON, and generates HTML indices.
  */
@@ -80,7 +110,8 @@ async function main(): Promise<void> {
   // notices we couldn't classify) while good data is still saved and committed.
   const hadParseErrors = reportParseErrors(result);
   const hadUnknownCauses = reportUnknownCauses(result);
-  if (hadParseErrors || hadUnknownCauses) {
+  const hadUnresolvedLines = reportUnresolvedLines(result);
+  if (hadParseErrors || hadUnknownCauses || hadUnresolvedLines) {
     process.exit(1);
   }
 }

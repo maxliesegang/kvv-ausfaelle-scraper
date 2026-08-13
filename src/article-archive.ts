@@ -19,7 +19,7 @@ import { join } from 'node:path';
 import { ISO_DATE_LENGTH } from './utils/constants.js';
 import { writeTextFile } from './utils/fs.js';
 import { getCurrentFahrplanYear, getFahrplanYear } from './fahrplan.js';
-import { extractStand, stripHtml } from './parser/text-extraction.js';
+import { extractArticleRegion, extractStand, stripHtml } from './parser/text-extraction.js';
 import { extractDetailId } from './utils/normalization.js';
 
 /** Subdirectory (under `<baseDir>/<year>/`) that holds the per-article text archive. */
@@ -37,20 +37,17 @@ const HEADER_UNKNOWN = 'unbekannt';
 /** Rule under the header, separating metadata from the archived body. */
 const HEADER_RULE = '='.repeat(72);
 
-/** Isolates the `<main>…</main>` article region so the archive excludes site chrome. */
-const MAIN_REGION_PATTERN = /<main\b[^>]*>([\s\S]*?)<\/main>/i;
-
 /**
- * Reduces a detail page to the clean, readable body we archive: the `<main>` region only
- * (or the whole document when the page has no `<main>`), stripped to text and de-indented.
+ * Reduces a detail page to the clean, readable body we archive: the article region only
+ * (see {@link extractArticleRegion}), stripped to text and de-indented.
  *
  * Scoping to `<main>` keeps the archive to the notice itself — without it the file would
  * carry the site's navigation and footer, and a site-wide chrome change would diff *every*
- * archived article at once, destroying the "only real edits show up" property.
+ * archived article at once, destroying the "only real edits show up" property. It is the same
+ * scoping the parser applies, so an archived body replays exactly like the live page did.
  */
 function toArchiveBody(html: string): string {
-  const articleHtml = MAIN_REGION_PATTERN.exec(html)?.[1] ?? html;
-  return stripHtml(articleHtml)
+  return stripHtml(extractArticleRegion(html))
     .replace(/^[ \t]+/gm, '') // drop source indentation so lines read cleanly
     .replace(/\n{2,}/g, '\n') // collapse the blank lines that de-indenting can open up
     .trim();

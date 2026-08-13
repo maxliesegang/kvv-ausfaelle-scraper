@@ -50,6 +50,9 @@ Guidance in this file applies to `src/**` unless a deeper `AGENTS.md` overrides 
   Compare trip times with `getBerlinWallClockMs` (`src/utils/berlin-time.ts`): KVV publishes
   Europe/Berlin wall clock with no offset, so a naive `new Date()` would resolve in the runner's
   zone. Any tool that rewrites stored trips must apply the same rule.
+- `DEFAULT_LINE` (`UNKNOWN`) is a last resort, not a bucket. An article naming no line resolves
+  from the train number (`resolveLinesWithoutMentions`); a trip that still lands on `UNKNOWN` is
+  published but reported by `index.ts`, which exits non-zero as a notification to map the number.
 - Storage treats `cause` and `causeKeyword` as one classification. A refetch must update both
   when either changes. Use `compareCancellationsBySchedule` anywhere cancellation files are
   rewritten so output ordering remains consistent.

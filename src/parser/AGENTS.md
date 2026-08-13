@@ -22,6 +22,14 @@ This is the most specific guidance for parser files.
 
 ## Change Rules
 
+- Every path into a detail page goes through `extractArticleRegion` (`text-extraction.ts`) before
+  `stripHtml`. The site chrome around a notice is several times its length; judging it as article
+  content couples every article's cause and relevance to KVV's navigation, and makes an archived
+  body replay differently from the live page. `toArticleText` already does both — use it.
+- A **diverted** train still runs. `isDiversionRow` keeps rerouting statements out of the
+  unparsed-trip report (and therefore out of the hard-error tripwire), inspecting the following
+  row because KVV writes the description there. Cancellation wording in the statement wins. The
+  archive corpus audit imports the same predicate — never fork it into the test.
 - Prefer additive parsing improvements over breaking existing patterns.
 - A corrupt value in the published text (not an unsupported layout) belongs in
   `article-corrections.ts`, which repairs the article text before parsing, scoped to one

@@ -149,6 +149,34 @@ export function resolveLines(
 }
 
 /**
+ * Resolves the line(s) for a trip in an article that mentions **no** line at all. Pure (all data
+ * passed in) so it can be unit-tested without disk.
+ *
+ * {@link resolveLines} intersects a number's GTFS lines with the lines the article mentions; with
+ * no mentions there is nothing to intersect, so it resolves to nothing and the trip would be
+ * filed under `UNKNOWN` — a bucket no consumer browsing by line ever sees. Here the number's own
+ * GTFS lines are the only evidence and are therefore authoritative: timing signatures identify
+ * the physical run of a shared number, and the flat index answers for every other number. Empty
+ * means GTFS does not know the number either, which is genuinely unresolvable.
+ */
+export function resolveLinesWithoutMentions(
+  index: TrainLineIndex,
+  ambiguous: AmbiguousTripIndex,
+  trip: TripDescriptor,
+): string[] {
+  const normalizedTrainNumber = normalizeTrainNumber(trip.trainNumber);
+  if (!normalizedTrainNumber) return [];
+
+  const signatures = ambiguous[normalizedTrainNumber];
+  if (signatures && signatures.length > 0) {
+    const { lines, confident } = resolveAmbiguousTrip(signatures, trip);
+    if (confident) return lines;
+  }
+
+  return [...(index.linesByTrainNumber[normalizedTrainNumber] ?? [])];
+}
+
+/**
  * Whether a train number appears in any line definition for the current Fahrplan year.
  *
  * This is the high-precision "official data" signal used to harden error visibility: a
@@ -177,4 +205,13 @@ export function lookupLinesForTrip(
   // resolving; a number with no entry for this article resolves purely from GTFS.
   const overrides = (detailId && OVERRIDES[detailId]) || {};
   return resolveLines(TRAIN_LINE_INDEX, AMBIGUOUS_TRIPS, trip, mentionedLines, overrides);
+}
+
+/**
+ * Returns the line(s) for a trip whose article names no line, using the definitions and timing
+ * signatures loaded for the current Fahrplan year. Empty means GTFS does not know the number
+ * (see {@link resolveLinesWithoutMentions}).
+ */
+export function lookupLinesForUnmentionedTrip(trip: TripDescriptor): string[] {
+  return resolveLinesWithoutMentions(TRAIN_LINE_INDEX, AMBIGUOUS_TRIPS, trip);
 }

@@ -27,6 +27,27 @@ function getBerlinUtcOffsetHours(year: number, month: number, day: number, hour:
   return day < transitionDay || (day === transitionDay && hour < 3) ? 2 : 1;
 }
 
+/** Isolates the `<main>…</main>` article region so site chrome stays out of the pipeline. */
+const MAIN_REGION_PATTERN = /<main\b[^>]*>([\s\S]*?)<\/main>/i;
+
+/**
+ * Narrows a detail page to the notice itself: the `<main>` region, or the whole input when it
+ * has none (a page without `<main>`, or an archived body, which is already plain text).
+ *
+ * Every consumer that reads a detail page goes through this. KVV's chrome is roughly 38,000
+ * characters of navigation and footer per page — several times the article — and feeding it to
+ * the parser, the relevance gate and the cause classifier means one nav change ("Baustellen",
+ * "Störungen") could reclassify or re-gate *every* article at once. It also keeps the text
+ * archive (`src/article-archive.ts`) and the parser reading the same region, so replaying an
+ * archive through `scripts/reparse-archives.ts` reproduces what a live run did.
+ *
+ * @param html - Raw detail-page HTML, or already-extracted article text
+ * @returns The article region's markup, or the input unchanged when no `<main>` is present
+ */
+export function extractArticleRegion(html: string): string {
+  return MAIN_REGION_PATTERN.exec(html)?.[1] ?? html;
+}
+
 /**
  * Strips HTML tags from a string and normalizes whitespace.
  * Converts <br> and </p> tags to line breaks before stripping.

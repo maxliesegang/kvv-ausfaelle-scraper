@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { describe, test } from 'node:test';
 import { parseArchive } from '../../src/article-archive.js';
 import { parseDetailPage } from '../../src/parser/index.js';
+import { isDiversionRow } from '../../src/parser/trip-parsing.js';
 
 const DOCS_DIR = join(process.cwd(), 'docs');
 const CLOCK_TIME_PATTERN = /\b(\d{1,2}:\d{2})\b/g;
@@ -120,7 +121,15 @@ function auditArchiveCorpus(): ArchiveCorpusAudit {
         parsingError = error;
       }
 
-      for (const [index, line] of archivedArticle.body.split('\n').entries()) {
+      const bodyRows = archivedArticle.body.split('\n');
+
+      for (const [index, line] of bodyRows.entries()) {
+        // A diverted train still runs, so no trip is expected from it — the same rule the live
+        // tripwire applies (`findUnparsedTripLikeRows`), shared so the audit cannot drift from it.
+        if (isDiversionRow(line, bodyRows[index + 1])) {
+          continue;
+        }
+
         const times = [...line.matchAll(CLOCK_TIME_PATTERN)].map((match) => match[1]);
 
         const lineNumber = index + 1;

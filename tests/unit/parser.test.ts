@@ -17,6 +17,7 @@ import {
   extractTripSectionCandidateRows,
   extractMentionedLines,
   findUnparsedTripLikeRows,
+  isDiversionRow,
   isValidTripRow,
   leadingTrainNumber,
   parseTripRow,
@@ -65,6 +66,59 @@ describe('Parser - Detail Page Parsing', () => {
         assertCancellationsEqual(actual, fixture.expected, fixture.name);
       });
     }
+  });
+
+  describe('Article region scoping', () => {
+    it('classifies the cause from the notice, not from the surrounding site chrome', () => {
+      const html = [
+        '<html><body>',
+        '<header><nav><a href="/bauarbeiten">Bauarbeiten und Sperrungen</a></nav></header>',
+        '<main>',
+        '<p>Linie S1</p>',
+        '<p>Nach aktuellem Stand 15.05.2026 12:00:00</p>',
+        '<p>Betriebsbedingt entfallen folgende Fahrten.</p>',
+        '<p>Betroffene Fahrten:</p>',
+        '<p>85879 Heilbronn Hbf 10:00 Uhr - Sinsheim Hbf 11:00 Uhr</p>',
+        '</main>',
+        '<footer>Weitere Informationen zu Baustellen und Sperrungen</footer>',
+        '</body></html>',
+      ].join('\n');
+
+      const [trip] = parseDetailPage(html, 'test://chrome-scoping');
+
+      // Without region scoping the nav's "Bauarbeiten" would outrank nothing — construction is
+      // matched last — but the footer and menu would still feed every other keyword list.
+      assert.strictEqual(trip?.cause, 'operational');
+      assert.strictEqual(trip?.causeKeyword, 'betriebsbedingt');
+    });
+  });
+
+  describe('Articles that name no line', () => {
+    // 10001 is an S1 number in the current Fahrplan year's definitions. A notice that never
+    // writes "Linie …" used to file its trips under UNKNOWN, where nobody browsing by line
+    // would find them; the train number identifies the line on its own.
+    const buildHtml = (trainNumber: string) =>
+      [
+        '<html><main>',
+        '<p>Nach aktuellem Stand 15.05.2026 12:00:00</p>',
+        '<p>Betriebsbedingt entfallen folgende Fahrten.</p>',
+        '<p>Betroffene Fahrten:</p>',
+        `<p>${trainNumber} Hochstetten 10:00 Uhr - Karlsruhe Hbf 11:00 Uhr</p>`,
+        '</main></html>',
+      ].join('\n');
+
+    it('resolves the line from the train number', () => {
+      const [trip] = parseDetailPage(buildHtml('10001'), 'test://no-line-mention');
+
+      assert.strictEqual(trip?.line, 'S1');
+    });
+
+    it('keeps UNKNOWN when GTFS does not know the number either', () => {
+      const [trip] = parseDetailPage(buildHtml('99999'), 'test://no-line-mention-unknown');
+
+      // Still published — the cancellation is real — and reported by index.ts so CI flags it.
+      assert.strictEqual(trip?.line, 'UNKNOWN');
+    });
   });
 
   describe('Error handling', () => {
@@ -309,6 +363,22 @@ describe('Parser - Detail Page Parsing', () => {
       assert.deepStrictEqual(findUnparsedTripLikeRows(text, new Set()), [
         'Entfall Stadtbahn: S51 Germersheim (23:30) - Wörth (00:03) - Söllingen (00:56)',
       ]);
+    });
+
+    it('ignores a diverted train, whose description sits on the following row', () => {
+      const text = [
+        'Zug 84784 Söllingen Reetzstraße 01:02 Uhr - Durlacher Tor 01:31 Uhr:',
+        'Wird ab "Durlacher Tor" über die Kapellenstraße zum "Rüppurrer Tor" umgeleitet.',
+      ].join('\n');
+
+      assert.deepStrictEqual(findUnparsedTripLikeRows(text, new Set()), []);
+    });
+
+    it('keeps a cancellation that also mentions a diversion', () => {
+      const row = 'S71 Karlsruhe Hbf (22:47) - Baden-Baden (23:17) entfällt, SEV wird umgeleitet';
+
+      assert.strictEqual(isDiversionRow(row), false);
+      assert.deepStrictEqual(findUnparsedTripLikeRows(row, new Set()), [row]);
     });
   });
 

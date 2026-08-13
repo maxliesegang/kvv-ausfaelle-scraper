@@ -1,5 +1,5 @@
 import type { Item } from './types.js';
-import { stripHtml } from './parser/text-extraction.js';
+import { extractArticleRegion, stripHtml } from './parser/text-extraction.js';
 import { extractTripRows } from './parser/trip-parsing.js';
 import { normalizeGermanText } from './utils/normalization.js';
 
@@ -183,7 +183,9 @@ export function analyzeRssItem(item: Item): RelevanceResult {
 }
 
 export function analyzeDetailPage(html: string): RelevanceResult {
-  const text = stripHtml(html);
+  // Score the notice, not the site around it: the shared article region keeps KVV's navigation
+  // and footer from contributing keywords, exactly as the parser and the archive do.
+  const text = stripHtml(extractArticleRegion(html));
   const {
     score: baseScore,
     reasons: baseReasons,

@@ -1,0 +1,35 @@
+name: CI
+
+# The scraper's correctness rests on the test suite (notably the archive-corpus and
+# archive-relevance audits), so it must run on every change — not only when someone
+# remembers to run it locally.
+on:
+  push:
+    branches: [main]
+    # The scheduled scraper pushes a docs/ commit six times a day. Those commits are audited by
+    # update-data.yml's own test step, so re-running the same suite here would be pure noise;
+    # any push that also touches code or tests still lands in this workflow.
+    paths-ignore: ['docs/**']
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # type-check + format:check
+      - run: npm run lint
+
+      - run: npm test
+
+      - run: npm run build

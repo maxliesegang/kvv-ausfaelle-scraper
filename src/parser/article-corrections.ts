@@ -26,7 +26,7 @@
  */
 
 import { extractDetailId } from '../utils/normalization.js';
-import { stripHtml } from './text-extraction.js';
+import { extractArticleRegion, stripHtml } from './text-extraction.js';
 
 /** One repair: an exact source substring and its corrected form. */
 interface ArticleCorrection {
@@ -70,15 +70,18 @@ export function applyArticleCorrections(text: string, url: string): string {
 }
 
 /**
- * The canonical plain text of an article: HTML stripped, then this article's corrections applied.
+ * The canonical plain text of an article: narrowed to the article region, HTML stripped, then
+ * this article's corrections applied.
  *
  * Every consumer that reasons about trips — `parseDetailPage`, the parser-gap check in
  * `workflow.ts`, the reparse tooling — must go through this, so they all judge the same text. A
- * caller stripping HTML without correcting would re-report a repaired row as a parser gap.
+ * caller stripping HTML without correcting would re-report a repaired row as a parser gap, and
+ * one skipping {@link extractArticleRegion} would judge the site's navigation and footer as
+ * article content.
  *
  * @param html - Raw detail-page HTML (or an archived body, which strips to itself)
  * @param url - Source URL; its `detailID` scopes which corrections apply
  */
 export function toArticleText(html: string, url: string): string {
-  return applyArticleCorrections(stripHtml(html), url);
+  return applyArticleCorrections(stripHtml(extractArticleRegion(html)), url);
 }

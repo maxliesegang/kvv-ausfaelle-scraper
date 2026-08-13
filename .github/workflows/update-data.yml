@@ -75,6 +75,15 @@ jobs:
         if: ${{ !cancelled() }}
         uses: actions/deploy-pages@v5
 
+      # The corpus audits (tests/unit/archive-corpus.test.ts, archive-relevance.test.ts) read
+      # docs/, so an article archived by the run above can turn them red with no code change —
+      # a class of regression the CI workflow, which only sees commits it is triggered by, can
+      # report only after the fact. Run them here, after the data is committed and published,
+      # so the good data still goes live and the failure lands on the run that produced it.
+      - name: Audit the committed data
+        if: ${{ !cancelled() }}
+        run: npm test
+
       - name: Fail if scraper had errors
         if: steps.scraper.outcome == 'failure'
         run: |

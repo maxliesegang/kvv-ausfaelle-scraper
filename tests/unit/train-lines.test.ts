@@ -11,6 +11,7 @@ import {
   buildTrainLineIndex,
   resolveLinesInIndex,
   resolveLines,
+  resolveLinesWithoutMentions,
 } from '../../src/train-lines.js';
 import {
   resolveAmbiguousTrip,
@@ -121,6 +122,52 @@ describe('Train Lines - Multi-line resolution', () => {
 
   it('ignores a curated override when the override line is not mentioned', () => {
     assert.deepStrictEqual(resolveLinesInIndex(index, '99999', ['S6'], { '99999': 'S5' }), []);
+  });
+});
+
+describe('Train Lines - Resolution without line mentions', () => {
+  // Same shape as above: 84872 is reused across S5/S51/S52, 70003 belongs only to S5.
+  const index = buildTrainLineIndex([
+    { line: 'S5', trainNumbers: ['84872', '70003'] },
+    { line: 'S51', trainNumbers: ['84872'] },
+    { line: 'S52', trainNumbers: ['84872'] },
+  ]);
+
+  it('resolves a number from GTFS when the article mentions no line', () => {
+    assert.deepStrictEqual(resolveLinesWithoutMentions(index, {}, { trainNumber: '70003' }), [
+      'S5',
+    ]);
+  });
+
+  it('reports every line a shared number runs on when timing cannot narrow it', () => {
+    assert.deepStrictEqual(resolveLinesWithoutMentions(index, {}, { trainNumber: '84872' }), [
+      'S5',
+      'S51',
+      'S52',
+    ]);
+  });
+
+  it('narrows a shared number to the one physical run its timing identifies', () => {
+    const ambiguous = {
+      '84872': [
+        { line: 'S51', dep: '07:45', arr: '08:10', dates: [['20260101', '20261231']] },
+        { line: 'S52', dep: '19:45', arr: '20:10', dates: [['20260101', '20261231']] },
+      ] as TripSignature[],
+    };
+
+    assert.deepStrictEqual(
+      resolveLinesWithoutMentions(index, ambiguous, {
+        trainNumber: '84872',
+        fromTime: '07:45',
+        toTime: '08:10',
+        date: '2026-02-08',
+      }),
+      ['S51'],
+    );
+  });
+
+  it('returns empty for a number GTFS does not know', () => {
+    assert.deepStrictEqual(resolveLinesWithoutMentions(index, {}, { trainNumber: '99999' }), []);
   });
 });
 

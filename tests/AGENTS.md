@@ -17,6 +17,10 @@ This is the most specific guidance for test code.
 - Keep tests deterministic and fast in `tests/unit/**`.
 - `tests/unit/archive-corpus.test.ts` audits every preserved archive for GTFS-known and explicit
   train-number rows. Parser changes must keep this corpus audit green, not only fixture tests.
+  It skips diversion statements via the parser's own `isDiversionRow` — a rerouted train produces
+  no trip. Keep using the shared predicate: a second copy here would drift from the scraper.
+  Because it reads `docs/`, newly archived articles can turn it red with no code change, which is
+  why `.github/workflows/update-data.yml` runs the suite after each scrape as well as `ci.yml`.
 - `tests/unit/archive-relevance.test.ts` audits the same corpus for relevance recall: archives are
   written before either gate runs, so any archive that parses into trips must pass both
   `analyzeRssItem` (scored on a headline + lead-sentence reconstruction of the ticker item) and
