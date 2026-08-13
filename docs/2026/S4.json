@@ -3660,14 +3660,14 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "unresolved",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "checkedAt": "2026-08-13T21:59:11.991Z",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
       "journeyStops": 0,
       "journeyCancelledStops": 0,
       "source": "bahn.expert",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -3865,6 +3865,18 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274493",
     "capturedAt": "2026-08-13T20:36:48.119Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "checkedAt": "2026-08-13T21:59:11.991Z",
+      "segmentStops": 6,
+      "segmentCancelledStops": 6,
+      "segmentTrackedStops": 0,
+      "journeyStops": 10,
+      "journeyCancelledStops": 10,
+      "source": "bahn.expert",
+      "journeyId": "20260813-12133a4f-c27a-38f9-9c6a-a4e4c5477e15",
+      "attempts": 1
+    }
   }
 ]

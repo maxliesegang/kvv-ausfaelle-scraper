@@ -1602,7 +1602,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "checkedAt": "2026-08-13T21:59:11.991Z",
       "segmentStops": 1,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1610,7 +1610,7 @@
       "journeyCancelledStops": 0,
       "source": "bahn.expert",
       "journeyId": "20260813-1add7bb1-bb90-313e-b958-22e3e1858e9b",
-      "attempts": 1
+      "attempts": 2
     }
   }
 ]
