@@ -10,6 +10,7 @@ import { parseArchive } from '../../src/article-archive.js';
 const TEST_DATA_DIR = join(process.cwd(), 'test-data');
 const ARTICLES_DIR = join(TEST_DATA_DIR, 'articles');
 const EXPECTED_DIR = join(TEST_DATA_DIR, 'expected');
+const PINNED_ARCHIVES_DIR = join(TEST_DATA_DIR, 'archives');
 const DOCS_DIR = join(process.cwd(), 'docs');
 
 export interface TestFixture {
@@ -78,6 +79,33 @@ export function loadArchivedArticle(year: string, id: string): ArchivedArticle {
   }
 
   return { id, year, body, url, filePath, rssTitle, rssPublishedIso };
+}
+
+/**
+ * Loads an article for a regression that asserts specific trip rows, preferring a **pinned** copy
+ * under `test-data/archives/` and falling back to the live archive under `docs/`.
+ *
+ * `docs/` is mutable: KVV rewrites a notice in place, dropping rows as they depart, so a
+ * regression written against today's roster can go red tomorrow with no code change — which is
+ * exactly what happened to `Nettro_CMS_274370` when the 12:58 rewrite removed the morning runs
+ * this suite pins. A regression that names train numbers therefore needs a frozen copy of the
+ * revision it was written against.
+ *
+ * Pin an article by copying the revision under test out of the archive's git history:
+ * `git show <commit>:docs/<year>/articles/<id>.txt > test-data/archives/<id>.txt`.
+ *
+ * Corpus-wide audits keep reading `docs/` through {@link loadAllArchivedArticles} — those assert
+ * properties that must hold for whatever KVV publishes, so they *should* track the live record.
+ */
+export function loadRegressionArticle(year: string, id: string): ArchivedArticle {
+  const pinnedPath = join(PINNED_ARCHIVES_DIR, `${id}.txt`);
+  if (!existsSync(pinnedPath)) return loadArchivedArticle(year, id);
+
+  const { body, url, rssTitle, rssPublishedIso } = parseArchive(readFileSync(pinnedPath, 'utf-8'));
+  if (!url) {
+    throw new Error(`Pinned article ${id} has no source URL: ${pinnedPath}`);
+  }
+  return { id, year, body, url, filePath: pinnedPath, rssTitle, rssPublishedIso };
 }
 
 /**

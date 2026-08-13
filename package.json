@@ -26,7 +26,8 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "npm run type-check && npm run format:check"
+    "lint": "npm run type-check && npm run format:check",
+    "verify-trips": "tsx scripts/verify-trips.ts"
   },
   "dependencies": {
     "rss-parser": "^3.13.0"

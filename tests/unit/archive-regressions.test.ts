@@ -2,11 +2,14 @@ import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 import { ParseError, parseDetailPage } from '../../src/parser/index.js';
 import type { Cancellation } from '../../src/types.js';
-import { loadArchivedArticle } from '../helpers/fixture-loader.js';
+import { loadRegressionArticle } from '../helpers/fixture-loader.js';
 import { normalizeCancellation } from '../helpers/test-utils.js';
 
 function parseArchivedArticle(id: string): Cancellation[] {
-  const article = loadArchivedArticle('2026', id);
+  // Prefers a pinned revision under `test-data/archives/`; see `loadRegressionArticle`. These
+  // tests name specific train numbers, and KVV edits notices in place, so the roster they assert
+  // has to be frozen rather than read from the mutable published archive.
+  const article = loadRegressionArticle('2026', id);
   return parseDetailPage(article.body, article.url);
 }
 
