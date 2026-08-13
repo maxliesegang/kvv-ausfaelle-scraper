@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274370
 Stand:  2026-08-13T01:00:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Söllingen Bahnhof und Germersheim Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (13.08.2026 bis 13.08.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6 zwischen Bad Wildbad Kurpark und Germersheim Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (13.08.2026 bis 14.08.2026)
 Datum:  2026-08-13T00:27:00.000Z
 ========================================================================
 
@@ -8,11 +8,11 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 13.08.2026, 02:27 Uhr
-Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51
-Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Söllingen Bahnhof und Germersheim Bahnhof 
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6 zwischen Bad Wildbad Kurpark und Germersheim Bahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Germersheim Bahnhof. Wir bitten um Entschuldigung.
+Betriebsbedingte Fahrtausfälle. Auf den Linien S5, S51 und S6 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Bad Wildbad Kurpark und Germersheim Bahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 13.08.2026 03:00:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 84792 Karlsruhe Tullastraße (04:11 Uhr) - Wörth Badepark (04:51 Uhr)
 84796 Karlsruhe Tullastraße (04:41 Uhr) - Wörth Badepark (05:21 Uhr)
@@ -28,6 +28,23 @@ Nach aktuellem Stand 13.08.2026 03:00:00 sind folgende Fahrten von einem (Teil-)
 80702 Karlsruhe Marktplatz (08:39 Uhr) - Karlsruhe Albtalbahnhof (08:48 Uhr)
 84820 Söllingen Bahnhof (08:48 Uhr) - Karlsruhe Tullastraße (09:10 Uhr)
 84722 Söllingen Bahnhof (09:18 Uhr) - Knielingen Rheinbergstraße (10:04 Uhr)
+84734 Karlsruhe Tullastraße (12:41 Uhr) - Knielingen Rheinbergstraße (13:04 Uhr)
+84991 Karlsruhe Tullastraße (14:07 Uhr) - Pforzheim Hbf (14:50 Uhr)
+84992 Pforzheim Hbf (15:06 Uhr) - Wörth Badepark (16:33 Uhr)
+85085 Wörth Badepark (16:45 Uhr) - Karlsruhe Tullastraße (17:26 Uhr)
+85069 Pforzheim Hbf (13:47 Uhr) - Bad Wildbad Kurpark (14:22 Uhr)
+85072 Bad Wildbad Kurpark (15:35 Uhr) - Pforzheim Hbf (16:10 Uhr)
+85079 Pforzheim Hbf (16:47 Uhr) - Bad Wildbad Kurpark (17:22 Uhr)
+85080 Bad Wildbad Kurpark (17:35 Uhr) - Pforzheim Hbf (18:10 Uhr)
+85087 Pforzheim Hbf (18:47 Uhr) - Bad Wildbad Kurpark (19:22 Uhr)
+84748 Karlsruhe Tullastraße (15:20 Uhr) - Wörth Bf (15:56 Uhr)
+84767 Wörth Bf (16:02 Uhr) - Söllingen Bahnhof (16:56 Uhr) 
+84760 Söllingen Bahnhof (17:01 Uhr) - Knielingen Rheinbergstraße (17:44 Uhr)
+84781 Knielingen Rheinbergstraße (18:52 Uhr) - Söllingen Bahnhof (19:37 Uhr)
+84858 Söllingen Bahnhof (19:51 Uhr) - Wörth Badepark (20:53 Uhr)
+84849 Wörth Badepark (21:07 Uhr) - Söllingen Bahnhof (22:06 Uhr)
+84864 Söllingen Bahnhof (22:51 Uhr) - Knielingen Rheinbergstraße (23:34 Uhr)
+84859 Knielingen Rheinbergstraße (23:52 Uhr) - Karlsruhe Albtalbahnhof (00:21 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

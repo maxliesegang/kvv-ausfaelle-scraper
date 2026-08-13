@@ -18,6 +18,8 @@ Nach aktuellem Stand 13.08.2026 03:02:00 sind folgende Fahrten von einem (Teil-)
 10019 Ettlingen Albgaubad (07:03 Uhr) - Neureut Kirchfeld (07:51 Uhr)
 20018 Neureut Kirchfeld (08:05 Uhr) - Ittersbach Rathaus (09:15 Uhr)
 20019 Ittersbach Rathaus (09:21 Uhr) - Ettlingen Stadt (09:45 Uhr)
+20025 Ettlingen Stadt (11:18 Uhr) - Hochstetten (12:26 Uhr)
+10042 Hochstetten (12:32 Uhr) - Ettlingen Albgaubad (13:42 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

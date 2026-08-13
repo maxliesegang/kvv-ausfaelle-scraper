@@ -2784,5 +2784,19 @@
     "capturedAt": "2026-08-13T05:36:04.246Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-13",
+    "stand": "2026-08-13T01:02:00.000Z",
+    "trainNumber": "10042",
+    "fromStop": "Hochstetten",
+    "fromTime": "12:32",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "13:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274378",
+    "capturedAt": "2026-08-13T09:06:44.230Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
