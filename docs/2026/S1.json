@@ -2772,7 +2772,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "checkedAt": "2026-08-13T21:59:11.991Z",
+      "checkedAt": "2026-08-14T01:27:55.942Z",
       "segmentStops": 33,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2780,7 +2780,7 @@
       "journeyCancelledStops": 0,
       "source": "bahn.expert",
       "journeyId": "20260813-fc0dd2be-1fa1-39cd-ba7e-1803d8e45f55",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -2798,7 +2798,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "checkedAt": "2026-08-13T21:59:11.991Z",
+      "checkedAt": "2026-08-14T01:27:55.942Z",
       "segmentStops": 30,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2806,7 +2806,7 @@
       "journeyCancelledStops": 0,
       "source": "bahn.expert",
       "journeyId": "20260813-a15c5ba4-8d07-3b21-a2f1-18396282cbf8",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {

@@ -3660,14 +3660,14 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "unresolved",
-      "checkedAt": "2026-08-13T21:59:11.991Z",
+      "checkedAt": "2026-08-14T01:27:55.942Z",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
       "journeyStops": 0,
       "journeyCancelledStops": 0,
       "source": "bahn.expert",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
