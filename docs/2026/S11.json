@@ -1127,7 +1127,7 @@
       "segmentTrackedStops": 0,
       "journeyStops": 41,
       "journeyCancelledStops": 0,
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -1176,7 +1176,21 @@
       "segmentTrackedStops": 0,
       "journeyStops": 55,
       "journeyCancelledStops": 0,
-      "attempts": 1
+      "attempts": 2
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-08-14",
+    "stand": "2026-08-14T06:10:00.000Z",
+    "trainNumber": "20028",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "10:35",
+    "toStop": "Ettlingen Stadtbahnhof",
+    "toTime": "11:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274600",
+    "capturedAt": "2026-08-14T09:02:46.889Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
