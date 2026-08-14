@@ -812,15 +812,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 16,
       "segmentCancelledStops": 16,
       "segmentTrackedStops": 0,
       "journeyStops": 16,
-      "journeyCancelledStops": 16,
-      "source": "bahn.expert",
-      "journeyId": "20260813-8199813e-d940-3e02-b294-87b6767d084b",
-      "attempts": 1
+      "journeyCancelledStops": 16
     }
   },
   {
@@ -838,15 +836,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 16,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 16,
       "journeyStops": 51,
-      "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-77a2741d-30d7-38de-8b5c-1041ed8f4a22",
-      "attempts": 1
+      "journeyCancelledStops": 0
     }
   },
   {
@@ -863,16 +859,14 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "ran",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "status": "partial",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 12,
       "segmentCancelledStops": 0,
-      "segmentTrackedStops": 12,
+      "segmentTrackedStops": 1,
       "journeyStops": 62,
-      "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-55057fc4-b396-31f1-883f-38ceb6c27819",
-      "attempts": 1
+      "journeyCancelledStops": 0
     }
   },
   {
@@ -890,15 +884,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 8,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 8,
       "journeyStops": 62,
-      "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-0638566c-da8c-379d-a82a-d7e7b5ca21f9",
-      "attempts": 1
+      "journeyCancelledStops": 0
     }
   },
   {
@@ -916,15 +908,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "partial",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
-      "segmentStops": 16,
-      "segmentCancelledStops": 1,
-      "segmentTrackedStops": 16,
-      "journeyStops": 62,
-      "journeyCancelledStops": 12,
       "source": "bahn.expert",
-      "journeyId": "20260813-19b67970-4b65-3820-ab7b-dea40958d407",
-      "attempts": 1
+      "checkedAt": "2026-08-14",
+      "segmentStops": 16,
+      "segmentCancelledStops": 2,
+      "segmentTrackedStops": 2,
+      "journeyStops": 62,
+      "journeyCancelledStops": 13
     }
   },
   {
@@ -942,15 +932,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "ran",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 11,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 11,
       "journeyStops": 62,
-      "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-bcf05d6b-19f8-3f06-81ce-14eb8d3653cc",
-      "attempts": 1
+      "journeyCancelledStops": 0
     }
   },
   {
@@ -968,15 +956,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "ran",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 16,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 16,
       "journeyStops": 51,
-      "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-7eafee68-9cf6-374e-89ef-1f63529f87ad",
-      "attempts": 1
+      "journeyCancelledStops": 0
     }
   },
   {
@@ -993,16 +979,14 @@
     "cause": "operational",
     "causeKeyword": "betriebsbedingt",
     "verification": {
-      "status": "partial",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 11,
-      "segmentCancelledStops": 10,
+      "segmentCancelledStops": 11,
       "segmentTrackedStops": 1,
       "journeyStops": 51,
-      "journeyCancelledStops": 10,
-      "source": "bahn.expert",
-      "journeyId": "20260813-cf63360b-3791-3199-a4ac-1ec99829fe43",
-      "attempts": 1
+      "journeyCancelledStops": 11
     }
   }
 ]

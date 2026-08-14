@@ -15,6 +15,7 @@
 
 import type { Cancellation } from '../types.js';
 import { formatBerlinWallClock } from '../utils/berlin-time.js';
+import { normalizeGermanText } from '../utils/normalization.js';
 import type { JourneyDetails, JourneyStop, JourneyStopEvent } from './bahn-expert.js';
 
 export type VerificationStatus =
@@ -29,9 +30,41 @@ export type VerificationStatus =
   /** No journey matching this line, date and departure time could be resolved. */
   | 'unresolved';
 
+/**
+ * Realtime feeds a verdict can be derived from.
+ *
+ * A union rather than a free-form string: adding a second feed is a deliberate, compile-checked
+ * change, and every consumer that switches on provenance is forced to handle the new case.
+ */
+export type VerificationSource = 'bahn.expert';
+
+/** The feed this module classifies. */
+export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
+
 export interface TripVerification {
   readonly status: VerificationStatus;
-  /** ISO timestamp of the check, so a stale verdict is recognisable. */
+  /**
+   * Which realtime feed answered.
+   *
+   * Constant today, and knowingly so — the field earns its bytes only once a second feed exists.
+   * It is stored anyway because it is the one fact about a verdict that cannot be re-derived
+   * later: a trip like `84957`, which one feed simply never observed, is permanently unverifiable
+   * *by that feed*, and a future answer from a different source must be distinguishable from this
+   * one rather than silently replacing it. Recording provenance from the start keeps the published
+   * records comparable across the change instead of splitting them into a before and an after.
+   *
+   * It is **not** a confidence signal and must not be used to rank verdicts: `retainStrongerVerdict`
+   * compares observed stops, and comparing counts across feeds that watch different things would
+   * need its own rule rather than an implicit preference for whichever source ran last.
+   */
+  readonly source: VerificationSource;
+  /**
+   * Berlin-local date of the check (`2026-08-14`), so a stale verdict is recognisable.
+   *
+   * Deliberately a date and not a timestamp: everything this field guards is measured in days —
+   * the feed's ~6-day window, and the realtime decay `retainStrongerVerdict` exists to resist. A
+   * per-run millisecond stamp only adds bytes to every record and churn to every diff.
+   */
   readonly checkedAt: string;
 
   /** Stops in the announced segment — the denominator for the two counts below. */
@@ -70,15 +103,29 @@ export interface TripVerification {
   readonly feedLine?: string;
 
   /**
+   * The operating company the feed names for the matched journey, recorded **only when it is not
+   * the KVV network operator** — the same anomaly-only rule as {@link feedLine}, and for the same
+   * reason. The audit this field exists for is "did a verdict come from a stranger's train", and
+   * storing `Albtal-Verkehrs-Gesellschaft mbH` on the overwhelming majority of records answers that
+   * question by making the reader filter it out. Present-means-unusual inverts that: a grep for the
+   * field *is* the audit, and it costs nothing on the normal case.
+   *
+   * A journey whose operator tokens name a foreign company is rejected outright by
+   * {@link matchesNetworkOperator} and never reaches here. What this field catches is the mixed
+   * response — an unexpected `train.operator` on a journey some other token vouched for.
+   */
+  readonly feedOperator?: string;
+
+  /**
    * How many times this trip has been looked up, including the run that produced this verdict.
    * Set by the verification run rather than by classification, and used to stop retrying a trip
    * that will never resolve (a number KVV published on a line no feed knows) on every run for the
    * whole six-day window.
+   *
+   * Only carried while the verdict is still provisional, since that is the only state
+   * {@link needsCheck} consults it in. On a settled verdict the count is spent bookkeeping.
    */
   readonly attempts?: number;
-
-  readonly source: 'bahn.expert';
-  readonly journeyId?: string;
 }
 
 function stopEvents(stop: JourneyStop): ReadonlyArray<JourneyStopEvent | null | undefined> {
@@ -316,16 +363,16 @@ function createVerification(
   status: VerificationStatus,
   counts: SegmentCounts,
   now: Date,
-  options: { journeyId?: string; feedLine?: string } = {},
+  options: { feedLine?: string; feedOperator?: string } = {},
 ): TripVerification {
   const { trackedOutsideSegment: _internal, ...published } = counts;
   return {
     status,
-    checkedAt: now.toISOString(),
+    source: VERIFICATION_SOURCE,
+    checkedAt: formatBerlinWallClock(now.getTime()).date,
     ...published,
     ...(options.feedLine === undefined ? {} : { feedLine: options.feedLine }),
-    source: 'bahn.expert',
-    ...(options.journeyId === undefined ? {} : { journeyId: options.journeyId }),
+    ...(options.feedOperator === undefined ? {} : { feedOperator: options.feedOperator }),
   };
 }
 
@@ -334,12 +381,82 @@ export function createUnresolvedVerification(now: Date): TripVerification {
   return createVerification('unresolved', NO_COUNTS, now);
 }
 
+/**
+ * How the feed names the operator of the KVV Stadtbahn network, in the three forms it publishes:
+ * the canonical short code, the company name, and the opaque administration ID.
+ *
+ * The name and the code are the load-bearing ones — they *say* AVG. The administration ID is only
+ * corroborating: `A6` identifies nobody on its own, is suffixed per line (`A6S1`, `A6S11`), and a
+ * prefix test on it would happily accept an unrelated `A60`. It is matched last and exactly, so a
+ * response that carries an ID and nothing else still resolves.
+ */
+const NETWORK_OPERATOR_NAME = 'albtal';
+const NETWORK_OPERATOR_CODE = 'avg';
+const NETWORK_ADMINISTRATION_IDS = new Set(['a6', 'a6s1', 'a6s11']);
+
+/** Every operator token the response carries, normalized. Empty when the feed named none. */
+function collectOperatorTokens(details: JourneyDetails): string[] {
+  const tokens: string[] = [];
+  const push = (value: string | undefined): void => {
+    if (value) tokens.push(normalizeGermanText(value));
+  };
+
+  push(details.train?.operator);
+  push(details.train?.admin);
+  // Per-leg administration repeats for every stop, so the first one that carries it is enough.
+  for (const stop of details.stops ?? []) {
+    const administration = (stop.departure ?? stop.arrival)?.transport?.administration;
+    if (!administration) continue;
+    push(administration.operatorCode);
+    push(administration.operatorName);
+    push(administration.administrationID);
+    break;
+  }
+  return tokens;
+}
+
+/**
+ * Whether this journey belongs to the network KVV publishes about.
+ *
+ * A Zugnummer is not unique — 20019 alone returns eleven journeys spread over VIAS at Arnhem, ÖBB
+ * near Vienna, a Nuremberg U-Bahn and buses in Leipzig, Worms and Losheim. Identity was previously
+ * confirmed by finding *a stop* at the announced date and time (±2 minutes), which an unrelated
+ * all-day service satisfies by coincidence: stored trip `S7 85586 2026-08-13 19:55 Achern →
+ * Karlsruhe Hbf` matched an SNCF Rennes → Brest run and was published as a real verdict.
+ *
+ * The operator is the key the line name only pretends to be. `journey.find` does not return it, so
+ * this cannot narrow the candidate list — it rejects a wrong candidate after its details arrive,
+ * and the caller moves on to the next one.
+ *
+ * A journey that names **no** operator at all is accepted: the fields are absent on some responses,
+ * and treating silence as foreign would throw away answers the feed did give us. Naming an operator
+ * that is not AVG is a different matter and is rejected. Should KVV ever publish a line another
+ * company runs, its journeys are rejected here and the trip is reported `unresolved` — provisional,
+ * retried and visible. That is the safe direction to fail; the alternative is a confident verdict
+ * computed from a stranger's train.
+ */
+function namesNetworkOperator(token: string): boolean {
+  return (
+    token.includes(NETWORK_OPERATOR_NAME) ||
+    token === NETWORK_OPERATOR_CODE ||
+    NETWORK_ADMINISTRATION_IDS.has(token)
+  );
+}
+
+export function matchesNetworkOperator(details: JourneyDetails): boolean {
+  const tokens = collectOperatorTokens(details);
+  if (tokens.length === 0) return true;
+  return tokens.some(namesNetworkOperator);
+}
+
 /** Classify one stored cancellation against the journey the feed returned for it. */
 export function classifyJourney(
   cancellation: Cancellation,
   details: JourneyDetails,
   now: Date,
 ): TripVerification | null {
+  if (!matchesNetworkOperator(details)) return null;
+
   const stops = details.stops ?? [];
   const bounds = locateSegment(cancellation, stops);
   if (!bounds) return null;
@@ -347,8 +464,11 @@ export function classifyJourney(
   const counts = countSegment(stops, bounds);
   const status = determineStatus(counts, details.cancelled === true);
   const feedLine = details.train?.line;
+  const feedOperator = details.train?.operator;
+  const unexpectedOperator =
+    feedOperator && !namesNetworkOperator(normalizeGermanText(feedOperator));
   return createVerification(status, counts, now, {
-    ...(details.journeyId === undefined ? {} : { journeyId: details.journeyId }),
     ...(feedLine && feedLine !== cancellation.line ? { feedLine } : {}),
+    ...(unexpectedOperator ? { feedOperator } : {}),
   });
 }

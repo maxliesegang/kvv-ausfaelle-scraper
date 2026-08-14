@@ -16,12 +16,15 @@ import {
   MAX_ATTEMPTS,
   isVerifiable,
   needsCheck,
+  retainStrongerVerdict,
   withAttemptCount,
 } from '../../src/verification/selection.js';
 import {
   classifyJourney,
+  createUnresolvedVerification,
   determineStatus,
   locateSegment,
+  matchesNetworkOperator,
   type SegmentCounts,
   type TripVerification,
   type VerificationStatus,
@@ -137,13 +140,13 @@ describe('trip selection', () => {
   const NOW_MS = Date.parse('2026-08-13T10:00:00.000Z');
   const verified = (overrides: Partial<TripVerification>): TripVerification => ({
     status: 'cancelled',
-    checkedAt: '2026-08-13T10:00:00.000Z',
+    source: 'bahn.expert',
+    checkedAt: '2026-08-13',
     segmentStops: 3,
     segmentCancelledStops: 3,
     segmentTrackedStops: 0,
     journeyStops: 3,
     journeyCancelledStops: 3,
-    source: 'bahn.expert',
     ...overrides,
   });
 
@@ -184,10 +187,132 @@ describe('trip selection', () => {
     assert.strictEqual(needsCheck(exhausted, true), true);
   });
 
-  it('counts attempts cumulatively across runs', () => {
+  it('counts attempts cumulatively across runs while a verdict stays provisional', () => {
     const first = withAttemptCount(verified({ status: 'unresolved' }), undefined);
     assert.strictEqual(first.attempts, 1);
-    assert.strictEqual(withAttemptCount(verified({}), first).attempts, 2);
+    assert.strictEqual(withAttemptCount(verified({ status: 'no-data' }), first).attempts, 2);
+  });
+
+  it('drops the attempt count once a verdict settles', () => {
+    // `needsCheck` reads `attempts` only for provisional verdicts, so on a settled one it is a
+    // number nothing will consult again — and one paid for on every departed trip.
+    const provisional = withAttemptCount(verified({ status: 'no-data' }), undefined);
+    const settled = withAttemptCount(verified({ status: 'cancelled' }), provisional);
+    assert.strictEqual(settled.attempts, undefined);
+    assert.ok(!('attempts' in settled), 'the key is absent, not merely undefined');
+    // Dropping it cannot revive a retry: a settled verdict is not re-checked at all.
+    assert.strictEqual(needsCheck(tripOn({ verification: settled }), false), false);
+  });
+
+  // The feed thins realtime out of a journey as the day recedes, so a later look at the same trip
+  // sees strictly less than the first one did. Every case here is taken from the 2026-08-13
+  // recheck, where decay alone turned `ran` into `no-data` and `partial` into `cancelled`.
+  describe('evidence ratchet', () => {
+    const ran = verified({ status: 'ran', segmentCancelledStops: 0, segmentTrackedStops: 13 });
+    const partial = verified({
+      status: 'partial',
+      segmentCancelledStops: 1,
+      segmentTrackedStops: 1,
+    });
+
+    it('takes a fresh verdict when the trip has never been verified', () => {
+      const choice = retainStrongerVerdict(undefined, ran);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.status, 'ran');
+      // Settled on the first look, so it never needs an attempt count.
+      assert.strictEqual(choice.verification.attempts, undefined);
+    });
+
+    it('counts the attempt when a first look lands provisional', () => {
+      const choice = retainStrongerVerdict(undefined, verified({ status: 'unresolved' }));
+      assert.strictEqual(choice.verification.attempts, 1);
+    });
+
+    it('discards a re-check that lost the observations behind a `ran` verdict', () => {
+      const decayed = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(ran, decayed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.status, 'ran');
+      assert.strictEqual(choice.verification.segmentTrackedStops, 13);
+    });
+
+    it('discards a re-check that would turn `partial` into `cancelled` by losing evidence', () => {
+      const decayed = verified({
+        status: 'cancelled',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(partial, decayed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.status, 'partial');
+    });
+
+    it('keeps retries bounded when a provisional verdict is re-checked', () => {
+      // Retention can only ever keep a *settled* verdict — a provisional one carries zero evidence
+      // by definition, so no fresh verdict can be weaker than it. The bound therefore lives on the
+      // path where the fresh verdict wins, and it is the attempt count that has to survive there.
+      const stale = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+        attempts: 1,
+      });
+      const again = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(stale, again);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.attempts, 2);
+    });
+
+    it('discards the attempt count when a decayed re-check keeps a settled verdict', () => {
+      const previous = { ...ran, attempts: 1 };
+      const decayed = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(previous, decayed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.attempts, undefined);
+    });
+
+    it('accepts late-arriving evidence, which is what makes a retry worth doing', () => {
+      const noData = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const arrived = verified({ status: 'cancelled', segmentCancelledStops: 3 });
+      const choice = retainStrongerVerdict(noData, arrived);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.status, 'cancelled');
+    });
+
+    it('takes an equally-evidenced re-check, refreshing the verdict', () => {
+      const later = { ...ran, checkedAt: '2026-08-14' };
+      const choice = retainStrongerVerdict(ran, later);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.checkedAt, '2026-08-14');
+    });
+
+    it('never lets an `unresolved` re-check erase a settled verdict', () => {
+      const unresolved = verified({
+        status: 'unresolved',
+        segmentStops: 0,
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(partial, unresolved);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.status, 'partial');
+    });
   });
 });
 
@@ -222,6 +347,76 @@ describe('verdict rules', () => {
       assert.strictEqual(determineStatus(input, journeyCancelled), expected);
     });
   }
+});
+
+// A Zugnummer is reused all over Europe, and the announced departure time is matched with a
+// ±2-minute tolerance, so an unrelated all-day service can satisfy it by coincidence — which is
+// exactly how `S7 85586 2026-08-13 19:55 Achern -> Karlsruhe Hbf` was once verified against an
+// SNCF Rennes -> Brest run.
+describe('operator identity', () => {
+  const segment = [stop('Achern', '19:55'), stop('Karlsruhe Hbf', '20:40')];
+  const trip = tripOn({
+    line: 'S7',
+    trainNumber: '85586',
+    fromStop: 'Achern',
+    fromTime: '19:55',
+    toStop: 'Karlsruhe Hbf',
+    toTime: '20:40',
+  });
+
+  const withOperator = (
+    train?: { operator?: string; admin?: string },
+    administration?: { operatorCode?: string; operatorName?: string; administrationID?: string },
+  ) => ({
+    stops: administration
+      ? segment.map((s) => ({ ...s, departure: { ...s.departure, transport: { administration } } }))
+      : segment,
+    ...(train ? { train } : {}),
+  });
+
+  it('accepts the network operator named in full', () => {
+    const details = withOperator({ operator: 'Albtal-Verkehrs-Gesellschaft mbH', admin: 'A6S11' });
+    assert.strictEqual(matchesNetworkOperator(details), true);
+    assert.ok(classifyJourney(trip, details, NOW));
+  });
+
+  it('accepts the canonical operator code carried per leg', () => {
+    const details = withOperator(undefined, { operatorCode: 'AVG', administrationID: 'A6' });
+    assert.strictEqual(matchesNetworkOperator(details), true);
+  });
+
+  it('rejects a foreign operator that matched only by coincidence of time', () => {
+    const details = withOperator({ operator: 'SNCF', admin: '87' }, { operatorCode: 'R' });
+    assert.strictEqual(matchesNetworkOperator(details), false);
+    // Rejected before any counting, so the caller falls through to the next candidate.
+    assert.strictEqual(classifyJourney(trip, details, NOW), null);
+  });
+
+  it('rejects an unrelated administration whose ID merely starts like the network one', () => {
+    assert.strictEqual(matchesNetworkOperator(withOperator({ admin: 'A60' })), false);
+  });
+
+  it('accepts a journey that names no operator at all', () => {
+    // Silence is not evidence of a foreign train, and rejecting it would discard real answers.
+    assert.strictEqual(matchesNetworkOperator({ stops: segment }), true);
+  });
+
+  it('does not record the operator when it is the expected network one', () => {
+    // Present-means-unusual: storing `Albtal…` on the overwhelming majority of records would make
+    // the audit a filter instead of a grep, and cost bytes on every departed trip to say "normal".
+    const details = withOperator({ operator: 'Albtal-Verkehrs-Gesellschaft mbH', admin: 'A6' });
+    const verdict = classifyJourney(trip, details, NOW);
+    assert.ok(verdict);
+    assert.ok(!('feedOperator' in verdict), 'the key is absent on the normal case');
+  });
+
+  it('records an unexpected operator on a journey another token vouched for', () => {
+    // The mixed response `matchesNetworkOperator` lets through: a foreign `train.operator` on a
+    // journey whose per-leg administration says AVG. This is exactly what the field is for.
+    const details = withOperator({ operator: 'SNCF' }, { operatorCode: 'AVG' });
+    assert.strictEqual(matchesNetworkOperator(details), true);
+    assert.strictEqual(classifyJourney(trip, details, NOW)?.feedOperator, 'SNCF');
+  });
 });
 
 describe('journey classification', () => {
@@ -270,6 +465,17 @@ describe('journey classification', () => {
   it('does not infer cancellation when the feed has no data at all', () => {
     const stops = [stop('Ittersbach Rathaus', '09:21'), stop('Ettlingen Stadt', '09:48')];
     assert.strictEqual(classifyJourney(tripOn(), { stops }, NOW)?.status, 'no-data');
+  });
+
+  it('records which feed answered, on every verdict', () => {
+    // Provenance is the one fact about a verdict that cannot be recovered later, so it is stamped
+    // on the unresolved case too — where there is no journey to re-derive anything from.
+    const stops = [
+      stop('Ittersbach Rathaus', '09:21', { delay: 0 }),
+      stop('Ettlingen Stadt', '09:48', { delay: 2 }),
+    ];
+    assert.strictEqual(classifyJourney(tripOn(), { stops }, NOW)?.source, 'bahn.expert');
+    assert.strictEqual(createUnresolvedVerification(NOW).source, 'bahn.expert');
   });
 
   it('reports a partial cancellation when only some stops are cancelled', () => {

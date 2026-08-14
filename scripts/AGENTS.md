@@ -64,6 +64,25 @@ This is the most specific guidance for maintenance scripts.
     `journeyStops` / `journeyCancelledStops` for the whole run. The journey scope is what makes a
     segment count readable — `18/30 cancelled` means something different on a 30-stop run than on
     a 132-stop one, and it reveals a disruption that spilled past the segment KVV named.
+  - **The record carries only what is read or unrecoverable.** Verification is stamped on every
+    departed trip, so a field costing a few bytes costs them ~1800 times per Fahrplan year and in
+    every commit diff. Fields are dropped when nothing reads them and they can be re-derived
+    (`journeyId` pointed into a feed that forgets after six days, so it is a dead pointer before
+    anyone could follow it), stored only when anomalous when their whole
+    purpose is spotting the exception (`feedLine`, `feedOperator`), and stored only while live when
+    they are run bookkeeping (`attempts`, provisional verdicts only). `checkedAt` is a Berlin-local
+    **date**: everything it guards is measured in days. The counts stay in full — they decide the
+    verdict, and the feed cannot be asked again once the window closes.
+  - **`source` is the deliberate exception to that rule.** It is a constant today (`bahn.expert`,
+    the `VerificationSource` union in `src/verification/verify.ts`) and is stored anyway, because
+    provenance is the one thing about a verdict that cannot be recovered afterwards. A trip the
+    feed never observed — `S5 84957 2026-08-13` carries realtime on none of its 39 stops — is
+    permanently unverifiable _by that feed_, and if a second source is ever added its answer must
+    be distinguishable from this one rather than silently replacing it. Stamping provenance from
+    the start keeps published records comparable across that change instead of splitting them into
+    a before and an after. It is **not** a confidence ranking: `retainStrongerVerdict` compares
+    observed stops, and comparing counts across feeds that watch different things would need its
+    own rule, never an implicit preference for whichever source ran last.
   - **Advisory only.** It writes `verification` and nothing else. A stored cancellation means
     "KVV announced this trip would not run", which stays true whatever the train did;
     verification adds the separate fact "it did / did not actually run". The disagreement
@@ -87,12 +106,42 @@ This is the most specific guidance for maintenance scripts.
     `feedLine`: a naming-convention marker whose value is longitudinal, **never** a reason to
     rewrite `line` — doing so would file trips under lines KVV never mentioned and silently undo
     the override decisions.
+  - **The operator is the key the line only pretends to be** (`matchesNetworkOperator` in
+    `src/verification/verify.ts`). A Zugnummer is reused across Europe — 20019 returns eleven
+    journeys spanning VIAS at Arnhem, ÖBB near Vienna, a Nuremberg U-Bahn and buses in Leipzig,
+    Worms and Losheim — and identity is otherwise confirmed only by finding _a stop_ at the
+    announced date and time (±2 min), which an unrelated all-day service satisfies by coincidence:
+    `S7 85586 2026-08-13 19:55 Achern → Karlsruhe Hbf` was verified against an SNCF Rennes → Brest
+    run and published as `no-data`. A journey whose operator is named and is not AVG is rejected,
+    and the caller falls through to the next candidate — which is how that trip then found its
+    real run (feed line `S71`, segment fully cancelled). Match on what the feed actually _says_ —
+    `train.operator` (`Albtal…`) and `administration.operatorCode` (`AVG`) — with the opaque
+    `train.admin` ID (`A6`, `A6S1`, `A6S11`) only corroborating and matched exactly, never by
+    prefix, which would accept an unrelated `A60`. A journey naming **no** operator is accepted;
+    silence is not evidence of a foreign train. Note `journey.find` omits the operator entirely,
+    so this confirms a candidate _after_ its details arrive and cannot pre-filter the list.
+    The operator behind a verdict is stored as `feedOperator` **only when it is not the network
+    operator**, so auditing which train answered is a grep rather than a re-fetch of every journey —
+    and a hit _is_ the anomaly instead of something to filter down to. Same present-means-unusual
+    rule as `feedLine`; a rejected foreign journey never reaches the field, so what it catches is the
+    mixed response whose `train.operator` is unexpected but whose other tokens vouched for it.
   - **Retries are bounded** (`MAX_ATTEMPTS` in `src/verification/selection.ts`). `no-data` and
     `unresolved` are provisional and retried on later runs, but only a few times: some trips never
     resolve — KVV occasionally publishes a train number on a line no feed knows — and an unbounded
     retry would re-ask on every run for the whole six-day window. `--recheck` ignores the budget.
     Trip selection (`isVerifiable`, `needsCheck`, `withAttemptCount`) lives in `selection.ts` so
     the policy is pure and unit-tested, leaving the script as orchestration.
+  - **Evidence only ratchets up** (`retainStrongerVerdict` in `src/verification/selection.ts`).
+    bahn.expert thins realtime detail out of a journey as the day recedes, so a re-check can see
+    strictly less than the first check did and the same trip re-reads as less served — measured on
+    2026-08-13, where a next-morning recheck turned four `ran` verdicts into `no-data`/`partial`.
+    A fresh verdict backed by fewer observed stops (cancelled + tracked, over the segment) than the
+    stored one is therefore discarded and the stored verdict kept, logged as `= kept` like
+    `storage.ts` logs its retentions. Late-arriving realtime moves the other way — it _adds_
+    cancellation flags or observations — and still wins, which is what makes retrying `no-data`
+    worth doing. The attempt count is bumped either way, so a permanently decaying trip is not
+    re-asked forever. Note that a `partial` → `cancelled` change is usually **not** decay: it is
+    the feed finishing the picture by flagging one more stop, and the counts distinguish the two.
   - **Best-effort.** Network/decode failures are counted and reported, never thrown; the script
     always exits 0 and the workflow step is `continue-on-error`. A third-party outage must never
     turn the data pipeline red — unlike `src/index.ts`'s exit codes, which flag _scraper_ gaps a

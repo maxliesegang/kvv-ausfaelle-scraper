@@ -16,6 +16,8 @@
  *   the script always exits 0: a third-party outage must not turn the data pipeline red.
  * - `no-data` and `unresolved` are re-checked on later runs while the trip stays inside the
  *   window; settled verdicts are left alone unless `--recheck` is passed.
+ * - Evidence only ratchets up: a re-check that sees *less* than the stored verdict did is
+ *   discarded (`retainStrongerVerdict`), because the feed thins realtime out as a day recedes.
  */
 
 import path from 'node:path';
@@ -29,7 +31,7 @@ import {
   findJourneys,
   type JourneyCandidate,
 } from '../src/verification/bahn-expert.js';
-import { isVerifiable, needsCheck, withAttemptCount } from '../src/verification/selection.js';
+import { isVerifiable, needsCheck, retainStrongerVerdict } from '../src/verification/selection.js';
 import {
   classifyJourney,
   createUnresolvedVerification,
@@ -108,15 +110,22 @@ async function verifySafely(
   }
 }
 
-function describeVerdict(trip: Cancellation, verdict: TripVerification): string {
+function describeVerdict(
+  trip: Cancellation,
+  verdict: TripVerification,
+  retainedPrevious: boolean,
+): string {
   const segment =
     `${verdict.segmentCancelledStops} cancelled / ${verdict.segmentTrackedStops} tracked ` +
     `of ${verdict.segmentStops} in segment`;
   const journey = `${verdict.journeyCancelledStops}/${verdict.journeyStops} in journey`;
   const feedLine = verdict.feedLine ? ` [feed line ${verdict.feedLine}]` : '';
+  // Marked like `storage.ts` logs its retentions, so a rule that keeps data instead of writing it
+  // is visible in a run rather than silent.
+  const kept = retainedPrevious ? ' = kept (fresh check saw less evidence)' : '';
   return (
     `  ${verdict.status.padEnd(10)} ${trip.line} ${trip.trainNumber} ${trip.date} ` +
-    `${trip.fromTime} ${trip.fromStop} -> ${trip.toStop} (${segment}; ${journey})${feedLine}`
+    `${trip.fromTime} ${trip.fromStop} -> ${trip.toStop} (${segment}; ${journey})${feedLine}${kept}`
   );
 }
 
@@ -149,7 +158,7 @@ async function main(): Promise<void> {
     (file) => file.endsWith('.json') && !file.startsWith('index'),
   );
 
-  const summary = { checked: 0, failed: 0, changedFiles: 0 };
+  const summary = { checked: 0, failed: 0, changedFiles: 0, verdictsRetained: 0 };
   const countByStatus = new Map<string, number>();
 
   for (const file of files) {
@@ -170,19 +179,25 @@ async function main(): Promise<void> {
     );
 
     const verdictByTrip = new Map<Cancellation, TripVerification>();
+    const retainedTrips = new Set<Cancellation>();
     outcomes.forEach((outcome, index) => {
       const trip = pending[index];
       if (!trip) return;
-      if (outcome.ok)
-        verdictByTrip.set(trip, withAttemptCount(outcome.verification, trip.verification));
-      else summary.failed += 1;
+      if (!outcome.ok) {
+        summary.failed += 1;
+        return;
+      }
+      const choice = retainStrongerVerdict(trip.verification, outcome.verification);
+      verdictByTrip.set(trip, choice.verification);
+      if (choice.retainedPrevious) retainedTrips.add(trip);
     });
     if (verdictByTrip.size === 0) continue;
 
     for (const [trip, verdict] of verdictByTrip) {
       summary.checked += 1;
+      if (retainedTrips.has(trip)) summary.verdictsRetained += 1;
       countByStatus.set(verdict.status, (countByStatus.get(verdict.status) ?? 0) + 1);
-      if (options.verbose) console.log(describeVerdict(trip, verdict));
+      if (options.verbose) console.log(describeVerdict(trip, verdict, retainedTrips.has(trip)));
     }
 
     if (options.write) {
@@ -203,6 +218,12 @@ async function main(): Promise<void> {
   );
   for (const [status, count] of [...countByStatus].sort((a, b) => b[1] - a[1])) {
     console.log(`  ${String(count).padStart(4)}  ${status}`);
+  }
+  if (summary.verdictsRetained > 0) {
+    console.log(
+      `  ${String(summary.verdictsRetained).padStart(4)}  stored verdicts kept ` +
+        '(fresh check saw less evidence)',
+    );
   }
   if (summary.failed > 0) {
     console.log(`  ${String(summary.failed).padStart(4)}  request failures (skipped)`);

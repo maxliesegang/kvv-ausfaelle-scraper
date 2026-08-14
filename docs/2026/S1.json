@@ -2772,15 +2772,14 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "checkedAt": "2026-08-14T01:27:55.942Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 33,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
       "journeyStops": 44,
       "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-fc0dd2be-1fa1-39cd-ba7e-1803d8e45f55",
-      "attempts": 3
+      "attempts": 1
     }
   },
   {
@@ -2798,15 +2797,14 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "checkedAt": "2026-08-14T01:27:55.942Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 30,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
       "journeyStops": 30,
       "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260813-a15c5ba4-8d07-3b21-a2f1-18396282cbf8",
-      "attempts": 3
+      "attempts": 1
     }
   },
   {
@@ -2824,15 +2822,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 44,
       "segmentCancelledStops": 44,
       "segmentTrackedStops": 0,
       "journeyStops": 44,
-      "journeyCancelledStops": 44,
-      "source": "bahn.expert",
-      "journeyId": "20260813-e5bcf80a-6f4d-376e-a74f-3e9db235d624",
-      "attempts": 1
+      "journeyCancelledStops": 44
     }
   }
 ]

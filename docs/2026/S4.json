@@ -3556,15 +3556,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 31,
       "segmentCancelledStops": 31,
       "segmentTrackedStops": 0,
       "journeyStops": 32,
-      "journeyCancelledStops": 32,
-      "source": "bahn.expert",
-      "journeyId": "20260808-318e0c2b-e45e-37aa-83e2-23a0c294a331",
-      "attempts": 1
+      "journeyCancelledStops": 32
     }
   },
   {
@@ -3582,15 +3580,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 32,
       "segmentCancelledStops": 32,
       "segmentTrackedStops": 0,
       "journeyStops": 32,
-      "journeyCancelledStops": 32,
-      "source": "bahn.expert",
-      "journeyId": "20260808-6748cf25-213c-3bb6-a2b7-cfd7760ad461",
-      "attempts": 1
+      "journeyCancelledStops": 32
     }
   },
   {
@@ -3607,16 +3603,14 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "partial",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 37,
-      "segmentCancelledStops": 36,
+      "segmentCancelledStops": 37,
       "segmentTrackedStops": 1,
       "journeyStops": 57,
-      "journeyCancelledStops": 36,
-      "source": "bahn.expert",
-      "journeyId": "20260809-8b428b6f-bc9a-372e-89b4-aa27d4464cc7",
-      "attempts": 1
+      "journeyCancelledStops": 37
     }
   },
   {
@@ -3634,15 +3628,13 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "partial",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 28,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 22,
       "journeyStops": 37,
-      "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "journeyId": "20260810-3bdf1694-b5ab-30cb-bed5-f777f891bd0d",
-      "attempts": 1
+      "journeyCancelledStops": 0
     }
   },
   {
@@ -3660,14 +3652,14 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "unresolved",
-      "checkedAt": "2026-08-14T01:27:55.942Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
       "journeyStops": 0,
       "journeyCancelledStops": 0,
-      "source": "bahn.expert",
-      "attempts": 3
+      "attempts": 1
     }
   },
   {
@@ -3685,15 +3677,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 18,
       "segmentCancelledStops": 18,
       "segmentTrackedStops": 0,
       "journeyStops": 18,
-      "journeyCancelledStops": 18,
-      "source": "bahn.expert",
-      "journeyId": "20260813-89cabc67-f63f-3869-a1cb-32c30cd530ba",
-      "attempts": 1
+      "journeyCancelledStops": 18
     }
   },
   {
@@ -3710,17 +3700,15 @@
     "cause": "operational",
     "causeKeyword": "betriebsbedingt",
     "verification": {
-      "status": "partial",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 42,
-      "segmentCancelledStops": 41,
+      "segmentCancelledStops": 42,
       "segmentTrackedStops": 1,
       "journeyStops": 52,
-      "journeyCancelledStops": 41,
-      "feedLine": "S41",
-      "source": "bahn.expert",
-      "journeyId": "20260813-aec8f33d-b9cf-3759-afa4-a4afcbe7c305",
-      "attempts": 1
+      "journeyCancelledStops": 42,
+      "feedLine": "S41"
     }
   },
   {
@@ -3737,16 +3725,14 @@
     "cause": "operational",
     "causeKeyword": "betriebsbedingt",
     "verification": {
-      "status": "partial",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 23,
-      "segmentCancelledStops": 22,
+      "segmentCancelledStops": 23,
       "segmentTrackedStops": 1,
       "journeyStops": 32,
-      "journeyCancelledStops": 22,
-      "source": "bahn.expert",
-      "journeyId": "20260813-5bbaa077-762b-31a0-9429-3445ae24b174",
-      "attempts": 1
+      "journeyCancelledStops": 23
     }
   },
   {
@@ -3764,15 +3750,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 31,
       "segmentCancelledStops": 31,
       "segmentTrackedStops": 0,
       "journeyStops": 32,
-      "journeyCancelledStops": 32,
-      "source": "bahn.expert",
-      "journeyId": "20260813-b371570b-e841-30b1-9582-09b12bbe46d7",
-      "attempts": 1
+      "journeyCancelledStops": 32
     }
   },
   {
@@ -3790,15 +3774,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 32,
       "segmentCancelledStops": 32,
       "segmentTrackedStops": 0,
       "journeyStops": 32,
-      "journeyCancelledStops": 32,
-      "source": "bahn.expert",
-      "journeyId": "20260813-7ef75a6d-a2ba-388c-b4ab-4082a41152f7",
-      "attempts": 1
+      "journeyCancelledStops": 32
     }
   },
   {
@@ -3816,15 +3798,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 32,
       "segmentCancelledStops": 32,
       "segmentTrackedStops": 0,
       "journeyStops": 32,
-      "journeyCancelledStops": 32,
-      "source": "bahn.expert",
-      "journeyId": "20260813-d751cb6c-544e-3c8d-970c-32851d5c787d",
-      "attempts": 1
+      "journeyCancelledStops": 32
     }
   },
   {
@@ -3842,15 +3822,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T20:57:12.298Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 32,
       "segmentCancelledStops": 32,
       "segmentTrackedStops": 0,
       "journeyStops": 33,
-      "journeyCancelledStops": 33,
-      "source": "bahn.expert",
-      "journeyId": "20260813-e334f5ca-eb9a-3622-b591-f7a62e11ccb2",
-      "attempts": 1
+      "journeyCancelledStops": 33
     }
   },
   {
@@ -3868,15 +3846,13 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
-      "checkedAt": "2026-08-13T21:59:11.991Z",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-14",
       "segmentStops": 6,
       "segmentCancelledStops": 6,
       "segmentTrackedStops": 0,
       "journeyStops": 10,
-      "journeyCancelledStops": 10,
-      "source": "bahn.expert",
-      "journeyId": "20260813-12133a4f-c27a-38f9-9c6a-a4e4c5477e15",
-      "attempts": 1
+      "journeyCancelledStops": 10
     }
   }
 ]

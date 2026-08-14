@@ -45,6 +45,18 @@ export interface JourneyStopEvent {
    * so a reader that only looks at {@link JourneyStop.cancelled} undercounts.
    */
   readonly cancelled?: boolean | null;
+  /**
+   * Who runs this leg. `operatorCode` is the feed's canonical short token (`AVG`, `SNCF`, `Bus`)
+   * and the most explicit statement of operator identity in the whole response — the top-level
+   * `train.admin` carries only an opaque ID (`A6`, `A6S11`, `87`).
+   */
+  readonly transport?: {
+    readonly administration?: {
+      readonly administrationID?: string;
+      readonly operatorCode?: string;
+      readonly operatorName?: string;
+    };
+  };
 }
 
 export interface JourneyStop {
@@ -58,7 +70,18 @@ export interface JourneyDetails {
   readonly journeyId?: string;
   readonly cancelled?: boolean | null;
   readonly stops?: readonly JourneyStop[];
-  readonly train?: { readonly line?: string; readonly journeyNumber?: number };
+  readonly train?: {
+    readonly line?: string;
+    readonly journeyNumber?: number;
+    /**
+     * Operating company, and its administration ID (`A6` for AVG, `87` for SNCF, `81` for ÖBB).
+     *
+     * Returned only by `journey.detailsByJourneyId` — `journey.find` omits both, which is why the
+     * operator can confirm a candidate's identity but cannot pre-filter the candidate list.
+     */
+    readonly admin?: string;
+    readonly operator?: string;
+  };
 }
 
 export interface JourneyCandidate {
