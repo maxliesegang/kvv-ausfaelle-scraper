@@ -1203,5 +1203,19 @@
       "journeyCancelledStops": 0,
       "attempts": 3
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T13:30:00.000Z",
+    "trainNumber": "26053",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "19:48",
+    "toStop": "Hochstetten",
+    "toTime": "20:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274672",
+    "capturedAt": "2026-08-15T16:17:48.135Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

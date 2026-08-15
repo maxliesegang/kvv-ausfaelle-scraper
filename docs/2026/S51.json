@@ -1177,6 +1177,16 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274621",
     "capturedAt": "2026-08-15T12:27:43.642Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "ran",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-15",
+      "segmentStops": 17,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 17,
+      "journeyStops": 43,
+      "journeyCancelledStops": 0
+    }
   }
 ]

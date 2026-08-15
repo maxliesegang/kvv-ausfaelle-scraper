@@ -3891,7 +3891,17 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
     "capturedAt": "2026-08-15T12:27:42.606Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-15",
+      "segmentStops": 31,
+      "segmentCancelledStops": 31,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32
+    }
   },
   {
     "line": "S4",
@@ -3904,6 +3914,72 @@
     "toTime": "17:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
     "capturedAt": "2026-08-15T12:27:42.606Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-15",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T12:49:42.000Z",
+    "trainNumber": "85529",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "18:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "19:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T16:17:48.399Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T12:49:42.000Z",
+    "trainNumber": "85536",
+    "fromStop": "Bretten Bf.",
+    "fromTime": "19:39",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "20:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T16:17:48.399Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T12:49:42.000Z",
+    "trainNumber": "85538",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "20:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "21:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T16:17:48.399Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T12:49:42.000Z",
+    "trainNumber": "85465",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "21:15",
+    "toStop": "Bretten Bf.",
+    "toTime": "21:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T16:17:48.399Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }
