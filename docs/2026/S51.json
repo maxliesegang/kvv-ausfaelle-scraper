@@ -1164,5 +1164,19 @@
       "journeyCancelledStops": 7,
       "feedLine": "E"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T12:10:39.000Z",
+    "trainNumber": "84911",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "14:50",
+    "toStop": "KA Rheinbergstr.",
+    "toTime": "15:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274621",
+    "capturedAt": "2026-08-15T12:27:43.642Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

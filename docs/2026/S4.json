@@ -3854,5 +3854,57 @@
       "journeyStops": 10,
       "journeyCancelledStops": 10
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T07:45:00.000Z",
+    "trainNumber": "85433",
+    "fromStop": "Heilbronn Willy-Brandt-Platz",
+    "fromTime": "13:05",
+    "toStop": "Öhringen Cappel",
+    "toTime": "13:50",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T12:27:42.606Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "ran",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-15",
+      "segmentStops": 24,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 24,
+      "journeyStops": 73,
+      "journeyCancelledStops": 0
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T07:45:00.000Z",
+    "trainNumber": "85521",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "14:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "15:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T12:27:42.606Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-15",
+    "stand": "2026-08-15T07:45:00.000Z",
+    "trainNumber": "85530",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "16:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "17:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274629",
+    "capturedAt": "2026-08-15T12:27:42.606Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
