@@ -13528,13 +13528,13 @@
     "verification": {
       "status": "no-data",
       "source": "bahn.expert",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-16",
       "segmentStops": 27,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
       "journeyStops": 27,
       "journeyCancelledStops": 0,
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -13765,6 +13765,16 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274621",
     "capturedAt": "2026-08-15T12:27:43.642Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-16",
+      "segmentStops": 39,
+      "segmentCancelledStops": 39,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40
+    }
   }
 ]
