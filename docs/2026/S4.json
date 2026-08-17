@@ -4022,5 +4022,47 @@
       "journeyStops": 57,
       "journeyCancelledStops": 24
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85401",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "03:55",
+    "toStop": "Heilbronn Willy Brandt Platz",
+    "toTime": "05:41",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T00:58:31.300Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85307",
+    "fromStop": "Heilbronn Willy Brandt Platz",
+    "fromTime": "06:21",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T00:58:31.300Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85410",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "06:44",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "08:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T00:58:31.300Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
