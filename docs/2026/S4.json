@@ -4059,7 +4059,17 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
     "capturedAt": "2026-08-17T00:58:31.300Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-17",
+      "segmentStops": 7,
+      "segmentCancelledStops": 7,
+      "segmentTrackedStops": 1,
+      "journeyStops": 17,
+      "journeyCancelledStops": 7
+    }
   },
   {
     "line": "S4",
@@ -4072,6 +4082,73 @@
     "toTime": "08:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
     "capturedAt": "2026-08-17T00:58:31.300Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "no-data",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-17",
+      "segmentStops": 56,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 56,
+      "journeyCancelledStops": 0,
+      "attempts": 1
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85517",
+    "fromStop": "Bretten Bahnhof",
+    "fromTime": "13:17",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "13:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T08:36:31.607Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85519",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "13:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "14:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T08:36:31.607Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85526",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "14:20",
+    "toStop": "Bretten Bahnhof",
+    "toTime": "14:39",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T08:36:31.607Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-17",
+    "stand": "2026-08-16T23:39:00.000Z",
+    "trainNumber": "85528",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "15:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "16:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
+    "capturedAt": "2026-08-17T08:36:31.607Z",
     "cause": "operational",
     "causeKeyword": "betriebsbedingt"
   }

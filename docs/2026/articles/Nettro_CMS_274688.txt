@@ -13,8 +13,9 @@ Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es z
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen. 
 Betroffen ist der Bereich zwischen Karlsruhe Albtalbahnhof und Heilbronn Hauptbahnhof/Willy-Brandt-Platz. 
-85401 Karlsruhe Albtalbahnhof (03:55 Uhr) - Heilbronn Willy Brandt Platz (05:41 Uhr)
-85307 Heilbronn Willy Brandt Platz (06:21 Uhr) - Heilbronn Pfühlpark (06:30 Uhr)
-85410 Heilbronn Pfühlpark (06:44 Uhr) - Karlsruhe Albtalbahnhof (08:42 Uhr)
+85517 Bretten Bahnhof (13:17 Uhr) - Flehingen Bahnhof (13:37 Uhr) 
+85519 KA Albtalbahnhof (13:35 Uhr) - Flehingen Bahnhof (14:37 Uhr)
+85526 Flehingen Bahnhof (14:20 Uhr) - Bretten Bahnhof (14:39 Uhr)
+85528 Flehingen Bahnhof (15:20 Uhr) - KA Albtalbahnhof (16:22 Uhr) 
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
