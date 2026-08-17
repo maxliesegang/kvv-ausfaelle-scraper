@@ -812,13 +812,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 16,
       "segmentCancelledStops": 16,
       "segmentTrackedStops": 0,
       "journeyStops": 16,
-      "journeyCancelledStops": 16
+      "journeyCancelledStops": 16,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   },
   {
@@ -836,13 +840,16 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 16,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 16,
       "journeyStops": 51,
-      "journeyCancelledStops": 0
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 51,
+      "trackedOutsideSegment": 36
     }
   },
   {
@@ -859,14 +866,17 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "partial",
+      "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 12,
       "segmentCancelledStops": 0,
-      "segmentTrackedStops": 1,
+      "segmentTrackedStops": 0,
       "journeyStops": 62,
-      "journeyCancelledStops": 0
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 51,
+      "trackedOutsideSegment": 51
     }
   },
   {
@@ -884,13 +894,16 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
-      "segmentStops": 8,
+      "checkedAt": "2026-08-17",
+      "segmentStops": 12,
       "segmentCancelledStops": 0,
-      "segmentTrackedStops": 8,
+      "segmentTrackedStops": 12,
       "journeyStops": 62,
-      "journeyCancelledStops": 0
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 62,
+      "trackedOutsideSegment": 51
     }
   },
   {
@@ -908,13 +921,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "partial",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 16,
       "segmentCancelledStops": 2,
-      "segmentTrackedStops": 2,
+      "segmentTrackedStops": 0,
       "journeyStops": 62,
-      "journeyCancelledStops": 13
+      "journeyCancelledStops": 13,
+      "journeyTrackedStops": 48,
+      "trackedOutsideSegment": 48,
+      "attempts": 4
     }
   },
   {
@@ -932,13 +949,16 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "ran",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 11,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 11,
       "journeyStops": 62,
-      "journeyCancelledStops": 0
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 62,
+      "trackedOutsideSegment": 52
     }
   },
   {
@@ -956,13 +976,16 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "ran",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 16,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 16,
       "journeyStops": 51,
-      "journeyCancelledStops": 0
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 51,
+      "trackedOutsideSegment": 36
     }
   },
   {
@@ -980,13 +1003,16 @@
     "causeKeyword": "betriebsbedingt",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 11,
       "segmentCancelledStops": 11,
-      "segmentTrackedStops": 1,
+      "segmentTrackedStops": 0,
       "journeyStops": 51,
-      "journeyCancelledStops": 11
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 41,
+      "trackedOutsideSegment": 41
     }
   }
 ]

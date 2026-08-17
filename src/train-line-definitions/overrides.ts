@@ -72,5 +72,12 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
       '84885': 'S51',
       '80702': 'S51',
     },
+    // AVG staffing notice for S1/S11, 2026-08-17. Both Ittersbach–Tullastraße runs are
+    // S12 reinforcements in GTFS, while KVV publishes them under the S11 corridor and never
+    // mentions S12. Same source-scoped corridor rule as 40014/40015 above.
+    Nettro_CMS_274705: {
+      '40017': 'S11',
+      '40016': 'S11',
+    },
   },
 };

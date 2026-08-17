@@ -14,7 +14,7 @@
  */
 
 import type { Cancellation } from '../types.js';
-import { formatBerlinWallClock } from '../utils/berlin-time.js';
+import { formatBerlinWallClock, getBerlinWallClockMs } from '../utils/berlin-time.js';
 import { normalizeGermanText } from '../utils/normalization.js';
 import type { JourneyDetails, JourneyStop, JourneyStopEvent } from './bahn-expert.js';
 
@@ -30,6 +30,8 @@ export type VerificationStatus =
   /** No journey matching this line, date and departure time could be resolved. */
   | 'unresolved';
 
+export type UnresolvedReason = 'invalid-train-number' | 'journey-not-found' | 'journey-mismatch';
+
 /**
  * Realtime feeds a verdict can be derived from.
  *
@@ -40,9 +42,21 @@ export type VerificationSource = 'bahn.expert';
 
 /** The feed this module classifies. */
 export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
+/**
+ * Version of the matching and evidence semantics that produced a verdict.
+ *
+ * Version 2 added bounded schedule matching, direction-aware boundary evidence, instant-based
+ * timestamp comparison, and journey-wide tracking counts. Version 3 scopes operator identity to
+ * the announced segment, which matters on through journeys and for ambiguous line names such as
+ * S6. A stored verdict without this field is version 1. The selection layer uses this only during
+ * a recheck: a newer method may correct a confident old false match, while same-version evidence
+ * continues to ratchet upward.
+ */
+export const VERIFICATION_METHOD_VERSION = 3;
 
 export interface TripVerification {
   readonly status: VerificationStatus;
+  readonly methodVersion: number;
   /**
    * Which realtime feed answered.
    *
@@ -62,7 +76,8 @@ export interface TripVerification {
    * Berlin-local date of the check (`2026-08-14`), so a stale verdict is recognisable.
    *
    * Deliberately a date and not a timestamp: everything this field guards is measured in days —
-   * the feed's ~6-day window, and the realtime decay `retainStrongerVerdict` exists to resist. A
+   * the feed's rolling seven-day window, and the realtime decay `retainStrongerVerdict` exists to
+   * resist. A
    * per-run millisecond stamp only adds bytes to every record and churn to every diff.
    */
   readonly checkedAt: string;
@@ -84,6 +99,17 @@ export interface TripVerification {
   readonly journeyStops: number;
   /** Stops cancelled across the entire journey, including any outside the announced segment. */
   readonly journeyCancelledStops: number;
+  /** Stops carrying realtime across the entire journey, including outside the segment. */
+  readonly journeyTrackedStops: number;
+
+  /** Tracking outside the announced segment that supports an inferred cancellation. */
+  readonly trackedOutsideSegment: number;
+
+  /** Present only when the source explicitly marked the whole journey cancelled. */
+  readonly journeyCancelled?: true;
+
+  /** Why no journey could be resolved; present only on `unresolved` verdicts. */
+  readonly unresolvedReason?: UnresolvedReason;
 
   /**
    * The line the feed reports, recorded **only when it differs from the stored `line`**.
@@ -120,7 +146,7 @@ export interface TripVerification {
    * How many times this trip has been looked up, including the run that produced this verdict.
    * Set by the verification run rather than by classification, and used to stop retrying a trip
    * that will never resolve (a number KVV published on a line no feed knows) on every run for the
-   * whole six-day window.
+   * whole seven-day window.
    *
    * Only carried while the verdict is still provisional, since that is the only state
    * {@link needsCheck} consults it in. On a settled verdict the count is spent bookkeeping.
@@ -145,12 +171,20 @@ function stopEvents(stop: JourneyStop): ReadonlyArray<JourneyStopEvent | null | 
  * second half of its run. A reported time that deviates from the scheduled one is therefore kept
  * as a fallback — a timetable row never deviates.
  */
+function isTrackedEvent(event: JourneyStopEvent | null | undefined): boolean {
+  if (!event) return false;
+  if (event.isRealTime === true) return true;
+  if (!event.time || !event.scheduledTime) return false;
+
+  // Compare instants, not their serializations. The same timestamp can be written as `Z` or with
+  // an explicit offset; treating those strings as different manufactures realtime observations.
+  const actualMs = Date.parse(event.time);
+  const scheduledMs = Date.parse(event.scheduledTime);
+  return !Number.isNaN(actualMs) && !Number.isNaN(scheduledMs) && actualMs !== scheduledMs;
+}
+
 function isTracked(stop: JourneyStop): boolean {
-  return stopEvents(stop).some((event) => {
-    if (!event) return false;
-    if (event.isRealTime === true) return true;
-    return Boolean(event.time && event.scheduledTime && event.time !== event.scheduledTime);
-  });
+  return stopEvents(stop).some(isTrackedEvent);
 }
 
 /**
@@ -167,8 +201,14 @@ function isCancelled(stop: JourneyStop): boolean {
   return stopEvents(stop).some((event) => event?.cancelled === true);
 }
 
-function scheduledWallClock(stop: JourneyStop): { date: string; time: string } | null {
-  const iso = stop.departure?.scheduledTime ?? stop.arrival?.scheduledTime;
+function scheduledWallClock(
+  stop: JourneyStop,
+  preferredEvent: 'arrival' | 'departure',
+): { date: string; time: string } | null {
+  const iso =
+    preferredEvent === 'departure'
+      ? (stop.departure?.scheduledTime ?? stop.arrival?.scheduledTime)
+      : (stop.arrival?.scheduledTime ?? stop.departure?.scheduledTime);
   if (!iso) return null;
   const parsed = Date.parse(iso);
   if (Number.isNaN(parsed)) return null;
@@ -180,85 +220,182 @@ function toMinutes(time: string): number {
   return Number(hours) * 60 + Number(minutes);
 }
 
-/** Loose token overlap — stop naming differs between KVV notices and the feed. */
-function nameTokens(name: string): Set<string> {
-  return new Set(
-    name
-      .toLowerCase()
-      .replace(/[^a-zäöüß]+/g, ' ')
-      .split(' ')
-      .filter((token) => token.length > 2),
-  );
+/**
+ * Canonical stop-name tokens. KVV and the feed abbreviate both place and street suffixes
+ * differently (`KA`/`Karlsruhe`, `Tullastr.`/`Tullastraße`, `Bf.`/`Bahnhof`). Station words are
+ * deliberately dropped: the locality distinguishes `Freudenstadt Bahnhof` from other stops much
+ * better than a generic `Bahnhof` token does.
+ */
+function nameTokens(name: string): string[] {
+  const aliases: Readonly<Record<string, string>> = {
+    ka: 'karlsruhe',
+    karlsr: 'karlsruhe',
+    kniel: 'knielingen',
+    bf: '',
+    hbf: 'haupt',
+    bahnhof: '',
+    pl: 'platz',
+  };
+
+  return [
+    ...new Set(
+      normalizeGermanText(name)
+        .replace(/-/g, ' ')
+        .split(' ')
+        .map((token) => aliases[token] ?? token)
+        .map((token) => token.replace(/str(?:asse)?$/, ''))
+        .map((token) => token.replace(/hauptbahnhof$/, 'haupt').replace(/bahnhof$/, ''))
+        .filter((token) => token.length > 2),
+    ),
+  ];
 }
 
-function overlap(a: Set<string>, b: Set<string>): number {
-  let count = 0;
-  for (const token of a) if (b.has(token)) count += 1;
-  return count;
+/** One-edit tolerance for source typos such as `Wörh` instead of `Wörth`. */
+function tokensMatch(a: string, b: string): boolean {
+  if (a === b) return true;
+  if (Math.abs(a.length - b.length) > 1 || Math.min(a.length, b.length) < 5) return false;
+
+  let edits = 0;
+  let ai = 0;
+  let bi = 0;
+  while (ai < a.length && bi < b.length) {
+    if (a[ai] === b[bi]) {
+      ai += 1;
+      bi += 1;
+      continue;
+    }
+    edits += 1;
+    if (edits > 1) return false;
+    if (a.length > b.length) ai += 1;
+    else if (b.length > a.length) bi += 1;
+    else {
+      ai += 1;
+      bi += 1;
+    }
+  }
+  return edits + (ai < a.length || bi < b.length ? 1 : 0) <= 1;
+}
+
+/** Dice similarity with one-to-one fuzzy token matching. */
+function nameSimilarity(wantedName: string, actualName: string): number {
+  const wanted = nameTokens(wantedName);
+  if (wanted.length === 0) return 0;
+
+  // A slash separates aliases in names such as `Tullastraße/Alter Schlachthof, Karlsruhe`, while
+  // text after a comma is often only the municipality. Score those meaningful variants as well
+  // as the full name. This lets short KVV names match without treating a municipality qualifier
+  // (`Linkenheim Süd, Linkenheim-Hochstetten`) as the stop itself.
+  const beforeComma = actualName.split(',')[0] ?? actualName;
+  const variants = [...new Set([actualName, beforeComma, ...beforeComma.split('/')])];
+  let best = 0;
+
+  for (const variant of variants) {
+    const actual = nameTokens(variant);
+    if (actual.length === 0) continue;
+    const used = new Set<number>();
+    let matches = 0;
+    for (const wantedToken of wanted) {
+      const exact = actual.findIndex((token, index) => !used.has(index) && token === wantedToken);
+      const index =
+        exact !== -1
+          ? exact
+          : actual.findIndex(
+              (token, candidateIndex) =>
+                !used.has(candidateIndex) && tokensMatch(wantedToken, token),
+            );
+      if (index !== -1) {
+        used.add(index);
+        matches += 1;
+      }
+    }
+    best = Math.max(best, (2 * matches) / (wanted.length + actual.length));
+  }
+  return best;
+}
+
+const MINIMUM_NAME_SIMILARITY = 0.55;
+/** Reject a same-named journey whose schedule does not describe the announced trip. */
+const MAX_ENDPOINT_TIME_DELTA_MINUTES = 15;
+
+interface StopMatch {
+  readonly index: number;
+  readonly nameSimilarity: number;
+  readonly timeDeltaMinutes: number;
 }
 
 /**
- * Tolerance when matching the announced departure against the timetable. KVV's notices are not
- * always minute-exact against the feed's schedule (`84793` is published as 05:43 for an 05:45
- * departure). A couple of minutes is safe here because the journey is *already* pinned by train
- * number: the tolerance only decides where inside this run the segment starts, so it cannot
- * accidentally select a different trip.
+ * Pick a stop using name first and time second. Time alone is not identity: on a dense Stadtbahn
+ * corridor an unrelated stop routinely departs in the same minute. The old time-only start match
+ * turned `Wörh Badepark 08:05` into Philippstraße 08:03 and published a confident verdict for
+ * the wrong segment.
  */
-const DEPARTURE_TOLERANCE_MINUTES = 2;
+function findBestStopMatch(
+  wantedName: string,
+  wantedDate: string,
+  wantedTime: string,
+  stops: readonly JourneyStop[],
+  firstIndex: number,
+  preferredEvent: 'arrival' | 'departure',
+): StopMatch | null {
+  const wantedMs = getBerlinWallClockMs(wantedDate, wantedTime);
+  let best: StopMatch | null = null;
 
-/** Index of the stop whose scheduled departure matches the announced one, or -1. */
-function findDepartureIndex(cancellation: Cancellation, stops: readonly JourneyStop[]): number {
-  const wantedMinutes = toMinutes(cancellation.fromTime);
-  return stops.findIndex((stop) => {
-    const wallClock = scheduledWallClock(stop);
-    if (!wallClock || wallClock.date !== cancellation.date) return false;
-    return Math.abs(toMinutes(wallClock.time) - wantedMinutes) <= DEPARTURE_TOLERANCE_MINUTES;
-  });
+  for (let index = firstIndex; index < stops.length; index += 1) {
+    const stop = stops[index];
+    const actualName = stop?.stopPlace?.name;
+    const wallClock = stop ? scheduledWallClock(stop, preferredEvent) : null;
+    if (!actualName || !wallClock) continue;
+
+    const similarity = nameSimilarity(wantedName, actualName);
+    if (similarity < MINIMUM_NAME_SIMILARITY) continue;
+    const actualMs = getBerlinWallClockMs(wallClock.date, wallClock.time);
+    const timeDeltaMinutes = Math.abs(actualMs - wantedMs) / (60 * 1000);
+    if (timeDeltaMinutes > MAX_ENDPOINT_TIME_DELTA_MINUTES) continue;
+    const candidate: StopMatch = {
+      index,
+      nameSimilarity: similarity,
+      timeDeltaMinutes,
+    };
+    if (
+      !best ||
+      candidate.nameSimilarity > best.nameSimilarity ||
+      (candidate.nameSimilarity === best.nameSimilarity &&
+        candidate.timeDeltaMinutes < best.timeDeltaMinutes)
+    ) {
+      best = candidate;
+    }
+  }
+  return best;
+}
+
+function nextDate(date: string): string {
+  const noonUtc = new Date(`${date}T12:00:00.000Z`);
+  noonUtc.setUTCDate(noonUtc.getUTCDate() + 1);
+  return noonUtc.toISOString().slice(0, 10);
 }
 
 /**
  * Index of the stop that ends the announced segment. Stop naming differs between KVV notices and
- * the feed ("Söllingen Bahnhof" vs "Söllingen (b Karlsr)"), so the name is matched by token
- * overlap, and the announced arrival time is the fallback when no name is recognisable.
+ * the feed ("Söllingen Bahnhof" vs "Söllingen (b Karlsr)"), so the name is matched by normalized
+ * token overlap and the scheduled arrival must remain inside the confidence window.
  */
 function findSegmentEndIndex(
   cancellation: Cancellation,
   stops: readonly JourneyStop[],
   startIndex: number,
 ): number {
-  const wantedTokens = nameTokens(cancellation.toStop);
-  const wantedMinutes = toMinutes(cancellation.toTime);
-  let bestByName = -1;
-  let bestOverlap = 0;
-  let bestByTime = -1;
-  let smallestDelta = Number.POSITIVE_INFINITY;
-
-  for (let index = startIndex + 1; index < stops.length; index += 1) {
-    const stop = stops[index];
-    if (!stop) continue;
-
-    const name = stop.stopPlace?.name;
-    if (name) {
-      const score = overlap(wantedTokens, nameTokens(name));
-      if (score > bestOverlap) {
-        bestOverlap = score;
-        bestByName = index;
-      }
-    }
-
-    const wallClock = scheduledWallClock(stop);
-    if (wallClock) {
-      const delta = Math.abs(toMinutes(wallClock.time) - wantedMinutes);
-      if (delta < smallestDelta) {
-        smallestDelta = delta;
-        bestByTime = index;
-      }
-    }
-  }
-
-  if (bestByName !== -1) return bestByName;
-  if (bestByTime !== -1) return bestByTime;
-  return stops.length - 1;
+  const crossesMidnight = toMinutes(cancellation.toTime) < toMinutes(cancellation.fromTime);
+  const wantedDate = crossesMidnight ? nextDate(cancellation.date) : cancellation.date;
+  return (
+    findBestStopMatch(
+      cancellation.toStop,
+      wantedDate,
+      cancellation.toTime,
+      stops,
+      startIndex + 1,
+      'arrival',
+    )?.index ?? -1
+  );
 }
 
 /**
@@ -269,14 +406,23 @@ export function locateSegment(
   cancellation: Cancellation,
   stops: readonly JourneyStop[],
 ): { start: number; end: number } | null {
-  const start = findDepartureIndex(cancellation, stops);
-  if (start === -1) return null;
-  return { start, end: findSegmentEndIndex(cancellation, stops, start) };
+  const start = findBestStopMatch(
+    cancellation.fromStop,
+    cancellation.date,
+    cancellation.fromTime,
+    stops,
+    0,
+    'departure',
+  )?.index;
+  if (start === undefined) return null;
+  const end = findSegmentEndIndex(cancellation, stops, start);
+  if (end === -1) return null;
+  return { start, end };
 }
 
 /**
- * Stop tallies behind a verdict. `trackedOutsideSegment` is deliberately internal: it decides
- * whether silence over the segment is meaningful, but it is not part of the published record.
+ * Stop tallies behind a verdict. `trackedOutsideSegment` is retained because it is the decisive
+ * evidence when an untracked segment is classified as cancelled.
  */
 export interface SegmentCounts {
   readonly segmentStops: number;
@@ -284,6 +430,7 @@ export interface SegmentCounts {
   readonly segmentTrackedStops: number;
   readonly journeyStops: number;
   readonly journeyCancelledStops: number;
+  readonly journeyTrackedStops: number;
   readonly trackedOutsideSegment: number;
 }
 
@@ -293,8 +440,44 @@ const NO_COUNTS: SegmentCounts = {
   segmentTrackedStops: 0,
   journeyStops: 0,
   journeyCancelledStops: 0,
+  journeyTrackedStops: 0,
   trackedOutsideSegment: 0,
 };
+
+/**
+ * Evidence at a segment boundary belongs to one side of the stop only. An observed arrival at the
+ * origin describes the preceding leg; an observed departure at the destination describes the
+ * following leg. Letting either leak into the segment can turn a fully cancelled leg into a
+ * partially tracked one (or vice versa).
+ */
+function segmentEvents(
+  stop: JourneyStop,
+  index: number,
+  bounds: { start: number; end: number },
+): ReadonlyArray<JourneyStopEvent | null | undefined> {
+  if (index === bounds.start) return [stop.departure];
+  if (index === bounds.end) return [stop.arrival];
+  return stopEvents(stop);
+}
+
+function isSegmentCancelled(
+  stop: JourneyStop,
+  index: number,
+  bounds: { start: number; end: number },
+): boolean {
+  return (
+    stop.cancelled === true ||
+    segmentEvents(stop, index, bounds).some((event) => event?.cancelled === true)
+  );
+}
+
+function isSegmentTracked(
+  stop: JourneyStop,
+  index: number,
+  bounds: { start: number; end: number },
+): boolean {
+  return segmentEvents(stop, index, bounds).some(isTrackedEvent);
+}
 
 /** Tally journey and segment stops in a single pass. */
 function countSegment(
@@ -305,6 +488,7 @@ function countSegment(
   let segmentCancelledStops = 0;
   let segmentTrackedStops = 0;
   let journeyCancelledStops = 0;
+  let journeyTrackedStops = 0;
   let trackedOutsideSegment = 0;
 
   for (let index = 0; index < stops.length; index += 1) {
@@ -313,11 +497,23 @@ function countSegment(
     const cancelled = isCancelled(stop);
     const tracked = isTracked(stop);
     if (cancelled) journeyCancelledStops += 1;
+    if (tracked) journeyTrackedStops += 1;
 
     if (index >= bounds.start && index <= bounds.end) {
+      const segmentCancelled = isSegmentCancelled(stop, index, bounds);
+      const segmentTracked = isSegmentTracked(stop, index, bounds);
       segmentStops += 1;
-      if (cancelled) segmentCancelledStops += 1;
-      if (tracked) segmentTrackedStops += 1;
+      if (segmentCancelled) segmentCancelledStops += 1;
+      if (segmentTracked) segmentTrackedStops += 1;
+      // The arrival into the origin and departure from the destination belong to the adjacent
+      // legs. They must not inflate segment tracking, but they are still valid control evidence
+      // that the feed observed the rest of this run.
+      if (
+        (index === bounds.start && isTrackedEvent(stop.arrival)) ||
+        (index === bounds.end && isTrackedEvent(stop.departure))
+      ) {
+        trackedOutsideSegment += 1;
+      }
     } else if (tracked) {
       trackedOutsideSegment += 1;
     }
@@ -329,6 +525,7 @@ function countSegment(
     segmentTrackedStops,
     journeyStops: stops.length,
     journeyCancelledStops,
+    journeyTrackedStops,
     trackedOutsideSegment,
   };
 }
@@ -363,22 +560,32 @@ function createVerification(
   status: VerificationStatus,
   counts: SegmentCounts,
   now: Date,
-  options: { feedLine?: string; feedOperator?: string } = {},
+  options: {
+    feedLine?: string;
+    feedOperator?: string;
+    journeyCancelled?: true;
+    unresolvedReason?: UnresolvedReason;
+  } = {},
 ): TripVerification {
-  const { trackedOutsideSegment: _internal, ...published } = counts;
   return {
     status,
+    methodVersion: VERIFICATION_METHOD_VERSION,
     source: VERIFICATION_SOURCE,
     checkedAt: formatBerlinWallClock(now.getTime()).date,
-    ...published,
+    ...counts,
+    ...(options.journeyCancelled ? { journeyCancelled: true as const } : {}),
+    ...(options.unresolvedReason ? { unresolvedReason: options.unresolvedReason } : {}),
     ...(options.feedLine === undefined ? {} : { feedLine: options.feedLine }),
     ...(options.feedOperator === undefined ? {} : { feedOperator: options.feedOperator }),
   };
 }
 
 /** Verdict for a trip whose journey could not be resolved at all. */
-export function createUnresolvedVerification(now: Date): TripVerification {
-  return createVerification('unresolved', NO_COUNTS, now);
+export function createUnresolvedVerification(
+  now: Date,
+  unresolvedReason: UnresolvedReason = 'journey-not-found',
+): TripVerification {
+  return createVerification('unresolved', NO_COUNTS, now, { unresolvedReason });
 }
 
 /**
@@ -386,37 +593,73 @@ export function createUnresolvedVerification(now: Date): TripVerification {
  * the canonical short code, the company name, and the opaque administration ID.
  *
  * The name and the code are the load-bearing ones — they *say* AVG. The administration ID is only
- * corroborating: `A6` identifies nobody on its own, is suffixed per line (`A6S1`, `A6S11`), and a
- * prefix test on it would happily accept an unrelated `A60`. It is matched last and exactly, so a
- * response that carries an ID and nothing else still resolves.
+ * corroborating: `A6` identifies nobody on its own, is suffixed per line (`A6S1`, `A6S11`,
+ * `A6S12`), and a prefix test on it would happily accept an unrelated `A60`. It is matched last
+ * and exactly, so a response that carries an ID and nothing else still resolves.
  */
 const NETWORK_OPERATOR_NAME = 'albtal';
 const NETWORK_OPERATOR_CODE = 'avg';
-const NETWORK_ADMINISTRATION_IDS = new Set(['a6', 'a6s1', 'a6s11']);
+const NETWORK_ADMINISTRATION_IDS = new Set(['a6', 'a6s1', 'a6s11', 'a6s12']);
+
+function pushOperatorTokens(
+  tokens: string[],
+  administration:
+    | {
+        readonly administrationID?: string;
+        readonly operatorCode?: string;
+        readonly operatorName?: string;
+      }
+    | undefined,
+): void {
+  if (!administration) return;
+  const values = [
+    administration.operatorCode,
+    administration.operatorName,
+    administration.administrationID,
+  ];
+  for (const value of values) {
+    if (value) tokens.push(normalizeGermanText(value));
+  }
+}
 
 /** Every operator token the response carries, normalized. Empty when the feed named none. */
-function collectOperatorTokens(details: JourneyDetails): string[] {
+function collectOperatorTokens(
+  details: JourneyDetails,
+  bounds?: { start: number; end: number },
+): string[] {
   const tokens: string[] = [];
   const push = (value: string | undefined): void => {
     if (value) tokens.push(normalizeGermanText(value));
   };
 
+  const stops = details.stops ?? [];
+  if (bounds) {
+    for (let index = bounds.start; index <= bounds.end; index += 1) {
+      const stop = stops[index];
+      if (!stop) continue;
+      for (const event of segmentEvents(stop, index, bounds)) {
+        pushOperatorTokens(tokens, event?.transport?.administration);
+      }
+    }
+    // Per-event administration describes the actual leg and wins over a journey-wide label. This
+    // is essential for through journeys that change operator. Fall back only when the segment is
+    // silent, which is common in sparse responses.
+    if (tokens.length > 0) return tokens;
+  } else {
+    for (const stop of stops) {
+      for (const event of stopEvents(stop)) {
+        pushOperatorTokens(tokens, event?.transport?.administration);
+      }
+    }
+  }
+
   push(details.train?.operator);
   push(details.train?.admin);
-  // Per-leg administration repeats for every stop, so the first one that carries it is enough.
-  for (const stop of details.stops ?? []) {
-    const administration = (stop.departure ?? stop.arrival)?.transport?.administration;
-    if (!administration) continue;
-    push(administration.operatorCode);
-    push(administration.operatorName);
-    push(administration.administrationID);
-    break;
-  }
   return tokens;
 }
 
 /**
- * Whether this journey belongs to the network KVV publishes about.
+ * Whether this journey segment belongs to the AVG network these notices publish about.
  *
  * A Zugnummer is not unique — 20019 alone returns eleven journeys spread over VIAS at Arnhem, ÖBB
  * near Vienna, a Nuremberg U-Bahn and buses in Leipzig, Worms and Losheim. Identity was previously
@@ -424,9 +667,10 @@ function collectOperatorTokens(details: JourneyDetails): string[] {
  * all-day service satisfies by coincidence: stored trip `S7 85586 2026-08-13 19:55 Achern →
  * Karlsruhe Hbf` matched an SNCF Rennes → Brest run and was published as a real verdict.
  *
- * The operator is the key the line name only pretends to be. `journey.find` does not return it, so
- * this cannot narrow the candidate list — it rejects a wrong candidate after its details arrive,
- * and the caller moves on to the next one.
+ * The operator is the key the line name only pretends to be. KVV has two unrelated S6 corridors,
+ * one operated by AVG and one by DB, so even an exact line match is not identity. `journey.find`
+ * does not return the operator, so this cannot narrow the candidate list — it rejects a wrong
+ * candidate after its details arrive, and the caller moves on to the next one.
  *
  * A journey that names **no** operator at all is accepted: the fields are absent on some responses,
  * and treating silence as foreign would throw away answers the feed did give us. Naming an operator
@@ -443,10 +687,16 @@ function namesNetworkOperator(token: string): boolean {
   );
 }
 
-export function matchesNetworkOperator(details: JourneyDetails): boolean {
-  const tokens = collectOperatorTokens(details);
+export function matchesNetworkOperator(
+  details: JourneyDetails,
+  bounds?: { start: number; end: number },
+): boolean {
+  const tokens = collectOperatorTokens(details, bounds);
   if (tokens.length === 0) return true;
-  return tokens.some(namesNetworkOperator);
+  // Conflicting explicit identities are ambiguity, not permission. Current AVG responses repeat
+  // compatible name/code/admin tokens; requiring all of them to agree prevents one stray AVG leg
+  // elsewhere in a mixed journey from vouching for a foreign announced segment.
+  return tokens.every(namesNetworkOperator);
 }
 
 /** Classify one stored cancellation against the journey the feed returned for it. */
@@ -455,11 +705,17 @@ export function classifyJourney(
   details: JourneyDetails,
   now: Date,
 ): TripVerification | null {
-  if (!matchesNetworkOperator(details)) return null;
-
+  const expectedJourneyNumber = Number(cancellation.trainNumber);
+  if (
+    details.train?.journeyNumber !== undefined &&
+    details.train.journeyNumber !== expectedJourneyNumber
+  ) {
+    return null;
+  }
   const stops = details.stops ?? [];
   const bounds = locateSegment(cancellation, stops);
   if (!bounds) return null;
+  if (!matchesNetworkOperator(details, bounds)) return null;
 
   const counts = countSegment(stops, bounds);
   const status = determineStatus(counts, details.cancelled === true);
@@ -468,6 +724,7 @@ export function classifyJourney(
   const unexpectedOperator =
     feedOperator && !namesNetworkOperator(normalizeGermanText(feedOperator));
   return createVerification(status, counts, now, {
+    ...(details.cancelled === true ? { journeyCancelled: true } : {}),
     ...(feedLine && feedLine !== cancellation.line ? { feedLine } : {}),
     ...(unexpectedOperator ? { feedOperator } : {}),
   });

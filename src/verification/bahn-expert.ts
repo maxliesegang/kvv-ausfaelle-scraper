@@ -8,7 +8,7 @@
  * 2. A browser-like `User-Agent` is mandatory — with a default client UA the gateway answers
  *    `HTTP 206` with an empty body rather than an error, which reads as a successful empty result.
  *
- * The API only answers for roughly the **last six days**; older dates fail outright. Realtime and
+ * The API answers for a rolling **seven days**; older instants fail outright. Realtime and
  * cancellation data survive that whole window, so verification can backfill after an outage
  * instead of only checking the trips that departed since the previous run.
  */
@@ -25,8 +25,13 @@ const USER_AGENT =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) ' +
   'Chrome/128.0.0.0 Safari/537.36 (+kvv-ausfaelle-scraper; trip verification)';
 
-/** How far back the gateway answers. Measured, not documented: -6 days works, -7 returns 400. */
-export const MAX_LOOKBACK_DAYS = 6;
+/**
+ * How far back the gateway answers. Measured, not documented: the cutoff is rolling rather than
+ * calendar-day based. At 2026-08-17 21:59 UTC, 2026-08-10 21:59 UTC still worked while 19:59 UTC
+ * returned 400. Keep the selection calculation instant-based so late trips on the seventh day are
+ * not needlessly discarded.
+ */
+export const MAX_LOOKBACK_DAYS = 7;
 
 export interface JourneyStopEvent {
   readonly scheduledTime?: string;
@@ -86,10 +91,45 @@ export interface JourneyDetails {
 
 export interface JourneyCandidate {
   readonly journeyId: string;
-  readonly train?: { readonly line?: string };
+  readonly train?: {
+    readonly line?: string;
+    readonly category?: string;
+    readonly transportType?: string;
+  };
+}
+
+/**
+ * Put likely AVG Stadtbahn results before same-number buses and trains elsewhere in Europe.
+ * Ordering is only an efficiency and resilience hint: full journey details still have to pass
+ * operator, number, stop-name, and schedule checks before they can produce a verdict.
+ */
+export function orderJourneyCandidates(
+  candidates: readonly JourneyCandidate[],
+  expectedLine: string,
+): JourneyCandidate[] {
+  const priority = (candidate: JourneyCandidate): number => {
+    const train = candidate.train;
+    if (train?.line === expectedLine) return 0;
+    if (train?.category?.toUpperCase() === 'AVG') return 1;
+    if (train?.transportType === 'CITY_TRAIN' || /^S\d/i.test(train?.line ?? '')) return 2;
+    return 3;
+  };
+
+  return candidates
+    .map((candidate, index) => ({ candidate, index, priority: priority(candidate) }))
+    .sort((a, b) => a.priority - b.priority || a.index - b.index)
+    .map(({ candidate }) => candidate);
 }
 
 class BahnExpertError extends Error {}
+
+interface RpcBatchEntry {
+  readonly result?: { readonly data?: string };
+  readonly error?: {
+    readonly json?: { readonly message?: string; readonly code?: number };
+    readonly message?: string;
+  };
+}
 
 async function callRpc(procedure: string, input: unknown, timeoutMs: number): Promise<unknown> {
   const encoded = JSON.stringify({ '0': JSON.stringify(stringifyDevalue(input)) });
@@ -110,8 +150,13 @@ async function callRpc(procedure: string, input: unknown, timeoutMs: number): Pr
       // The empty-206 signature: almost always a rejected User-Agent rather than "no results".
       throw new BahnExpertError(`${procedure} returned an empty body (User-Agent rejected?)`);
     }
-    const batch = JSON.parse(body) as ReadonlyArray<{ result?: { data?: string } }>;
-    const data = batch[0]?.result?.data;
+    const batch = JSON.parse(body) as ReadonlyArray<RpcBatchEntry>;
+    const entry = batch[0];
+    if (entry?.error) {
+      const message = entry.error.json?.message ?? entry.error.message ?? 'unknown RPC error';
+      throw new BahnExpertError(`${procedure} failed: ${message}`);
+    }
+    const data = entry?.result?.data;
     if (data === undefined) return null;
     return parseDevalue(JSON.parse(data) as unknown[]);
   } finally {
@@ -123,7 +168,7 @@ async function callRpc(procedure: string, input: unknown, timeoutMs: number): Pr
  * Find journeys carrying `journeyNumber` on `departureDate`.
  *
  * A number is not unique across operators — KVV's Zugnummern collide with local bus lines — so
- * callers must narrow the result by `train.line` before fetching details.
+ * callers should prioritize plausible lines/categories, then validate the full journey details.
  */
 export async function findJourneys(
   journeyNumber: number,

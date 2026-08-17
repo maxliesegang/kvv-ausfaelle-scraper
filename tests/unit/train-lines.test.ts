@@ -77,6 +77,19 @@ describe('Train Lines - Article-scoped overrides (real data)', () => {
       }
     },
   );
+
+  it(
+    'maps the S12 reinforcements in article 274705 to the mentioned S11 corridor',
+    { skip: !is2026ScheduleActive },
+    () => {
+      for (const trainNumber of ['40017', '40016']) {
+        assert.deepStrictEqual(
+          lookupLinesForTrip({ trainNumber }, ['S1', 'S11'], 'Nettro_CMS_274705'),
+          ['S11'],
+        );
+      }
+    },
+  );
 });
 
 describe('Train Lines - Multi-line resolution', () => {

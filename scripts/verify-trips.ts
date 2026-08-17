@@ -2,7 +2,8 @@
  * Back-verify stored cancellations against an external realtime feed.
  *
  * Reads `docs/<fahrplan-year>/<line>.json`, and for every trip that has already departed and still
- * falls inside bahn.expert's ~6-day window, asks whether the announced segment actually ran. The
+ * falls inside bahn.expert's rolling seven-day window, asks whether the announced segment actually
+ * ran. The
  * verdict is written to the trip's advisory `verification` field and nothing else — trip identity,
  * cause and dates are never touched.
  *
@@ -14,8 +15,8 @@
  * Notes:
  * - Best-effort by design. Network and decode failures are counted and reported, never thrown, and
  *   the script always exits 0: a third-party outage must not turn the data pipeline red.
- * - `no-data` and `unresolved` are re-checked on later runs while the trip stays inside the
- *   window; settled verdicts are left alone unless `--recheck` is passed.
+ * - `partial`, `no-data` and `unresolved` are re-checked on later Berlin calendar days while the
+ *   trip stays inside the window; settled verdicts are left alone unless `--recheck` is passed.
  * - Evidence only ratchets up: a re-check that sees *less* than the stored verdict did is
  *   discarded (`retainStrongerVerdict`), because the feed thins realtime out as a day recedes.
  */
@@ -29,7 +30,7 @@ import { listFiles, readJsonFile, writeJsonFile } from '../src/utils/fs.js';
 import {
   fetchJourneyDetails,
   findJourneys,
-  type JourneyCandidate,
+  orderJourneyCandidates,
 } from '../src/verification/bahn-expert.js';
 import { isVerifiable, needsCheck, retainStrongerVerdict } from '../src/verification/selection.js';
 import {
@@ -64,27 +65,44 @@ function parseArguments(argv: readonly string[]): Options {
 
 async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVerification> {
   const journeyNumber = Number(cancellation.trainNumber);
-  if (!Number.isFinite(journeyNumber)) return createUnresolvedVerification(now);
+  if (!Number.isFinite(journeyNumber)) {
+    return createUnresolvedVerification(now, 'invalid-train-number');
+  }
 
   const departureDate = new Date(getBerlinWallClockMs(cancellation.date, '10:00'));
   const candidates = await findJourneys(journeyNumber, departureDate, REQUEST_TIMEOUT_MS);
+  if (candidates.length === 0) return createUnresolvedVerification(now, 'journey-not-found');
 
   // A Zugnummer is reused across operators, so the stored line is the best hint about which
   // candidate is ours — but only a hint. KVV and the feed name the same run differently often
   // enough (`S51` vs `S52`, `S7` vs `S71`, a depot run as `E`) that requiring an exact match
-  // discards real answers. Try the exact line first, then the rest; `classifyJourney` still has
-  // to find the announced departure on the right date, which is what actually confirms identity.
-  const matchesLine = (candidate: JourneyCandidate): boolean =>
-    candidate.train?.line === cancellation.line;
-  const ordered = [...candidates.filter(matchesLine), ...candidates.filter((c) => !matchesLine(c))];
+  // discards real answers. Try the exact line first, then AVG/rail aliases before unrelated buses;
+  // `classifyJourney` still confirms identity from the full operator, route, date and schedule.
+  const ordered = orderJourneyCandidates(candidates, cancellation.line);
+  let firstCandidateError: unknown;
+  let sawJourneyDetails = false;
 
   for (const candidate of ordered) {
-    const details = await fetchJourneyDetails(candidate.journeyId, REQUEST_TIMEOUT_MS);
+    let details;
+    try {
+      details = await fetchJourneyDetails(candidate.journeyId, REQUEST_TIMEOUT_MS);
+    } catch (error) {
+      // One stale or broken same-number result must not hide a valid AVG candidate later in the
+      // list. If none succeeds, rethrow below so an upstream problem is skipped rather than
+      // persisted as a confident `unresolved` result.
+      firstCandidateError ??= error;
+      continue;
+    }
     if (!details) continue;
+    sawJourneyDetails = true;
     const verdict = classifyJourney(cancellation, details, now);
     if (verdict) return verdict;
   }
-  return createUnresolvedVerification(now);
+  if (firstCandidateError) throw firstCandidateError;
+  return createUnresolvedVerification(
+    now,
+    sawJourneyDetails ? 'journey-mismatch' : 'journey-not-found',
+  );
 }
 
 type VerifyOutcome =
@@ -118,14 +136,19 @@ function describeVerdict(
   const segment =
     `${verdict.segmentCancelledStops} cancelled / ${verdict.segmentTrackedStops} tracked ` +
     `of ${verdict.segmentStops} in segment`;
-  const journey = `${verdict.journeyCancelledStops}/${verdict.journeyStops} in journey`;
+  const journey =
+    `${verdict.journeyCancelledStops} cancelled / ` +
+    `${verdict.journeyTrackedStops ?? '?'} tracked ` +
+    `of ${verdict.journeyStops} in journey`;
   const feedLine = verdict.feedLine ? ` [feed line ${verdict.feedLine}]` : '';
+  const unresolvedReason = verdict.unresolvedReason ? ` [${verdict.unresolvedReason}]` : '';
   // Marked like `storage.ts` logs its retentions, so a rule that keeps data instead of writing it
   // is visible in a run rather than silent.
   const kept = retainedPrevious ? ' = kept (fresh check saw less evidence)' : '';
   return (
     `  ${verdict.status.padEnd(10)} ${trip.line} ${trip.trainNumber} ${trip.date} ` +
-    `${trip.fromTime} ${trip.fromStop} -> ${trip.toStop} (${segment}; ${journey})${feedLine}${kept}`
+    `${trip.fromTime} ${trip.fromStop} -> ${trip.toStop} ` +
+    `(${segment}; ${journey})${feedLine}${unresolvedReason}${kept}`
   );
 }
 
@@ -170,7 +193,7 @@ async function main(): Promise<void> {
       (trip) =>
         (!options.date || trip.date === options.date) &&
         isVerifiable(trip, nowMs) &&
-        needsCheck(trip, options.recheck),
+        needsCheck(trip, options.recheck, nowMs),
     );
     if (pending.length === 0) continue;
 

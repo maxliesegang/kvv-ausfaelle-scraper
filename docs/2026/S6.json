@@ -910,13 +910,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 19,
       "segmentCancelledStops": 19,
       "segmentTrackedStops": 0,
       "journeyStops": 19,
-      "journeyCancelledStops": 19
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   },
   {
@@ -934,13 +938,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 19,
       "segmentCancelledStops": 19,
       "segmentTrackedStops": 0,
       "journeyStops": 19,
-      "journeyCancelledStops": 19
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   },
   {
@@ -958,13 +966,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 19,
       "segmentCancelledStops": 19,
       "segmentTrackedStops": 0,
       "journeyStops": 19,
-      "journeyCancelledStops": 19
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   },
   {
@@ -982,13 +994,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 19,
       "segmentCancelledStops": 19,
       "segmentTrackedStops": 0,
       "journeyStops": 19,
-      "journeyCancelledStops": 19
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   },
   {
@@ -1006,13 +1022,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 19,
       "segmentCancelledStops": 19,
       "segmentTrackedStops": 0,
       "journeyStops": 19,
-      "journeyCancelledStops": 19
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   }
 ]

@@ -11,7 +11,11 @@ import { describe, it } from 'node:test';
 import type { Cancellation } from '../../src/types.js';
 import { loadJourneyFixture } from '../helpers/fixture-loader.js';
 import { parseDevalue, stringifyDevalue } from '../../src/verification/devalue.js';
-import type { JourneyStop } from '../../src/verification/bahn-expert.js';
+import {
+  findJourneys,
+  orderJourneyCandidates,
+  type JourneyStop,
+} from '../../src/verification/bahn-expert.js';
 import {
   MAX_ATTEMPTS,
   isVerifiable,
@@ -68,15 +72,17 @@ function stop(
   const utcHour = String(Number(hours) - 2).padStart(2, '0');
   const scheduledTime = `2026-08-13T${utcHour}:${minutes}:00.000Z`;
   const observed = options.delay !== undefined;
+  const event = {
+    scheduledTime,
+    time: scheduledTime,
+    delay: observed ? options.delay : 0,
+    isRealTime: observed ? true : null,
+    cancelled: options.cancelled ?? null,
+  };
   return {
     stopPlace: { name },
-    departure: {
-      scheduledTime,
-      time: scheduledTime,
-      delay: observed ? options.delay : 0,
-      isRealTime: observed ? true : null,
-      cancelled: options.cancelled ?? null,
-    },
+    arrival: event,
+    departure: event,
     cancelled: options.cancelled ?? null,
   };
 }
@@ -118,6 +124,43 @@ describe('devalue codec', () => {
   });
 });
 
+describe('bahn.expert client errors', () => {
+  it('throws on a tRPC error returned with HTTP 200 instead of treating it as no results', async () => {
+    const originalFetch = globalThis.fetch;
+    globalThis.fetch = async () =>
+      new Response(
+        JSON.stringify([{ error: { json: { message: 'upstream unavailable', code: -32000 } } }]),
+        { status: 200 },
+      );
+    try {
+      await assert.rejects(
+        findJourneys(20019, new Date('2026-08-13T08:00:00.000Z'), 1000),
+        /journey\.find failed: upstream unavailable/,
+      );
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+});
+
+describe('journey candidate ordering', () => {
+  it('tries the exact line, then AVG and other rail candidates, before same-number buses', () => {
+    const ordered = orderJourneyCandidates(
+      [
+        { journeyId: 'bus', train: { line: '283', category: 'Bus', transportType: 'BUS' } },
+        { journeyId: 'other-s-line', train: { line: 'S71', transportType: 'CITY_TRAIN' } },
+        { journeyId: 'avg-alias', train: { line: 'S52', category: 'AVG' } },
+        { journeyId: 'exact', train: { line: 'S5', category: 'AVG' } },
+      ],
+      'S5',
+    );
+    assert.deepStrictEqual(
+      ordered.map((candidate) => candidate.journeyId),
+      ['exact', 'avg-alias', 'other-s-line', 'bus'],
+    );
+  });
+});
+
 describe('segment location', () => {
   it('scopes to the announced segment rather than the whole journey', () => {
     const stops = [
@@ -133,13 +176,144 @@ describe('segment location', () => {
   it('returns null when no stop matches the announced departure', () => {
     assert.strictEqual(locateSegment(tripOn(), [stop('Somewhere', '14:00')]), null);
   });
+
+  it('uses the stop name to disambiguate dense-corridor departure times', () => {
+    const stops = [
+      stop('Söllingen (b Karlsr)', '18:18'),
+      stop('Weinweg, Karlsruhe', '18:39'),
+      stop('Tullastraße/Alter Schlachthof, Karlsruhe', '18:41'),
+      stop('Karlsruhe-Kniel. Rheinbergstr.', '19:04'),
+    ];
+    const trip = tripOn({
+      line: 'S5',
+      fromStop: 'KA Tullastraße',
+      fromTime: '18:41',
+      toStop: 'Knielingen Rheinbergstraße',
+      toTime: '19:04',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 2, end: 3 });
+  });
+
+  it('does not let a generic city token beat the actual destination', () => {
+    const stops = [
+      stop('Söllingen (b Karlsr)', '08:48'),
+      stop('Durlach Hubstraße, Karlsruhe', '09:04'),
+      stop('Tullastraße/Alter Schlachthof, Karlsruhe', '09:11'),
+    ];
+    const trip = tripOn({
+      line: 'S5',
+      fromStop: 'Söllingen Bahnhof',
+      fromTime: '08:48',
+      toStop: 'Karlsruhe Tullastr.',
+      toTime: '09:10',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 2 });
+  });
+
+  it("matches a short KVV stop name against the feed's compound stop name", () => {
+    const stops = [
+      stop('Tullastraße/Alter Schlachthof, Karlsruhe', '12:17'),
+      stop('Karlsruhe Albtalbahnhof', '12:32'),
+      stop('Achern', '13:25'),
+    ];
+    const trip = tripOn({
+      line: 'S7',
+      fromStop: 'Tullastraße',
+      fromTime: '12:17',
+      toStop: 'Achern',
+      toTime: '13:25',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 2 });
+  });
+
+  it('normalizes Bahnhof when KVV attaches it to the specific station name', () => {
+    const stops = [stop('Karlsruhe-Neureut Kirchfeld', '10:35'), stop('Ettlingen Stadt', '11:18')];
+    const trip = tripOn({
+      fromStop: 'Neureut Kirchfeld',
+      fromTime: '10:35',
+      toStop: 'Ettlingen Stadtbahnhof',
+      toTime: '11:18',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 1 });
+  });
+
+  it('does not mistake a municipality qualifier for the named origin', () => {
+    const stops = [
+      stop('Hochstetten', '05:33'),
+      stop('Hochstetten Altenheim, Linkenheim-Hochstetten', '05:34'),
+      stop('Hochstetten Grenzstraße', '05:36'),
+      stop('Linkenheim Süd, Linkenheim-Hochstetten', '05:42'),
+      stop('Albgaubad, Ettlingen', '06:42'),
+    ];
+    const trip = tripOn({
+      line: 'S1',
+      fromStop: 'Hochstetten',
+      fromTime: '05:52',
+      toStop: 'Ettlingen Albgaubad',
+      toTime: '06:42',
+    });
+    assert.strictEqual(locateSegment(trip, stops), null);
+  });
+
+  it('prefers the named station over a regional qualifier despite a source time offset', () => {
+    const stops = [
+      stop('Bondorf (b Herrenberg)', '08:02'),
+      stop('Schopfloch (b Freudenstadt)', '08:30'),
+      stop('Freudenstadt Hbf', '08:53'),
+    ];
+    const trip = tripOn({
+      line: 'S8',
+      fromStop: 'Bondorf Bahnhof',
+      fromTime: '08:02',
+      toStop: 'Freudenstadt Bahnhof',
+      toTime: '08:43',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 2 });
+  });
+
+  it('tolerates a one-character stop typo but never accepts a time-only match', () => {
+    const trip = tripOn({
+      line: 'S5',
+      fromStop: 'Wörh Badepark',
+      fromTime: '07:35',
+      toStop: 'Söllingen Bahnhof',
+      toTime: '08:37',
+    });
+    const realJourney = [
+      stop('Wörth (Rhein) Badepark', '07:35'),
+      stop('Philippstraße, Karlsruhe', '08:03'),
+      stop('Söllingen (b Karlsr)', '08:37'),
+    ];
+    assert.deepStrictEqual(locateSegment(trip, realJourney), { start: 0, end: 2 });
+    assert.strictEqual(locateSegment(trip, realJourney.slice(1)), null);
+  });
+
+  it('rejects the same train and endpoints when both published times describe another run', () => {
+    // KVV published 84805 as 08:05–09:09 on 2026-08-17, while bahn.expert's only AVG 84805 was
+    // 07:35–08:37. Matching names alone called that earlier train `ran` with false confidence.
+    const trip = tripOn({
+      line: 'S5',
+      trainNumber: '84805',
+      fromStop: 'Wörh Badepark',
+      fromTime: '08:05',
+      toStop: 'Söllingen Bahnhof',
+      toTime: '09:09',
+    });
+    const earlierJourney = [
+      stop('Wörth (Rhein) Badepark', '07:35', { delay: 0 }),
+      stop('Söllingen (b Karlsr)', '08:37', { delay: 0 }),
+    ];
+    assert.strictEqual(locateSegment(trip, earlierJourney), null);
+  });
 });
 
 describe('trip selection', () => {
   // 2026-08-13 12:00 Berlin, i.e. after the 09:21 departure the default trip uses.
   const NOW_MS = Date.parse('2026-08-13T10:00:00.000Z');
+  const NEXT_DAY_MS = Date.parse('2026-08-14T10:00:00.000Z');
   const verified = (overrides: Partial<TripVerification>): TripVerification => ({
     status: 'cancelled',
+    methodVersion: 2,
     source: 'bahn.expert',
     checkedAt: '2026-08-13',
     segmentStops: 3,
@@ -147,6 +321,8 @@ describe('trip selection', () => {
     segmentTrackedStops: 0,
     journeyStops: 3,
     journeyCancelledStops: 3,
+    journeyTrackedStops: 0,
+    trackedOutsideSegment: 0,
     ...overrides,
   });
 
@@ -162,35 +338,63 @@ describe('trip selection', () => {
     assert.strictEqual(isVerifiable(tripOn(), NOW_MS), true);
   });
 
+  it('uses the measured rolling seven-day cutoff instead of dropping the whole seventh day', () => {
+    assert.strictEqual(
+      isVerifiable(tripOn({ date: '2026-08-06', fromTime: '12:00' }), NOW_MS),
+      true,
+    );
+    assert.strictEqual(
+      isVerifiable(tripOn({ date: '2026-08-06', fromTime: '11:59' }), NOW_MS),
+      false,
+    );
+  });
+
   it('skips a trip older than the feed window', () => {
     assert.strictEqual(isVerifiable(tripOn({ date: '2026-08-01' }), NOW_MS), false);
   });
 
   it('checks a trip that has never been verified', () => {
-    assert.strictEqual(needsCheck(tripOn(), false), true);
+    assert.strictEqual(needsCheck(tripOn(), false, NOW_MS), true);
   });
 
   it('leaves a settled verdict alone', () => {
     const trip = tripOn({ verification: verified({ attempts: 1 }) });
-    assert.strictEqual(needsCheck(trip, false), false);
+    assert.strictEqual(needsCheck(trip, false, NOW_MS), false);
   });
 
-  it('retries a provisional verdict until the attempt limit', () => {
+  it('retries a provisional verdict on a later day until the attempt limit', () => {
     const atLimit = MAX_ATTEMPTS;
     const retryable = tripOn({ verification: verified({ status: 'unresolved', attempts: 1 }) });
     const exhausted = tripOn({
       verification: verified({ status: 'unresolved', attempts: atLimit }),
     });
-    assert.strictEqual(needsCheck(retryable, false), true);
-    assert.strictEqual(needsCheck(exhausted, false), false);
+    assert.strictEqual(needsCheck(retryable, false, NEXT_DAY_MS), true);
+    assert.strictEqual(needsCheck(exhausted, false, NEXT_DAY_MS), false);
     // `--recheck` ignores the budget entirely.
-    assert.strictEqual(needsCheck(exhausted, true), true);
+    assert.strictEqual(needsCheck(exhausted, true, NOW_MS), true);
+  });
+
+  it('does not spend multiple provisional attempts on the same day', () => {
+    const retryable = tripOn({ verification: verified({ status: 'no-data', attempts: 1 }) });
+    assert.strictEqual(needsCheck(retryable, false, NOW_MS), false);
+    assert.strictEqual(needsCheck(retryable, false, NEXT_DAY_MS), true);
+  });
+
+  it('rechecks a partial verdict because late evidence can settle it', () => {
+    const partial = tripOn({ verification: verified({ status: 'partial', attempts: 1 }) });
+    assert.strictEqual(needsCheck(partial, false, NOW_MS), false);
+    assert.strictEqual(needsCheck(partial, false, NEXT_DAY_MS), true);
   });
 
   it('counts attempts cumulatively across runs while a verdict stays provisional', () => {
     const first = withAttemptCount(verified({ status: 'unresolved' }), undefined);
     assert.strictEqual(first.attempts, 1);
     assert.strictEqual(withAttemptCount(verified({ status: 'no-data' }), first).attempts, 2);
+  });
+
+  it('counts a legacy partial without attempts as an existing first check', () => {
+    const legacyPartial = verified({ status: 'partial' });
+    assert.strictEqual(withAttemptCount(legacyPartial, legacyPartial).attempts, 2);
   });
 
   it('drops the attempt count once a verdict settles', () => {
@@ -201,7 +405,7 @@ describe('trip selection', () => {
     assert.strictEqual(settled.attempts, undefined);
     assert.ok(!('attempts' in settled), 'the key is absent, not merely undefined');
     // Dropping it cannot revive a retry: a settled verdict is not re-checked at all.
-    assert.strictEqual(needsCheck(tripOn({ verification: settled }), false), false);
+    assert.strictEqual(needsCheck(tripOn({ verification: settled }), false, NEXT_DAY_MS), false);
   });
 
   // The feed thins realtime out of a journey as the day recedes, so a later look at the same trip
@@ -295,6 +499,71 @@ describe('trip selection', () => {
       assert.strictEqual(choice.verification.status, 'cancelled');
     });
 
+    it('prioritizes new explicit cancellation flags over decayed tracking', () => {
+      const previous = verified({
+        status: 'partial',
+        segmentCancelledStops: 1,
+        segmentTrackedStops: 12,
+      });
+      const settled = verified({
+        status: 'cancelled',
+        segmentCancelledStops: 3,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(previous, settled);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.status, 'cancelled');
+    });
+
+    it('does not erase explicit cancellation flags when tracking later increases', () => {
+      const previous = verified({
+        status: 'partial',
+        segmentCancelledStops: 2,
+        segmentTrackedStops: 1,
+      });
+      const contradictory = verified({
+        status: 'ran',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 3,
+      });
+      const choice = retainStrongerVerdict(previous, contradictory);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.segmentCancelledStops, 2);
+    });
+
+    it('does not erase an explicit journey-level cancellation flag', () => {
+      const explicit = verified({
+        status: 'cancelled',
+        journeyCancelled: true,
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const contradictory = verified({
+        status: 'ran',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 3,
+      });
+      const choice = retainStrongerVerdict(explicit, contradictory);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.journeyCancelled, true);
+    });
+
+    it('accepts corrected segment bounds instead of comparing counts across different scopes', () => {
+      const wronglyScoped = verified({
+        status: 'ran',
+        segmentStops: 19,
+        segmentTrackedStops: 19,
+      });
+      const corrected = verified({
+        status: 'ran',
+        segmentStops: 18,
+        segmentTrackedStops: 18,
+      });
+      const choice = retainStrongerVerdict(wronglyScoped, corrected);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.segmentStops, 18);
+    });
+
     it('takes an equally-evidenced re-check, refreshing the verdict', () => {
       const later = { ...ran, checkedAt: '2026-08-14' };
       const choice = retainStrongerVerdict(ran, later);
@@ -313,6 +582,35 @@ describe('trip selection', () => {
       assert.strictEqual(choice.retainedPrevious, true);
       assert.strictEqual(choice.verification.status, 'partial');
     });
+
+    it('lets a newer matching method correct a settled verdict from the legacy method', () => {
+      const legacyRan = { ...ran, methodVersion: 1 };
+      const rejectedByCurrentMatcher = verified({
+        status: 'unresolved',
+        segmentStops: 0,
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+        unresolvedReason: 'journey-mismatch',
+      });
+      const choice = retainStrongerVerdict(legacyRan, rejectedByCurrentMatcher);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.status, 'unresolved');
+      assert.strictEqual(choice.verification.methodVersion, 2);
+    });
+
+    it('does not let feed expiry masquerade as a newer-method correction', () => {
+      const legacyRan = { ...ran, methodVersion: 1 };
+      const missingFromFeed = verified({
+        status: 'unresolved',
+        segmentStops: 0,
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+        unresolvedReason: 'journey-not-found',
+      });
+      const choice = retainStrongerVerdict(legacyRan, missingFromFeed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.status, 'ran');
+    });
   });
 });
 
@@ -323,6 +621,7 @@ describe('verdict rules', () => {
     segmentTrackedStops: 0,
     journeyStops: 10,
     journeyCancelledStops: 0,
+    journeyTrackedStops: 0,
     trackedOutsideSegment: 0,
     ...overrides,
   });
@@ -374,10 +673,26 @@ describe('operator identity', () => {
     ...(train ? { train } : {}),
   });
 
+  const withEventOperator = (
+    value: JourneyStop,
+    event: 'arrival' | 'departure',
+    operatorCode: string,
+  ): JourneyStop => ({
+    ...value,
+    [event]: {
+      ...value[event],
+      transport: { administration: { operatorCode } },
+    },
+  });
+
   it('accepts the network operator named in full', () => {
     const details = withOperator({ operator: 'Albtal-Verkehrs-Gesellschaft mbH', admin: 'A6S11' });
     assert.strictEqual(matchesNetworkOperator(details), true);
     assert.ok(classifyJourney(trip, details, NOW));
+  });
+
+  it('accepts the S12-specific AVG administration ID', () => {
+    assert.strictEqual(matchesNetworkOperator(withOperator({ admin: 'A6S12' })), true);
   });
 
   it('accepts the canonical operator code carried per leg', () => {
@@ -390,6 +705,14 @@ describe('operator identity', () => {
     assert.strictEqual(matchesNetworkOperator(details), false);
     // Rejected before any counting, so the caller falls through to the next candidate.
     assert.strictEqual(classifyJourney(trip, details, NOW), null);
+  });
+
+  it('rejects details carrying a different journey number', () => {
+    const details = withOperator({ operator: 'Albtal-Verkehrs-Gesellschaft mbH', admin: 'A6' });
+    assert.strictEqual(
+      classifyJourney(trip, { ...details, train: { ...details.train, journeyNumber: 12345 } }, NOW),
+      null,
+    );
   });
 
   it('rejects an unrelated administration whose ID merely starts like the network one', () => {
@@ -411,11 +734,31 @@ describe('operator identity', () => {
   });
 
   it('records an unexpected operator on a journey another token vouched for', () => {
-    // The mixed response `matchesNetworkOperator` lets through: a foreign `train.operator` on a
-    // journey whose per-leg administration says AVG. This is exactly what the field is for.
+    // Whole-journey metadata conflicts, but the administration on the announced segment is more
+    // specific and vouches for it. This is exactly what the anomaly field is for.
     const details = withOperator({ operator: 'SNCF' }, { operatorCode: 'AVG' });
-    assert.strictEqual(matchesNetworkOperator(details), true);
+    assert.strictEqual(matchesNetworkOperator(details), false);
     assert.strictEqual(classifyJourney(trip, details, NOW)?.feedOperator, 'SNCF');
+  });
+
+  it('checks the operator on the announced segment, not an AVG leg elsewhere in the journey', () => {
+    const before = withEventOperator(stop('Baden-Baden', '19:30'), 'departure', 'AVG');
+    const from = withEventOperator(stop('Achern', '19:55'), 'departure', 'DB');
+    const to = withEventOperator(stop('Karlsruhe Hbf', '20:40'), 'arrival', 'DB');
+    const after = withEventOperator(stop('Durlach', '20:50'), 'arrival', 'AVG');
+    const details = { stops: [before, from, to, after], train: { operator: 'AVG' } };
+
+    assert.strictEqual(classifyJourney(trip, details, NOW), null);
+  });
+
+  it('accepts an AVG segment on a through journey operated by someone else outside it', () => {
+    const before = withEventOperator(stop('Baden-Baden', '19:30'), 'departure', 'DB');
+    const from = withEventOperator(stop('Achern', '19:55'), 'departure', 'AVG');
+    const to = withEventOperator(stop('Karlsruhe Hbf', '20:40'), 'arrival', 'AVG');
+    const after = withEventOperator(stop('Durlach', '20:50'), 'arrival', 'DB');
+    const details = { stops: [before, from, to, after], train: { operator: 'DB Regio AG' } };
+
+    assert.ok(classifyJourney(trip, details, NOW));
   });
 });
 
@@ -437,6 +780,13 @@ describe('journey classification', () => {
     const verdict = classifyJourney(trip, { stops }, NOW);
     assert.strictEqual(verdict?.status, 'cancelled');
     assert.strictEqual(verdict?.segmentCancelledStops, 3);
+  });
+
+  it("retains the source's explicit whole-journey cancellation evidence", () => {
+    const stops = [stop('Ittersbach Rathaus', '09:21'), stop('Ettlingen Stadt', '09:48')];
+    const verdict = classifyJourney(tripOn(), { stops, cancelled: true }, NOW);
+    assert.strictEqual(verdict?.status, 'cancelled');
+    assert.strictEqual(verdict?.journeyCancelled, true);
   });
 
   it('reports a trip that ran when the whole segment is tracked', () => {
@@ -476,6 +826,10 @@ describe('journey classification', () => {
     ];
     assert.strictEqual(classifyJourney(tripOn(), { stops }, NOW)?.source, 'bahn.expert');
     assert.strictEqual(createUnresolvedVerification(NOW).source, 'bahn.expert');
+    assert.strictEqual(
+      createUnresolvedVerification(NOW, 'journey-mismatch').unresolvedReason,
+      'journey-mismatch',
+    );
   });
 
   it('reports a partial cancellation when only some stops are cancelled', () => {
@@ -565,6 +919,83 @@ describe('journey classification', () => {
     assert.strictEqual(verdict?.status, 'no-data');
   });
 
+  it('does not leak realtime from adjacent legs across segment boundaries', () => {
+    const precedingArrival: JourneyStop = {
+      stopPlace: { name: 'Ittersbach Rathaus' },
+      arrival: {
+        scheduledTime: '2026-08-13T07:20:00.000Z',
+        time: '2026-08-13T07:21:00.000Z',
+        isRealTime: true,
+      },
+      departure: { scheduledTime: '2026-08-13T07:21:00.000Z' },
+    };
+    const followingDeparture: JourneyStop = {
+      stopPlace: { name: 'Ettlingen Stadt' },
+      arrival: { scheduledTime: '2026-08-13T07:48:00.000Z' },
+      departure: {
+        scheduledTime: '2026-08-13T07:49:00.000Z',
+        time: '2026-08-13T07:50:00.000Z',
+        isRealTime: true,
+      },
+    };
+    const verdict = classifyJourney(
+      tripOn(),
+      { stops: [precedingArrival, followingDeparture] },
+      NOW,
+    );
+    assert.strictEqual(verdict?.segmentTrackedStops, 0);
+    assert.strictEqual(verdict?.journeyTrackedStops, 2);
+    assert.strictEqual(verdict?.trackedOutsideSegment, 2);
+    assert.strictEqual(verdict?.status, 'cancelled');
+  });
+
+  it('does not leak cancellation flags from adjacent legs across segment boundaries', () => {
+    const origin: JourneyStop = {
+      stopPlace: { name: 'Ittersbach Rathaus' },
+      arrival: { scheduledTime: '2026-08-13T07:20:00.000Z', cancelled: true },
+      departure: {
+        scheduledTime: '2026-08-13T07:21:00.000Z',
+        time: '2026-08-13T07:22:00.000Z',
+        isRealTime: true,
+      },
+    };
+    const destination: JourneyStop = {
+      stopPlace: { name: 'Ettlingen Stadt' },
+      arrival: {
+        scheduledTime: '2026-08-13T07:48:00.000Z',
+        time: '2026-08-13T07:49:00.000Z',
+        isRealTime: true,
+      },
+      departure: { scheduledTime: '2026-08-13T07:49:00.000Z', cancelled: true },
+    };
+    const verdict = classifyJourney(tripOn(), { stops: [origin, destination] }, NOW);
+    assert.strictEqual(verdict?.segmentCancelledStops, 0);
+    assert.strictEqual(verdict?.journeyCancelledStops, 2);
+    assert.strictEqual(verdict?.status, 'ran');
+  });
+
+  it('does not treat equivalent timestamp encodings as realtime', () => {
+    const stops: JourneyStop[] = [
+      {
+        stopPlace: { name: 'Ittersbach Rathaus' },
+        departure: {
+          scheduledTime: '2026-08-13T07:21:00.000Z',
+          time: '2026-08-13T09:21:00.000+02:00',
+        },
+      },
+      {
+        stopPlace: { name: 'Ettlingen Stadt' },
+        arrival: {
+          scheduledTime: '2026-08-13T07:48:00.000Z',
+          time: '2026-08-13T09:48:00.000+02:00',
+        },
+      },
+    ];
+    const verdict = classifyJourney(tripOn(), { stops }, NOW);
+    assert.strictEqual(verdict?.segmentTrackedStops, 0);
+    assert.strictEqual(verdict?.status, 'no-data');
+  });
+
   it('counts a stop the feed cancelled only at event level', () => {
     // Partial cancellations are flagged per arrival/departure at their boundary, with no
     // stop-level flag — the uncounted stop downgraded a full cancellation to `partial`.
@@ -600,7 +1031,9 @@ describe('journey classification against captured feed responses', () => {
     const details = loadJourneyFixture('20260813-19b67970-4b65-3820-ab7b-dea40958d407');
     const verdict = classifyJourney(trip, details, NOW);
     assert.strictEqual(verdict?.segmentStops, 16);
-    assert.strictEqual(verdict?.segmentTrackedStops, 2);
+    // The only observations at the boundaries are the arrival into Freudenstadt before the
+    // announced segment and the departure from Forbach after it. Neither belongs to this leg.
+    assert.strictEqual(verdict?.segmentTrackedStops, 0);
   });
 
   it('still recognises observation reported without the realtime flag', () => {

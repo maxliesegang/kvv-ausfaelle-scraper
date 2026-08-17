@@ -61,13 +61,13 @@ This is the most specific guidance for maintenance scripts.
   the scope, `--recheck` re-fetches settled verdicts, `--verbose` lists every verdict.
   - Verdict counts are recorded at two scopes: `segmentStops` / `segmentCancelledStops` /
     `segmentTrackedStops` for the announced segment (these decide the verdict), and
-    `journeyStops` / `journeyCancelledStops` for the whole run. The journey scope is what makes a
-    segment count readable — `18/30 cancelled` means something different on a 30-stop run than on
-    a 132-stop one, and it reveals a disruption that spilled past the segment KVV named.
+    `journeyStops` / `journeyCancelledStops` / `journeyTrackedStops` for the whole run.
+    `trackedOutsideSegment` retains the exact control evidence behind an inferred cancellation.
+    These make a segment count readable and auditable after the short-lived feed expires.
   - **The record carries only what is read or unrecoverable.** Verification is stamped on every
     departed trip, so a field costing a few bytes costs them ~1800 times per Fahrplan year and in
     every commit diff. Fields are dropped when nothing reads them and they can be re-derived
-    (`journeyId` pointed into a feed that forgets after six days, so it is a dead pointer before
+    (`journeyId` pointed into a feed that forgets after seven days, so it is a dead pointer before
     anyone could follow it), stored only when anomalous when their whole
     purpose is spotting the exception (`feedLine`, `feedOperator`), and stored only while live when
     they are run bookkeeping (`attempts`, provisional verdicts only). `checkedAt` is a Berlin-local
@@ -91,11 +91,19 @@ This is the most specific guidance for maintenance scripts.
   - **Segment scoping is the core rule.** A notice names the _affected segment_ of a longer run
     (`20019 Ittersbach Rathaus (09:21) - Ettlingen Stadt (09:45)` is one leg of a journey
     continuing to 10:31), so verdicts are computed over `fromTime` → `toStop` only. Judging the
-    whole journey reports "ran" for trips whose announced leg was never served.
+    whole journey reports "ran" for trips whose announced leg was never served. Both endpoints
+    are located by normalized stop name first and scheduled time second. Time alone is never
+    identity on dense Stadtbahn corridors: several adjacent stops can fall inside a two-minute
+    tolerance, while KVV's endpoint time can itself differ from the feed by ten minutes or more.
+    The stop matcher normalizes `KA`/`Karlsruhe`, station and street abbreviations, and one-character
+    source typos; it rejects a journey when either named endpoint remains unrecognisable or more
+    than 15 minutes from the published schedule. Boundary evidence is directional: only departure
+    belongs to the origin and only arrival to the destination, so adjacent legs cannot manufacture
+    tracking or cancellation inside the announced segment.
   - **Absence of realtime is not evidence of cancellation.** A segment with no realtime counts as
     cancelled only when the _rest of the same run_ was tracked, which proves the feed had
-    coverage; otherwise the verdict is `no-data`. `no-data` and `unresolved` are re-checked on
-    later runs, settled verdicts are not.
+    coverage; otherwise the verdict is `no-data`. `partial`, `no-data`, and `unresolved` are
+    re-checked on later Berlin calendar days; `cancelled` and `ran` are settled.
   - **Line names are a hint, not a key.** KVV and the feed name the same run differently _by
     design_: KVV publishes the corridor a rider recognises (`S51`, `S7`) while the feed follows
     GTFS's operational short-workings (`S52`, `S71`), or has no line at all for a depot run (`E`).
@@ -124,32 +132,41 @@ This is the most specific guidance for maintenance scripts.
     operator**, so auditing which train answered is a grep rather than a re-fetch of every journey —
     and a hit _is_ the anomaly instead of something to filter down to. Same present-means-unusual
     rule as `feedLine`; a rejected foreign journey never reaches the field, so what it catches is the
-    mixed response whose `train.operator` is unexpected but whose other tokens vouched for it.
-  - **Retries are bounded** (`MAX_ATTEMPTS` in `src/verification/selection.ts`). `no-data` and
-    `unresolved` are provisional and retried on later runs, but only a few times: some trips never
-    resolve — KVV occasionally publishes a train number on a line no feed knows — and an unbounded
-    retry would re-ask on every run for the whole six-day window. `--recheck` ignores the budget.
-    Trip selection (`isVerifiable`, `needsCheck`, `withAttemptCount`) lives in `selection.ts` so
-    the policy is pure and unit-tested, leaving the script as orchestration.
+    mixed response whose `train.operator` is unexpected but whose segment-level tokens vouched for
+    it. Operator evidence is scoped to the announced segment: KVV has unrelated S6 corridors run by
+    AVG and DB, and a through journey can change operators, so neither the line text nor an AVG leg
+    elsewhere in the journey may vouch for the affected segment.
+  - **Retries are bounded and date-spaced** (`MAX_ATTEMPTS` in
+    `src/verification/selection.ts`). `partial`, `no-data`, and `unresolved` are provisional and
+    retried at most once per Berlin calendar day, but only a few times: some trips never resolve —
+    KVV occasionally publishes a train number on a line no feed knows — and an unbounded retry
+    would re-ask throughout the seven-day window. Date spacing is load-bearing with the four-hour
+    workflow schedule: without it, a trip spends all three attempts in eight hours and cannot
+    benefit from next-day realtime. `--recheck` ignores both spacing and budget. Trip selection
+    (`isVerifiable`, `needsCheck`, `withAttemptCount`) lives in `selection.ts` so the policy is pure
+    and unit-tested, leaving the script as orchestration.
   - **Evidence only ratchets up** (`retainStrongerVerdict` in `src/verification/selection.ts`).
     bahn.expert thins realtime detail out of a journey as the day recedes, so a re-check can see
     strictly less than the first check did and the same trip re-reads as less served — measured on
     2026-08-13, where a next-morning recheck turned four `ran` verdicts into `no-data`/`partial`.
-    A fresh verdict backed by fewer observed stops (cancelled + tracked, over the segment) than the
-    stored one is therefore discarded and the stored verdict kept, logged as `= kept` like
-    `storage.ts` logs its retentions. Late-arriving realtime moves the other way — it _adds_
-    cancellation flags or observations — and still wins, which is what makes retrying `no-data`
-    worth doing. The attempt count is bumped either way, so a permanently decaying trip is not
-    re-asked forever. Note that a `partial` → `cancelled` change is usually **not** decay: it is
-    the feed finishing the picture by flagging one more stop, and the counts distinguish the two.
+    Explicit cancellation flags are compared first and tracked stops second: new cancellation
+    flags always win, removed flags never erase stronger stored evidence, and tracking is compared
+    only when cancellation evidence is equal. A fresh unresolved lookup cannot erase a located
+    segment. Changed non-zero segment denominators are accepted as corrected scope rather than
+    compared as if their raw counts described the same stops. A retained result is logged as
+    `= kept` like `storage.ts` logs its retentions. The attempt count is bumped either way, so a
+    permanently decaying trip is not re-asked forever.
+    `methodVersion` makes deliberate classifier migrations possible: a newer method can replace
+    old evidence during `--recheck`, including an explicit `journey-mismatch`, while a mere
+    `journey-not-found` cannot erase a segment the expiring feed previously resolved.
   - **Best-effort.** Network/decode failures are counted and reported, never thrown; the script
     always exits 0 and the workflow step is `continue-on-error`. A third-party outage must never
     turn the data pipeline red — unlike `src/index.ts`'s exit codes, which flag _scraper_ gaps a
     maintainer can act on.
-  - The feed answers for roughly the **last six days** (`MAX_LOOKBACK_DAYS`), and realtime
-    survives that whole window, so a missed run self-heals instead of losing trips. Older trips
-    are permanently unverifiable. Wire-format details (devalue encoding, mandatory browser
-    `User-Agent`) live in `src/verification/`.
+  - The feed answers for a rolling **seven days** (`MAX_LOOKBACK_DAYS`), and realtime survives that
+    whole window, so a missed run self-heals instead of losing trips. The cutoff was measured at
+    the instant level: a request exactly seven days old worked while one two hours older returned 400. Older trips are permanently unverifiable. Wire-format details (devalue encoding,
+    mandatory browser `User-Agent`) live in `src/verification/`.
 
 ## Change Rules
 

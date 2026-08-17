@@ -1106,13 +1106,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
-      "segmentStops": 36,
-      "segmentCancelledStops": 36,
+      "checkedAt": "2026-08-17",
+      "segmentStops": 38,
+      "segmentCancelledStops": 38,
       "segmentTrackedStops": 0,
       "journeyStops": 38,
-      "journeyCancelledStops": 38
+      "journeyCancelledStops": 38,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true
     }
   },
   {
@@ -1130,13 +1134,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 26,
       "segmentCancelledStops": 26,
       "segmentTrackedStops": 0,
       "journeyStops": 26,
       "journeyCancelledStops": 26,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true,
       "feedLine": "S52"
     }
   },
@@ -1155,13 +1163,17 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-14",
+      "checkedAt": "2026-08-17",
       "segmentStops": 7,
       "segmentCancelledStops": 7,
       "segmentTrackedStops": 0,
       "journeyStops": 7,
       "journeyCancelledStops": 7,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "journeyCancelled": true,
       "feedLine": "E"
     }
   },
@@ -1180,13 +1192,16 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
+      "methodVersion": 3,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-15",
+      "checkedAt": "2026-08-17",
       "segmentStops": 17,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 17,
       "journeyStops": 43,
-      "journeyCancelledStops": 0
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 43,
+      "trackedOutsideSegment": 27
     }
   }
 ]
