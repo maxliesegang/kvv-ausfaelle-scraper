@@ -4093,7 +4093,7 @@
       "segmentTrackedStops": 0,
       "journeyStops": 56,
       "journeyCancelledStops": 0,
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -4108,7 +4108,17 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
     "capturedAt": "2026-08-17T08:36:31.607Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "partial",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-17",
+      "segmentStops": 10,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 2,
+      "journeyStops": 32,
+      "journeyCancelledStops": 0
+    }
   },
   {
     "line": "S4",
@@ -4122,7 +4132,17 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274688",
     "capturedAt": "2026-08-17T08:36:31.607Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-17",
+      "segmentStops": 31,
+      "segmentCancelledStops": 31,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32
+    }
   },
   {
     "line": "S4",

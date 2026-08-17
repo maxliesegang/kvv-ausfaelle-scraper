@@ -13799,7 +13799,7 @@
       "segmentTrackedStops": 0,
       "journeyStops": 23,
       "journeyCancelledStops": 0,
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -13824,7 +13824,7 @@
       "segmentTrackedStops": 0,
       "journeyStops": 39,
       "journeyCancelledStops": 0,
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -13849,7 +13849,7 @@
       "segmentTrackedStops": 0,
       "journeyStops": 40,
       "journeyCancelledStops": 0,
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -13874,7 +13874,7 @@
       "segmentTrackedStops": 0,
       "journeyStops": 49,
       "journeyCancelledStops": 0,
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -13947,7 +13947,59 @@
       "segmentTrackedStops": 0,
       "journeyStops": 30,
       "journeyCancelledStops": 0,
-      "attempts": 1
+      "attempts": 2
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-17",
+    "stand": "2026-08-17T10:23:00.000Z",
+    "trainNumber": "84751",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "13:52",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "14:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274697",
+    "capturedAt": "2026-08-17T12:34:00.271Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-17",
+      "segmentStops": 29,
+      "segmentCancelledStops": 29,
+      "segmentTrackedStops": 0,
+      "journeyStops": 30,
+      "journeyCancelledStops": 30
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-17",
+    "stand": "2026-08-17T10:23:00.000Z",
+    "trainNumber": "84838",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "14:48",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274697",
+    "capturedAt": "2026-08-17T12:34:00.271Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-17",
+    "stand": "2026-08-17T10:23:00.000Z",
+    "trainNumber": "84835",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "16:05",
+    "toStop": "KA Lameyplatz",
+    "toTime": "16:24",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274697",
+    "capturedAt": "2026-08-17T12:34:00.271Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
