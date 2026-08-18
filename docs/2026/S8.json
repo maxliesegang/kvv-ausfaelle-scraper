@@ -1014,5 +1014,47 @@
       "journeyTrackedStops": 41,
       "trackedOutsideSegment": 41
     }
+  },
+  {
+    "line": "S8",
+    "date": "2026-08-18",
+    "stand": "2026-08-18T02:30:00.000Z",
+    "trainNumber": "85611",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "05:16",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274742",
+    "capturedAt": "2026-08-18T04:29:49.806Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "no-data",
+      "methodVersion": 3,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-18",
+      "segmentStops": 51,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "attempts": 1
+    }
+  },
+  {
+    "line": "S8",
+    "date": "2026-08-18",
+    "stand": "2026-08-18T02:30:00.000Z",
+    "trainNumber": "85622",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "07:46",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "10:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274742",
+    "capturedAt": "2026-08-18T04:29:49.806Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
