@@ -25,6 +25,7 @@ import {
 } from '../../src/verification/selection.js';
 import {
   classifyJourney,
+  createJourneyMismatchVerification,
   createUnresolvedVerification,
   determineStatus,
   locateSegment,
@@ -32,6 +33,7 @@ import {
   type SegmentCounts,
   type TripVerification,
   type VerificationStatus,
+  VERIFICATION_METHOD_VERSION,
 } from '../../src/verification/verify.js';
 
 const NOW = new Date('2026-08-13T20:00:00.000Z');
@@ -226,6 +228,60 @@ describe('segment location', () => {
     assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 2 });
   });
 
+  it('matches a short street stop against feed locality and district prefixes', () => {
+    // Live 84957 was the exact AVG S5 candidate at the exact published times, but the symmetric
+    // token score rejected its origin: one KVV token versus three feed tokens scored only 0.5.
+    const stops = [
+      stop('Karlsruhe-Kniel. Rheinbergstr.', '05:02'),
+      stop('Söllingen (b Karlsr)', '05:48'),
+      stop('Pforzheim Hbf', '06:11'),
+    ];
+    const trip = tripOn({
+      line: 'S5',
+      trainNumber: '84957',
+      fromStop: 'Rheinbergstraße',
+      fromTime: '05:02',
+      toStop: 'Pforzheim Hbf.',
+      toTime: '06:11',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 2 });
+  });
+
+  it('accepts one stale endpoint time when both names match and the other time is exact', () => {
+    // Live S1 10004: KVV said 05:52 at Hochstetten, the feed said 05:33, and both agreed on the
+    // named 06:42 destination. The exact second anchor makes the wider first delta safe.
+    const stops = [stop('Hochstetten', '05:33'), stop('Albgaubad, Ettlingen', '06:42')];
+    const trip = tripOn({
+      line: 'S1',
+      trainNumber: '10004',
+      fromStop: 'Hochstetten',
+      fromTime: '05:52',
+      toStop: 'Ettlingen Albgaubad',
+      toTime: '06:42',
+    });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 1 });
+  });
+
+  it('uses a unique exact schedule pair when neither endpoint name is recognisable', () => {
+    const stops = [
+      stop('Feed origin', '09:21'),
+      stop('Middle', '09:35'),
+      stop('Feed end', '09:45'),
+    ];
+    const trip = tripOn({ fromStop: 'KVV origin', toStop: 'KVV destination' });
+    assert.deepStrictEqual(locateSegment(trip, stops), { start: 0, end: 2 });
+  });
+
+  it('rejects a time-only fallback when more than one ordered pair fits', () => {
+    const stops = [
+      stop('First origin', '09:21'),
+      stop('Second origin', '09:21'),
+      stop('Feed end', '09:45'),
+    ];
+    const trip = tripOn({ fromStop: 'KVV origin', toStop: 'KVV destination' });
+    assert.strictEqual(locateSegment(trip, stops), null);
+  });
+
   it('normalizes Bahnhof when KVV attaches it to the specific station name', () => {
     const stops = [stop('Karlsruhe-Neureut Kirchfeld', '10:35'), stop('Ettlingen Stadt', '11:18')];
     const trip = tripOn({
@@ -239,7 +295,6 @@ describe('segment location', () => {
 
   it('does not mistake a municipality qualifier for the named origin', () => {
     const stops = [
-      stop('Hochstetten', '05:33'),
       stop('Hochstetten Altenheim, Linkenheim-Hochstetten', '05:34'),
       stop('Hochstetten Grenzstraße', '05:36'),
       stop('Linkenheim Süd, Linkenheim-Hochstetten', '05:42'),
@@ -313,7 +368,7 @@ describe('trip selection', () => {
   const NEXT_DAY_MS = Date.parse('2026-08-14T10:00:00.000Z');
   const verified = (overrides: Partial<TripVerification>): TripVerification => ({
     status: 'cancelled',
-    methodVersion: 2,
+    methodVersion: VERIFICATION_METHOD_VERSION,
     source: 'bahn.expert',
     checkedAt: '2026-08-13',
     segmentStops: 3,
@@ -360,6 +415,15 @@ describe('trip selection', () => {
   it('leaves a settled verdict alone', () => {
     const trip = tripOn({ verification: verified({ attempts: 1 }) });
     assert.strictEqual(needsCheck(trip, false, NOW_MS), false);
+  });
+
+  it('rechecks an older matching method even when its retry budget is exhausted', () => {
+    const old = verified({
+      status: 'unresolved',
+      methodVersion: VERIFICATION_METHOD_VERSION - 1,
+      attempts: MAX_ATTEMPTS,
+    });
+    assert.strictEqual(needsCheck(tripOn({ verification: old }), false, NOW_MS), true);
   });
 
   it('retries a provisional verdict on a later day until the attempt limit', () => {
@@ -595,7 +659,7 @@ describe('trip selection', () => {
       const choice = retainStrongerVerdict(legacyRan, rejectedByCurrentMatcher);
       assert.strictEqual(choice.retainedPrevious, false);
       assert.strictEqual(choice.verification.status, 'unresolved');
-      assert.strictEqual(choice.verification.methodVersion, 2);
+      assert.strictEqual(choice.verification.methodVersion, VERIFICATION_METHOD_VERSION);
     });
 
     it('does not let feed expiry masquerade as a newer-method correction', () => {
@@ -610,6 +674,25 @@ describe('trip selection', () => {
       const choice = retainStrongerVerdict(legacyRan, missingFromFeed);
       assert.strictEqual(choice.retainedPrevious, true);
       assert.strictEqual(choice.verification.status, 'ran');
+    });
+
+    it('does not discard journey-wide evidence while a segment remains unresolved', () => {
+      const evidence = verified({
+        status: 'unresolved',
+        segmentStops: 0,
+        journeyStops: 30,
+        journeyCancelledStops: 30,
+        journeyCancelled: true,
+      });
+      const decayed = verified({
+        status: 'unresolved',
+        segmentStops: 0,
+        journeyStops: 30,
+        journeyCancelledStops: 0,
+      });
+      const choice = retainStrongerVerdict(evidence, decayed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.journeyCancelledStops, 30);
     });
   });
 });
@@ -763,6 +846,54 @@ describe('operator identity', () => {
 });
 
 describe('journey classification', () => {
+  it('preserves whole-journey evidence when a strongly identified segment cannot be located', () => {
+    // Live S1 56008 has a malformed KVV interval, but the exact S1 journey is explicitly cancelled
+    // and every stop is flagged. Keep that evidence without claiming the unknown segment's bounds.
+    const stops = [
+      stop('Karlsruhe-Neureut Kirchfeld', '02:35', { cancelled: true }),
+      stop('Albgaubad, Ettlingen', '03:25', { cancelled: true }),
+    ];
+    const trip = tripOn({
+      line: 'S1',
+      trainNumber: '56008',
+      fromStop: 'Neureut Kirchfeld',
+      fromTime: '03:33',
+      toStop: 'Ettlingen Albgaubad',
+      toTime: '03:25',
+    });
+    const verdict = createJourneyMismatchVerification(
+      trip,
+      {
+        stops,
+        cancelled: true,
+        train: {
+          line: 'S1',
+          journeyNumber: 56008,
+          operator: 'Albtal-Verkehrs-Gesellschaft mbH',
+        },
+      },
+      NOW,
+    );
+    assert.strictEqual(verdict?.status, 'unresolved');
+    assert.strictEqual(verdict?.segmentStops, 0);
+    assert.strictEqual(verdict?.journeyStops, 2);
+    assert.strictEqual(verdict?.journeyCancelledStops, 2);
+    assert.strictEqual(verdict?.journeyCancelled, true);
+  });
+
+  it('does not attach journey-wide evidence from a different feed line', () => {
+    const trip = tripOn({ line: 'S4', trainNumber: '84805' });
+    const details = {
+      stops: [stop('Wörth Badepark', '07:35'), stop('Söllingen', '08:37')],
+      train: {
+        line: 'S5',
+        journeyNumber: 84805,
+        operator: 'Albtal-Verkehrs-Gesellschaft mbH',
+      },
+    };
+    assert.strictEqual(createJourneyMismatchVerification(trip, details, NOW), null);
+  });
+
   it('confirms a cancellation when every stop of the segment is cancelled', () => {
     const stops = [
       stop('Wörth (Rhein) Badepark', '07:35', { cancelled: true }),

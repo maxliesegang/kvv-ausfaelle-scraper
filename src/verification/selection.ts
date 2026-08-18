@@ -8,7 +8,7 @@
 import type { Cancellation } from '../types.js';
 import { formatBerlinWallClock, getBerlinWallClockMs } from '../utils/berlin-time.js';
 import { MAX_LOOKBACK_DAYS } from './bahn-expert.js';
-import type { TripVerification } from './verify.js';
+import { VERIFICATION_METHOD_VERSION, type TripVerification } from './verify.js';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
@@ -46,6 +46,9 @@ export function isVerifiable(cancellation: Cancellation, nowMs: number): boolean
 export function needsCheck(cancellation: Cancellation, recheck: boolean, nowMs: number): boolean {
   const existing = cancellation.verification;
   if (!existing || recheck) return true;
+  // Matching fixes must reach records whose ordinary retry budget is already exhausted. Once the
+  // new verdict is written its version is current and this path naturally switches itself off.
+  if ((existing.methodVersion ?? 1) < VERIFICATION_METHOD_VERSION) return true;
   if (!PROVISIONAL_STATUSES.has(existing.status)) return false;
   if ((existing.attempts ?? 1) >= MAX_ATTEMPTS) return false;
   return existing.checkedAt !== formatBerlinWallClock(nowMs).date;
@@ -136,8 +139,24 @@ export function retainStrongerVerdict(
   const lostTrackingEvidence =
     fresh.segmentCancelledStops === previous.segmentCancelledStops &&
     fresh.segmentTrackedStops < previous.segmentTrackedStops;
+  const bothSegmentsUnresolved = previous.segmentStops === 0 && fresh.segmentStops === 0;
+  const journeyScopeChanged =
+    previous.journeyStops > 0 &&
+    fresh.journeyStops > 0 &&
+    previous.journeyStops !== fresh.journeyStops;
+  const lostJourneyCancellationEvidence =
+    (previous.journeyCancelled === true && fresh.journeyCancelled !== true) ||
+    (fresh.journeyCancelled !== true &&
+      fresh.journeyCancelledStops < previous.journeyCancelledStops);
+  const lostJourneyTrackingEvidence =
+    fresh.journeyCancelledStops === previous.journeyCancelledStops &&
+    fresh.journeyTrackedStops < previous.journeyTrackedStops;
   const retainPrevious =
-    lostResolvedJourney || (!scopeChanged && (lostCancellationEvidence || lostTrackingEvidence));
+    lostResolvedJourney ||
+    (!scopeChanged && (lostCancellationEvidence || lostTrackingEvidence)) ||
+    (bothSegmentsUnresolved &&
+      !journeyScopeChanged &&
+      (lostJourneyCancellationEvidence || lostJourneyTrackingEvidence));
 
   return retainPrevious
     ? { verification: withAttemptCount(previous, previous), retainedPrevious: true }

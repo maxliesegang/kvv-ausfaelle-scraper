@@ -27,7 +27,7 @@ export type VerificationStatus =
   | 'ran'
   /** The feed knows the journey but holds neither cancellation flags nor realtime for it. */
   | 'no-data'
-  /** No journey matching this line, date and departure time could be resolved. */
+  /** The announced segment could not be resolved confidently within a journey. */
   | 'unresolved';
 
 export type UnresolvedReason = 'invalid-train-number' | 'journey-not-found' | 'journey-mismatch';
@@ -48,11 +48,14 @@ export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
  * Version 2 added bounded schedule matching, direction-aware boundary evidence, instant-based
  * timestamp comparison, and journey-wide tracking counts. Version 3 scopes operator identity to
  * the announced segment, which matters on through journeys and for ambiguous line names such as
- * S6. A stored verdict without this field is version 1. The selection layer uses this only during
- * a recheck: a newer method may correct a confident old false match, while same-version evidence
- * continues to ratchet upward.
+ * S6. Version 4 makes names one signal rather than an absolute gate: it recognises distinctive
+ * terminal street names, permits one wider name-confirmed time discrepancy when the other endpoint
+ * is exact, falls back to a unique exact schedule pair, and retains journey-wide evidence when a
+ * segment still cannot be located. A stored verdict without this field is version 1. The selection
+ * layer uses this only during a recheck: a newer method may correct a confident old false match,
+ * while same-version evidence continues to ratchet upward.
  */
-export const VERIFICATION_METHOD_VERSION = 3;
+export const VERIFICATION_METHOD_VERSION = 4;
 
 export interface TripVerification {
   readonly status: VerificationStatus;
@@ -108,7 +111,7 @@ export interface TripVerification {
   /** Present only when the source explicitly marked the whole journey cancelled. */
   readonly journeyCancelled?: true;
 
-  /** Why no journey could be resolved; present only on `unresolved` verdicts. */
+  /** Why no journey or segment could be resolved; present only on `unresolved` verdicts. */
   readonly unresolvedReason?: UnresolvedReason;
 
   /**
@@ -283,10 +286,20 @@ function nameSimilarity(wantedName: string, actualName: string): number {
 
   // A slash separates aliases in names such as `Tullastraße/Alter Schlachthof, Karlsruhe`, while
   // text after a comma is often only the municipality. Score those meaningful variants as well
-  // as the full name. This lets short KVV names match without treating a municipality qualifier
-  // (`Linkenheim Süd, Linkenheim-Hochstetten`) as the stop itself.
+  // as the full name. The final street token is also a safe, useful variant: KVV publishes the
+  // short `Rheinbergstraße`, while the feed publishes `Karlsruhe-Kniel. Rheinbergstr.`. Using an
+  // arbitrary final token would be too broad; restricting this to street names keeps locality
+  // qualifiers such as `Linkenheim-Hochstetten` from becoming stop identities.
   const beforeComma = actualName.split(',')[0] ?? actualName;
-  const variants = [...new Set([actualName, beforeComma, ...beforeComma.split('/')])];
+  const terminalStreet = beforeComma.match(/[\p{L}-]+str(?:aße|asse|\.)?$/iu)?.[0];
+  const variants = [
+    ...new Set([
+      actualName,
+      beforeComma,
+      ...beforeComma.split('/'),
+      ...(terminalStreet ? [terminalStreet] : []),
+    ]),
+  ];
   let best = 0;
 
   for (const variant of variants) {
@@ -316,6 +329,12 @@ function nameSimilarity(wantedName: string, actualName: string): number {
 const MINIMUM_NAME_SIMILARITY = 0.55;
 /** Reject a same-named journey whose schedule does not describe the announced trip. */
 const MAX_ENDPOINT_TIME_DELTA_MINUTES = 15;
+/** Wider tolerance is safe only when both names match and the other endpoint is effectively exact. */
+const MAX_ANCHORED_ENDPOINT_TIME_DELTA_MINUTES = 30;
+const MAX_ANCHOR_TIME_DELTA_MINUTES = 2;
+const MINIMUM_ANCHORED_NAME_SIMILARITY = 0.8;
+/** Names may be omitted only when the complete ordered schedule pair is unique at exact precision. */
+const MAX_TIME_ONLY_DELTA_MINUTES = 2;
 
 interface StopMatch {
   readonly index: number;
@@ -336,6 +355,7 @@ function findBestStopMatch(
   stops: readonly JourneyStop[],
   firstIndex: number,
   preferredEvent: 'arrival' | 'departure',
+  maxTimeDeltaMinutes = MAX_ENDPOINT_TIME_DELTA_MINUTES,
 ): StopMatch | null {
   const wantedMs = getBerlinWallClockMs(wantedDate, wantedTime);
   let best: StopMatch | null = null;
@@ -350,7 +370,7 @@ function findBestStopMatch(
     if (similarity < MINIMUM_NAME_SIMILARITY) continue;
     const actualMs = getBerlinWallClockMs(wallClock.date, wallClock.time);
     const timeDeltaMinutes = Math.abs(actualMs - wantedMs) / (60 * 1000);
-    if (timeDeltaMinutes > MAX_ENDPOINT_TIME_DELTA_MINUTES) continue;
+    if (timeDeltaMinutes > maxTimeDeltaMinutes) continue;
     const candidate: StopMatch = {
       index,
       nameSimilarity: similarity,
@@ -379,23 +399,99 @@ function nextDate(date: string): string {
  * the feed ("Söllingen Bahnhof" vs "Söllingen (b Karlsr)"), so the name is matched by normalized
  * token overlap and the scheduled arrival must remain inside the confidence window.
  */
-function findSegmentEndIndex(
+function findSegmentEndMatch(
   cancellation: Cancellation,
   stops: readonly JourneyStop[],
   startIndex: number,
-): number {
+  maxTimeDeltaMinutes = MAX_ENDPOINT_TIME_DELTA_MINUTES,
+): StopMatch | null {
   const crossesMidnight = toMinutes(cancellation.toTime) < toMinutes(cancellation.fromTime);
   const wantedDate = crossesMidnight ? nextDate(cancellation.date) : cancellation.date;
-  return (
-    findBestStopMatch(
-      cancellation.toStop,
-      wantedDate,
-      cancellation.toTime,
-      stops,
-      startIndex + 1,
-      'arrival',
-    )?.index ?? -1
+  return findBestStopMatch(
+    cancellation.toStop,
+    wantedDate,
+    cancellation.toTime,
+    stops,
+    startIndex + 1,
+    'arrival',
+    maxTimeDeltaMinutes,
   );
+}
+
+function locateNamedSegment(
+  cancellation: Cancellation,
+  stops: readonly JourneyStop[],
+  maxTimeDeltaMinutes: number,
+): {
+  bounds: { start: number; end: number };
+  startDelta: number;
+  endDelta: number;
+  startSimilarity: number;
+  endSimilarity: number;
+} | null {
+  const start = findBestStopMatch(
+    cancellation.fromStop,
+    cancellation.date,
+    cancellation.fromTime,
+    stops,
+    0,
+    'departure',
+    maxTimeDeltaMinutes,
+  );
+  if (!start) return null;
+  const end = findSegmentEndMatch(cancellation, stops, start.index, maxTimeDeltaMinutes);
+  if (!end) return null;
+  return {
+    bounds: { start: start.index, end: end.index },
+    startDelta: start.timeDeltaMinutes,
+    endDelta: end.timeDeltaMinutes,
+    startSimilarity: start.nameSimilarity,
+    endSimilarity: end.nameSimilarity,
+  };
+}
+
+function findScheduleMatches(
+  wantedDate: string,
+  wantedTime: string,
+  stops: readonly JourneyStop[],
+  firstIndex: number,
+  preferredEvent: 'arrival' | 'departure',
+): StopMatch[] {
+  const wantedMs = getBerlinWallClockMs(wantedDate, wantedTime);
+  const matches: StopMatch[] = [];
+  for (let index = firstIndex; index < stops.length; index += 1) {
+    const stop = stops[index];
+    const wallClock = stop ? scheduledWallClock(stop, preferredEvent) : null;
+    if (!wallClock) continue;
+    const actualMs = getBerlinWallClockMs(wallClock.date, wallClock.time);
+    const timeDeltaMinutes = Math.abs(actualMs - wantedMs) / (60 * 1000);
+    if (timeDeltaMinutes <= MAX_TIME_ONLY_DELTA_MINUTES) {
+      matches.push({ index, nameSimilarity: 0, timeDeltaMinutes });
+    }
+  }
+  return matches;
+}
+
+/** Locate a segment by schedule only when exactly one ordered endpoint pair fits. */
+function locateUniqueScheduleSegment(
+  cancellation: Cancellation,
+  stops: readonly JourneyStop[],
+): { start: number; end: number } | null {
+  const crossesMidnight = toMinutes(cancellation.toTime) < toMinutes(cancellation.fromTime);
+  const endDate = crossesMidnight ? nextDate(cancellation.date) : cancellation.date;
+  const starts = findScheduleMatches(
+    cancellation.date,
+    cancellation.fromTime,
+    stops,
+    0,
+    'departure',
+  );
+  const pairs = starts.flatMap((start) =>
+    findScheduleMatches(endDate, cancellation.toTime, stops, start.index + 1, 'arrival').map(
+      (end) => ({ start: start.index, end: end.index }),
+    ),
+  );
+  return pairs.length === 1 ? (pairs[0] ?? null) : null;
 }
 
 /**
@@ -406,18 +502,31 @@ export function locateSegment(
   cancellation: Cancellation,
   stops: readonly JourneyStop[],
 ): { start: number; end: number } | null {
-  const start = findBestStopMatch(
-    cancellation.fromStop,
-    cancellation.date,
-    cancellation.fromTime,
+  const named = locateNamedSegment(cancellation, stops, MAX_ENDPOINT_TIME_DELTA_MINUTES);
+  if (named) return named.bounds;
+
+  // KVV occasionally publishes one stale endpoint time. Two matching names plus one exact time
+  // still identify the run strongly; this recovered live S1 10004 (05:52 published vs 05:33 in
+  // the timetable, with its destination exact) without accepting S5 84805, whose two times were
+  // both about half an hour away from the only journey returned.
+  const anchored = locateNamedSegment(
+    cancellation,
     stops,
-    0,
-    'departure',
-  )?.index;
-  if (start === undefined) return null;
-  const end = findSegmentEndIndex(cancellation, stops, start);
-  if (end === -1) return null;
-  return { start, end };
+    MAX_ANCHORED_ENDPOINT_TIME_DELTA_MINUTES,
+  );
+  if (
+    anchored &&
+    Math.min(anchored.startDelta, anchored.endDelta) <= MAX_ANCHOR_TIME_DELTA_MINUTES &&
+    anchored.startSimilarity >= MINIMUM_ANCHORED_NAME_SIMILARITY &&
+    anchored.endSimilarity >= MINIMUM_ANCHORED_NAME_SIMILARITY
+  ) {
+    return anchored.bounds;
+  }
+
+  // Names differ much more freely than schedules. The exact train number, date and operator are
+  // checked by the caller; here both endpoint clocks must additionally form one unique ordered
+  // pair. Ambiguous dense-corridor times deliberately remain unresolved.
+  return locateUniqueScheduleSegment(cancellation, stops);
 }
 
 /**
@@ -697,6 +806,57 @@ export function matchesNetworkOperator(
   // compatible name/code/admin tokens; requiring all of them to agree prevents one stray AVG leg
   // elsewhere in a mixed journey from vouching for a foreign announced segment.
   return tokens.every(namesNetworkOperator);
+}
+
+function countJourney(stops: readonly JourneyStop[]): SegmentCounts {
+  return {
+    segmentStops: 0,
+    segmentCancelledStops: 0,
+    segmentTrackedStops: 0,
+    journeyStops: stops.length,
+    journeyCancelledStops: stops.filter(isCancelled).length,
+    journeyTrackedStops: stops.filter(isTracked).length,
+    // The segment is unknown, so no tracked stop can honestly be labelled inside or outside it.
+    trackedOutsideSegment: 0,
+  };
+}
+
+/**
+ * Preserve evidence from a strongly identified journey whose announced segment remains unknown.
+ *
+ * This deliberately requires the exact stored line in addition to train number, network operator
+ * and service date. Line aliases are safe only after endpoint matching; without a segment they
+ * would attach S5 journey evidence to KVV's unrelated S4 84805 typo. The unresolved status keeps
+ * the journey counts contextual rather than claiming they describe the announced segment.
+ */
+export function createJourneyMismatchVerification(
+  cancellation: Cancellation,
+  details: JourneyDetails,
+  now: Date,
+): TripVerification | null {
+  const expectedJourneyNumber = Number(cancellation.trainNumber);
+  if (details.train?.journeyNumber !== expectedJourneyNumber) return null;
+  if (details.train?.line !== cancellation.line) return null;
+  if (!matchesNetworkOperator(details)) return null;
+
+  const stops = details.stops ?? [];
+  const runsOnDate = stops.some((stop) =>
+    stopEvents(stop).some((event) => {
+      if (!event?.scheduledTime) return false;
+      const parsed = Date.parse(event.scheduledTime);
+      return !Number.isNaN(parsed) && formatBerlinWallClock(parsed).date === cancellation.date;
+    }),
+  );
+  if (!runsOnDate || stops.length === 0) return null;
+
+  const feedOperator = details.train?.operator;
+  const unexpectedOperator =
+    feedOperator && !namesNetworkOperator(normalizeGermanText(feedOperator));
+  return createVerification('unresolved', countJourney(stops), now, {
+    unresolvedReason: 'journey-mismatch',
+    ...(details.cancelled === true ? { journeyCancelled: true } : {}),
+    ...(unexpectedOperator ? { feedOperator } : {}),
+  });
 }
 
 /** Classify one stored cancellation against the journey the feed returned for it. */

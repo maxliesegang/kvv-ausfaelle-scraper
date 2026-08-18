@@ -35,6 +35,7 @@ import {
 import { isVerifiable, needsCheck, retainStrongerVerdict } from '../src/verification/selection.js';
 import {
   classifyJourney,
+  createJourneyMismatchVerification,
   createUnresolvedVerification,
   type TripVerification,
 } from '../src/verification/verify.js';
@@ -81,6 +82,7 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
   const ordered = orderJourneyCandidates(candidates, cancellation.line);
   let firstCandidateError: unknown;
   let sawJourneyDetails = false;
+  let journeyMismatchEvidence: TripVerification | null = null;
 
   for (const candidate of ordered) {
     let details;
@@ -97,7 +99,18 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
     sawJourneyDetails = true;
     const verdict = classifyJourney(cancellation, details, now);
     if (verdict) return verdict;
+    const mismatchEvidence = createJourneyMismatchVerification(cancellation, details, now);
+    if (
+      mismatchEvidence &&
+      (!journeyMismatchEvidence ||
+        mismatchEvidence.journeyCancelledStops + mismatchEvidence.journeyTrackedStops >
+          journeyMismatchEvidence.journeyCancelledStops +
+            journeyMismatchEvidence.journeyTrackedStops)
+    ) {
+      journeyMismatchEvidence = mismatchEvidence;
+    }
   }
+  if (journeyMismatchEvidence) return journeyMismatchEvidence;
   if (firstCandidateError) throw firstCandidateError;
   return createUnresolvedVerification(
     now,

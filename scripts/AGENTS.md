@@ -95,11 +95,21 @@ This is the most specific guidance for maintenance scripts.
     are located by normalized stop name first and scheduled time second. Time alone is never
     identity on dense Stadtbahn corridors: several adjacent stops can fall inside a two-minute
     tolerance, while KVV's endpoint time can itself differ from the feed by ten minutes or more.
-    The stop matcher normalizes `KA`/`Karlsruhe`, station and street abbreviations, and one-character
-    source typos; it rejects a journey when either named endpoint remains unrecognisable or more
-    than 15 minutes from the published schedule. Boundary evidence is directional: only departure
+    The stop matcher normalizes `KA`/`Karlsruhe`, station and street abbreviations, distinctive
+    terminal street names behind locality/district prefixes, and one-character source typos.
+    Names are strong evidence but not an absolute gate: when they fail, an exact train/date/operator
+    may still resolve through one unique ordered pair of endpoint times within two minutes. A
+    name-confirmed pair normally allows 15 minutes; one endpoint may differ by up to 30 minutes only
+    when both names are strong and the other time is within two minutes. Boundary evidence is
+    directional: only departure
     belongs to the origin and only arrival to the destination, so adjacent legs cannot manufacture
     tracking or cancellation inside the announced segment.
+  - **Unresolved segments retain safe journey evidence.** If no segment pair survives, a candidate
+    on the exact stored line with the exact train number, service date, and AVG operator may still
+    contribute whole-journey cancellation/tracking counts. Its status stays `unresolved`, segment
+    counts stay zero, and `trackedOutsideSegment` stays zero because no stop can honestly be placed
+    inside or outside unknown bounds. This deliberately excludes line aliases: without endpoint
+    confirmation, an S5 response must not become evidence for an unrelated S4 notice typo.
   - **Absence of realtime is not evidence of cancellation.** A segment with no realtime counts as
     cancelled only when the _rest of the same run_ was tracked, which proves the feed had
     coverage; otherwise the verdict is `no-data`. `partial`, `no-data`, and `unresolved` are
@@ -142,7 +152,10 @@ This is the most specific guidance for maintenance scripts.
     KVV occasionally publishes a train number on a line no feed knows — and an unbounded retry
     would re-ask throughout the seven-day window. Date spacing is load-bearing with the four-hour
     workflow schedule: without it, a trip spends all three attempts in eight hours and cannot
-    benefit from next-day realtime. `--recheck` ignores both spacing and budget. Trip selection
+    benefit from next-day realtime. `--recheck` ignores both spacing and budget. An older
+    `methodVersion` is also rechecked once regardless of status or spent budget, so matcher fixes
+    reach still-live historical records without requiring a manual migration. Once written, the
+    current version switches that path off. Trip selection
     (`isVerifiable`, `needsCheck`, `withAttemptCount`) lives in `selection.ts` so the policy is pure
     and unit-tested, leaving the script as orchestration.
   - **Evidence only ratchets up** (`retainStrongerVerdict` in `src/verification/selection.ts`).
