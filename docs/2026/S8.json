@@ -1032,7 +1032,7 @@
       "status": "no-data",
       "methodVersion": 4,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-18",
+      "checkedAt": "2026-08-19",
       "segmentStops": 51,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1040,7 +1040,7 @@
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
-      "attempts": 2
+      "attempts": 3
     }
   },
   {

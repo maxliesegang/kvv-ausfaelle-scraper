@@ -14285,7 +14285,7 @@
       "status": "no-data",
       "methodVersion": 4,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-18",
+      "checkedAt": "2026-08-19",
       "segmentStops": 39,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -14293,7 +14293,7 @@
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -14369,7 +14369,7 @@
       "status": "no-data",
       "methodVersion": 4,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-18",
+      "checkedAt": "2026-08-19",
       "segmentStops": 49,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -14377,7 +14377,7 @@
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -14425,7 +14425,7 @@
       "status": "no-data",
       "methodVersion": 4,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-18",
+      "checkedAt": "2026-08-19",
       "segmentStops": 40,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -14433,7 +14433,7 @@
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -14480,7 +14480,7 @@
       "status": "no-data",
       "methodVersion": 4,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-18",
+      "checkedAt": "2026-08-19",
       "segmentStops": 30,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -14488,7 +14488,7 @@
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
-      "attempts": 1
+      "attempts": 2
     }
   }
 ]
