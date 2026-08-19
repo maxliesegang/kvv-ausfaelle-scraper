@@ -363,7 +363,7 @@ describe('segment location', () => {
 });
 
 describe('trip selection', () => {
-  // 2026-08-13 12:00 Berlin, i.e. after the 09:21 departure the default trip uses.
+  // 2026-08-13 12:00 Berlin, i.e. after the 09:45 segment end the default trip uses.
   const NOW_MS = Date.parse('2026-08-13T10:00:00.000Z');
   const NEXT_DAY_MS = Date.parse('2026-08-14T10:00:00.000Z');
   const verified = (overrides: Partial<TripVerification>): TripVerification => ({
@@ -381,12 +381,24 @@ describe('trip selection', () => {
     ...overrides,
   });
 
-  it('skips a trip that has not departed yet', () => {
+  it('skips a trip whose segment has not started yet', () => {
     assert.strictEqual(isVerifiable(tripOn({ fromTime: '23:50' }), NOW_MS), false);
   });
 
-  it('skips a trip that departed within the settling grace period', () => {
-    assert.strictEqual(isVerifiable(tripOn({ fromTime: '11:45' }), NOW_MS), false);
+  it('skips a trip whose segment ended within the settling grace period', () => {
+    assert.strictEqual(isVerifiable(tripOn({ fromTime: '10:30', toTime: '11:45' }), NOW_MS), false);
+  });
+
+  it('waits for the whole announced segment instead of checking a long trip mid-run', () => {
+    assert.strictEqual(isVerifiable(tripOn({ fromTime: '09:00', toTime: '12:30' }), NOW_MS), false);
+  });
+
+  it('waits for a segment that ends after midnight', () => {
+    const beforeEnd = Date.parse('2026-08-13T22:15:00.000Z'); // 00:15 Berlin on August 14
+    const afterGrace = Date.parse('2026-08-13T23:00:00.000Z'); // 01:00 Berlin on August 14
+    const overnight = tripOn({ fromTime: '23:30', toTime: '00:20' });
+    assert.strictEqual(isVerifiable(overnight, beforeEnd), false);
+    assert.strictEqual(isVerifiable(overnight, afterGrace), true);
   });
 
   it('accepts a departed trip inside the lookback window', () => {
@@ -517,6 +529,29 @@ describe('trip selection', () => {
       const choice = retainStrongerVerdict(partial, decayed);
       assert.strictEqual(choice.retainedPrevious, true);
       assert.strictEqual(choice.verification.status, 'partial');
+    });
+
+    it('dates retained evidence to the fresh check so retries remain daily', () => {
+      const previous = verified({
+        status: 'partial',
+        segmentCancelledStops: 1,
+        segmentTrackedStops: 12,
+        attempts: 1,
+      });
+      const decayed = verified({
+        status: 'cancelled',
+        checkedAt: '2026-08-14',
+        segmentCancelledStops: 1,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(previous, decayed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.checkedAt, '2026-08-14');
+      assert.strictEqual(choice.verification.attempts, 2);
+      assert.strictEqual(
+        needsCheck(tripOn({ verification: choice.verification }), false, NEXT_DAY_MS),
+        false,
+      );
     });
 
     it('keeps retries bounded when a provisional verdict is re-checked', () => {
@@ -674,6 +709,7 @@ describe('trip selection', () => {
       const choice = retainStrongerVerdict(legacyRan, missingFromFeed);
       assert.strictEqual(choice.retainedPrevious, true);
       assert.strictEqual(choice.verification.status, 'ran');
+      assert.strictEqual(choice.verification.methodVersion, VERIFICATION_METHOD_VERSION);
     });
 
     it('does not discard journey-wide evidence while a segment remains unresolved', () => {
@@ -874,11 +910,12 @@ describe('journey classification', () => {
       },
       NOW,
     );
-    assert.strictEqual(verdict?.status, 'unresolved');
+    assert.strictEqual(verdict?.status, 'cancelled');
     assert.strictEqual(verdict?.segmentStops, 0);
     assert.strictEqual(verdict?.journeyStops, 2);
     assert.strictEqual(verdict?.journeyCancelledStops, 2);
     assert.strictEqual(verdict?.journeyCancelled, true);
+    assert.strictEqual(verdict?.unresolvedReason, undefined);
   });
 
   it('does not attach journey-wide evidence from a different feed line', () => {

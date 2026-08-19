@@ -75,6 +75,13 @@ is available, including `unknown` classifications and legacy records that predat
 storage. The field preserves classifier evidence without requiring consumers to re-read the
 archived article.
 
+Records may also contain an advisory `verification` object after the separate back-verification
+job has checked bahn.expert's realtime history. Its `status` is `cancelled`, `ran`, `partial`,
+`no-data`, or `unresolved`, with stop counts recording the evidence for the announced segment and
+the whole journey. This does not change the cancellation record's meaning: the record says what
+KVV announced, while `verification` describes what the external feed later observed. The field is
+optional because the feed has a rolling seven-day window and some trips cannot be resolved.
+
 ## Running locally
 
 Requirements: Node.js 22 or newer.
@@ -132,11 +139,18 @@ See [tests/README.md](tests/README.md) for test organization and
   articles against stored trips
 - `npm run reparse-archives -- --write [--year=N]` — backfill only `cause` and `causeKeyword`
   for stored trips that reparse to the same identity
+- `npm run reparse-archives -- --write-dates [--year=N]` — correct trip dates from successfully
+  reparsed archives without otherwise reconciling trip fields
 - `npm run reparse-archives -- --write-trips [--year=N]` — fully reconcile successfully parsed
   archived articles with stored trips
+- `npm run verify-trips -- [--year=N] [--date=YYYY-MM-DD] [--verbose]` — read-only check of
+  completed announced segments against bahn.expert's realtime history; add `--write` to persist
+  advisory `verification` results or `--recheck` to ignore normal retry limits
 
-`--write` and `--write-trips` are mutually exclusive. Parse failures never authorize deletion:
-only successfully parsed archives participate in reconciliation.
+The three reparse write modes are mutually exclusive. Parse failures never authorize deletion:
+only successfully parsed archives participate in reconciliation. Verification waits until the
+announced segment has ended plus a settling grace period, never changes trip identity or cause,
+and keeps stronger evidence when the feed's short-lived detail decays.
 
 ## Configuration
 

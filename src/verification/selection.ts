@@ -12,8 +12,14 @@ import { VERIFICATION_METHOD_VERSION, type TripVerification } from './verify.js'
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
-/** Grace period after departure before a trip is judged, so a running trip is not called missing. */
+/** Grace period after the announced segment ends, so a running trip is not judged prematurely. */
 export const SETTLE_MS = 30 * 60 * 1000;
+
+function nextDate(date: string): string {
+  const noonUtc = new Date(`${date}T12:00:00.000Z`);
+  noonUtc.setUTCDate(noonUtc.getUTCDate() + 1);
+  return noonUtc.toISOString().slice(0, 10);
+}
 
 /**
  * Provisional verdicts are retried on later runs — realtime data can arrive late — but only a few
@@ -32,13 +38,21 @@ const PROVISIONAL_STATUSES = new Set<TripVerification['status']>([
 ]);
 
 /**
- * Whether a trip can be checked at all: departed (plus a settling grace period) and still inside
- * the feed's lookback window. Trips older than the window are permanently unverifiable.
+ * Whether a trip can be checked at all: its announced segment has ended (plus a settling grace
+ * period) and its departure is still inside the feed's lookback window. Waiting for the segment
+ * end matters on long runs: checking 30 minutes after departure can see only the first observed
+ * stops and permanently settle a false partial or inferred-cancellation verdict.
+ *
+ * Trips older than the window are permanently unverifiable.
  */
 export function isVerifiable(cancellation: Cancellation, nowMs: number): boolean {
   const departureMs = getBerlinWallClockMs(cancellation.date, cancellation.fromTime);
   if (Number.isNaN(departureMs)) return false;
-  if (departureMs > nowMs - SETTLE_MS) return false;
+  const sameDayEndMs = getBerlinWallClockMs(cancellation.date, cancellation.toTime);
+  if (Number.isNaN(sameDayEndMs)) return false;
+  const endDate = sameDayEndMs < departureMs ? nextDate(cancellation.date) : cancellation.date;
+  const segmentEndMs = getBerlinWallClockMs(endDate, cancellation.toTime);
+  if (Number.isNaN(segmentEndMs) || segmentEndMs > nowMs - SETTLE_MS) return false;
   return (nowMs - departureMs) / MS_PER_DAY <= MAX_LOOKBACK_DAYS;
 }
 
@@ -82,6 +96,23 @@ export interface VerdictChoice {
   readonly retainedPrevious: boolean;
 }
 
+/** Keep the evidence but record that it was assessed again by the fresh check. */
+function retainPreviousEvidence(
+  previous: TripVerification,
+  fresh: TripVerification,
+): TripVerification {
+  const retained = {
+    ...previous,
+    // Without refreshing this date, the next workflow run on the same day retries immediately and
+    // can spend the entire bounded attempt budget before any new realtime has had time to arrive.
+    checkedAt: fresh.checkedAt,
+    // A newer matcher that found the same journey but less expiring evidence has still validated
+    // the stored match. Stamp the current version so migration does not repeat on every run.
+    methodVersion: Math.max(previous.methodVersion ?? 1, fresh.methodVersion),
+  };
+  return withAttemptCount(retained, previous);
+}
+
 /**
  * Pick which of two verdicts to store. **Evidence only ratchets up.**
  *
@@ -113,17 +144,14 @@ export function retainStrongerVerdict(
   }
 
   const previousMethodVersion = previous.methodVersion ?? 1;
-  if (fresh.methodVersion > previousMethodVersion) {
+  if (
+    fresh.methodVersion > previousMethodVersion &&
+    fresh.status === 'unresolved' &&
+    fresh.unresolvedReason === 'journey-mismatch'
+  ) {
     // A newer matcher positively rejecting fetched journey details corrects an old false match.
-    // Merely finding no journey can also mean the short-lived feed has already decayed, so it
-    // must not erase a previously located segment.
-    if (
-      previous.segmentStops > 0 &&
-      fresh.status === 'unresolved' &&
-      fresh.unresolvedReason !== 'journey-mismatch'
-    ) {
-      return { verification: withAttemptCount(previous, previous), retainedPrevious: true };
-    }
+    // Other newer-method results still pass through the evidence ratchet below: method migration
+    // must not turn feed decay into a confident downgrade.
     return { verification: withAttemptCount(fresh, previous), retainedPrevious: false };
   }
 
@@ -159,6 +187,6 @@ export function retainStrongerVerdict(
       (lostJourneyCancellationEvidence || lostJourneyTrackingEvidence));
 
   return retainPrevious
-    ? { verification: withAttemptCount(previous, previous), retainedPrevious: true }
+    ? { verification: retainPreviousEvidence(previous, fresh), retainedPrevious: true }
     : { verification: withAttemptCount(fresh, previous), retainedPrevious: false };
 }

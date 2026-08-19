@@ -51,6 +51,11 @@ Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` 
 - `cause` and `causeKeyword` are a paired article-level classification. `causeKeyword` is `null`
   when no evidence is available, either because no rule matched or because the stored record
   predates evidence capture.
+- `verification` is optional, advisory evidence from an external realtime source. It records what
+  the source later observed; it never changes the record's primary meaning that KVV announced a
+  cancellation. Consumers must tolerate its absence, including for trips outside the source's
+  rolling lookback window. Keep its `source` provenance and segment/journey evidence intact, and
+  never use a verdict to delete or rewrite cancellation identity.
 - `stand` is the source article's Europe/Berlin timestamp represented as UTC ISO time.
 - `date` is the source-local trip date and must not change because of a UTC date rollover.
 - Keep `capturedAt` stable when offline reconciliation corrects an already stored trip. The same

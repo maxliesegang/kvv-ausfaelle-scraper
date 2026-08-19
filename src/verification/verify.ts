@@ -51,11 +51,14 @@ export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
  * S6. Version 4 makes names one signal rather than an absolute gate: it recognises distinctive
  * terminal street names, permits one wider name-confirmed time discrepancy when the other endpoint
  * is exact, falls back to a unique exact schedule pair, and retains journey-wide evidence when a
- * segment still cannot be located. A stored verdict without this field is version 1. The selection
- * layer uses this only during a recheck: a newer method may correct a confident old false match,
- * while same-version evidence continues to ratchet upward.
+ * segment still cannot be located. Version 5 accepts the source's explicit whole-journey
+ * cancellation even when malformed published endpoint times prevent segment location: an
+ * explicitly cancelled journey necessarily cancelled every segment it contained. A stored verdict
+ * without this field is version 1. The selection layer uses this only during a recheck: a newer
+ * method may correct a confident old false match, while same-version evidence continues to ratchet
+ * upward.
  */
-export const VERIFICATION_METHOD_VERSION = 4;
+export const VERIFICATION_METHOD_VERSION = 5;
 
 export interface TripVerification {
   readonly status: VerificationStatus;
@@ -852,11 +855,16 @@ export function createJourneyMismatchVerification(
   const feedOperator = details.train?.operator;
   const unexpectedOperator =
     feedOperator && !namesNetworkOperator(normalizeGermanText(feedOperator));
-  return createVerification('unresolved', countJourney(stops), now, {
-    unresolvedReason: 'journey-mismatch',
-    ...(details.cancelled === true ? { journeyCancelled: true } : {}),
-    ...(unexpectedOperator ? { feedOperator } : {}),
-  });
+  const journeyCancelled = details.cancelled === true;
+  return createVerification(
+    journeyCancelled ? 'cancelled' : 'unresolved',
+    countJourney(stops),
+    now,
+    {
+      ...(journeyCancelled ? { journeyCancelled: true } : { unresolvedReason: 'journey-mismatch' }),
+      ...(unexpectedOperator ? { feedOperator } : {}),
+    },
+  );
 }
 
 /** Classify one stored cancellation against the journey the feed returned for it. */

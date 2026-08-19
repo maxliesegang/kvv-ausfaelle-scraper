@@ -1,5 +1,8 @@
 # Agents
 
+This is the canonical repository guidance for coding agents. Tool-specific instruction files,
+including `CLAUDE.md`, should only point here rather than duplicate these rules.
+
 This repository uses path-scoped `AGENTS.md` files to minimize context.
 When multiple files apply, use the closest file to the edited path as the most specific guidance.
 
@@ -17,6 +20,9 @@ When multiple files apply, use the closest file to the edited path as the most s
   - **Fahrplan year**: the timetable-period bucket used for storage and mappings
 - Primary commands:
   - `npm run dev`
+  - `npm run build`
+  - `npm run lint`
+  - `npm test`
   - `npm run test:unit`
   - `npm run type-check`
   - `npm run format:check`
@@ -30,6 +36,17 @@ When multiple files apply, use the closest file to the edited path as the most s
 - Name counters by the entity and outcome they count (`tripsRestored`,
   `articlesWithParseErrors`, `classificationsUpdated`), not generic verbs such as `changed` or
   `written`.
+- Use `line` only for a transit line; call a line of article text a `row`.
+- Name Fahrplan-year directories explicitly (`fahrplanYearDirectory`, not `yearDir`), functions
+  with verbs, and maps as `<values>By<Key>`.
+
+## Code Conventions
+
+- The project targets Node.js 22+ and uses ESM. Prefix built-in imports with `node:` and include
+  `.js` extensions on relative imports.
+- Prefer shared helpers under `src/utils/` over local reimplementations.
+- Treat published JSON field names as contracts, even when a longer internal name would be more
+  descriptive.
 
 ## Path Map
 

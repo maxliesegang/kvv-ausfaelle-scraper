@@ -106,14 +106,19 @@ This is the most specific guidance for maintenance scripts.
     tracking or cancellation inside the announced segment.
   - **Unresolved segments retain safe journey evidence.** If no segment pair survives, a candidate
     on the exact stored line with the exact train number, service date, and AVG operator may still
-    contribute whole-journey cancellation/tracking counts. Its status stays `unresolved`, segment
-    counts stay zero, and `trackedOutsideSegment` stays zero because no stop can honestly be placed
-    inside or outside unknown bounds. This deliberately excludes line aliases: without endpoint
-    confirmation, an S5 response must not become evidence for an unrelated S4 notice typo.
+    contribute whole-journey cancellation/tracking counts. Its status stays `unresolved` unless
+    the source explicitly marks the entire journey cancelled; that statement necessarily covers
+    every segment even when malformed notice times hide its bounds. Segment counts stay zero, and
+    `trackedOutsideSegment` stays zero because no stop can honestly be placed inside or outside
+    unknown bounds. This deliberately excludes line aliases: without endpoint confirmation, an S5
+    response must not become evidence for an unrelated S4 notice typo.
   - **Absence of realtime is not evidence of cancellation.** A segment with no realtime counts as
     cancelled only when the _rest of the same run_ was tracked, which proves the feed had
     coverage; otherwise the verdict is `no-data`. `partial`, `no-data`, and `unresolved` are
     re-checked on later Berlin calendar days; `cancelled` and `ran` are settled.
+    A trip first becomes eligible only after the announced segment's arrival plus the settling
+    grace period, not after departure; otherwise a long trip is necessarily read mid-run and can
+    be settled from incomplete evidence.
   - **Line names are a hint, not a key.** KVV and the feed name the same run differently _by
     design_: KVV publishes the corridor a rider recognises (`S51`, `S7`) while the feed follows
     GTFS's operational short-workings (`S52`, `S71`), or has no line at all for a depot run (`E`).
@@ -155,7 +160,9 @@ This is the most specific guidance for maintenance scripts.
     benefit from next-day realtime. `--recheck` ignores both spacing and budget. An older
     `methodVersion` is also rechecked once regardless of status or spent budget, so matcher fixes
     reach still-live historical records without requiring a manual migration. Once written, the
-    current version switches that path off. Trip selection
+    current version switches that path off. A recheck that retains stronger stored evidence still
+    refreshes `checkedAt`; otherwise later workflow runs on the same day consume the remaining
+    attempt budget immediately. Trip selection
     (`isVerifiable`, `needsCheck`, `withAttemptCount`) lives in `selection.ts` so the policy is pure
     and unit-tested, leaving the script as orchestration.
   - **Evidence only ratchets up** (`retainStrongerVerdict` in `src/verification/selection.ts`).
