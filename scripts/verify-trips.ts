@@ -3,9 +3,13 @@
  *
  * Reads `docs/<fahrplan-year>/<line>.json`, and for every trip that has already departed and still
  * falls inside bahn.expert's rolling seven-day window, asks whether the announced segment actually
- * ran. The
- * verdict is written to the trip's advisory `verification` field and nothing else — trip identity,
- * cause and dates are never touched.
+ * ran. The verdict is written to the trip's advisory `verification` field and nothing else — trip
+ * identity, cause and dates are never touched.
+ *
+ * Every Fahrplan year directory is scanned, not just the current one. The window is seven days and
+ * a Fahrplan year turns over in mid-December, so for a week each year the trips that need checking
+ * live in the *previous* year's directory. Selection discards out-of-window trips cheaply, which
+ * makes scanning the closed years a rounding error rather than a cost worth optimising away.
  *
  * Read-only by default (same convention as `reparse-archives.ts`); `--write` persists.
  *
@@ -23,7 +27,8 @@
 
 import path from 'node:path';
 import { DATA_DIR } from '../src/config.js';
-import { getFahrplanYear } from '../src/fahrplan.js';
+import { listFahrplanYearDirectories } from '../src/fahrplan.js';
+import { generateSiteIndices } from '../src/site-index.js';
 import type { Cancellation } from '../src/types.js';
 import { getBerlinWallClockMs } from '../src/utils/berlin-time.js';
 import { listFiles, readJsonFile, writeJsonFile } from '../src/utils/fs.js';
@@ -87,7 +92,10 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
   for (const candidate of ordered) {
     let details;
     try {
-      details = await fetchJourneyDetails(candidate.journeyId, REQUEST_TIMEOUT_MS);
+      const fetched = await fetchJourneyDetails(candidate.journeyId, REQUEST_TIMEOUT_MS);
+      // The id a verdict is audited by must always be set, even on a response that omits it: it
+      // is the id we asked with either way.
+      details = fetched && { ...fetched, journeyId: fetched.journeyId ?? candidate.journeyId };
     } catch (error) {
       // One stale or broken same-number result must not hide a valid AVG candidate later in the
       // list. If none succeeds, rethrow below so an upstream problem is skipped rather than
@@ -183,19 +191,29 @@ async function mapWithConcurrency<T, R>(
   return results;
 }
 
-async function main(): Promise<void> {
-  const options = parseArguments(process.argv.slice(2));
-  const now = new Date();
-  const nowMs = now.getTime();
-  const fahrplanYear = options.year ?? getFahrplanYear(now.toISOString().slice(0, 10));
-  const fahrplanYearDirectory = path.join(DATA_DIR, String(fahrplanYear));
+interface RunSummary {
+  checked: number;
+  failed: number;
+  changedFiles: number;
+  verdictsRetained: number;
+}
 
+/**
+ * Verify one Fahrplan year directory in place. Returns nothing: everything a run reports is
+ * accumulated into `summary` and `countByStatus`, so scanning several years reads as one run
+ * rather than one report per directory.
+ */
+async function verifyFahrplanYear(
+  fahrplanYearDirectory: string,
+  options: Options,
+  now: Date,
+  summary: RunSummary,
+  countByStatus: Map<string, number>,
+): Promise<void> {
+  const nowMs = now.getTime();
   const files = (await listFiles(fahrplanYearDirectory)).filter(
     (file) => file.endsWith('.json') && !file.startsWith('index'),
   );
-
-  const summary = { checked: 0, failed: 0, changedFiles: 0, verdictsRetained: 0 };
-  const countByStatus = new Map<string, number>();
 
   for (const file of files) {
     const filePath = path.join(fahrplanYearDirectory, file);
@@ -245,9 +263,32 @@ async function main(): Promise<void> {
       summary.changedFiles += 1;
     }
   }
+}
 
+async function main(): Promise<void> {
+  const options = parseArguments(process.argv.slice(2));
+  const now = new Date();
+
+  // Directory names are the source of truth for which years exist, so a closed year keeps being
+  // checked for as long as its trips remain inside the feed's window. `--year` narrows this to one
+  // directory for a manual backfill.
+  const yearDirectories = (await listFahrplanYearDirectories(DATA_DIR)).filter(
+    (year) => options.year === undefined || year === String(options.year),
+  );
+
+  const summary: RunSummary = { checked: 0, failed: 0, changedFiles: 0, verdictsRetained: 0 };
+  const countByStatus = new Map<string, number>();
+
+  for (const year of yearDirectories) {
+    await verifyFahrplanYear(path.join(DATA_DIR, year), options, now, summary, countByStatus);
+  }
+
+  const scope =
+    yearDirectories.length === 1
+      ? `year ${yearDirectories[0]}`
+      : `years ${yearDirectories.join(', ')}`;
   console.log(
-    `\nVerified ${summary.checked} trip(s) in Fahrplan year ${fahrplanYear}` +
+    `\nVerified ${summary.checked} trip(s) in Fahrplan ${scope}` +
       (options.write
         ? `, updated ${summary.changedFiles} file(s).`
         : ' (dry run, nothing written).'),
@@ -263,6 +304,12 @@ async function main(): Promise<void> {
   }
   if (summary.failed > 0) {
     console.log(`  ${String(summary.failed).padStart(4)}  request failures (skipped)`);
+  }
+
+  // The published indices summarise these verdicts, and the scraper generated them *before* this
+  // script ran. Without this they would report the previous run's verdicts on every publish.
+  if (options.write && summary.changedFiles > 0) {
+    await generateSiteIndices(DATA_DIR);
   }
 }
 

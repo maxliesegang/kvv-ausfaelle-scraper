@@ -60,6 +60,43 @@
       <li><a href="./2026/">2026</a></li>
     </ul>
 
+    <h2>Verification statuses</h2>
+    <p class="desc">
+      Trips carry an optional advisory <code>verification</code> field recording what an external
+      realtime source later observed. It never changes the record's primary meaning — that KVV
+      announced the trip as cancelled — and is absent for trips outside the source's rolling
+      seven-day window.
+    </p>
+    <dl>
+      <dt><code>cancelled</code> — Cancelled</dt>
+      <dd>
+        The realtime source confirms the announced segment did not run — either it flagged the trip
+        or its stops as cancelled, or it tracked the vehicle either side of a segment it never
+        observed it on.
+      </dd>
+      <dt><code>partial</code> — Partly cancelled</dt>
+      <dd>
+        Only part of the announced segment was cancelled, or only part of it was observed. The
+        notice and reality agree in part.
+      </dd>
+      <dt><code>ran</code> — Ran</dt>
+      <dd>
+        The source observed the vehicle across the whole announced segment with no cancellation
+        flag. The trip KVV announced as cancelled appears to have run.
+      </dd>
+      <dt><code>no-data</code> — No data</dt>
+      <dd>
+        The source knows the journey but holds neither cancellation flags nor realtime for the
+        announced segment, so it says nothing either way. Absence of evidence, not evidence of
+        absence.
+      </dd>
+      <dt><code>unresolved</code> — Unresolved</dt>
+      <dd>
+        No journey matching the trip could be identified in the source, so it was never in a
+        position to answer.
+      </dd>
+    </dl>
+
     <h2>Cancellation causes</h2>
     <p class="desc">
       Ordered cause taxonomy published in <code>index.json</code> for downstream consumers.

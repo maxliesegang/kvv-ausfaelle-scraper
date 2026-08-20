@@ -1,7 +1,13 @@
 import { join } from 'node:path';
-import { ensureDirectory, listFiles, writeTextFile } from './utils/fs.js';
+import { ensureDirectory, listFiles, readJsonFile, writeTextFile } from './utils/fs.js';
 import { listFahrplanYearDirectories } from './fahrplan.js';
 import { PUBLIC_CAUSE_DEFINITIONS } from './cause.js';
+import type { Cancellation } from './types.js';
+import {
+  PUBLIC_VERIFICATION_STATUS_DEFINITIONS,
+  VERIFICATION_SOURCE,
+  type VerificationStatus,
+} from './verification/verify.js';
 
 /** Version of the public root-index contract. Increment only for breaking changes. */
 export const ROOT_INDEX_SCHEMA_VERSION = 1;
@@ -65,6 +71,71 @@ function buildIndexJson<T extends object>(data: T, generatedAt: string): string 
 }
 
 /**
+ * Verdict tally for one Fahrplan year, published so the realtime evidence attached to individual
+ * trips is discoverable at all. Stored per trip, it is invisible to anyone who has not already
+ * downloaded and searched a line file — including the two facts most worth seeing, that some
+ * announced cancellations were later observed to have run and that others could not be checked.
+ *
+ * `checkedTrips` is deliberately reported against `totalTrips`: the source answers for a rolling
+ * seven days, so most stored trips carry no verdict and never will. Without the denominator the
+ * counts read as a claim about the year rather than about its last week.
+ */
+export interface VerificationSummary {
+  readonly source: string;
+  readonly checkedTrips: number;
+  readonly totalTrips: number;
+  /** Verdict counts, keyed by status. Statuses with no trips are omitted. */
+  readonly statusCounts: Readonly<Partial<Record<VerificationStatus, number>>>;
+}
+
+/** Statuses in published order, so a summary reads the same way everywhere it appears. */
+const VERIFICATION_STATUS_ORDER: readonly VerificationStatus[] =
+  PUBLIC_VERIFICATION_STATUS_DEFINITIONS.map(({ id }) => id);
+
+/**
+ * Tally the verdicts stored in a year's line files.
+ *
+ * Reads the same per-line JSON the site publishes rather than any intermediate state, so the
+ * summary cannot drift from the files a consumer downloads. A malformed or non-array file counts
+ * as no trips instead of failing index generation: a broken data file must not cost the site its
+ * index pages.
+ */
+async function summarizeVerification(
+  fahrplanYearDirectory: string,
+  files: readonly string[],
+): Promise<VerificationSummary> {
+  const statusCounts: Partial<Record<VerificationStatus, number>> = {};
+  let checkedTrips = 0;
+  let totalTrips = 0;
+
+  for (const file of files) {
+    if (file.startsWith('index')) continue;
+    const trips = await readJsonFile<Cancellation[]>(join(fahrplanYearDirectory, file));
+    if (!Array.isArray(trips)) continue;
+    for (const trip of trips) {
+      totalTrips += 1;
+      const status = trip?.verification?.status;
+      if (!status) continue;
+      checkedTrips += 1;
+      statusCounts[status] = (statusCounts[status] ?? 0) + 1;
+    }
+  }
+
+  const orderedCounts: Partial<Record<VerificationStatus, number>> = {};
+  for (const status of VERIFICATION_STATUS_ORDER) {
+    const count = statusCounts[status];
+    if (count !== undefined) orderedCounts[status] = count;
+  }
+
+  return {
+    source: VERIFICATION_SOURCE,
+    checkedTrips,
+    totalTrips,
+    statusCounts: orderedCounts,
+  };
+}
+
+/**
  * Builds the root index HTML page listing all available years.
  */
 function buildRootIndex(years: readonly string[]): string {
@@ -74,6 +145,11 @@ function buildRootIndex(years: readonly string[]): string {
     (year) => `      <li><a href="./${htmlEscape(year)}/">${htmlEscape(year)}</a></li>`,
     '      <li><em>No years yet</em></li>',
   );
+  const verificationStatusDefinitions = PUBLIC_VERIFICATION_STATUS_DEFINITIONS.map(
+    ({ id, label, description }) =>
+      `      <dt><code>${htmlEscape(id)}</code> — ${htmlEscape(label)}</dt>\n` +
+      `      <dd>${htmlEscape(description)}</dd>`,
+  ).join('\n');
   const causeDefinitions = PUBLIC_CAUSE_DEFINITIONS.map(
     ({ id, label, description }) =>
       `      <dt><code>${htmlEscape(id)}</code> — ${htmlEscape(label)}</dt>\n` +
@@ -93,6 +169,17 @@ function buildRootIndex(years: readonly string[]): string {
 ${yearLinks}
     </ul>
 
+    <h2>Verification statuses</h2>
+    <p class="desc">
+      Trips carry an optional advisory <code>verification</code> field recording what an external
+      realtime source later observed. It never changes the record's primary meaning — that KVV
+      announced the trip as cancelled — and is absent for trips outside the source's rolling
+      seven-day window.
+    </p>
+    <dl>
+${verificationStatusDefinitions}
+    </dl>
+
     <h2>Cancellation causes</h2>
     <p class="desc">
       Ordered cause taxonomy published in <code>index.json</code> for downstream consumers.
@@ -111,7 +198,35 @@ ${causeDefinitions}
 /**
  * Builds a year index HTML page listing all JSON files for that year.
  */
-function buildYearIndex(year: string, files: readonly string[]): string {
+function buildVerificationSection(summary: VerificationSummary): string {
+  if (summary.checkedTrips === 0) {
+    return `    <p class="hint">No trips in ${htmlEscape(summary.source)}'s lookback window have been verified yet.</p>`;
+  }
+  const rows = PUBLIC_VERIFICATION_STATUS_DEFINITIONS.flatMap(({ id, label }) => {
+    const count = summary.statusCounts[id];
+    return count === undefined
+      ? []
+      : [
+          `      <li><code>${htmlEscape(id)}</code> — ${htmlEscape(label)}: ` +
+            `<strong>${count}</strong></li>`,
+        ];
+  }).join('\n');
+
+  return `    <ul>
+${rows}
+    </ul>
+    <p class="hint">
+      ${summary.checkedTrips} of ${summary.totalTrips} stored trips carry a verdict from
+      <code>${htmlEscape(summary.source)}</code>. The rest departed outside its rolling lookback
+      window and cannot be checked.
+    </p>`;
+}
+
+function buildYearIndex(
+  year: string,
+  files: readonly string[],
+  summary: VerificationSummary,
+): string {
   const sortedFiles = files.slice().sort();
   const fileLinks = buildList(
     sortedFiles,
@@ -132,6 +247,11 @@ function buildYearIndex(year: string, files: readonly string[]): string {
 ${fileLinks}
     </ul>
 
+    <h2>Verification</h2>
+    <p>Advisory realtime evidence stored on individual trips (see <a href="../">status
+    definitions</a>).</p>
+${buildVerificationSection(summary)}
+
     <p class="hint">If additional files are added (e.g., for other lines), they will appear automatically on next run.</p>
 `,
   });
@@ -146,6 +266,7 @@ function buildRootIndexJson(years: readonly string[], generatedAt: string): stri
       schemaVersion: ROOT_INDEX_SCHEMA_VERSION,
       years: years.slice().sort(),
       causes: PUBLIC_CAUSE_DEFINITIONS,
+      verificationStatuses: PUBLIC_VERIFICATION_STATUS_DEFINITIONS,
     },
     generatedAt,
   );
@@ -154,8 +275,13 @@ function buildRootIndexJson(years: readonly string[], generatedAt: string): stri
 /**
  * Builds a year index JSON listing all JSON files for that year.
  */
-function buildYearIndexJson(year: string, files: readonly string[], generatedAt: string): string {
-  return buildIndexJson({ year, files: files.slice().sort() }, generatedAt);
+function buildYearIndexJson(
+  year: string,
+  files: readonly string[],
+  verification: VerificationSummary,
+  generatedAt: string,
+): string {
+  return buildIndexJson({ year, files: files.slice().sort(), verification }, generatedAt);
 }
 
 /**
@@ -190,8 +316,9 @@ export async function generateSiteIndices(baseDir: string): Promise<void> {
     years.map(async (year) => {
       const fahrplanYearDirectory = join(baseDir, year);
       const files = await listJsonFiles(fahrplanYearDirectory);
-      const html = buildYearIndex(year, files);
-      const json = buildYearIndexJson(year, files, generatedAt);
+      const verification = await summarizeVerification(fahrplanYearDirectory, files);
+      const html = buildYearIndex(year, files, verification);
+      const json = buildYearIndexJson(year, files, verification, generatedAt);
       await Promise.all([
         writeTextFile(join(fahrplanYearDirectory, 'index.html'), html),
         writeTextFile(join(fahrplanYearDirectory, 'index.json'), json),

@@ -58,5 +58,32 @@
       "description": "Aus dem Artikel konnte keine Ursache zuverlässig bestimmt werden."
     }
   ],
-  "generatedAt": "2026-08-19T20:20:26.731Z"
+  "verificationStatuses": [
+    {
+      "id": "cancelled",
+      "label": "Cancelled",
+      "description": "The realtime source confirms the announced segment did not run — either it flagged the trip or its stops as cancelled, or it tracked the vehicle either side of a segment it never observed it on."
+    },
+    {
+      "id": "partial",
+      "label": "Partly cancelled",
+      "description": "Only part of the announced segment was cancelled, or only part of it was observed. The notice and reality agree in part."
+    },
+    {
+      "id": "ran",
+      "label": "Ran",
+      "description": "The source observed the vehicle across the whole announced segment with no cancellation flag. The trip KVV announced as cancelled appears to have run."
+    },
+    {
+      "id": "no-data",
+      "label": "No data",
+      "description": "The source knows the journey but holds neither cancellation flags nor realtime for the announced segment, so it says nothing either way. Absence of evidence, not evidence of absence."
+    },
+    {
+      "id": "unresolved",
+      "label": "Unresolved",
+      "description": "No journey matching the trip could be identified in the source, so it was never in a position to answer."
+    }
+  ],
+  "generatedAt": "2026-08-20T05:21:18.419Z"
 }

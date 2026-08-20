@@ -32,6 +32,61 @@ export type VerificationStatus =
 
 export type UnresolvedReason = 'invalid-train-number' | 'journey-not-found' | 'journey-mismatch';
 
+export interface PublicVerificationStatusDefinition {
+  readonly id: VerificationStatus;
+  readonly label: string;
+  readonly description: string;
+}
+
+/**
+ * The status taxonomy as published in `docs/index.json`, mirroring `PUBLIC_CAUSE_DEFINITIONS`.
+ *
+ * A consumer reading `status: "cancelled"` off a trip has no way to know what the word was allowed
+ * to mean — in particular that it covers both an explicit statement by the feed and an inference
+ * drawn from silence. Publishing the taxonomy beside the data is what makes the field usable by
+ * anyone who did not write the classifier. Array order is display order, weakest claim last.
+ */
+export const PUBLIC_VERIFICATION_STATUS_DEFINITIONS: readonly PublicVerificationStatusDefinition[] =
+  [
+    {
+      id: 'cancelled',
+      label: 'Cancelled',
+      description:
+        'The realtime source confirms the announced segment did not run — either it flagged the ' +
+        'trip or its stops as cancelled, or it tracked the vehicle either side of a segment it ' +
+        'never observed it on.',
+    },
+    {
+      id: 'partial',
+      label: 'Partly cancelled',
+      description:
+        'Only part of the announced segment was cancelled, or only part of it was observed. The ' +
+        'notice and reality agree in part.',
+    },
+    {
+      id: 'ran',
+      label: 'Ran',
+      description:
+        'The source observed the vehicle across the whole announced segment with no cancellation ' +
+        'flag. The trip KVV announced as cancelled appears to have run.',
+    },
+    {
+      id: 'no-data',
+      label: 'No data',
+      description:
+        'The source knows the journey but holds neither cancellation flags nor realtime for the ' +
+        'announced segment, so it says nothing either way. Absence of evidence, not evidence of ' +
+        'absence.',
+    },
+    {
+      id: 'unresolved',
+      label: 'Unresolved',
+      description:
+        'No journey matching the trip could be identified in the source, so it was never in a ' +
+        'position to answer.',
+    },
+  ];
+
 /**
  * Realtime feeds a verdict can be derived from.
  *
@@ -53,12 +108,14 @@ export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
  * is exact, falls back to a unique exact schedule pair, and retains journey-wide evidence when a
  * segment still cannot be located. Version 5 accepts the source's explicit whole-journey
  * cancellation even when malformed published endpoint times prevent segment location: an
- * explicitly cancelled journey necessarily cancelled every segment it contained. A stored verdict
- * without this field is version 1. The selection layer uses this only during a recheck: a newer
- * method may correct a confident old false match, while same-version evidence continues to ratchet
- * upward.
+ * explicitly cancelled journey necessarily cancelled every segment it contained. Version 6 stops
+ * inferring a cancellation from any single tracked stop anywhere in the journey and requires the
+ * control evidence to sit next to the silent segment or cover a real share of the remainder. A
+ * stored verdict without this field is version 1. The selection layer uses this only during a
+ * recheck: a newer method may correct a confident old false match, while same-version evidence
+ * continues to ratchet upward.
  */
-export const VERIFICATION_METHOD_VERSION = 5;
+export const VERIFICATION_METHOD_VERSION = 6;
 
 export interface TripVerification {
   readonly status: VerificationStatus;
@@ -110,6 +167,33 @@ export interface TripVerification {
 
   /** Tracking outside the announced segment that supports an inferred cancellation. */
   readonly trackedOutsideSegment: number;
+
+  /**
+   * Tracking on the stops immediately bordering the announced segment, counted separately because
+   * proximity is what makes silence mean cancellation. A vehicle observed at the stop before the
+   * segment starts, or at the stop after it ends, was demonstrably running either side of a leg
+   * the feed never saw it on. The same observation twenty stops away says only that the run
+   * existed at some point. Both are `trackedOutsideSegment`; only this one is decisive on its own.
+   *
+   * At most 4: the arrival into the origin and the departure out of the destination (the boundary
+   * stops' outward-facing halves), plus the neighbouring stops on each side.
+   */
+  readonly trackedAdjacentStops: number;
+
+  /**
+   * The feed's identifier for the journey a verdict was computed from.
+   *
+   * Stored so a verdict stays auditable. Every other field is a tally, and a tally cannot be
+   * re-derived or argued with once the seven-day window has closed — if a verdict looks wrong
+   * there is otherwise no way to ask what it was computed from. Matching a stored trip to a
+   * journey has already gone wrong once (train number `85586` matched an SNCF Rennes → Brest run
+   * before operator scoping existed), and this is the field that makes the next such case
+   * diagnosable rather than merely suspicious.
+   *
+   * Absent on `unresolved` verdicts that never reached a journey, and on records written before
+   * method version 6.
+   */
+  readonly journeyId?: string;
 
   /** Present only when the source explicitly marked the whole journey cancelled. */
   readonly journeyCancelled?: true;
@@ -544,6 +628,7 @@ export interface SegmentCounts {
   readonly journeyCancelledStops: number;
   readonly journeyTrackedStops: number;
   readonly trackedOutsideSegment: number;
+  readonly trackedAdjacentStops: number;
 }
 
 const NO_COUNTS: SegmentCounts = {
@@ -554,6 +639,7 @@ const NO_COUNTS: SegmentCounts = {
   journeyCancelledStops: 0,
   journeyTrackedStops: 0,
   trackedOutsideSegment: 0,
+  trackedAdjacentStops: 0,
 };
 
 /**
@@ -602,6 +688,7 @@ function countSegment(
   let journeyCancelledStops = 0;
   let journeyTrackedStops = 0;
   let trackedOutsideSegment = 0;
+  let trackedAdjacentStops = 0;
 
   for (let index = 0; index < stops.length; index += 1) {
     const stop = stops[index];
@@ -619,15 +706,18 @@ function countSegment(
       if (segmentTracked) segmentTrackedStops += 1;
       // The arrival into the origin and departure from the destination belong to the adjacent
       // legs. They must not inflate segment tracking, but they are still valid control evidence
-      // that the feed observed the rest of this run.
+      // that the feed observed the rest of this run — and being on the boundary stop itself, they
+      // are the closest such evidence there is.
       if (
         (index === bounds.start && isTrackedEvent(stop.arrival)) ||
         (index === bounds.end && isTrackedEvent(stop.departure))
       ) {
         trackedOutsideSegment += 1;
+        trackedAdjacentStops += 1;
       }
     } else if (tracked) {
       trackedOutsideSegment += 1;
+      if (index === bounds.start - 1 || index === bounds.end + 1) trackedAdjacentStops += 1;
     }
   }
 
@@ -639,7 +729,40 @@ function countSegment(
     journeyCancelledStops,
     journeyTrackedStops,
     trackedOutsideSegment,
+    trackedAdjacentStops,
   };
+}
+
+/**
+ * Share of the untouched remainder that must carry realtime before distant tracking alone is
+ * accepted as proof that a silent segment was cancelled. Half is deliberately unambitious: it only
+ * has to separate a run the feed genuinely watched from one it barely saw.
+ */
+const MINIMUM_CONTROL_TRACKING_RATIO = 0.5;
+
+/**
+ * Whether the journey outside the announced segment was observed well enough that silence *on* the
+ * segment means the leg was not served.
+ *
+ * Any tracking anywhere used to be enough, which reads far too much into a single stop. Stored
+ * trip `S5 84820 2026-08-18` inferred a cancellation of thirteen silent stops from five observed
+ * ones scattered across the remaining twenty-seven: a feed that saw under a fifth of a run is not
+ * a feed whose silence proves anything. Two rules now let the inference through, and they answer
+ * different questions:
+ *
+ * - **Adjacency** — the vehicle was observed immediately either side of the segment, so it existed
+ *   at the very moments it should have been serving the leg. One such stop settles it.
+ * - **Coverage** — failing that, the feed must have watched a real share of the remainder, so that
+ *   an unwatched segment stands out against a watched run rather than against more silence.
+ *
+ * Everything else is `no-data`: absence of evidence, reported as such.
+ */
+function hasCancellationControl(counts: SegmentCounts): boolean {
+  const { journeyStops, segmentStops, trackedOutsideSegment, trackedAdjacentStops } = counts;
+  if (trackedOutsideSegment === 0) return false;
+  if (trackedAdjacentStops > 0) return true;
+  const controlStops = journeyStops - segmentStops;
+  return controlStops > 0 && trackedOutsideSegment / controlStops >= MINIMUM_CONTROL_TRACKING_RATIO;
 }
 
 /**
@@ -652,17 +775,16 @@ export function determineStatus(
   counts: SegmentCounts,
   journeyCancelled: boolean,
 ): VerificationStatus {
-  const { segmentStops, segmentCancelledStops, segmentTrackedStops, trackedOutsideSegment } =
-    counts;
+  const { segmentStops, segmentCancelledStops, segmentTrackedStops } = counts;
 
   if (journeyCancelled) return 'cancelled';
   if (segmentStops > 0 && segmentCancelledStops === segmentStops) return 'cancelled';
   if (segmentCancelledStops > 0) return 'partial';
   if (segmentTrackedStops === 0) {
-    // Silence only means something when the rest of the same run *was* tracked: that proves the
-    // vehicle existed and the feed had coverage, so the announced leg was genuinely not served.
-    // Without that control, absence of realtime is absence of evidence.
-    return trackedOutsideSegment > 0 ? 'cancelled' : 'no-data';
+    // Silence only means something when the rest of the same run *was* tracked well enough to
+    // prove the vehicle existed and the feed was watching it. Without that control, absence of
+    // realtime is absence of evidence — see `hasCancellationControl`.
+    return hasCancellationControl(counts) ? 'cancelled' : 'no-data';
   }
   return segmentTrackedStops < segmentStops ? 'partial' : 'ran';
 }
@@ -676,6 +798,7 @@ function createVerification(
     feedLine?: string;
     feedOperator?: string;
     journeyCancelled?: true;
+    journeyId?: string;
     unresolvedReason?: UnresolvedReason;
   } = {},
 ): TripVerification {
@@ -686,6 +809,7 @@ function createVerification(
     checkedAt: formatBerlinWallClock(now.getTime()).date,
     ...counts,
     ...(options.journeyCancelled ? { journeyCancelled: true as const } : {}),
+    ...(options.journeyId === undefined ? {} : { journeyId: options.journeyId }),
     ...(options.unresolvedReason ? { unresolvedReason: options.unresolvedReason } : {}),
     ...(options.feedLine === undefined ? {} : { feedLine: options.feedLine }),
     ...(options.feedOperator === undefined ? {} : { feedOperator: options.feedOperator }),
@@ -819,8 +943,10 @@ function countJourney(stops: readonly JourneyStop[]): SegmentCounts {
     journeyStops: stops.length,
     journeyCancelledStops: stops.filter(isCancelled).length,
     journeyTrackedStops: stops.filter(isTracked).length,
-    // The segment is unknown, so no tracked stop can honestly be labelled inside or outside it.
+    // The segment is unknown, so no tracked stop can honestly be labelled inside, outside or
+    // adjacent to it.
     trackedOutsideSegment: 0,
+    trackedAdjacentStops: 0,
   };
 }
 
@@ -862,6 +988,7 @@ export function createJourneyMismatchVerification(
     now,
     {
       ...(journeyCancelled ? { journeyCancelled: true } : { unresolvedReason: 'journey-mismatch' }),
+      ...(details.journeyId === undefined ? {} : { journeyId: details.journeyId }),
       ...(unexpectedOperator ? { feedOperator } : {}),
     },
   );
@@ -893,6 +1020,7 @@ export function classifyJourney(
     feedOperator && !namesNetworkOperator(normalizeGermanText(feedOperator));
   return createVerification(status, counts, now, {
     ...(details.cancelled === true ? { journeyCancelled: true } : {}),
+    ...(details.journeyId === undefined ? {} : { journeyId: details.journeyId }),
     ...(feedLine && feedLine !== cancellation.line ? { feedLine } : {}),
     ...(unexpectedOperator ? { feedOperator } : {}),
   });

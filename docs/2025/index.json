@@ -17,5 +17,11 @@
     "S8.json",
     "index.json"
   ],
-  "generatedAt": "2026-08-19T20:20:26.731Z"
+  "verification": {
+    "source": "bahn.expert",
+    "checkedTrips": 0,
+    "totalTrips": 332,
+    "statusCounts": {}
+  },
+  "generatedAt": "2026-08-20T05:21:18.419Z"
 }

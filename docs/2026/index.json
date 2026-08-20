@@ -19,5 +19,17 @@
     "UNKNOWN.json",
     "index.json"
   ],
-  "generatedAt": "2026-08-19T20:20:26.731Z"
+  "verification": {
+    "source": "bahn.expert",
+    "checkedTrips": 146,
+    "totalTrips": 1911,
+    "statusCounts": {
+      "cancelled": 96,
+      "partial": 7,
+      "ran": 18,
+      "no-data": 23,
+      "unresolved": 2
+    }
+  },
+  "generatedAt": "2026-08-20T05:21:18.419Z"
 }

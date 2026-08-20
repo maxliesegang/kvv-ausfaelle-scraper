@@ -9,11 +9,13 @@ This is the most specific guidance for published artifacts.
 
 - Root:
   - `docs/index.html`
-  - `docs/index.json` — root contract with `schemaVersion`, Fahrplan years, and the ordered
-    public cause taxonomy (`causes`)
+  - `docs/index.json` — root contract with `schemaVersion`, Fahrplan years, the ordered
+    public cause taxonomy (`causes`), and the ordered verification status taxonomy
+    (`verificationStatuses`)
 - Per Fahrplan year:
   - `docs/<fahrplan-year>/index.html`
-  - `docs/<fahrplan-year>/index.json`
+  - `docs/<fahrplan-year>/index.json` — file list plus a `verification` summary
+    (`source`, `checkedTrips`, `totalTrips`, `statusCounts`)
 - Per line data:
   - `docs/<fahrplan-year>/<line>.json`
 - Per year train mappings:
@@ -56,6 +58,16 @@ Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` 
   cancellation. Consumers must tolerate its absence, including for trips outside the source's
   rolling lookback window. Keep its `source` provenance and segment/journey evidence intact, and
   never use a verdict to delete or rewrite cancellation identity.
+- A verdict's `status` is defined by the `verificationStatuses` taxonomy in the root `index.json`,
+  and per-year `index.json` tallies the statuses stored in that year's line files. Both are
+  generated, so the summary cannot be edited into agreement with anything but the data.
+- `journeyId` names the source journey a verdict was computed from. It is what makes a verdict
+  auditable after the lookback window closes, so preserve it verbatim; it is not a data-quality
+  marker and says nothing about the verdict's strength.
+- `cancelled` covers both an explicit flag from the source and an inference from silence. The two
+  are distinguishable from the stored evidence: an inferred cancellation has no `journeyCancelled`
+  flag and `segmentCancelledStops: 0`, resting instead on `trackedAdjacentStops` or on
+  `trackedOutsideSegment` against the journey remainder.
 - `stand` is the source article's Europe/Berlin timestamp represented as UTC ISO time.
 - `date` is the source-local trip date and must not change because of a UTC date rollover.
 - Keep `capturedAt` stable when offline reconciliation corrects an already stored trip. The same

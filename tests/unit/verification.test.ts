@@ -378,6 +378,7 @@ describe('trip selection', () => {
     journeyCancelledStops: 3,
     journeyTrackedStops: 0,
     trackedOutsideSegment: 0,
+    trackedAdjacentStops: 0,
     ...overrides,
   });
 
@@ -742,6 +743,7 @@ describe('verdict rules', () => {
     journeyCancelledStops: 0,
     journeyTrackedStops: 0,
     trackedOutsideSegment: 0,
+    trackedAdjacentStops: 0,
     ...overrides,
   });
 
@@ -750,10 +752,33 @@ describe('verdict rules', () => {
     ['every segment stop cancelled', counts({ segmentCancelledStops: 10 }), false, 'cancelled'],
     ['some segment stops cancelled', counts({ segmentCancelledStops: 4 }), false, 'partial'],
     [
-      'segment untracked while the rest of the run was tracked',
-      counts({ trackedOutsideSegment: 5 }),
+      'segment untracked while the vehicle was observed right beside it',
+      counts({ journeyStops: 30, trackedOutsideSegment: 1, trackedAdjacentStops: 1 }),
       false,
       'cancelled',
+    ],
+    [
+      'segment untracked while most of the remainder was tracked',
+      counts({ journeyStops: 30, trackedOutsideSegment: 15 }),
+      false,
+      'cancelled',
+    ],
+    // Five observations scattered across 27 stops is a run the feed barely watched, so silence on
+    // the announced leg says nothing about it. This is stored trip `S5 84820 2026-08-18`, which
+    // earlier method versions reported as a confirmed cancellation.
+    [
+      'segment untracked while the feed barely watched the remainder',
+      counts({ segmentStops: 13, journeyStops: 40, trackedOutsideSegment: 5 }),
+      false,
+      'no-data',
+    ],
+    // A journey with no stops outside the announced segment offers no control at all: there is
+    // nothing the silence can be measured against.
+    [
+      'segment untracked with no remainder to compare against',
+      counts({ trackedOutsideSegment: 0 }),
+      false,
+      'no-data',
     ],
     ['nothing tracked anywhere', counts({}), false, 'no-data'],
     ['segment only partly tracked', counts({ segmentTrackedStops: 6 }), false, 'partial'],
@@ -1202,6 +1227,28 @@ describe('journey classification against captured feed responses', () => {
     // The only observations at the boundaries are the arrival into Freudenstadt before the
     // announced segment and the departure from Forbach after it. Neither belongs to this leg.
     assert.strictEqual(verdict?.segmentTrackedStops, 0);
+    // Those two, plus the observed stops either side of them, are the closest control evidence
+    // there is — the vehicle was seen right up to the announced leg and again right after it.
+    assert.strictEqual(verdict?.trackedAdjacentStops, 4);
+  });
+
+  it('records the journey a verdict was computed from', () => {
+    // Without the id, a verdict cannot be re-examined once the source's window has closed: every
+    // other field is a tally with no way back to the journey it was tallied from.
+    const trip = tripOn({
+      line: 'S8',
+      trainNumber: '85636',
+      date: '2026-08-13',
+      fromStop: 'Freudenstadt Hbf',
+      fromTime: '10:53',
+      toStop: 'Forbach',
+      toTime: '11:39',
+    });
+    const details = loadJourneyFixture('20260813-19b67970-4b65-3820-ab7b-dea40958d407');
+    assert.strictEqual(
+      classifyJourney(trip, details, NOW)?.journeyId,
+      '20260813-19b67970-4b65-3820-ab7b-dea40958d407',
+    );
   });
 
   it('still recognises observation reported without the realtime flag', () => {
