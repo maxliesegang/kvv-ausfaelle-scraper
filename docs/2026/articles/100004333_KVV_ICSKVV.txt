@@ -1,16 +1,16 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004333_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 161 - Gondelsheim: Haltestelle Marktplatz teilweise verlegt (24.08.2026 bis 13.09.2026)
+Titel:  Linie 161 - Gondelsheim: Haltestelle Marktplatz teilweise verlegt (26.08.2026 bis 13.09.2026)
 Datum:  2026-08-18T08:25:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 24.08.2026 bis 13.09.2026
+Vom 26.08.2026 bis 13.09.2026
 Linie 161
 Gondelsheim: Haltestelle Marktplatz teilweise verlegt
 (end) Aufgrund des barrierefreien Ausbaus der Haltestelle "Gondelsheim Marktplatz" kann diese 
-ab Montag, den 24. August 2026 bis vsl. Mitte September 2026 
+ab Mittwoch, den 26. August 2026 bis vsl. Mitte September 2026 
 nur in der Fahrtrichtung "Gondelsheim In den Buchen" planmäßig bedient werden. Für die Fahrtrichtung Bretten ist die Haltestelle "Gondelsheim Marktplatz" mit einer Ersatzhaltestelle (rund 40 Meter in südliche Richtung) verlegt.
 Zurück zur Übersicht
