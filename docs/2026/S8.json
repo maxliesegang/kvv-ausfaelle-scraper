@@ -1030,9 +1030,9 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "methodVersion": 5,
+      "methodVersion": 6,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-19",
+      "checkedAt": "2026-08-20",
       "segmentStops": 51,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1040,7 +1040,9 @@
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
-      "attempts": 4
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260818-d0ab2522-30ac-3ffc-ad96-c0e95700b350",
+      "attempts": 5
     }
   },
   {
@@ -1058,16 +1060,18 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
-      "methodVersion": 5,
+      "methodVersion": 6,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-19",
+      "checkedAt": "2026-08-20",
       "segmentStops": 51,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 51,
       "journeyStops": 51,
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 51,
-      "trackedOutsideSegment": 0
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260818-f1597e4b-448d-3f3d-a84c-1007b0a08f43"
     }
   }
 ]

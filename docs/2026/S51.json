@@ -1192,16 +1192,18 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "ran",
-      "methodVersion": 5,
+      "methodVersion": 6,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-19",
+      "checkedAt": "2026-08-20",
       "segmentStops": 17,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 17,
       "journeyStops": 43,
       "journeyCancelledStops": 0,
       "journeyTrackedStops": 43,
-      "trackedOutsideSegment": 27
+      "trackedOutsideSegment": 27,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20260815-1e1dc179-0922-34ae-a285-421e36cbdf53"
     }
   }
 ]
