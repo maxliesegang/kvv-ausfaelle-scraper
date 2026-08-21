@@ -40,5 +40,36 @@
     "capturedAt": "2026-08-03T06:55:06.697Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S12",
+    "date": "2026-08-21",
+    "stand": "2026-08-21T04:28:00.000Z",
+    "trainNumber": "40015",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "07:36",
+    "toStop": "Betriebshof Gerwigstr.",
+    "toTime": "08:38",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274922",
+    "capturedAt": "2026-08-21T08:34:07.236Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 6,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-21",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 26,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260821-30a457f2-bbed-3dfe-bea9-4871af66d5b1",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   }
 ]
