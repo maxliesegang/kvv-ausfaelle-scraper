@@ -225,9 +225,9 @@ const TRIP_FORMATS: readonly TripFormat[] = [
     rejectUhrOnlyStops: false,
     extract: EXTRACT.stopThenTime,
   },
-  // A narrowly tolerated KVV typo: both times parenthesized but the separator is absent.
+  // A narrowly tolerated KVV typo: both times closed by ")" but the separator is absent.
   {
-    pattern: PATTERNS.TRIP_STOP_TIME_REQUIRED_PARENTHESES_MISSING_SEPARATOR_FORMAT,
+    pattern: PATTERNS.TRIP_STOP_TIME_CLOSING_PARENTHESES_MISSING_SEPARATOR_FORMAT,
     rejectUhrOnlyStops: true,
     extract: EXTRACT.stopThenTime,
   },

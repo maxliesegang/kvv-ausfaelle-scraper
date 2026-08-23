@@ -68,11 +68,15 @@ export const PATTERNS = {
 
   /**
    * Same parenthesized stop/time layout with the separator accidentally omitted.
-   * Example: "85029 Knielingen (21:41 Uhr) Pforzheim (22:50 Uhr)".
-   * Both times must be parenthesized, keeping this typo-tolerant form narrow.
+   * Examples: "85029 Knielingen (21:41 Uhr) Pforzheim (22:50 Uhr)"
+   *           "85617 Freudenstadt Stadt (08:32 Uhr) Freudenstadt Hbf. 08:37 Uhr)"
+   * With no separator, the parentheses are what delimit the two stop/time pairs, so both times
+   * must still be closed by ")" and the departure time fully parenthesized. Only the arrival
+   * time's opening "(" may be missing — KVV drops it together with the separator — which keeps
+   * this typo-tolerant form narrow.
    */
-  TRIP_STOP_TIME_REQUIRED_PARENTHESES_MISSING_SEPARATOR_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
+  TRIP_STOP_TIME_CLOSING_PARENTHESES_MISSING_SEPARATOR_FORMAT:
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
 
   /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>

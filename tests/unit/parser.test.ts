@@ -334,6 +334,21 @@ describe('Parser - Detail Page Parsing', () => {
       );
     });
 
+    it('parses a row missing both the separator and the arrival time\u2019s opening paren', () => {
+      assert.deepStrictEqual(
+        parseTripRowFields('85617 Freudenstadt Stadt (08:32 Uhr) Freudenstadt Hbf. 08:37 Uhr)'),
+        [
+          {
+            trainNumber: '85617',
+            fromStop: 'Freudenstadt Stadt',
+            fromTime: '08:32',
+            toStop: 'Freudenstadt Hbf.',
+            toTime: '08:37',
+          },
+        ],
+      );
+    });
+
     it('never merges adjacent rows that each start with a train number', () => {
       const text = [
         'Betroffene Fahrten:',
