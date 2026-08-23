@@ -40,5 +40,19 @@
     "capturedAt": "2026-04-25T16:36:03.901Z",
     "cause": "unknown",
     "causeKeyword": null
+  },
+  {
+    "line": "S71",
+    "date": "2026-08-23",
+    "stand": "2026-08-22T19:17:00.000Z",
+    "trainNumber": "85593",
+    "fromStop": "Karlsruhe Hbf.",
+    "fromTime": "22:47",
+    "toStop": "Baden Baden Bf.",
+    "toTime": "23:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274980",
+    "capturedAt": "2026-08-23T08:23:06.750Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
