@@ -14570,5 +14570,33 @@
       "journeyId": "20260818-5b9de8e7-ca67-3aec-952c-612ce6a3edcc",
       "attempts": 4
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-24",
+    "stand": "2026-08-24T00:25:00.000Z",
+    "trainNumber": "84957",
+    "fromStop": "Rheinbergstrasse",
+    "fromTime": "05:01",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "06:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274988",
+    "capturedAt": "2026-08-24T04:39:23.394Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-24",
+    "stand": "2026-08-24T00:25:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "06:25",
+    "toStop": "KA Starckstrasse",
+    "toTime": "07:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274988",
+    "capturedAt": "2026-08-24T04:39:23.394Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
