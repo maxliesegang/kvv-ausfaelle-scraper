@@ -22,7 +22,7 @@
   "verification": {
     "source": "bahn.expert",
     "checkedTrips": 151,
-    "totalTrips": 1957,
+    "totalTrips": 1965,
     "statusCounts": {
       "cancelled": 98,
       "partial": 7,
@@ -31,5 +31,5 @@
       "unresolved": 3
     }
   },
-  "generatedAt": "2026-08-25T00:59:20.576Z"
+  "generatedAt": "2026-08-25T04:33:32.082Z"
 }

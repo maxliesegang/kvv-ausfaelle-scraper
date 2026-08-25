@@ -1605,5 +1605,33 @@
     "capturedAt": "2026-08-22T20:16:24.082Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S8",
+    "date": "2026-08-25",
+    "stand": "2026-08-25T00:10:00.000Z",
+    "trainNumber": "85611",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "05:21",
+    "toStop": "Freudenstadt Bf",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275075",
+    "capturedAt": "2026-08-25T04:33:29.763Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S8",
+    "date": "2026-08-25",
+    "stand": "2026-08-25T00:10:00.000Z",
+    "trainNumber": "85622",
+    "fromStop": "Freudenstadt Bf",
+    "fromTime": "07:48",
+    "toStop": "KA Tullastr.",
+    "toTime": "10:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275075",
+    "capturedAt": "2026-08-25T04:33:29.763Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
