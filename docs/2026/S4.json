@@ -4329,5 +4329,19 @@
     "capturedAt": "2026-08-25T08:35:41.968Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-26",
+    "stand": "2026-08-26T01:14:00.000Z",
+    "trainNumber": "85400",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "06:27",
+    "toStop": "KA Albtal Bf",
+    "toTime": "06:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275147",
+    "capturedAt": "2026-08-26T04:34:07.575Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
