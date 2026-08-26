@@ -1,0 +1,32 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004348_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien S7, S7, SEV - Rastatt - Karlsruhe: nächtliche Einschränkungen im September (05.09.2026 bis 27.09.2026)
+Datum:  2026-08-26T05:07:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 05.09.2026 bis 27.09.2026
+Linien S7, S7, SEV
+Rastatt - Karlsruhe: nächtliche Einschränkungen im September
+(AVG)
+Linie(n): 
+S7, S8
+Zeitraum: 
+•    Nächte 05./06., 07./08., 17./18. 18./19., und 21./22. bis 23./24.09.  (jeweils ca. 22:45 Uhr - 04:00 Uhr)
+•    Nächte 06./07., 15./16., 16./17.09. und 24./25. bis 26./27.09. (jeweils ca. 22:00 Uhr - 04:00 Uhr)
+Entfall Stadtbahn: 
+Karlsruhe Tullastraße &lt;-&gt; Rastatt (&lt;-&gt; Kuppenheim, nur in der Nacht 06./07.)
+Ersatzverkehr: 
+jeweils Karlsruhe Hbf (Vorpl.) &lt;-&gt;Durmersheim &lt;-&gt; Rastatt (&lt;-&gt; Kuppenheim, nur in der Nacht 06./07.)
+Grund: 
+DB InfraGO - Bauarbeiten
+Sonstiges: 
+Erster Zug am 14.09. beginnt nicht an der Tullastraße, sondern in Rastatt: Karlsruhe Tullastr. (04:16) -&gt; Rastatt (an 04:55) -&gt;  Bühl / Freudenstadt; Ersatzverkehr Karlsruhe Hbf (Vorpl.) -&gt;  Durmersheim -&gt;  Rastatt
+Erster Zug am 25.09. beginnt nicht an der Tullastraße, sondern in Karlsruhe Hbf, fährt ohne Halt bis Rastatt und dann weiter wie üblich nach Bühl (Baden) und Freudenstadt; Ersatzverkehr Karlsruhe Hbf -&gt;  Durmersheim -&gt; Rastatt
+Ersatzfahrplan (05.09. bis 07.09.2026)
+Ersatzfahrplan (07.09. bis 14.09.2026)
+Ersatzfahrplan (15.09. bis 23.09.2026)
+Ersatzfahrplan (24.09. bis 26.09.2026)
+Zurück zur Übersicht

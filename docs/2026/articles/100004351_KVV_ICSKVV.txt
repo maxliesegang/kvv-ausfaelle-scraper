@@ -1,0 +1,28 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004351_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien S71, SEV - Karlsruhe - Baden-Baden: nächtlicher Ersatzverkehr wegen Bauarbeiten (29.09.2026 bis 29.09.2026)
+Datum:  2026-08-26T05:20:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 29.09.2026 bis 29.09.2026
+Linien S71, SEV
+Karlsruhe - Baden-Baden: nächtlicher Ersatzverkehr wegen Bauarbeiten
+(AVG)
+Linie(n): 
+S71
+Zeitraum: 
+29.09.2026
+Entfall Stadtbahn:
+S71 Karlsruhe Hbf (22:47 Uhr) - Rastatt - Baden-Baden (23:17 Uhr) entfällt 04.09. und 06.09. und endet am 29.09. in Rastatt
+Ersatzverkehr:  
+jeweils (Karlsruhe Hbf (Vorpl.) &lt;-&gt;Ettlingen West &lt;-&gt;Rastatt &lt;-&gt; Baden-Baden
+Grund: 
+DB InfraGO - Bauarbeiten
+Sonstiges: 
+entfällt
+Ersatzfahrplan (04.09. und 06.09.2026)
+Ersatzfahrplan (11.09.2026)
+Zurück zur Übersicht

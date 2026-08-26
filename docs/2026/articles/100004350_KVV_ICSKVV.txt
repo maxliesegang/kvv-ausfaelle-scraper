@@ -1,0 +1,27 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004350_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien S71, SEV - Karlsruhe - Rastatt: Zwischenhalte entfallen wegen Bauarbeiten (11.09.2026 bis 11.09.2026)
+Datum:  2026-08-26T05:26:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 11.09.2026 bis 11.09.2026
+Linien S71, SEV
+Karlsruhe - Rastatt: Zwischenhalte entfallen wegen Bauarbeiten
+(AVG)
+Linie(n): 
+S71
+Zeitraum: 
+11.09.2026
+Entfall Stadtbahn:
+S71 Karlsruhe Hbf (05:16) -&gt; Rastatt (05:39) -&gt; Achern ohne Zwischenhalt bis Rastatt
+Ersatzverkehr: 
+Karlsruhe Hbf (Vorpl.) -&gt; Ettlingen West -&gt; Rastatt
+Grund: 
+DB InfraGO - Bauarbeiten
+Sonstiges: 
+entfällt
+Ersatzfahrplan (11.09.2026)
+Zurück zur Übersicht

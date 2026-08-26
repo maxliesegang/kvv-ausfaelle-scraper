@@ -1621,5 +1621,47 @@
       "journeyCancelled": true,
       "feedLine": "S71"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-26",
+    "stand": "2026-08-26T05:21:00.000Z",
+    "trainNumber": "80721",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "07:55",
+    "toStop": "KA Tullastraße",
+    "toTime": "08:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275163",
+    "capturedAt": "2026-08-26T08:36:51.438Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-26",
+    "stand": "2026-08-26T05:21:00.000Z",
+    "trainNumber": "85565",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "08:16",
+    "toStop": "Achern Bf.",
+    "toTime": "09:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275163",
+    "capturedAt": "2026-08-26T08:36:51.438Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-26",
+    "stand": "2026-08-26T05:21:00.000Z",
+    "trainNumber": "85566",
+    "fromStop": "Achern Bf.",
+    "fromTime": "09:33",
+    "toStop": "KA Tullastraße",
+    "toTime": "10:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275163",
+    "capturedAt": "2026-08-26T08:36:51.438Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
