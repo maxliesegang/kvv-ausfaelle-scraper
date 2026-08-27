@@ -1,0 +1,50 @@
+{
+  "candidate": {
+    "place": {
+      "name": "Ittersbach Rathaus",
+      "scheduledDeparture": "2026-08-13T07:21:00Z"
+    },
+    "tripId": "transitous-forecast-20019",
+    "tripShortName": "20019",
+    "routeShortName": "S11",
+    "agencyName": "Albtal-Verkehrs-Gesellschaft mbH",
+    "realTime": true,
+    "cancelled": false,
+    "tripCancelled": false
+  },
+  "itinerary": {
+    "id": "forecast-itinerary",
+    "legs": [
+      {
+        "tripId": "transitous-forecast-20019",
+        "tripShortName": "20019",
+        "routeShortName": "S11",
+        "agencyName": "Albtal-Verkehrs-Gesellschaft mbH",
+        "cancelled": false,
+        "realTime": true,
+        "from": {
+          "name": "Ittersbach Rathaus",
+          "scheduledDeparture": "2026-08-13T07:21:00Z",
+          "departure": "2026-08-13T07:51:00Z",
+          "cancelled": false
+        },
+        "intermediateStops": [
+          {
+            "name": "Busenbach",
+            "scheduledArrival": "2026-08-13T07:34:00Z",
+            "arrival": "2026-08-13T08:04:00Z",
+            "scheduledDeparture": "2026-08-13T07:35:00Z",
+            "departure": "2026-08-13T08:05:00Z",
+            "cancelled": false
+          }
+        ],
+        "to": {
+          "name": "Ettlingen Stadt",
+          "scheduledArrival": "2026-08-13T07:45:00Z",
+          "arrival": "2026-08-13T08:15:00Z",
+          "cancelled": false
+        }
+      }
+    ]
+  }
+}

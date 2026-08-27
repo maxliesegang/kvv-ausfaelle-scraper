@@ -24,6 +24,10 @@ This is the most specific guidance for parser fixtures.
   Capture new ones by calling `fetchJourneyDetails` and writing the decoded object verbatim;
   never hand-edit the stop list, since editing it back into what we expect is the failure mode
   these fixtures exist to prevent.
+- Transitous response fixtures: `test-data/transitous/*.json` — paired MOTIS stop-board candidate
+  and trip itinerary shapes. Keep cancellation flags and the distinction between scheduled and
+  current timestamps intact; the adapter tests use them to reject leg-wide delay forecasts as
+  vehicle observations.
 
 ## Fixture Rules
 

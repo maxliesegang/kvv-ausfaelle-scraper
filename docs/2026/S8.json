@@ -1130,7 +1130,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-8199813e-d940-3e02-b294-87b6767d084b",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1161,7 +1161,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-82743995-9533-3ed5-8350-b5487cb9da8f",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1192,7 +1192,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-d1941ea0-e9ad-3777-b8d6-43a89c6d79d4",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1251,7 +1251,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1310,7 +1310,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-82743995-9533-3ed5-8350-b5487cb9da8f",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1340,7 +1340,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-604a4ebb-db24-3a07-a769-582954027dd6",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1370,7 +1370,7 @@
       "trackedOutsideSegment": 33,
       "trackedAdjacentStops": 4,
       "journeyId": "20260822-c8e65140-ea9d-36a5-a702-b3a1c2a4a4d9",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1400,7 +1400,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1460,7 +1460,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-d6b912ae-52ad-359f-94bd-71f28edcf2e3",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1490,7 +1490,7 @@
       "trackedOutsideSegment": 12,
       "trackedAdjacentStops": 2,
       "journeyId": "20260822-26ad2bed-0d66-39e8-b353-b3fb05d09e97",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1667,7 +1667,7 @@
       "trackedOutsideSegment": 6,
       "trackedAdjacentStops": 2,
       "journeyId": "20260822-e50ea301-4b42-3fd1-8194-fb39962130c9",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1933,7 +1933,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-39450944-8baa-3a39-a3ce-2626a23864ae",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1963,7 +1963,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260822-ce49c117-362e-321e-bbd4-fb538735a6b7",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1993,7 +1993,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -2023,7 +2023,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -2053,7 +2053,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260823-ea1cc3ad-eaf9-3690-bcdd-a192ebc90b6b",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -2083,7 +2083,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {

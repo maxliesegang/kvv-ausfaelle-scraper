@@ -109,9 +109,9 @@ export const PUBLIC_VERIFICATION_STATUS_DEFINITIONS: readonly PublicVerification
  * A union rather than a free-form string: adding a second feed is a deliberate, compile-checked
  * change, and every consumer that switches on provenance is forced to handle the new case.
  */
-export type VerificationSource = 'bahn.expert';
+export type VerificationSource = 'bahn.expert' | 'transitous';
 
-/** The feed this module classifies. */
+/** Default source for the legacy one-source call sites and stored records. */
 export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
 /**
  * Version of the matching and evidence semantics that produced a verdict.
@@ -138,18 +138,15 @@ export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
  */
 export const VERIFICATION_METHOD_VERSION = 7;
 
-export interface TripVerification {
+export interface VerificationEvidence {
   readonly status: VerificationStatus;
   readonly methodVersion: number;
   /**
    * Which realtime feed answered.
    *
-   * Constant today, and knowingly so — the field earns its bytes only once a second feed exists.
-   * It is stored anyway because it is the one fact about a verdict that cannot be re-derived
-   * later: a trip like `84957`, which one feed simply never observed, is permanently unverifiable
-   * *by that feed*, and a future answer from a different source must be distinguishable from this
-   * one rather than silently replacing it. Recording provenance from the start keeps the published
-   * records comparable across the change instead of splitting them into a before and an after.
+   * This is the source of the selected top-level verdict. When more than one provider answered,
+   * `TripVerification.checks` preserves each source's evidence independently so a fallback answer
+   * never silently replaces the primary source's result.
    *
    * It is **not** a confidence signal and must not be used to rank verdicts: `retainStrongerVerdict`
    * compares observed stops, and comparing counts across feeds that watch different things would
@@ -159,10 +156,8 @@ export interface TripVerification {
   /**
    * Berlin-local date of the check (`2026-08-14`), so a stale verdict is recognisable.
    *
-   * Deliberately a date and not a timestamp: everything this field guards is measured in days —
-   * the feed's rolling seven-day window, and the realtime decay `retainStrongerVerdict` exists to
-   * resist. A
-   * per-run millisecond stamp only adds bytes to every record and churn to every diff.
+   * Deliberately a date and not a timestamp: provider windows and retry spacing are measured in
+   * days. A per-run millisecond stamp only adds bytes to every record and churn to every diff.
    */
   readonly checkedAt: string;
 
@@ -263,6 +258,21 @@ export interface TripVerification {
    * {@link needsCheck} consults it in. On a settled verdict the count is spent bookkeeping.
    */
   readonly attempts?: number;
+}
+
+export type VerificationAgreement = 'single-source' | 'corroborated' | 'conflicting';
+
+/**
+ * Published verification result plus optional evidence from the other providers consulted.
+ *
+ * The original top-level fields stay intact for backwards compatibility: they are the selected
+ * verdict, and old consumers can continue to read them without knowing that a second source was
+ * tried. `checks` appears only when more than one source answered, keyed by source so repeated
+ * four-hour runs update evidence idempotently rather than append duplicate observations.
+ */
+export interface TripVerification extends VerificationEvidence {
+  readonly checks?: Partial<Record<VerificationSource, VerificationEvidence>>;
+  readonly agreement?: VerificationAgreement;
 }
 
 function stopEvents(stop: JourneyStop): ReadonlyArray<JourneyStopEvent | null | undefined> {
@@ -867,6 +877,7 @@ function createVerification(
   counts: SegmentCounts,
   now: Date,
   options: {
+    source?: VerificationSource;
     feedLine?: string;
     feedOperator?: string;
     journeyCancelled?: true;
@@ -877,7 +888,7 @@ function createVerification(
   return {
     status,
     methodVersion: VERIFICATION_METHOD_VERSION,
-    source: VERIFICATION_SOURCE,
+    source: options.source ?? VERIFICATION_SOURCE,
     checkedAt: formatBerlinWallClock(now.getTime()).date,
     ...counts,
     ...(options.journeyCancelled ? { journeyCancelled: true as const } : {}),
@@ -898,8 +909,10 @@ export function createUnresolvedVerification(
   now: Date,
   unresolvedReason: UnresolvedReason = 'journey-not-found',
   journeyId?: string,
+  source: VerificationSource = VERIFICATION_SOURCE,
 ): TripVerification {
   return createVerification('unresolved', NO_COUNTS, now, {
+    source,
     unresolvedReason,
     ...(journeyId === undefined ? {} : { journeyId }),
   });
@@ -1058,6 +1071,7 @@ export function createJourneyMismatchVerification(
   cancellation: Cancellation,
   details: JourneyDetails,
   now: Date,
+  source: VerificationSource = VERIFICATION_SOURCE,
 ): TripVerification | null {
   const expectedJourneyNumber = Number(cancellation.trainNumber);
   if (details.train?.journeyNumber !== expectedJourneyNumber) return null;
@@ -1083,6 +1097,7 @@ export function createJourneyMismatchVerification(
     countJourney(stops),
     now,
     {
+      source,
       ...(journeyCancelled ? { journeyCancelled: true } : { unresolvedReason: 'journey-mismatch' }),
       ...(details.journeyId === undefined ? {} : { journeyId: details.journeyId }),
       ...(unexpectedOperator ? { feedOperator } : {}),
@@ -1095,6 +1110,7 @@ export function classifyJourney(
   cancellation: Cancellation,
   details: JourneyDetails,
   now: Date,
+  source: VerificationSource = VERIFICATION_SOURCE,
 ): TripVerification | null {
   const expectedJourneyNumber = Number(cancellation.trainNumber);
   if (
@@ -1115,6 +1131,7 @@ export function classifyJourney(
   const unexpectedOperator =
     feedOperator && !namesNetworkOperator(normalizeGermanText(feedOperator));
   return createVerification(status, counts, now, {
+    source,
     ...(details.cancelled === true ? { journeyCancelled: true } : {}),
     ...(details.journeyId === undefined ? {} : { journeyId: details.journeyId }),
     ...(feedLine && feedLine !== cancellation.line ? { feedLine } : {}),

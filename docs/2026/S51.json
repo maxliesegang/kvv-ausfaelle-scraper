@@ -1234,7 +1234,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260826-bcacc0e2-a883-3ea7-82dc-c2eaae691a60",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
@@ -1264,7 +1264,7 @@
       "trackedOutsideSegment": 5,
       "trackedAdjacentStops": 0,
       "journeyId": "20260826-21ec565d-29ba-3d85-960e-90307013222f",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {

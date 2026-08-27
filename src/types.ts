@@ -60,9 +60,9 @@ export interface Cancellation {
   readonly restoredFrom?: string;
 
   /**
-   * Advisory result of checking an external realtime feed for whether this trip actually ran.
+   * Advisory result of checking external realtime feeds for whether this trip actually ran.
    * Absent until `scripts/verify-trips.ts` has looked at the record, and absent forever on trips
-   * older than the feed's rolling seven-day window.
+   * older than every provider's rolling lookback window.
    *
    * This never changes what the record *means*. A stored cancellation states "KVV announced this
    * trip would not run", which stays true regardless of what the train did; verification adds the

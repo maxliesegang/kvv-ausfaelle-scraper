@@ -21,16 +21,17 @@
     "index.json"
   ],
   "verification": {
-    "source": "bahn.expert",
-    "checkedTrips": 222,
+    "source": "multiple",
+    "sources": ["bahn.expert", "transitous"],
+    "checkedTrips": 224,
     "totalTrips": 1995,
     "statusCounts": {
-      "cancelled": 148,
+      "cancelled": 150,
       "partial": 14,
       "ran": 18,
       "no-data": 31,
       "unresolved": 11
     }
   },
-  "generatedAt": "2026-08-27T18:46:17.952Z"
+  "generatedAt": "2026-08-27T20:03:41.731Z"
 }

@@ -76,12 +76,14 @@ function buildIndexJson<T extends object>(data: T, generatedAt: string): string 
  * downloaded and searched a line file — including the two facts most worth seeing, that some
  * announced cancellations were later observed to have run and that others could not be checked.
  *
- * `checkedTrips` is deliberately reported against `totalTrips`: the source answers for a rolling
- * seven days, so most stored trips carry no verdict and never will. Without the denominator the
- * counts read as a claim about the year rather than about its last week.
+ * `checkedTrips` is deliberately reported against `totalTrips`: providers answer only inside
+ * short rolling lookback windows, so most stored trips carry no verdict and never will. Without
+ * the denominator the counts read as a claim about the year rather than about recent trips.
  */
 export interface VerificationSummary {
+  /** Legacy single-source summary; `multiple` when selected evidence comes from several feeds. */
   readonly source: string;
+  readonly sources: readonly string[];
   readonly checkedTrips: number;
   readonly totalTrips: number;
   /** Verdict counts, keyed by status. Statuses with no trips are omitted. */
@@ -107,6 +109,7 @@ async function summarizeVerification(
   const statusCounts: Partial<Record<VerificationStatus, number>> = {};
   let checkedTrips = 0;
   let totalTrips = 0;
+  const sources = new Set<string>();
 
   for (const file of files) {
     if (file.startsWith('index')) continue;
@@ -116,6 +119,8 @@ async function summarizeVerification(
       totalTrips += 1;
       const status = trip?.verification?.status;
       if (!status) continue;
+      sources.add(trip.verification.source);
+      for (const source of Object.keys(trip.verification.checks ?? {})) sources.add(source);
       checkedTrips += 1;
       statusCounts[status] = (statusCounts[status] ?? 0) + 1;
     }
@@ -128,7 +133,8 @@ async function summarizeVerification(
   }
 
   return {
-    source: VERIFICATION_SOURCE,
+    source: sources.size > 1 ? 'multiple' : ([...sources][0] ?? VERIFICATION_SOURCE),
+    sources: [...sources].sort(),
     checkedTrips,
     totalTrips,
     statusCounts: orderedCounts,
@@ -171,10 +177,11 @@ ${yearLinks}
 
     <h2>Verification statuses</h2>
     <p class="desc">
-      Trips carry an optional advisory <code>verification</code> field recording what an external
-      realtime source later observed. It never changes the record's primary meaning — that KVV
-      announced the trip as cancelled — and is absent for trips outside the source's rolling
-      seven-day window.
+      Trips carry an optional advisory <code>verification</code> field recording what external
+      realtime sources later observed. It never changes the record's primary meaning — that KVV
+      announced the trip as cancelled — and is absent for trips outside every provider's rolling
+      lookback window. Fallback routing data is provided by
+      <a href="https://transitous.org/sources/">Transitous and its listed sources</a>.
     </p>
     <dl>
 ${verificationStatusDefinitions}
@@ -199,8 +206,9 @@ ${causeDefinitions}
  * Builds a year index HTML page listing all JSON files for that year.
  */
 function buildVerificationSection(summary: VerificationSummary): string {
+  const sourceLabel = summary.sources.length > 0 ? summary.sources.join(', ') : summary.source;
   if (summary.checkedTrips === 0) {
-    return `    <p class="hint">No trips in ${htmlEscape(summary.source)}'s lookback window have been verified yet.</p>`;
+    return `    <p class="hint">No trips in the configured verification lookback windows have been verified yet.</p>`;
   }
   const rows = PUBLIC_VERIFICATION_STATUS_DEFINITIONS.flatMap(({ id, label }) => {
     const count = summary.statusCounts[id];
@@ -217,8 +225,8 @@ ${rows}
     </ul>
     <p class="hint">
       ${summary.checkedTrips} of ${summary.totalTrips} stored trips carry a verdict from
-      <code>${htmlEscape(summary.source)}</code>. The rest departed outside its rolling lookback
-      window and cannot be checked.
+      <code>${htmlEscape(sourceLabel)}</code>. The rest departed outside all configured rolling
+      lookback windows and cannot be checked.
     </p>`;
 }
 

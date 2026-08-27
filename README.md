@@ -76,11 +76,15 @@ storage. The field preserves classifier evidence without requiring consumers to 
 archived article.
 
 Records may also contain an advisory `verification` object after the separate back-verification
-job has checked bahn.expert's realtime history. Its `status` is `cancelled`, `ran`, `partial`,
+job has checked bahn.expert and, for provisional recent results, Transitous. Its `status` is `cancelled`, `ran`, `partial`,
 `no-data`, or `unresolved`, with stop counts recording the evidence for the announced segment and
 the whole journey. This does not change the cancellation record's meaning: the record says what
-KVV announced, while `verification` describes what the external feed later observed. The field is
-optional because the feed has a rolling seven-day window and some trips cannot be resolved.
+KVV announced, while `verification` describes what external realtime data later observed. The
+selected result keeps its `source`; when both providers answer, optional `checks` preserve each
+source independently and `agreement` records whether they corroborate or conflict. The field is
+optional because the providers have short lookback windows and some trips cannot be resolved.
+Transitous fallback data follows the attribution and source terms listed at
+<https://transitous.org/sources/>.
 
 ## Running locally
 
@@ -144,7 +148,7 @@ See [tests/README.md](tests/README.md) for test organization and
 - `npm run reparse-archives -- --write-trips [--year=N]` — fully reconcile successfully parsed
   archived articles with stored trips
 - `npm run verify-trips -- [--year=N] [--date=YYYY-MM-DD] [--verbose]` — read-only check of
-  completed announced segments against bahn.expert's realtime history; add `--write` to persist
+  completed announced segments against bahn.expert with a recent-trip Transitous fallback; add `--write` to persist
   advisory `verification` results or `--recheck` to ignore normal retry limits
 
 The three reparse write modes are mutually exclusive. Parse failures never authorize deletion:

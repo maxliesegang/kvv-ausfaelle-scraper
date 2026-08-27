@@ -1,10 +1,12 @@
 /**
- * Back-verify stored cancellations against an external realtime feed.
+ * Back-verify stored cancellations against external realtime feeds.
  *
  * Reads `docs/<fahrplan-year>/<line>.json`, and for every trip that has already departed and still
- * falls inside bahn.expert's rolling seven-day window, asks whether the announced segment actually
- * ran. The verdict is written to the trip's advisory `verification` field and nothing else — trip
- * identity, cause and dates are never touched.
+ * falls inside at least one provider's lookback window, asks whether the announced segment
+ * actually ran. bahn.expert is the history-capable primary; Transitous is consulted only when the
+ * primary result is provisional or failed and the trip is still inside Transitous's one-day
+ * best-effort window. The verdict is written to the advisory `verification` field and nothing
+ * else — trip identity, cause and dates are never touched.
  *
  * Every Fahrplan year directory is scanned, not just the current one. The window is seven days and
  * a Fahrplan year turns over in mid-December, so for a week each year the trips that need checking
@@ -25,34 +27,25 @@
  * - `partial`, `no-data` and `unresolved` are re-checked on later Berlin calendar days while the
  *   trip stays inside the window; settled verdicts are left alone unless `--recheck` is passed.
  * - Evidence only ratchets up: a re-check that sees *less* than the stored verdict did is
- *   discarded (`retainStrongerVerdict`), because the feed thins realtime out as a day recedes.
+ *   discarded by the selection layer, because the feed thins realtime out as a day recedes.
  */
 
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { DATA_DIR } from '../src/config.js';
 import { listFahrplanYearDirectories } from '../src/fahrplan.js';
 import { generateSiteIndices } from '../src/site-index.js';
 import type { Cancellation } from '../src/types.js';
-import { getBerlinWallClockMs } from '../src/utils/berlin-time.js';
 import { listFiles, readJsonFile, writeJsonFile } from '../src/utils/fs.js';
-import {
-  fetchJourneyDetails,
-  findJourneys,
-  orderJourneyCandidates,
-} from '../src/verification/bahn-expert.js';
-import { isVerifiable, needsCheck, retainStrongerVerdict } from '../src/verification/selection.js';
-import {
-  classifyJourney,
-  createJourneyMismatchVerification,
-  createUnresolvedVerification,
-  identifiesNetworkJourney,
-  VERIFICATION_SOURCE,
-  type TripVerification,
-} from '../src/verification/verify.js';
+import { bahnExpertProvider } from '../src/verification/bahn-expert-provider.js';
+import { verifyWithProviders, type VerificationProvider } from '../src/verification/provider.js';
+import { needsCheck, selectAcrossSources } from '../src/verification/selection.js';
+import { transitousProvider } from '../src/verification/transitous-provider.js';
+import { type TripVerification, type VerificationSource } from '../src/verification/verify.js';
 
-const REQUEST_TIMEOUT_MS = 20_000;
 /** Small enough to stay a polite guest on a hobby-run service. */
 const CONCURRENCY = 4;
+const PROVIDERS: readonly VerificationProvider[] = [bahnExpertProvider, transitousProvider];
 
 interface Options {
   year?: number;
@@ -74,75 +67,6 @@ function parseArguments(argv: readonly string[]): Options {
   return options;
 }
 
-async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVerification> {
-  const journeyNumber = Number(cancellation.trainNumber);
-  if (!Number.isFinite(journeyNumber)) {
-    return createUnresolvedVerification(now, 'invalid-train-number');
-  }
-
-  const departureDate = new Date(getBerlinWallClockMs(cancellation.date, '10:00'));
-  const candidates = await findJourneys(journeyNumber, departureDate, REQUEST_TIMEOUT_MS);
-  if (candidates.length === 0) return createUnresolvedVerification(now, 'journey-not-found');
-
-  // A Zugnummer is reused across operators, so the stored line is the best hint about which
-  // candidate is ours — but only a hint. KVV and the feed name the same run differently often
-  // enough (`S51` vs `S52`, `S7` vs `S71`, a depot run as `E`) that requiring an exact match
-  // discards real answers. Try the exact line first, then AVG/rail aliases before unrelated buses;
-  // `classifyJourney` still confirms identity from the full operator, route, date and schedule.
-  const ordered = orderJourneyCandidates(candidates, cancellation.line);
-  let firstCandidateError: unknown;
-  let networkJourneyId: string | undefined;
-  let journeyMismatchEvidence: TripVerification | null = null;
-
-  for (const candidate of ordered) {
-    let details;
-    try {
-      const fetched = await fetchJourneyDetails(candidate.journeyId, REQUEST_TIMEOUT_MS);
-      // The id a verdict is audited by must always be set, even on a response that omits it: it
-      // is the id we asked with either way.
-      details = fetched && { ...fetched, journeyId: fetched.journeyId ?? candidate.journeyId };
-    } catch (error) {
-      // One stale or broken same-number result must not hide a valid AVG candidate later in the
-      // list. If none succeeds, rethrow below so an upstream problem is skipped rather than
-      // persisted as a confident `unresolved` result.
-      firstCandidateError ??= error;
-      continue;
-    }
-    if (!details) continue;
-    // Only an AVG journey counts as "our train was in the feed". A same-numbered Köln tram is not
-    // a failed match, it is a different vehicle, and telling the two apart is the whole point of
-    // the reason recorded below.
-    if (identifiesNetworkJourney(cancellation, details)) {
-      networkJourneyId ??= details.journeyId;
-    }
-    const verdict = classifyJourney(cancellation, details, now);
-    if (verdict) return verdict;
-    const mismatchEvidence = createJourneyMismatchVerification(cancellation, details, now);
-    if (
-      mismatchEvidence &&
-      (!journeyMismatchEvidence ||
-        mismatchEvidence.journeyCancelledStops + mismatchEvidence.journeyTrackedStops >
-          journeyMismatchEvidence.journeyCancelledStops +
-            journeyMismatchEvidence.journeyTrackedStops)
-    ) {
-      journeyMismatchEvidence = mismatchEvidence;
-    }
-  }
-  if (journeyMismatchEvidence) return journeyMismatchEvidence;
-  if (firstCandidateError) throw firstCandidateError;
-  if (networkJourneyId !== undefined) {
-    return createUnresolvedVerification(now, 'journey-mismatch', networkJourneyId);
-  }
-  return createUnresolvedVerification(
-    now,
-    candidates.length > 0 ? 'journey-not-in-network' : 'journey-not-found',
-  );
-}
-
-type VerifyOutcome =
-  | { readonly ok: true; readonly verification: TripVerification }
-  | { readonly ok: false; readonly reason: string };
-
 /**
  * Collapse an error to the shape of the problem, dropping the parts that vary per trip.
  *
@@ -154,26 +78,6 @@ type VerifyOutcome =
 function failureReason(error: unknown): string {
   const message = error instanceof Error ? error.message : String(error);
   return message.replace(/\b\d{8}-[0-9a-f-]+\b/g, '<journeyId>');
-}
-
-/**
- * Verification is advisory, so a failed lookup is a skipped trip, never a thrown run. The trip
- * simply keeps whatever verdict it already had and is retried on a later run.
- */
-async function verifySafely(
-  cancellation: Cancellation,
-  now: Date,
-  verbose: boolean,
-): Promise<VerifyOutcome> {
-  try {
-    return { ok: true, verification: await verifyOne(cancellation, now) };
-  } catch (error) {
-    if (verbose) {
-      const { line, trainNumber, date } = cancellation;
-      console.warn(`  ! ${line} ${trainNumber} ${date}: ${String(error)}`);
-    }
-    return { ok: false, reason: failureReason(error) };
-  }
 }
 
 function describeVerdict(
@@ -190,11 +94,16 @@ function describeVerdict(
     `of ${verdict.journeyStops} in journey`;
   const feedLine = verdict.feedLine ? ` [feed line ${verdict.feedLine}]` : '';
   const unresolvedReason = verdict.unresolvedReason ? ` [${verdict.unresolvedReason}]` : '';
+  const checkedSources = Object.keys(verdict.checks ?? {});
+  const sourceSummary =
+    checkedSources.length > 1
+      ? `[${checkedSources.join('+')}; ${verdict.agreement ?? 'single-source'}]`
+      : `[${verdict.source}]`;
   // Marked like `storage.ts` logs its retentions, so a rule that keeps data instead of writing it
   // is visible in a run rather than silent.
   const kept = retainedPrevious ? ' = kept (fresh check saw less evidence)' : '';
   return (
-    `  ${verdict.status.padEnd(10)} ${trip.line} ${trip.trainNumber} ${trip.date} ` +
+    `  ${verdict.status.padEnd(10)} ${sourceSummary} ${trip.line} ${trip.trainNumber} ${trip.date} ` +
     `${trip.fromTime} ${trip.fromStop} -> ${trip.toStop} ` +
     `(${segment}; ${journey})${feedLine}${unresolvedReason}${kept}`
   );
@@ -225,6 +134,10 @@ interface RunSummary {
   verdictsRetained: number;
   /** How many failures each distinct problem caused, so the log names the cause, not just a count. */
   readonly failuresByReason: Map<string, number>;
+  readonly sourceHealth: Map<
+    VerificationSource,
+    { attempted: number; succeeded: number; failed: number }
+  >;
 }
 
 /**
@@ -271,13 +184,13 @@ async function verifyFahrplanYear(
     const pending = trips.filter(
       (trip) =>
         (!options.date || trip.date === options.date) &&
-        isVerifiable(trip, nowMs) &&
+        PROVIDERS.some((provider) => provider.canCheck(trip, now)) &&
         needsCheck(trip, options.recheck, nowMs),
     );
     if (pending.length === 0) continue;
 
     const outcomes = await mapWithConcurrency(pending, CONCURRENCY, (trip) =>
-      verifySafely(trip, now, options.verbose),
+      verifyWithProviders(trip, now, PROVIDERS),
     );
 
     const verdictByTrip = new Map<Cancellation, TripVerification>();
@@ -285,15 +198,36 @@ async function verifyFahrplanYear(
     outcomes.forEach((outcome, index) => {
       const trip = pending[index];
       if (!trip) return;
-      if (!outcome.ok) {
+      for (const source of outcome.attemptedSources) {
+        const health = summary.sourceHealth.get(source) ?? {
+          attempted: 0,
+          succeeded: 0,
+          failed: 0,
+        };
+        health.attempted += 1;
+        if (outcome.verifications.some((verification) => verification.source === source)) {
+          health.succeeded += 1;
+        } else {
+          health.failed += 1;
+        }
+        summary.sourceHealth.set(source, health);
+      }
+      for (const failure of outcome.failures) {
         summary.failed += 1;
-        summary.failuresByReason.set(
-          outcome.reason,
-          (summary.failuresByReason.get(outcome.reason) ?? 0) + 1,
-        );
+        if (options.verbose) {
+          const { line, trainNumber, date } = trip;
+          console.warn(
+            `  ! ${failure.source} ${line} ${trainNumber} ${date}: ${String(failure.error)}`,
+          );
+        }
+        const reason = failureReason(failure.error);
+        const key = `${failure.source}: ${reason}`;
+        summary.failuresByReason.set(key, (summary.failuresByReason.get(key) ?? 0) + 1);
+      }
+      if (outcome.verifications.length === 0) {
         return;
       }
-      const choice = retainStrongerVerdict(trip.verification, outcome.verification);
+      const choice = selectAcrossSources(trip.verification, outcome.verifications);
       verdictByTrip.set(trip, choice.verification);
       if (choice.retainedPrevious) retainedTrips.add(trip);
     });
@@ -334,6 +268,7 @@ async function main(): Promise<void> {
     changedFiles: 0,
     verdictsRetained: 0,
     failuresByReason: new Map(),
+    sourceHealth: new Map(),
   };
   const countByStatus = new Map<string, number>();
 
@@ -373,22 +308,23 @@ async function main(): Promise<void> {
     await generateSiteIndices(DATA_DIR);
   }
 
-  if (isSourceUnreachable(summary)) {
-    // `::error::` is GitHub's annotation syntax and plain text anywhere else, so the same line
-    // serves a workflow run and a terminal.
-    console.error(
-      `::error::Every one of ${summary.failed} lookup(s) failed — treating ${VERIFICATION_SOURCE} ` +
-        'as unreachable, not as flaky trips. If this persists the gateway has most likely moved ' +
-        'again; see the mount-point note in src/verification/bahn-expert.ts.',
-    );
-    process.exitCode = 1;
+  for (const [source, health] of summary.sourceHealth) {
+    if (isSourceUnreachable({ checked: health.succeeded, failed: health.failed })) {
+      console.error(
+        `::error::Every one of ${health.failed} ${source} lookup(s) failed — treating the source ` +
+          'as unreachable rather than persisting missing-data verdicts.',
+      );
+      process.exitCode = 1;
+    }
   }
 }
 
 // Best-effort by contract: never fail the pipeline over a third-party feed. `main` sets a non-zero
 // exit code for a wholly unreachable source, which the workflow's `continue-on-error` turns into a
 // visibly failed step rather than a failed run — publishing is unaffected, the alarm still rings.
-main().catch((error) => {
-  console.error('Verification aborted:', error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
+  main().catch((error) => {
+    console.error('Verification aborted:', error);
+    process.exitCode = 1;
+  });
+}

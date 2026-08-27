@@ -15,7 +15,7 @@ This is the most specific guidance for published artifacts.
 - Per Fahrplan year:
   - `docs/<fahrplan-year>/index.html`
   - `docs/<fahrplan-year>/index.json` — file list plus a `verification` summary
-    (`source`, `checkedTrips`, `totalTrips`, `statusCounts`)
+    (`source`, `sources`, `checkedTrips`, `totalTrips`, `statusCounts`)
 - Per line data:
   - `docs/<fahrplan-year>/<line>.json`
 - Per year train mappings:
@@ -53,11 +53,15 @@ Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` 
 - `cause` and `causeKeyword` are a paired article-level classification. `causeKeyword` is `null`
   when no evidence is available, either because no rule matched or because the stored record
   predates evidence capture.
-- `verification` is optional, advisory evidence from an external realtime source. It records what
-  the source later observed; it never changes the record's primary meaning that KVV announced a
+- `verification` is optional, advisory evidence from external realtime sources. It records what
+  they later observed; it never changes the record's primary meaning that KVV announced a
   cancellation. Consumers must tolerate its absence, including for trips outside the source's
   rolling lookback window. Keep its `source` provenance and segment/journey evidence intact, and
   never use a verdict to delete or rewrite cancellation identity.
+- The top-level verification fields remain the selected backwards-compatible verdict. When several
+  providers answered, `checks` keeps their evidence keyed by source and `agreement` is
+  `single-source`, `corroborated`, or `conflicting`. Never add stop counts across providers: their
+  stop scopes and observation semantics differ.
 - A verdict's `status` is defined by the `verificationStatuses` taxonomy in the root `index.json`,
   and per-year `index.json` tallies the statuses stored in that year's line files. Both are
   generated, so the summary cannot be edited into agreement with anything but the data.

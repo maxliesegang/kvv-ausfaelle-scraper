@@ -75,6 +75,7 @@ describe('Site index generation', () => {
       assert.match(rootHtml, /<a href="\.\/2026\/">2026<\/a>/);
       assert.match(rootHtml, /<code>emergency<\/code> — Einsatz von Rettungskräften/);
       assert.match(rootHtml, /<code>unknown<\/code> — Unbekannt/);
+      assert.match(rootHtml, /href="https:\/\/transitous\.org\/sources\/"/);
 
       const yearHtml = await readFile(join(year2025Dir, 'index.html'), 'utf-8');
       assert.match(yearHtml, /<a href="\.\/S1\.json"><code>S1\.json<\/code><\/a>/);
@@ -93,24 +94,36 @@ describe('Site index generation', () => {
     try {
       const yearDir = join(tempDir, '2026');
       await mkdir(yearDir, { recursive: true });
-      const trip = (verificationStatus?: string): Record<string, unknown> => ({
+      const trip = (
+        verificationStatus?: string,
+        includeFallback = false,
+      ): Record<string, unknown> => ({
         line: 'S1',
         date: '2026-08-13',
         trainNumber: '84805',
         ...(verificationStatus
-          ? { verification: { status: verificationStatus, source: 'bahn.expert' } }
+          ? {
+              verification: {
+                status: verificationStatus,
+                source: 'bahn.expert',
+                ...(includeFallback
+                  ? { checks: { transitous: { status: 'no-data', source: 'transitous' } } }
+                  : {}),
+              },
+            }
           : {}),
       });
       await writeFile(
         join(yearDir, 'S1.json'),
         JSON.stringify([trip('cancelled'), trip('ran'), trip()]),
       );
-      await writeFile(join(yearDir, 'S2.json'), JSON.stringify([trip('cancelled'), trip()]));
+      await writeFile(join(yearDir, 'S2.json'), JSON.stringify([trip('cancelled', true), trip()]));
 
       await generateSiteIndices(tempDir);
 
       const yearIndex = await readJsonFile<YearIndexData>(join(yearDir, 'index.json'));
-      assert.strictEqual(yearIndex.verification.source, 'bahn.expert');
+      assert.strictEqual(yearIndex.verification.source, 'multiple');
+      assert.deepStrictEqual(yearIndex.verification.sources, ['bahn.expert', 'transitous']);
       assert.strictEqual(yearIndex.verification.totalTrips, 5);
       assert.strictEqual(yearIndex.verification.checkedTrips, 3);
       assert.deepStrictEqual(yearIndex.verification.statusCounts, { cancelled: 2, ran: 1 });
@@ -154,7 +167,10 @@ describe('Site index generation', () => {
       assert.deepStrictEqual(yearIndex.verification.statusCounts, {});
 
       const yearHtml = await readFile(join(yearDir, 'index.html'), 'utf-8');
-      assert.match(yearHtml, /No trips in bahn\.expert's lookback window have been verified yet\./);
+      assert.match(
+        yearHtml,
+        /No trips in the configured verification lookback windows have been verified yet\./,
+      );
     } finally {
       await rm(tempDir, { recursive: true, force: true });
     }

@@ -56,9 +56,18 @@ This is the most specific guidance for maintenance scripts.
   DELFI GTFS exports and KVV's own EFA GTFS all lack `trip_short_name` and cannot be used.
 
 - `verify-trips.ts` (`npm run verify-trips`) — **read-only** report by default. Back-verifies
-  stored cancellations against bahn.expert's realtime feed and stamps the advisory
-  `verification` field on each trip; `--write` persists, `--year=N` / `--date=YYYY-MM-DD` narrow
-  the scope, `--recheck` re-fetches settled verdicts, `--verbose` lists every verdict.
+  stored cancellations against bahn.expert, with Transitous as a recent-trip fallback, and stamps
+  the advisory `verification` field on each trip; `--write` persists, `--year=N` /
+  `--date=YYYY-MM-DD` narrow the scope, `--recheck` re-fetches settled verdicts, `--verbose` lists
+  every verdict.
+  - **Provider order is deliberate.** bahn.expert retains about seven days and is queried first.
+    Transitous is best-effort/live and is queried only when the primary fails or returns a
+    provisional verdict, and only during its one-day eligibility window. A conclusive primary
+    verdict avoids unnecessary load on the volunteer-run fallback.
+  - **Cross-source evidence is source-scoped.** Each provider passes through its own decay ratchet;
+    raw stop counts are never compared across feeds. The selected result stays in the legacy
+    top-level fields. When several feeds answer, `checks` preserves each result and `agreement`
+    surfaces corroboration or a credible `cancelled`/`ran` conflict.
   - Verdict counts are recorded at two scopes: `segmentStops` / `segmentCancelledStops` /
     `segmentTrackedStops` for the announced segment (these decide the verdict), and
     `journeyStops` / `journeyCancelledStops` / `journeyTrackedStops` for the whole run.
@@ -73,16 +82,15 @@ This is the most specific guidance for maintenance scripts.
     they are run bookkeeping (`attempts`, provisional verdicts only). `checkedAt` is a Berlin-local
     **date**: everything it guards is measured in days. The counts stay in full — they decide the
     verdict, and the feed cannot be asked again once the window closes.
-  - **`source` is the deliberate exception to that rule.** It is a constant today (`bahn.expert`,
-    the `VerificationSource` union in `src/verification/verify.ts`) and is stored anyway, because
+  - **`source` is the deliberate exception to that rule.** It identifies the selected provider and
+    is stored because
     provenance is the one thing about a verdict that cannot be recovered afterwards. A trip the
     feed never observed — `S5 84957 2026-08-13` carries realtime on none of its 39 stops — is
-    permanently unverifiable _by that feed_, and if a second source is ever added its answer must
-    be distinguishable from this one rather than silently replacing it. Stamping provenance from
-    the start keeps published records comparable across that change instead of splitting them into
-    a before and an after. It is **not** a confidence ranking: `retainStrongerVerdict` compares
-    observed stops, and comparing counts across feeds that watch different things would need its
-    own rule, never an implicit preference for whichever source ran last.
+    permanently unverifiable _by that feed_, while Transitous may answer separately. `checks`
+    keeps those answers distinguishable instead of silently replacing one with the other. It is
+    **not** a confidence ranking: each source's repeated observations use
+    `retainStrongerVerdict`, while `selectAcrossSources` compares semantic evidence rather than raw
+    counts from feeds that watch different things.
   - **Advisory only.** It writes `verification` and nothing else. A stored cancellation means
     "KVV announced this trip would not run", which stays true whatever the train did;
     verification adds the separate fact "it did / did not actually run". The disagreement

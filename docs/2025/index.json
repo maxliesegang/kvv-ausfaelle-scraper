@@ -19,9 +19,10 @@
   ],
   "verification": {
     "source": "bahn.expert",
+    "sources": [],
     "checkedTrips": 0,
     "totalTrips": 332,
     "statusCounts": {}
   },
-  "generatedAt": "2026-08-27T18:46:17.952Z"
+  "generatedAt": "2026-08-27T20:03:41.731Z"
 }

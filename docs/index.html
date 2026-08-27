@@ -62,10 +62,11 @@
 
     <h2>Verification statuses</h2>
     <p class="desc">
-      Trips carry an optional advisory <code>verification</code> field recording what an external
-      realtime source later observed. It never changes the record's primary meaning — that KVV
-      announced the trip as cancelled — and is absent for trips outside the source's rolling
-      seven-day window.
+      Trips carry an optional advisory <code>verification</code> field recording what external
+      realtime sources later observed. It never changes the record's primary meaning — that KVV
+      announced the trip as cancelled — and is absent for trips outside every provider's rolling
+      lookback window. Fallback routing data is provided by
+      <a href="https://transitous.org/sources/">Transitous and its listed sources</a>.
     </p>
     <dl>
       <dt><code>cancelled</code> — Cancelled</dt>

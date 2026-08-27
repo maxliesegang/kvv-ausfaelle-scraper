@@ -8,7 +8,13 @@
 import type { Cancellation } from '../types.js';
 import { formatBerlinWallClock, getBerlinWallClockMs } from '../utils/berlin-time.js';
 import { MAX_LOOKBACK_DAYS } from './bahn-expert.js';
-import { VERIFICATION_METHOD_VERSION, type TripVerification } from './verify.js';
+import {
+  VERIFICATION_METHOD_VERSION,
+  type TripVerification,
+  type VerificationAgreement,
+  type VerificationEvidence,
+  type VerificationSource,
+} from './verify.js';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
@@ -45,15 +51,40 @@ const PROVISIONAL_STATUSES = new Set<TripVerification['status']>([
  *
  * Trips older than the window are permanently unverifiable.
  */
-export function isVerifiable(cancellation: Cancellation, nowMs: number): boolean {
+export function isSegmentSettled(cancellation: Cancellation, nowMs: number): boolean {
   const departureMs = getBerlinWallClockMs(cancellation.date, cancellation.fromTime);
   if (Number.isNaN(departureMs)) return false;
   const sameDayEndMs = getBerlinWallClockMs(cancellation.date, cancellation.toTime);
   if (Number.isNaN(sameDayEndMs)) return false;
   const endDate = sameDayEndMs < departureMs ? nextDate(cancellation.date) : cancellation.date;
   const segmentEndMs = getBerlinWallClockMs(endDate, cancellation.toTime);
-  if (Number.isNaN(segmentEndMs) || segmentEndMs > nowMs - SETTLE_MS) return false;
-  return (nowMs - departureMs) / MS_PER_DAY <= MAX_LOOKBACK_DAYS;
+  return !Number.isNaN(segmentEndMs) && segmentEndMs <= nowMs - SETTLE_MS;
+}
+
+/** Whether the departure is still inside one provider's measured/declared retention window. */
+export function isWithinLookback(
+  cancellation: Cancellation,
+  nowMs: number,
+  maxLookbackDays: number,
+): boolean {
+  const departureMs = getBerlinWallClockMs(cancellation.date, cancellation.fromTime);
+  if (Number.isNaN(departureMs) || departureMs > nowMs) return false;
+  return (nowMs - departureMs) / MS_PER_DAY <= maxLookbackDays;
+}
+
+/** Whether a provider can still answer for this trip at the given instant. */
+export function isCheckable(
+  cancellation: Cancellation,
+  nowMs: number,
+  maxLookbackDays: number,
+): boolean {
+  return (
+    isSegmentSettled(cancellation, nowMs) && isWithinLookback(cancellation, nowMs, maxLookbackDays)
+  );
+}
+
+export function isVerifiable(cancellation: Cancellation, nowMs: number): boolean {
+  return isCheckable(cancellation, nowMs, MAX_LOOKBACK_DAYS);
 }
 
 /** Whether a verifiable trip is worth (re-)fetching. `recheck` forces a fresh look. */
@@ -77,9 +108,9 @@ export function needsCheck(cancellation: Cancellation, recheck: boolean, nowMs: 
  * also keeps a verdict that settles from carrying the history of how long it took to get there.
  */
 export function withAttemptCount(
-  verification: TripVerification,
-  previous: TripVerification | undefined,
-): TripVerification {
+  verification: VerificationEvidence,
+  previous: VerificationEvidence | undefined,
+): VerificationEvidence {
   if (!PROVISIONAL_STATUSES.has(verification.status)) {
     const { attempts: _spent, ...settled } = verification;
     return settled;
@@ -89,18 +120,106 @@ export function withAttemptCount(
 }
 
 /** Which verdict a run decided to store, and whether that meant discarding the fresh one. */
-export interface VerdictChoice {
+export interface VerdictChoice<T extends VerificationEvidence = VerificationEvidence> {
   /** The verdict to store, with its attempt count already stamped. */
-  readonly verification: TripVerification;
+  readonly verification: T;
   /** True when the fresh verdict was discarded as weaker and the stored one kept. */
   readonly retainedPrevious: boolean;
 }
 
+function sourceEvidence(verification: TripVerification): VerificationEvidence {
+  const { checks: _checks, agreement: _agreement, ...evidence } = verification;
+  return evidence;
+}
+
+function evidenceRank(verification: VerificationEvidence): number {
+  if (
+    verification.journeyCancelled ||
+    (verification.status === 'cancelled' && verification.segmentCancelledStops > 0)
+  ) {
+    return 7;
+  }
+  if (verification.segmentCancelledStops > 0) return 6;
+  if (verification.status === 'cancelled') return 5;
+  if (verification.status === 'ran') return 4;
+  if (verification.status === 'partial') return 3;
+  if (verification.status === 'no-data') return 2;
+  return 1;
+}
+
+function agreementFor(
+  checks: Partial<Record<VerificationSource, VerificationEvidence>>,
+): VerificationAgreement {
+  const evidence = Object.values(checks).filter(
+    (check): check is VerificationEvidence => check !== undefined,
+  );
+  const settled = evidence
+    .map((check) => check?.status)
+    .filter((status) => status === 'cancelled' || status === 'ran');
+  const hasCancellationEvidence = evidence.some(
+    (check) =>
+      check.status === 'cancelled' ||
+      check.journeyCancelled === true ||
+      check.segmentCancelledStops > 0,
+  );
+  if (hasCancellationEvidence && settled.includes('ran')) return 'conflicting';
+  if (settled.length >= 2 && new Set(settled).size === 1) return 'corroborated';
+  return 'single-source';
+}
+
+const SOURCE_PRIORITY: Readonly<Record<VerificationSource, number>> = {
+  'bahn.expert': 0,
+  transitous: 1,
+};
+
+/**
+ * Merge independently sourced results without comparing their raw stop counts as if they came
+ * from one feed. Each source first passes through its own decay ratchet; selection then uses only
+ * semantic evidence strength, with source priority as the final tie-breaker.
+ */
+export function selectAcrossSources(
+  previous: TripVerification | undefined,
+  fresh: readonly TripVerification[],
+): VerdictChoice<TripVerification> {
+  const checks: Partial<Record<VerificationSource, VerificationEvidence>> = {
+    ...(previous?.checks ?? {}),
+  };
+  if (previous) checks[previous.source] = sourceEvidence(previous);
+
+  const retainedBySource = new Set<VerificationSource>();
+  for (const result of fresh) {
+    const prior = checks[result.source];
+    const choice = retainStrongerVerdict(prior, result);
+    checks[result.source] = choice.verification;
+    if (choice.retainedPrevious) retainedBySource.add(result.source);
+  }
+
+  const available = Object.values(checks).filter(
+    (value): value is VerificationEvidence => value !== undefined,
+  );
+  if (available.length === 0) {
+    throw new Error('selectAcrossSources requires previous or fresh verification evidence');
+  }
+  available.sort(
+    (a, b) =>
+      evidenceRank(b) - evidenceRank(a) || SOURCE_PRIORITY[a.source] - SOURCE_PRIORITY[b.source],
+  );
+  const selected = available[0]!;
+  const verification: TripVerification =
+    available.length === 1
+      ? { ...selected }
+      : { ...selected, checks, agreement: agreementFor(checks) };
+  return {
+    verification,
+    retainedPrevious: retainedBySource.has(selected.source),
+  };
+}
+
 /** Keep the evidence but record that it was assessed again by the fresh check. */
 function retainPreviousEvidence(
-  previous: TripVerification,
-  fresh: TripVerification,
-): TripVerification {
+  previous: VerificationEvidence,
+  fresh: VerificationEvidence,
+): VerificationEvidence {
   const retained = {
     ...previous,
     // Without refreshing this date, the next workflow run on the same day retries immediately and
@@ -136,8 +255,8 @@ function retainPreviousEvidence(
  * decaying trip would be re-asked on every run forever.
  */
 export function retainStrongerVerdict(
-  previous: TripVerification | undefined,
-  fresh: TripVerification,
+  previous: VerificationEvidence | undefined,
+  fresh: VerificationEvidence,
 ): VerdictChoice {
   if (!previous) {
     return { verification: withAttemptCount(fresh, undefined), retainedPrevious: false };

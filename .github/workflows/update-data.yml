@@ -39,11 +39,11 @@ jobs:
         continue-on-error: true
         run: npm start
 
-      # Back-verify departed trips against bahn.expert's realtime feed and stamp the advisory
-      # `verification` field. Runs before formatting/commit so verdicts ship with the same commit.
-      # Deliberately isolated from the scraper: it is a third-party dependency with no SLA, it
-      # never mutates trip identity, and `continue-on-error` keeps an outage there from touching
-      # the publishing path. The feed answers for ~6 days, so a skipped run self-heals later.
+      # Back-verify departed trips against bahn.expert, with Transitous as a recent-trip fallback,
+      # and stamp the advisory `verification` field. Runs before formatting/commit so verdicts ship
+      # with the same commit. Deliberately isolated from the scraper: both providers are third-party
+      # dependencies without an SLA, verification never mutates trip identity, and
+      # `continue-on-error` keeps an outage from touching the publishing path.
       - name: Back-verify departed trips
         if: always()
         continue-on-error: true
