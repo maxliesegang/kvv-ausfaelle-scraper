@@ -112,6 +112,22 @@ This is the most specific guidance for maintenance scripts.
     `trackedOutsideSegment` stays zero because no stop can honestly be placed inside or outside
     unknown bounds. This deliberately excludes line aliases: without endpoint confirmation, an S5
     response must not become evidence for an unrelated S4 notice typo.
+  - **A propagated delay forecast is not an observation.** Tracking is read from `isRealTime`, and
+    where the feed leaves that flag null a time deviating from the schedule stands in for it — some
+    genuinely observed runs report nothing else. But a run the feed only knows to be _late_ gets one
+    delay applied to every remaining stop, and every one of those times then deviates without the
+    train having been seen anywhere. So `isRealTime` is authoritative **wherever the feed uses it at
+    all**: on a journey carrying the flag anywhere, its absence on a stop is an answer, not a gap to
+    paper over. The fallback applies only to journeys with no flag on any event, and then only when
+    the deviations resolve to more than one delay value — several delays are a vehicle being
+    watched, one restated number is a forecast. Two shapes were being read as tracking, and both
+    published `ran`: the whole-journey forecast (`20260822-604a4ebb`, `20260822-82743995`,
+    `20260822-d6b912ae` — the Freudenstadt shuttle, `delay: 59` throughout, `lastKnownPosition`
+    empty, on a day KVV had announced the whole S8 cancelled for lack of staff), and the forecast
+    _tail_ that follows a journey's last real sighting (`20260822-d413a3fe` flags eleven events from
+    Rastatt onward and leaves the announced Forbach → Rastatt leg on a flat `delay: 41`). `ran` is
+    the strongest claim this classifier makes and the one a forecast most easily manufactures, since
+    a forecast covers _every_ stop and so always reads as a fully tracked segment.
   - **Absence of realtime is not evidence of cancellation.** A segment with no realtime counts as
     cancelled only when the _rest of the same run_ was tracked, which proves the feed had
     coverage; otherwise the verdict is `no-data`. `partial`, `no-data`, and `unresolved` are
@@ -178,7 +194,19 @@ This is the most specific guidance for maintenance scripts.
     permanently decaying trip is not re-asked forever.
     `methodVersion` makes deliberate classifier migrations possible: a newer method can replace
     old evidence during `--recheck`, including an explicit `journey-mismatch`, while a mere
-    `journey-not-found` cannot erase a segment the expiring feed previously resolved.
+    `journey-not-found` cannot erase a segment the expiring feed previously resolved. A newer
+    method may also revise its _tracking_ downwards, because tracking is this classifier's own
+    inference from the feed's timestamps — without that, the ratchet reads a correction as decay
+    and preserves precisely the verdicts the new version exists to withdraw. Cancellation flags are
+    never revised this way: those are the feed's own statements and ratchet up across every version.
+  - **An absent journey is not a failed match.** `journey-not-in-network` means the feed returned
+    journeys carrying that number but none of them is an AVG run — a Zugnummer is reused freely, and
+    `S8 85610 2026-08-22` returns exactly one journey, a Köln tram. Nothing about the matching can
+    be improved there. `journey-mismatch` is the actionable one: the AVG journey _was_ identified
+    and the announced segment could not be located inside it, so KVV's endpoint names or times and
+    the feed's stop list disagree. Collapsing the two makes the reason unactionable — half the
+    stored `journey-mismatch` records were absent journeys. Unresolved verdicts that reached a
+    journey record its `journeyId`, so even a verdict that concluded nothing says what from.
   - **Best-effort.** Network/decode failures are counted and reported, never thrown; the script
     always exits 0 and the workflow step is `continue-on-error`. A third-party outage must never
     turn the data pipeline red — unlike `src/index.ts`'s exit codes, which flag _scraper_ gaps a

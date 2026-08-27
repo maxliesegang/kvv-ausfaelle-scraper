@@ -1,0 +1,1352 @@
+{
+  "stops": [
+    {
+      "stopPlace": {
+        "evaNumber": "8002022",
+        "name": "Forbach (Schwarzw)",
+        "ril100": "RFCH"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:09:00.000Z",
+        "time": "2026-08-22T03:50:51.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "transport": {
+          "administration": {
+            "administrationID": "A6",
+            "operatorCode": "AVG",
+            "operatorName": "Albtal-Verkehrs-Gesellschaft"
+          },
+          "category": "AVG",
+          "categoryInternal": "DRS",
+          "direction": {
+            "stopPlaces": [
+              {
+                "evaNumber": "720995",
+                "ifopt": "",
+                "name": "Tullastraße/Alter Schlachthof, Karlsruhe"
+              }
+            ]
+          },
+          "journeyDescription": "S8",
+          "journeyNumber": 85602,
+          "label": "",
+          "line": "S8",
+          "operationalJourneyNumber": "85602",
+          "type": "CITY_TRAIN"
+        },
+        "id": "8002022_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002197",
+        "name": "Gausbach",
+        "ril100": "RGBA"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:10:00.000Z",
+        "time": "2026-08-22T03:51:50.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002197_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:10:00.000Z",
+        "time": "2026-08-22T03:51:50.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002197_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8003532",
+        "name": "Langenbrand",
+        "ril100": "RLBD"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:13:00.000Z",
+        "time": "2026-08-22T03:54:45.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8003532_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:13:00.000Z",
+        "time": "2026-08-22T03:54:45.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8003532_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8000643",
+        "name": "Au im Murgtal",
+        "ril100": "RWSA"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:15:00.000Z",
+        "time": "2026-08-22T03:56:42.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000643_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:16:00.000Z",
+        "time": "2026-08-22T03:57:42.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000643_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8006291",
+        "name": "Weisenbach",
+        "ril100": "RWSB"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:17:00.000Z",
+        "time": "2026-08-22T03:58:41.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8006291_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:18:00.000Z",
+        "time": "2026-08-22T03:59:41.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8006291_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002837",
+        "name": "Hilpertsau",
+        "ril100": "RHLT"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:20:00.000Z",
+        "time": "2026-08-22T04:01:38.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002837_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:20:00.000Z",
+        "time": "2026-08-22T04:01:38.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002837_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8004594",
+        "name": "Obertsrot",
+        "ril100": "ROT"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:21:00.000Z",
+        "time": "2026-08-22T04:02:37.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004594_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:22:00.000Z",
+        "time": "2026-08-22T04:03:37.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004594_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002250",
+        "name": "Gernsbach Mitte",
+        "ril100": "RGSD"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:24:00.000Z",
+        "time": "2026-08-22T04:05:34.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002250_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:25:00.000Z",
+        "time": "2026-08-22T04:06:34.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002250_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002248",
+        "name": "Gernsbach Bf",
+        "ril100": "RGS"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:26:00.000Z",
+        "time": "2026-08-22T04:07:33.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002248_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:26:00.000Z",
+        "time": "2026-08-22T04:07:33.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002248_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002910",
+        "name": "Hörden",
+        "ril100": "RHOR"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:28:00.000Z",
+        "time": "2026-08-22T04:09:30.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002910_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:29:00.000Z",
+        "time": "2026-08-22T04:10:30.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002910_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8004722",
+        "name": "Ottenau",
+        "ril100": "ROTU"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:30:00.000Z",
+        "time": "2026-08-22T04:11:29.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004722_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:31:00.000Z",
+        "time": "2026-08-22T04:12:29.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004722_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8006733",
+        "name": "Gaggenau Mercedes-Benz Werk",
+        "ril100": "RDAI"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:32:00.000Z",
+        "time": "2026-08-22T04:13:28.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8006733_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:32:00.000Z",
+        "time": "2026-08-22T04:13:28.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8006733_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002167",
+        "name": "Gaggenau Bf",
+        "ril100": "RGG"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:33:00.000Z",
+        "time": "2026-08-22T04:14:27.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "3",
+        "platform": "3",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002167_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:34:00.000Z",
+        "time": "2026-08-22T04:15:27.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "3",
+        "platform": "3",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002167_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8005187",
+        "name": "Bad Rotenfels Weinbrennerstraße",
+        "ril100": "RROW"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:35:00.000Z",
+        "time": "2026-08-22T04:16:26.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8005187_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:35:00.000Z",
+        "time": "2026-08-22T04:16:26.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8005187_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8005183",
+        "name": "Bad Rotenfels Bf",
+        "ril100": "RRO"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:36:00.000Z",
+        "time": "2026-08-22T04:17:25.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8005183_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:37:00.000Z",
+        "time": "2026-08-22T04:18:25.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8005183_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8005186",
+        "name": "Bad Rotenfels Schloss",
+        "ril100": "RROG"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:38:00.000Z",
+        "time": "2026-08-22T04:19:24.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8005186_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:38:00.000Z",
+        "time": "2026-08-22T04:19:24.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8005186_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8000998",
+        "name": "Bischweier",
+        "ril100": "RBIS"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:40:00.000Z",
+        "time": "2026-08-22T04:21:21.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000998_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:41:00.000Z",
+        "time": "2026-08-22T04:22:21.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000998_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8003480",
+        "name": "Kuppenheim",
+        "ril100": "RKU"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:42:00.000Z",
+        "time": "2026-08-22T04:23:20.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8003480_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:43:00.000Z",
+        "time": "2026-08-22T04:24:20.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8003480_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8004944",
+        "name": "Rastatt Beinle",
+        "ril100": "RRAB"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:45:00.000Z",
+        "time": "2026-08-22T04:26:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004944_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:46:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 41,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004944_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8000306",
+        "name": "Rastatt",
+        "ril100": "RRA"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:48:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 39,
+        "scheduledPlatform": "5",
+        "platform": "5",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000306_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:49:00.000Z",
+        "time": "2026-08-22T03:51:41.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "5",
+        "platform": "5",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000306_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8004636",
+        "name": "Ötigheim",
+        "ril100": "ROH"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:52:00.000Z",
+        "time": "2026-08-22T03:55:02.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 3,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004636_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:53:00.000Z",
+        "time": "2026-08-22T03:55:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8004636_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8000963",
+        "name": "Bietigheim (Baden)",
+        "ril100": "RBIE"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:55:00.000Z",
+        "time": "2026-08-22T03:57:38.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000963_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:56:00.000Z",
+        "time": "2026-08-22T03:58:35.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8000963_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8001616",
+        "name": "Durmersheim",
+        "ril100": "RDRM"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T03:59:00.000Z",
+        "time": "2026-08-22T04:01:31.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "3",
+        "platform": "3",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8001616_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T03:59:00.000Z",
+        "time": "2026-08-22T04:01:29.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "3",
+        "platform": "3",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8001616_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8070170",
+        "name": "Durmersheim Nord",
+        "ril100": "RDUN"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:01:00.000Z",
+        "time": "2026-08-22T04:03:14.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8070170_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:02:00.000Z",
+        "time": "2026-08-22T04:03:12.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 1,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8070170_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002023",
+        "name": "Forchheim (b Karlsruhe)",
+        "ril100": "RFM"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:06:00.000Z",
+        "time": "2026-08-22T04:07:08.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 1,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002023_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:06:00.000Z",
+        "time": "2026-08-22T04:07:07.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 1,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": true,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002023_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8079045",
+        "name": "Karlsruhe Albtalbahnhof",
+        "ril100": "RKAB"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:11:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 16,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8079045_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:12:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 15,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8079045_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8079041",
+        "name": "Karlsruhe Bahnhofsvorplatz",
+        "ril100": "RKV"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:13:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 14,
+        "scheduledPlatform": "21",
+        "platform": "21",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8079041_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:14:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 13,
+        "scheduledPlatform": "21",
+        "platform": "21",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8079041_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "723869",
+        "name": "Poststraße, Karlsruhe",
+        "ril100": "RKAP"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:15:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 12,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "723869_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:15:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 12,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "723869_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "721323",
+        "name": "Augartenstraße, Karlsruhe",
+        "ril100": "RKAG"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:16:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 11,
+        "scheduledPlatform": "2.",
+        "platform": "2.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "721323_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:17:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 10,
+        "scheduledPlatform": "2.",
+        "platform": "2.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "721323_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "901013",
+        "name": "Kongresszentrum (U) , Karlsruhe",
+        "ril100": "RKMK"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:17:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 10,
+        "scheduledPlatform": "4U.",
+        "platform": "4U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "901013_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:18:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 9,
+        "scheduledPlatform": "4U.",
+        "platform": "4U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "901013_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "901012",
+        "name": "Ettlinger Tor/Staatstheater (U) , Karlsruhe",
+        "ril100": "RKME"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:19:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 8,
+        "scheduledPlatform": "4U.",
+        "platform": "4U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "901012_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:19:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 8,
+        "scheduledPlatform": "4U.",
+        "platform": "4U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "901012_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8079046",
+        "name": "Karlsruhe Marktplatz (Pyramide)",
+        "ril100": "RKMAP"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:20:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 7,
+        "scheduledPlatform": "4U.",
+        "platform": "4U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8079046_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:21:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 6,
+        "scheduledPlatform": "4U.",
+        "platform": "4U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8079046_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "401002",
+        "name": "Kronenplatz (U) , Karlsruhe",
+        "ril100": "RKBPU"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:22:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 5,
+        "scheduledPlatform": "2U.",
+        "platform": "2U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "401002_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:22:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 5,
+        "scheduledPlatform": "2U.",
+        "platform": "2U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "401002_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "301001",
+        "name": "Durlacher Tor/KIT-Campus Süd (U) , Karlsruhe",
+        "ril100": "RKDTU"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:23:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 4,
+        "scheduledPlatform": "2U.",
+        "platform": "2U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "301001_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:24:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 3,
+        "scheduledPlatform": "2U.",
+        "platform": "2U.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "301001_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "723616",
+        "name": "Gottesauer Platz/BGV, Karlsruhe",
+        "ril100": "RKDG"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:25:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "2.",
+        "platform": "2.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "723616_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T04:25:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 2,
+        "scheduledPlatform": "2.",
+        "platform": "2.",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "723616_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "720995",
+        "name": "Tullastraße/Alter Schlachthof, Karlsruhe",
+        "ril100": "RKTUT"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T04:27:00.000Z",
+        "time": "2026-08-22T04:27:17.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 0,
+        "scheduledPlatform": "4",
+        "platform": "4",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "transport": {
+          "administration": {
+            "administrationID": "A6",
+            "operatorCode": "AVG",
+            "operatorName": "Albtal-Verkehrs-Gesellschaft"
+          },
+          "category": "AVG",
+          "categoryInternal": "DRS",
+          "direction": {
+            "stopPlaces": [
+              {
+                "evaNumber": "720995",
+                "ifopt": "",
+                "name": "Tullastraße/Alter Schlachthof, Karlsruhe"
+              }
+            ]
+          },
+          "journeyDescription": "S8",
+          "journeyNumber": 85602,
+          "label": "",
+          "line": "S8",
+          "operationalJourneyNumber": "85602",
+          "type": "CITY_TRAIN"
+        },
+        "id": "720995_A_1"
+      },
+      "codeShares": null
+    }
+  ],
+  "segmentStart": {
+    "evaNumber": "8002022",
+    "name": "Forbach (Schwarzw)",
+    "ril100": "RFCH"
+  },
+  "segmentDestination": {
+    "evaNumber": "720995",
+    "name": "Tullastraße/Alter Schlachthof, Karlsruhe",
+    "ril100": "RKTUT"
+  },
+  "journeyId": "20260822-d413a3fe-0b7b-3c15-9912-87971237e62b",
+  "arrival": {
+    "scheduledTime": "2026-08-22T04:27:00.000Z",
+    "time": "2026-08-22T04:27:17.000Z",
+    "cancelled": null,
+    "additional": null,
+    "delay": 0,
+    "scheduledPlatform": "4",
+    "platform": "4",
+    "isRealTime": null,
+    "noPassengerChange": null,
+    "codeShares": null,
+    "transport": {
+      "administration": {
+        "administrationID": "A6",
+        "operatorCode": "AVG",
+        "operatorName": "Albtal-Verkehrs-Gesellschaft"
+      },
+      "category": "AVG",
+      "categoryInternal": "DRS",
+      "direction": {
+        "stopPlaces": [
+          {
+            "evaNumber": "720995",
+            "ifopt": "",
+            "name": "Tullastraße/Alter Schlachthof, Karlsruhe"
+          }
+        ]
+      },
+      "journeyDescription": "S8",
+      "journeyNumber": 85602,
+      "label": "",
+      "line": "S8",
+      "operationalJourneyNumber": "85602",
+      "type": "CITY_TRAIN"
+    },
+    "id": "720995_A_1"
+  },
+  "departure": {
+    "scheduledTime": "2026-08-22T03:09:00.000Z",
+    "time": "2026-08-22T03:50:51.000Z",
+    "cancelled": null,
+    "additional": null,
+    "delay": 41,
+    "scheduledPlatform": "2",
+    "platform": "2",
+    "isRealTime": null,
+    "noPassengerChange": null,
+    "codeShares": null,
+    "transport": {
+      "administration": {
+        "administrationID": "A6",
+        "operatorCode": "AVG",
+        "operatorName": "Albtal-Verkehrs-Gesellschaft"
+      },
+      "category": "AVG",
+      "categoryInternal": "DRS",
+      "direction": {
+        "stopPlaces": [
+          {
+            "evaNumber": "720995",
+            "ifopt": "",
+            "name": "Tullastraße/Alter Schlachthof, Karlsruhe"
+          }
+        ]
+      },
+      "journeyDescription": "S8",
+      "journeyNumber": 85602,
+      "label": "",
+      "line": "S8",
+      "operationalJourneyNumber": "85602",
+      "type": "CITY_TRAIN"
+    },
+    "id": "8002022_D_1"
+  },
+  "finalDestination": "Tullastraße/Alter Schlachthof, Karlsruhe",
+  "train": {
+    "category": "AVG",
+    "journeyNumber": 85602,
+    "admin": "A6",
+    "line": "S8",
+    "customLine": null,
+    "transportType": "CITY_TRAIN",
+    "operator": "Albtal-Verkehrs-Gesellschaft mbH",
+    "name": "S8"
+  },
+  "type": "JNY",
+  "cancelled": null,
+  "continuationFor": null,
+  "continuationBy": null,
+  "lastKnownPosition": null,
+  "currentStop": null
+}

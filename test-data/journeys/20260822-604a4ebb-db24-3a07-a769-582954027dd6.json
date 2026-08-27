@@ -1,0 +1,264 @@
+{
+  "stops": [
+    {
+      "stopPlace": {
+        "evaNumber": "8002091",
+        "name": "Freudenstadt Stadt",
+        "ril100": "TFSS"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T05:32:00.000Z",
+        "time": "2026-08-22T06:31:48.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 59,
+        "scheduledPlatform": "2",
+        "platform": "2",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "transport": {
+          "administration": {
+            "administrationID": "A6",
+            "operatorCode": "AVG",
+            "operatorName": "Albtal-Verkehrs-Gesellschaft"
+          },
+          "category": "AVG",
+          "categoryInternal": "DRS",
+          "direction": {
+            "stopPlaces": [
+              {
+                "evaNumber": "8000110",
+                "ifopt": "",
+                "name": "Freudenstadt Hbf"
+              }
+            ]
+          },
+          "journeyDescription": "S8",
+          "journeyNumber": 85613,
+          "label": "",
+          "line": "S8",
+          "operationalJourneyNumber": "85613",
+          "type": "CITY_TRAIN"
+        },
+        "id": "8002091_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002090",
+        "name": "Freudenstadt Schulzentrum",
+        "ril100": "TFSZ"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T05:33:00.000Z",
+        "time": "2026-08-22T06:32:47.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 59,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002090_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T05:33:00.000Z",
+        "time": "2026-08-22T06:32:47.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 59,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002090_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8002087",
+        "name": "Freudenstadt Industriegebiet",
+        "ril100": "TFSI"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T05:35:00.000Z",
+        "time": "2026-08-22T06:34:44.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 59,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002087_A_1"
+      },
+      "departure": {
+        "scheduledTime": "2026-08-22T05:35:00.000Z",
+        "time": "2026-08-22T06:34:44.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 59,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "id": "8002087_D_1"
+      },
+      "codeShares": null
+    },
+    {
+      "stopPlace": {
+        "evaNumber": "8000110",
+        "name": "Freudenstadt Hbf",
+        "ril100": "TFS"
+      },
+      "arrival": {
+        "scheduledTime": "2026-08-22T05:37:00.000Z",
+        "time": "2026-08-22T06:36:41.000Z",
+        "cancelled": null,
+        "additional": null,
+        "delay": 59,
+        "scheduledPlatform": "1",
+        "platform": "1",
+        "isRealTime": null,
+        "noPassengerChange": null,
+        "codeShares": null,
+        "transport": {
+          "administration": {
+            "administrationID": "A6",
+            "operatorCode": "AVG",
+            "operatorName": "Albtal-Verkehrs-Gesellschaft"
+          },
+          "category": "AVG",
+          "categoryInternal": "DRS",
+          "direction": {
+            "stopPlaces": [
+              {
+                "evaNumber": "8000110",
+                "ifopt": "",
+                "name": "Freudenstadt Hbf"
+              }
+            ]
+          },
+          "journeyDescription": "S8",
+          "journeyNumber": 85613,
+          "label": "",
+          "line": "S8",
+          "operationalJourneyNumber": "85613",
+          "type": "CITY_TRAIN"
+        },
+        "id": "8000110_A_1"
+      },
+      "codeShares": null
+    }
+  ],
+  "segmentStart": {
+    "evaNumber": "8002091",
+    "name": "Freudenstadt Stadt",
+    "ril100": "TFSS"
+  },
+  "segmentDestination": {
+    "evaNumber": "8000110",
+    "name": "Freudenstadt Hbf",
+    "ril100": "TFS"
+  },
+  "journeyId": "20260822-604a4ebb-db24-3a07-a769-582954027dd6",
+  "arrival": {
+    "scheduledTime": "2026-08-22T05:37:00.000Z",
+    "time": "2026-08-22T06:36:41.000Z",
+    "cancelled": null,
+    "additional": null,
+    "delay": 59,
+    "scheduledPlatform": "1",
+    "platform": "1",
+    "isRealTime": null,
+    "noPassengerChange": null,
+    "codeShares": null,
+    "transport": {
+      "administration": {
+        "administrationID": "A6",
+        "operatorCode": "AVG",
+        "operatorName": "Albtal-Verkehrs-Gesellschaft"
+      },
+      "category": "AVG",
+      "categoryInternal": "DRS",
+      "direction": {
+        "stopPlaces": [
+          {
+            "evaNumber": "8000110",
+            "ifopt": "",
+            "name": "Freudenstadt Hbf"
+          }
+        ]
+      },
+      "journeyDescription": "S8",
+      "journeyNumber": 85613,
+      "label": "",
+      "line": "S8",
+      "operationalJourneyNumber": "85613",
+      "type": "CITY_TRAIN"
+    },
+    "id": "8000110_A_1"
+  },
+  "departure": {
+    "scheduledTime": "2026-08-22T05:32:00.000Z",
+    "time": "2026-08-22T06:31:48.000Z",
+    "cancelled": null,
+    "additional": null,
+    "delay": 59,
+    "scheduledPlatform": "2",
+    "platform": "2",
+    "isRealTime": null,
+    "noPassengerChange": null,
+    "codeShares": null,
+    "transport": {
+      "administration": {
+        "administrationID": "A6",
+        "operatorCode": "AVG",
+        "operatorName": "Albtal-Verkehrs-Gesellschaft"
+      },
+      "category": "AVG",
+      "categoryInternal": "DRS",
+      "direction": {
+        "stopPlaces": [
+          {
+            "evaNumber": "8000110",
+            "ifopt": "",
+            "name": "Freudenstadt Hbf"
+          }
+        ]
+      },
+      "journeyDescription": "S8",
+      "journeyNumber": 85613,
+      "label": "",
+      "line": "S8",
+      "operationalJourneyNumber": "85613",
+      "type": "CITY_TRAIN"
+    },
+    "id": "8002091_D_1"
+  },
+  "finalDestination": "Freudenstadt Hbf",
+  "train": {
+    "category": "AVG",
+    "journeyNumber": 85613,
+    "admin": "A6",
+    "line": "S8",
+    "customLine": null,
+    "transportType": "CITY_TRAIN",
+    "operator": "Albtal-Verkehrs-Gesellschaft mbH",
+    "name": "S8"
+  },
+  "type": "JNY",
+  "cancelled": null,
+  "continuationFor": null,
+  "continuationBy": null,
+  "lastKnownPosition": null,
+  "currentStop": null
+}

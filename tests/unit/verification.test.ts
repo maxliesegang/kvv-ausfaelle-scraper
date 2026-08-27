@@ -29,6 +29,7 @@ import {
   createJourneyMismatchVerification,
   createUnresolvedVerification,
   determineStatus,
+  identifiesNetworkJourney,
   locateSegment,
   matchesNetworkOperator,
   type SegmentCounts,
@@ -728,6 +729,40 @@ describe('trip selection', () => {
       assert.strictEqual(choice.verification.methodVersion, VERIFICATION_METHOD_VERSION);
     });
 
+    it('lets a newer method withdraw tracking it no longer believes', () => {
+      // Version 7 stopped counting a propagated delay forecast as observation. Without this the
+      // ratchet would read the correction as decay and preserve exactly the `ran` verdicts the
+      // change exists to withdraw — the fix would never reach a single stored record.
+      const legacyRan = { ...ran, methodVersion: VERIFICATION_METHOD_VERSION - 1 };
+      const forecastRejected = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(legacyRan, forecastRejected);
+      assert.strictEqual(choice.retainedPrevious, false);
+      assert.strictEqual(choice.verification.status, 'no-data');
+    });
+
+    it("still refuses a newer method that lost the feed's own cancellation flags", () => {
+      // Tracking is this classifier's inference and a new version may revise it. Cancellation
+      // flags are the feed's statements, and losing those is decay whatever version reads them.
+      const cancelled = verified({
+        status: 'cancelled',
+        segmentCancelledStops: 13,
+        segmentTrackedStops: 0,
+        methodVersion: VERIFICATION_METHOD_VERSION - 1,
+      });
+      const decayed = verified({
+        status: 'no-data',
+        segmentCancelledStops: 0,
+        segmentTrackedStops: 0,
+      });
+      const choice = retainStrongerVerdict(cancelled, decayed);
+      assert.strictEqual(choice.retainedPrevious, true);
+      assert.strictEqual(choice.verification.segmentCancelledStops, 13);
+    });
+
     it('does not discard journey-wide evidence while a segment remains unresolved', () => {
       const evidence = verified({
         status: 'unresolved',
@@ -918,6 +953,37 @@ describe('operator identity', () => {
     const details = { stops: [before, from, to, after], train: { operator: 'DB Regio AG' } };
 
     assert.ok(classifyJourney(trip, details, NOW));
+  });
+});
+
+describe('network journey identity', () => {
+  const details = (overrides: Record<string, unknown> = {}) => ({
+    journeyId: '20260822-abc',
+    train: { journeyNumber: 85610, operator: 'Albtal-Verkehrs-Gesellschaft mbH', admin: 'A6' },
+    stops: [stop('Forbach', '06:43'), stop('Rastatt Bf', '07:20')],
+    ...overrides,
+  });
+  const trip = tripOn({ line: 'S8', trainNumber: '85610', date: '2026-08-22' });
+
+  it('recognises the AVG run the stored trip names', () => {
+    assert.strictEqual(identifiesNetworkJourney(trip, details()), true);
+  });
+
+  // Stored trip `S8 85610 2026-08-22` returns exactly one journey from the feed: a Köln tram. That
+  // is not a match this classifier failed to make, it is a different vehicle, and the two have to
+  // be told apart or `journey-mismatch` stops meaning anything a maintainer can act on.
+  it('rejects a same-numbered journey from another network', () => {
+    const koelnTram = details({
+      train: { journeyNumber: 85610, operator: undefined, admin: 'vrs001' },
+    });
+    assert.strictEqual(identifiesNetworkJourney(trip, koelnTram), false);
+  });
+
+  it('rejects an AVG journey carrying a different number', () => {
+    assert.strictEqual(
+      identifiesNetworkJourney(trip, details({ train: { journeyNumber: 85611, admin: 'A6' } })),
+      false,
+    );
   });
 });
 
@@ -1239,12 +1305,14 @@ describe('journey classification against captured feed responses', () => {
     const details = loadJourneyFixture('20260813-19b67970-4b65-3820-ab7b-dea40958d407');
     const verdict = classifyJourney(trip, details, NOW);
     assert.strictEqual(verdict?.segmentStops, 16);
-    // The only observations at the boundaries are the arrival into Freudenstadt before the
-    // announced segment and the departure from Forbach after it. Neither belongs to this leg.
+    // The only observation at a boundary is the arrival into Freudenstadt Hbf, which describes
+    // the leg *before* the announced segment rather than the segment itself.
     assert.strictEqual(verdict?.segmentTrackedStops, 0);
-    // Those two, plus the observed stops either side of them, are the closest control evidence
-    // there is — the vehicle was seen right up to the announced leg and again right after it.
-    assert.strictEqual(verdict?.trackedAdjacentStops, 4);
+    // That arrival and the observed stop before it are the closest control evidence there is: the
+    // vehicle was seen right up to the announced leg. Nothing after it was — Forbach's departure
+    // and Gausbach beyond it carry a flat `delay: 11` with no realtime flag, the forecast tail
+    // that follows the last sighting, and counting those as observations put this at 4.
+    assert.strictEqual(verdict?.trackedAdjacentStops, 2);
   });
 
   it('records the journey a verdict was computed from', () => {
@@ -1301,6 +1369,67 @@ describe('journey classification against captured feed responses', () => {
     assert.strictEqual(verdict?.segmentCancelledStops, verdict?.segmentStops);
     // The feed calls this S41 where KVV publishes S4 — recorded, never used to rewrite the line.
     assert.strictEqual(verdict?.feedLine, 'S41');
+  });
+
+  it('does not read a propagated delay forecast as observation', () => {
+    // 85613's four stops all carry `delay: 59` with `isRealTime` null and `lastKnownPosition`
+    // empty: one number applied to the timetable, not a train anybody watched. Counting those
+    // deviating times as tracking reported the whole segment observed and published `ran` — on a
+    // day KVV had announced the entire S8 cancelled for lack of staff.
+    const trip = tripOn({
+      line: 'S8',
+      trainNumber: '85613',
+      date: '2026-08-22',
+      fromStop: 'Freudenstadt Stadt',
+      fromTime: '07:32',
+      toStop: 'Freudenstadt Hbf.',
+      toTime: '07:37',
+    });
+    const details = loadJourneyFixture('20260822-604a4ebb-db24-3a07-a769-582954027dd6');
+    const verdict = classifyJourney(trip, details, new Date('2026-08-22T20:00:00.000Z'));
+    assert.strictEqual(verdict?.segmentStops, 4);
+    assert.strictEqual(verdict?.segmentTrackedStops, 0);
+    assert.strictEqual(verdict?.journeyTrackedStops, 0);
+    // Silence with nothing to measure it against stays silence. The point is that it is no longer
+    // reported as a trip that ran.
+    assert.strictEqual(verdict?.status, 'no-data');
+  });
+
+  it('does not read a forecast tail as observation because the journey was flagged elsewhere', () => {
+    // 85602 is the harder shape: the feed *does* set `isRealTime`, but only on the eleven events
+    // from Rastatt onward — after the announced Forbach -> Rastatt leg has ended. That leg carries
+    // nothing but a flat `delay: 41`. Judging the fallback per journey rather than per event let
+    // those eleven flags vouch for a segment nobody watched, and it was published as `ran`.
+    const trip = tripOn({
+      line: 'S8',
+      trainNumber: '85602',
+      date: '2026-08-22',
+      fromStop: 'Forbach',
+      fromTime: '05:09',
+      toStop: 'Rastatt Bf.',
+      toTime: '05:48',
+    });
+    const details = loadJourneyFixture('20260822-d413a3fe-0b7b-3c15-9912-87971237e62b');
+    const verdict = classifyJourney(trip, details, new Date('2026-08-22T20:00:00.000Z'));
+    assert.strictEqual(verdict?.segmentStops, 20);
+    assert.strictEqual(verdict?.segmentTrackedStops, 0);
+    assert.notStrictEqual(verdict?.status, 'ran');
+  });
+
+  it('still accepts unflagged observation whose delays vary per stop', () => {
+    // The counterpart to the case above, and the reason the fallback survives at all: 20019 also
+    // carries no realtime flag, but its deviations resolve to three different delay values across
+    // the run. One number restated is a forecast; several are a vehicle being watched.
+    const trip = tripOn({
+      line: 'S11',
+      trainNumber: '20019',
+      fromStop: 'Ittersbach Rathaus',
+      fromTime: '09:21',
+      toStop: 'Ettlingen Stadt',
+      toTime: '09:45',
+    });
+    const details = loadJourneyFixture('20260813-682647f9-023f-336c-b852-2edfa1f95e75');
+    assert.strictEqual(classifyJourney(trip, details, NOW)?.segmentTrackedStops, 2);
   });
 
   it('keeps a genuinely partial cancellation partial', () => {

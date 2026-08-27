@@ -45,6 +45,7 @@ import {
   classifyJourney,
   createJourneyMismatchVerification,
   createUnresolvedVerification,
+  identifiesNetworkJourney,
   VERIFICATION_SOURCE,
   type TripVerification,
 } from '../src/verification/verify.js';
@@ -90,7 +91,7 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
   // `classifyJourney` still confirms identity from the full operator, route, date and schedule.
   const ordered = orderJourneyCandidates(candidates, cancellation.line);
   let firstCandidateError: unknown;
-  let sawJourneyDetails = false;
+  let networkJourneyId: string | undefined;
   let journeyMismatchEvidence: TripVerification | null = null;
 
   for (const candidate of ordered) {
@@ -108,7 +109,12 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
       continue;
     }
     if (!details) continue;
-    sawJourneyDetails = true;
+    // Only an AVG journey counts as "our train was in the feed". A same-numbered Köln tram is not
+    // a failed match, it is a different vehicle, and telling the two apart is the whole point of
+    // the reason recorded below.
+    if (identifiesNetworkJourney(cancellation, details)) {
+      networkJourneyId ??= details.journeyId;
+    }
     const verdict = classifyJourney(cancellation, details, now);
     if (verdict) return verdict;
     const mismatchEvidence = createJourneyMismatchVerification(cancellation, details, now);
@@ -124,9 +130,12 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
   }
   if (journeyMismatchEvidence) return journeyMismatchEvidence;
   if (firstCandidateError) throw firstCandidateError;
+  if (networkJourneyId !== undefined) {
+    return createUnresolvedVerification(now, 'journey-mismatch', networkJourneyId);
+  }
   return createUnresolvedVerification(
     now,
-    sawJourneyDetails ? 'journey-mismatch' : 'journey-not-found',
+    candidates.length > 0 ? 'journey-not-in-network' : 'journey-not-found',
   );
 }
 

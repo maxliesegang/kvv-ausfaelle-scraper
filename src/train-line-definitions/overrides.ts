@@ -79,5 +79,23 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
       '40017': 'S11',
       '40016': 'S11',
     },
+    // AVG staffing notice for S1/S11 (Neureut Kirchfeld–Bad Herrenalb/Ittersbach),
+    // 2026-08-24. GTFS files the Rheinhafen–Neureut Kirchfeld run 44057 under route `E`
+    // ("E-Wagen A-Plan"), a reinforcement working the seeder never records on an S-line, so
+    // it maps to neither mentioned line. Its stop list (Rheinhafen 17:38 → Neureut
+    // Kirchfeld 17:59) matches the notice exactly and it terminates six minutes before
+    // 20058 leaves Neureut Kirchfeld for Ittersbach Rathaus in this same notice — it is the
+    // positioning run that becomes that S11.
+    Nettro_CMS_275034: {
+      '44057': 'S11',
+    },
+    // AVG staffing notice for S51/S52 (Germersheim–KA Marktplatz), 2026-08-27. Same `E`
+    // route gap: GTFS knows 80702 only as "E-Wagen B-Plan" (KA Marktplatz 08:39 → Karlsruhe
+    // Albtalbahnhof 08:48, matching the notice). It is the depot continuation of 84885,
+    // which GTFS calls S52 and which this notice does mention — unlike Nettro_CMS_274370,
+    // where the same pair had to go to S51 because that notice named S5/S51 only.
+    Nettro_CMS_275214: {
+      '80702': 'S52',
+    },
   },
 };

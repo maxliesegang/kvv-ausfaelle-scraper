@@ -144,8 +144,9 @@ export function retainStrongerVerdict(
   }
 
   const previousMethodVersion = previous.methodVersion ?? 1;
+  const methodUpgraded = fresh.methodVersion > previousMethodVersion;
   if (
-    fresh.methodVersion > previousMethodVersion &&
+    methodUpgraded &&
     fresh.status === 'unresolved' &&
     fresh.unresolvedReason === 'journey-mismatch'
   ) {
@@ -164,7 +165,13 @@ export function retainStrongerVerdict(
     (previous.journeyCancelled === true && fresh.journeyCancelled !== true) ||
     (fresh.journeyCancelled !== true &&
       fresh.segmentCancelledStops < previous.segmentCancelledStops);
+  // Tracking is this classifier's own inference from the feed's timestamps, so a newer method is
+  // entitled to revise it downwards — that is what version 7 does when it stops reading a
+  // propagated delay forecast as observation, and without this the ratchet would preserve exactly
+  // the `ran` verdicts that change exists to withdraw. Cancellation flags are not revised this
+  // way: those are the feed's own statements, and they keep ratcheting up across versions.
   const lostTrackingEvidence =
+    !methodUpgraded &&
     fresh.segmentCancelledStops === previous.segmentCancelledStops &&
     fresh.segmentTrackedStops < previous.segmentTrackedStops;
   const bothSegmentsUnresolved = previous.segmentStops === 0 && fresh.segmentStops === 0;
@@ -177,6 +184,7 @@ export function retainStrongerVerdict(
     (fresh.journeyCancelled !== true &&
       fresh.journeyCancelledStops < previous.journeyCancelledStops);
   const lostJourneyTrackingEvidence =
+    !methodUpgraded &&
     fresh.journeyCancelledStops === previous.journeyCancelledStops &&
     fresh.journeyTrackedStops < previous.journeyTrackedStops;
   const retainPrevious =

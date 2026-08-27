@@ -30,7 +30,23 @@ export type VerificationStatus =
   /** The announced segment could not be resolved confidently within a journey. */
   | 'unresolved';
 
-export type UnresolvedReason = 'invalid-train-number' | 'journey-not-found' | 'journey-mismatch';
+export type UnresolvedReason =
+  /** The stored `trainNumber` is not a number, so the feed could not even be asked. */
+  | 'invalid-train-number'
+  /** The feed returned no journey at all carrying that number on that date. */
+  | 'journey-not-found'
+  /**
+   * The feed returned journeys with that number, but none of them is an AVG run — a Zugnummer is
+   * reused freely, and a KVV trip whose number only turns up on a Köln tram and a München bus was
+   * simply never in this feed. Nothing about the match can be improved; the journey is absent.
+   */
+  | 'journey-not-in-network'
+  /**
+   * The AVG journey *was* identified, but the announced segment could not be located inside it.
+   * Unlike the reason above this one is actionable: it means KVV's endpoint names or times and the
+   * feed's stop list disagree, and the counts stored beside it describe the journey as a whole.
+   */
+  | 'journey-mismatch';
 
 export interface PublicVerificationStatusDefinition {
   readonly id: VerificationStatus;
@@ -110,12 +126,17 @@ export const VERIFICATION_SOURCE: VerificationSource = 'bahn.expert';
  * cancellation even when malformed published endpoint times prevent segment location: an
  * explicitly cancelled journey necessarily cancelled every segment it contained. Version 6 stops
  * inferring a cancellation from any single tracked stop anywhere in the journey and requires the
- * control evidence to sit next to the silent segment or cover a real share of the remainder. A
- * stored verdict without this field is version 1. The selection layer uses this only during a
- * recheck: a newer method may correct a confident old false match, while same-version evidence
- * continues to ratchet upward.
+ * control evidence to sit next to the silent segment or cover a real share of the remainder.
+ * Version 7 stops reading a propagated delay forecast as observation: `isRealTime` is authoritative
+ * wherever the feed uses it at all, and a deviating time stands in for it only on a journey that
+ * carries no flag anywhere and whose delays vary. Both forms of forecast — a whole journey stamped
+ * with one delay, and the flat tail that follows a journey's last real sighting — were being
+ * counted as tracked, and published `ran` for trips the feed never watched. A stored verdict without
+ * this field is version 1. The selection layer uses this only during a recheck: a newer method may
+ * correct a confident old false match and may revise its own tracking inference downwards, while
+ * the feed's explicit cancellation flags continue to ratchet upward across every version.
  */
-export const VERIFICATION_METHOD_VERSION = 6;
+export const VERIFICATION_METHOD_VERSION = 7;
 
 export interface TripVerification {
   readonly status: VerificationStatus;
@@ -249,22 +270,11 @@ function stopEvents(stop: JourneyStop): ReadonlyArray<JourneyStopEvent | null | 
 }
 
 /**
- * Whether the feed actually observed the vehicle at this stop.
- *
- * `delay` is **not** a realtime signal: the feed emits `delay: 0` with `time === scheduledTime` on
- * purely timetabled stops, so reading a non-null delay as "tracked" marks an untracked run as
- * fully observed — every one of journey `20260813-19b67970`'s 62 stops carries a delay while only
- * twelve were observed.
- *
- * `isRealTime` is the explicit flag, but it is not always set: journey `20260813-682647f9` leaves
- * it null throughout and still reports second-precision times drifting from the schedule for the
- * second half of its run. A reported time that deviates from the scheduled one is therefore kept
- * as a fallback — a timetable row never deviates.
+ * Whether the reported time differs from the timetable at all. On its own this says nothing about
+ * observation — see {@link acceptsDeviationAsObservation} for when it is allowed to.
  */
-function isTrackedEvent(event: JourneyStopEvent | null | undefined): boolean {
-  if (!event) return false;
-  if (event.isRealTime === true) return true;
-  if (!event.time || !event.scheduledTime) return false;
+function deviatesFromSchedule(event: JourneyStopEvent | null | undefined): boolean {
+  if (!event?.time || !event.scheduledTime) return false;
 
   // Compare instants, not their serializations. The same timestamp can be written as `Z` or with
   // an explicit offset; treating those strings as different manufactures realtime observations.
@@ -273,8 +283,66 @@ function isTrackedEvent(event: JourneyStopEvent | null | undefined): boolean {
   return !Number.isNaN(actualMs) && !Number.isNaN(scheduledMs) && actualMs !== scheduledMs;
 }
 
-function isTracked(stop: JourneyStop): boolean {
-  return stopEvents(stop).some(isTrackedEvent);
+/**
+ * Whether a deviating time may stand in for the realtime flag **on this journey**.
+ *
+ * The fallback exists because the flag is not always set: journey `20260813-682647f9` leaves
+ * `isRealTime` null throughout and still reports times drifting from the schedule across the
+ * second half of its run. Those deviations carry three different delay values — a vehicle being
+ * watched.
+ *
+ * A forecast looks different. When the feed knows only that a run is late it applies **one** delay
+ * to every remaining stop, and the resulting times deviate from the schedule at every single stop
+ * without a metre of it having been observed. Journeys `20260822-82743995`, `20260822-604a4ebb`
+ * and `20260822-d6b912ae` — the Freudenstadt shuttle on a day KVV had announced the whole S8 as
+ * cancelled for lack of staff — each carry no realtime flag at all and a single delay value across
+ * every stop. Read as observation, that is a fully tracked segment, and two of the three were
+ * published as `ran`: the strongest claim this classifier makes, drawn from a feed that had not
+ * seen the train.
+ *
+ * So the fallback applies only to journeys where the flag is **never** used. Where the feed sets
+ * `isRealTime` anywhere, it is telling us which stops it observed, and its silence on the others is
+ * an answer rather than a gap to paper over — journey `20260822-d413a3fe` flags eleven events after
+ * Rastatt and leaves the announced Forbach → Rastatt leg carrying nothing but a flat `delay: 41`,
+ * which the journey-wide form of this test still read as a fully tracked segment and published as
+ * `ran`. Only where no event carries the flag at all does a deviating time stand in for it, and
+ * then only if the deviations resolve to more than one delay: several delay values are a vehicle
+ * being watched, one restated number is a forecast.
+ */
+function acceptsDeviationAsObservation(stops: readonly JourneyStop[]): boolean {
+  const delays = new Set<number | null | undefined>();
+  for (const stop of stops) {
+    for (const event of stopEvents(stop)) {
+      if (event?.isRealTime === true) return false;
+      if (deviatesFromSchedule(event)) delays.add(event?.delay);
+    }
+  }
+  return delays.size > 1;
+}
+
+/**
+ * Whether the feed actually observed the vehicle at this stop.
+ *
+ * `delay` is **not** a realtime signal: the feed emits `delay: 0` with `time === scheduledTime` on
+ * purely timetabled stops, so reading a non-null delay as "tracked" marks an untracked run as
+ * fully observed — every one of journey `20260813-19b67970`'s 62 stops carries a delay while only
+ * twelve were observed.
+ *
+ * `isRealTime` is the explicit flag and settles it alone. Where it is null, a deviating time may
+ * stand in for it, but only on a journey whose deviations `acceptsDeviationAsObservation` has
+ * cleared of being one propagated forecast.
+ */
+function isTrackedEvent(
+  event: JourneyStopEvent | null | undefined,
+  acceptsDeviation: boolean,
+): boolean {
+  if (!event) return false;
+  if (event.isRealTime === true) return true;
+  return acceptsDeviation && deviatesFromSchedule(event);
+}
+
+function isTracked(stop: JourneyStop, acceptsDeviation: boolean): boolean {
+  return stopEvents(stop).some((event) => isTrackedEvent(event, acceptsDeviation));
 }
 
 /**
@@ -673,8 +741,11 @@ function isSegmentTracked(
   stop: JourneyStop,
   index: number,
   bounds: { start: number; end: number },
+  acceptsDeviation: boolean,
 ): boolean {
-  return segmentEvents(stop, index, bounds).some(isTrackedEvent);
+  return segmentEvents(stop, index, bounds).some((event) =>
+    isTrackedEvent(event, acceptsDeviation),
+  );
 }
 
 /** Tally journey and segment stops in a single pass. */
@@ -689,18 +760,19 @@ function countSegment(
   let journeyTrackedStops = 0;
   let trackedOutsideSegment = 0;
   let trackedAdjacentStops = 0;
+  const acceptsDeviation = acceptsDeviationAsObservation(stops);
 
   for (let index = 0; index < stops.length; index += 1) {
     const stop = stops[index];
     if (!stop) continue;
     const cancelled = isCancelled(stop);
-    const tracked = isTracked(stop);
+    const tracked = isTracked(stop, acceptsDeviation);
     if (cancelled) journeyCancelledStops += 1;
     if (tracked) journeyTrackedStops += 1;
 
     if (index >= bounds.start && index <= bounds.end) {
       const segmentCancelled = isSegmentCancelled(stop, index, bounds);
-      const segmentTracked = isSegmentTracked(stop, index, bounds);
+      const segmentTracked = isSegmentTracked(stop, index, bounds, acceptsDeviation);
       segmentStops += 1;
       if (segmentCancelled) segmentCancelledStops += 1;
       if (segmentTracked) segmentTrackedStops += 1;
@@ -709,8 +781,8 @@ function countSegment(
       // that the feed observed the rest of this run — and being on the boundary stop itself, they
       // are the closest such evidence there is.
       if (
-        (index === bounds.start && isTrackedEvent(stop.arrival)) ||
-        (index === bounds.end && isTrackedEvent(stop.departure))
+        (index === bounds.start && isTrackedEvent(stop.arrival, acceptsDeviation)) ||
+        (index === bounds.end && isTrackedEvent(stop.departure, acceptsDeviation))
       ) {
         trackedOutsideSegment += 1;
         trackedAdjacentStops += 1;
@@ -816,12 +888,35 @@ function createVerification(
   };
 }
 
-/** Verdict for a trip whose journey could not be resolved at all. */
+/**
+ * Verdict for a trip whose journey could not be resolved at all.
+ *
+ * `journeyId` is passed on the reasons that reached a journey, so even a verdict that concluded
+ * nothing still says which journey it concluded it from.
+ */
 export function createUnresolvedVerification(
   now: Date,
   unresolvedReason: UnresolvedReason = 'journey-not-found',
+  journeyId?: string,
 ): TripVerification {
-  return createVerification('unresolved', NO_COUNTS, now, { unresolvedReason });
+  return createVerification('unresolved', NO_COUNTS, now, {
+    unresolvedReason,
+    ...(journeyId === undefined ? {} : { journeyId }),
+  });
+}
+
+/**
+ * Whether these details are the AVG journey the stored trip names — number, operator and nothing
+ * else. Deliberately weaker than {@link classifyJourney}: it answers "was our train in the feed at
+ * all", which is what separates an absent journey from one whose segment we failed to locate.
+ */
+export function identifiesNetworkJourney(
+  cancellation: Cancellation,
+  details: JourneyDetails,
+): boolean {
+  const expectedJourneyNumber = Number(cancellation.trainNumber);
+  if (details.train?.journeyNumber !== expectedJourneyNumber) return false;
+  return matchesNetworkOperator(details);
 }
 
 /**
@@ -936,13 +1031,14 @@ export function matchesNetworkOperator(
 }
 
 function countJourney(stops: readonly JourneyStop[]): SegmentCounts {
+  const acceptsDeviation = acceptsDeviationAsObservation(stops);
   return {
     segmentStops: 0,
     segmentCancelledStops: 0,
     segmentTrackedStops: 0,
     journeyStops: stops.length,
     journeyCancelledStops: stops.filter(isCancelled).length,
-    journeyTrackedStops: stops.filter(isTracked).length,
+    journeyTrackedStops: stops.filter((stop) => isTracked(stop, acceptsDeviation)).length,
     // The segment is unknown, so no tracked stop can honestly be labelled inside, outside or
     // adjacent to it.
     trackedOutsideSegment: 0,
