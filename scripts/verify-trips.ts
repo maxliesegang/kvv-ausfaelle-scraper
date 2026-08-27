@@ -17,8 +17,11 @@
  *   npm run verify-trips -- [--year=N] [--date=YYYY-MM-DD] [--write] [--recheck] [--verbose]
  *
  * Notes:
- * - Best-effort by design. Network and decode failures are counted and reported, never thrown, and
- *   the script always exits 0: a third-party outage must not turn the data pipeline red.
+ * - Best-effort by design. Network and decode failures are counted and reported, never thrown, so
+ *   a third-party outage never turns the *data pipeline* red — the scrape still publishes.
+ *   A run in which every single lookup failed is the exception: that is not a flaky trip, it is a
+ *   broken integration, and it exits non-zero so the workflow step shows it. Silence cost six days
+ *   of verification when bahn.expert moved its gateway from `/rpc` to `/api/trpc`.
  * - `partial`, `no-data` and `unresolved` are re-checked on later Berlin calendar days while the
  *   trip stays inside the window; settled verdicts are left alone unless `--recheck` is passed.
  * - Evidence only ratchets up: a re-check that sees *less* than the stored verdict did is
@@ -42,6 +45,7 @@ import {
   classifyJourney,
   createJourneyMismatchVerification,
   createUnresolvedVerification,
+  VERIFICATION_SOURCE,
   type TripVerification,
 } from '../src/verification/verify.js';
 
@@ -127,7 +131,21 @@ async function verifyOne(cancellation: Cancellation, now: Date): Promise<TripVer
 }
 
 type VerifyOutcome =
-  { readonly ok: true; readonly verification: TripVerification } | { readonly ok: false };
+  | { readonly ok: true; readonly verification: TripVerification }
+  | { readonly ok: false; readonly reason: string };
+
+/**
+ * Collapse an error to the shape of the problem, dropping the parts that vary per trip.
+ *
+ * Failures are reported grouped by this string rather than one line per trip. A count on its own
+ * (`10 request failures (skipped)`) reads like flakiness whatever the cause; `10 x journey.find
+ * responded 404` names a moved endpoint on sight, which is the whole difference between a log a
+ * maintainer can act on and one they scroll past.
+ */
+function failureReason(error: unknown): string {
+  const message = error instanceof Error ? error.message : String(error);
+  return message.replace(/\b\d{8}-[0-9a-f-]+\b/g, '<journeyId>');
+}
 
 /**
  * Verification is advisory, so a failed lookup is a skipped trip, never a thrown run. The trip
@@ -145,7 +163,7 @@ async function verifySafely(
       const { line, trainNumber, date } = cancellation;
       console.warn(`  ! ${line} ${trainNumber} ${date}: ${String(error)}`);
     }
-    return { ok: false };
+    return { ok: false, reason: failureReason(error) };
   }
 }
 
@@ -196,6 +214,27 @@ interface RunSummary {
   failed: number;
   changedFiles: number;
   verdictsRetained: number;
+  /** How many failures each distinct problem caused, so the log names the cause, not just a count. */
+  readonly failuresByReason: Map<string, number>;
+}
+
+/**
+ * Whether a run's outcome says the feed itself is unreachable rather than some trips being awkward.
+ *
+ * Individual lookups fail all the time — a stale candidate, a timeout, a journey the feed has since
+ * forgotten — and none of those deserve a red step. A run that *attempted* lookups and had **every
+ * one** of them fail is a different animal: no journey the feed could still answer for would come
+ * back that way. That is the signature of a moved endpoint, a rejected User-Agent, or an outage,
+ * and it is the only outcome here a maintainer has to do something about.
+ *
+ * Note the guard is on `checked === 0`, not on a ratio. A partial failure still produced verdicts
+ * and self-heals on the next run; only total silence cannot.
+ */
+export function isSourceUnreachable(summary: {
+  readonly checked: number;
+  readonly failed: number;
+}): boolean {
+  return summary.failed > 0 && summary.checked === 0;
 }
 
 /**
@@ -239,6 +278,10 @@ async function verifyFahrplanYear(
       if (!trip) return;
       if (!outcome.ok) {
         summary.failed += 1;
+        summary.failuresByReason.set(
+          outcome.reason,
+          (summary.failuresByReason.get(outcome.reason) ?? 0) + 1,
+        );
         return;
       }
       const choice = retainStrongerVerdict(trip.verification, outcome.verification);
@@ -276,7 +319,13 @@ async function main(): Promise<void> {
     (year) => options.year === undefined || year === String(options.year),
   );
 
-  const summary: RunSummary = { checked: 0, failed: 0, changedFiles: 0, verdictsRetained: 0 };
+  const summary: RunSummary = {
+    checked: 0,
+    failed: 0,
+    changedFiles: 0,
+    verdictsRetained: 0,
+    failuresByReason: new Map(),
+  };
   const countByStatus = new Map<string, number>();
 
   for (const year of yearDirectories) {
@@ -304,6 +353,9 @@ async function main(): Promise<void> {
   }
   if (summary.failed > 0) {
     console.log(`  ${String(summary.failed).padStart(4)}  request failures (skipped)`);
+    for (const [reason, count] of [...summary.failuresByReason].sort((a, b) => b[1] - a[1])) {
+      console.log(`        ${String(count).padStart(4)} x ${reason}`);
+    }
   }
 
   // The published indices summarise these verdicts, and the scraper generated them *before* this
@@ -311,9 +363,23 @@ async function main(): Promise<void> {
   if (options.write && summary.changedFiles > 0) {
     await generateSiteIndices(DATA_DIR);
   }
+
+  if (isSourceUnreachable(summary)) {
+    // `::error::` is GitHub's annotation syntax and plain text anywhere else, so the same line
+    // serves a workflow run and a terminal.
+    console.error(
+      `::error::Every one of ${summary.failed} lookup(s) failed — treating ${VERIFICATION_SOURCE} ` +
+        'as unreachable, not as flaky trips. If this persists the gateway has most likely moved ' +
+        'again; see the mount-point note in src/verification/bahn-expert.ts.',
+    );
+    process.exitCode = 1;
+  }
 }
 
-// Best-effort by contract: never fail the pipeline over a third-party feed.
+// Best-effort by contract: never fail the pipeline over a third-party feed. `main` sets a non-zero
+// exit code for a wholly unreachable source, which the workflow's `continue-on-error` turns into a
+// visibly failed step rather than a failed run — publishing is unaffected, the alarm still rings.
 main().catch((error) => {
   console.error('Verification aborted:', error);
+  process.exitCode = 1;
 });

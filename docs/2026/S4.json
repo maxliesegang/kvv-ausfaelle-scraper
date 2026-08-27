@@ -4314,7 +4314,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275091",
     "capturedAt": "2026-08-25T08:35:41.968Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 6,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260825-a8ee4463-d1fd-3648-b0dc-2a8320203a4d"
+    }
   },
   {
     "line": "S4",
@@ -4328,7 +4344,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275091",
     "capturedAt": "2026-08-25T08:35:41.968Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 6,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260825-850e89cc-aeae-39fe-9c14-ae3ae97bdea2"
+    }
   },
   {
     "line": "S4",
@@ -4342,7 +4374,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275147",
     "capturedAt": "2026-08-26T04:34:07.575Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 6,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 11,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 56,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 42,
+      "trackedOutsideSegment": 42,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260826-c42c71fd-cbd8-3333-8e74-3da7ae32643a"
+    }
   },
   {
     "line": "S4",
@@ -4356,7 +4403,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275147",
     "capturedAt": "2026-08-26T08:36:52.262Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 6,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260826-a8ee4463-d1fd-3648-b0dc-2a8320203a4d"
+    }
   },
   {
     "line": "S4",
@@ -4370,6 +4433,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275147",
     "capturedAt": "2026-08-26T08:36:52.262Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 6,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260826-850e89cc-aeae-39fe-9c14-ae3ae97bdea2"
+    }
   }
 ]

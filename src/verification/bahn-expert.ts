@@ -2,11 +2,17 @@
  * Read-only client for bahn.expert's tRPC gateway, used to check whether a trip KVV announced as
  * cancelled actually ran.
  *
- * Two constraints are load-bearing and non-obvious:
+ * Three constraints are load-bearing and non-obvious:
  *
  * 1. Inputs and outputs are `devalue`-encoded (see `./devalue.ts`). Plain JSON is rejected.
  * 2. A browser-like `User-Agent` is mandatory — with a default client UA the gateway answers
  *    `HTTP 206` with an empty body rather than an error, which reads as a successful empty result.
+ * 3. The gateway's mount point is not part of any published contract and has moved once already
+ *    (`/rpc` → `/api/trpc`, some time before 2026-08-22, which silently stopped verification for
+ *    six days). It is read out of the site's own client bundle: search the JS assets linked from
+ *    `https://bahn.expert/` for the tRPC client's `url:` option. `verify-trips.ts` now treats a
+ *    run in which every lookup failed as a broken integration rather than a quiet skip, so the
+ *    next move shows up on the run that breaks instead of a week later.
  *
  * The API answers for a rolling **seven days**; older instants fail outright. Realtime and
  * cancellation data survive that whole window, so verification can backfill after an outage
@@ -15,7 +21,7 @@
 
 import { parseDevalue, stringifyDevalue } from './devalue.js';
 
-const RPC_BASE = 'https://bahn.expert/rpc';
+const RPC_BASE = 'https://bahn.expert/api/trpc';
 
 /**
  * bahn.expert rejects non-browser agents with an empty `206`, so a browser UA is required. The

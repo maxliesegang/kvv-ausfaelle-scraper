@@ -16,6 +16,7 @@ import {
   orderJourneyCandidates,
   type JourneyStop,
 } from '../../src/verification/bahn-expert.js';
+import { isSourceUnreachable } from '../../scripts/verify-trips.js';
 import {
   MAX_ATTEMPTS,
   isVerifiable,
@@ -142,6 +143,20 @@ describe('bahn.expert client errors', () => {
     } finally {
       globalThis.fetch = originalFetch;
     }
+  });
+});
+
+describe('source-unreachable detection', () => {
+  it('flags a run whose every lookup failed, so a moved gateway is not read as flaky trips', () => {
+    assert.equal(isSourceUnreachable({ checked: 0, failed: 8 }), true);
+  });
+
+  it('stays quiet on partial failure, which produced verdicts and self-heals next run', () => {
+    assert.equal(isSourceUnreachable({ checked: 7, failed: 1 }), false);
+  });
+
+  it('stays quiet when there was simply nothing to verify', () => {
+    assert.equal(isSourceUnreachable({ checked: 0, failed: 0 }), false);
   });
 });
 
