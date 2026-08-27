@@ -56,7 +56,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "unresolved",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 0,
@@ -69,7 +69,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260821-30a457f2-bbed-3dfe-bea9-4871af66d5b1",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 2
+      "attempts": 3
     }
   }
 ]

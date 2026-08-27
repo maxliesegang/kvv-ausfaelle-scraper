@@ -56,7 +56,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 10,

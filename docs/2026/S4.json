@@ -4317,7 +4317,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 32,
@@ -4347,7 +4347,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 32,
@@ -4377,7 +4377,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 11,
@@ -4406,7 +4406,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 32,
@@ -4436,7 +4436,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 32,
@@ -4450,5 +4450,19 @@
       "journeyCancelled": true,
       "journeyId": "20260826-850e89cc-aeae-39fe-9c14-ae3ae97bdea2"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-28",
+    "stand": "2026-08-27T17:15:00.000Z",
+    "trainNumber": "85541",
+    "fromStop": "Bretten Bf.",
+    "fromTime": "02:00",
+    "toStop": "Gölshausen Bf.",
+    "toTime": "02:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275314",
+    "capturedAt": "2026-08-27T18:45:55.822Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

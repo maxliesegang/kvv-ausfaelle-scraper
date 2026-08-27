@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222
 Stand:  2026-08-27T05:48:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Söllingen Bahnhof und Wörth Badepark Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (27.08.2026 bis 27.08.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 - Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Söllingen Bahnhof und Germersheim Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (27.08.2026 bis 28.08.2026)
 Datum:  2026-08-27T05:47:00.000Z
 ========================================================================
 
@@ -8,19 +8,20 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 27.08.2026, 07:47 Uhr
-Betriebsbedingte Fahrtausfälle auf der Linie S5
-Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Söllingen Bahnhof und Wörth Badepark 
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Söllingen Bahnhof und Germersheim Bahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Wörth Badepark. Wir bitten um Entschuldigung.
+Betriebsbedingte Fahrtausfälle. Auf den Linien S5, S51 und S52 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Wörth Badepark. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 27.08.2026 07:48:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84835 Ka Tullastrasse (16:47 Uhr) - Söllingen (17:09 Uhr)
-84764 Söllingen (17:18 Uhr) - Ka. Rheinbergstraße (18:04 Uhr)
 84781 Ka. Rheinbergstraße (18:51 Uhr) - Söllingen (19:37 Uhr)
 84858 Söllingen (19:51 Uhr) - Wörth Badepark (20:53 Uhr)
+85093 KA Tullastraße (20:27 Uhr) - Pforzheim Hbf (21:10 Uhr)
 84849 Wörth Badepark (21:07 Uhr) - Söllingen (22:06 Uhr)
+85090 Pforzheim Hbf (22:46 Uhr) - KA Rheinbergstraße (23:54 Uhr)
 84864 Söllingen (22:51 Uhr) - Wörth Badepark (23:53 Uhr)
 84863 Wörth Badepark (00:05 Uhr) - Ka Tullastrasse (00:47 Uhr)
+84787 KA Rheinbergstraße (00:42 Uhr) - Söllingen (01:26 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

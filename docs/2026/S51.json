@@ -1221,7 +1221,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "unresolved",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 0,
@@ -1229,12 +1229,12 @@
       "segmentTrackedStops": 0,
       "journeyStops": 46,
       "journeyCancelledStops": 0,
-      "journeyTrackedStops": 27,
+      "journeyTrackedStops": 16,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260826-bcacc0e2-a883-3ea7-82dc-c2eaae691a60",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -1252,19 +1252,19 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "partial",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 35,
       "segmentCancelledStops": 33,
-      "segmentTrackedStops": 2,
+      "segmentTrackedStops": 0,
       "journeyStops": 44,
       "journeyCancelledStops": 33,
-      "journeyTrackedStops": 11,
-      "trackedOutsideSegment": 10,
-      "trackedAdjacentStops": 2,
+      "journeyTrackedStops": 5,
+      "trackedOutsideSegment": 5,
+      "trackedAdjacentStops": 0,
       "journeyId": "20260826-21ec565d-29ba-3d85-960e-90307013222f",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -1282,7 +1282,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 46,

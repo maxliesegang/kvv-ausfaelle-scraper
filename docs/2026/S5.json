@@ -14586,7 +14586,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 39,
@@ -14616,7 +14616,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 34,
@@ -14624,8 +14624,8 @@
       "segmentTrackedStops": 0,
       "journeyStops": 49,
       "journeyCancelledStops": 34,
-      "journeyTrackedStops": 11,
-      "trackedOutsideSegment": 11,
+      "journeyTrackedStops": 5,
+      "trackedOutsideSegment": 5,
       "trackedAdjacentStops": 0,
       "journeyId": "20260824-f07705ed-89cb-3e40-ab78-faf5c99a0da3"
     }
@@ -14645,7 +14645,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 40,
@@ -14675,7 +14675,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 49,
@@ -14705,7 +14705,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 40,
@@ -14735,7 +14735,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 40,
@@ -14765,7 +14765,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 13,
@@ -14777,7 +14777,7 @@
       "trackedOutsideSegment": 5,
       "trackedAdjacentStops": 0,
       "journeyId": "20260825-96b32a69-8547-30dc-9e5a-7137caa425a4",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -14795,7 +14795,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 13,
@@ -14825,7 +14825,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 23,
@@ -14855,7 +14855,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 30,
@@ -14885,7 +14885,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 40,
@@ -14915,7 +14915,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 40,
@@ -14945,7 +14945,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 40,
@@ -14975,7 +14975,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "cancelled",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 49,
@@ -15005,7 +15005,7 @@
     "causeKeyword": "fahrpersonal",
     "verification": {
       "status": "no-data",
-      "methodVersion": 6,
+      "methodVersion": 7,
       "source": "bahn.expert",
       "checkedAt": "2026-08-27",
       "segmentStops": 13,
@@ -15017,7 +15017,7 @@
       "trackedOutsideSegment": 5,
       "trackedAdjacentStops": 0,
       "journeyId": "20260827-bae0d665-3d52-35b4-8363-69fbf197403c",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -15032,7 +15032,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 30,
+      "segmentCancelledStops": 30,
+      "segmentTrackedStops": 0,
+      "journeyStops": 30,
+      "journeyCancelledStops": 30,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260827-608e90fa-4567-30c0-b5cf-7cbe458e58e5"
+    }
   },
   {
     "line": "S5",
@@ -15046,7 +15062,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-27",
+      "segmentStops": 30,
+      "segmentCancelledStops": 30,
+      "segmentTrackedStops": 0,
+      "journeyStops": 30,
+      "journeyCancelledStops": 30,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260827-e6f77917-179e-3057-9c01-e47d6537b9b8"
+    }
   },
   {
     "line": "S5",
@@ -15066,6 +15098,20 @@
     "line": "S5",
     "date": "2026-08-27",
     "stand": "2026-08-27T05:48:00.000Z",
+    "trainNumber": "85093",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "20:27",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "21:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
+    "capturedAt": "2026-08-27T18:45:57.022Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-27",
+    "stand": "2026-08-27T05:48:00.000Z",
     "trainNumber": "84849",
     "fromStop": "Wörth Badepark",
     "fromTime": "21:07",
@@ -15073,6 +15119,20 @@
     "toTime": "22:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-27",
+    "stand": "2026-08-27T05:48:00.000Z",
+    "trainNumber": "85090",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "22:46",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "23:54",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
+    "capturedAt": "2026-08-27T18:45:57.022Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   },
@@ -15101,6 +15161,20 @@
     "toTime": "00:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-28",
+    "stand": "2026-08-27T05:48:00.000Z",
+    "trainNumber": "84787",
+    "fromStop": "KA Rheinbergstraße",
+    "fromTime": "00:42",
+    "toStop": "Söllingen",
+    "toTime": "01:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
+    "capturedAt": "2026-08-27T18:45:57.022Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }
