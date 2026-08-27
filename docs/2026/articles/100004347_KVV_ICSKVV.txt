@@ -1,17 +1,17 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004347_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 52 - Karlsruhe: Haltestelle um 100m verlegt (07.09.2026 bis 23.10.2026)
+Titel:  Linie 52 - Karlsruhe: Haltestelle um 100m verlegt (14.09.2026 bis 30.10.2026)
 Datum:  2026-08-25T12:03:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 07.09.2026 bis 23.10.2026
+Vom 14.09.2026 bis 30.10.2026
 Linie 52
 Karlsruhe: Haltestelle um 100m verlegt
 (kue) Wegen Bauarbeiten muss
-von Montag, 07. September 2026
-bis vsl. Freitag, 23. Oktober 2026
+von Montag, 14. September 2026
+bis vsl. Freitag, 30. Oktober 2026
 die Haltestelle "Nürnberger Straße" für beide Fahrtrichtungen ca. 100 Meter in Richtung Osten (Höhe Bussardweg) verlegt werden.
 Zurück zur Übersicht
