@@ -1712,5 +1712,65 @@
       "journeyCancelled": true,
       "journeyId": "20260826-c66ec6a1-92c8-3147-a9a1-780332a8bc5a"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-28",
+    "stand": "2026-08-28T06:57:00.000Z",
+    "trainNumber": "85571",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "11:13",
+    "toStop": "Achern Bf.",
+    "toTime": "12:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275337",
+    "capturedAt": "2026-08-28T16:29:49.064Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260828-e4e9bff8-d930-34de-a826-215d6e24c024"
+    }
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-28",
+    "stand": "2026-08-28T06:57:00.000Z",
+    "trainNumber": "85572",
+    "fromStop": "Achern Bf.",
+    "fromTime": "12:33",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "13:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275337",
+    "capturedAt": "2026-08-28T16:29:49.064Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260828-d152eabd-9887-3606-93e7-ff9b0e836337"
+    }
   }
 ]
