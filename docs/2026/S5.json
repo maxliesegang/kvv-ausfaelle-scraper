@@ -15187,7 +15187,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 40,
+      "segmentCancelledStops": 40,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260827-426a5159-5d26-3e82-b0ca-2e0f0cae9f41"
+    }
   },
   {
     "line": "S5",
@@ -15201,7 +15217,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T18:45:57.022Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 39,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 57,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 17,
+      "trackedOutsideSegment": 17,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20260827-adc5b7ef-8b4a-3285-af0f-fb7e0022e7f8",
+      "feedLine": "S6"
+    }
   },
   {
     "line": "S5",
@@ -15215,7 +15247,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 40,
+      "segmentCancelledStops": 40,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260827-b6d29160-5521-3e40-b501-954cd19d060d"
+    }
   },
   {
     "line": "S5",
@@ -15229,7 +15277,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T06:56:22.931Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 28,
+      "segmentCancelledStops": 28,
+      "segmentTrackedStops": 0,
+      "journeyStops": 28,
+      "journeyCancelledStops": 28,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260828-ba15f7ee-01af-3038-84e5-b4da3f66423e"
+    }
   },
   {
     "line": "S5",
@@ -15243,6 +15307,64 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275222",
     "capturedAt": "2026-08-27T18:45:57.022Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-28",
+      "segmentStops": 30,
+      "segmentCancelledStops": 30,
+      "segmentTrackedStops": 0,
+      "journeyStops": 30,
+      "journeyCancelledStops": 30,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260828-3c359dee-135d-3421-932c-5752c5324651"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-28",
+    "stand": "2026-08-28T00:15:00.000Z",
+    "trainNumber": "84820",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "09:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "09:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275329",
+    "capturedAt": "2026-08-28T03:59:27.983Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-28",
+    "stand": "2026-08-28T00:15:00.000Z",
+    "trainNumber": "84813",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "10:05",
+    "toStop": "Söllingen",
+    "toTime": "11:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275329",
+    "capturedAt": "2026-08-28T03:59:27.983Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-08-28",
+    "stand": "2026-08-28T00:15:00.000Z",
+    "trainNumber": "84730",
+    "fromStop": "Söllingen",
+    "fromTime": "11:18",
+    "toStop": "KA Tullastraße",
+    "toTime": "11:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275329",
+    "capturedAt": "2026-08-28T03:59:27.983Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
