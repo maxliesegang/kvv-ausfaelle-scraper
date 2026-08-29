@@ -4653,5 +4653,77 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260828-06b1b66d-1d58-3e2b-bdc4-37ab12a19d42"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:36:00.000Z",
+    "trainNumber": "85523",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "15:35",
+    "toStop": "Flehingen",
+    "toTime": "15:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275403",
+    "capturedAt": "2026-08-29T16:06:07.150Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-29",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260829-ad334540-52f9-355a-baad-8e15d78d45fe"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:36:00.000Z",
+    "trainNumber": "85532",
+    "fromStop": "Flehingen",
+    "fromTime": "17:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275403",
+    "capturedAt": "2026-08-29T16:06:07.150Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:36:00.000Z",
+    "trainNumber": "85531",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275403",
+    "capturedAt": "2026-08-29T16:06:07.150Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:36:00.000Z",
+    "trainNumber": "85540",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "21:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "22:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275403",
+    "capturedAt": "2026-08-29T16:06:07.150Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

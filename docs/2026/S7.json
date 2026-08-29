@@ -1772,5 +1772,49 @@
       "journeyCancelled": true,
       "journeyId": "20260828-d152eabd-9887-3606-93e7-ff9b0e836337"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-29",
+    "stand": "2026-08-29T12:30:00.000Z",
+    "trainNumber": "85579",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "15:17",
+    "toStop": "Acher Bf.",
+    "toTime": "16:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275428",
+    "capturedAt": "2026-08-29T16:06:06.882Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-29",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260829-e38b756e-4bcf-32f0-b37d-d43bb7935eee"
+    }
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-29",
+    "stand": "2026-08-29T12:30:00.000Z",
+    "trainNumber": "85580",
+    "fromStop": "Achern Bahnhof",
+    "fromTime": "16:33",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "17:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275428",
+    "capturedAt": "2026-08-29T16:06:06.882Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
