@@ -3141,5 +3141,61 @@
       "journeyCancelled": true,
       "journeyId": "20260820-e5325318-1085-3978-9985-3d818656396d"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:26:00.000Z",
+    "trainNumber": "36013",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "09:16",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "10:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275387",
+    "capturedAt": "2026-08-29T02:39:05.267Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:26:00.000Z",
+    "trainNumber": "16012",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "10:25",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "11:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275387",
+    "capturedAt": "2026-08-29T02:39:05.267Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:26:00.000Z",
+    "trainNumber": "16015",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "11:30",
+    "toStop": "Hochstetten",
+    "toTime": "12:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275387",
+    "capturedAt": "2026-08-29T02:39:05.267Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:26:00.000Z",
+    "trainNumber": "16028",
+    "fromStop": "Hochstetten",
+    "fromTime": "12:52",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "13:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275387",
+    "capturedAt": "2026-08-29T02:39:05.267Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
