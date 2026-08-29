@@ -18,6 +18,9 @@ Nach aktuellem Stand 29.08.2026 01:26:00 sind folgende Fahrten von einem (Teil-)
 16012 Neureut Kirchfeld 10:25Uhr - Ettlingen Stadt 11:12 Uhr
 16015 Ettlingen Stadt 11:30Uhr - Hochstetten 12:46Uhr
 16028 Hochstetten 12:52Uhr - Ettlingen Stadt 13:58Uhr 
+26034 Ettlingen Stadt 15:18Uhr - Ittersbach Rathaus 15:45 Uhr
+26039 Ittersbach Rathaus 15:51 Uhr - Hochstetten 17:26 Uhr
+16056 Hochstetten 17:32 Uhr - Ettlingen Stadt 18:42 Uhr
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
