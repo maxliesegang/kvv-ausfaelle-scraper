@@ -1785,7 +1785,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275412",
     "capturedAt": "2026-08-30T05:18:19.247Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-30",
+      "segmentStops": 7,
+      "segmentCancelledStops": 7,
+      "segmentTrackedStops": 0,
+      "journeyStops": 7,
+      "journeyCancelledStops": 7,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260829-e9458a69-6235-36de-88ef-68fdaf18040d",
+      "feedLine": "E"
+    }
   },
   {
     "line": "S7",
@@ -1799,7 +1816,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275412",
     "capturedAt": "2026-08-30T05:18:19.247Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-30",
+      "segmentStops": 20,
+      "segmentCancelledStops": 20,
+      "segmentTrackedStops": 0,
+      "journeyStops": 20,
+      "journeyCancelledStops": 20,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260829-13ccc5f5-493e-38fb-8bb8-74ecce6d36bb"
+    }
   },
   {
     "line": "S7",
@@ -1813,7 +1846,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275412",
     "capturedAt": "2026-08-30T05:18:19.247Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-30",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260829-c66ec6a1-92c8-3147-a9a1-780332a8bc5a"
+    }
   },
   {
     "line": "S7",
@@ -1827,7 +1876,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275412",
     "capturedAt": "2026-08-30T05:18:19.247Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-30",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 13,
+      "trackedOutsideSegment": 13,
+      "trackedAdjacentStops": 1,
+      "journeyId": "20260829-e4e9bff8-d930-34de-a826-215d6e24c024"
+    }
   },
   {
     "line": "S7",
@@ -1888,5 +1952,89 @@
       "journeyCancelled": true,
       "journeyId": "20260829-18ddad2c-1a60-35ac-ab78-ed631e727db4"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T06:50:00.000Z",
+    "trainNumber": "85569",
+    "fromStop": "Tullastr.",
+    "fromTime": "10:17",
+    "toStop": "Achern",
+    "toTime": "11:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275454",
+    "capturedAt": "2026-08-30T09:40:52.149Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T06:50:00.000Z",
+    "trainNumber": "85570",
+    "fromStop": "Achern",
+    "fromTime": "11:33",
+    "toStop": "Tullastr.",
+    "toTime": "12:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275454",
+    "capturedAt": "2026-08-30T09:40:52.149Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T06:50:00.000Z",
+    "trainNumber": "85575",
+    "fromStop": "Tullastr.",
+    "fromTime": "13:17",
+    "toStop": "Achern",
+    "toTime": "14:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275454",
+    "capturedAt": "2026-08-30T09:40:52.149Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T06:50:00.000Z",
+    "trainNumber": "85576",
+    "fromStop": "Achern",
+    "fromTime": "14:33",
+    "toStop": "Tullastr.",
+    "toTime": "15:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275454",
+    "capturedAt": "2026-08-30T09:40:52.149Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T06:50:00.000Z",
+    "trainNumber": "85583",
+    "fromStop": "Tullastr.",
+    "fromTime": "17:17",
+    "toStop": "Achern",
+    "toTime": "18:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275454",
+    "capturedAt": "2026-08-30T09:40:52.149Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T06:50:00.000Z",
+    "trainNumber": "85584",
+    "fromStop": "Achern",
+    "fromTime": "18:33",
+    "toStop": "Tullastr.",
+    "toTime": "19:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275454",
+    "capturedAt": "2026-08-30T09:40:52.149Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

@@ -1184,5 +1184,33 @@
       "journeyCancelled": true,
       "journeyId": "20260828-21b6c788-e74c-3cd1-b3f0-ab67eb6ef9b0"
     }
+  },
+  {
+    "line": "S6",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T07:31:00.000Z",
+    "trainNumber": "85063",
+    "fromStop": "KA Starckstr.",
+    "fromTime": "11:07",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "12:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275462",
+    "capturedAt": "2026-08-30T09:40:51.785Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S6",
+    "date": "2026-08-30",
+    "stand": "2026-08-30T07:31:00.000Z",
+    "trainNumber": "85064",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "12:52",
+    "toStop": "KA Starckstr.",
+    "toTime": "14:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275462",
+    "capturedAt": "2026-08-30T09:40:51.785Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
