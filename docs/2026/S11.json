@@ -1385,7 +1385,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-30",
+      "checkedAt": "2026-08-31",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1395,7 +1395,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -1445,7 +1445,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-30",
+      "checkedAt": "2026-08-31",
       "segmentStops": 13,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1455,7 +1455,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260824-366ad2ce-a0cc-3555-b848-5afa947cbd19",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -1475,7 +1475,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-30",
+      "checkedAt": "2026-08-31",
       "segmentStops": 13,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1485,13 +1485,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260829-b383525a-fb9b-31a5-9ff5-23c9a5144e59",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-08-30",
+          "checkedAt": "2026-08-31",
           "segmentStops": 13,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -1501,7 +1501,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20260829-b383525a-fb9b-31a5-9ff5-23c9a5144e59",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
