@@ -3084,6 +3084,48 @@
   },
   {
     "line": "S1",
+    "date": "2026-08-17",
+    "stand": "2026-08-17T00:14:00.000Z",
+    "trainNumber": "10043",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "11:58",
+    "toStop": "Hochstetten Bf.",
+    "toTime": "13:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274705",
+    "capturedAt": "2026-08-30T05:18:19.243Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-17",
+    "stand": "2026-08-17T00:14:00.000Z",
+    "trainNumber": "10045",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "12:34",
+    "toStop": "Hochstetten Bf.",
+    "toTime": "13:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274705",
+    "capturedAt": "2026-08-30T05:18:19.243Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-17",
+    "stand": "2026-08-17T00:14:00.000Z",
+    "trainNumber": "10048",
+    "fromStop": "Hochstetten Bf.",
+    "fromTime": "13:52",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "14:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_274705",
+    "capturedAt": "2026-08-30T05:18:19.243Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
     "date": "2026-08-20",
     "stand": "2026-08-20T10:49:00.000Z",
     "trainNumber": "10056",
@@ -3141,6 +3183,20 @@
       "journeyCancelled": true,
       "journeyId": "20260820-e5325318-1085-3978-9985-3d818656396d"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-24",
+    "stand": "2026-08-24T15:18:00.000Z",
+    "trainNumber": "30053",
+    "fromStop": "Bad Herrenalb Bf",
+    "fromTime": "17:43",
+    "toStop": "Moltkestr./ Städtisches Klinikum",
+    "toTime": "18:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275034",
+    "capturedAt": "2026-08-30T05:18:19.245Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S1",

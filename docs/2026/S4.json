@@ -3921,7 +3921,7 @@
   {
     "line": "S4",
     "date": "2026-08-15",
-    "stand": "2026-08-15T07:45:00.000Z",
+    "stand": "2026-08-15T12:49:42.000Z",
     "trainNumber": "85521",
     "fromStop": "Karlsruhe Albtalbahnhof",
     "fromTime": "14:35",
@@ -3951,7 +3951,7 @@
   {
     "line": "S4",
     "date": "2026-08-15",
-    "stand": "2026-08-15T07:45:00.000Z",
+    "stand": "2026-08-15T12:49:42.000Z",
     "trainNumber": "85530",
     "fromStop": "Flehingen Bf.",
     "fromTime": "16:20",
@@ -4653,6 +4653,20 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260828-06b1b66d-1d58-3e2b-bdc4-37ab12a19d42"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-08-29",
+    "stand": "2026-08-28T23:36:00.000Z",
+    "trainNumber": "85442",
+    "fromStop": "Eppingen",
+    "fromTime": "15:24",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "16:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275403",
+    "capturedAt": "2026-08-30T05:18:19.247Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S4",

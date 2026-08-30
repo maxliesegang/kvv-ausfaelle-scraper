@@ -12,5 +12,33 @@
     "capturedAt": "2026-07-11T13:08:13.233Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S52",
+    "date": "2026-08-27",
+    "stand": "2026-08-27T03:00:00.000Z",
+    "trainNumber": "84885",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "07:26",
+    "toStop": "Karlsruhe Marktplatz Pyramide (U)",
+    "toTime": "08:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275214",
+    "capturedAt": "2026-08-30T05:18:19.245Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S52",
+    "date": "2026-08-27",
+    "stand": "2026-08-27T03:00:00.000Z",
+    "trainNumber": "80702",
+    "fromStop": "Karlsruhe Marktplatz Pyramide (U)",
+    "fromTime": "08:38",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "08:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275214",
+    "capturedAt": "2026-08-30T05:18:19.245Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

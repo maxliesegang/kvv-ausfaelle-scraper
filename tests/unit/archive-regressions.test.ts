@@ -400,6 +400,33 @@ describe('archived article parser regressions', () => {
     ]);
   });
 
+  test('parses column-aligned time/stop rows alongside parenthesized-time rows', () => {
+    // KVV started writing the trip list as whitespace-aligned columns with no "-" between the
+    // departure and arrival halves, and mixes the layout with the parenthesized one in a single
+    // article. Before the column-separated format existed, the first row here was dropped.
+    const trips = parseArchivedArticle('Nettro_CMS_275403');
+
+    assert.equal(trips.length, 5, 'the column-aligned row must not be dropped');
+    assert.deepEqual(trips.slice(0, 2).map(routeOf), [
+      {
+        trainNumber: '85442',
+        line: 'S4',
+        fromStop: 'Eppingen',
+        fromTime: '15:24',
+        toStop: 'Karlsruhe Albtalbahnhof',
+        toTime: '16:42',
+      },
+      {
+        trainNumber: '85523',
+        line: 'S4',
+        fromStop: 'Albtalbahnhof',
+        fromTime: '15:35',
+        toStop: 'Flehingen',
+        toTime: '15:37',
+      },
+    ]);
+  });
+
   test('does not invent trips from an unnumbered multi-stop replacement-service notice', (t) => {
     t.mock.method(console, 'warn', () => undefined);
     assert.throws(() => parseArchivedArticle('100004264_KVV_ICSKVV'), ParseError);

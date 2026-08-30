@@ -219,6 +219,12 @@ const TRIP_FORMATS: readonly TripFormat[] = [
     rejectUhrOnlyStops: true,
     extract: EXTRACT.timeThenStop,
   },
+  // <trainNumber> <time> <fromStop>   <time> <toStop> (column-aligned, no separator)
+  {
+    pattern: PATTERNS.TRIP_TIME_STOP_COLUMN_SEPARATED_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.timeThenStop,
+  },
   // <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
   {
     pattern: PATTERNS.TRIP_STOP_TIME_REQUIRED_PARENTHESES_FORMAT,

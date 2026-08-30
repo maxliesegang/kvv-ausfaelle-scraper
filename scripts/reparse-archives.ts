@@ -385,6 +385,27 @@ async function backfillClassificationsForYear(
 }
 
 /**
+ * Whether a stored verdict still describes the trip a reparse produced.
+ *
+ * `verification` is computed over the announced segment — `fromTime` → `toStop` on a given date —
+ * and, unlike the trip itself, it cannot be recomputed at will: bahn.expert answers for a rolling
+ * seven days, after which a dropped verdict is gone for good. So it is carried across a
+ * correction that leaves those endpoints intact, and dropped only when the reparse moves them,
+ * where it would be evidence about a different segment. Dropping it makes `needsCheck` re-ask,
+ * which is the right outcome while the trip is still inside the lookback window.
+ */
+function describesSameVerifiedSegment(stored: Cancellation, reparsed: Cancellation): boolean {
+  return (
+    stored.date === reparsed.date &&
+    stored.trainNumber === reparsed.trainNumber &&
+    stored.fromStop === reparsed.fromStop &&
+    stored.fromTime === reparsed.fromTime &&
+    stored.toStop === reparsed.toStop &&
+    stored.toTime === reparsed.toTime
+  );
+}
+
+/**
  * Reconciles stored trips for successfully parsed archives. A parse failure is deliberately
  * absent from `reparsedTripsBySourceUrl`, so it can never delete that article's existing data.
  */
@@ -451,14 +472,19 @@ async function reconcileTripsForYear(
         continue;
       }
 
-      // `capturedAt` and `restoredFrom` are provenance the reparse cannot know: the archive says
-      // what KVV published, not when we first saw it or that the record was recovered by hand.
-      // Both must survive a correction, or reconciliation silently rewrites history.
+      // `capturedAt`, `restoredFrom` and `verification` are provenance the reparse cannot know:
+      // the archive says what KVV published, not when we first saw it, that the record was
+      // recovered by hand, or what the train actually did. All must survive a correction, or
+      // reconciliation silently rewrites history. The verdict is kept only while it still
+      // describes the same announced segment (see {@link describesSameVerifiedSegment}).
       const reconciledTrip = storedTrip
         ? {
             ...trip,
             capturedAt: storedTrip.capturedAt,
             ...(storedTrip.restoredFrom ? { restoredFrom: storedTrip.restoredFrom } : {}),
+            ...(storedTrip.verification && describesSameVerifiedSegment(storedTrip, trip)
+              ? { verification: storedTrip.verification }
+              : {}),
           }
         : trip;
       reconciledTripsByIdentity.set(identity, { line: trip.line, trip: reconciledTrip });

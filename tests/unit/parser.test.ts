@@ -349,6 +349,24 @@ describe('Parser - Detail Page Parsing', () => {
       );
     });
 
+    it('keeps the separator out of the arrival stop when only the opening paren is missing', () => {
+      // KVV drops the arrival time's "(" but keeps the "-", so this is the optional-parentheses
+      // fallback's row, not the missing-separator format's — which would read "- Neureut
+      // Kirchfeld" as the stop name.
+      assert.deepStrictEqual(
+        parseTripRowFields('56003 Ettlingen Albgaubad (01:28 Uhr) - Neureut Kirchfeld 02:19 Uhr)'),
+        [
+          {
+            trainNumber: '56003',
+            fromStop: 'Ettlingen Albgaubad',
+            fromTime: '01:28',
+            toStop: 'Neureut Kirchfeld',
+            toTime: '02:19',
+          },
+        ],
+      );
+    });
+
     it('never merges adjacent rows that each start with a train number', () => {
       const text = [
         'Betroffene Fahrten:',

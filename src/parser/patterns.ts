@@ -74,9 +74,13 @@ export const PATTERNS = {
    * must still be closed by ")" and the departure time fully parenthesized. Only the arrival
    * time's opening "(" may be missing — KVV drops it together with the separator — which keeps
    * this typo-tolerant form narrow.
+   * The arrival stop may not begin with a separator: "56003 Ettlingen Albgaubad (01:28 Uhr) -
+   * Neureut Kirchfeld 02:19 Uhr)" drops only the opening parenthesis and keeps the "-", so it
+   * belongs to the optional-parentheses fallback below. Without the guard this format claims it
+   * first and reads the separator as part of the stop name ("- Neureut Kirchfeld").
    */
   TRIP_STOP_TIME_CLOSING_PARENTHESES_MISSING_SEPARATOR_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+(?![-–])(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
 
   /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
@@ -84,6 +88,18 @@ export const PATTERNS = {
    */
   TRIP_TIME_STOP_FORMAT:
     /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
+
+  /**
+   * Same time/stop layout as {@link PATTERNS.TRIP_TIME_STOP_FORMAT} with no separator between the
+   * two halves: KVV lays the row out in whitespace-aligned columns instead.
+   * Example: "84877 05:50 Germersheim  07:17 Söllingen (b. Karlsruhe)"
+   * With no "-" to split on, the column gap is the only field boundary, so at least two spaces
+   * are required before the arrival time. A single space would make the row indistinguishable
+   * from prose that happens to start with a number and a clock time; leaving such a row
+   * unparsed surfaces it as a warning instead of inventing a trip from it.
+   */
+  TRIP_TIME_STOP_COLUMN_SEPARATED_FORMAT:
+    /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s{2,}(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)$/,
 
   /**
    * Matches trip format with line prefix: <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr

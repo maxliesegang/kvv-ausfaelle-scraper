@@ -94,8 +94,13 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm test
 
+      # `!cancelled()` is load-bearing, not decoration: an `if:` that names no status function
+      # gets an implicit `success()`, so with the audit above red this step was skipped and the
+      # scraper's own verdict never reached the run's status. The scraper step is
+      # `continue-on-error`, which reports its conclusion as success either way — so a skip here
+      # is a silent loss of the parse-error signal, not a redundant one.
       - name: Fail if scraper had errors
-        if: steps.scraper.outcome == 'failure'
+        if: ${{ !cancelled() && steps.scraper.outcome == 'failure' }}
         run: |
           echo "Scraper exited non-zero (parse errors or unclassified 'unknown' causes)."
           echo "Data was still committed above; check logs for affected articles."

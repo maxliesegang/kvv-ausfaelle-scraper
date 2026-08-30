@@ -29,8 +29,11 @@ This is the most specific guidance for maintenance scripts.
     reconciliation alone would keep the old (departed, hence retained) record and add the
     corrected one beside it.
   - `--write-trips`: fully reconciles each successfully parsed archived article with stored
-    trips from the same source URL. It preserves an existing trip's `capturedAt` and uses the
-    canonical storage ordering.
+    trips from the same source URL. It preserves an existing trip's `capturedAt`, `restoredFrom`
+    and `verification`, and uses the canonical storage ordering. The verdict is provenance the
+    reparse cannot regenerate — the feed answers for seven days only — so it is carried across a
+    correction and dropped solely when the reparse moves the announced segment's endpoints,
+    which is what it was computed over.
   - Safety: parse failures and articles without structured train-number rows never participate
     in deletion. Nor do already-departed trips — the same forward-looking rule the live
     reconciler applies (`hasDeparted` in `src/storage.ts`), so the script and the scraper

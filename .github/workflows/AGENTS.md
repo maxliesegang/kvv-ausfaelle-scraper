@@ -52,6 +52,17 @@ would withhold data that is already valid.
    - `docs/` stays committed to git regardless — it is the single source of truth the scraper re-reads for reconciliation; the Pages artifact is just a copy of it
 5. Post-publish audit:
    - `npm test` against the just-committed `docs/`, guarded by `if: ${{ !cancelled() }}`
+6. Scraper verdict:
+   - `Fail if scraper had errors` re-raises the `continue-on-error` scraper step's outcome
+
+## Step Guards
+
+Every step after `npm start` runs on a job that may already be failing, so each one states its
+guard deliberately. An `if:` naming no status function (`always()`, `!cancelled()`, `failure()`)
+carries an implicit `success()` and is therefore **skipped once any earlier step has failed** —
+which is how the scraper's parse-error verdict went missing on runs where the post-publish audit
+turned red first. A step whose only job is to report a condition must say `!cancelled() && <the
+condition>`, never the bare condition.
 
 ## Failure Behavior
 
