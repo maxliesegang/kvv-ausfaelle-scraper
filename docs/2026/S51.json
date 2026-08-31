@@ -1374,7 +1374,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-08-31",
+      "checkedAt": "2026-09-01",
       "segmentStops": 17,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -1384,7 +1384,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260829-71259705-1ed1-385d-96ef-760a18d3f820",
-      "attempts": 2
+      "attempts": 3
     }
   },
   {
