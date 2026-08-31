@@ -1553,5 +1553,33 @@
       "journeyCancelled": true,
       "journeyId": "20260829-a2fc41f3-f7c3-3907-bb7c-ace217e1ed45"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "20040",
+    "fromStop": "Hochstetten",
+    "fromTime": "13:12",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "14:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "20046",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "15:05",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "15:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

@@ -3362,5 +3362,75 @@
       "journeyCancelled": true,
       "journeyId": "20260829-3929e35b-3b2e-3a39-b861-72c899c3b25a"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "10043",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "11:58",
+    "toStop": "Hochstetten",
+    "toTime": "13:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "30037",
+    "fromStop": "Bad Herrenalb Bf",
+    "fromTime": "13:43",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "14:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "30044",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "16:32",
+    "toStop": "Bad Herrenalb Bf",
+    "toTime": "16:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "30051",
+    "fromStop": "Bad Herrenalb Bf",
+    "fromTime": "17:03",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "18:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:10:00.000Z",
+    "trainNumber": "30054",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "18:25",
+    "toStop": "Bad Herrenalb Bf",
+    "toTime": "19:33",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275490",
+    "capturedAt": "2026-08-31T10:24:23.369Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

@@ -71,5 +71,85 @@
       "unresolvedReason": "journey-mismatch",
       "attempts": 4
     }
+  },
+  {
+    "line": "S12",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:02:00.000Z",
+    "trainNumber": "40017",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "08:06",
+    "toStop": "Ka Tullastrasse",
+    "toTime": "09:03",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275486",
+    "capturedAt": "2026-08-31T10:24:23.639Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "no-data",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-08-31",
+      "segmentStops": 26,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 26,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260831-da6060f5-e001-3235-a5a1-17ff1645211e",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "no-data",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-08-31",
+          "segmentStops": 26,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 26,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260831-da6060f5-e001-3235-a5a1-17ff1645211e",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-08-31",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260831_08:06_de-KVV_15.T0.22-312-E-s26-7.7.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
+  },
+  {
+    "line": "S12",
+    "date": "2026-08-31",
+    "stand": "2026-08-31T05:02:00.000Z",
+    "trainNumber": "40016",
+    "fromStop": "Ka Tullastrasse",
+    "fromTime": "16:06",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "15:59",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275486",
+    "capturedAt": "2026-08-31T10:24:23.639Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
