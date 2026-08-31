@@ -1,17 +1,17 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004257_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie S2 - Rintheim: Haltestelle "Sinsheimer Straße" aufgehoben (17.08.2026 bis 03.09.2026)
+Titel:  Linie S2 - Rintheim: Haltestelle "Sinsheimer Straße" aufgehoben (17.08.2026 bis 10.09.2026)
 Datum:  2026-07-16T12:10:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 17.08.2026 bis 03.09.2026
+Vom 17.08.2026 bis 10.09.2026
 Linie S2
 Rintheim: Haltestelle &quot;Sinsheimer Straße&quot; aufgehoben
 (sie) Wegen einer Baumaßnahme 
-von Sonntag, 17.08 bis vsl. Mittwoch 03.09.2026 (03:30 Uhr)
+von Montag, 17.08. bis vsl. Donnerstag 10.09.2026 (03:30 Uhr)
 ist die Haltestelle "Sinsheimer Straße" aufgehoben.
 Wir bitten um Beachtung!
 Zurück zur Übersicht
