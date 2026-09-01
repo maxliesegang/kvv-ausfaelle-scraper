@@ -2263,5 +2263,65 @@
       "journeyCancelled": true,
       "journeyId": "20260825-f1597e4b-448d-3f3d-a84c-1007b0a08f43"
     }
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-01",
+    "stand": "2026-09-01T02:31:00.000Z",
+    "trainNumber": "85611",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "05:21",
+    "toStop": "Freudenstadt Bf.",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275575",
+    "capturedAt": "2026-09-01T09:06:06.397Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-01",
+      "segmentStops": 51,
+      "segmentCancelledStops": 51,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 51,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260901-d0ab2522-30ac-3ffc-ad96-c0e95700b350"
+    }
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-01",
+    "stand": "2026-09-01T02:31:00.000Z",
+    "trainNumber": "85622",
+    "fromStop": "Freudenstadt Bf.",
+    "fromTime": "07:48",
+    "toStop": "KA Tullastraße",
+    "toTime": "10:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275575",
+    "capturedAt": "2026-09-01T09:06:06.397Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-01",
+      "segmentStops": 51,
+      "segmentCancelledStops": 51,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 51,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260901-f1597e4b-448d-3f3d-a84c-1007b0a08f43"
+    }
   }
 ]
