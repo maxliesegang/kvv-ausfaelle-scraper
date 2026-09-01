@@ -1,0 +1,41 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004364_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S5, S51, SEV - Söllingen (b Karlsruhe) - Pforzheim Hbf: S5/S51 - Nächtliche Einschränkungen im September (11.09.2026 bis 25.09.2026)
+Datum:  2026-09-01T10:56:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 11.09.2026 bis 25.09.2026
+Linien: S5, S51, SEV
+Söllingen (b Karlsruhe) - Pforzheim Hbf: S5/S51 - Nächtliche Einschränkungen im September
+(AVG)
+Söllingen (b Karlsruhe) - Pforzheim Hbf: S5/S51 - Nächtliche Einschränkungen im September
+Linie(n): S5/S51
+Zeitraum: Nächte 11./12.09., 13./14.09. - 17./18.09.2026 und 20./21.09. - 24./25.09.2026 (jeweils ca. 22:00 Uhr bis 05:00 Uhr)
+Einschränkungen Stadtbahn: Verschiedene Teilausfälle Pforzheim &lt;-&gt; Wilferdingen-Singen bzw. Söllingen (b KA)
+•    Ca. jeder zweite Zug der Linien S5 / S51 entfällt in der Nacht 11./12.09. zwischen Söllingen und Pforzheim:
+o    Pforzheim Hbf (21:46) - Söllingen (b KA) (22:09) - Wörth Badepark
+o    Pforzheim Hbf (22:46) - Söllingen (b KA) (23:09) - Karlsruhe Rheinbergstraße
+o    Pforzheim Hbf (00:06) - Söllingen (b KA) (00:29) - Karlsruhe Rheinbergstraße
+o    Wörth Badepark (20:45) - Söllingen (b KA) (21:45) - Pforzheim Hbf (22:10)
+o    Wörth Badepark (21:45) - Söllingen (b KA) (22:45) - Pforzheim Hbf (23:10)
+o    Karlsruhe Rheinbergstraße (22:42) - Söllingen (b KA)  (23:25) - Pforzheim Hbf (23:50)
+•    Einzelne Verbindungen entfallen In den Nächten 13./14. - 17./18., 20./21. sowie 22./23. bis 24./25.09. zwischen Pforzheim und Wilferdingen-Singen bzw. Pforzheim
+o    S51 Pforzheim Hbf (23:06) - Wilferdingen-Singen (23:22) - Germersheim
+o    S5 KA Rheinhafen - Söllingen (b KA) (04:34) - Pforzheim Hbf (04:56)
+o    S5 Wörth Badepark - Wilferdingen-Singen (22:53) - Pforzheim Hbf (23:10)
+•    In der Nacht 21./22.09. entfallen alle Fahrten der Linien S5 / S51 von 22:00 bis 05:00 zwischen Söllingen (b KA) und Pforzheim Hbf
+Ersatzverkehr: 
+•    morgens ein Ersatzbus Söllingen Reetzstraße &lt;-&gt; Pforzheim Hbf
+•    abends kein Ersatzverkehr, bitte auf die übrigen Verbindungen ausweichen, außer
+•    In der Nächten 11./12. und 21./22.09. Ersatzverkehr Söllingen Reetzstraße %EF%82%AB Pforzheim Hbf für die entfallenden Verbindungen
+Grund: DB InfraGO - Verschiedene Bauarbeiten
+Ausnahmen/Sonstiges:
+•    Kein Umstieg zwischen Ersatzverkehr und Stadtbahn in Söllingen Bahnhof! 
+•    Wie bereits angekündigt, entfallen vom 04.09. (22 Uhr) bis 11.09. (22 Uhr) alle Stadtbahnen zwischen Söllingen (b KA) und Wilferdingen-Singen aufgrund von weiteren Bauarbeiten der DB InfraGO! 
+Fahrplan Ersatzverkehr (11.09. bis 12.09.2026)
+Fahrplan Ersatzverkehr (14.09. bis 18.09.2026)
+Fahrplan Ersatzverkehr (21.09. bis 25.09.2026)
+Zurück zur Übersicht
