@@ -4820,7 +4820,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-02",
+      "checkedAt": "2026-09-03",
       "segmentStops": 32,
       "segmentCancelledStops": 11,
       "segmentTrackedStops": 18,
@@ -4831,13 +4831,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260901-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a",
       "feedLine": "S7",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-02",
+          "checkedAt": "2026-09-03",
           "segmentStops": 32,
           "segmentCancelledStops": 11,
           "segmentTrackedStops": 18,
@@ -4848,7 +4848,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20260901-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a",
           "feedLine": "S7",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -4917,7 +4917,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-02",
+      "checkedAt": "2026-09-03",
       "segmentStops": 32,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -4928,13 +4928,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260902-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a",
       "feedLine": "S7",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-02",
+          "checkedAt": "2026-09-03",
           "segmentStops": 32,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -4945,13 +4945,13 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20260902-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a",
           "feedLine": "S7",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "transitous",
-          "checkedAt": "2026-09-02",
+          "checkedAt": "2026-09-03",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -4962,7 +4962,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20260902_07:35_de-KVV_541.T0.22-304-E-s26-7.154.R",
           "unresolvedReason": "journey-mismatch",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
