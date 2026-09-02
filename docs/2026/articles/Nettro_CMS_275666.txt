@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275666
-Stand:  2026-09-02T00:20:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (02.09.2026 bis 02.09.2026)
+Stand:  2026-09-02T09:16:00.000Z
+Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Söllingen Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (02.09.2026 bis 03.09.2026)
 Datum:  2026-09-02T00:20:00.000Z
 ========================================================================
 
@@ -9,17 +9,23 @@ Fahrplan
 Verkehrsmeldungen
 02.09.2026, 02:20 Uhr
 Betriebsbedingte Fahrtausfälle auf der Linie S5
-Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
+Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Söllingen Bahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 02.09.2026 02:20:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84810 Söllingen Bf. (06:18 Uhr) - Wörth Badepark (07:22 Uhr)
-84950 Pforzheim Hbf (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
-84805 Wörth Badepark (07:35 Uhr) - Söllingen Bf. (08:37 Uhr)
-84809 Wörth Badepark (08:05 Uhr) - Söllingen Bf. (09:09 Uhr)
-84820 Söllingen Bf. (08:48 Uhr) - KA Tullastr. (09:11 Uhr)
-84722 Söllingen Bf. (09:18 Uhr) - KA Rheinbergstr. (10:04 Uhr)
+Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Söllingen Bahnhof. Wir bitten um Entschuldigung.
+Nach aktuellem Stand 02.09.2026 11:16:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+84842 Karlsruhe Lameyplatz (16:27 Uhr) - Wörth Badepark (16:53 Uhr)
+84839 Wörth Badepark (17:05 Uhr) - Karlsruhe Lameyplatz (17:29 Uhr)
+84843 Karlsruhe Starckstraße (18:27 Uhr) - Söllingen Bf. (19:09 Uhr)
+84776 Söllingen Bf. (19:18 Uhr) - Knielingen Rheinbergstraße (20:04 Uhr)
+84772 KA Tullastraße (19:21 Uhr) - KA Rheinbergstraße (19:44 Uhr)
+84785 KA Rheinbergstraße (19:51 Uhr) - Söllingen Bf. (20:37 Uhr)
+84858 Karlsruhe Tullastraße (20:11 Uhr) - Wörth Badepark (20:53 Uhr)
+84860 Söllingen Bf. (20:51 Uhr) - Wörth Badepark (21:53 Uhr)
+84849 Wörth Badepark (21:07 Uhr) - Söllingen Bf. (22:06 Uhr)
+84851 Wörth Badepark (22:05 Uhr) - Söllingen Bf. (23:06 Uhr)
+84864 Söllingen Bf. (22:51 Uhr) - Wörth Badepark (23:53 Uhr) 
+84863 Wörth Badepark (00:05 Uhr) - Karlsruhe Tullastraße (00:47 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
