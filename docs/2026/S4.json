@@ -4899,5 +4899,47 @@
       "trackedAdjacentStops": 2,
       "journeyId": "20260901-3c840690-c34d-32ce-9654-cdcb207fb8c5"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-02",
+    "stand": "2026-09-02T00:18:37.000Z",
+    "trainNumber": "85507",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "07:35",
+    "toStop": "Flehingen",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275657",
+    "capturedAt": "2026-09-02T02:33:54.671Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-02",
+    "stand": "2026-09-02T00:18:37.000Z",
+    "trainNumber": "85516",
+    "fromStop": "Flehingen",
+    "fromTime": "09:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "10:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275657",
+    "capturedAt": "2026-09-02T02:33:54.671Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-02",
+    "stand": "2026-09-02T00:18:37.000Z",
+    "trainNumber": "85433",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "11:15",
+    "toStop": "KA Tullastr.",
+    "toTime": "11:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275657",
+    "capturedAt": "2026-09-02T02:33:54.671Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
