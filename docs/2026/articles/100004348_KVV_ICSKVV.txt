@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004348_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linien S7, S7, SEV - Rastatt - Karlsruhe: nächtliche Einschränkungen im September (05.09.2026 bis 27.09.2026)
+Titel:  Linien S7, S8, SEV - Rastatt - Karlsruhe: nächtliche Einschränkungen im September (05.09.2026 bis 27.09.2026)
 Datum:  2026-08-26T05:07:00.000Z
 ========================================================================
 
@@ -8,7 +8,7 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 Vom 05.09.2026 bis 27.09.2026
-Linien S7, S7, SEV
+Linien S7, S8, SEV
 Rastatt - Karlsruhe: nächtliche Einschränkungen im September
 (AVG)
 Linie(n): 

@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275817
 Stand:  2026-09-03T00:21:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (03.09.2026 bis 03.09.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (03.09.2026 bis 03.09.2026)
 Datum:  2026-09-03T00:20:00.000Z
 ========================================================================
 
@@ -8,16 +8,44 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 03.09.2026, 02:20 Uhr
-Betriebsbedingte Fahrtausfälle auf der Linie S5
-Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
+Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51
+Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
+Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 03.09.2026 02:21:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 84957 KA Rheinbergstr. (05:02 Uhr) - Pforzheim Hbf (06:11 Uhr)
 84950 Pforzheim Hbf (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
 84809 Wörth Badepark (08:05 Uhr) - Söllingen Bf. (09:09 Uhr)
 84722 Söllingen Bf. (09:18 Uhr) - KA Rheinbergstr. (10:04 Uhr)
+84735 Knielingen Rheinbergstr (10:52 Uhr) - Söllingen Bf (11:37 Uhr)
+84828 Söllingen Bf (11:37 Uhr) - Wörth Badepark (12:53 Uhr)
+84823 Wörth Badepark (13:05 Uhr) - Söllingen Bf (14:09 Uhr)
+84751 Knielingen Rheinbergstr (13:52 Uhr) - Söllingen Bf (14:37 Uhr)
+84746 Söllingen Bf (14:18 Uhr) - Knielingen Rheinbergstr (15:04 Uhr)
+84838 Söllingen Bf (14:47 Uhr) - Wörth Badepark (15:53 Uhr)
+84831 Karlsruhe Tullatr. (15:46 Uhr) - Söllingen Bf (16:09 Uhr)
+84752 Karlsruhe Lameyplatz (15:58 Uhr) - Knielingen Rheinbergstr (16:04 Uhr)
+84835 Wörth Badepark (16:05 Uhr) - Karlsruhe Tullatr. (16:46 Uhr)
+84758 Söllingen Bf (16:09 Uhr) - Knielingen Rheinbergstr (17:04 Uhr)
+84769 Knielingen Rheinbergstr (16:52 Uhr) - Söllingen Bf (17:37 Uhr)
+84760 Karlsruhe Tullatr. (17:20 Uhr) - Knielingen Rheinbergstr (17:44 Uhr)
+84850 Söllingen Bf (17:48 Uhr) - Wörth Badepark (18:53 Uhr)
+84775 Knielingen Rheinbergstr (17:52 Uhr) - Söllingen Bf (18:37 Uhr)
+84779 Knielingen Rheinbergstr (18:12 Uhr) - Söllingen Bf (18:56 Uhr)
+84854 Söllingen Bf (18:48 Uhr) - Wörth Badepark (19:53 Uhr)
+84772 Söllingen Bf (19:01 Uhr) - Knielingen Rheinbergstr (19:44 Uhr)
+84845 Wörth Badepark (19:05 Uhr) - Söllingen Bf (20:06 Uhr)
+84785 Knielingen Rheinbergstr (19:52 Uhr) - Söllingen Bf (20:37 Uhr)
+84847 Wörth Badepark (20:05 Uhr) - Söllingen Bf (21:06 Uhr)
+84780 Söllingen Bf (20:18 Uhr) - Knielingen Rheinbergstr (21:04 Uhr)
+84860 Söllingen Bf (20:51 Uhr) - Wörth Badepark (21:53 Uhr)
+84862 Söllingen Bf (21:51 Uhr) - Wörth Badepark (22:53 Uhr)
+84851 Wörth Badepark (22:05 Uhr) - Söllingen Bf (23:06 Uhr)
+84855 Wörth Badepark (23:09 Uhr) - Karlsruhe Tullatr. (0:01 Uhr)
+S51
+85483 Germersheim Bf (15:26 Uhr) - Karlsruhe Marktplatz (16:26 Uhr)
+84910 Karlsruhe Marktplatz (16:37 Uhr) - Germersheim Bf (17:35 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
