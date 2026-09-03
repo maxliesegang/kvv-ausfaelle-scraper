@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275817
 Stand:  2026-09-03T00:21:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (03.09.2026 bis 03.09.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S51 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (03.09.2026 bis 04.09.2026)
 Datum:  2026-09-03T00:20:00.000Z
 ========================================================================
 
@@ -34,15 +34,21 @@ Nach aktuellem Stand 03.09.2026 02:21:00 sind folgende Fahrten von einem (Teil-)
 84775 Knielingen Rheinbergstr (17:52 Uhr) - Söllingen Bf (18:37 Uhr)
 84779 Knielingen Rheinbergstr (18:12 Uhr) - Söllingen Bf (18:56 Uhr)
 84854 Söllingen Bf (18:48 Uhr) - Wörth Badepark (19:53 Uhr)
+84781 Knielingen Rheinbergstr (18:52 Uhr) - Söllingen Bf (19:37 Uhr)
 84772 Söllingen Bf (19:01 Uhr) - Knielingen Rheinbergstr (19:44 Uhr)
 84845 Wörth Badepark (19:05 Uhr) - Söllingen Bf (20:06 Uhr)
+84858 Söllingen Bf (19:51 Uhr) - Wörth Badepark (20:53 Uhr)
 84785 Knielingen Rheinbergstr (19:52 Uhr) - Söllingen Bf (20:37 Uhr)
 84847 Wörth Badepark (20:05 Uhr) - Söllingen Bf (21:06 Uhr)
 84780 Söllingen Bf (20:18 Uhr) - Knielingen Rheinbergstr (21:04 Uhr)
 84860 Söllingen Bf (20:51 Uhr) - Wörth Badepark (21:53 Uhr)
+84849 Wörth Badepark (21:07 Uhr) - Söllingen Bf (22:06 Uhr)
 84862 Söllingen Bf (21:51 Uhr) - Wörth Badepark (22:53 Uhr)
+84864 Söllingen Bf (22:51 uhr) - Wörth Badepark (23:53 Uhr)
 84851 Wörth Badepark (22:05 Uhr) - Söllingen Bf (23:06 Uhr)
 84855 Wörth Badepark (23:09 Uhr) - Karlsruhe Tullatr. (0:01 Uhr)
+04.09.2025
+84863 Wörth Badepark (0:05 Uhr) - Karlsruhe Tullatr. (0:51 Uhr)
 S51
 85483 Germersheim Bf (15:26 Uhr) - Karlsruhe Marktplatz (16:26 Uhr)
 84910 Karlsruhe Marktplatz (16:37 Uhr) - Germersheim Bf (17:35 Uhr)
