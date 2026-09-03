@@ -2191,5 +2191,33 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260902-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-09-03",
+    "stand": "2026-09-03T00:22:00.000Z",
+    "trainNumber": "85551",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "04:17",
+    "toStop": "Bühl",
+    "toTime": "05:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275825",
+    "capturedAt": "2026-09-03T02:40:59.403Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-09-03",
+    "stand": "2026-09-03T00:22:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Bühl",
+    "fromTime": "05:44",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275825",
+    "capturedAt": "2026-09-03T02:40:59.403Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

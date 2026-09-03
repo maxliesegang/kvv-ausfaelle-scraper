@@ -5026,5 +5026,33 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260902-6964a8c9-3fe7-3d88-a445-5eb8a0e44867"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-03",
+    "stand": "2026-09-03T00:24:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "06:35",
+    "toStop": "Eppingen",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275833",
+    "capturedAt": "2026-09-03T02:40:58.931Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-03",
+    "stand": "2026-09-03T00:24:00.000Z",
+    "trainNumber": "85512",
+    "fromStop": "Eppingen",
+    "fromTime": "08:07",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "09:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275833",
+    "capturedAt": "2026-09-03T02:40:58.931Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
