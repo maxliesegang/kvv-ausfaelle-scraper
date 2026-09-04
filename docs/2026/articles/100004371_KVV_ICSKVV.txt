@@ -1,0 +1,22 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004371_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S31, S32, SEV - Karlsruhe Hbf - Bruchsal: S31 / S32 - Nächtliche Teilausfälle Mitte September (14.09.2026 bis 17.09.2026)
+Datum:  2026-09-04T05:08:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 14.09.2026 bis 17.09.2026
+Linien: S31, S32, SEV
+Karlsruhe Hbf - Bruchsal: S31 / S32 - Nächtliche Teilausfälle Mitte September
+(AVG)
+Karlsruhe Hbf - Bruchsal: S31 / S32 - Nächtliche Teilausfälle Mitte September
+Linie(n): S31/S32
+Zeitraum: Nächte 14./15.09. und 16./17.09.2026 (jeweils 22:00 Uhr - 05:00 Uhr)
+Entfall Stadtbahn: jeweils Karlsruhe Hbf &lt;-&gt; Bruchsal
+Ersatzverkehr:  jeweils Karlsruhe Hbf (Vorpl.) &lt;-&gt; Bruchsal
+-&gt;    Achtung! Der SEV muss wegen Sperrung der B3 Umleitung über Jöhlingen fahren, daher längere Fahrzeiten als sonst
+Grund: DB InfraGO - Bauarbeiten 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
