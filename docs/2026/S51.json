@@ -1637,6 +1637,60 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275817",
     "capturedAt": "2026-09-04T05:19:24.441Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "partial",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-04",
+      "segmentStops": 26,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 19,
+      "journeyStops": 26,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 19,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260904-c2a67f05-f775-36c1-942a-1b83095860f3",
+      "feedLine": "S52",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "partial",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-04",
+          "segmentStops": 26,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 19,
+          "journeyStops": 26,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 19,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260904-c2a67f05-f775-36c1-942a-1b83095860f3",
+          "feedLine": "S52",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-04",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260904_15:26_de-KVV_109.T0.22-352-E-s26-7.6.R",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   }
 ]
