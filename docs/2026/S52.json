@@ -73,5 +73,19 @@
       "journeyId": "20260827-2d5edf3e-c937-3d11-9c45-629c9ed1c1a3",
       "feedLine": "E"
     }
+  },
+  {
+    "line": "S52",
+    "date": "2026-09-04",
+    "stand": "2026-09-03T00:21:00.000Z",
+    "trainNumber": "84910",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "16:37",
+    "toStop": "Germersheim Bf",
+    "toTime": "17:35",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275817",
+    "capturedAt": "2026-09-04T05:19:24.441Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

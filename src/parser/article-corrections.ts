@@ -48,6 +48,13 @@ const ARTICLE_CORRECTIONS: Readonly<Record<string, readonly ArticleCorrection[]>
   Nettro_CMS_273228: [
     { find: 'Söllingen Bahnhof 09:009 Uhr', replace: 'Söllingen Bahnhof 09:09 Uhr' },
   ],
+  // S5/S51 AVG cancellations, published 03.09.2026 02:20. The date row that opens the list's
+  // after-midnight tail is published as "04.09.2025" — a year in the previous Fahrplan period,
+  // which dates the three rows after it (84863, 85483, 84910) a full year off and, for 84910,
+  // also breaks the timing match that identifies its line. The intended day is unique: the
+  // notice's own headline scopes it to "03.09.2026 bis 04.09.2026", and the row sits between a
+  // 23:09 and a 0:05 departure, so it can only be the night following publication.
+  Nettro_CMS_275817: [{ find: '04.09.2025', replace: '04.09.2026' }],
 };
 
 /**

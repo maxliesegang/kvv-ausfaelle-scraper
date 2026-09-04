@@ -1624,5 +1624,19 @@
       "journeyCancelled": true,
       "journeyId": "20260830-d7c9d416-8e92-348f-865e-ad31d06edcf3"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-09-04",
+    "stand": "2026-09-03T00:21:00.000Z",
+    "trainNumber": "85483",
+    "fromStop": "Germersheim Bf",
+    "fromTime": "15:26",
+    "toStop": "Karlsruhe Marktplatz",
+    "toTime": "16:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275817",
+    "capturedAt": "2026-09-04T05:19:24.441Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

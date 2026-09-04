@@ -3612,7 +3612,7 @@
   {
     "line": "S1",
     "date": "2026-09-02",
-    "stand": "2026-09-02T07:25:00.000Z",
+    "stand": "2026-09-02T13:00:00.000Z",
     "trainNumber": "30044",
     "fromStop": "Ettlingen Stadt",
     "fromTime": "16:31",
@@ -3678,7 +3678,7 @@
   {
     "line": "S1",
     "date": "2026-09-02",
-    "stand": "2026-09-02T07:25:00.000Z",
+    "stand": "2026-09-02T13:00:00.000Z",
     "trainNumber": "30051",
     "fromStop": "Bad Herrenalb Bf.",
     "fromTime": "17:03",
@@ -3744,7 +3744,7 @@
   {
     "line": "S1",
     "date": "2026-09-02",
-    "stand": "2026-09-02T07:25:00.000Z",
+    "stand": "2026-09-02T13:00:00.000Z",
     "trainNumber": "30054",
     "fromStop": "KA Neureut/Kirchfeld",
     "fromTime": "18:24",
@@ -3773,7 +3773,7 @@
   {
     "line": "S1",
     "date": "2026-09-02",
-    "stand": "2026-09-02T07:25:00.000Z",
+    "stand": "2026-09-02T13:00:00.000Z",
     "trainNumber": "10071",
     "fromStop": "Ettlingen Albgaubad",
     "fromTime": "18:54",
