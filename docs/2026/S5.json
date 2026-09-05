@@ -18527,6 +18527,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275992",
     "capturedAt": "2026-09-05T02:38:46.835Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-05",
+      "segmentStops": 7,
+      "segmentCancelledStops": 7,
+      "segmentTrackedStops": 0,
+      "journeyStops": 7,
+      "journeyCancelledStops": 7,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260905-6f8a1871-6892-3968-9d3d-a0a29d1f7194"
+    }
   }
 ]
