@@ -1243,5 +1243,19 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260830-572c266c-13b6-31fa-9f08-28b6a6cc4a60"
     }
+  },
+  {
+    "line": "S6",
+    "date": "2026-09-05",
+    "stand": "2026-09-05T01:00:00.000Z",
+    "trainNumber": "85043",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "06:57",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "07:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_275992",
+    "capturedAt": "2026-09-05T02:38:46.835Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
