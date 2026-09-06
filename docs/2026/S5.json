@@ -18544,5 +18544,33 @@
       "journeyCancelled": true,
       "journeyId": "20260905-6f8a1871-6892-3968-9d3d-a0a29d1f7194"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-06",
+    "stand": "2026-09-06T12:41:00.000Z",
+    "trainNumber": "84862",
+    "fromStop": "Ka.-Tullastraße",
+    "fromTime": "22:10",
+    "toStop": "Wörth Badepark",
+    "toTime": "22:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276043",
+    "capturedAt": "2026-09-06T14:49:21.807Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-06",
+    "stand": "2026-09-06T12:41:00.000Z",
+    "trainNumber": "84855",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "23:09",
+    "toStop": "Ka.-Tullastraße",
+    "toTime": "23:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276043",
+    "capturedAt": "2026-09-06T14:49:21.807Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
