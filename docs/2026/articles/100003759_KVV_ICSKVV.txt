@@ -7,11 +7,4 @@ Datum:  2026-01-27T05:51:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 09.02.2026 bis auf weiteres
-Linie 232, 259
-Rauental: Haltestelle Kirche aufgehoben
-(eic) Aufgrund von Bauarbeiten in der Hauptstraße in Rauental müssen die Linien 232 und 259
-ab Montag, den 09. Februar 2026
-bis auf Weiteres 
-innerörtlich umgeleitet werden. In der Folge kann die Haltestelle "Rauental Kirche" nicht bedient werden. Bitte benutzen Sie alternativ die Haltestelle “Rauental Bischweierer Straße“.
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr
