@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004374_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S42, SEV - Bad Friedrichshall - Sinsheim: S42 - Teilausfälle nachts (18.09.2026 bis 19.09.2026)
+Datum:  2026-09-07T05:03:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 18.09.2026 bis 19.09.2026
+Linien: S42, SEV
+Bad Friedrichshall - Sinsheim: S42 - Teilausfälle nachts
+(AVG)
+Bad Friedrichshall - Sinsheim: S42 - Teilausfälle nachts
+Linie(n): S42
+Zeitraum: Freitag 18.09. (23:20 Uhr) bis Samstag 19.09.2026 (04:50 Uhr)
+Entfall Stadtbahn: Bad Friedrichshall Hbf &lt;-&gt; Sinsheim (Elsenz) Hbf
+Ersatzverkehr: Ersatzbusse Bad Friedrichshall Hbf &lt;-&gt; Sinsheim (Elsenz) Hbf
+Grund: DB InfraGO - Bauarbeiten
+Zurück zur Übersicht

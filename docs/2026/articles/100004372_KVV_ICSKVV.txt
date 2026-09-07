@@ -1,0 +1,22 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004372_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie: S41 - Neckarelz - Mosbach (Baden): S41 - Ein Zug je Richtung entfällt nachts (14.09.2026 bis 15.09.2026)
+Datum:  2026-09-07T04:51:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 14.09.2026 bis 15.09.2026
+Linie: S41
+Neckarelz - Mosbach (Baden): S41 - Ein Zug je Richtung entfällt nachts
+(AVG)
+Neckarelz - Mosbach (Baden): S41 - Ein Zug je Richtung entfällt nachts
+Linie(n): S41
+Zeitraum: 14.09. (22:00 Uhr) bis 15.09.2026 (04:50 Uhr)
+Entfall Stadtbahn: je Richtung entfällt ein Zug Neckarelz &lt;-&gt; Mosbach (Baden)
+o    22:20 Mosbach (Baden) -&gt; Neckarelz (22:24)
+o    22:34 Neckarelz -&gt; 22:38 Mosbach (Baden)
+Ersatzverkehr: S-Bahn Rhein-Neckar
+Grund: DB InfraGO - Bauarbeiten 
+Zurück zur Übersicht
