@@ -18841,7 +18841,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-08",
+      "checkedAt": "2026-09-09",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -18852,7 +18852,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260907_24:54_de-KVV_2998.T0.22-305-E-s26-8.192.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
