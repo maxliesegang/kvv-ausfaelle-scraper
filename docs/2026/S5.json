@@ -18774,7 +18774,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276089",
     "capturedAt": "2026-09-07T17:07:06.221Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-08",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260907_23:54_de-KVV_2960.T0.22-305-E-s26-8.192.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -18788,7 +18805,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276089",
     "capturedAt": "2026-09-07T17:07:06.221Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-08",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260907_24:16_de-KVV_5985.T0.22-305-E-s26-8.232.H",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -18802,7 +18836,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276089",
     "capturedAt": "2026-09-07T17:07:06.221Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-08",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260907_24:54_de-KVV_2998.T0.22-305-E-s26-8.192.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -18816,6 +18867,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276089",
     "capturedAt": "2026-09-07T17:07:06.221Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-08",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260907_24:02_de-KVV_5928.T0.22-305-E-s26-8.238.H",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   }
 ]
