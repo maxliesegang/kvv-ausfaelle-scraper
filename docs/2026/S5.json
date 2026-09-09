@@ -18885,5 +18885,75 @@
       "unresolvedReason": "journey-mismatch",
       "attempts": 1
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-09",
+    "stand": "2026-09-08T21:30:00.000Z",
+    "trainNumber": "84972",
+    "fromStop": "Tullastrasse",
+    "fromTime": "04:10",
+    "toStop": "Wörth Badepark",
+    "toTime": "04:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276130",
+    "capturedAt": "2026-09-09T02:46:21.722Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-09",
+    "stand": "2026-09-08T21:30:00.000Z",
+    "trainNumber": "84791",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "06:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276130",
+    "capturedAt": "2026-09-09T02:46:21.722Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-09",
+    "stand": "2026-09-08T21:30:00.000Z",
+    "trainNumber": "84810",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "06:18",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276130",
+    "capturedAt": "2026-09-09T02:46:21.722Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-09",
+    "stand": "2026-09-08T21:30:00.000Z",
+    "trainNumber": "84805",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:35",
+    "toStop": "Söllingen Bf.",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276130",
+    "capturedAt": "2026-09-09T02:46:21.722Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-09",
+    "stand": "2026-09-08T21:30:00.000Z",
+    "trainNumber": "84820",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "08:48",
+    "toStop": "Tullastrasse",
+    "toTime": "09:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276130",
+    "capturedAt": "2026-09-09T02:46:21.722Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
