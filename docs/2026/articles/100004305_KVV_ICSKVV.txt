@@ -1,18 +1,18 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004305_KVV_ICSKVV
 Stand:  2026-08-29T19:00:00.000Z
-Titel:  Linien RE1, RE45, RE73, S5, S51, S31, S32, SEV - Karlsruhe - Bruchsal / Pforzheim: Erhebliche Einschränkungen Ende der Sommerferien 2026 (29.08.2026 bis 11.09.2026)
+Titel:  Linien RE1, RE45, RE73, S5, S51, S31, S32, SEV - Karlsruhe - Bruchsal / Pforzheim: Erhebliche Einschränkungen Ende der Sommerferien 2026 (29.08.2026 bis 12.09.2026)
 Datum:  2026-07-30T04:53:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 29.08.2026 bis 11.09.2026
+Vom 29.08.2026 bis 12.09.2026
 Linien RE1, RE45, RE73, S5, S51, S31, S32, SEV
 Karlsruhe - Bruchsal / Pforzheim: Erhebliche Einschränkungen Ende der Sommerferien 2026
 (AVG) Wegen umfangreicher Bauarbeiten der DB InfraGO kommt es in den letzten beiden Sommerferienwochen zu erheblichen Einschränkungen im Stadtbahn- und Regionalverkehr.
 S31 / S32
-29.08.2026, 21:00 Uhr bis 11.09.2026, 21:00 Uhr
+29.08.2026, 21:00 Uhr bis 11.09.2026, 21:00 Uhr verlängert bis 12.09.2026 (05:00 Uhr)
 Fahrten zwischen Karlsruhe Hbf und Bruchsal entfallen.
 Es verkehrt ein Ersatzverkehr mit Bussen zwischen Karlsruhe und Bruchsal.
 In den Nächten 29./30.08. bis 03./04.09. (jeweils 21 bis 04:30 Uhr) entfallen die Linien zusätzlich zwischen Karlsruhe und Ubstadt Ort.
