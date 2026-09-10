@@ -1,0 +1,23 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004383_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie: S8 - Eutingen im Gäu - Bondorf b. Herrenberg: S8 im Spätverkehr unterbrochen (23.09.2026 bis 23.09.2026)
+Datum:  2026-09-10T09:06:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 23.09.2026 bis 23.09.2026
+Linie: S8
+Eutingen im Gäu - Bondorf b. Herrenberg: S8 im Spätverkehr unterbrochen
+(AVG)
+Eutingen im Gäu - Bondorf b. Herrenberg: S8 im Spätverkehr unterbrochen
+Linie(n): S8, zeitgleich Einschränkungen im übrigen Regionalverkehr der DB ( u.a. bei RE 14b im Abschnitt Hochdorf (b Horb) &lt;-&gt; Eutingen im Gäu)
+Zeitraum: 23.09.2026 (ca. 21:00 Uhr bis 23:00 Uhr)
+Entfall Stadtbahn:  
+•    S8 Freudenstadt (21:15) - Eutingen im Gäu (21:51) - Bondorf  (b Herrenberg) (21:57) 
+•    S8 Bondorf  (b Herrenberg) (22:02) - Eutingen im Gäu (22:09) - Freudenstadt (22:43)
+Ersatzverkehr:  Eutingen im Gäu &lt;-&gt;Herrenberg ZOB  (ersetzt durch Gesamt-SEV-Konzept von DB Regio: RE14b)
+Gründe:  DB InfraGO - Instandhaltungsarbeiten auf der Gäubahn
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
