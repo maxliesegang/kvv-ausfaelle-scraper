@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004361_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie: S4 - Weindorf Heilbronn: S4 - Am Wochenende zusätzliche Züge nach Öhringen-Cappel (11.09.2026 bis 13.09.2026)
+Titel:  Linie: S4, S42 - Weindorf Heilbronn: S4 - Am Wochenende zusätzliche Züge nach Öhringen-Cappel (11.09.2026 bis 13.09.2026)
 Datum:  2026-09-01T09:56:00.000Z
 ========================================================================
 
@@ -8,11 +8,15 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 Vom 11.09.2026 bis 13.09.2026
-Linie: S4
+Linie: S4, S42
 Weindorf Heilbronn: S4 - Am Wochenende zusätzliche Züge nach Öhringen-Cappel
 (AVG)
 Weindorf Heilbronn: S4 - Am Wochenende zusätzliche Züge nach Öhringen-Cappel
 Am Freitag 11.09., Sa. 12.09, So. 13.09, Fr. 18.09., und Samstag 19.09.2026,
-während dem Weindorf Heilbronn, bietet die AVG auf der Stadtbahnlinie S4 zahlreiche zusätzliche Züge an: 
-Zwischen Heilbronn Hbf/Willy-Brandt-Pl. &lt;-&gt;  Öhringen-Cappel gibt es an diesen Abenden bis ca. Mitternacht zwei Stadtbahnverbindungen pro Stunde.
+Die Albtal-Verkehrs-Gesellschaft (AVG) bietet an einigen Tagen im September zusätzliche Fahrten mit den Stadtbahnen der AVG-Linien S4 und S42 an.
+So können alle Besucher*innen vom Weindorf sowie von der Veranstaltung Tag der Schiene komfortabel mit dem ÖPNV an- und abreisen und verantwortungsvoll das Auto zu Hause stehen lassen.
+Am Freitag, 11. September, Samstag, 12. September, Sonntag, 13. September, Freitag, 18. September, sowie Samstag, 19. September, 
+bietet die AVG während des Weindorfs Heilbronn auf der Stadtbahnlinie S4 zahlreiche zusätzliche Bahnen an: Zwischen Pfühlpark - Öhringen-Cappel gibt es an diesen Abenden bis circa Mitternacht zwei Stadtbahnverbindungen pro Stunde. Außerdem gibt es am Pfühlpark Umsteigeverbindungen mit bereits bestehenden Fahrten zum Heilbronn Hbf/Willy-Brandt-Platz.
+Am Samstag, 19. September, am Tag der Schiene, bietet die AVG ebenfalls einen Stadtbahn-Sonderzug an: Von Heilbronn Hbf/Willy-Brandt-Pl., Abfahrt 16:40 Uhr über Nordheim nach Lauffen (Neckar), Ankunft 16:54 Uhr und zurück von Lauffen (Neckar), Abfahrt 17:10 Uhr über Nordheim nach Heilbronn Hbf, Ankunft 17:21 Uhr.
+Weitere Informationen zum Fahrplanangebot der AVG gibt es online unter avg.info/fahrplan/fahrplanauskunft
 Zurück zur Übersicht
