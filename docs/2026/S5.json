@@ -19287,5 +19287,33 @@
       "unresolvedReason": "journey-mismatch",
       "attempts": 1
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T00:49:00.000Z",
+    "trainNumber": "84884",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "07:59",
+    "toStop": "Germersheim",
+    "toTime": "09:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276246",
+    "capturedAt": "2026-09-12T02:51:12.270Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T00:49:00.000Z",
+    "trainNumber": "84895",
+    "fromStop": "Germersheim",
+    "fromTime": "09:50",
+    "toStop": "KA Marktpl. Pyramide U",
+    "toTime": "10:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276246",
+    "capturedAt": "2026-09-12T02:51:12.270Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
