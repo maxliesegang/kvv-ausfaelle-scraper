@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276246
-Stand:  2026-09-12T00:49:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Karlsruhe Albtalbahnhof und Karlsruhe Marktplatz (Pyramide) Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (12.09.2026 bis 12.09.2026)
+Stand:  2026-09-12T04:07:00.000Z
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S51 und S52 - Betriebsbedingte Fahrtausfälle auf den Linien S51 und S52 zwischen Karlsruhe Marktplatz (Pyramide) und Karlsruhe Albtalbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (12.09.2026 bis 12.09.2026)
 Datum:  2026-09-12T00:48:00.000Z
 ========================================================================
 
@@ -8,12 +8,12 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 12.09.2026, 02:48 Uhr
-Betriebsbedingte Fahrtausfälle auf der Linie S5
-Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Karlsruhe Albtalbahnhof und Karlsruhe Marktplatz (Pyramide) 
+Betriebsbedingte Fahrtausfälle auf den Linien S51 und S52
+Betriebsbedingte Fahrtausfälle auf den Linien S51 und S52 zwischen Karlsruhe Marktplatz (Pyramide) und Karlsruhe Albtalbahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Albtalbahnhof und Karlsruhe Marktplatz (Pyramide). Wir bitten um Entschuldigung.
-Nach aktuellem Stand 12.09.2026 02:49:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+Betriebsbedingte Fahrtausfälle. Auf den Linien S51 und S52 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Marktplatz (Pyramide) und Karlsruhe Albtalbahnhof. Wir bitten um Entschuldigung.
+Nach aktuellem Stand 12.09.2026 06:07:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 84884 KA Albtal Bf (07:59 Uhr) - Germersheim (09:07 Uhr)
 84895 Germersheim (09:50 Uhr) - KA Marktpl. Pyramide U (10:52 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:

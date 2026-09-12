@@ -1692,5 +1692,49 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T04:07:00.000Z",
+    "trainNumber": "84884",
+    "fromStop": "KA Albtal Bf",
+    "fromTime": "07:59",
+    "toStop": "Germersheim",
+    "toTime": "09:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276246",
+    "capturedAt": "2026-09-12T08:18:46.944Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-12",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
+  },
+  {
+    "line": "S51",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T04:07:00.000Z",
+    "trainNumber": "84895",
+    "fromStop": "Germersheim",
+    "fromTime": "09:50",
+    "toStop": "KA Marktpl. Pyramide U",
+    "toTime": "10:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276246",
+    "capturedAt": "2026-09-12T08:18:46.944Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
