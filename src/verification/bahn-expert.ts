@@ -1,27 +1,25 @@
 /**
- * Read-only client for bahn.expert's tRPC gateway, used to check whether a trip KVV announced as
+ * Read-only client for bahn.expert's oRPC gateway, used to check whether a trip KVV announced as
  * cancelled actually ran.
  *
  * Three constraints are load-bearing and non-obvious:
  *
- * 1. Inputs and outputs are `devalue`-encoded (see `./devalue.ts`). Plain JSON is rejected.
+ * 1. The gateway uses oRPC's JSON envelope: inputs and outputs live under a `json` property, and
+ *    Date inputs carry a `meta` path annotation.
  * 2. A browser-like `User-Agent` is mandatory — with a default client UA the gateway answers
  *    `HTTP 206` with an empty body rather than an error, which reads as a successful empty result.
- * 3. The gateway's mount point is not part of any published contract and has moved once already
- *    (`/rpc` → `/api/trpc`, some time before 2026-08-22, which silently stopped verification for
- *    six days). It is read out of the site's own client bundle: search the JS assets linked from
- *    `https://bahn.expert/` for the tRPC client's `url:` option. `verify-trips.ts` now treats a
- *    run in which every lookup failed as a broken integration rather than a quiet skip, so the
- *    next move shows up on the run that breaks instead of a week later.
+ * 3. The gateway's mount point is not part of any published contract and has moved before. It is
+ *    read out of the site's own client bundle: search the JS assets linked from
+ *    `https://bahn.expert/` for the oRPC client's `url:` option. `verify-trips.ts` treats a run in
+ *    which every lookup failed as a broken integration rather than a quiet skip, so the next move
+ *    shows up on the run that breaks instead of a week later.
  *
  * The API answers for a rolling **seven days**; older instants fail outright. Realtime and
  * cancellation data survive that whole window, so verification can backfill after an outage
  * instead of only checking the trips that departed since the previous run.
  */
 
-import { parseDevalue, stringifyDevalue } from './devalue.js';
-
-const RPC_BASE = 'https://bahn.expert/api/trpc';
+const RPC_BASE = 'https://bahn.expert/api/orpc';
 
 /**
  * bahn.expert rejects non-browser agents with an empty `206`, so a browser UA is required. The
@@ -129,42 +127,65 @@ export function orderJourneyCandidates(
 
 class BahnExpertError extends Error {}
 
-interface RpcBatchEntry {
-  readonly result?: { readonly data?: string };
-  readonly error?: {
-    readonly json?: { readonly message?: string; readonly code?: number };
-    readonly message?: string;
-  };
+interface RpcErrorEnvelope {
+  readonly defined?: boolean;
+  readonly inferable?: boolean;
+  readonly code?: string;
+  readonly message?: string;
+  readonly data?: unknown;
 }
 
-async function callRpc(procedure: string, input: unknown, timeoutMs: number): Promise<unknown> {
-  const encoded = JSON.stringify({ '0': JSON.stringify(stringifyDevalue(input)) });
-  const url = `${RPC_BASE}/${procedure}?batch=1&input=${encodeURIComponent(encoded)}`;
+interface RpcEnvelope {
+  readonly json?: unknown;
+  readonly meta?: readonly unknown[][];
+}
+
+function getRpcError(value: unknown): RpcErrorEnvelope | undefined {
+  if (value === null || typeof value !== 'object') return undefined;
+  const candidate = value as RpcErrorEnvelope;
+  return typeof candidate.message === 'string' && typeof candidate.code === 'string'
+    ? candidate
+    : undefined;
+}
+
+async function callRpc(procedure: string, input: RpcEnvelope, timeoutMs: number): Promise<unknown> {
+  const url = `${RPC_BASE}/${procedure.replaceAll('.', '/')}`;
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(url, {
-      headers: { 'User-Agent': USER_AGENT, Accept: '*/*' },
+      method: 'POST',
+      headers: {
+        'User-Agent': USER_AGENT,
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(input),
       signal: controller.signal,
     });
-    if (!response.ok) {
-      throw new BahnExpertError(`${procedure} responded ${response.status}`);
-    }
     const body = await response.text();
     if (body.length === 0) {
       // The empty-206 signature: almost always a rejected User-Agent rather than "no results".
       throw new BahnExpertError(`${procedure} returned an empty body (User-Agent rejected?)`);
     }
-    const batch = JSON.parse(body) as ReadonlyArray<RpcBatchEntry>;
-    const entry = batch[0];
-    if (entry?.error) {
-      const message = entry.error.json?.message ?? entry.error.message ?? 'unknown RPC error';
-      throw new BahnExpertError(`${procedure} failed: ${message}`);
+    let envelope: RpcEnvelope;
+    try {
+      envelope = JSON.parse(body) as RpcEnvelope;
+    } catch {
+      throw new BahnExpertError(`${procedure} returned invalid JSON (${response.status})`);
     }
-    const data = entry?.result?.data;
-    if (data === undefined) return null;
-    return parseDevalue(JSON.parse(data) as unknown[]);
+    const error = getRpcError(envelope.json);
+    if (!response.ok) {
+      throw new BahnExpertError(`${procedure} failed: ${error?.message ?? response.status}`);
+    }
+    if (error) {
+      throw new BahnExpertError(`${procedure} failed: ${error.message}`);
+    }
+    if (!Object.hasOwn(envelope, 'json')) {
+      throw new BahnExpertError(`${procedure} returned no JSON result`);
+    }
+    return envelope.json;
   } finally {
     clearTimeout(timer);
   }
@@ -183,7 +204,14 @@ export async function findJourneys(
 ): Promise<readonly JourneyCandidate[]> {
   const result = await callRpc(
     'journey.find',
-    { journeyNumber, initialDepartureDate: departureDate, withOEV: true },
+    {
+      json: {
+        journeyNumber,
+        initialDepartureDate: departureDate.toISOString(),
+        withOEV: true,
+      },
+      meta: [['date', 'initialDepartureDate']],
+    },
     timeoutMs,
   );
   if (!Array.isArray(result)) return [];
@@ -198,7 +226,7 @@ export async function fetchJourneyDetails(
   journeyId: string,
   timeoutMs: number,
 ): Promise<JourneyDetails | null> {
-  const result = await callRpc('journey.detailsByJourneyId', journeyId, timeoutMs);
+  const result = await callRpc('journey.detailsByJourneyId', { json: journeyId }, timeoutMs);
   if (result === null || typeof result !== 'object') return null;
   return result as JourneyDetails;
 }

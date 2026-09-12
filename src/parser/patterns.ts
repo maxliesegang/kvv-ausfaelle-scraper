@@ -25,14 +25,14 @@ export const PATTERNS = {
    * Example: "123 Karlsruhe Hbf (10:30 Uhr) - Bruchsal (11:00)"
    */
   TRIP_STOP_TIME_REQUIRED_PARENTHESES_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*[-–]+\s*(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)/i,
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)\s*[-–]+\s*(.+?)\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)/i,
 
   /**
    * Matches trip format: <trainNumber> <fromStop> <fromTime> Uhr - <toStop> <toTime> Uhr
    * Example: "85582 Albtalbahnhof 18:24 Uhr - Tullastraße 18:44 Uhr"
    */
   TRIP_STOP_TIME_FORMAT:
-    /^(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
+    /^(\d+)\s+(.+?)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?$/i,
 
   /**
    * Matches trip format using "bis" as the separator, with optional "ab"/"an" time markers:
@@ -43,7 +43,7 @@ export const PATTERNS = {
    * them. A trailing parenthesized annotation (e.g. "(LT)" for Linientaxi) is tolerated.
    */
   TRIP_AB_BIS_FORMAT:
-    /^(\d+)\s+(.+?)\s+(?:ab\s+)?(\d{1,2}:\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+(?:an\s+)?(\d{1,2}:\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
+    /^(\d+)\s+(.+?)\s+(?:ab\s+)?(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+bis\s+(.+?)\s+(?:an\s+)?(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s*(?:\([^)]*\))?\s*$/i,
 
   /**
    * Matches the prose "entfällt zwischen" form KVV sometimes uses instead of a tabular row:
@@ -53,7 +53,7 @@ export const PATTERNS = {
    * Deliberately un-anchored at the end so trailing explanatory prose does not defeat it.
    */
   TRIP_ENTFAELLT_ZWISCHEN_FORMAT:
-    /^(\d+)\s+entf(?:ä|ae)llt\s+zwischen\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+und\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)/i,
+    /^(\d+)\s+entf(?:ä|ae)llt\s+zwischen\s+(.+?)\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)\s+und\s+(.+?)\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)/i,
 
   /**
    * Loose stop/time format tolerating optional parentheses around EITHER time independently:
@@ -64,7 +64,7 @@ export const PATTERNS = {
    * parenthesized date-ranges (no leading number) from matching.
    */
   TRIP_STOP_TIME_OPTIONAL_PARENTHESES_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*[-–]+\s*(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)?\s*$/i,
+    /^(\d+)\s+(.+?)\s+\(?\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)?\s*[-–]+\s*(.+?)\s+\(?\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)?\s*$/i,
 
   /**
    * Same parenthesized stop/time layout with the separator accidentally omitted.
@@ -80,14 +80,14 @@ export const PATTERNS = {
    * first and reads the separator as part of the stop name ("- Neureut Kirchfeld").
    */
   TRIP_STOP_TIME_CLOSING_PARENTHESES_MISSING_SEPARATOR_FORMAT:
-    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s+(?![-–])(.+?)\s+\(?\s*(\d{1,2}:\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
+    /^(\d+)\s+(.+?)\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)\s+(?![-–])(.+?)\s+\(?\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)\s*$/i,
 
   /**
    * Matches trip format: <trainNumber> <time> Uhr <fromStop> - <time> Uhr <toStop>
    * Example: "84888 08:38 Uhr Söllingen Bahnhof - 10:07 Uhr Germersheim Bahnhof"
    */
   TRIP_TIME_STOP_FORMAT:
-    /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)/,
+    /^(\d+)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+(.+?)\s*[-–]+\s*(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+(.+)/,
 
   /**
    * Same time/stop layout as {@link PATTERNS.TRIP_TIME_STOP_FORMAT} with no separator between the
@@ -99,7 +99,7 @@ export const PATTERNS = {
    * unparsed surfaces it as a warning instead of inventing a trip from it.
    */
   TRIP_TIME_STOP_COLUMN_SEPARATED_FORMAT:
-    /^(\d+)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+?)\s{2,}(\d{1,2}:\d{2})(?:\s*Uhr)?\s+(.+)$/,
+    /^(\d+)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+(.+?)\s{2,}(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+(.+)$/,
 
   /**
    * Matches trip format with line prefix: <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
@@ -107,7 +107,7 @@ export const PATTERNS = {
    * This format includes the line identifier at the beginning of each trip line.
    */
   TRIP_LINE_PREFIX_FORMAT:
-    /^([A-Z]+\d+)\s+(\d+)\s+(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}:\d{2})(?:\s*Uhr)?$/i,
+    /^([A-Z]+\d+)\s+(\d+)\s+(.+?)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s*[-–]+\s*(.+?)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?$/i,
 } as const;
 
 /**
@@ -176,14 +176,14 @@ export const LINE_IDENTIFIER_PATTERN = /\b[A-Za-z]+\d{1,3}\b/g;
  * (departure + arrival). Used to detect trip-like content the parser failed to
  * structure, so it can be surfaced as a warning instead of being silently dropped.
  */
-export const TRIP_TIME_PAIR_PATTERN = /\d{1,2}:\d{2}.*\d{1,2}:\d{2}/;
+export const TRIP_TIME_PAIR_PATTERN = /\d{1,2}[:.]\d{2}.*\d{1,2}[:.]\d{2}/;
 
 /**
  * A parenthesized stop time in the unnumbered route lists used by construction notices.
  * A single stop may carry arrival and departure times ("05:09 05:11").
  */
 export const PARENTHESIZED_ROUTE_TIME_PATTERN =
-  /\(\s*\d{1,2}:\d{2}(?:\s+\d{1,2}:\d{2})?(?:\s*Uhr)?\s*\)/gi;
+  /\(\s*\d{1,2}[:.]\d{2}(?:\s+\d{1,2}[:.]\d{2})?(?:\s*Uhr)?\s*\)/gi;
 
 /** A stop-to-stop separator, deliberately requiring surrounding whitespace. */
 export const ROUTE_SEPARATOR_PATTERN = /\s[-–]\s/;

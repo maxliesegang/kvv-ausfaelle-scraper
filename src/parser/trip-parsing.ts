@@ -265,7 +265,15 @@ function matchTripFormat(row: string): ValidTripFields | null {
     const match = row.match(pattern);
     if (!match) continue;
 
-    const fields = extract(match);
+    // KVV sometimes writes clock times with a dot ("17.52 Uhr"). Keep the published
+    // Cancellation contract's HH:MM representation and normalize before trip dating and line
+    // resolution consume the extracted departure time.
+    const extracted = extract(match);
+    const fields = {
+      ...extracted,
+      fromTime: extracted.fromTime?.replace('.', ':'),
+      toTime: extracted.toTime?.replace('.', ':'),
+    };
     if (isValidTripFields(fields, rejectUhrOnlyStops)) {
       return fields;
     }

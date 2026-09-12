@@ -1,9 +1,9 @@
 /**
  * Unit tests for trip back-verification.
  *
- * Covers the devalue codec (the wire format bahn.expert requires) and the verdict logic, with the
- * emphasis on segment scoping — the rule that a KVV notice names an affected *segment*, not a
- * trip's endpoints. No network access: every journey here is a literal fixture.
+ * Covers the historical devalue codec, the current bahn.expert client errors, and the verdict
+ * logic, with the emphasis on segment scoping — the rule that a KVV notice names an affected
+ * *segment*, not a trip's endpoints. No network access: every journey here is a literal fixture.
  */
 
 import assert from 'node:assert';
@@ -129,12 +129,53 @@ describe('devalue codec', () => {
 });
 
 describe('bahn.expert client errors', () => {
-  it('throws on a tRPC error returned with HTTP 200 instead of treating it as no results', async () => {
+  it('uses the current oRPC endpoint and Date envelope', async () => {
+    const originalFetch = globalThis.fetch;
+    let requestUrl = '';
+    let requestInit: RequestInit | undefined;
+    globalThis.fetch = async (input, init) => {
+      requestUrl = String(input);
+      requestInit = init;
+      return new Response(
+        JSON.stringify({
+          json: [{ journeyId: 'journey-1', train: { line: 'S1' } }],
+        }),
+        { status: 200 },
+      );
+    };
+    try {
+      const departureDate = new Date('2026-08-13T08:00:00.000Z');
+      const candidates = await findJourneys(20019, departureDate, 1000);
+
+      assert.equal(requestUrl, 'https://bahn.expert/api/orpc/journey/find');
+      assert.equal(requestInit?.method, 'POST');
+      assert.deepStrictEqual(JSON.parse(String(requestInit?.body)), {
+        json: {
+          journeyNumber: 20019,
+          initialDepartureDate: departureDate.toISOString(),
+          withOEV: true,
+        },
+        meta: [['date', 'initialDepartureDate']],
+      });
+      assert.deepStrictEqual(candidates, [{ journeyId: 'journey-1', train: { line: 'S1' } }]);
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it('throws on an oRPC error instead of treating it as no results', async () => {
     const originalFetch = globalThis.fetch;
     globalThis.fetch = async () =>
       new Response(
-        JSON.stringify([{ error: { json: { message: 'upstream unavailable', code: -32000 } } }]),
-        { status: 200 },
+        JSON.stringify({
+          json: {
+            defined: false,
+            inferable: false,
+            code: 'INTERNAL_SERVER_ERROR',
+            message: 'upstream unavailable',
+          },
+        }),
+        { status: 503 },
       );
     try {
       await assert.rejects(

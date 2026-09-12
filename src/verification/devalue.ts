@@ -1,7 +1,9 @@
 /**
- * Minimal `devalue` codec for bahn.expert's tRPC gateway.
+ * Historical `devalue` codec for bahn.expert's former tRPC gateway.
  *
- * bahn.expert serializes tRPC inputs and outputs with `devalue`, not plain JSON. The wire form is
+ * The current bahn.expert client uses oRPC's JSON envelope; this codec remains a regression
+ * reference for the former wire format. bahn.expert serialized tRPC inputs and outputs with
+ * `devalue`, not plain JSON. The wire form is
  * a flat array whose element 0 holds the **root representation inline**; every number that appears
  * *inside* a container is an index into that same array, while a scalar sitting in its own slot is
  * a literal value. Special types are tagged arrays (`["Date", "<ISO>"]`).
@@ -10,8 +12,8 @@
  * lives at index 1", but `flat[1] = 84805` is the number itself. Treating every number as a
  * reference walks off the end of the array; treating none as references loses the graph.
  *
- * Plain JSON payloads are rejected by the server with `Invalid input`, so this codec is required
- * to talk to the API at all.
+ * Plain JSON payloads were rejected by the former server with `Invalid input`, which is why this
+ * codec was originally needed to talk to the API.
  */
 
 /** Negative slots devalue reserves for values JSON cannot express. */

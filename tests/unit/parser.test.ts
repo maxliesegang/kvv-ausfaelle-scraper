@@ -319,6 +319,21 @@ describe('Parser - Detail Page Parsing', () => {
       );
     });
 
+    it('normalizes dot-separated clock times', () => {
+      assert.deepStrictEqual(
+        parseTripRowFields('16058 Hochstetten (17.52 Uhr) - Ettlingen Albgaubad (19:02 Uhr)'),
+        [
+          {
+            trainNumber: '16058',
+            fromStop: 'Hochstetten',
+            fromTime: '17:52',
+            toStop: 'Ettlingen Albgaubad',
+            toTime: '19:02',
+          },
+        ],
+      );
+    });
+
     it('parses a parenthesized row whose separator is missing', () => {
       assert.deepStrictEqual(
         parseTripRowFields('85029 Knielingen Rheinbergstr. (21:41 Uhr) Pforzheim Hbf. (22:50 Uhr)'),

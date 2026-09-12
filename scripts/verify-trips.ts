@@ -23,7 +23,7 @@
  *   a third-party outage never turns the *data pipeline* red — the scrape still publishes.
  *   A run in which every single lookup failed is the exception: that is not a flaky trip, it is a
  *   broken integration, and it exits non-zero so the workflow step shows it. Silence cost six days
- *   of verification when bahn.expert moved its gateway from `/rpc` to `/api/trpc`.
+ *   of verification when bahn.expert moved its gateway from `/api/trpc` to `/api/orpc`.
  * - `partial`, `no-data` and `unresolved` are re-checked on later Berlin calendar days while the
  *   trip stays inside the window; settled verdicts are left alone unless `--recheck` is passed.
  * - Evidence only ratchets up: a re-check that sees *less* than the stored verdict did is
