@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276262
-Stand:  2026-09-12T04:08:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 zwischen Wörth Badepark und Bad Wildbad Kurpark Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (12.09.2026 bis 12.09.2026)
+Stand:  2026-09-12T13:04:00.000Z
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 zwischen Pforzheim Hauptbahnhof und Wörth Badepark Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (12.09.2026 bis 13.09.2026)
 Datum:  2026-09-12T04:08:00.000Z
 ========================================================================
 
@@ -9,14 +9,16 @@ Fahrplan
 Verkehrsmeldungen
 12.09.2026, 06:08 Uhr
 Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6
-Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 zwischen Wörth Badepark und Bad Wildbad Kurpark 
+Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 zwischen Pforzheim Hauptbahnhof und Wörth Badepark 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S6 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Bad Wildbad Kurpark. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 12.09.2026 06:08:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85052 KA Rheinbergstraße (09:57 Uhr) - Wörth Badepark (10:15 Uhr) 
-85063 Wörth Badepark (10:45 Uhr) - Bad Wildbad Kurpark (12:52 Uhr) 
-85064 Bad Wildbad Kurpark (13:05 Uhr) - KA Starckstraße (14:48 Uhr)
+Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S6 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Pforzheim Hauptbahnhof und Wörth Badepark. Wir bitten um Entschuldigung.
+Nach aktuellem Stand 12.09.2026 15:04:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+85004 Ka Tullastrasse (17:51 Uhr) - Ka. Rheinbergstraße (18:14 Uhr)
+85021 Ka. Rheinbergstraße (18:41 Uhr) - Pforzheim Hbf (19:50 Uhr)
+85018 Pforzheim Hbf (20:06 Uhr) - Ka Tullastrasse (20:50 Uhr)
+84864 Ka Tullastrasse (23:11 Uhr) - Wörth Badepark (23:53 Uhr)
+85035 Wörth Badepark (00:25 Uhr) - Ka Tullastrasse (01:06 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

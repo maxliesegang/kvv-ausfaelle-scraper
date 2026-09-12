@@ -5414,7 +5414,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276237",
     "capturedAt": "2026-09-12T02:51:13.066Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-12",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S4",
@@ -5427,6 +5443,51 @@
     "toTime": "13:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276237",
     "capturedAt": "2026-09-12T02:51:13.066Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-12",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260912_11:20_de-KVV_424.T2.22-304-E-s26-9.191.H",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T13:01:00.000Z",
+    "trainNumber": "85462",
+    "fromStop": "Ka Tullastrasse",
+    "fromTime": "21:27",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "21:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276311",
+    "capturedAt": "2026-09-12T14:53:21.163Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T13:01:00.000Z",
+    "trainNumber": "85467",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "22:15",
+    "toStop": "Ka Tullastrasse",
+    "toTime": "22:29",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276311",
+    "capturedAt": "2026-09-12T14:53:21.163Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }

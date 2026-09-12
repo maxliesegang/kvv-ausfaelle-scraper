@@ -3799,5 +3799,19 @@
       "journeyCancelled": true,
       "journeyId": "20260902-d8e144cc-1d0c-32c7-8082-aad79b23fb4a"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-09-12",
+    "stand": "2026-09-12T13:41:00.000Z",
+    "trainNumber": "16045",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "16:34",
+    "toStop": "Hochstetten",
+    "toTime": "17:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276327",
+    "capturedAt": "2026-09-12T14:53:20.117Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
