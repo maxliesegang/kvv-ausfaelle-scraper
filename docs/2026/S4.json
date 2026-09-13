@@ -5142,7 +5142,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-13",
+      "checkedAt": "2026-09-14",
       "segmentStops": 11,
       "segmentCancelledStops": 10,
       "segmentTrackedStops": 0,
@@ -5152,7 +5152,7 @@
       "trackedOutsideSegment": 37,
       "trackedAdjacentStops": 0,
       "journeyId": "20260907-652a6ed8-c70f-33ac-80a6-3f8bdcc3f9a6",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "transitous": {
           "status": "unresolved",
@@ -5175,7 +5175,7 @@
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-13",
+          "checkedAt": "2026-09-14",
           "segmentStops": 11,
           "segmentCancelledStops": 10,
           "segmentTrackedStops": 0,
@@ -5185,7 +5185,7 @@
           "trackedOutsideSegment": 37,
           "trackedAdjacentStops": 0,
           "journeyId": "20260907-652a6ed8-c70f-33ac-80a6-3f8bdcc3f9a6",
-          "attempts": 2
+          "attempts": 3
         }
       },
       "agreement": "single-source"
@@ -5274,7 +5274,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-13",
+      "checkedAt": "2026-09-14",
       "segmentStops": 11,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -5284,7 +5284,7 @@
       "trackedOutsideSegment": 10,
       "trackedAdjacentStops": 0,
       "journeyId": "20260907-f4b8dba8-8f0f-36e4-84a3-911888d6c722",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "transitous": {
           "status": "unresolved",
@@ -5307,7 +5307,7 @@
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-13",
+          "checkedAt": "2026-09-14",
           "segmentStops": 11,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -5317,7 +5317,7 @@
           "trackedOutsideSegment": 10,
           "trackedAdjacentStops": 0,
           "journeyId": "20260907-f4b8dba8-8f0f-36e4-84a3-911888d6c722",
-          "attempts": 2
+          "attempts": 3
         }
       },
       "agreement": "single-source"

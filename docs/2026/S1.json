@@ -3817,7 +3817,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-13",
+      "checkedAt": "2026-09-14",
       "segmentStops": 44,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -3827,7 +3827,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260912-61da89a1-d0e7-3fb6-811c-99a8adb1f1ab",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "transitous": {
           "status": "unresolved",
@@ -3850,7 +3850,7 @@
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-13",
+          "checkedAt": "2026-09-14",
           "segmentStops": 44,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -3860,7 +3860,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20260912-61da89a1-d0e7-3fb6-811c-99a8adb1f1ab",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
@@ -3883,7 +3883,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-13",
+      "checkedAt": "2026-09-14",
       "segmentStops": 44,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -3893,13 +3893,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20260912-4561684d-b0bd-3b68-b811-04a9e1cd9545",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-13",
+          "checkedAt": "2026-09-14",
           "segmentStops": 44,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -3909,7 +3909,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20260912-4561684d-b0bd-3b68-b811-04a9e1cd9545",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
