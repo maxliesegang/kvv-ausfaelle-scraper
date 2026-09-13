@@ -1707,20 +1707,55 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
+      "segmentStops": 37,
+      "segmentCancelledStops": 37,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 37,
+      "journeyCancelledStops": 37,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20260912-5ecd019f-916a-357e-83ab-256e551dc8aa",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-12",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "unresolvedReason": "journey-not-found",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 37,
+          "segmentCancelledStops": 37,
+          "segmentTrackedStops": 0,
+          "journeyStops": 37,
+          "journeyCancelledStops": 37,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260912-5ecd019f-916a-357e-83ab-256e551dc8aa"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
@@ -1739,19 +1774,56 @@
     "verification": {
       "status": "unresolved",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
+      "journeyStops": 43,
       "journeyCancelledStops": 0,
-      "journeyTrackedStops": 0,
+      "journeyTrackedStops": 5,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "journeyId": "20260912_09:50_de-KVV_13.T2.22-351-E-s26-9.40.R",
+      "journeyId": "20260912-8c24a89e-95de-3593-ad35-d7460a2099cb",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 1,
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260912_09:50_de-KVV_13.T2.22-351-E-s26-9.40.R",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 2
+        },
+        "bahn.expert": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 43,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 5,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260912-8c24a89e-95de-3593-ad35-d7460a2099cb",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
     }
   }
 ]

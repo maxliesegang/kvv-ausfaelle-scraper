@@ -5142,7 +5142,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-12",
+      "checkedAt": "2026-09-13",
       "segmentStops": 11,
       "segmentCancelledStops": 10,
       "segmentTrackedStops": 0,
@@ -5152,7 +5152,7 @@
       "trackedOutsideSegment": 37,
       "trackedAdjacentStops": 0,
       "journeyId": "20260907-652a6ed8-c70f-33ac-80a6-3f8bdcc3f9a6",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "transitous": {
           "status": "unresolved",
@@ -5175,7 +5175,7 @@
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-12",
+          "checkedAt": "2026-09-13",
           "segmentStops": 11,
           "segmentCancelledStops": 10,
           "segmentTrackedStops": 0,
@@ -5185,7 +5185,7 @@
           "trackedOutsideSegment": 37,
           "trackedAdjacentStops": 0,
           "journeyId": "20260907-652a6ed8-c70f-33ac-80a6-3f8bdcc3f9a6",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
@@ -5274,7 +5274,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-12",
+      "checkedAt": "2026-09-13",
       "segmentStops": 11,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -5284,7 +5284,7 @@
       "trackedOutsideSegment": 10,
       "trackedAdjacentStops": 0,
       "journeyId": "20260907-f4b8dba8-8f0f-36e4-84a3-911888d6c722",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "transitous": {
           "status": "unresolved",
@@ -5307,7 +5307,7 @@
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-12",
+          "checkedAt": "2026-09-13",
           "segmentStops": 11,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -5317,7 +5317,7 @@
           "trackedOutsideSegment": 10,
           "trackedAdjacentStops": 0,
           "journeyId": "20260907-f4b8dba8-8f0f-36e4-84a3-911888d6c722",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
@@ -5533,20 +5533,55 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
+      "segmentStops": 57,
+      "segmentCancelledStops": 57,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 57,
+      "journeyCancelledStops": 57,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20260912-7234b559-7cb1-35f4-bbd1-2fea199b4a00",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-12",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "unresolvedReason": "journey-not-found",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 57,
+          "segmentCancelledStops": 57,
+          "segmentTrackedStops": 0,
+          "journeyStops": 57,
+          "journeyCancelledStops": 57,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260912-7234b559-7cb1-35f4-bbd1-2fea199b4a00"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
@@ -5563,20 +5598,55 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
+      "segmentStops": 57,
+      "segmentCancelledStops": 57,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 57,
+      "journeyCancelledStops": 57,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20260912-07a76d6d-f624-398f-a1ce-09e7da12d6f6",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-12",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "unresolvedReason": "journey-not-found",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 57,
+          "segmentCancelledStops": 57,
+          "segmentTrackedStops": 0,
+          "journeyStops": 57,
+          "journeyCancelledStops": 57,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260912-07a76d6d-f624-398f-a1ce-09e7da12d6f6"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
@@ -5593,21 +5663,56 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
+      "segmentStops": 56,
+      "segmentCancelledStops": 56,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 56,
+      "journeyCancelledStops": 56,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "journeyId": "20260912_06:40_de-KVV_355.T2.22-304-E-s26-9.230.H",
-      "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20260912-72f77ac4-fecc-370b-932a-37df39786296",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-12",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260912_06:40_de-KVV_355.T2.22-304-E-s26-9.230.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 56,
+          "segmentCancelledStops": 56,
+          "segmentTrackedStops": 0,
+          "journeyStops": 56,
+          "journeyCancelledStops": 56,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260912-72f77ac4-fecc-370b-932a-37df39786296"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
@@ -5624,20 +5729,55 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20260912-72109dfe-b09e-3f30-a465-dcf001da5138",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-12",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "unresolvedReason": "journey-not-found",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 32,
+          "segmentCancelledStops": 32,
+          "segmentTrackedStops": 0,
+          "journeyStops": 32,
+          "journeyCancelledStops": 32,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260912-72109dfe-b09e-3f30-a465-dcf001da5138"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
@@ -5654,21 +5794,56 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-12",
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-13",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "journeyId": "20260912_11:20_de-KVV_424.T2.22-304-E-s26-9.191.H",
-      "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20260912-f3974c12-4c72-379e-8f78-78d5ae89f6e0",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-12",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260912_11:20_de-KVV_424.T2.22-304-E-s26-9.191.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-13",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 32,
+          "journeyCancelledStops": 32,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260912-f3974c12-4c72-379e-8f78-78d5ae89f6e0"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
