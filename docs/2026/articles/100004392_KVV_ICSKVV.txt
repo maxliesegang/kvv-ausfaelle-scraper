@@ -1,0 +1,39 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004392_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie M - Karlsruhe: Messe-Express verkehrt zur Messe "expoSE/expoDirekt" (18.11.2026 bis 19.11.2026)
+Datum:  2026-09-14T01:00:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 18.11.2026 bis 19.11.2026
+Linie M
+Karlsruhe: Messe-Express verkehrt zur Messe &quot;expoSE/expoDirekt&quot;
+(sie) Der Messe-Express verkehrt
+vom Mittwoch 18.11. bis Donnerstag 19.11.2026
+zur Messe "expoSE/expoDirekt" zwischen Karlsruhe Hauptbahnhof (Bahnhofsvorplatz) und der Messe Karlsruhe (Haupteingang).
+Die Abfahrtszeiten sind wie folgt:
+ab Hauptbahnhof
+Mittwoch:
+von 08:10 Uhr bis 12:10 Uhr alle 30 Minuten
+von 12:10 Uhr bis 16:10 Uhr alle 60 Minuten
+von 16:10 Uhr bis 18:40 Uhr alle 30 Minuten
+Donnerstag:
+von 08:10 Uhr bis 12:10 Uhr alle 30 Minuten
+von 12:10 Uhr bis 16:10 Uhr alle 60 Minuten
+von 16:10 Uhr bis 17:40 Uhr alle 30 Minuten
+ab Messe Karlsruhe
+Mittwoch:
+von 08:30 Uhr bis 11:30 Uhr alle 30 Minuten
+von 11:30 Uhr bis 15:30 Uhr alle 60 Minuten
+von 15:30 Uhr bis 19:00 Uhr alle 30 Minuten
+Donnerstag:
+von 08:30 Uhr bis 11:30 Uhr alle 30 Minuten
+von 11:30 Uhr bis 15:30 Uhr alle 60 Minuten
+von 15:30 Uhr bis 18:00 Uhr alle 30 Minuten
+Hinweis:
+Die Fahrt mit dem Messe-Express ist für Besucher*innen der Messe kostenfrei.
+Weitere Informationen
+Fahrplan Messe-Express
+Zurück zur Übersicht
