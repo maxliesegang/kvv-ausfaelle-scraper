@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276488
 Stand:  2026-09-15T00:07:00.000Z
-Titel:  Linie S4: Fahrleitungsstörung - Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S4. Ein Schienenersatzverkehr wird eingerichtet. Störungsende offen. (15.09.2026 bis 15.09.2026)
+Titel:  Linie S5: Fahrleitungsstörung - Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S5. Ein Schienenersatzverkehr wird eingerichtet. Störungsende offen. (15.09.2026 bis 15.09.2026)
 Datum:  2026-09-15T00:07:00.000Z
 ========================================================================
 
@@ -8,8 +8,8 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 15.09.2026, 02:07 Uhr
-Linie S4: Fahrleitungsstörung
-Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S4. Ein Schienenersatzverkehr wird eingerichtet. Störungsende offen.
-Fahrleitungsstörung im Bereich Grötzingen Bahnhof. Die Linie S4 ist zwischen Durlach Bahnhof und Pforzheim Hauptbahnhof unterbrochen. Ein Schienenersatzverkehr wird zwischen Durlach Bahnhof und Pforzheim Hauptbahnhof eingerichtet. Störungsende offen.
+Linie S5: Fahrleitungsstörung
+Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S5. Ein Schienenersatzverkehr wird eingerichtet. Störungsende offen.
+Fahrleitungsstörung im Bereich Grötzingen Bahnhof. Die Linie S5 ist zwischen Durlach Bahnhof und Pforzheim Hauptbahnhof unterbrochen. Ein Schienenersatzverkehr wird zwischen Durlach Bahnhof und Pforzheim Hauptbahnhof eingerichtet. Störungsende offen.
 Ein Busnotverkehr ist durch die Firma Agarend Reisen mit insgesamt vier Gelenkbussen eingerichtet. Ab 4 Uhr wird im Stundentakt bis 5 Uhr im Pendel gefahren, ab 5 Uhr wird im Halbstundentakt im Pendel gefahren.
 Zurück zur Übersicht

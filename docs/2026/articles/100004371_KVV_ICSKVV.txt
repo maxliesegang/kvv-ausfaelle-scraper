@@ -16,7 +16,6 @@ Linie(n): S31/S32
 Zeitraum: Nächte 14./15.09. und 16./17.09.2026 (jeweils 22:00 Uhr - 05:00 Uhr)
 Entfall Stadtbahn: jeweils Karlsruhe Hbf &lt;-&gt; Bruchsal
 Ersatzverkehr:  jeweils Karlsruhe Hbf (Vorpl.) &lt;-&gt; Bruchsal
--&gt;    Achtung! Der SEV muss wegen Sperrung der B3 Umleitung über Jöhlingen fahren, daher längere Fahrzeiten als sonst
 Grund: DB InfraGO - Bauarbeiten 
 Fahrplan Ersatzverkehr
 Zurück zur Übersicht
