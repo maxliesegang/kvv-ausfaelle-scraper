@@ -1,0 +1,27 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004398_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S8, RE14b, SEV - Freudenstadt Hbf - Bondorf: S8, RE 14b - Zugausfälle und Ersatzverkehr im Oktober (01.10.2026 bis 29.10.2026)
+Datum:  2026-09-15T11:09:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 01.10.2026 bis 29.10.2026
+Linien: S8, RE14b, SEV
+Freudenstadt Hbf - Bondorf: S8, RE 14b - Zugausfälle und Ersatzverkehr im Oktober
+(AVG)
+Freudenstadt Hbf - Bondorf: S8, RE 14b - Zugausfälle und Ersatzverkehr im Oktober
+Linie(n): S8, RE 14 b
+Zeitraum: Donnerstag 01.10. bis 29.10.2026 durchgehend
+Einschränkung Zugverkehr: 
+•    S8 entfällt Bondorf (b Herrrenb) &lt;&gt; Freudenstadt Hbf 
+•    RE/RB14b entfällt Hochdorf &lt;&gt; Freudenstadt Hbf 
+Ersatzverkehr: 
+•    Bus RE14b FDS Stadtbf &lt;&gt; Freudenstadt Hbf &lt;&gt; Horb 
+•    XBus RE14b FDS Stadtbf &lt;&gt; FDS Marktpl. &lt;&gt; Freudenstadt Hbf &lt;&gt; Dornstetten &lt;&gt; Horb ohne zusätzliche Halte
+Grund: Arbeiten DB InfraGO
+Ausnahmen/Sonstiges:
+•    Umsteigemöglichkeiten in Richtung Stuttgart/Rottweil in Horb
+Ersatzfahrplan DB
+Zurück zur Übersicht

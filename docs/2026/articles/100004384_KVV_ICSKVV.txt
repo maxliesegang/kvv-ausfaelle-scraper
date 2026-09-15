@@ -1,17 +1,17 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004384_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 143, 145, 149s, 702 (VPE) - Oberderdingen: Umleitung wegen Bauarbeiten (22.09.2026 bis 23.10.2026)
+Titel:  Linie 143, 145, 149s, 702 (VPE) - Oberderdingen: Umleitung wegen Bauarbeiten (20.10.2026 bis 13.11.2026)
 Datum:  2026-09-10T11:30:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 22.09.2026 bis 23.10.2026
+Vom 20.10.2026 bis 13.11.2026
 Linie 143, 145, 149s, 702 (VPE)
 Oberderdingen: Umleitung wegen Bauarbeiten
 (end) Aufgrund von Bauarbeiten auf der L554 zwischen Oberderdingen und Flehingen müssen die Linien 143, 145 und 149s, sowie die VPE-Linie 702 
-von Dienstag, den 22. September 2026 bis Freitag, den 23. Oktober 2026
+von Dienstag, den 20. Oktober 2026 bis Freitag, den 13. November 2026
 überörtlich umgeleitet werden. In der Folge wird die Haltestelle "Oberderdingen Allmend" nicht bedient, welche im betroffenen Zeitraum ersatzlos aufgehoben ist.
 Linie 143: Die Linie 143 verkehrt im Stundentakt abweichend ab der Haltestelle "Großvillars Wilfenberg" auf dem Laufweg der Linie 145 zur Haltestelle "Oberderdingen-Flehingen".  Es werden folgende Haltestellen bedient:
 Oberderdingen Schillerstraße (Ersatz)

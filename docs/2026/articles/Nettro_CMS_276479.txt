@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276479
 Stand:  2026-09-14T23:59:00.000Z
-Titel:  Linie S4: Fahrleitungsstörung - Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S4. Ein Schienenersatzverkehr wird eingerichtet. Störungsende offen. (15.09.2026 bis 15.09.2026)
+Titel:  Linie S4: Fahrleitungsstörung - Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S4. Ein Schienenersatzverkehr ist eingerichtet. Störungsende offen. (15.09.2026 bis 15.09.2026)
 Datum:  2026-09-14T23:59:00.000Z
 ========================================================================
 
@@ -9,7 +9,8 @@ Fahrplan
 Verkehrsmeldungen
 15.09.2026, 01:59 Uhr
 Linie S4: Fahrleitungsstörung
-Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S4. Ein Schienenersatzverkehr wird eingerichtet. Störungsende offen.
-Fahrleitungsstörung im Bereich Grötzingen Bahnhof. Die Linie S4 ist zwischen Durlach Bahnhof und Bretten Bahnhof unterbrochen. Ein Schienenersatzverkehr wird zwischen Durlach Bahnhof und Bretten Bahnhof eingerichtet. Störungsende offen.
-Die Firma Hettler fährt ab 04:40 Uhr ab Bretten Richtung Karlsruhe mit einem Bus im Pendel bis Karlsruhe Tullastraße. Ab 6:00 Uhr kommen drei weitere Gelenkbusse der Firma BV GmbH dazu im Pendel ohne festen Fahrplan.
+Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen. Betroffene Linie: S4. Ein Schienenersatzverkehr ist eingerichtet. Störungsende offen.
+Fahrleitungsstörung im Bereich Grötzingen Bahnhof. Die Linie S4 ist zwischen Durlach Bahnhof und Bretten Bahnhof unterbrochen. Ein Schienenersatzverkehr ist zwischen Durlach Bahnhof und Bretten Bahnhof eingerichtet. Störungsende offen.
+Ein SEV ist mit 4 Gelenkbussen eingerichtet. Es wird im Pendel ohne festen Fahrplan gefahren.
+Der RE45 hält einmal die Stunde in Grötzingen Bf. und fährt bis Eppingen Bf.
 Zurück zur Übersicht
