@@ -2503,5 +2503,71 @@
       "journeyCancelled": true,
       "journeyId": "20260913-18ddad2c-1a60-35ac-ab78-ed631e727db4"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-09-16",
+    "stand": "2026-09-16T03:30:00.000Z",
+    "trainNumber": "85473",
+    "fromStop": "Achern Bf",
+    "fromTime": "06:17",
+    "toStop": "Albtalbahnhof",
+    "toTime": "07:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276606",
+    "capturedAt": "2026-09-16T09:00:24.365Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "no-data",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-16",
+      "segmentStops": 14,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 61,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 23,
+      "trackedOutsideSegment": 23,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260916-51a3bdad-2ea4-3dbe-b834-2ea7af2fe01e",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "no-data",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-16",
+          "segmentStops": 14,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 61,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 23,
+          "trackedOutsideSegment": 23,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260916-51a3bdad-2ea4-3dbe-b834-2ea7af2fe01e",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-16",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260916_06:17_de-KVV_45.T0.22-307-E-s26-9.19.R",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   }
 ]
