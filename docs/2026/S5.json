@@ -21929,7 +21929,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276598",
     "capturedAt": "2026-09-16T09:00:25.263Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-16",
+      "segmentStops": 28,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 7,
+      "trackedOutsideSegment": 7,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260916-bce0e9ce-7115-34ac-913d-118d9857fbd7"
+    }
   },
   {
     "line": "S5",
@@ -21942,8 +21957,8 @@
     "toTime": "21:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276598",
     "capturedAt": "2026-09-16T09:00:25.263Z",
-    "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S5",
@@ -21956,8 +21971,8 @@
     "toTime": "22:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276598",
     "capturedAt": "2026-09-16T09:00:25.263Z",
-    "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S5",
@@ -21970,7 +21985,7 @@
     "toTime": "23:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276598",
     "capturedAt": "2026-09-16T09:00:25.263Z",
-    "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
