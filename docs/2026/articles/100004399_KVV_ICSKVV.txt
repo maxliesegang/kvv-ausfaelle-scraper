@@ -1,0 +1,107 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004399_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S2, S12, 1, 2, 3, 4, 5, 6, 21, 24, 26, 30, 31, 42, NL1, NL2, NL3, SEV - Karlsruhe: Bauarbeiten im VBK-Netz (Phase 3) (21.09.2026 bis 24.10.2026)
+Datum:  2026-09-17T01:30:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 21.09.2026 bis 24.10.2026
+Linien: S2, S12, 1, 2, 3, 4, 5, 6, 21, 24, 26, 30, 31, 42, NL1, NL2, NL3, SEV
+Karlsruhe: Bauarbeiten im VBK-Netz (Phase 3)
+(kue) Im Zeitraum bis zu den Herbstferien, somit
+von Montag, 21. August 2026 (03:30 Uhr),
+bis Samstag, 24. Oktober 2026 (06:45 Uhr),
+gilt Phase 3 der Bauarbeiten in der zweiten Jahreshälfte 2026.
+Grund: Gleis- und Weichenerneuerungen, Sanierungsarbeiten in der Waldstadt
+Gesperrte Streckenabschnitte und somit kein Bahnverkehr zwischen:
+• Durlach Turmberg über Schlossplatz und Friedrichschule - Auer Straße 
+• Wolfartsweier Nord - Zündhütle - Auer Straße
+• Europäische Schule - Jägerhaus - Fächerbad - Hirtenweg 
+• Durlacher Tor - Kronenplatz (Fritz-Erler-Straße) - Mendelssohnplatz 
+• Mathystraße - Otto-Sachs-Straße - Lessingstraße - Weinbrennerplatz
+Es ergeben sich folgende Änderungen der Linien:
+S-Bahn
+S2
+EILZUG Spöck Richard-Hecht-Schule ab 07:21 Uhr an Schultagen:
+Regulärer Fahrweg von Spöck kommend bis zur Haltestelle "Durlacher Tor (Bernhardusplatz)". Anschließend weiter über Kapellenstraße - Ettlinger Tor - Europaplatz - Yorckstraße - Entenfang - Rheinhafen.
+EILZUG Mörsch Bach-West ab 07:04 Uhr an Schultagen:
+Regulärer Fahrweg von Rheinstetten kommend bis zur Haltestelle "Europaplatz (oben)", anschließend weiter über Ettlinger Tor - Südostbahn - Tullastraße. 
+S4 
+Zug 85472 Ab Heilbronn Pfühlpark (ab 23:40 Uhr) sowie Zug 85541 Karlsruhe Albtalbahnhof (ab 01:16 Uhr); verkehren nur in Nächten auf Montag bis Freitag
+werden zwischen "Durlacher Tor (Durlacher Allee)" und "Rüppurrer Tor (Rüppurrer Straße)" über die Kapellenstraße umgeleitet.
+S5 
+Zug 84784 Söllingen Reetzstraße (ab 01:02 Uhr); verkehrt nur in Nächten von Montag bis Freitag: 
+Wird ab "Durlacher Tor (Durlacher Allee)" über die Kapellenstraße zum "Rüppurrer Tor (Rüppurrer Straße)" umgeleitet.
+S12
+Ittersbach - Albtalbahnhof - Kolpingplatz - Karlstor (Karlstraße und Kriegsstraße) - Rüppurrer Tor (Kriegsstraße) - Südostbahn - Tullastraße
+Tram
+Linie 1
+Verkehrt von der Karlsruher Innenstadt kommend ab der Haltestelle "Untermühlstraße" bis "Durlach Bahnhof" (und zurück).
+Linie 2
+Knielingen Nord - Yorckstraße - Schillerstraße - Weinbrennerplatz - Kühler Krug - Entenfang - Rheinhafen (und zurück)
+Linie 3
+Alle Fahrten werden zwischen Durlacher Tor (oben) und Rüppurrer Tor über die Kapellenstraße umgeleitet (und zurück). 
+Die Haltestelle Kronenplatz (Fritz-Erler-Straße) entfällt. Der Kronenplatz bleibt über die Haltestelle im Stadtbahntunnel erreichbar.
+Linie 4
+Verkehrt regulär nur zwischen Hirtenweg und Oberreut (und zurück).
+Linie 5
+Verkehrt nur auf dem Abschnitt Tullastraße - Karlstor/ Bundesgerichtshof - Europaplatz (oben) (und zurück)
+Linie 6
+Pendelverkehr zwischen Tivoli - Hauptbahnhof (Vorplatz) - ZKM - Arbeitsagentur (und zurück)
+Linie 8
+Die Linie 8 entfällt auf ihrem kompletten Laufweg
+Nightliner
+NL1
+Verkehrt auf dem regulären Fahrweg nur zwischen Hirtenweg und Neureut-Heide (und zurück). 
+Kein Verkehr in Richtung Waldstadt - Europäische Schule.
+NL2
+Von der Karlsruher Innenstadt kommend Umleitung ab Auer Straße bis Durlach Bahnhof (und zurück). 
+Zusätzlich Umleitung zwischen Ebertstraße und Karlstor über Kolpingplatz und Mathystraße (und zurück).
+NL3
+Wegen der Sperrung zwischen Turmberg und Auer Straße wird die Linie NL3 bis Durlach Bahnhof verlängert. 
+Hierfür nutzt sie zwischen Turmberg und Durlach Bahnhof den Linienweg der 31. 
+Die Haltestelle Turmberg wird nur in Fahrtrichtung Stupferich bedient. Anschließend verkehrt die Linie wieder auf ihrem regulären Linienweg.
+Schienenersatzverkehr (SEV)
+Folgende Buslinien ersetzen die Bahnen:
+SEV 14
+Waldstadt Zentrum - Hirtenweg
+SEV 14X
+Waldstadt Zentrum - Durlacher Tor
+SEV 14N
+Europäische Schule - Hirtenweg (Nachtverkehr)
+SEV 15
+Europäische Schule - Waldstadt Zentrum
+Hinweis: Die Fahrradmitnahme in den SEV-Bussen ist nicht möglich.
+Änderungen bei den Buslinien:
+Bus 21:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße wird die Linie 21 über die bisherige Endhaltestelle Durlach Turmberg hinaus über die Haltestellen „Ochsentorstraße“ und „An der Fayence“ bis "Durlach Bahnhof" umgeleitet.
+Bus 24:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße wird die Linie 24 zwischen "Blattwiesenstraße" und "Durlach Turmberg" über "Durlach Bahnhof" entlang des Fahrwegs der Linie 31 umgeleitet.
+Bus 24A:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der daraus resultierenden Umleitung der Linie 24 wird diese Linie zwischen "Durlach Turmberg" (Steig C) und "Durlach Bahnhof" verstärkt.
+Linie 26:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der Gymnasiumstraße wird die Linie 26 weiträumig über die Haltestelle „Rommelstraße“ umgeleitet.
+Linie 30:
+Alle Fahrten werden von der Haltestelle "Elbinger Straße West" bis zur "Europäischen Schule" verlängert.
+Linie 31:
+Umleitung in Richtung "Durlach Bahnhof" zwischen "Waldstadt Zentrum", "Fächerbad" und "Hallesche Allee".
+Linie 42/42A:
+Aufgrund der Sperrung des Streckenabschnitts Wolfartsweier Nord - Auer Straße wird die Linie 42 durch die zusätzliche Verstärkerlinie 42A ergänzt.
+Somit ergeben sich zusätzliche Fahrtmöglichkeiten zwischen Durlach Bahnhof und Durlach-Aue.
+Besonderheiten an den Haltestellen
+Baustellenbedingt kann die Haltestelle „Durlach Schlossplatz“ von den Linien 21, 23, 24, 26 und NL3 nicht bedient werden.
+Übersicht der Abfahrtssteige an der Haltestelle "Durlach Bahnhof"
+Steig A (am Kiosk): Fahrten über bzw. nach Turmberg (Linien 21, 24, 24A, 31, NL3 und 18)
+Steig B: Fahrten zum Durlacher Tor bzw. nach Killisfeld (Linien 42 und 42A)
+Steig C: Fahrten nach Ettlingen (Linie 107)
+Steig D: Fahrten über Brühlstraße und Zündhütle (Linien 24 und 24A)
+Steig E: Express- und Schulfahrten (Linien 18 und 31X)
+Aufgrund von Umleitungen und zusätzlichem Umstieg auf Ersatzbusse planen Sie bitte mehr Fahrzeit ein.
+Baustellenflyer
+Liniennetzplan (Phase 3)
+Weitere Informationen
+Fahrwege der Busse und Ersatzverkehre (Phase 3)
+Umgebungspläne der Haltestellen
+Zurück zur Übersicht
