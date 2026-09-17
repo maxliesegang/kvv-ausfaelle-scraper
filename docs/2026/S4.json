@@ -6013,6 +6013,21 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276680",
     "capturedAt": "2026-09-17T03:05:55.680Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-17",
+      "segmentStops": 23,
+      "segmentCancelledStops": 23,
+      "segmentTrackedStops": 0,
+      "journeyStops": 73,
+      "journeyCancelledStops": 36,
+      "journeyTrackedStops": 38,
+      "trackedOutsideSegment": 38,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260917-6964a8c9-3fe7-3d88-a445-5eb8a0e44867"
+    }
   }
 ]

@@ -1,16 +1,16 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004396_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 161 - Gondelsheim: Haltestelle Bahnhof teilweise verlegt (21.09.2026 bis 25.09.2026)
+Titel:  Linie 161 - Gondelsheim: Haltestelle Bahnhof teilweise verlegt (28.09.2026 bis 03.10.2026)
 Datum:  2026-09-15T07:58:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 21.09.2026 bis 25.09.2026
+Vom 28.09.2026 bis 03.10.2026
 Linie 161
 Gondelsheim: Haltestelle Bahnhof teilweise verlegt
 (end) Aufgrund von Bauarbeiten ist die Haltestelle "Gondelsheim Bahnhof"
-von Montag, den 21. September 2026 bis Freitag, den 25. September 2026
+von Montag, den 28. September 2026 bis Samstag, den 03. Oktober 2026
 für die Fahrtrichtung Bretten mit einer Ersatzhaltestelle in der Neibsheimer Straße (Höhe Hausnr. 16) verlegt. Für die Haltestellen "Gondelsheim In den Buchen", "Gondelsheim Graf-Douglas-Straße" und "Gondelsheim Marktplatz" gelten für die Linie 161 in Fahrtrichtung Bretten leicht veränderte Abfahrtszeiten. 
 Zurück zur Übersicht
