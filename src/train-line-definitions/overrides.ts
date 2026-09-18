@@ -105,5 +105,12 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_275817: {
       '85483': 'S51',
     },
+    // AVG staffing notice for S1/S11, 2026-09-17. Same S12-on-the-S11-corridor case as
+    // Nettro_CMS_273364: GTFS files the KA Tullastraße–Ittersbach Rathaus run 40014 as an
+    // S12 (the reinforcement line on the Ittersbach corridor), while KVV reports it under
+    // the S11 corridor the notice names.
+    Nettro_CMS_276704: {
+      '40014': 'S11',
+    },
   },
 };

@@ -430,13 +430,22 @@ async function reconcileTripsForYear(
     (name) => name.endsWith('.json') && name !== 'index.json',
   );
   const storedTripsByLine = new Map<string, Cancellation[]>();
-  const storedTripsBySourceKey = new Map<string, Cancellation>();
+  // A multi-line article stores one copy of a shared trip per line bucket, and all copies share
+  // the same source-scoped key. Keep every copy so the lookup below can prefer the one the
+  // reparse produced; a single-entry map would silently keep whichever line file was read last.
+  const storedTripsBySourceKey = new Map<string, Cancellation[]>();
   for (const filename of lineFilenames) {
     const line = filename.slice(0, -'.json'.length);
     const trips = await loadExistingCancellations(join(fahrplanYearDirectory, filename));
     storedTripsByLine.set(line, trips);
     for (const trip of trips) {
-      storedTripsBySourceKey.set(getSourceScopedTripKey(trip), trip);
+      const sourceKey = getSourceScopedTripKey(trip);
+      const sameKeyTrips = storedTripsBySourceKey.get(sourceKey);
+      if (sameKeyTrips) {
+        sameKeyTrips.push(trip);
+      } else {
+        storedTripsBySourceKey.set(sourceKey, [trip]);
+      }
     }
   }
 
@@ -467,7 +476,14 @@ async function reconcileTripsForYear(
   for (const trips of reparsedTripsBySourceUrl.values()) {
     for (const trip of trips) {
       const identity = getLineScopedTripKey(trip);
-      const storedTrip = storedTripsBySourceKey.get(getSourceScopedTripKey(trip));
+      // Prefer the stored copy of the same line: its `line`-relative evidence (a `feedLine`
+      // naming any other line, per-trip verdict provenance) describes this bucket's copy,
+      // not a sibling's. A different-line copy is still accepted when no same-line copy
+      // exists, preserving the cross-file recovery the source-scoped lookup exists for.
+      const sameSourceKeyTrips = storedTripsBySourceKey.get(getSourceScopedTripKey(trip)) ?? [];
+      const storedTrip =
+        sameSourceKeyTrips.find((candidate) => candidate.line === trip.line) ??
+        sameSourceKeyTrips[0];
       if (storedTrip === undefined && reconciledTripsByIdentity.has(identity)) {
         continue;
       }
