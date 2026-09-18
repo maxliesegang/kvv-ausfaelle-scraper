@@ -6029,5 +6029,33 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260917-6964a8c9-3fe7-3d88-a445-5eb8a0e44867"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-18",
+    "stand": "2026-09-18T09:43:00.000Z",
+    "trainNumber": "85529",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "18:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "19:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276765",
+    "capturedAt": "2026-09-18T15:42:37.690Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-18",
+    "stand": "2026-09-18T09:43:00.000Z",
+    "trainNumber": "85538",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "20:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "21:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276765",
+    "capturedAt": "2026-09-18T15:42:37.690Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

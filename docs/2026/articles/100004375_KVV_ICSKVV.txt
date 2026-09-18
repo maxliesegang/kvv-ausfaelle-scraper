@@ -10,10 +10,9 @@ Verkehrsmeldungen
 Vom 25.09.2026 bis 10.10.2026
 Linien: S41, S42, SEV
 S41/S42: Bauarbeiten zwischen Neckarsulm und Mosbach / Sinsheim
-(AVG)
-Ersatzverkehr zwischen Heilbronn und Mosbach/Sinsheim
+(AVG) Ersatzverkehr zwischen Heilbronn und Mosbach/Sinsheim
 Aufgrund von Bauarbeiten der DB InfraGO entfallen die Stadtbahnlinien S41 und S42
-von Freitag, 25.09. (ab 21:00 Uhr), bis Samstag, 10.10. (bis 05:00 Uhr) 
+von Freitag, 25.09. (ab 21:00 Uhr), bis Samstag, 10.10.2026 (bis 05:00 Uhr) 
 zwischen Heilbronn Kaufland und Mosbach (Baden) bzw. Sinsheim (Elsenz) Hbf.
 Ersatzbusse:
 verkehren jeweils stündlich zwischen Heilbronn Hans-Rießer-Str. und Mosbach (Baden) bzw. Sinsheim (Elsenz) Hbf.
@@ -22,4 +21,5 @@ Bitte beachten Sie:
 An der Haltestelle Heilbronn Kaufland besteht kein direkter Umstieg zwischen Stadtbahn und Ersatzbus.
 Auch im Regionalverkehr von DB Regio und Arverio kann es zu Einschränkungen kommen.
 Bitte informieren Sie sich vor Fahrtantritt über Ihre Verbindung.
+Ersatzfahrplan S41/S42
 Zurück zur Übersicht
