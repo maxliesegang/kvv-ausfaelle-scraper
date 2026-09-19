@@ -18,6 +18,8 @@ Nach aktuellem Stand 19.09.2026 02:30:00 sind folgende Fahrten von einem (Teil-)
 85388 Heilbronn Willy-Brandt-Platz (08:22 Uhr) - Schwaigern West (08:40 Uhr)
 85317 Schwaigern West (09:16 Uhr) - Heilbronn Willy-Brandt-Platz (09:34 Uhr)
 85422 Willy-Brandt-Platz (09:52 Uhr) - Bretten Bahnhof (10:57 Uhr)
+85513 Karlsruhe Albtalbahnhof (19:35 Uhr) - Flehingen Bf (11:37 Uhr)
+85522 Flehingen Bf (12:20 Uhr) - Karlsruhe Albtalbahnhof ( 13:22 Uhr)
 85433 Karlsruhe Albtalbahnhof (11:15 Uhr) - Öhringen Cappel (13:50 Uhr)
 85442 Öhringen Cappel (14:03 Uhr) - Heilbronn Willy-Brandt-Platz (14:50 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:

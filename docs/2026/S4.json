@@ -6102,7 +6102,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276774",
     "capturedAt": "2026-09-19T02:51:52.676Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-19",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 73,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 48,
+      "trackedOutsideSegment": 48,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260919-4e0ccd51-0c6b-3800-a953-623842ef6c53"
+    }
   },
   {
     "line": "S4",
@@ -6116,7 +6131,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276774",
     "capturedAt": "2026-09-19T02:51:52.676Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-19",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 34,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 24,
+      "trackedOutsideSegment": 24,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20260919-f4df3cf2-eceb-311d-ac15-7da054cef615"
+    }
   },
   {
     "line": "S4",
@@ -6130,7 +6160,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276774",
     "capturedAt": "2026-09-19T02:51:52.676Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-19",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 34,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 24,
+      "trackedOutsideSegment": 24,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20260919-f35cf990-4918-3ce6-b615-80fddc73609e"
+    }
   },
   {
     "line": "S4",
@@ -6164,6 +6209,20 @@
     "line": "S4",
     "date": "2026-09-19",
     "stand": "2026-09-19T00:30:00.000Z",
+    "trainNumber": "85522",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "12:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "13:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276774",
+    "capturedAt": "2026-09-19T08:28:12.274Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-19",
+    "stand": "2026-09-19T00:30:00.000Z",
     "trainNumber": "85442",
     "fromStop": "Öhringen Cappel",
     "fromTime": "14:03",
@@ -6171,6 +6230,20 @@
     "toTime": "14:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276774",
     "capturedAt": "2026-09-19T02:51:52.676Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-19",
+    "stand": "2026-09-19T00:30:00.000Z",
+    "trainNumber": "85513",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "11:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276774",
+    "capturedAt": "2026-09-19T08:28:12.274Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }
