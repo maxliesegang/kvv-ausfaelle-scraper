@@ -27,9 +27,12 @@ Nach aktuellem Stand 19.09.2026 02:33:00 sind folgende Fahrten von einem (Teil-)
 26049 Ittersbach Rathaus (18:21 Uhr) - Hochstetten (19:56 Uhr)
 36030 Neureut Kirchfeld (18:44 Uhr) - Ettlingen Stadt (19:28 Uhr)
 26055 Ittersbach Rathaus (19:51 Uhr) - Ettlingen Stadt (20:15 Uhr)
+16059 Ettlingen Albgaubad (20:04 Uhr) - Hochstetten (21:16 Uhr)
 36034 Hochstetten (20:22 Uhr) - Bad Herrenalb (21:28 Uhr)
+36036 Hochstetten (21:22 Uhr) - Bad Herrenalb (22:53 Uhr)
 36039 Bad Herrenalb (22:03 Uhr) - Hochstetten (23:36 Uhr)
-20076 Hochstetten (23:42) - Ettlingen Stadt (00:48 Uhr)
+30065 Bad Herrenalb (23:03 Uhr) - Ettlingen Stadt (23:25 Uhr)
+20076 Hochstetten (23:42 Uhr) - Ettlingen Stadt (00:48 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

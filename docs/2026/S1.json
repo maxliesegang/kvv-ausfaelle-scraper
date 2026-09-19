@@ -4034,7 +4034,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276799",
     "capturedAt": "2026-09-19T02:51:51.403Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-19",
+      "segmentStops": 43,
+      "segmentCancelledStops": 43,
+      "segmentTrackedStops": 0,
+      "journeyStops": 43,
+      "journeyCancelledStops": 43,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260919-3168bb92-12c5-33e8-b1e6-fd59e03a8ee0"
+    }
   },
   {
     "line": "S1",
@@ -4048,7 +4064,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276799",
     "capturedAt": "2026-09-19T02:51:51.403Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-19",
+      "segmentStops": 44,
+      "segmentCancelledStops": 44,
+      "segmentTrackedStops": 0,
+      "journeyStops": 44,
+      "journeyCancelledStops": 44,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260919-bce2a989-549f-3023-833a-e9839cb7f00e"
+    }
   },
   {
     "line": "S1",
@@ -4110,6 +4142,20 @@
     "line": "S1",
     "date": "2026-09-19",
     "stand": "2026-09-19T00:33:00.000Z",
+    "trainNumber": "16059",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "20:04",
+    "toStop": "Hochstetten",
+    "toTime": "21:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276799",
+    "capturedAt": "2026-09-19T15:14:09.305Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-09-19",
+    "stand": "2026-09-19T00:33:00.000Z",
     "trainNumber": "36034",
     "fromStop": "Hochstetten",
     "fromTime": "20:22",
@@ -4124,6 +4170,20 @@
     "line": "S1",
     "date": "2026-09-19",
     "stand": "2026-09-19T00:33:00.000Z",
+    "trainNumber": "36036",
+    "fromStop": "Hochstetten",
+    "fromTime": "21:22",
+    "toStop": "Bad Herrenalb",
+    "toTime": "22:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276799",
+    "capturedAt": "2026-09-19T15:14:09.305Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-09-19",
+    "stand": "2026-09-19T00:33:00.000Z",
     "trainNumber": "36039",
     "fromStop": "Bad Herrenalb",
     "fromTime": "22:03",
@@ -4131,6 +4191,20 @@
     "toTime": "23:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276799",
     "capturedAt": "2026-09-19T02:51:51.403Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S1",
+    "date": "2026-09-19",
+    "stand": "2026-09-19T00:33:00.000Z",
+    "trainNumber": "30065",
+    "fromStop": "Bad Herrenalb",
+    "fromTime": "23:03",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "23:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276799",
+    "capturedAt": "2026-09-19T15:14:09.305Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }

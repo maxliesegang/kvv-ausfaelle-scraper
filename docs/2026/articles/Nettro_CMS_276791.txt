@@ -14,7 +14,13 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S8 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Tullastraße/Alter Schlachthof und Freudenstadt Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 19.09.2026 02:00:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+85639 Freudenstadt Hauptbahnhof (13:07 Uhr) - Bondorf Bf (13:57 Uhr) 
 85644 Forbach Bf (13:42 Uhr) - Karlsruhe Tullstraße (15:00 Uhr)
+85650 Bondorf Bf  (14:02)- Freudenstadt Hauptbahnhof (14:53 Uhr)
+85652 Freudenstadt Hauptbahnhof (15:23Uhr) - Freudenstadt Stadtbahnhof (15:28 Uhr)
+85649 Freudenstadt Stadtbahnhof (16:32 Uhr) - Freudenstadt Hauptbahnhof (16:37 Uhr)
+85662 Freudenstadt Hbf (17:46 Uhr) - Karlsruhe Tullastrasse (20:06 Uhr) 
+85673 Karlsruhe Tullastrasse ( 20:53) - Freudenstadt Hbf (23:07)
 85655 Karlsruhe Tullastraße (15:52 Uhr) - Freudenstadt Hbf (18:07 Uhr)
 85666 Freudenstadt Hbf (18:53 Uhr) - Forbach Bf (19:39 Uhr)
 85665 Forbach Bf (20:17 Uhr) - Freudenstadt Hbf (21:07 Uhr)
