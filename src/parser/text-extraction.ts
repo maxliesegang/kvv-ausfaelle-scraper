@@ -49,26 +49,71 @@ export function extractArticleRegion(html: string): string {
 }
 
 /**
- * Strips HTML tags from a string and normalizes whitespace.
+ * The HTML entities KVV's pages actually use. Decoded in a single pass, so `&amp;lt;`
+ * yields the literal text `&lt;` rather than being decoded twice into `<`.
+ */
+const HTML_ENTITY_REPLACEMENTS: Readonly<Record<string, string>> = {
+  nbsp: ' ',
+  '#160': ' ',
+  ndash: '-',
+  '#8211': '-',
+  lt: '<',
+  '#60': '<',
+  gt: '>',
+  '#62': '>',
+  quot: '"',
+  '#34': '"',
+  apos: "'",
+  '#39': "'",
+  amp: '&',
+  '#38': '&',
+};
+
+/** An entity reference. An unlisted one is left as written rather than guessed at. */
+const HTML_ENTITY_PATTERN = /&(#?[a-z0-9]+);/gi;
+
+function decodeHtmlEntities(text: string): string {
+  return text.replace(
+    HTML_ENTITY_PATTERN,
+    (entity, name: string) => HTML_ENTITY_REPLACEMENTS[name.toLowerCase()] ?? entity,
+  );
+}
+
+/**
+ * A markup tag: `<` followed by an optional `/` and then a name, a `!` (comment, doctype) or
+ * a `?` (processing instruction).
+ *
+ * The leading-character requirement is what keeps `<->` and `<>` — which KVV writes as
+ * `&lt;-&gt;` for "between A and B" — from being eaten as if they were tags. Without it,
+ * {@link stripHtml} is not idempotent once entities are decoded: the arrow survives the
+ * live HTML pass only because it is still encoded there, and would silently vanish when an
+ * archived body (already plain text) is replayed through the parser.
+ */
+const HTML_TAG_PATTERN = /<\/?[a-zA-Z!?][^>]*>/g;
+
+/**
+ * Strips HTML tags from a string, decodes the entities KVV uses, and normalizes whitespace.
  * Converts <br> and </p> tags to line breaks before stripping.
+ *
+ * Entities are decoded *after* tags are removed. Decoding first would turn an encoded
+ * `&lt;tag&gt;` in the page's visible text into real markup and delete it.
  *
  * @param html - HTML string to strip
  * @returns Plain text with normalized line breaks
  */
 export function stripHtml(html: string): string {
-  return html
-    .replace(/<br\s*\/?\s*>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<\/div>/gi, '\n')
-    .replace(/<\/h[1-6]>/gi, '\n')
-    .replace(/<\/li>/gi, '\n')
-    .replace(/<(li|p|div|h[1-6]|section|article)[^>]*>/gi, '\n')
-    .replace(/&nbsp;/gi, ' ')
+  return decodeHtmlEntities(
+    html
+      .replace(/<br\s*\/?\s*>/gi, '\n')
+      .replace(/<\/p>/gi, '\n')
+      .replace(/<\/div>/gi, '\n')
+      .replace(/<\/h[1-6]>/gi, '\n')
+      .replace(/<\/li>/gi, '\n')
+      .replace(/<(li|p|div|h[1-6]|section|article)[^>]*>/gi, '\n')
+      .replace(HTML_TAG_PATTERN, ''),
+  )
     .replace(/\u00a0/g, ' ')
-    .replace(/&#160;/gi, ' ')
-    .replace(/&ndash;|&#8211;|–/g, '-')
-    .replace(/&amp;/gi, '&')
-    .replace(/<[^>]+>/g, '')
+    .replace(/–/g, '-')
     .replace(/\r/g, '')
     .replace(/\n{2,}/g, '\n')
     .trim();

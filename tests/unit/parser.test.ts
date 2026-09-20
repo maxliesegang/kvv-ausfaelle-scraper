@@ -5,11 +5,12 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { parseDetailPage } from '../../src/parser/index.js';
+import { findUnmappedTrainNumbersError, parseDetailPage } from '../../src/parser/index.js';
 import {
   extractLine,
   extractStand,
   parseGermanDateTime,
+  stripHtml,
 } from '../../src/parser/text-extraction.js';
 import { extractTripDateAnchor } from '../../src/parser/trip-dates.js';
 import {
@@ -90,6 +91,68 @@ describe('Parser - Detail Page Parsing', () => {
       // matched last — but the footer and menu would still feed every other keyword list.
       assert.strictEqual(trip?.cause, 'operational');
       assert.strictEqual(trip?.causeKeyword, 'betriebsbedingt');
+    });
+  });
+
+  describe('Entity decoding', () => {
+    it('decodes the entities KVV writes, leaving unlisted ones alone', () => {
+      assert.strictEqual(stripHtml('Pf\u00fchlpark &lt;-&gt; Hbf'), 'Pf\u00fchlpark <-> Hbf');
+      assert.strictEqual(stripHtml('Haltestelle &quot;Eisweiher&quot;'), 'Haltestelle "Eisweiher"');
+      assert.strictEqual(stripHtml('A &amp; B'), 'A & B');
+      assert.strictEqual(stripHtml('unknown &copy; entity'), 'unknown &copy; entity');
+    });
+
+    it('leaves a decoded "<->" intact when an archived body is stripped again', () => {
+      // The archive stores already-stripped text and the parser strips it once more on
+      // replay. A tag pattern that accepted "<->" would delete the arrow on that second
+      // pass, so an archived article would parse differently from the live page.
+      const once = stripHtml('Knielingen &lt;-&gt; W\u00f6rth Badepark');
+
+      assert.strictEqual(once, 'Knielingen <-> W\u00f6rth Badepark');
+      assert.strictEqual(stripHtml(once), once);
+    });
+
+    it('does not turn encoded markup in the visible text into real tags', () => {
+      // Decoding before tag-stripping would make this vanish instead of reading as text.
+      assert.strictEqual(stripHtml('<p>zeigt &lt;br&gt; an</p>'), 'zeigt <br> an');
+    });
+  });
+
+  describe('Train numbers that map to no mentioned line', () => {
+    // Nettro_CMS_276842 in the corpus: four night trips, one of which GTFS files under the
+    // "E-Wagen" route rather than S1 or S11. Failing the article would discard the three
+    // that did resolve.
+    const html = [
+      '<html><main>',
+      '<p>Linien S1 und S11</p>',
+      '<p>Betriebsbedingte Fahrtausf\u00e4lle.</p>',
+      '<p>Nach aktuellem Stand 15.05.2026 12:00:00 sind folgende Fahrten betroffen:</p>',
+      '<p>99998 Karlsruhe Rheinhafen (01:11 Uhr) - Neureut Kirchfeld (01:32 Uhr)</p>',
+      '<p>56004 Neureut Kirchfeld (01:33 Uhr) - Ettlingen Albgaubad (02:25 Uhr)</p>',
+      '</main></html>',
+    ].join('\n');
+
+    it('keeps the trips that did resolve', () => {
+      const trips = parseDetailPage(html, 'test://unmapped-sibling');
+
+      assert.deepStrictEqual(
+        trips.map((trip) => trip.trainNumber),
+        ['56004'],
+      );
+      assert.strictEqual(trips[0]?.line, 'S1');
+    });
+
+    it('reports the unmapped number instead of throwing it away', () => {
+      const error = findUnmappedTrainNumbersError(html, 'test://unmapped-sibling');
+
+      assert.ok(error, 'expected an unmapped train number to be reported');
+      assert.match(error.message, /99998/);
+    });
+
+    it('reports nothing when every number resolves', () => {
+      const mapped = html.replace(/<p>99998[^<]*<\/p>\n/, '');
+
+      assert.strictEqual(findUnmappedTrainNumbersError(mapped, 'test://all-mapped'), undefined);
     });
   });
 

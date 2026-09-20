@@ -44,6 +44,14 @@ something — never add a per-run value such as a capture timestamp.
 
 Use Fahrplan years, not calendar years. Example: a cancellation on `2024-12-16` belongs to Fahrplan year `2025`.
 
+An archive is foldered by a date the **article** states, never by the run's clock: its `Stand:`
+when the page carries one, otherwise its `Datum:` (RSS publication date). About half of KVV's
+notices — the imported construction ones — carry no `Stand`, and foldering those by the current
+Fahrplan year made the directory depend on when the scraper happened to run: across a rollover the
+same article is rewritten under the new year while the old copy stays, so one notice occupies two
+paths and neither diff means what it looks like. Ten archives had already landed a year out that
+way and were moved to `docs/2025/articles/`.
+
 ## Cancellation Contract
 
 - Per-line JSON files contain `Cancellation` records from `src/types.ts`.

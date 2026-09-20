@@ -30,6 +30,25 @@ This is the most specific guidance for parser files.
   unparsed-trip report (and therefore out of the hard-error tripwire), inspecting the following
   row because KVV writes the description there. Cancellation wording in the statement wins. The
   archive corpus audit imports the same predicate — never fork it into the test.
+- **Unnumbered route rows stay unparsed.** Construction notices list trips as
+  `• S8 KA Marktplatz (05:03) - Rastatt (05:38) - Gaggenau (05:51) - Freudenstadt`, with no
+  Zugnummer. `isUnnumberedRouteRow` detects them so they surface as warnings, and that is
+  deliberately as far as it goes: the row _shape_ is regular, but its meaning is not, and a
+  `Cancellation` cannot express what the article says. Audited over the whole archive
+  (33 such rows in 13 articles), the same shape carries:
+  - cancellations (`100004264`, heading `Entfall Stadtbahn: der erste Zug je Richtung entfällt`);
+  - **delays**, not cancellations (`100004232`, heading
+    `Einschränkungen Stadtbahn: folgende Fahrten … fahren teilweise deutlich später`);
+  - trips that still run but terminate early (`100004252`, `… endet am 07.08. bereits in Durlach`)
+    or are merely retimed (`100004314`'s last row, `-> Zug fährt … 10 Minuten später`);
+  - a non-exhaustive sample (`100004206`, `ca. jede zweite Verbindung`).
+
+  Dating them is the harder half: these notices cover a _set_ of nights
+  (`100004364`: `Nächte 11./12.09., 13./14.09. - 17./18.09. und 20./21.09. - 24./25.09.2026`),
+  while a `Cancellation` carries one `date`. Picking one would invent a day KVV never named —
+  the same failure `trip-dates.ts` exists to prevent. Per the rule above, leave the row
+  unparsed rather than publish a guess; the workflow already skips these as `construction`.
+
 - Prefer additive parsing improvements over breaking existing patterns.
 - A corrupt value in the published text (not an unsupported layout) belongs in
   `article-corrections.ts`, which repairs the article text before parsing, scoped to one

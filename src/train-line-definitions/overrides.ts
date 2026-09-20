@@ -112,5 +112,14 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_276704: {
       '40014': 'S11',
     },
+    // AVG staffing notice for S1/S11 (Neureut Kirchfeld–Ettlingen Albgaubad), 2026-09-20.
+    // Same `E` route gap as Nettro_CMS_275214: GTFS knows 47051 only on route "E-Wagen
+    // A-Plan", which is neither mentioned line. The notice lists one continuous night
+    // vehicle cycle — 47051 Rheinhafen 01:11 → Neureut Kirchfeld 01:32, then 56004 out of
+    // Neureut Kirchfeld at 01:33, 56007, 56012 — and GTFS files all three continuations as
+    // S1, so 47051 is that cycle's first leg.
+    Nettro_CMS_276842: {
+      '47051': 'S1',
+    },
   },
 };

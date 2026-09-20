@@ -81,6 +81,26 @@ function resolveArchiveYear(dateIso: string): string {
 }
 
 /**
+ * The date the archive folders an article by: a date the *article itself* states, never one
+ * supplied by the run.
+ *
+ * `extractStand` substitutes the current time when a page carries no "Stand", and roughly half
+ * of KVV's notices (the imported construction ones) carry none. Foldering on that fallback makes
+ * the directory a function of *when the scraper ran*: across a Fahrplan-year rollover the same
+ * article is written a second time under the new year while the old copy stays behind, which is
+ * exactly the byte-stability this file is built around. The feed's publication date is stable
+ * and present on every such notice, so it is preferred over the fallback.
+ */
+function resolveArchiveDate(
+  standIso: string,
+  hasStand: boolean,
+  item: ArchiveItemMetadata,
+): string {
+  const dateIso = hasStand ? standIso : (item.rssPublishedIso ?? standIso);
+  return dateIso.slice(0, ISO_DATE_LENGTH);
+}
+
+/**
  * The feed-item values recorded alongside the article. Both are optional: a legacy caller or a
  * feed item missing the field simply archives `unbekannt` rather than failing the run.
  */
@@ -156,7 +176,7 @@ export function renderArchive(
   // distinguishes them). The fallback is fine for foldering by year but must not appear in
   // the header, so only a real Stand is passed through.
   const { standIso, hasStand } = extractStand(body);
-  const year = resolveArchiveYear(standIso.slice(0, ISO_DATE_LENGTH));
+  const year = resolveArchiveYear(resolveArchiveDate(standIso, hasStand, item));
 
   return {
     year,

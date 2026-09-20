@@ -29,15 +29,19 @@ export class ParseError extends Error {
   }
 }
 
+/** What one detail page yielded: its trips, plus any train number that resolved to no line. */
+interface ParsedArticle {
+  readonly trips: Cancellation[];
+  /** Numbers a multi-line article lists that map to none of its lines. */
+  readonly unmappedTrainNumbers: string[];
+}
+
 /**
- * Parses a cancellation detail page HTML into an array of Cancellation objects.
- *
- * @param html - Raw HTML content of the detail page
- * @param url - Source URL for reference
- * @returns Array of parsed cancellations (empty if parsing fails or no trips found)
- * @throws Error if no trips are found in the article
+ * Parses a detail page into trips, collecting rather than throwing on unmappable train numbers.
+ * Both public entry points below read the same result, so the notification can never disagree
+ * with the trips that were saved.
  */
-export function parseDetailPage(html: string, url: string): Cancellation[] {
+function parseArticle(html: string, url: string): ParsedArticle {
   const text = toArticleText(html, url);
 
   // Extract metadata
@@ -80,6 +84,28 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     }
   }
 
+  return { trips, unmappedTrainNumbers: Array.from(unmappedTrainNumbers) };
+}
+
+/**
+ * Parses a cancellation detail page HTML into an array of Cancellation objects.
+ *
+ * A train number that maps to none of a multi-line article's lines does **not** fail the parse:
+ * the rows that did resolve are returned, and the unmappable ones are reported separately by
+ * {@link findUnmappedTrainNumbersError}. Throwing here used to discard the whole article —
+ * three resolvable S1 trips were lost to one unmapped sibling in `Nettro_CMS_276842` — which
+ * contradicts how a dropped known-number row is already handled: keep the good trips, raise the
+ * notification alongside them.
+ *
+ * @param html - Raw HTML content of the detail page
+ * @param url - Source URL for reference
+ * @returns Array of parsed cancellations
+ * @throws {ParseError} If no trips are found in the article
+ */
+export function parseDetailPage(html: string, url: string): Cancellation[] {
+  const text = toArticleText(html, url);
+  const { trips } = parseArticle(html, url);
+
   // Surface trip-like rows the parser silently dropped (`extractTripRows` merges/filters,
   // so an unparsable row never reaches the loop above). This only warns — the workflow
   // decides whether a dropped row is a hard error (see `findMissedKnownTripsError`), so good
@@ -93,27 +119,41 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
     );
   }
 
-  if (unmappedTrainNumbers.size > 0) {
-    const linesDescription =
-      lineMentionCount > 0 && mentionedLines.length > 0
-        ? `${lineMentionCount} lines: ${mentionedLines.join(', ')}`
-        : 'multiple lines';
-    const trains = Array.from(unmappedTrainNumbers);
-    const trainsLabel = trains.length > 1 ? 'trains' : 'train';
-    const numbersLabel = trains.length > 1 ? 'these train numbers' : 'this train number';
-
-    throw new ParseError(
-      `Multi-line article detected (${linesDescription}) in article ${url} ` +
-        `but no train number mapping found for ${trainsLabel} ${trains.join(', ')}. ` +
-        `Please add ${numbersLabel} to the appropriate line definition.`,
-    );
-  }
-
   if (trips.length === 0) {
     throw new ParseError(`Incorrect parse: no trips were found in article ${url}`);
   }
 
   return trips;
+}
+
+/**
+ * The notification that an article names a train number mapping to none of its lines — a real
+ * cancellation filed under no line until someone adds the number to a line definition.
+ *
+ * Returned rather than thrown, so the caller saves the trips that *did* resolve and still fails
+ * CI. This mirrors `findMissedKnownTripsError` in `workflow.ts`.
+ */
+export function findUnmappedTrainNumbersError(html: string, url: string): ParseError | undefined {
+  const { unmappedTrainNumbers } = parseArticle(html, url);
+  if (unmappedTrainNumbers.length === 0) {
+    return undefined;
+  }
+
+  const text = toArticleText(html, url);
+  const mentionedLines = extractMentionedLines(text);
+  const linesDescription =
+    mentionedLines.length > 0
+      ? `${mentionedLines.length} lines: ${mentionedLines.join(', ')}`
+      : 'multiple lines';
+  const trainsLabel = unmappedTrainNumbers.length > 1 ? 'trains' : 'train';
+  const numbersLabel =
+    unmappedTrainNumbers.length > 1 ? 'these train numbers' : 'this train number';
+
+  return new ParseError(
+    `Multi-line article detected (${linesDescription}) in article ${url} ` +
+      `but no train number mapping found for ${trainsLabel} ${unmappedTrainNumbers.join(', ')}. ` +
+      `Please add ${numbersLabel} to the appropriate line definition.`,
+  );
 }
 
 // Re-export types and utilities that may be useful for consumers

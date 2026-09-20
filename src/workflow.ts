@@ -2,7 +2,7 @@ import type { Cancellation, Item } from './types.js';
 import { DATA_DIR, RSS_URL } from './config.js';
 import { archiveArticleText } from './article-archive.js';
 import { fetchText, parseRss } from './rss.js';
-import { parseDetailPage, ParseError } from './parser/index.js';
+import { findUnmappedTrainNumbersError, parseDetailPage, ParseError } from './parser/index.js';
 import { findUnparsedTripLikeRows, leadingTrainNumber } from './parser/trip-parsing.js';
 import { toArticleText } from './parser/article-corrections.js';
 import { classifyCause } from './cause.js';
@@ -161,7 +161,11 @@ export async function processRssItem(
   try {
     const trips = parseDetailPage(html, url);
     console.log(`  -> parsed ${trips.length} trips`);
-    const parseError = findMissedKnownTripsError(html, trips, url);
+    // Both checks keep their trips and report alongside them. An unmappable train number is
+    // the article's own row that resolved to no line; a missed known-number row is one no
+    // format matched. Either fails CI as a notification without losing what did parse.
+    const parseError =
+      findMissedKnownTripsError(html, trips, url) ?? findUnmappedTrainNumbersError(html, url);
     return { status: 'parsed', trips, ...(parseError ? { parseError } : {}) };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
@@ -177,6 +181,15 @@ export async function processRssItem(
       const missedKnownTripError = findMissedKnownTripsError(html, [], url);
       if (missedKnownTripError) {
         throw missedKnownTripError;
+      }
+
+      // An article whose every row resolved to no line parses to zero trips, so it lands here
+      // rather than in the success path. Its rows are valid trip rows, so nothing below sees
+      // them as trip-like and it would otherwise be filed as "no trip details" — silently
+      // dropping the one notification that says which number to map.
+      const unmappedTrainNumbersError = findUnmappedTrainNumbersError(html, url);
+      if (unmappedTrainNumbersError) {
+        throw unmappedTrainNumbersError;
       }
 
       if (!hasTripLikeRows) {

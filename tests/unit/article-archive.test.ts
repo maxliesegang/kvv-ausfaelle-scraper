@@ -168,6 +168,46 @@ describe('Article archive - reparse fidelity', () => {
   }
 });
 
+/**
+ * Roughly half of KVV's notices (the imported construction ones) carry no "Stand", and the
+ * archive used to fold those by the *current* Fahrplan year — making the directory a
+ * function of when the scraper ran rather than of the article. Ten archives in `docs/` had
+ * already landed a year out that way.
+ */
+describe('Article archive - year foldering', () => {
+  // No "Stand" line anywhere in the body, so `extractStand` falls back to the current time.
+  const bodyWithoutStand =
+    'Linie S1\nBetroffene Fahrten:\n10001 Hochstetten 10:00 Uhr - Hbf 11:00 Uhr';
+
+  it('folds a Stand-less article by the feed publication date', () => {
+    const { year } = renderArchive('test://no-stand', bodyWithoutStand, {
+      rssPublishedIso: '2025-10-01T08:00:00.000Z',
+    });
+
+    // Fahrplan year 2025 runs 2024-12-15 .. 2025-12-13.
+    assert.strictEqual(year, '2025');
+  });
+
+  it('prefers the article Stand over the feed publication date', () => {
+    const { year } = renderArchive(
+      'test://with-stand',
+      `Nach aktuellem Stand 01.03.2026 09:00:00\n${bodyWithoutStand}`,
+      { rssPublishedIso: '2025-10-01T08:00:00.000Z' },
+    );
+
+    assert.strictEqual(year, '2026');
+  });
+
+  it('is stable across runs for the same Stand-less article', () => {
+    const item = { rssPublishedIso: '2025-10-01T08:00:00.000Z' };
+
+    assert.strictEqual(
+      renderArchive('test://stable', bodyWithoutStand, item).year,
+      renderArchive('test://stable', bodyWithoutStand, item).year,
+    );
+  });
+});
+
 /** Reads an archived file by name from whichever year folder it landed in. */
 async function findArchivedFile(baseDir: string, fileName: string): Promise<string> {
   const { readdir } = await import('node:fs/promises');
