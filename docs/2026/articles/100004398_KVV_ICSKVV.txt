@@ -15,11 +15,11 @@ Freudenstadt Hbf - Bondorf: S8, RE 14b - Zugausfälle und Ersatzverkehr im Oktob
 Linie(n): S8, RE 14 b
 Zeitraum: Donnerstag 01.10. bis 29.10.2026 durchgehend
 Einschränkung Zugverkehr: 
-•    S8 entfällt Bondorf (b Herrrenb) &lt;&gt; Freudenstadt Hbf 
-•    RE/RB14b entfällt Hochdorf &lt;&gt; Freudenstadt Hbf 
+•    S8 entfällt Bondorf (b Herrrenb) <> Freudenstadt Hbf 
+•    RE/RB14b entfällt Hochdorf <> Freudenstadt Hbf 
 Ersatzverkehr: 
-•    Bus RE14b FDS Stadtbf &lt;&gt; Freudenstadt Hbf &lt;&gt; Horb 
-•    XBus RE14b FDS Stadtbf &lt;&gt; FDS Marktpl. &lt;&gt; Freudenstadt Hbf &lt;&gt; Dornstetten &lt;&gt; Horb ohne zusätzliche Halte
+•    Bus RE14b FDS Stadtbf <> Freudenstadt Hbf <> Horb 
+•    XBus RE14b FDS Stadtbf <> FDS Marktpl. <> Freudenstadt Hbf <> Dornstetten <> Horb ohne zusätzliche Halte
 Grund: Arbeiten DB InfraGO
 Ausnahmen/Sonstiges:
 •    Umsteigemöglichkeiten in Richtung Stuttgart/Rottweil in Horb

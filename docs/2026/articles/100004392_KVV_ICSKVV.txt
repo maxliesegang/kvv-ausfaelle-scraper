@@ -9,7 +9,7 @@ Fahrplan
 Verkehrsmeldungen
 Vom 18.11.2026 bis 19.11.2026
 Linie M
-Karlsruhe: Messe-Express verkehrt zur Messe &quot;expoSE/expoDirekt&quot;
+Karlsruhe: Messe-Express verkehrt zur Messe "expoSE/expoDirekt"
 (sie) Der Messe-Express verkehrt
 vom Mittwoch 18.11. bis Donnerstag 19.11.2026
 zur Messe "expoSE/expoDirekt" zwischen Karlsruhe Hauptbahnhof (Bahnhofsvorplatz) und der Messe Karlsruhe (Haupteingang).

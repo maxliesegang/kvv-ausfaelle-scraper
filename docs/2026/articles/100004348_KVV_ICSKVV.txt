@@ -17,14 +17,14 @@ Zeitraum:
 •    Nächte 05./06., 07./08., 17./18. 18./19., und 21./22. bis 23./24.09.  (jeweils ca. 22:45 Uhr - 04:00 Uhr)
 •    Nächte 06./07., 15./16., 16./17.09. und 24./25. bis 26./27.09. (jeweils ca. 22:00 Uhr - 04:00 Uhr)
 Entfall Stadtbahn: 
-Karlsruhe Tullastraße &lt;-&gt; Rastatt (&lt;-&gt; Kuppenheim, nur in der Nacht 06./07.)
+Karlsruhe Tullastraße <-> Rastatt (<-> Kuppenheim, nur in der Nacht 06./07.)
 Ersatzverkehr: 
-jeweils Karlsruhe Hbf (Vorpl.) &lt;-&gt;Durmersheim &lt;-&gt; Rastatt (&lt;-&gt; Kuppenheim, nur in der Nacht 06./07.)
+jeweils Karlsruhe Hbf (Vorpl.) <->Durmersheim <-> Rastatt (<-> Kuppenheim, nur in der Nacht 06./07.)
 Grund: 
 DB InfraGO - Bauarbeiten
 Sonstiges: 
-Erster Zug am 14.09. beginnt nicht an der Tullastraße, sondern in Rastatt: Karlsruhe Tullastr. (04:16) -&gt; Rastatt (an 04:55) -&gt;  Bühl / Freudenstadt; Ersatzverkehr Karlsruhe Hbf (Vorpl.) -&gt;  Durmersheim -&gt;  Rastatt
-Erster Zug am 25.09. beginnt nicht an der Tullastraße, sondern in Karlsruhe Hbf, fährt ohne Halt bis Rastatt und dann weiter wie üblich nach Bühl (Baden) und Freudenstadt; Ersatzverkehr Karlsruhe Hbf -&gt;  Durmersheim -&gt; Rastatt
+Erster Zug am 14.09. beginnt nicht an der Tullastraße, sondern in Rastatt: Karlsruhe Tullastr. (04:16) -> Rastatt (an 04:55) ->  Bühl / Freudenstadt; Ersatzverkehr Karlsruhe Hbf (Vorpl.) ->  Durmersheim ->  Rastatt
+Erster Zug am 25.09. beginnt nicht an der Tullastraße, sondern in Karlsruhe Hbf, fährt ohne Halt bis Rastatt und dann weiter wie üblich nach Bühl (Baden) und Freudenstadt; Ersatzverkehr Karlsruhe Hbf ->  Durmersheim -> Rastatt
 Ersatzfahrplan (05.09. bis 07.09.2026)
 Ersatzfahrplan (07.09. bis 14.09.2026)
 Ersatzfahrplan (15.09. bis 23.09.2026)

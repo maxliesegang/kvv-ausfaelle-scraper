@@ -18,7 +18,7 @@ Zeitraum:
 Entfall Stadtbahn:
 S71 Karlsruhe Hbf (22:47 Uhr) - Rastatt - Baden-Baden (23:17 Uhr) entfällt 04.09. und 06.09. und endet am 29.09. in Rastatt
 Ersatzverkehr:  
-jeweils (Karlsruhe Hbf (Vorpl.) &lt;-&gt;Ettlingen West &lt;-&gt;Rastatt &lt;-&gt; Baden-Baden
+jeweils (Karlsruhe Hbf (Vorpl.) <->Ettlingen West <->Rastatt <-> Baden-Baden
 Grund: 
 DB InfraGO - Bauarbeiten
 Sonstiges: 
