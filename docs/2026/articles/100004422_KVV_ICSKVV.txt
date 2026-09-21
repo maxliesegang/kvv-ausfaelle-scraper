@@ -1,17 +1,17 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004422_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 129, 131, 140 - Weiher: Haltestelle Unterdorf verlegt (21.09.2026 bis 04.12.2026)
+Titel:  Linie 129, 131, 140 - Weiher: Haltestelle Unterdorf verlegt (05.10.2026 bis 04.12.2026)
 Datum:  2026-09-18T09:59:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 21.09.2026 bis 04.12.2026
+Vom 05.10.2026 bis 04.12.2026
 Linie 129, 131, 140
 Weiher: Haltestelle Unterdorf verlegt
 (lou) Aufgrund einer Baumaßnahme in der Hauptstraße in Weiher muss die Haltestelle "Weiher Unterdorf"
-von Montag, den 21. September 2026
+von Montag, den 5. Oktober 2026
 bis vls. Freitag, den 4. Dezember 2026
 für die Linien 129, 131 und 140 mit einer Ersatzhaltestelle im Ludwig-Simon-Ring im Bereich der Einmündung zur Hauptstraße verlegt werden.
 Zurück zur Übersicht
