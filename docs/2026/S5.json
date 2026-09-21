@@ -23297,7 +23297,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23308,7 +23308,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260921_04:11_de-KVV_16.T0.22-305-E-s26-9.2.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23328,7 +23328,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23339,7 +23339,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260921_05:02_de-KVV_40.T0.22-305-E-s26-9.87.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23359,7 +23359,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23370,7 +23370,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260921_05:05_de-KVV_71.T0.22-305-E-s26-9.90.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23390,7 +23390,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23400,7 +23400,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23420,7 +23420,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23431,7 +23431,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260921_06:25_de-KVV_222.T0.22-305-E-s26-9.6.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23451,7 +23451,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23462,7 +23462,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260921_07:35_de-KVV_369.T0.22-305-E-s26-9.90.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23482,7 +23482,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23493,7 +23493,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260921_08:05_de-KVV_427.T0.22-305-E-s26-9.90.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23513,7 +23513,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23523,7 +23523,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23543,7 +23543,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-09-22",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23553,7 +23553,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   }
 ]
