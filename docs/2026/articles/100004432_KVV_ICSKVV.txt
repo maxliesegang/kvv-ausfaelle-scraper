@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004432_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S7, S71, SEV - Rastatt - Achern: S7 und S71 entfallen an einem Wochenende im Oktober (10.10.2026 bis 12.10.2026)
+Datum:  2026-09-22T06:28:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 10.10.2026 bis 12.10.2026
+Linien: S7, S71, SEV
+Rastatt - Achern: S7 und S71 entfallen an einem Wochenende im Oktober
+(AVG) Rastatt - Achern: S7 und S71 entfallen an einem Wochenende im Oktober
+Linie(n): S7, S71
+Zeitraum: Samstag 10.10. (04:00 Uhr) bis Montag 12.10.2026 (04:00 Uhr)
+Entfall Stadtbahn: Rastatt <-> Achern
+Ersatzverkehr:   Rastatt <-> Bühl (Baden); RE2 hält wie gewöhnlich in Rastatt, Baden-Baden, Bühl (Baden) und Achern
+Grund: DB InfraGO - Bauarbeiten
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
