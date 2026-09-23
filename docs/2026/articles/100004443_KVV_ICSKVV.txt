@@ -1,0 +1,24 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004443_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie: S51 - Knielingen Rheinbergstraße - Germersheim: S51 einzelne Züge entfallen ab 22:00 Uhr auf Teilabschnitt (10.10.2026 bis 11.10.2026)
+Datum:  2026-09-23T11:58:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 10.10.2026 bis 11.10.2026
+Linie: S51
+Knielingen Rheinbergstraße - Germersheim: S51 einzelne Züge entfallen ab 22:00 Uhr auf Teilabschnitt
+(AVG) Knielingen Rheinbergstraße - Germersheim: S51 einzelne Züge entfallen ab 22:00 Uhr auf Teilabschnitt
+Linie(n): S51
+Zeitraum: Nacht 10./11.10.2026 (22:00 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn: Knielingen Rheinbergstraße  <-> Germersheim
+•    S51 Germersheim (22:30)-Wörth (Rhein) (23:02) - KA Rheinbergstraße (23:11) - KA Entenfang (23:21)
+•    S51 KA Entenfang (23:06) - KA Rheinbergstraße (23:15) - Wörth (Rhein) (23:23) - Germersheim (00:07)
+Ersatzverkehr: es wird kein SEV eingerichtet
+Grund: DB InfraGO - Zeitfenster für Instandhaltung 
+Ausnahmen/Sonstiges: 
+•    die vorletzte Fahrt Richtung Germersheim endet in der Rheinbergstraße, ersatzweise wird eine Fahrt 30 Minuten später angeboten
+o    S51 KA Rheinbergstraße (00:14) (00:44) - Wörth (Rhein (00:23) (00:53) - Germersheim (00:57) (01:27)
+Zurück zur Übersicht

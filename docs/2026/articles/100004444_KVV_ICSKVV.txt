@@ -1,0 +1,21 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004444_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S51, SEV - Wörth (Rhein) - Germersheim: S51 Ein Zug pro Richtung entfällt nachts auf Teilabschnitt (11.10.2026 bis 12.10.2026)
+Datum:  2026-09-23T12:04:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 11.10.2026 bis 12.10.2026
+Linien: S51, SEV
+Wörth (Rhein) - Germersheim: S51 Ein Zug pro Richtung entfällt nachts auf Teilabschnitt
+(AVG) Wörth (Rhein) - Germersheim: S51 Ein Zug pro Richtung entfällt nachts auf Teilabschnitt
+Linie(n): S51
+Zeitraum: Nacht 11./12.10.2026 (23:30 Uhr bis 04:30 Uhr)
+Entfall Stadtbahn: Wörth (Rhein)   <-> Germersheim
+•    S51 Germersheim (23:30)-Wörth (Rhein) (00:02) - KA Rheinbergstraße (00:11) - KA Entenfang (00:21)
+•    S51 KA Entenfang (23:06) - KA Rheinbergstraße (23:15) - Wörth (Rhein) (23:23) - Germersheim (00:07)
+Ersatzverkehr: Wörth (Rhein)  <-> Germersheim
+Grund: DB InfraGO - Oberleitungsarbeiten im Abschnitt Germersheim - Wörth (Rhein) 
+Zurück zur Übersicht

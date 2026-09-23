@@ -1,0 +1,21 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004445_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S31, S32, SEV - Karlsruhe Hbf - Ubstadt Ort : S31 / S32 - Nächtliche Teilausfälle Mitte Oktober (10.10.2026 bis 12.10.2026)
+Datum:  2026-09-23T12:31:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 10.10.2026 bis 12.10.2026
+Linien: S31, S32, SEV
+Karlsruhe Hbf - Ubstadt Ort : S31 / S32 - Nächtliche Teilausfälle Mitte Oktober
+(AVG) Karlsruhe Hbf - Ubstadt Ort : S31 / S32 - Nächtliche Teilausfälle Mitte Oktober
+Linie(n): S31/S32
+Zeitraum: Nächte 10./11.10. und  11./12.10.  (jeweils 00:01 - 04:30 Uhr)
+Entfall Stadtbahn: jeweils Karlsruhe Hbf « Ubstadt Ort
+Ersatzverkehr:  jeweils Karlsruhe Hbf (Vorpl.) « Ubstadt Ort Bahnhof
+Grund: DB InfraGO - Arbeiten an Leit- und Sicherungstechnik in Bruchsal
+Ausnahmen/Sonstiges: die Fahrzeiten der Züge aus Menzingen/Odenheim sind baustellenbedingt geändert, Fahrplanauskunft beachten
+Fahrplan Ersatzverkehr 
+Zurück zur Übersicht
