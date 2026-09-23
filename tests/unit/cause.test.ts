@@ -113,6 +113,16 @@ describe('classifyCause - categories', () => {
       'construction',
     );
     assert.strictEqual(classifyCause('die AVG sperrt die Enztalbahn'), 'construction');
+    assert.strictEqual(
+      classifyCause('Grund: DB InfraGO - Oberleitungsarbeiten im Abschnitt Germersheim - Wörth'),
+      'construction',
+    );
+    assert.strictEqual(
+      classifyCause('Brückenarbeiten zwischen Karlsruhe und Durlach'),
+      'construction',
+    );
+    assert.strictEqual(classifyCause('Umleitung wegen Kranarbeiten'), 'construction');
+    assert.strictEqual(classifyCause('Haltentfall wegen Baumfällarbeiten'), 'construction');
   });
 
   it('falls back to unknown when no cause keyword is present', () => {
