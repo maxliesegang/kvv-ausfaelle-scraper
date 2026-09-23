@@ -15,7 +15,9 @@ Aufgrund von Bauarbeiten der DB InfraGO entfallen die Stadtbahnlinien S41 und S4
 von Freitag, 25.09. (ab 21:00 Uhr), bis Samstag, 10.10.2026 (bis 05:00 Uhr) 
 zwischen Heilbronn Kaufland und Mosbach (Baden) bzw. Sinsheim (Elsenz) Hbf.
 Ersatzbusse:
-verkehren jeweils stündlich zwischen Heilbronn Hans-Rießer-Str. und Mosbach (Baden) bzw. Sinsheim (Elsenz) Hbf.
+verkehren jeweils stündlich zwischen Heilbronn Hans-Rießer-Str. und Sinsheim (Elsenz) Hbf.
+Zwischen Hans-Rießer-Str. und Bad Rappenau verkehrt der Ersatzverkehr im 30-Minuten-Takt.
+Die Linie RE10 Heidelberg <> Heilbronn verkehrt stündlich über Mosbach-Neckarelz und bedient die Halte der Linie S41 zwischen Mosbach-Neckarelz und Bad Friedrichshall
 Zwischen Heilbronn Kaufland und Heilbronn Hbf/Willy-Brandt-Platz fahren die Linien S41/S42 im 30-Minuten-Takt, jedoch mit geänderten Abfahrtszeiten.
 Bitte beachten Sie:
 An der Haltestelle Heilbronn Kaufland besteht kein direkter Umstieg zwischen Stadtbahn und Ersatzbus.
