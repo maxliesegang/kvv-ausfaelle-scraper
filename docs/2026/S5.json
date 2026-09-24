@@ -23573,7 +23573,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23584,7 +23584,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_10:52_de-KVV_649.T0.22-305-E-s26-9.86.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23604,7 +23604,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23614,7 +23614,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23634,7 +23634,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23645,7 +23645,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_13:05_de-KVV_855.T0.22-305-E-s26-9.90.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23665,7 +23665,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23675,7 +23675,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23695,7 +23695,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23705,7 +23705,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23725,7 +23725,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23736,7 +23736,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_15:12_de-KVV_1048.T0.22-305-E-s26-9.86.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23756,7 +23756,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23767,7 +23767,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_14:46_de-KVV_1122.T0.22-305-E-s26-9.6.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23787,7 +23787,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23798,7 +23798,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_15:05_de-KVV_1037.T0.22-305-E-s26-9.90.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23818,7 +23818,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23829,7 +23829,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_15:06_de-KVV_1173.T0.22-305-E-s26-9.6.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23849,7 +23849,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23859,7 +23859,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23879,7 +23879,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23889,7 +23889,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23909,7 +23909,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23920,7 +23920,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_16:23_de-KVV_1174.T0.22-305-E-s26-9.83.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23940,7 +23940,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23951,7 +23951,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_16:45_de-KVV_1207.T0.22-305-E-s26-9.83.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -23971,7 +23971,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -23982,7 +23982,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_17:02_de-KVV_1241.T0.22-305-E-s26-9.98.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24002,7 +24002,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24013,7 +24013,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260924_17:01_de-KVV_1393.T0.22-305-E-s26-9.11.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24028,7 +24028,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_17:52_de-KVV_1341.T0.22-305-E-s26-9.86.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24042,7 +24059,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_18:12_de-KVV_1376.T0.22-305-E-s26-9.86.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24056,7 +24090,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_18:05_de-KVV_1354.T0.22-305-E-s26-9.90.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24070,7 +24121,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24084,7 +24151,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24098,7 +24181,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24112,7 +24211,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_19:52_de-KVV_1515.T0.22-305-E-s26-9.86.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24126,7 +24242,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T08:56:53.608Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_18:50_de-KVV_202.T0.22-351-E-s26-9.40.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24140,7 +24273,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_20:05_de-KVV_1528.T0.22-305-E-s26-9.90.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24154,7 +24304,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T08:56:53.608Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24168,7 +24334,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24182,7 +24364,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24196,7 +24394,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_22:05_de-KVV_1596.T0.22-305-E-s26-9.90.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24210,7 +24425,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T08:56:53.608Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_22:30_de-KVV_246.T0.22-351-E-s26-9.38.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24224,7 +24456,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260924_23:09_de-KVV_1630.T0.22-305-E-s26-9.109.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24238,7 +24487,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T16:22:18.504Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
