@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054
-Stand:  2026-09-24T06:11:00.000Z
+Stand:  2026-09-24T06:09:00.000Z
 Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Karlsruhe Tullastraße/Alter Schlachthof und Söllingen Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (24.09.2026 bis 24.09.2026)
 Datum:  2026-09-24T06:09:00.000Z
 ========================================================================
@@ -13,18 +13,39 @@ Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Karlsruhe Tullastraße
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Tullastraße/Alter Schlachthof und Söllingen Bahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 24.09.2026 08:11:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84735 Karlsruhe Rheinbergstraße (10:51 Uhr) - Söllingen Bf (11:37 Uhr)
+Na84735 Karlsruhe Rheinbergstraße (10:51 Uhr) - Söllingen Bf (11:37 Uhr)
 84828 Söllingen Bf (11:51 Uhr) - Wörth Badepark (12:53 Uhr)
 84823 Wörth Badepark (13:05 Uhr) - Söllingen Bf (14:09 Uhr)
-84746 Söllingen  Bf (14:18 Uhr) - Karlsruhe Rheinbergstraße (15:04 Uhr)
-85409 Karlsruhe Tullastraße (14:57 Uhr) - Kalsruhe Tullastraße (16:00 Uhr)
+84746 Söllingen Bf (14:18 Uhr) - Karlsruhe Rheinbergstraße (15:04 Uhr)
+85409 Karlsruhe Tullastraße (14:57 Uhr) - Karlsruhe Tullastraße (16:00 Uhr)
+84761 Karlsruhe Rheinbergstraße (15:12 Uhr) - Söllingen Bf (15:56 Uhr)
 85068 Karlsruhe Tullastraße (15:30 Uhr) - Wörth Badepark (16:15 Uhr)
+84992 Karlsruhe Tullastraße (15:51 Uhr) - Wörth Badepark (16:33 Uhr)
+84754 Söllingen Bf (16:01 Uhr) - Wörth Bf (16:56 Uhr)
+85085 Wörth Badepark (16:45 Uhr) - Karlsruhe Tullastraße (17:26 Uhr)
+84773 Wörth Bf (17:02 Uhr) - Karlsruhe Rheinbergstraße (17:10 Uhr)
 85005 Wörth Badepark (16:23 Uhr) - Karlsruhe Tullastraße (17:06 Uhr)
+84773 Wörth Bf (17:02 Uhr) - Karlsruhe Rheinbergstraße (17:10 Uhr)
+84779 Karlsruhe Rheinbergstraße (18:11 Uhr) - Söllingen Bf (18:56 Uhr)
+84772 Söllingen Bf (19:01 Uhr) - Karlsruhe Rheinbergstraße (19:44 Uhr)
+84843 Karlsruhe Starckstraße (18:27 Uhr) - Söllingen Bf (19:09 Uhr)
+84776 Söllingen Bf (19:18 Uhr) - Karlsruhe Rheinbergstraße (20:04 Uhr)
+84785 Karlsruhe Rheinbergstraße (19:51 Uhr) - Söllingen Bf (20:37 Uhr)
 84929 Karlsruhe Tullastraße (19:56 Uhr) - Karlsruhe Rheinbergstr. (19:59 Uhr)
 84928 Karlsruhe Rheinbergstr. (20:41 Uhr) - Germersheim Bf (22.07 Uhr)
+84860 Söllingen Bf (20:51 Uhr) - Wörth Badepark (22:05 Uhr)
+84851 Wörth Badepark (22:05 Uhr) - Söllingen (23:06 Uhr)
 84943 Germersheim Bf (22:30 Uhr) - Söllingen Bf (23:56 Uhr) 
+85096 Söllingen (23:19 Uhr) - Karlsruhe Tullastraße (23:33 Uhr)
 84782 Söllingen Bf (00:02 Uhr) - Rheinbergstr. (00:44 Uhr)
+84831 KA. Tullastr. (15:46 Uhr) - Söllingen Bf. (16:09 Uhr)
+84758 Söllingen Bf. (16:18 Uhr) - KA. Rheinbergstr. (17:04 Uhr)
+84760 KA. Tullastr (17:21 Uhr) - KA Rheinbergstr. (17:44 Uhr) 
+84775 KA. Rheinbergstr. (17:52 Uhr) - Söllingen Bf. (18:37 Uhr) 
+84854 Söllingen Bf. (18:48 Uhr) - Wörth Badepark (19:53 Uhr)
+84847 Wörth Badepark (20:05 Uhr) - Söllingen Bf. (21:06 Uhr)
+84862 Söllingen Bf. (21:51 Uhr) - Wörth Badepark (22:53 Uhr)
+84855 Wörth Badepark (23:09 Uhr) - KA. Tullastr. (00:01 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
