@@ -24552,7 +24552,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24563,7 +24563,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_13:48_de-KVV_1043.T0.22-305-E-s26-9.4.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24583,7 +24583,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24594,7 +24594,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_15:05_de-KVV_1036.T0.22-305-E-s26-9.82.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24614,7 +24614,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24625,7 +24625,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_15:12_de-KVV_1048.T0.22-305-E-s26-9.86.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24645,7 +24645,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24656,7 +24656,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_15:37_de-KVV_133.T0.22-352-E-s26-9.7.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24676,7 +24676,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24686,7 +24686,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24706,7 +24706,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24716,7 +24716,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -24731,7 +24731,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277240",
     "capturedAt": "2026-09-25T16:23:36.543Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_16:50_de-KVV_181.T0.22-351-E-s26-9.42.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S5",
@@ -24750,7 +24767,37 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 2
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-25",
+    "stand": "2026-09-25T11:47:00.000Z",
+    "trainNumber": "84920",
+    "fromStop": "Söllingen",
+    "fromTime": "18:38",
+    "toStop": "Germersheim",
+    "toTime": "20:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277240",
+    "capturedAt": "2026-09-25T16:23:36.543Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -24767,20 +24814,6 @@
     "line": "S5",
     "date": "2026-09-25",
     "stand": "2026-09-25T11:47:00.000Z",
-    "trainNumber": "84920",
-    "fromStop": "Söllingen",
-    "fromTime": "18:38",
-    "toStop": "Germersheim",
-    "toTime": "20:07",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277240",
-    "capturedAt": "2026-09-25T16:23:36.543Z",
-    "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
-  },
-  {
-    "line": "S5",
-    "date": "2026-09-25",
-    "stand": "2026-09-25T11:47:00.000Z",
     "trainNumber": "84935",
     "fromStop": "Germersheim",
     "fromTime": "20:50",
@@ -24789,6 +24822,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277240",
     "capturedAt": "2026-09-25T16:23:36.543Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_20:50_de-KVV_224.T0.22-351-E-s26-9.47.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   }
 ]

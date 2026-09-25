@@ -2887,7 +2887,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2898,7 +2898,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_09:23_de-KVV_144.T0.22-308-E-s26-9.45.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2918,7 +2918,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2928,7 +2928,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "attempts": 2
     }
   }
 ]

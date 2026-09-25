@@ -2775,7 +2775,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2786,7 +2786,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_14:17_de-KVV_619.T0.22-307-E-s26-9.29.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2806,7 +2806,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2817,7 +2817,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_15:33_de-KVV_276.T0.22-307-E-s26-9.21.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   }
 ]

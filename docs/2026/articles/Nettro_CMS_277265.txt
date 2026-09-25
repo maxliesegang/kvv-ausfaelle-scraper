@@ -13,8 +13,10 @@ Betriebsbedingte Fahrtausfälle auf der Linie S4
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Auf der Linie S4 kommt es streikbedingt zu Ersatzverkehr mit Bussen.
-Folgende Fahrten werden durch einen Ersatzverkehr bis Bussen ersetzt:
+Folgende Fahrten werden durch einen Ersatzverkehr mit Bussen ersetzt:
 85469 23:15 Karlsruhe Albtalbahnhof - 01:18 Heilbronn Pfühlpark
+85474 23:40 Heilbronn Pfühlpark - 01:42 Karlsruhe Albtalbahnhof
 85476 01:25 Heilbronn Pfühlpark - 03:23 Karlsruhe Albtalbahnhof
+85547 03:15 Karlsruhe Albtalbahnhof - 04:07 Gölshausen  
 Die betroffenen Fahrten werden zwischen Karlsruhe Hauptbahnhof und Heilbronn Hbf/Willy-Brandt-Platz ersetzt. Bitte beachten Sie die längere Fahrzeit des Schienenersatzverkehrs sowie die Ersatzhaltestellen gemäß Aushang an den Bahnsteigen.
 Zurück zur Übersicht

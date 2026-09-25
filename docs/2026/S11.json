@@ -2341,7 +2341,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2352,7 +2352,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_07:12_de-KVV_65.T0.22-311-E-s26-6.22.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2372,7 +2372,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2383,7 +2383,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_08:21_de-KVV_479.T0.22-311-E-s26-6.2.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2403,7 +2403,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2414,7 +2414,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_08:51_de-KVV_492.T0.22-311-E-s26-6.2.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2434,7 +2434,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2445,7 +2445,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_09:05_de-KVV_99.T0.22-311-E-s26-6.28.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2465,7 +2465,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2476,7 +2476,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_09:51_de-KVV_506.T0.22-311-E-s26-6.2.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2496,7 +2496,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2507,7 +2507,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_10:21_de-KVV_513.T0.22-311-E-s26-6.5.H",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -2527,7 +2527,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "transitous",
-      "checkedAt": "2026-09-25",
+      "checkedAt": "2026-09-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2538,7 +2538,7 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260925_14:12_de-KVV_212.T0.22-311-E-s26-6.22.R",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1
+      "attempts": 2
     }
   }
 ]
