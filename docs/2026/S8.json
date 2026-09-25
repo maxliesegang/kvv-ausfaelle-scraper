@@ -2869,5 +2869,66 @@
       "journeyCancelled": true,
       "journeyId": "20260919-4b6b979d-b066-33c7-b7c6-b964bb2b8994"
     }
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-25",
+    "stand": "2026-09-25T06:02:00.000Z",
+    "trainNumber": "85632",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "09:23",
+    "toStop": "Freudenstadt Stadt",
+    "toTime": "09:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277192",
+    "capturedAt": "2026-09-25T09:18:09.248Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_09:23_de-KVV_144.T0.22-308-E-s26-9.45.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-25",
+    "stand": "2026-09-25T06:02:00.000Z",
+    "trainNumber": "85787",
+    "fromStop": "Freudenstadt Stadt",
+    "fromTime": "09:37",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "09:41",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277192",
+    "capturedAt": "2026-09-25T09:18:09.248Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "unresolvedReason": "journey-not-found",
+      "attempts": 1
+    }
   }
 ]

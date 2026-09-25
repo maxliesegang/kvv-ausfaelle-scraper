@@ -9,7 +9,9 @@
     "toStop": "Menzingen Bf",
     "toTime": "23:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264013",
-    "capturedAt": "2026-02-23T20:40:27.980Z"
+    "capturedAt": "2026-02-23T20:40:27.980Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S32",
@@ -21,7 +23,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "09:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
-    "capturedAt": "2026-04-26T06:03:49.835Z"
+    "capturedAt": "2026-04-26T06:03:49.835Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S32",
@@ -33,7 +37,9 @@
     "toStop": "Karlsruhe Hbf.",
     "toTime": "10:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
-    "capturedAt": "2026-04-26T06:03:49.835Z"
+    "capturedAt": "2026-04-26T06:03:49.835Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S32",
@@ -45,7 +51,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
-    "capturedAt": "2026-04-26T08:55:29.057Z"
+    "capturedAt": "2026-04-26T08:55:29.057Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S32",
@@ -57,6 +65,39 @@
     "toStop": "Ubstadt Ort",
     "toTime": "18:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_267788",
-    "capturedAt": "2026-04-26T08:55:29.057Z"
+    "capturedAt": "2026-04-26T08:55:29.057Z",
+    "cause": "unknown",
+    "causeKeyword": null
+  },
+  {
+    "line": "S32",
+    "date": "2026-09-25",
+    "stand": "2026-09-25T05:57:00.000Z",
+    "trainNumber": "85112",
+    "fromStop": "Karlsruhe Hbf",
+    "fromTime": "08:43",
+    "toStop": "Ubstadt Ort",
+    "toTime": "09:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277174",
+    "capturedAt": "2026-09-25T09:18:09.326Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-25",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_08:43_de-KVV_115.T0.22-332-E-s26-9.45.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   }
 ]

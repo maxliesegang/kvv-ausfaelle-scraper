@@ -1,0 +1,25 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004454_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S4, SEV - Öhringen-Cappel - Weinsberg: S4 - Ein Zug je Richtung entfällt in einzelnen Nächten (02.10.2026 bis 11.10.2026)
+Datum:  2026-09-25T05:06:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 02.10.2026 bis 11.10.2026
+Linien: S4, SEV
+Öhringen-Cappel - Weinsberg: S4 - Ein Zug je Richtung entfällt in einzelnen Nächten
+(AVG)
+Öhringen-Cappel - Weinsberg: S4 - Ein Zug je Richtung entfällt in einzelnen Nächten
+Linie(n): S4
+Zeitraum: Nächte 02./03., 03./04., 09./10. und 10./11.10.2026 (jeweils ca. 00:10 Uhr bis 01:50 Uhr)
+Entfall Stadtbahn: Es entfällt die letzte Verbindung  Öhringen-Cappel <-> Weinsberg und die vorletzte Verbindung Weinsberg <-> Öhringen-Cappel:
+•    S4 Öhringen-Cappel (00:30) - Weinsberg (an 01:00, ab 01:01) - Heilbronn Hbf/Willy-Brandt-Pl. (01:17)
+•    S4 Heilbronn Hbf/Willy-Brandt-Pl. (00:14) - Weinsberg (an 00:29, ab 00:30) - Öhringen-Cappel (00:57)
+Ersatzverkehr: 
+•    Ersatzbus nur Öhringen-Cappel <-> Weinsberg
+•    In der Gegenrichtung bitte auf die frühere oder spätere Verbindung ausweichen
+Grund: DB InfraGO - Bauarbeiten
+Sonstiges: In den Nächten 2./3. bis 15./16.10. kommt es aufgrund des eingleisigen Betriebs der Strecke im Spätverkehr außerdem bei anderen Fahrten zu Verspätungen von bis zu 20 Minuten. 
+Zurück zur Übersicht
