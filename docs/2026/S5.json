@@ -23376,7 +23376,7 @@
   {
     "line": "S5",
     "date": "2026-09-21",
-    "stand": "2026-09-21T00:26:00.000Z",
+    "stand": "2026-09-21T04:30:00.000Z",
     "trainNumber": "84810",
     "fromStop": "Söllingen",
     "fromTime": "06:18",
@@ -23406,7 +23406,7 @@
   {
     "line": "S5",
     "date": "2026-09-21",
-    "stand": "2026-09-21T00:26:00.000Z",
+    "stand": "2026-09-21T04:30:00.000Z",
     "trainNumber": "84950",
     "fromStop": "Pforzheim Hbf",
     "fromTime": "06:25",
@@ -23437,7 +23437,7 @@
   {
     "line": "S5",
     "date": "2026-09-21",
-    "stand": "2026-09-21T00:26:00.000Z",
+    "stand": "2026-09-21T04:30:00.000Z",
     "trainNumber": "84805",
     "fromStop": "Wörth Badepark",
     "fromTime": "07:35",
@@ -23468,7 +23468,7 @@
   {
     "line": "S5",
     "date": "2026-09-21",
-    "stand": "2026-09-21T00:26:00.000Z",
+    "stand": "2026-09-21T04:30:00.000Z",
     "trainNumber": "84809",
     "fromStop": "Wörth Badepark",
     "fromTime": "08:05",
@@ -23499,7 +23499,7 @@
   {
     "line": "S5",
     "date": "2026-09-21",
-    "stand": "2026-09-21T00:26:00.000Z",
+    "stand": "2026-09-21T04:30:00.000Z",
     "trainNumber": "84820",
     "fromStop": "Söllingen",
     "fromTime": "08:48",
@@ -23529,32 +23529,16 @@
   {
     "line": "S5",
     "date": "2026-09-21",
-    "stand": "2026-09-21T00:26:00.000Z",
+    "stand": "2026-09-21T04:30:00.000Z",
     "trainNumber": "84722",
     "fromStop": "Söllingen",
     "fromTime": "09:18",
-    "toStop": "Ka Tullastrasse",
-    "toTime": "09:40",
+    "toStop": "Ka. Rheinbergstraße",
+    "toTime": "10:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_276850",
     "capturedAt": "2026-09-21T03:00:54.434Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal",
-    "verification": {
-      "status": "unresolved",
-      "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-22",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
-      "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
-      "journeyTrackedStops": 0,
-      "trackedOutsideSegment": 0,
-      "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 2
-    }
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S5",
@@ -23590,7 +23574,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84828",
     "fromStop": "Söllingen Bf",
     "fromTime": "11:51",
@@ -23620,7 +23604,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84823",
     "fromStop": "Wörth Badepark",
     "fromTime": "13:05",
@@ -23651,62 +23635,30 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84746",
-    "fromStop": "Söllingen  Bf",
+    "fromStop": "Söllingen Bf",
     "fromTime": "14:18",
     "toStop": "Karlsruhe Rheinbergstraße",
     "toTime": "15:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T08:56:53.608Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal",
-    "verification": {
-      "status": "unresolved",
-      "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-25",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
-      "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
-      "journeyTrackedStops": 0,
-      "trackedOutsideSegment": 0,
-      "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 2
-    }
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "85409",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "14:57",
-    "toStop": "Kalsruhe Tullastraße",
+    "toStop": "Karlsruhe Tullastraße",
     "toTime": "16:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277054",
     "capturedAt": "2026-09-24T08:56:53.608Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal",
-    "verification": {
-      "status": "unresolved",
-      "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-25",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
-      "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
-      "journeyTrackedStops": 0,
-      "trackedOutsideSegment": 0,
-      "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 2
-    }
+    "causeKeyword": "fahrpersonal"
   },
   {
     "line": "S5",
@@ -23742,7 +23694,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "85068",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "15:30",
@@ -23895,7 +23847,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "85005",
     "fromStop": "Wörth Badepark",
     "fromTime": "16:23",
@@ -24233,7 +24185,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84929",
     "fromStop": "Karlsruhe Tullastraße",
     "fromTime": "19:56",
@@ -24295,7 +24247,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84928",
     "fromStop": "Karlsruhe Rheinbergstr.",
     "fromTime": "20:41",
@@ -24416,7 +24368,7 @@
   {
     "line": "S5",
     "date": "2026-09-24",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84943",
     "fromStop": "Germersheim Bf",
     "fromTime": "22:30",
@@ -24508,7 +24460,7 @@
   {
     "line": "S5",
     "date": "2026-09-25",
-    "stand": "2026-09-24T06:11:00.000Z",
+    "stand": "2026-09-24T06:09:00.000Z",
     "trainNumber": "84782",
     "fromStop": "Söllingen Bf",
     "fromTime": "00:02",

@@ -121,5 +121,12 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_276842: {
       '47051': 'S1',
     },
+    // AVG staffing notice for S1/S11 (Bad Herrenalb–Hochstetten), 2026-09-25. Same
+    // S12-on-the-S11-corridor case as Nettro_CMS_273841: GTFS files the Ittersbach
+    // Rathaus–KA Tullastraße run 40015 as an S12, while KVV reports it under the S11 corridor
+    // the notice names.
+    Nettro_CMS_277170: {
+      '40015': 'S11',
+    },
   },
 };

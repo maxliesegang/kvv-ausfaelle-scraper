@@ -55,6 +55,21 @@ const ARTICLE_CORRECTIONS: Readonly<Record<string, readonly ArticleCorrection[]>
   // notice's own headline scopes it to "03.09.2026 bis 04.09.2026", and the row sits between a
   // 23:09 and a 0:05 departure, so it can only be the night following publication.
   Nettro_CMS_275817: [{ find: '04.09.2025', replace: '04.09.2026' }],
+  // S1/S11 AVG cancellations, 2026-09-25. Train 10040 is published without its arrival time
+  // ("Hochstetten (11:52 Uhr) - Ettlingen Stadt"), so the row matches no trip format and is
+  // dropped. GTFS resolves it uniquely: every run of short name 10040 is an S1 leaving
+  // Hochstetten at 11:52 and terminating at Ettlingen Stadt at 12:58.
+  Nettro_CMS_277170: [
+    {
+      find: 'Hochstetten (11:52 Uhr) - Ettlingen Stadt\n',
+      replace: 'Hochstetten (11:52 Uhr) - Ettlingen Stadt (12:58 Uhr)\n',
+    },
+  ],
+  // S8 AVG cancellations, 2026-09-25. The Forbach time of train 85634 is published as
+  // "10 :42 Uhr" — a stray space that matches no clock format, so the row is dropped. The
+  // only reading is 10:42, and GTFS confirms it: the run active that day (Freudenstadt Hbf
+  // 09:53) reaches Forbach (Schwarzwald) at 10:39 and departs at 10:42.
+  Nettro_CMS_277192: [{ find: 'Forbach Bf (10 :42 Uhr)', replace: 'Forbach Bf (10:42 Uhr)' }],
 };
 
 /**
