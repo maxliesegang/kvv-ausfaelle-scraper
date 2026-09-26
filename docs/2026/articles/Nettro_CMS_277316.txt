@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316
 Stand:  2026-09-25T23:48:00.000Z
-Titel:  Linie S4: Kurzfristiger betriebsbedingter Ausfall bei der AVG - Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen. Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. (26.09.2026 bis 26.09.2026)
+Titel:  Linie S4: Kurzfristiger betriebsbedingter Ausfall bei der AVG - Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen. Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. (26.09.2026 bis 27.09.2026)
 Datum:  2026-09-25T23:48:00.000Z
 ========================================================================
 
@@ -18,5 +18,16 @@ Betroffene Fahrten:
 85412 Heilbronn Pfühlpark 06:40 Uhr - KA Albtalbahnhof 08:42 Uhr
 85511 KA Albtalbahnhof 09:35 Uhr - Flehingen Bahnhof 10:37 Uhr
 85520 Flehingen Bahnhof 11:20 Uhr - KA Albtalbahnhof 12:22 Uhr
+85438 Bretten Bahnhof 14:59 - KA Albtalbahnhof 15:42 Uhr
+85523 KA Albtalbahnhof 15:35 Uhr - Flehingen Bahnhof 16:37 Uhr
+85525 KA Albtalbahnhof 16:35 Uhr - Flehingen Bahnhof 17:37 Uhr
+85532 Flehingen Bahnhof 17:20 Uhr - KA Albtalbahnhof 18:22 Uhr
+85534 Flehingen Bahnhof 18:20 Uhr - KA Albtalbahnhof 19:22 Uhr
+85533 KA Albtalbahnhof 20:35 Uhr - Flehingen Bahnhof 21:37 Uhr
+85542 Flehingen Bahnhof 22:00 Uhr - Bretten Bahnhof 22:16 Uhr
+85468 Bretten Bahnhof 22:59 Uhr - KA Albtalbahnhof 23:42 Uhr 
+85469 KA Albtalbahnhof 23:15 Uhr - Heilbronn Pfühlpark 01:18 Uhr
+85471 KA Albtalbahnhof 00:15 Uhr - Bretten Bahnhof 00:58 Uhr        (27.09.2026)   
+85476 Heilbronn Pfühlpark 01:25 Uhr - KA Albtalbahnhof 03:23 Uhr   (27.09.2026)
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

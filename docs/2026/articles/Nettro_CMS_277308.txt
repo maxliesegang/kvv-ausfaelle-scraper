@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277308
 Stand:  2026-09-25T23:46:00.000Z
-Titel:  Linie S5: Kurzfristiger betriebsbedingter Ausfall bei der AVG - Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. (26.09.2026 bis 26.09.2026)
+Titel:  Linie S5: Kurzfristiger betriebsbedingter Ausfall bei der AVG - Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. (26.09.2026 bis 27.09.2026)
 Datum:  2026-09-25T23:46:00.000Z
 ========================================================================
 
@@ -48,6 +48,19 @@ Betroffene Fahrten:
 85054 KA Tullastraße 10:31 Uhr - Wörth Badepark 11:15 Uhr
 85067 Wörth Badepark 11:45 Uhr - KA Rheinbergstraße 12:01 Uhr
 84817 KA Starckstraße 12:27 Uhr - Söllingen Bahnhof 13:06 Uhr
-84740 Söllingen Bahnhof 13:18 Uhr - KA Lameyplatz 13:57 Uhr
+84740 Söllingen Bahnhof 13:18 Uhr - KA Rheinbergstraße 14:04 Uhr
+84753 KA Rheinbergstraße 14:12 Uhr - Berghausen Bahnhof 14:53 Uhr
+84750 Berghausen Bahnhof 15:03 Uhr - KA Rheinbergstraße 15:44 Uhr
+84763 KA Rheinbergstraße 15:52 Uhr - Söllingen Bahnhof 16:37 Uhr
+84848 Söllingen Bahnhof 16:51 Uhr - KA Tullastraße 17:10 Uhr
+85064 KA Tullastraße 14:31 Uhr - Wörth Badepark 15:15 Uhr
+85081 Wörth Badepark  15:45 Uhr - KA Tullastraße 16:26 Uhr 
+84756 KA Tullastraße 16:20 Uhr - KA Rheinbergstraße 16:44 Uhr
+84769 KA Rheinbergstraße 16:52 Uhr - Söllingen Bahnhof 17:37 Uhr
+84852 Söllingen Bahnhof 17:51 Uhr - Wörth Badepark 18:53 Uhr 
+84845 Wörth Badepark 19:05 Uhr - KA Tullastraße 19:46 Uhr
+84947 KA Starckstraße 01:12 Uhr - Söllingen Bahnhof 01:55 Uhr    (27.09.2026)
+84870 Söllingen Bahnhof 02:01 Uhr - Wörth Badepark 03:05 Uhr    (27.09.2026)
+84869 Wörth Badepark 03:20 Uhr - KA Rheinbergstraße 03:35 Uhr  (27.09.2026)
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
