@@ -182,21 +182,56 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-22",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 26,
+      "segmentCancelledStops": 26,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 26,
+      "journeyCancelledStops": 26,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "journeyId": "20260921_07:36_de-KVV_13.T0.22-312-E-s26-7.7.H",
-      "unresolvedReason": "journey-mismatch",
-      "attempts": 2
+      "journeyCancelled": true,
+      "journeyId": "20260921-30a457f2-bbed-3dfe-bea9-4871af66d5b1",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-22",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260921_07:36_de-KVV_13.T0.22-312-E-s26-7.7.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 2
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-26",
+          "segmentStops": 26,
+          "segmentCancelledStops": 26,
+          "segmentTrackedStops": 0,
+          "journeyStops": 26,
+          "journeyCancelledStops": 26,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260921-30a457f2-bbed-3dfe-bea9-4871af66d5b1"
+        }
+      },
+      "agreement": "single-source"
     }
   }
 ]

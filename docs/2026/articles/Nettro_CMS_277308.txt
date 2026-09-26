@@ -14,20 +14,40 @@ Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. 
 Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. 
 Betroffene Fahrten:
-84949 KA Rheinbergstraße 03:37 Uhr - Pforzheim Bahnhof 04:48 Uhr
+84700 Söllingen 05:01 Uhr - Ka. Rheinbergstr. 05:43 Uhr 
 84707 KA Rheinbergstraße 05:07 Uhr - Söllingen Bahnhof 05:55 Uhr
 84944 Pforzheim Bahnhof 05:09 Uhr - Wörth Badepark 06:38 Uhr
+84804 Ka. Rheinbergstr. 05:44 Uhr - Wörth Badepark 05:56 Uhr 
 84808 Söllingen Bahnhof 06:01 Uhr - Wörth Badepark 07:04 Uhr 
+84967 Wörth Badepark 06:23 Uhr - Pforzheim 07:50 Uhr 
 84801 Wörth Badepark 07:03 Uhr - Söllingen Bahnhof 08:06 Uhr 
 84812 KA Tullastraße 07:06 Uhr - Wörth Badepark 07:53 Uhr
 85055 Wörth Badepark 07:45 - KA Lameyplatz 08:05 Uhr
 84807 Wörth Badepark 08:05 Uhr - Söllingen Bahnhof 09:06 Uhr
+84958 Pforzheim 08:06 Uhr - Ka. Rheinbergstr. 09:14 Uhr 
+84952 Ka. Lameyplatz 08:08 Uhr - Rheinbergstr. 08:14 Uhr 
+84973 Ka. Rheinbergstr. 08:41 Uhr - Pforzheim 09:50 Uhr 
 84822 Söllingen Bahnhof 08:51 - Wörth Badepark 09:53 Uhr
 84722 Söllingen Bahnhof 09:18 Uhr - KA Rheinbergstraße 10:04 Uhr
+84977 Ka. Rheinbergstr. 09:41 Uhr - Ka. Lameyplatz 09:49 Uhr 
 84816 Wörth Badepark 10:05 - Söllingen Bahnhof 11:06 Uhr 
+84968 Pforzheim 10:06 Uhr - Ka. Rheinbergstr. 11:14 Uhr 
 84733 KA Rheinbergstraße 10:12 Uhr - Berghausen Bahnhof 10:53 Uhr
 84728 Berghausen Bahnhof 11:03 Uhr - KA Tullastraße 11:21 Uhr
 84730 Söllingen Bahnhof 11:18 - KA Rheinbergstraße 12:04 Uhr
+84985 Ka. Rheinbergstr. 11:42 Uhr - Lameyplatz 11:49 Uhr 
 84741 KA Rheinbergstraße 12:12 Uhr - KA Lameyplatz 12:19 Uhr
+84724 KA Tullastraße 10:20 Uhr - KA Rheinbergstraße 10:44 Uhr
+84735 KA Rheinbergstraße 10:52 Uhr - KA Tullastraße 11:16 Uhr
+84832 KA Tullastraße 13:10 Uhr - Wörth Badepark 13:53 Uhr
+84825 Wörth Badepark 14:05 Uhr - Söllingen Bahnhof 15:06 Uhr
+84752 Söllingen Bahnhof  15:18 Uhr- KA Rheinbergstraße 16:04 Uhr
+84765 KA Rheinbergstraße 16:12 Uhr - Berghausen Bahnhof 16:53 Uhr
+84762 Berghausen Bahnhof 17:03 Uhr - KA Rheinbergstraße 17:44 Uhr
+84775 KA Rheinbergstraße 17:52 Uhr - KA Tullastraße 18:16 Uhr 
+85054 KA Tullastraße 10:31 Uhr - Wörth Badepark 11:15 Uhr
+85067 Wörth Badepark 11:45 Uhr - KA Rheinbergstraße 12:01 Uhr
+84817 KA Starckstraße 12:27 Uhr - Söllingen Bahnhof 13:06 Uhr
+84740 Söllingen Bahnhof 13:18 Uhr - KA Lameyplatz 13:57 Uhr
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
