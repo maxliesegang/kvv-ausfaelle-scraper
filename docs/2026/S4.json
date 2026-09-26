@@ -6367,7 +6367,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277265",
     "capturedAt": "2026-09-25T16:23:35.264Z",
     "cause": "strike",
-    "causeKeyword": "streik"
+    "causeKeyword": "streik",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_23:15_de-KVV_1689.T0.22-304-E-s26-9.154.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S4",
@@ -6381,7 +6398,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277265",
     "capturedAt": "2026-09-25T23:01:30.550Z",
     "cause": "strike",
-    "causeKeyword": "streik"
+    "causeKeyword": "streik",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_23:40_de-KVV_3642.T0.22-304-E-s26-9.211.H",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S4",
@@ -6395,7 +6429,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277265",
     "capturedAt": "2026-09-25T16:23:35.264Z",
     "cause": "strike",
-    "causeKeyword": "streik"
+    "causeKeyword": "streik",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_25:25_de-KVV_3697.T0.22-304-E-s26-9.215.H",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
   },
   {
     "line": "S4",
@@ -6409,6 +6460,79 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277265",
     "capturedAt": "2026-09-25T23:01:30.550Z",
     "cause": "strike",
-    "causeKeyword": "streik"
+    "causeKeyword": "streik",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "transitous",
+      "checkedAt": "2026-09-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 0,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260925_27:15_de-KVV_1825.T0.22-304-E-s26-9.165.R",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-26",
+    "stand": "2026-09-25T23:48:00.000Z",
+    "trainNumber": "85403",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "04:15",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "06:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316",
+    "capturedAt": "2026-09-26T03:12:17.166Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-26",
+    "stand": "2026-09-25T23:48:00.000Z",
+    "trainNumber": "85412",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "06:40",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "08:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316",
+    "capturedAt": "2026-09-26T03:12:17.166Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-26",
+    "stand": "2026-09-25T23:48:00.000Z",
+    "trainNumber": "85511",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "09:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "10:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316",
+    "capturedAt": "2026-09-26T03:12:17.166Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-26",
+    "stand": "2026-09-25T23:48:00.000Z",
+    "trainNumber": "85520",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "11:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "12:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316",
+    "capturedAt": "2026-09-26T03:12:17.166Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
