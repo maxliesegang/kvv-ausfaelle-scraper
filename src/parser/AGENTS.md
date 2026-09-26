@@ -65,7 +65,8 @@ This is the most specific guidance for parser files.
   is stored as UTC ISO time.
 - Trip dating lives in `trip-dates.ts` and is a property of the **list**, not of a row: the
   article's publication timestamp dates the list, an explicit date row inside the list overrides
-  it, and a late-evening → early-morning step opens an after-midnight tail. Never date a row from
+  it, a trailing `(27.09.2026)` on a trip row dates that row alone, and a late-evening →
+  early-morning step opens an after-midnight tail. Never date a row from
   its own time being "in the past" — notices keep listing trips that have already departed, so
   that reads as tomorrow and invents cancellations on a day KVV never mentioned. Any change here
   must be checked against the whole text archive, not just fixtures.

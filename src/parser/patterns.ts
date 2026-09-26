@@ -128,6 +128,15 @@ export const TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN = /^(\d{3,})\s*:\s+/;
 export const TRIP_LIST_DATE_ROW_PATTERN = /^(\d{1,2})\.(\d{1,2})\.(\d{4})?\.?$/;
 
 /**
+ * A parenthesized date trailing a trip row — "84947 KA Starckstraße 01:12 Uhr - Söllingen
+ * Bahnhof 01:55 Uhr    (27.09.2026)" — with which KVV dates a single after-midnight row in place
+ * of a separate date row. It dates that row only, and is stripped before format matching so no
+ * trip format has to tolerate it. Anchored at the end so a date inside a stop name or prose
+ * cannot match.
+ */
+export const TRIP_ROW_DATE_SUFFIX_PATTERN = /\s*\(\s*(\d{1,2})\.(\d{1,2})\.(\d{4})?\s*\)\s*$/;
+
+/**
  * Text markers used to identify sections in the HTML.
  */
 export const MARKERS = {

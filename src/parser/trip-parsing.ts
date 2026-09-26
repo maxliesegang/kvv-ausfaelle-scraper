@@ -13,7 +13,12 @@ import {
   type TripDescriptor,
 } from '../train-lines.js';
 import { extractDetailId, normalizeLineUppercase } from '../utils/normalization.js';
-import { assignTripDates, parseTripListDateRow, type TripDateAnchor } from './trip-dates.js';
+import {
+  assignTripDates,
+  parseTripListDateRow,
+  parseTripRowDateSuffix,
+  type TripDateAnchor,
+} from './trip-dates.js';
 import { MAX_ROWS_TO_COMBINE } from '../utils/constants.js';
 import {
   PATTERNS,
@@ -25,6 +30,7 @@ import {
   LINE_IDENTIFIER_PATTERN,
   TRIP_TIME_PAIR_PATTERN,
   TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
+  TRIP_ROW_DATE_SUFFIX_PATTERN,
   PARENTHESIZED_ROUTE_TIME_PATTERN,
   ROUTE_SEPARATOR_PATTERN,
   DIVERSION_STATEMENT_PATTERN,
@@ -261,8 +267,10 @@ interface ValidTripFields extends ParsedTripFields {
  * format whose regex matches and whose captured fields pass validation.
  */
 function matchTripFormat(row: string): ValidTripFields | null {
+  // A trailing "(27.09.2026)" dates the row (see extractDatedTripRows); it is no trip field.
+  const tripFieldsRow = row.replace(TRIP_ROW_DATE_SUFFIX_PATTERN, '');
   for (const { pattern, rejectUhrOnlyStops, extract } of TRIP_FORMATS) {
-    const match = row.match(pattern);
+    const match = tripFieldsRow.match(pattern);
     if (!match) continue;
 
     // KVV sometimes writes clock times with a dot ("17.52 Uhr"). Keep the published
@@ -540,7 +548,7 @@ export interface DatedTripRow {
  * Extracts the article's trip rows, each carrying the date it departs on.
  *
  * Dating is a property of the *list*, not of a row on its own: an explicit date row governs the
- * rows after it, and the chronological order of the rows reveals a midnight crossing. See
+ * rows after it, a date written on a row itself dates just that row, and the chronological order of the rows reveals a midnight crossing. See
  * `trip-dates.ts` for the rules and why a row's own time can never decide its day.
  */
 export function extractDatedTripRows(text: string, anchor: TripDateAnchor): DatedTripRow[] {
@@ -559,6 +567,7 @@ export function extractDatedTripRows(text: string, anchor: TripDateAnchor): Date
     mergedRows.map((merged) => ({
       departureTime: matchTripFormat(merged.row)?.fromTime,
       explicitDate: explicitDateByRawIndex[merged.rawIndex],
+      rowDate: parseTripRowDateSuffix(merged.row, anchor.date),
     })),
     anchor,
   );

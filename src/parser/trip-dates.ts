@@ -5,7 +5,8 @@
  * reader is expected to know which day it means. Three things on the page say which:
  *
  *   1. an explicit date row inside the list (`06.07.2026`), which KVV inserts where the list
- *      runs past midnight — authoritative wherever it appears;
+ *      runs past midnight — authoritative wherever it appears — or, instead, a date trailing a
+ *      single row (`… 01:55 Uhr (27.09.2026)`), authoritative for that row alone;
  *   2. the order of the rows, which is chronological, so a late-evening row followed by an
  *      early-morning one is the list crossing midnight;
  *   3. the article's publication timestamp, the day the whole list was written for.
@@ -18,7 +19,7 @@
 
 import { formatBerlinWallClock } from '../utils/berlin-time.js';
 import { ISO_DATE_LENGTH, MINUTES_PER_HOUR, CLOCK_TIME_LENGTH } from '../utils/constants.js';
-import { PATTERNS, TRIP_LIST_DATE_ROW_PATTERN } from './patterns.js';
+import { PATTERNS, TRIP_LIST_DATE_ROW_PATTERN, TRIP_ROW_DATE_SUFFIX_PATTERN } from './patterns.js';
 
 /** The article timestamp a trip list's clock times are read against. */
 export interface TripDateAnchor {
@@ -34,6 +35,8 @@ export interface TripDateInput {
   readonly departureTime: string | undefined;
   /** ISO date from an explicit date row in the list, if one governs this row. */
   readonly explicitDate: string | undefined;
+  /** ISO date written on the row itself (`… (27.09.2026)`), dating this row only. */
+  readonly rowDate?: string | undefined;
 }
 
 /**
@@ -69,7 +72,19 @@ export function extractTripDateAnchor(text: string): TripDateAnchor {
  * Returns `undefined` for anything that is not such a row.
  */
 export function parseTripListDateRow(row: string, fallbackIsoDate: string): string | undefined {
-  const match = TRIP_LIST_DATE_ROW_PATTERN.exec(row.trim());
+  return toIsoDate(TRIP_LIST_DATE_ROW_PATTERN.exec(row.trim()), fallbackIsoDate);
+}
+
+/**
+ * Parses the parenthesized date trailing a trip row (`… 01:55 Uhr (27.09.2026)`) into an ISO
+ * date, taking a missing year from `fallbackIsoDate`. Returns `undefined` when the row has none.
+ */
+export function parseTripRowDateSuffix(row: string, fallbackIsoDate: string): string | undefined {
+  return toIsoDate(TRIP_ROW_DATE_SUFFIX_PATTERN.exec(row), fallbackIsoDate);
+}
+
+/** Builds an ISO date from a day/month/optional-year match, or `undefined` without one. */
+function toIsoDate(match: RegExpExecArray | null, fallbackIsoDate: string): string | undefined {
   const day = match?.[1];
   const month = match?.[2];
   if (!day || !month) return undefined;
@@ -152,7 +167,9 @@ export function assignTripDates(
 ): string[] {
   const departures = inputs.map((input) => toMinutesSinceMidnight(input.departureTime));
   const anchorMinutes = toMinutesSinceMidnight(anchor.clockTime);
-  const hasExplicitDate = inputs.some((input) => input.explicitDate !== undefined);
+  const hasExplicitDate = inputs.some(
+    (input) => input.explicitDate !== undefined || input.rowDate !== undefined,
+  );
 
   // An explicitly dated list says which day each row runs on; only an undated one needs the
   // anchor's day inferred.
@@ -180,6 +197,7 @@ export function assignTripDates(
       }
     }
     previousDeparture = departure;
-    return isAfterMidnightTail ? addOneDay(baseDate) : baseDate;
+    // A row's own date outranks everything inferred for it, but leaves the list's state alone.
+    return input.rowDate ?? (isAfterMidnightTail ? addOneDay(baseDate) : baseDate);
   });
 }

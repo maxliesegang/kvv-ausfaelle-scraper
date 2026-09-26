@@ -6803,5 +6803,33 @@
     "capturedAt": "2026-09-26T15:37:40.879Z",
     "cause": "operational",
     "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-27",
+    "stand": "2026-09-25T23:48:00.000Z",
+    "trainNumber": "85471",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "00:15",
+    "toStop": "Bretten Bahnhof",
+    "toTime": "00:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316",
+    "capturedAt": "2026-09-26T20:17:05.887Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-27",
+    "stand": "2026-09-25T23:48:00.000Z",
+    "trainNumber": "85476",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "01:25",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "03:23",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277316",
+    "capturedAt": "2026-09-26T20:17:05.887Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

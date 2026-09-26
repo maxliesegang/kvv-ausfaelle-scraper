@@ -427,6 +427,58 @@ describe('archived article parser regressions', () => {
     ]);
   });
 
+  test('parses and dates trip rows carrying a trailing parenthesized date', () => {
+    // The last three rows end in "(27.09.2026)". Their 01:12 departure follows a 19:05 one, which
+    // is no late-evening → early-morning step, so the trailing date is the only thing placing
+    // them after midnight — and before it was stripped, no trip format matched those rows.
+    const trips = parseArchivedArticle('Nettro_CMS_277308');
+
+    assert.deepEqual(
+      trips.slice(-4).map(({ trainNumber, date, fromStop, fromTime, toStop, toTime }) => ({
+        trainNumber,
+        date,
+        fromStop,
+        fromTime,
+        toStop,
+        toTime,
+      })),
+      [
+        {
+          trainNumber: '84845',
+          date: '2026-09-26',
+          fromStop: 'Wörth Badepark',
+          fromTime: '19:05',
+          toStop: 'KA Tullastraße',
+          toTime: '19:46',
+        },
+        {
+          trainNumber: '84947',
+          date: '2026-09-27',
+          fromStop: 'KA Starckstraße',
+          fromTime: '01:12',
+          toStop: 'Söllingen Bahnhof',
+          toTime: '01:55',
+        },
+        {
+          trainNumber: '84870',
+          date: '2026-09-27',
+          fromStop: 'Söllingen Bahnhof',
+          fromTime: '02:01',
+          toStop: 'Wörth Badepark',
+          toTime: '03:05',
+        },
+        {
+          trainNumber: '84869',
+          date: '2026-09-27',
+          fromStop: 'Wörth Badepark',
+          fromTime: '03:20',
+          toStop: 'KA Rheinbergstraße',
+          toTime: '03:35',
+        },
+      ],
+    );
+  });
+
   test('does not invent trips from an unnumbered multi-stop replacement-service notice', (t) => {
     t.mock.method(console, 'warn', () => undefined);
     assert.throws(() => parseArchivedArticle('100004264_KVV_ICSKVV'), ParseError);
