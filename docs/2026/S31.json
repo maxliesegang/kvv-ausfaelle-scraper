@@ -73,21 +73,56 @@
     "cause": "personnel",
     "causeKeyword": "fahrpersonal",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-09-26",
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-27",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 16,
+      "journeyCancelledStops": 16,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "journeyId": "20260925_07:43_de-KVV_701.T0.22-331-E-s26-9.48.H",
-      "unresolvedReason": "journey-mismatch",
-      "attempts": 2
+      "journeyCancelled": true,
+      "journeyId": "20260925-763f8d38-289a-381c-9eb3-a09f0fb83d50",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-09-26",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20260925_07:43_de-KVV_701.T0.22-331-E-s26-9.48.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 2
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-09-27",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 16,
+          "journeyCancelledStops": 16,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20260925-763f8d38-289a-381c-9eb3-a09f0fb83d50"
+        }
+      },
+      "agreement": "single-source"
     }
   }
 ]
