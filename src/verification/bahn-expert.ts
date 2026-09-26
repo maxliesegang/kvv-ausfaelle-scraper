@@ -6,8 +6,9 @@
  *
  * 1. The gateway uses oRPC's JSON envelope: inputs and outputs live under a `json` property, and
  *    Date inputs carry a `meta` path annotation.
- * 2. A browser-like `User-Agent` is mandatory — with a default client UA the gateway answers
- *    `HTTP 206` with an empty body rather than an error, which reads as a successful empty result.
+ * 2. Browser-like headers are mandatory — with a default client UA the gateway answers `HTTP 206`
+ *    with an empty body rather than an error, which reads as a successful empty result. Since
+ *    2026-09 the `User-Agent` alone is rejected the same way unless a site `Referer` is present.
  * 3. The gateway's mount point is not part of any published contract and has moved before. It is
  *    read out of the site's own client bundle: search the JS assets linked from
  *    `https://bahn.expert/` for the oRPC client's `url:` option. `verify-trips.ts` treats a run in
@@ -22,12 +23,16 @@
 const RPC_BASE = 'https://bahn.expert/api/orpc';
 
 /**
- * bahn.expert rejects non-browser agents with an empty `206`, so a browser UA is required. The
- * trailing comment keeps the request honest about who is calling and why.
+ * bahn.expert rejects requests it does not attribute to its own site with an empty `206`, so
+ * browser-like headers are required. As of 2026-09 a browser `User-Agent` alone is no longer
+ * accepted: the gateway also requires a `Referer` from the site itself (an `Origin` header is
+ * not sufficient). The trailing comment keeps the request honest about who is calling and why.
  */
 const USER_AGENT =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) ' +
   'Chrome/128.0.0.0 Safari/537.36 (+kvv-ausfaelle-scraper; trip verification)';
+
+const REFERER = 'https://bahn.expert/';
 
 /**
  * How far back the gateway answers. Measured, not documented: the cutoff is rolling rather than
@@ -158,6 +163,7 @@ async function callRpc(procedure: string, input: RpcEnvelope, timeoutMs: number)
       method: 'POST',
       headers: {
         'User-Agent': USER_AGENT,
+        Referer: REFERER,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
@@ -166,8 +172,10 @@ async function callRpc(procedure: string, input: RpcEnvelope, timeoutMs: number)
     });
     const body = await response.text();
     if (body.length === 0) {
-      // The empty-206 signature: almost always a rejected User-Agent rather than "no results".
-      throw new BahnExpertError(`${procedure} returned an empty body (User-Agent rejected?)`);
+      // The empty-206 signature: almost always rejected browser-attribution headers rather than "no results".
+      throw new BahnExpertError(
+        `${procedure} returned an empty body (User-Agent/Referer rejected?)`,
+      );
     }
     let envelope: RpcEnvelope;
     try {
