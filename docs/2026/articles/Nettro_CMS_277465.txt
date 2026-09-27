@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465
 Stand:  2026-09-26T22:19:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 zwischen Wörth Bahnhof und Bad Wildbad Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (27.09.2026 bis 27.09.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5 und S6 zwischen Wörth Bahnhof und Bad Wildbad Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (27.09.2026 bis 28.09.2026)
 Datum:  2026-09-26T22:19:00.000Z
 ========================================================================
 
@@ -15,16 +15,7 @@ www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S6 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Bahnhof und Bad Wildbad Bahnhof. Wir bitten um Entschuldigung.
 Folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 S5
-84794 04:20 Uhr Karlsruhe Tullastraße - 05:05 Uhr Wörth Badepark
-84959 05:20 Uhr Wörth Badepark - 06:48 Uhr Pforzheim Hbf
-84962 08:46 Uhr Pforzheim Hbf - 09:46 Uhr Karlsruhe Lameyplatz
-(Zug wird 09:47 Uhr Lameyplatz Richtung Wörth eingesetzt)
-84824 10:25 Uhr Karlsruhe Tullastraße - 10:53 Uhr Wörth Badepark
-84815 11:05 Uhr Wörth Badepark - 12:06 Uhr Söllingen Bf.
-84832 12:50 Uhr Söllingen Bf. - 13:53 Uhr Wörth Badepark
-84989 13:06 Uhr Karlsruhe Tullastraße - 13:50 Uhr Pforzheim Hbf.
-84988 14:06 Uhr Pforzheim Hbf. - 14:50 Uhr Karlsruhe Tullastraße
-84825 14:05 Uhr Wörth Badepark - 15:06 Uhr Söllingen Bf.
+85081 15:42 Uhr Wörth Badepark - 16:27 Uhr Ka Tullastrasse 
 84844 15:51 Uhr Söllingen Bf. - 16:53 Uhr Wörth Badepark
 84829 15:47 Uhr Karlsruhe Tullastraße - 16:06 Uhr Söllingen Bf.
 85068 15:48 Uhr Lamey Platz - 16:17 Uhr Wörth Badepark
@@ -33,16 +24,20 @@ S5
 84837 17:05 Uhr Wörth Badepark - 18:06 Uhr Söllingen Bf.
 84841 18:05 Uhr Wörth Badepark - 19:06 Uhr Söllingen Bf.
 84856 18:51 Uhr Söllingen Bf. - 19:53 Uhr Wörth Badepark
+85078 18:57 Uhr Ka. Rheinbergstraße - 19:15 Uhr Wörth Badepark 
+85093 19:45 Uhr Wörth Badepark - 21:10 Uhr Pforzheim Hbf 
 84858 19:51 Uhr Söllingen Bf. - 20:53 Uhr Wörth Badepark
 84847 20:05 Uhr Wörth Badepark - 21:06 Uhr Söllingen Bf.
 84849 21:07 Uhr Wörth Badepark - 22:06 Uhr Söllingen Bf.
 84862 21:51 Uhr Söllingen Bf. - 22:53 Uhr Wörth Badepark
+85090 22:46 Uhr Pforzheim Hbf - 23:54 Ka. Rheinbergstraße 
 84864 22:51 Uhr Söllingen Bf. - 23:53 Uhr Wörth Badepark
 84855 23:09 Uhr Wörth Badepark - 23:59 Uhr Karlsruhe Tullastraße
 84863 00:05 Uhr Wörth Badepark - 00:49 Uhr Karlsruhe Tullastraße  (28.09.26)
+84787 0:41 Uhr Ka. Rheinbergstraße - 01:26 Uhr Söllingen 
 S6
-85043 06:57 Uhr Pforzheim Hbf - 07:32 Uhr Bad Wildbad Kurpark
-85050 07:47 Uhr Bad Wildbad Kurpark - 08:22 Uhr Pforzheim Hbf
+85093 21:17 Uhr Pforzheim Hbf - 21:52 Uhr Bad Wildbad Kurpark 
+85090 22:05 Uhr Bad Wildbad Kurpark - 22:40 Uhr Pforzheim Hbf 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

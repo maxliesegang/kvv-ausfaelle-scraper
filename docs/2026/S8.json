@@ -3029,5 +3029,61 @@
       "trackedAdjacentStops": 2,
       "journeyId": "20260925-2d65c054-5dad-308a-b111-832156476855"
     }
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-27",
+    "stand": "2026-09-27T12:42:00.000Z",
+    "trainNumber": "85665",
+    "fromStop": "Ka Tullastrasse",
+    "fromTime": "18:57",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "21:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277526",
+    "capturedAt": "2026-09-27T16:16:33.421Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-27",
+    "stand": "2026-09-27T12:42:00.000Z",
+    "trainNumber": "85676",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "21:23",
+    "toStop": "Freudenstadt Stadt",
+    "toTime": "21:28",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277526",
+    "capturedAt": "2026-09-27T16:16:33.421Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-27",
+    "stand": "2026-09-27T12:42:00.000Z",
+    "trainNumber": "85667",
+    "fromStop": "Freudenstadt Stadt",
+    "fromTime": "21:38",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "21:43",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277526",
+    "capturedAt": "2026-09-27T16:16:33.421Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S8",
+    "date": "2026-09-27",
+    "stand": "2026-09-27T12:42:00.000Z",
+    "trainNumber": "85678",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "21:53",
+    "toStop": "Ka Tullastrasse",
+    "toTime": "0:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277526",
+    "capturedAt": "2026-09-27T16:16:33.421Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

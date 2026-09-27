@@ -1527,5 +1527,63 @@
       "journeyCancelled": true,
       "journeyId": "20260927-acfe30e9-42b4-3f51-988b-a65e69be7ac4"
     }
+  },
+  {
+    "line": "S6",
+    "date": "2026-09-27",
+    "stand": "2026-09-26T22:19:00.000Z",
+    "trainNumber": "85081",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "15:42",
+    "toStop": "Ka Tullastrasse",
+    "toTime": "16:27",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465",
+    "capturedAt": "2026-09-27T16:16:34.315Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-27",
+      "segmentStops": 28,
+      "segmentCancelledStops": 28,
+      "segmentTrackedStops": 0,
+      "journeyStops": 67,
+      "journeyCancelledStops": 28,
+      "journeyTrackedStops": 33,
+      "trackedOutsideSegment": 33,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260927-076b7e77-c31f-361a-966e-e421779f6144",
+      "feedLine": "S5"
+    }
+  },
+  {
+    "line": "S6",
+    "date": "2026-09-27",
+    "stand": "2026-09-26T22:19:00.000Z",
+    "trainNumber": "85093",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "21:17",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "21:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465",
+    "capturedAt": "2026-09-27T16:16:34.315Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S6",
+    "date": "2026-09-27",
+    "stand": "2026-09-26T22:19:00.000Z",
+    "trainNumber": "85090",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "22:05",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "22:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465",
+    "capturedAt": "2026-09-27T16:16:34.315Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
