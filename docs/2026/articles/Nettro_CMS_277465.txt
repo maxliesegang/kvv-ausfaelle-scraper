@@ -19,6 +19,27 @@ S5
 84959 05:20 Uhr Wörth Badepark - 06:48 Uhr Pforzheim Hbf
 84962 08:46 Uhr Pforzheim Hbf - 09:46 Uhr Karlsruhe Lameyplatz
 (Zug wird 09:47 Uhr Lameyplatz Richtung Wörth eingesetzt)
+84824 10:25 Uhr Karlsruhe Tullastraße - 10:53 Uhr Wörth Badepark
+84815 11:05 Uhr Wörth Badepark - 12:06 Uhr Söllingen Bf.
+84832 12:50 Uhr Söllingen Bf. - 13:53 Uhr Wörth Badepark
+84989 13:06 Uhr Karlsruhe Tullastraße - 13:50 Uhr Pforzheim Hbf.
+84988 14:06 Uhr Pforzheim Hbf. - 14:50 Uhr Karlsruhe Tullastraße
+84825 14:05 Uhr Wörth Badepark - 15:06 Uhr Söllingen Bf.
+84844 15:51 Uhr Söllingen Bf. - 16:53 Uhr Wörth Badepark
+84829 15:47 Uhr Karlsruhe Tullastraße - 16:06 Uhr Söllingen Bf.
+85068 15:48 Uhr Lamey Platz - 16:17 Uhr Wörth Badepark
+85085 16:43 Uhr Wörth Badepark - 17:09 Uhr Lamey Platz
+84848 16:51 Uhr Söllingen Bf. - 17:53 Uhr Wörth Badepark
+84837 17:05 Uhr Wörth Badepark - 18:06 Uhr Söllingen Bf.
+84841 18:05 Uhr Wörth Badepark - 19:06 Uhr Söllingen Bf.
+84856 18:51 Uhr Söllingen Bf. - 19:53 Uhr Wörth Badepark
+84858 19:51 Uhr Söllingen Bf. - 20:53 Uhr Wörth Badepark
+84847 20:05 Uhr Wörth Badepark - 21:06 Uhr Söllingen Bf.
+84849 21:07 Uhr Wörth Badepark - 22:06 Uhr Söllingen Bf.
+84862 21:51 Uhr Söllingen Bf. - 22:53 Uhr Wörth Badepark
+84864 22:51 Uhr Söllingen Bf. - 23:53 Uhr Wörth Badepark
+84855 23:09 Uhr Wörth Badepark - 23:59 Uhr Karlsruhe Tullastraße
+84863 00:05 Uhr Wörth Badepark - 00:49 Uhr Karlsruhe Tullastraße  (28.09.26)
 S6
 85043 06:57 Uhr Pforzheim Hbf - 07:32 Uhr Bad Wildbad Kurpark
 85050 07:47 Uhr Bad Wildbad Kurpark - 08:22 Uhr Pforzheim Hbf
