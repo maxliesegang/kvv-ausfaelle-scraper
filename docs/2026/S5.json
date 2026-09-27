@@ -28120,7 +28120,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277308",
     "capturedAt": "2026-09-26T20:17:05.886Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-27",
+      "segmentStops": 25,
+      "segmentCancelledStops": 25,
+      "segmentTrackedStops": 0,
+      "journeyStops": 47,
+      "journeyCancelledStops": 25,
+      "journeyTrackedStops": 17,
+      "trackedOutsideSegment": 17,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260927-3fc9a979-99f8-311e-8ccd-9031fbc87a3c",
+      "feedLine": "S51"
+    }
   },
   {
     "line": "S5",
@@ -28134,7 +28150,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277308",
     "capturedAt": "2026-09-26T20:17:05.886Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-27",
+      "segmentStops": 40,
+      "segmentCancelledStops": 40,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260927-be0d8cfd-e593-363a-9247-71dd88373508"
+    }
   },
   {
     "line": "S5",
@@ -28148,6 +28180,64 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277308",
     "capturedAt": "2026-09-26T20:17:05.886Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-27",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 11,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260927-090b2d73-5ae0-3528-b0f8-905c32e2ffe8"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-27",
+    "stand": "2026-09-26T22:19:00.000Z",
+    "trainNumber": "84794",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "04:20",
+    "toStop": "Wörth Badepark",
+    "toTime": "05:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465",
+    "capturedAt": "2026-09-27T03:19:40.308Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-27",
+    "stand": "2026-09-26T22:19:00.000Z",
+    "trainNumber": "84959",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "05:20",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "06:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465",
+    "capturedAt": "2026-09-27T03:19:40.308Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-09-27",
+    "stand": "2026-09-26T22:19:00.000Z",
+    "trainNumber": "84962",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "08:46",
+    "toStop": "Karlsruhe Lameyplatz",
+    "toTime": "09:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277465",
+    "capturedAt": "2026-09-27T03:19:40.308Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
