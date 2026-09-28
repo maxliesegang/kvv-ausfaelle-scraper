@@ -1,0 +1,26 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004463_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S5, SEV - Wörth Badepark - Knielingen Rheinbergstraße: S5 Einzelne Züge entfallen auf Teilabschnitt ab 22:00 Uhr (23.10.2026 bis 24.10.2026)
+Datum:  2026-09-28T08:26:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 23.10.2026 bis 24.10.2026
+Linien: S5, SEV
+Wörth Badepark  - Knielingen Rheinbergstraße: S5  Einzelne Züge entfallen auf Teilabschnitt ab 22:00 Uhr
+(AVG)
+Wörth Badepark  - Knielingen Rheinbergstraße: S5  Einzelne Züge entfallen auf Teilabschnitt ab 22:00 Uhr 
+Linie(n): S5
+Zeitraum: Nacht 23./24.10.2026 (22:00 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn:  Karlsruhe Knielingen  <-> Wörth Badepark, betroffen sind diese Fahrten
+•    Pforzheim (20:46) - Karlsruhe Knielingen (21:57) - Wörth (Rhein) Badepark (22:15) 
+•    Pforzheim (21:46) - Karlsruhe Knielingen (22:57) - Wörth (Rhein) Badepark (23:16) 
+•    Wörth (Rhein) Badepark (22:45) - Karlsruhe Knielingen (23:02) - Karlsruhe Tullastraße (23:27)
+•    Wörth (Rhein) Badepark (23:35) - Karlsruhe Knielingen (23:52) (00:02) - Karlsruhe Albtalbahnhof -> Zug fährt ab Karlsruhe Knielingen 10 Minuten später
+Ersatzverkehr:  Karlsruhe Knielingen  <-> Wörth Berufsschule
+Grund: DB InfraGO - Zeitfenster für Instandhaltung (u.a. Weichentausch auf der Rheinbrücke)
+Ausnahmen/Sonstiges:   die S51 verkehrt regulär
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
