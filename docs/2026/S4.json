@@ -7220,5 +7220,49 @@
       "journeyCancelled": true,
       "journeyId": "20260927-696c7b9e-d4a3-3720-9b69-7c87f9791f8b"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-28",
+    "stand": "2026-09-28T11:51:00.000Z",
+    "trainNumber": "85531",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277563",
+    "capturedAt": "2026-09-28T19:09:07.748Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-28",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260928-6aa9f4b7-557d-34ff-b37e-06df8f9cf327"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-09-28",
+    "stand": "2026-09-28T11:51:00.000Z",
+    "trainNumber": "85540",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "21:20",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "22:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277563",
+    "capturedAt": "2026-09-28T19:09:07.748Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
