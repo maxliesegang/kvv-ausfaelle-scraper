@@ -23,15 +23,15 @@
   "verification": {
     "source": "multiple",
     "sources": ["bahn.expert", "transitous"],
-    "checkedTrips": 850,
-    "totalTrips": 2620,
+    "checkedTrips": 853,
+    "totalTrips": 2637,
     "statusCounts": {
-      "cancelled": 670,
+      "cancelled": 673,
       "partial": 33,
       "ran": 22,
       "no-data": 87,
       "unresolved": 38
     }
   },
-  "generatedAt": "2026-09-29T10:21:18.912Z"
+  "generatedAt": "2026-09-29T17:30:59.604Z"
 }

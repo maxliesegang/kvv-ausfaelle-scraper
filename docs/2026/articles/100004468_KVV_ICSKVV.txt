@@ -1,0 +1,20 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004468_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien 144, 145, 145s, 149s - Oberderdingen: Umleitung wegen Bauarbeiten (05.10.2026 bis 16.10.2026)
+Datum:  2026-09-29T11:39:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 05.10.2026 bis 16.10.2026
+Linien 144, 145, 145s, 149s
+Oberderdingen: Umleitung wegen Bauarbeiten
+(end) Aufgrund von Bauarbeiten in der Sulzfelder Straße in Oberderdingen müssen die Linien 144 und 145s 
+von Montag, den 05. Oktober 2026 bis Freitag, den 16. Oktober 2026
+überörtlich umgeleitet werden. In der Folge kann die Haltestelle "Oberderdingen Kelterplatz" nicht bedient werden und ist im betroffenen Zeitraum ersatzlos aufgehoben.
+Linie 144: Die Linie 144 erhält ein angepasstes Betriebskonzept mit verlängerten Fahrzeiten. Die Verstärkerfahrten von und nach Sulzfeld beginnen und enden bereits an der Haltestelle "Kürnbach Hessenstraße". Die Verstärkerfahrten von und nach Kürnbach beginnen und enden bereits an der Haltestelle "Oberderdingen Blanco Verwaltung". Die Haltestelle "Oberderdingen Blanco Verwaltung" wird nur noch im Einzelfall bedient. Die Linie verkehrt zwischen "Oberderdingen Blanco Werk III" und "Kürnbach Flehinger Straße" ohne Halt.
+Linie 145s: Die Linie 145s wird umgeleitet und hält nicht an der Haltestelle "Oberderdingen Kelterplatz". Sie verkehrt ohne Halt zwischen den Haltestellen "Oberderdingen Schulzentrum" und "Kürnbach Flehinger Straße". Es gelten angepasste Abfahrtszeiten auf der gesamten Linie.
+Linie 145: Die Abfahrt der Linie 145 um 07:02 Uhr ab der Haltestelle "Oberderdingen Schulzentrum" ist auf 07:12 Uhr verschoben.
+Linie 149s: Die Abfahrt der Linie 149s um 16:00 Uhr ab der Haltestelle "Oberderdingen Schulzentrum" ist auf 16:06 Uhr verschoben.
+Zurück zur Übersicht
