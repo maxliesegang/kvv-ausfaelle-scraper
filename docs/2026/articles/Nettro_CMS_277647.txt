@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277647
 Stand:  2026-09-29T14:44:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S4 - Betriebsbedingte Fahrtausfälle auf der Linie S4 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (29.09.2026 bis 30.09.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (29.09.2026 bis 30.09.2026)
 Datum:  2026-09-29T14:41:00.000Z
 ========================================================================
 
@@ -8,11 +8,11 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 29.09.2026, 16:41 Uhr
-Betriebsbedingte Fahrtausfälle auf der Linie S4
-Betriebsbedingte Fahrtausfälle auf der Linie S4 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
+Betriebsbedingte Fahrtausfälle auf der Linie S5
+Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Wörth Badepark und Pforzheim Hauptbahnhof 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S4 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
+Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 29.09.2026 16:44:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 84769 Knielingen Rheinbergstr. (16:51 Uhr) - Söllingen Bf. (17:37 Uhr)
 84850 Söllingen Bf. (17:48 Uhr) - Knielingen Rheinbergstr. (18:34 Uhr)
