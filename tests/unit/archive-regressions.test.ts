@@ -479,6 +479,44 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('parses time/stop rows with parenthesized times and a "bis" separator', () => {
+    // "85507 (08:21 Uhr) Bretten Bf. bis (08:37 Uhr) Flehingen Bf." puts each time before its
+    // stop, in parentheses, joined by "bis" — a layout no earlier format accepted.
+    const trips = parseArchivedArticle('Nettro_CMS_277611');
+
+    assert.deepEqual(
+      trips.map(({ line, trainNumber, date, fromStop, fromTime, toStop, toTime }) => ({
+        line,
+        trainNumber,
+        date,
+        fromStop,
+        fromTime,
+        toStop,
+        toTime,
+      })),
+      [
+        {
+          line: 'S4',
+          trainNumber: '85507',
+          date: '2026-09-29',
+          fromStop: 'Bretten Bf.',
+          fromTime: '08:21',
+          toStop: 'Flehingen Bf.',
+          toTime: '08:37',
+        },
+        {
+          line: 'S4',
+          trainNumber: '85516',
+          date: '2026-09-29',
+          fromStop: 'Flehingen Bf.',
+          fromTime: '09:20',
+          toStop: 'Bretten Bf.',
+          toTime: '09:39',
+        },
+      ],
+    );
+  });
+
   test('does not invent trips from an unnumbered multi-stop replacement-service notice', (t) => {
     t.mock.method(console, 'warn', () => undefined);
     assert.throws(() => parseArchivedArticle('100004264_KVV_ICSKVV'), ParseError);

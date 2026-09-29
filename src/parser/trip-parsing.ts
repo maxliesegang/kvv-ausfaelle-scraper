@@ -231,6 +231,12 @@ const TRIP_FORMATS: readonly TripFormat[] = [
     rejectUhrOnlyStops: true,
     extract: EXTRACT.timeThenStop,
   },
+  // <trainNumber> (<time> Uhr) <fromStop> bis (<time> Uhr) <toStop>
+  {
+    pattern: PATTERNS.TRIP_PARENTHESIZED_TIME_STOP_BIS_FORMAT,
+    rejectUhrOnlyStops: true,
+    extract: EXTRACT.timeThenStop,
+  },
   // <trainNumber> <fromStop> (<time>) - <toStop> (<time>)
   {
     pattern: PATTERNS.TRIP_STOP_TIME_REQUIRED_PARENTHESES_FORMAT,

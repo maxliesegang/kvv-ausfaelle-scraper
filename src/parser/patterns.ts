@@ -102,6 +102,16 @@ export const PATTERNS = {
     /^(\d+)\s+(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+(.+?)\s{2,}(\d{1,2}[:.]\d{2})(?:\s*Uhr)?\s+(.+)$/,
 
   /**
+   * Time/stop layout with both times parenthesized and "bis" as the separator:
+   * <trainNumber> (<fromTime> Uhr) <fromStop> bis (<toTime> Uhr) <toStop>
+   * Example: "85507 (08:21 Uhr) Bretten Bf. bis (08:37 Uhr) Flehingen Bf."
+   * Both parentheses are required: they are what distinguishes the row from prose that happens
+   * to start with a number and contain "bis".
+   */
+  TRIP_PARENTHESIZED_TIME_STOP_BIS_FORMAT:
+    /^(\d+)\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)\s+(.+?)\s+bis\s+\(\s*(\d{1,2}[:.]\d{2})\s*(?:Uhr)?\s*\)\s+(.+?)\s*$/i,
+
+  /**
    * Matches trip format with line prefix: <line> <trainNumber> <fromStop> <time> Uhr - <toStop> <time> Uhr
    * Example: "S5 84957 Rheinbergstraße 05:02 Uhr - Pforzheim 06:11 Uhr"
    * This format includes the line identifier at the beginning of each trip line.
