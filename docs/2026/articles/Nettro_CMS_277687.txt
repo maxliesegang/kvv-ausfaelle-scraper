@@ -14,6 +14,8 @@ Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S4 kommt es zu einzelnen Fahrtausfällen. 
 Betroffen ist der Bereich zwischen Karlsruhe Albtalbahnhof und Schwaigern Bahnhof. 
 Betroffene Fahrt:
-S4 85401 Albtalbahnhof 03:55 Uhr - Schwaigern 05:25 Uhr
+85401 KA-Albtalbahnhof (03:55 Uhr) - Schwaigern Bf (05:25 Uhr)
+85515 Karlsruhe Albtalbahnhof  (11:35 Uhr) - Flehingen Bf. (12:37 Uhr)
+85524 Flehingen Bf. (13:20 Uhr) - Karlsruhe Albtalbahnhof (14:22 Uhr)
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

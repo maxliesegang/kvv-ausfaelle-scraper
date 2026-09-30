@@ -3161,7 +3161,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277679",
     "capturedAt": "2026-09-29T23:23:10.381Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-30",
+      "segmentStops": 51,
+      "segmentCancelledStops": 51,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 51,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260930-d0ab2522-30ac-3ffc-ad96-c0e95700b350"
+    }
   },
   {
     "line": "S8",
@@ -3175,6 +3191,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277679",
     "capturedAt": "2026-09-29T23:23:10.381Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-30",
+      "segmentStops": 51,
+      "segmentCancelledStops": 51,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 51,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20260930-f1597e4b-448d-3f3d-a84c-1007b0a08f43"
+    }
   }
 ]
