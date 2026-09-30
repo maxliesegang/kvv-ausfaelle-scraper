@@ -1854,5 +1854,62 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260914-bcacc0e2-a883-3ea7-82dc-c2eaae691a60"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-09-30",
+    "stand": "2026-09-30T12:55:00.000Z",
+    "trainNumber": "84917",
+    "fromStop": "Karlsruhe Lameyplatz",
+    "fromTime": "16:38",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "17:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277761",
+    "capturedAt": "2026-09-30T17:29:35.056Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-09-30",
+      "segmentStops": 23,
+      "segmentCancelledStops": 23,
+      "segmentTrackedStops": 0,
+      "journeyStops": 46,
+      "journeyCancelledStops": 25,
+      "journeyTrackedStops": 16,
+      "trackedOutsideSegment": 16,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20260930-8c7f310e-9f07-3d22-a4f8-d37fc2e1dbb3"
+    }
+  },
+  {
+    "line": "S51",
+    "date": "2026-09-30",
+    "stand": "2026-09-30T12:55:00.000Z",
+    "trainNumber": "84916",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "17:37",
+    "toStop": "Germersheim",
+    "toTime": "19:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277761",
+    "capturedAt": "2026-09-30T17:29:35.056Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-09-30",
+    "stand": "2026-09-30T12:55:00.000Z",
+    "trainNumber": "84931",
+    "fromStop": "Germersheim",
+    "fromTime": "19:49",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "21:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277761",
+    "capturedAt": "2026-09-30T17:29:35.056Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

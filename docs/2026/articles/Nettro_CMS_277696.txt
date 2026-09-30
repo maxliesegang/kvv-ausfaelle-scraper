@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277696
 Stand:  2026-09-30T01:10:00.000Z
-Titel:  Linie S5: Kurzfristiger betriebsbedingter Ausfall bei der AVG - Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. (30.09.2026 bis 30.09.2026)
+Titel:  Linie S5: Kurzfristiger betriebsbedingter Ausfall bei der AVG - Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App. (30.09.2026 bis 01.10.2026)
 Datum:  2026-09-30T01:10:00.000Z
 ========================================================================
 
@@ -14,9 +14,20 @@ Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. 
 Betroffen ist der Bereich zwischen Knielingen Rheinbergstraße und Söllingen Bahnhof. 
 Betroffene Fahrten:
-S5 84792 Tullastraße 04:10 Uhr - Rheinberstraße 04:34 Uhr 
-S5 84791 Rheinbergstraße 05:22 Uhr - Söllingen Bahnhof 06:07 Uhr
-S5 84810 Söllingen Bahnhof 06:18 Uhr - Rheinberstraße 07:04 Uhr
-S5 84805 Starckstraße 07:57 Uhr -  Tullastraße 09:10 Uhr 
+84779 Karlsruhe Rheinbergstraße (18:12 Uhr) - Söllingen b.KA (18:56 Uhr)
+84772 Söllingen b.KA (19:01 Uhr) - Karlsruhe Rheinbergstraße (19:44 Uhr)
+84785 Karlsruhe Rheinbergstraße (19:52 Uhr) - Söllingen b.KA (20:37 Uhr)
+84858 Karlsruhe Tullastr. 20:10 Uhr - Wörth Badepark (20:53 Uhr)
+85084 Karlsruhe Tullastraße (20:30 Uhr) - Wörth Badepark (21:15 Uhr)
+84860 Söllingen b.KA (20:51 Uhr) - Karlsruhe Rheinbergstraße (21:34 Uhr)
+84849 Wörth Badepark (21:07 Uhr) - Söllingen Bf (22:07 Uhr)
+85097 Wörth Badepark (21:45 Uhr) - Pforzheim Hauptbahnhof (23:10 Uhr)
+84851 Karlsruhe Rheinbergstraße (22:22 Uhr) - Söllingen b.KA (23:06 Uhr)
+84864 Söllingen Bf (22:51 Uhr) - Knielingen Rheinbergstr (23:34 Uhr)
+01.10.26
+84945 Knielingen Rheinbergstr (00:12 Uhr) - Söllingen Bf (00:56 Uhr)
+84863 Karlsruhe Rheinbergstraße (00:22 Uhr) - Karlsruhe Tullastraße (00:47 Uhr)
+84784 Söllingen Bf (01:01 Uhr) - Karlsruhe Albtalbahnhof (01:34 Uhr)
+85028 Pforzheim Hauptbahnhof (01:06 Uhr) - Karlsruhe Tullastraße (01:52 Uhr) 
 Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

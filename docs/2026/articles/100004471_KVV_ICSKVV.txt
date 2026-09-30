@@ -1,0 +1,24 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004471_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S42, SEV - Bad Wimpfen - Neckarsulm: S42 - Einschränkungen in einer Nacht (13.10.2026 bis 14.10.2026)
+Datum:  2026-09-30T09:27:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 13.10.2026 bis 14.10.2026
+Linien: S42, SEV
+Bad Wimpfen - Neckarsulm: S42 - Einschränkungen in einer Nacht
+(AVG)
+Bad Wimpfen - Neckarsulm: S42 - Einschränkungen in einer Nacht
+Linie(n): S42
+Zeitraum: In der Nacht 13.10. (23:00 Uhr) bis 14.10.2026 (04:55 Uhr)
+Entfall Stadtbahn:  Bad Wimpfen <-> Neckarsulm
+Ersatzverkehr: Ersatzbusse Bad Wimpfen <-> Neckarsulm
+•    Der letzte Ersatzbus fährt ab Neckarsulm ohne Halt weiter bis Heilbronn Hbf
+Grund: DB InfraGO - Bauarbeiten
+Sonstiges:
+•    Achtung: Geänderte Abfahrtszeiten bei einzelnen Zügen Neckarsulm <-> Heilbronn Hbf/Willy-Brandt-Pl.,  und Bad Friedrichshall Hbf <-> Sinsheim (Elsenz) Hbf
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
