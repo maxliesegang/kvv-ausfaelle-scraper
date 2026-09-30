@@ -14,16 +14,6 @@ Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv
 Kurzfristiger betriebsbedingter Ausfall bei der AVG. Auf der Linie S5 kommt es zu einzelnen Fahrtausfällen. 
 Betroffen ist der Bereich zwischen Knielingen Rheinbergstraße und Söllingen Bahnhof. 
 Betroffene Fahrten:
-84779 Karlsruhe Rheinbergstraße (18:12 Uhr) - Söllingen b.KA (18:56 Uhr)
-84772 Söllingen b.KA (19:01 Uhr) - Karlsruhe Rheinbergstraße (19:44 Uhr)
-84785 Karlsruhe Rheinbergstraße (19:52 Uhr) - Söllingen b.KA (20:37 Uhr)
-84858 Karlsruhe Tullastr. 20:10 Uhr - Wörth Badepark (20:53 Uhr)
-85084 Karlsruhe Tullastraße (20:30 Uhr) - Wörth Badepark (21:15 Uhr)
-84860 Söllingen b.KA (20:51 Uhr) - Karlsruhe Rheinbergstraße (21:34 Uhr)
-84849 Wörth Badepark (21:07 Uhr) - Söllingen Bf (22:07 Uhr)
-85097 Wörth Badepark (21:45 Uhr) - Pforzheim Hauptbahnhof (23:10 Uhr)
-84851 Karlsruhe Rheinbergstraße (22:22 Uhr) - Söllingen b.KA (23:06 Uhr)
-84864 Söllingen Bf (22:51 Uhr) - Knielingen Rheinbergstr (23:34 Uhr)
 01.10.26
 84945 Knielingen Rheinbergstr (00:12 Uhr) - Söllingen Bf (00:56 Uhr)
 84863 Karlsruhe Rheinbergstraße (00:22 Uhr) - Karlsruhe Tullastraße (00:47 Uhr)

@@ -7481,7 +7481,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-30",
+      "checkedAt": "2026-10-01",
       "segmentStops": 17,
       "segmentCancelledStops": 16,
       "segmentTrackedStops": 0,
@@ -7492,13 +7492,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260929-3e440016-5600-3e5b-a622-b87a0339b809",
       "feedLine": "S5",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-30",
+          "checkedAt": "2026-10-01",
           "segmentStops": 17,
           "segmentCancelledStops": 16,
           "segmentTrackedStops": 0,
@@ -7509,7 +7509,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20260929-3e440016-5600-3e5b-a622-b87a0339b809",
           "feedLine": "S5",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
@@ -7802,7 +7802,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-30",
+      "checkedAt": "2026-10-01",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -7813,13 +7813,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260930-3c359dee-135d-3421-932c-5752c5324651",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-30",
+          "checkedAt": "2026-10-01",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -7830,7 +7830,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20260930-3c359dee-135d-3421-932c-5752c5324651",
           "unresolvedReason": "journey-mismatch",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
