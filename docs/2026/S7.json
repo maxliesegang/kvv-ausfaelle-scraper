@@ -3259,5 +3259,48 @@
       "journeyCancelled": true,
       "journeyId": "20260929-ddafbbb9-737f-3d1c-8413-4c4bef590ffd"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-01",
+    "stand": "2026-10-01T00:21:00.000Z",
+    "trainNumber": "85551",
+    "fromStop": "Rastatt Bf",
+    "fromTime": "04:56",
+    "toStop": "Bühl",
+    "toTime": "05:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277898",
+    "capturedAt": "2026-10-01T03:48:29.585Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-01",
+      "segmentStops": 7,
+      "segmentCancelledStops": 7,
+      "segmentTrackedStops": 0,
+      "journeyStops": 23,
+      "journeyCancelledStops": 7,
+      "journeyTrackedStops": 6,
+      "trackedOutsideSegment": 6,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261001-17a1a242-f532-32ec-9994-8cf0e43898ca"
+    }
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-01",
+    "stand": "2026-10-01T00:21:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Bühl",
+    "fromTime": "05:44",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277898",
+    "capturedAt": "2026-10-01T03:48:29.585Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

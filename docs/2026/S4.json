@@ -7611,7 +7611,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-09-30",
+      "checkedAt": "2026-10-01",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -7622,13 +7622,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20260929-511d2deb-de7c-39f1-a2d0-182c76d460c3",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-09-30",
+          "checkedAt": "2026-10-01",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -7639,7 +7639,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20260929-511d2deb-de7c-39f1-a2d0-182c76d460c3",
           "unresolvedReason": "journey-mismatch",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
@@ -7941,5 +7941,103 @@
       "journeyCancelled": true,
       "journeyId": "20260930-850e89cc-aeae-39fe-9c14-ae3ae97bdea2"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "85409",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "05:35",
+    "toStop": "Heilbronn Pfühlpark",
+    "toTime": "07:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "06:35",
+    "toStop": "Eppingen Bf",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "80000",
+    "fromStop": "Heilbronn Pfühlpark",
+    "fromTime": "07:43",
+    "toStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "toTime": "07:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "85512",
+    "fromStop": "Eppingen Bf",
+    "fromTime": "08:07",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "09:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "85418",
+    "fromStop": "Heilbronn Hbf/Willy-Brandt-Platz",
+    "fromTime": "08:52",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "10:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "85515",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "11:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "12:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-01",
+    "stand": "2026-09-30T22:47:00.000Z",
+    "trainNumber": "85524",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "13:20",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "14:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277856",
+    "capturedAt": "2026-10-01T03:48:29.427Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
