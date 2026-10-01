@@ -13,9 +13,11 @@ Betriebsbedingte Fahrtausfälle auf der Linie S51 zwischen Pforzheim Hauptbahnho
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Pforzheim Hauptbahnhof und Germersheim Bahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 01.10.2026 02:16:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85036 Pforzheim Hbf (05:46 Uhr) - Germersheim Bf (07:38 Uhr)
-84889 Germersheim Bf (07:53 Uhr) - Ka Tullastrasse (09:05 Uhr)
+Nach aktuellem Stand 01.10.2026 02:16:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen:
+84913 Germersheim Bf. (14:50 Uhr) - Söllingen Bf. (16:17 Uhr)
+84912 Söllingen (16:38 Uhr) - Germersheim Bf. (18:07 Uhr)
+84921 Germersheim Bf. (16:50 Uhr) - Söllingen Bf. (18:17 Uhr) 
+84920 Söllingen Bf. (18:38 Uhr) - Germersheim Bf. (20:07 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

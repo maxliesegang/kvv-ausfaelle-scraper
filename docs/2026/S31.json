@@ -124,5 +124,33 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S31",
+    "date": "2026-10-01",
+    "stand": "2026-10-01T09:19:00.000Z",
+    "trainNumber": "85191",
+    "fromStop": "Odenheim Bf.",
+    "fromTime": "14:03",
+    "toStop": "Bruchsal Bf.",
+    "toTime": "14:26",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277980",
+    "capturedAt": "2026-10-01T10:40:17.028Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S31",
+    "date": "2026-10-01",
+    "stand": "2026-10-01T09:19:00.000Z",
+    "trainNumber": "85188",
+    "fromStop": "Bruchsal Bf. 8",
+    "fromTime": "14:32",
+    "toStop": "Odenheim Bf.",
+    "toTime": "14:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_277980",
+    "capturedAt": "2026-10-01T10:40:17.028Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

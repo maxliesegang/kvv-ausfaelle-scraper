@@ -14,13 +14,12 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S4 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Albtalbahnhof und Heilbronn Pfühlpark. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 01.10.2026 00:47:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85409 Ka. Albtalbahnhof (05:35 Uhr) - Heilbronn Pfühlpark (07:30 Uhr)
-85595 Ka. Albtalbahnhof (06:35 Uhr) - Eppingen Bf (07:52 Uhr)
-80000 Heilbronn Pfühlpark (07:43 Uhr) - Heilbronn Hbf/Willy-Brandt-Platz (07:56 Uhr)
 85512 Eppingen Bf (08:07 Uhr) - Ka. Albtalbahnhof (09:22 Uhr)
 85418 Heilbronn Hbf/Willy-Brandt-Platz (08:52 Uhr) - Ka. Albtalbahnhof (10:42 Uhr)
 85515 Ka. Albtalbahnhof (11:35 Uhr) - Flehingen Bf (12:37 Uhr)
 85524 Flehingen Bf (13:20 Uhr) - Ka. Albtalbahnhof (14:22 Uhr)
+85519 Ka. Albtalbahnhof (13:35 Uhr) - Flehingen Bf. /14:37 Uhr)
+85528 Flehingen Bf. (14:37 Uhr) - Ka. Albtalbahnhof ( 16:22 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
