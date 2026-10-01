@@ -70,6 +70,11 @@ const ARTICLE_CORRECTIONS: Readonly<Record<string, readonly ArticleCorrection[]>
   // only reading is 10:42, and GTFS confirms it: the run active that day (Freudenstadt Hbf
   // 09:53) reaches Forbach (Schwarzwald) at 10:39 and departs at 10:42.
   Nettro_CMS_277192: [{ find: 'Forbach Bf (10 :42 Uhr)', replace: 'Forbach Bf (10:42 Uhr)' }],
+  // S4 AVG cancellations, 2026-10-01. The Flehingen time of train 85519 opens with a slash
+  // instead of a parenthesis ("Flehingen Bf. /14:37 Uhr)"), so the row matches no trip format
+  // and is dropped. The time itself is intact, and GTFS confirms it: every run of short name
+  // 85519 leaving Karlsruhe Albtalbahnhof at 13:35 terminates at Flehingen at 14:37.
+  Nettro_CMS_277856: [{ find: 'Flehingen Bf. /14:37 Uhr)', replace: 'Flehingen Bf. (14:37 Uhr)' }],
 };
 
 /**
