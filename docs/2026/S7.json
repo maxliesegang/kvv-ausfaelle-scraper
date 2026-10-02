@@ -3318,5 +3318,33 @@
       "journeyCancelled": true,
       "journeyId": "20261001-52eaa9aa-a90a-38cf-a953-b0bb92cf9e69"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-02",
+    "stand": "2026-10-02T01:03:00.000Z",
+    "trainNumber": "85557",
+    "fromStop": "Ka Tullastrasse",
+    "fromTime": "05:57",
+    "toStop": "Baden-Baden",
+    "toTime": "06:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278029",
+    "capturedAt": "2026-10-02T03:46:39.911Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-02",
+    "stand": "2026-10-02T01:03:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Baden-Baden",
+    "fromTime": "07:00",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "07:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278029",
+    "capturedAt": "2026-10-02T03:46:39.911Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
