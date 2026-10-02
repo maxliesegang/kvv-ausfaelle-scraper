@@ -8224,7 +8224,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278005",
     "capturedAt": "2026-10-02T03:46:40.234Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-02",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261002-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a",
+      "feedLine": "S7"
+    }
   },
   {
     "line": "S4",
@@ -8238,7 +8255,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278005",
     "capturedAt": "2026-10-02T03:46:40.234Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-02",
+      "segmentStops": 32,
+      "segmentCancelledStops": 32,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 32,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261002-3c840690-c34d-32ce-9654-cdcb207fb8c5"
+    }
   },
   {
     "line": "S4",
@@ -8251,6 +8284,35 @@
     "toTime": "11:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278005",
     "capturedAt": "2026-10-02T03:46:40.234Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-02",
+      "segmentStops": 23,
+      "segmentCancelledStops": 23,
+      "segmentTrackedStops": 0,
+      "journeyStops": 73,
+      "journeyCancelledStops": 23,
+      "journeyTrackedStops": 51,
+      "trackedOutsideSegment": 51,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261002-f732a368-b6d9-365b-b539-f76ce2f0e551"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-02",
+    "stand": "2026-10-02T00:59:00.000Z",
+    "trainNumber": "85520",
+    "fromStop": "Bretten Bf.",
+    "fromTime": "11:39",
+    "toStop": "Ka. Albtalbahnhof",
+    "toTime": "12:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278005",
+    "capturedAt": "2026-10-02T10:15:36.757Z",
     "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   },
