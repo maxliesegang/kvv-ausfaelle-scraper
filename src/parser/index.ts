@@ -29,6 +29,18 @@ export class ParseError extends Error {
   }
 }
 
+/**
+ * The article parsed cleanly but yielded no trips. Callers treat this differently from any other
+ * {@link ParseError} (it is often a notice without a trip list), so it is a type to branch on
+ * rather than a message to match: rewording the message must not change how a run is judged.
+ */
+export class NoTripsFoundError extends ParseError {
+  constructor(url: string) {
+    super(`Incorrect parse: no trips were found in article ${url}`);
+    this.name = 'NoTripsFoundError';
+  }
+}
+
 /** What one detail page yielded: its trips, plus any train number that resolved to no line. */
 interface ParsedArticle {
   readonly trips: Cancellation[];
@@ -100,7 +112,7 @@ function parseArticle(html: string, url: string): ParsedArticle {
  * @param html - Raw HTML content of the detail page
  * @param url - Source URL for reference
  * @returns Array of parsed cancellations
- * @throws {ParseError} If no trips are found in the article
+ * @throws {NoTripsFoundError} If no trips are found in the article
  */
 export function parseDetailPage(html: string, url: string): Cancellation[] {
   const text = toArticleText(html, url);
@@ -120,7 +132,7 @@ export function parseDetailPage(html: string, url: string): Cancellation[] {
   }
 
   if (trips.length === 0) {
-    throw new ParseError(`Incorrect parse: no trips were found in article ${url}`);
+    throw new NoTripsFoundError(url);
   }
 
   return trips;

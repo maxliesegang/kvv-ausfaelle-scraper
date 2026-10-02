@@ -30,7 +30,8 @@
  * Exit code is 0 regardless of findings. Pipe/read the summary to act on it.
  */
 
-import { basename, join } from 'node:path';
+import { basename, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
 import { DATA_DIR } from '../src/config.js';
 import {
@@ -39,10 +40,19 @@ import {
   hasDeparted,
   loadExistingCancellations,
 } from '../src/storage.js';
-import { parseDetailPage, ParseError } from '../src/parser/index.js';
+import {
+  findUnmappedTrainNumbersError,
+  NoTripsFoundError,
+  parseDetailPage,
+  ParseError,
+} from '../src/parser/index.js';
+import { toArticleText } from '../src/parser/article-corrections.js';
+import { findUnparsedTripLikeRows, leadingTrainNumber } from '../src/parser/trip-parsing.js';
 import { ARCHIVE_SUBDIR, parseArchive } from '../src/article-archive.js';
 import { getFahrplanYear, listFahrplanYearDirectories } from '../src/fahrplan.js';
 import { listFiles, readTextFile, writeJsonFile } from '../src/utils/fs.js';
+import { extractDetailId } from '../src/utils/normalization.js';
+import { namesSameStop } from '../src/verification/verify.js';
 import type { CauseClassification } from '../src/cause.js';
 import type { Cancellation } from '../src/types.js';
 
@@ -106,25 +116,22 @@ function getLineScopedTripKey(trip: Cancellation, line: string = trip.line): str
   return JSON.stringify([line, getCancellationKey(trip)]);
 }
 
-/** Loads every stored cancellation for a year, indexed by source URL then by line/trip key. */
-async function loadStoredTripsBySourceUrl(
+/** Loads every stored line file of a year, keyed by the line its filename names. */
+async function loadStoredTripsByLine(
   fahrplanYearDirectory: string,
-): Promise<Map<string, Map<string, Cancellation>>> {
-  const tripsBySourceUrl = new Map<string, Map<string, Cancellation>>();
+): Promise<Map<string, Cancellation[]>> {
   const lineFilenames = (await listFiles(fahrplanYearDirectory)).filter(
     (name) => name.endsWith('.json') && name !== 'index.json',
   );
+  const storedTripsByLine = new Map<string, Cancellation[]>();
   for (const filename of lineFilenames) {
-    for (const trip of await loadExistingCancellations(join(fahrplanYearDirectory, filename))) {
-      let sourceTrips = tripsBySourceUrl.get(trip.sourceUrl);
-      if (!sourceTrips) {
-        sourceTrips = new Map();
-        tripsBySourceUrl.set(trip.sourceUrl, sourceTrips);
-      }
-      sourceTrips.set(getLineScopedTripKey(trip), trip);
-    }
+    const line = filename.slice(0, -'.json'.length);
+    storedTripsByLine.set(
+      line,
+      await loadExistingCancellations(join(fahrplanYearDirectory, filename)),
+    );
   }
-  return tripsBySourceUrl;
+  return storedTripsByLine;
 }
 
 interface ArchiveProcessingTotals {
@@ -136,6 +143,8 @@ interface ArchiveProcessingTotals {
   tripsAdded: number;
   tripsRemoved: number;
   classificationsChanged: number;
+  /** Report mode: stored trips `--write-trips` would correct, classification changes included. */
+  tripsToCorrect: number;
   articlesWithDifferences: number;
   /** Write mode: stored trips whose cause/causeKeyword was re-stamped. */
   classificationsUpdated: number;
@@ -165,6 +174,7 @@ function createArchiveProcessingTotals(): ArchiveProcessingTotals {
     tripsAdded: 0,
     tripsRemoved: 0,
     classificationsChanged: 0,
+    tripsToCorrect: 0,
     articlesWithDifferences: 0,
     classificationsUpdated: 0,
     lineFilesWritten: 0,
@@ -186,6 +196,22 @@ interface ParsedArchivedArticle {
 /** Trip identity scoped to its source article, safe to use across line files. */
 function getSourceScopedTripKey(trip: Cancellation): string {
   return JSON.stringify([trip.sourceUrl, getCancellationKey(trip)]);
+}
+
+/**
+ * Whether a trip-less article still lists trip rows the parser could not turn into trips: a
+ * numbered row no format matched, or valid rows whose train numbers map to none of the article's
+ * lines. Mirrors the checks `processRssItem` raises in a live run, so an article the scraper would
+ * fail on is a parse error here too, never "no structured trip rows".
+ */
+export function listsUnresolvedTripRows(articleBody: string, sourceUrl: string): boolean {
+  const hasUnparsedNumberedRow = findUnparsedTripLikeRows(
+    toArticleText(articleBody, sourceUrl),
+    new Set(),
+  ).some((row) => leadingTrainNumber(row) !== undefined);
+  return (
+    hasUnparsedNumberedRow || findUnmappedTrainNumbersError(articleBody, sourceUrl) !== undefined
+  );
 }
 
 /**
@@ -214,14 +240,7 @@ async function parseArchivedArticle(
     return { sourceUrl, trips };
   } catch (error) {
     const errorMessage = (error as Error).message;
-    const hasNumberedTripRow = articleBody
-      .split(/\r?\n/)
-      .some((line) => /^\s*\d{4,6}\b/.test(line));
-    if (
-      error instanceof ParseError &&
-      errorMessage.includes('Incorrect parse: no trips were found') &&
-      !hasNumberedTripRow
-    ) {
+    if (error instanceof NoTripsFoundError && !listsUnresolvedTripRows(articleBody, sourceUrl)) {
       totals.articlesWithoutStructuredTrips += 1;
       console.log(`  - ${basename(archiveFilePath)}: no structured train-number trip rows`);
       return null;
@@ -233,68 +252,118 @@ async function parseArchivedArticle(
   }
 }
 
-/** Reparses one archive file and reports how it differs from what is stored for its URL. */
-async function reportArchivedArticleDifferences(
-  filePath: string,
-  storedTripsBySourceUrl: Map<string, Map<string, Cancellation>>,
+/** The fields a correction rewrites, as `field: old → new`; a dropped verdict is named, not dumped. */
+function describeFieldChanges(stored: Cancellation, corrected: Cancellation): string {
+  const fields = new Set([...Object.keys(stored), ...Object.keys(corrected)]);
+  return [...fields]
+    .filter((field) => {
+      const key = field as keyof Cancellation;
+      return !isDeepStrictEqual(stored[key], corrected[key]);
+    })
+    .map((field) =>
+      field === 'verification'
+        ? 'verification dropped'
+        : `${field}: ${String(stored[field as keyof Cancellation])} → ` +
+          `${String(corrected[field as keyof Cancellation])}`,
+    )
+    .join(', ');
+}
+
+/** Whether a correction changes the trip's classification. */
+function changesClassification({ stored, reconciled }: TripCorrection): boolean {
+  return stored.cause !== reconciled.cause || stored.causeKeyword !== reconciled.causeKeyword;
+}
+
+/** Whether a correction changes anything besides the classification. */
+function changesTripFields({ stored, reconciled }: TripCorrection): boolean {
+  return !isDeepStrictEqual(stored, {
+    ...reconciled,
+    cause: stored.cause,
+    causeKeyword: stored.causeKeyword,
+  });
+}
+
+/**
+ * Reports what `--write-trips` would change, grouped by the article each change is attributed to.
+ * It reads the very {@link TripReconciliation} the write mode applies, so the prediction cannot
+ * drift from the write: a trip moving to a sibling notice shows as removed from one article and
+ * restored under the other, exactly as it is written.
+ */
+function reportTripReconciliation(
+  reconciliation: TripReconciliation,
   options: ArchiveCommandOptions,
   totals: ArchiveProcessingTotals,
-): Promise<void> {
-  const archivedArticle = await parseArchivedArticle(filePath, totals);
-  if (!archivedArticle) return;
-  const { sourceUrl, trips: reparsedTrips } = archivedArticle;
+): void {
+  const changes = [...reconciliation.changesByLine.values()];
+  const restoredTrips = changes.flatMap((lineChanges) => lineChanges.restored);
+  const removedTrips = changes.flatMap((lineChanges) => lineChanges.removed);
+  const corrections = changes.flatMap((lineChanges) => lineChanges.corrected);
+  const sourceUrls = [
+    ...new Set([
+      ...restoredTrips.map((trip) => trip.sourceUrl),
+      ...removedTrips.map((trip) => trip.sourceUrl),
+      ...corrections.map(({ stored }) => stored.sourceUrl),
+    ]),
+  ].sort();
 
-  const storedTrips = storedTripsBySourceUrl.get(sourceUrl) ?? new Map<string, Cancellation>();
-  const reparsedTripsByKey = new Map(
-    reparsedTrips.map((trip) => [getLineScopedTripKey(trip), trip]),
-  );
+  for (const sourceUrl of sourceUrls) {
+    const isFromArticle = (trip: Cancellation) => trip.sourceUrl === sourceUrl;
+    const articleRestoredTrips = restoredTrips.filter(isFromArticle);
+    const articleRemovedTrips = removedTrips.filter(isFromArticle);
+    const articleCorrections = corrections.filter(({ stored }) => isFromArticle(stored));
+    const fieldCorrections = articleCorrections.filter(changesTripFields);
+    const reclassifications = articleCorrections.filter(changesClassification);
+    const retainedPastTrips = reconciliation.retainedPastTrips.filter(isFromArticle);
 
-  const addedTrips = reparsedTrips.filter((trip) => !storedTrips.has(getLineScopedTripKey(trip)));
-  const unlistedTrips = [...storedTrips.values()].filter(
-    (trip) => !reparsedTripsByKey.has(getLineScopedTripKey(trip)),
-  );
+    totals.articlesWithDifferences += 1;
+    totals.tripsAdded += articleRestoredTrips.length;
+    totals.tripsRemoved += articleRemovedTrips.length;
+    totals.tripsToCorrect += articleCorrections.length;
+    totals.classificationsChanged += reclassifications.length;
 
-  // A departed trip is retained, not removed (see `reconcileBucket`). Split it out so this
-  // report predicts what `--write-trips` would do rather than over-reporting removals the
-  // reconciler will not perform.
-  const nowMs = Date.now();
-  const retainedPastTrips = unlistedTrips.filter((trip) => hasDeparted(trip, nowMs));
-  const removedTrips = unlistedTrips.filter((trip) => !hasDeparted(trip, nowMs));
-  const reclassifiedTrips = reparsedTrips.filter((trip) => {
-    const storedTrip = storedTrips.get(getLineScopedTripKey(trip));
-    return (
-      storedTrip &&
-      (storedTrip.cause !== trip.cause || storedTrip.causeKeyword !== trip.causeKeyword)
+    const retainedNote =
+      retainedPastTrips.length > 0 ? `, ${retainedPastTrips.length} past trip(s) retained` : '';
+    console.log(
+      `  ~ ${extractDetailId(sourceUrl) ?? sourceUrl}: +${articleRestoredTrips.length} added, ` +
+        `-${articleRemovedTrips.length} removed, ~${articleCorrections.length} corrected ` +
+        `(${reclassifications.length} classification change(s))${retainedNote}`,
     );
-  });
-
-  if (addedTrips.length === 0 && removedTrips.length === 0 && reclassifiedTrips.length === 0) {
-    return;
-  }
-
-  totals.articlesWithDifferences += 1;
-  totals.tripsAdded += addedTrips.length;
-  totals.tripsRemoved += removedTrips.length;
-  totals.classificationsChanged += reclassifiedTrips.length;
-
-  const retainedNote =
-    retainedPastTrips.length > 0 ? `, ${retainedPastTrips.length} past trip(s) retained` : '';
-  console.log(
-    `  ~ ${basename(filePath)}: +${addedTrips.length} added, -${removedTrips.length} removed, ` +
-      `${reclassifiedTrips.length} classification change(s)${retainedNote}`,
-  );
-  if (options.verbose) {
-    for (const trip of addedTrips) console.log(`      + ${formatTrip(trip)}`);
-    for (const trip of removedTrips) console.log(`      - ${formatTrip(trip)}`);
+    if (!options.verbose) continue;
+    for (const trip of articleRestoredTrips) console.log(`      + ${formatTrip(trip)}`);
+    for (const trip of articleRemovedTrips) console.log(`      - ${formatTrip(trip)}`);
     for (const trip of retainedPastTrips) console.log(`      = ${formatTrip(trip)} (departed)`);
-    for (const trip of reclassifiedTrips) {
-      const storedTrip = storedTrips.get(getLineScopedTripKey(trip));
+    for (const { stored, reconciled } of fieldCorrections) {
+      console.log(`      ~ ${formatTrip(stored)}: ${describeFieldChanges(stored, reconciled)}`);
+    }
+    for (const { stored, reconciled } of reclassifications) {
       console.log(
-        `      ~ ${formatTrip(trip)} [${trip.causeKeyword ?? 'no keyword'}] ` +
-          `(was ${storedTrip?.cause} [${storedTrip?.causeKeyword ?? 'no keyword'}])`,
+        `      ~ ${formatTrip(reconciled)} [${reconciled.causeKeyword ?? 'no keyword'}] ` +
+          `(was ${stored.cause} [${stored.causeKeyword ?? 'no keyword'}])`,
       );
     }
   }
+}
+
+/**
+ * Reparses every archive in a year, keyed by source URL. A parse failure is deliberately absent,
+ * so it can never delete or rewrite that article's stored data.
+ */
+async function loadReparsedTripsBySourceUrl(
+  fahrplanYearDirectory: string,
+  totals: ArchiveProcessingTotals,
+): Promise<Map<string, readonly Cancellation[]>> {
+  const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
+  const archiveFilenames = (await listFiles(archiveDirectory))
+    .filter((filename) => filename.endsWith('.txt'))
+    .sort();
+  const reparsedTripsBySourceUrl = new Map<string, readonly Cancellation[]>();
+  for (const filename of archiveFilenames) {
+    const archivedArticle = await parseArchivedArticle(join(archiveDirectory, filename), totals);
+    if (archivedArticle) {
+      reparsedTripsBySourceUrl.set(archivedArticle.sourceUrl, archivedArticle.trips);
+    }
+  }
+  return reparsedTripsBySourceUrl;
 }
 
 /**
@@ -393,51 +462,81 @@ async function backfillClassificationsForYear(
  * correction that leaves those endpoints intact, and dropped only when the reparse moves them,
  * where it would be evidence about a different segment. Dropping it makes `needsCheck` re-ask,
  * which is the right outcome while the trip is still inside the lookback window.
+ *
+ * Endpoint names are compared as stops, not strings: KVV re-spells a stop between edits of one
+ * notice (`Albtalbahnhof` → `KA-Albtalbahnhof`), which leaves the segment where it was.
  */
 function describesSameVerifiedSegment(stored: Cancellation, reparsed: Cancellation): boolean {
   return (
     stored.date === reparsed.date &&
     stored.trainNumber === reparsed.trainNumber &&
-    stored.fromStop === reparsed.fromStop &&
+    namesSameStop(stored.fromStop, reparsed.fromStop) &&
     stored.fromTime === reparsed.fromTime &&
-    stored.toStop === reparsed.toStop &&
+    namesSameStop(stored.toStop, reparsed.toStop) &&
     stored.toTime === reparsed.toTime
   );
 }
 
 /**
- * Reconciles stored trips for successfully parsed archives. A parse failure is deliberately
- * absent from `reparsedTripsBySourceUrl`, so it can never delete that article's existing data.
+ * The record a reparsed trip replaces its stored copy with. `capturedAt`, `restoredFrom` and
+ * `verification` are provenance the reparse cannot know: the archive says what KVV published, not
+ * when we first saw it, that the record was recovered by hand, or what the train actually did. All
+ * must survive a correction, or reconciliation silently rewrites history. The verdict is kept only
+ * while it still describes the same announced segment (see {@link describesSameVerifiedSegment}).
  */
-async function reconcileTripsForYear(
-  fahrplanYearDirectory: string,
-  options: ArchiveCommandOptions,
-  totals: ArchiveProcessingTotals,
-): Promise<void> {
-  const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
-  const archiveFilenames = (await listFiles(archiveDirectory))
-    .filter((filename) => filename.endsWith('.txt'))
-    .sort();
-  const reparsedTripsBySourceUrl = new Map<string, readonly Cancellation[]>();
-  for (const filename of archiveFilenames) {
-    const archivedArticle = await parseArchivedArticle(join(archiveDirectory, filename), totals);
-    if (archivedArticle) {
-      reparsedTripsBySourceUrl.set(archivedArticle.sourceUrl, archivedArticle.trips);
-    }
-  }
+function applyStoredProvenance(stored: Cancellation, reparsed: Cancellation): Cancellation {
+  return {
+    ...reparsed,
+    capturedAt: stored.capturedAt,
+    ...(stored.restoredFrom ? { restoredFrom: stored.restoredFrom } : {}),
+    ...(stored.verification && describesSameVerifiedSegment(stored, reparsed)
+      ? { verification: stored.verification }
+      : {}),
+  };
+}
 
-  const lineFilenames = (await listFiles(fahrplanYearDirectory)).filter(
-    (name) => name.endsWith('.json') && name !== 'index.json',
-  );
-  const storedTripsByLine = new Map<string, Cancellation[]>();
+/** A stored trip and the record reconciliation replaces it with. */
+export interface TripCorrection {
+  readonly stored: Cancellation;
+  readonly reconciled: Cancellation;
+}
+
+/** What reconciliation changes in one line file, matched by source-scoped trip key. */
+export interface LineTripChanges {
+  /** Reconciled trips with no stored copy under the same source in this line file. */
+  readonly restored: readonly Cancellation[];
+  /** Same-source records whose content changed (parsed fields, classification or verdict). */
+  readonly corrected: readonly TripCorrection[];
+  /** Stored trips the reconciled line file no longer holds. */
+  readonly removed: readonly Cancellation[];
+}
+
+export interface TripReconciliation {
+  /** Every stored line plus any new one, holding its reconciled trips in canonical order. */
+  readonly tripsByLine: ReadonlyMap<string, readonly Cancellation[]>;
+  /** Only the lines that change. */
+  readonly changesByLine: ReadonlyMap<string, LineTripChanges>;
+  /** Stored trips a reparsed article no longer lists, kept because they already departed. */
+  readonly retainedPastTrips: readonly Cancellation[];
+}
+
+/**
+ * Reconciles a year's stored trips with its successfully reparsed archives — pure, no I/O, so the
+ * write mode and the report share one result and the rules below are unit-testable.
+ *
+ * Only articles present in `reparsedTripsBySourceUrl` are reconciled; a parse failure must be
+ * left out by the caller, so it can never delete that article's stored data.
+ */
+export function reconcileArchivedTrips(
+  storedTripsByLine: ReadonlyMap<string, readonly Cancellation[]>,
+  reparsedTripsBySourceUrl: ReadonlyMap<string, readonly Cancellation[]>,
+  nowMs: number,
+): TripReconciliation {
   // A multi-line article stores one copy of a shared trip per line bucket, and all copies share
   // the same source-scoped key. Keep every copy so the lookup below can prefer the one the
   // reparse produced; a single-entry map would silently keep whichever line file was read last.
   const storedTripsBySourceKey = new Map<string, Cancellation[]>();
-  for (const filename of lineFilenames) {
-    const line = filename.slice(0, -'.json'.length);
-    const trips = await loadExistingCancellations(join(fahrplanYearDirectory, filename));
-    storedTripsByLine.set(line, trips);
+  for (const trips of storedTripsByLine.values()) {
     for (const trip of trips) {
       const sourceKey = getSourceScopedTripKey(trip);
       const sameKeyTrips = storedTripsBySourceKey.get(sourceKey);
@@ -461,20 +560,25 @@ async function reconcileTripsForYear(
   // dropping a past trip from it is garbage collection, not a retraction. This mirrors
   // `reconcileBucket` in `src/storage.ts`, so the tooling and the live scraper converge on the
   // same stored set instead of undoing each other.
-  const nowMs = Date.now();
+  const departedStoredTrips: Cancellation[] = [];
   for (const [line, trips] of storedTripsByLine) {
     for (const trip of trips) {
-      if (!reparsedTripsBySourceUrl.has(trip.sourceUrl) || hasDeparted(trip, nowMs)) {
+      const wasReparsed = reparsedTripsBySourceUrl.has(trip.sourceUrl);
+      const departed = hasDeparted(trip, nowMs);
+      if (!wasReparsed || departed) {
         reconciledTripsByIdentity.set(getLineScopedTripKey(trip, line), { line, trip });
       }
+      if (wasReparsed && departed) departedStoredTrips.push(trip);
     }
   }
 
   // Reparsed trips. First writer wins — archives are processed in sorted order — except that a
   // trip the store already published under *this* article always displaces an earlier duplicate,
   // so the published `sourceUrl` and `capturedAt` stay put.
+  const reparsedSourceKeys = new Set<string>();
   for (const trips of reparsedTripsBySourceUrl.values()) {
     for (const trip of trips) {
+      reparsedSourceKeys.add(getSourceScopedTripKey(trip));
       const identity = getLineScopedTripKey(trip);
       // Prefer the stored copy of the same line: its `line`-relative evidence (a `feedLine`
       // naming any other line, per-trip verdict provenance) describes this bucket's copy,
@@ -488,72 +592,86 @@ async function reconcileTripsForYear(
         continue;
       }
 
-      // `capturedAt`, `restoredFrom` and `verification` are provenance the reparse cannot know:
-      // the archive says what KVV published, not when we first saw it, that the record was
-      // recovered by hand, or what the train actually did. All must survive a correction, or
-      // reconciliation silently rewrites history. The verdict is kept only while it still
-      // describes the same announced segment (see {@link describesSameVerifiedSegment}).
-      const reconciledTrip = storedTrip
-        ? {
-            ...trip,
-            capturedAt: storedTrip.capturedAt,
-            ...(storedTrip.restoredFrom ? { restoredFrom: storedTrip.restoredFrom } : {}),
-            ...(storedTrip.verification && describesSameVerifiedSegment(storedTrip, trip)
-              ? { verification: storedTrip.verification }
-              : {}),
-          }
-        : trip;
+      const reconciledTrip = storedTrip ? applyStoredProvenance(storedTrip, trip) : trip;
       reconciledTripsByIdentity.set(identity, { line: trip.line, trip: reconciledTrip });
     }
   }
 
   // Every stored line starts empty so a line that lost all its trips is still rewritten.
-  const reconciledTripsByLine = new Map<string, Cancellation[]>(
+  const unsortedTripsByLine = new Map<string, Cancellation[]>(
     [...storedTripsByLine.keys()].map((line) => [line, []]),
   );
   for (const { line, trip } of reconciledTripsByIdentity.values()) {
-    const lineTrips = reconciledTripsByLine.get(line);
+    const lineTrips = unsortedTripsByLine.get(line);
     if (lineTrips) {
       lineTrips.push(trip);
     } else {
-      reconciledTripsByLine.set(line, [trip]);
+      unsortedTripsByLine.set(line, [trip]);
     }
   }
 
-  for (const [line, unsortedReconciledTrips] of reconciledTripsByLine) {
+  const tripsByLine = new Map<string, readonly Cancellation[]>();
+  const changesByLine = new Map<string, LineTripChanges>();
+  for (const [line, unsortedTrips] of unsortedTripsByLine) {
+    const reconciledTrips = [...unsortedTrips].sort(compareCancellationsBySchedule);
+    tripsByLine.set(line, reconciledTrips);
+
     const storedTrips = storedTripsByLine.get(line) ?? [];
-    const reconciledTrips = [...unsortedReconciledTrips].sort(compareCancellationsBySchedule);
     const storedTripsByKey = new Map(
       storedTrips.map((trip) => [getSourceScopedTripKey(trip), trip]),
     );
     const reconciledTripKeys = new Set(reconciledTrips.map(getSourceScopedTripKey));
-    const restoredTrips = reconciledTrips.filter(
+    const restored = reconciledTrips.filter(
       (trip) => !storedTripsByKey.has(getSourceScopedTripKey(trip)),
     );
-    const removedTrips = storedTrips.filter(
+    const removed = storedTrips.filter(
       (trip) => !reconciledTripKeys.has(getSourceScopedTripKey(trip)),
     );
-    const correctedTrips = reconciledTrips.filter((trip) => {
-      const storedTrip = storedTripsByKey.get(getSourceScopedTripKey(trip));
-      return storedTrip !== undefined && !isDeepStrictEqual(storedTrip, trip);
+    const corrected = reconciledTrips.flatMap((reconciled) => {
+      const stored = storedTripsByKey.get(getSourceScopedTripKey(reconciled));
+      return stored !== undefined && !isDeepStrictEqual(stored, reconciled)
+        ? [{ stored, reconciled }]
+        : [];
     });
-    if (restoredTrips.length === 0 && removedTrips.length === 0 && correctedTrips.length === 0) {
-      continue;
+    if (restored.length > 0 || removed.length > 0 || corrected.length > 0) {
+      changesByLine.set(line, { restored, corrected, removed });
     }
+  }
 
-    await writeJsonFile(join(fahrplanYearDirectory, `${line}.json`), reconciledTrips);
+  return {
+    tripsByLine,
+    changesByLine,
+    // Only departed trips the reparse no longer lists are worth reporting as retained.
+    retainedPastTrips: departedStoredTrips.filter(
+      (trip) => !reparsedSourceKeys.has(getSourceScopedTripKey(trip)),
+    ),
+  };
+}
+
+/** Writes the line files a reconciliation changes. */
+async function writeTripReconciliation(
+  fahrplanYearDirectory: string,
+  reconciliation: TripReconciliation,
+  options: ArchiveCommandOptions,
+  totals: ArchiveProcessingTotals,
+): Promise<void> {
+  for (const [line, { restored, corrected, removed }] of reconciliation.changesByLine) {
+    await writeJsonFile(
+      join(fahrplanYearDirectory, `${line}.json`),
+      reconciliation.tripsByLine.get(line) ?? [],
+    );
     totals.lineFilesWritten += 1;
-    totals.tripsRestored += restoredTrips.length;
-    totals.staleTripsRemoved += removedTrips.length;
-    totals.tripsCorrected += correctedTrips.length;
+    totals.tripsRestored += restored.length;
+    totals.staleTripsRemoved += removed.length;
+    totals.tripsCorrected += corrected.length;
     console.log(
-      `  ~ ${line}.json: +${restoredTrips.length} restored, ` +
-        `~${correctedTrips.length} corrected, -${removedTrips.length} removed`,
+      `  ~ ${line}.json: +${restored.length} restored, ` +
+        `~${corrected.length} corrected, -${removed.length} removed`,
     );
     if (options.verbose) {
-      for (const trip of restoredTrips) console.log(`      + ${formatTrip(trip)}`);
-      for (const trip of correctedTrips) console.log(`      ~ ${formatTrip(trip)}`);
-      for (const trip of removedTrips) console.log(`      - ${formatTrip(trip)}`);
+      for (const trip of restored) console.log(`      + ${formatTrip(trip)}`);
+      for (const { reconciled } of corrected) console.log(`      ~ ${formatTrip(reconciled)}`);
+      for (const trip of removed) console.log(`      - ${formatTrip(trip)}`);
     }
   }
 }
@@ -681,21 +799,20 @@ async function main(): Promise<void> {
       case 'backfill-classifications':
         await backfillClassificationsForYear(fahrplanYearDirectory, options, totals);
         continue;
-      case 'reconcile-trips':
-        await reconcileTripsForYear(fahrplanYearDirectory, options, totals);
-        continue;
       case 'redate-trips':
         await redateTripsForYear(fahrplanYearDirectory, options, totals);
         continue;
-      case 'report': {
-        const storedTripsBySourceUrl = await loadStoredTripsBySourceUrl(fahrplanYearDirectory);
-        for (const filename of archiveFilenames.sort()) {
-          await reportArchivedArticleDifferences(
-            join(archiveDirectory, filename),
-            storedTripsBySourceUrl,
-            options,
-            totals,
-          );
+      case 'report':
+      case 'reconcile-trips': {
+        const reconciliation = reconcileArchivedTrips(
+          await loadStoredTripsByLine(fahrplanYearDirectory),
+          await loadReparsedTripsBySourceUrl(fahrplanYearDirectory, totals),
+          Date.now(),
+        );
+        if (options.operation === 'report') {
+          reportTripReconciliation(reconciliation, options, totals);
+        } else {
+          await writeTripReconciliation(fahrplanYearDirectory, reconciliation, options, totals);
         }
         continue;
       }
@@ -739,12 +856,18 @@ async function main(): Promise<void> {
         parseSummary +
           `Diffs vs stored: ${totals.articlesWithDifferences} article(s) — ` +
           `+${totals.tripsAdded} would-add, -${totals.tripsRemoved} would-remove, ` +
-          `${totals.classificationsChanged} classification change(s).`,
+          `~${totals.tripsToCorrect} would-correct ` +
+          `(${totals.classificationsChanged} classification change(s)).`,
       );
   }
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+// Run only when executed directly, so tests can import the pure reconciliation.
+const invokedDirectly =
+  process.argv[1] !== undefined && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (invokedDirectly) {
+  main().catch((err) => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}

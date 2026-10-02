@@ -5,7 +5,11 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { findUnmappedTrainNumbersError, parseDetailPage } from '../../src/parser/index.js';
+import {
+  findUnmappedTrainNumbersError,
+  NoTripsFoundError,
+  parseDetailPage,
+} from '../../src/parser/index.js';
 import {
   extractLine,
   extractStand,
@@ -202,6 +206,8 @@ describe('Parser - Detail Page Parsing', () => {
         'Incorrect parse',
         'Should throw when no trips found',
       );
+      // Callers branch on the type, not the message (`processRssItem`, `reparse-archives`).
+      assert.throws(() => parseDetailPage(html, 'test://no-trips'), NoTripsFoundError);
     });
 
     it('should throw on empty HTML', () => {

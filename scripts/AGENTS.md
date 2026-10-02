@@ -18,7 +18,13 @@ This is the most specific guidance for maintenance scripts.
   the appropriate line or source scope when crossing files. Surfaces parser/classifier
   improvements and regressions. Flags: `--year=N`, `--verbose`, `--write`, `--write-dates`, and
   `--write-trips`. The three write flags are mutually exclusive.
-  - No write flag: reports differences, writes nothing, and exits 0 regardless of findings.
+  - No write flag: reports differences, writes nothing, and exits 0 regardless of findings. The
+    report prints the same `reconcileArchivedTrips` result `--write-trips` writes, grouped by the
+    article each change belongs to, so the two cannot disagree: a trip already stored under a
+    sibling notice is not an addition, a trip moving to a sibling notice is removed from one and
+    added under the other, and corrections (with any verdict they would drop) are listed field by
+    field under `--verbose`. `reconcileArchivedTrips` is pure and exported; the script runs `main`
+    only when executed directly, and `tests/unit/reparse-archives.test.ts` pins its rules.
   - `--write`: backfills only `cause`/`causeKeyword` for stored trips that reparse to the same
     identity. Pre-archive trips retain their stored classification.
   - `--write-dates`: re-stamps only `date`, matching a stored trip to its reparsed self by
@@ -33,9 +39,13 @@ This is the most specific guidance for maintenance scripts.
     and `verification`, and uses the canonical storage ordering. The verdict is provenance the
     reparse cannot regenerate — the feed answers for seven days only — so it is carried across a
     correction and dropped solely when the reparse moves the announced segment's endpoints,
-    which is what it was computed over.
+    which is what it was computed over. Endpoint names are compared as stops
+    (`namesSameStop` in `src/verification/verify.ts`), so KVV re-spelling a stop between edits
+    (`Albtalbahnhof` → `KA-Albtalbahnhof`) does not discard an unrecoverable verdict.
   - Safety: parse failures and articles without structured train-number rows never participate
-    in deletion. Nor do already-departed trips — the same forward-looking rule the live
+    in deletion. An article counts as without trip rows only when the live run would skip it too:
+    a numbered row no format matched, or valid rows whose numbers map to none of the article's
+    lines, make it a parse error (`listsUnresolvedTripRows`). Nor do already-departed trips — the same forward-looking rule the live
     reconciler applies (`hasDeparted` in `src/storage.ts`), so the script and the scraper
     cannot undo each other. The default report
     splits those out as "past trip(s) retained" instead of counting them as would-be removals.

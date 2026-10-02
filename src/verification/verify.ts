@@ -491,6 +491,43 @@ function nameSimilarity(wantedName: string, actualName: string): number {
   return best;
 }
 
+/**
+ * Canonical tokens KVV prefixes to a stop name without naming a different stop: the city
+ * qualifier (`KA-Albtalbahnhof`, `Karlsruhe Durlach`). Station words never reach this check;
+ * {@link nameTokens} already drops them.
+ */
+const STOP_QUALIFIER_TOKENS: ReadonlySet<string> = new Set(['karlsruhe']);
+
+/**
+ * Whether two KVV spellings name the same stop: their canonical tokens match one-to-one (allowing
+ * a one-character typo), except that one name may additionally carry the city qualifier. So
+ * `Albtalbahnhof` → `KA-Albtalbahnhof` and `Schwaigern` → `Schwaigern Bf` are the same stop, while
+ * `Wörth` and `Wörth Badepark` are not: a locality alone does not identify a stop within it.
+ * Stricter than {@link nameSimilarity}, which ranks feed candidates rather than deciding identity.
+ */
+export function namesSameStop(a: string, b: string): boolean {
+  const [shorter, longer] = [nameTokens(a), nameTokens(b)].sort((x, y) => x.length - y.length);
+  if (!shorter || !longer || shorter.length === 0) return false;
+  const used = new Set<number>();
+  const allMatched = shorter.every((token) => {
+    const exact = longer.findIndex((candidate, index) => !used.has(index) && candidate === token);
+    const index =
+      exact !== -1
+        ? exact
+        : longer.findIndex(
+            (candidate, candidateIndex) =>
+              !used.has(candidateIndex) && tokensMatch(token, candidate),
+          );
+    if (index === -1) return false;
+    used.add(index);
+    return true;
+  });
+  return (
+    allMatched &&
+    longer.every((token, index) => used.has(index) || STOP_QUALIFIER_TOKENS.has(token))
+  );
+}
+
 const MINIMUM_NAME_SIMILARITY = 0.55;
 /** Reject a same-named journey whose schedule does not describe the announced trip. */
 const MAX_ENDPOINT_TIME_DELTA_MINUTES = 15;

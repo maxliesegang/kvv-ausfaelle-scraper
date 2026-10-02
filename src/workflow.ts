@@ -2,7 +2,12 @@ import type { Cancellation, Item } from './types.js';
 import { DATA_DIR, RSS_URL } from './config.js';
 import { archiveArticleText } from './article-archive.js';
 import { fetchText, parseRss } from './rss.js';
-import { findUnmappedTrainNumbersError, parseDetailPage, ParseError } from './parser/index.js';
+import {
+  findUnmappedTrainNumbersError,
+  NoTripsFoundError,
+  parseDetailPage,
+  ParseError,
+} from './parser/index.js';
 import { findUnparsedTripLikeRows, leadingTrainNumber } from './parser/trip-parsing.js';
 import { toArticleText } from './parser/article-corrections.js';
 import { classifyCause } from './cause.js';
@@ -170,7 +175,7 @@ export async function processRssItem(
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
 
-    if (error instanceof ParseError && message.includes('Incorrect parse: no trips were found')) {
+    if (error instanceof NoTripsFoundError) {
       const reasons = detailRelevance.reasons.join('; ') || 'no relevance reasons recorded';
       const text = toArticleText(html, url);
       const unparsedTripLikeRows = findUnparsedTripLikeRows(text, new Set());

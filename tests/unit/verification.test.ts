@@ -32,6 +32,7 @@ import {
   identifiesNetworkJourney,
   locateSegment,
   matchesNetworkOperator,
+  namesSameStop,
   type SegmentCounts,
   type TripVerification,
   type VerificationStatus,
@@ -217,6 +218,29 @@ describe('journey candidate ordering', () => {
       ordered.map((candidate) => candidate.journeyId),
       ['exact', 'avg-alias', 'other-s-line', 'bus'],
     );
+  });
+});
+
+describe('stop name identity', () => {
+  it('treats a qualifier or station word KVV adds between edits as the same stop', () => {
+    assert.ok(namesSameStop('Albtalbahnhof', 'KA-Albtalbahnhof'));
+    assert.ok(namesSameStop('Schwaigern Bf', 'Schwaigern'));
+    assert.ok(namesSameStop('Söllingen', 'Söllingen Bf'));
+    assert.ok(namesSameStop('KA Tullastr.', 'Karlsruhe Tullastraße'));
+    assert.ok(namesSameStop('Durlach', 'Karlsruhe Durlach'));
+    assert.ok(namesSameStop('Wörh', 'Wörth'), 'a one-character typo is the same stop');
+  });
+
+  it('keeps distinct stops apart', () => {
+    assert.ok(!namesSameStop('Karlsruhe Marktplatz', 'Karlsruhe Albtalbahnhof'));
+    assert.ok(!namesSameStop('Bad Friedrichshall', 'Bad Wimpfen'));
+    assert.ok(!namesSameStop('Bf', 'Hbf'));
+  });
+
+  it('does not let a bare locality stand for a stop within it', () => {
+    assert.ok(!namesSameStop('Wörth', 'Wörth Badepark'));
+    assert.ok(!namesSameStop('Karlsruhe', 'Karlsruhe Durlach'));
+    assert.ok(!namesSameStop('Karlsruhe', 'KA Hbf'));
   });
 });
 
