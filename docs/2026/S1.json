@@ -6006,7 +6006,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-02",
+      "checkedAt": "2026-10-03",
       "segmentStops": 30,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -6016,13 +6016,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261001-32ce8367-fb26-3a26-ad54-b8165ddd550c",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-02",
+          "checkedAt": "2026-10-03",
           "segmentStops": 30,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -6032,7 +6032,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261001-32ce8367-fb26-3a26-ad54-b8165ddd550c",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -6102,7 +6102,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-02",
+      "checkedAt": "2026-10-03",
       "segmentStops": 29,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 1,
@@ -6112,13 +6112,13 @@
       "trackedOutsideSegment": 10,
       "trackedAdjacentStops": 2,
       "journeyId": "20261001-f922fe48-cc2f-376b-97e3-02fcf44d36a9",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-02",
+          "checkedAt": "2026-10-03",
           "segmentStops": 29,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 1,
@@ -6128,7 +6128,7 @@
           "trackedOutsideSegment": 10,
           "trackedAdjacentStops": 2,
           "journeyId": "20261001-f922fe48-cc2f-376b-97e3-02fcf44d36a9",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -6168,7 +6168,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-02",
+      "checkedAt": "2026-10-03",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -6179,13 +6179,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261001-6395a1e8-a911-3af4-a317-dd49befa28c7",
       "unresolvedReason": "journey-mismatch",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-02",
+          "checkedAt": "2026-10-03",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -6196,7 +6196,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20261001-6395a1e8-a911-3af4-a317-dd49befa28c7",
           "unresolvedReason": "journey-mismatch",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
