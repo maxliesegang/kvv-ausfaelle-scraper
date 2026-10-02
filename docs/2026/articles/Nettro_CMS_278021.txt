@@ -14,33 +14,10 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 02.10.2026 03:02:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84792 Ka Tullastrasse (04:10 Uhr) - Ka. Rheinbergstraße (04:34 Uhr)
-84701 Ka. Rheinhafen (04:15 Uhr) - Söllingen (04:56 Uhr)
-84796 Ka Tullastrasse (04:40 Uhr) - Wörth Badepark (05:21 Uhr)
-84957 Ka. Rheinbergstraße (05:01 Uhr) - Pforzheim Hbf (06:11 Uhr)
-84702 Söllingen (05:18 Uhr) - Ka. Rheinbergstraße (06:04 Uhr)
-84791 Ka. Rheinbergstraße (05:21 Uhr) - Söllingen (06:07 Uhr)
-84793 Wörth Badepark (05:45 Uhr) - Söllingen (06:47 Uhr)
-84810 Söllingen (06:18 Uhr) - Ka. Rheinbergstraße (07:04 Uhr)
-84950 Pforzheim Hbf (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
-84717 Ka. Rheinbergstraße (06:51 Uhr) - Söllingen (07:37 Uhr)
-84710 Söllingen (07:18 Uhr) - Ka. Rheinbergstraße (08:04 Uhr)
-84799 Ka. Rheinbergstraße (07:21 Uhr) - Söllingen (08:08 Uhr)
-84818 Söllingen (07:48 Uhr) - Ka. Rheinbergstraße (08:34 Uhr)
-84809 Wörth Badepark (08:05 Uhr) - Söllingen (09:09 Uhr)
-84714 Söllingen (08:18 Uhr) - Ka. Rheinbergstraße (09:04 Uhr)
-84725 Ka. Rheinbergstraße (08:31 Uhr) - Berghausen Bf (09:11 Uhr)
-84727 Ka. Rheinbergstraße (08:51 Uhr) - Söllingen (09:37 Uhr)
-84722 Söllingen (09:18 Uhr) - Ka. Rheinbergstraße (10:04 Uhr)
-84811 Ka. Rheinbergstraße (09:21 Uhr) - Söllingen (10:06 Uhr)
-84824 Söllingen (09:51 Uhr) - Ka. Rheinbergstraße (10:34 Uhr)
-84726 Söllingen (10:18 Uhr) - Ka. Rheinbergstraße (11:04 Uhr)
-84739 Ka. Rheinbergstraße (11:51 Uhr) - Söllingen (12:37 Uhr)
-84830 Söllingen (12:48 Uhr) - Ka. Rheinbergstraße (13:34 Uhr)
-84823 Ka. Rheinbergstraße (13:21 Uhr) - Söllingen (14:09 Uhr)
-84746 Söllingen (14:18 Uhr) - Ka. Rheinbergstraße (15:04 Uhr)
 84839 Ka. Rheinbergstraße (17:21 Uhr) - Söllingen (18:09 Uhr)
 84770 Söllingen (18:18 Uhr) - Ka. Rheinbergstraße (19:04 Uhr)
+03.10.2026
+85030 Pforzheim Hbf (01:09 Uhr) - Knielingen Rheinbergstr (02:17 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
