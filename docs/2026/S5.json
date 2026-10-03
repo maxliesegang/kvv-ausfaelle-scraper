@@ -31901,5 +31901,47 @@
       "journeyCancelled": true,
       "journeyId": "20261003-c17d25e8-12b8-3461-af44-8e7e25202770"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-03",
+    "stand": "2026-10-03T09:00:00.000Z",
+    "trainNumber": "84852",
+    "fromStop": "Tullastraße",
+    "fromTime": "18:11",
+    "toStop": "Rheinbergstraße",
+    "toTime": "18:34",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278137",
+    "capturedAt": "2026-10-03T15:36:49.376Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-03",
+    "stand": "2026-10-03T09:00:00.000Z",
+    "trainNumber": "84845",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "19:21",
+    "toStop": "Söllingen Bf.",
+    "toTime": "20:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278137",
+    "capturedAt": "2026-10-03T15:36:49.376Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-03",
+    "stand": "2026-10-03T09:00:00.000Z",
+    "trainNumber": "84860",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "20:51",
+    "toStop": "Tullastraße",
+    "toTime": "21:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278137",
+    "capturedAt": "2026-10-03T15:36:49.376Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
