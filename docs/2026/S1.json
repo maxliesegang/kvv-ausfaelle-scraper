@@ -6407,5 +6407,19 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261004-4525945c-b6a3-3ccb-ac5a-1f54ff2e3565"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-06",
+    "stand": "2026-10-06T11:51:00.000Z",
+    "trainNumber": "10059",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "15:54",
+    "toStop": "Hochstetten",
+    "toTime": "17:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278235",
+    "capturedAt": "2026-10-06T14:40:54.282Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
