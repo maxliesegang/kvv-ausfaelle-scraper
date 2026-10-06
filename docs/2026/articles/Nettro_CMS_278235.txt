@@ -14,11 +14,10 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S1 und S11 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Ittersbach Rathaus und Hochstetten. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 06.10.2026 13:51:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-10059 Ettlingen Albgaubad (15:54 Uhr) - Hochstetten (17:06 Uhr)
-20056 Hochstetten (17:12 Uhr) - Ittersbach Rathaus (18:45 Uhr)
-20057 Ittersbach Rathaus (18:51 Uhr) - Ettlingen Stadt (19:18 Uhr)
 20072 Ettlingen Stadt (22:48 Uhr) - Ittersbach Rathaus (23:15 Uhr)
+10085 Ettlingen Albgaubad (23:04 Uhr) - Neureut Kirchfeld (23:52 Uhr)
 20071 Ittersbach Rathaus (23:21 Uhr) - Ettlingen Stadt (23:45 Uhr)
+10086 Neureut Kirchfeld (00:24 Uhr) - Ettlingen Albgaubad (01:15 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
