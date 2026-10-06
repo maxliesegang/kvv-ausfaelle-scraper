@@ -2266,7 +2266,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-05",
+      "checkedAt": "2026-10-06",
       "segmentStops": 10,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2276,13 +2276,13 @@
       "trackedOutsideSegment": 16,
       "trackedAdjacentStops": 0,
       "journeyId": "20261004-a13396ef-7b59-31b6-9896-3cf86bd65af2",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-06",
           "segmentStops": 10,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -2292,7 +2292,7 @@
           "trackedOutsideSegment": 16,
           "trackedAdjacentStops": 0,
           "journeyId": "20261004-a13396ef-7b59-31b6-9896-3cf86bd65af2",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -2332,7 +2332,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-05",
+      "checkedAt": "2026-10-06",
       "segmentStops": 10,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2342,13 +2342,13 @@
       "trackedOutsideSegment": 16,
       "trackedAdjacentStops": 0,
       "journeyId": "20261004-f73a1cc8-78bd-371c-9c12-ff2d598d4103",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-05",
+          "checkedAt": "2026-10-06",
           "segmentStops": 10,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -2358,7 +2358,7 @@
           "trackedOutsideSegment": 16,
           "trackedAdjacentStops": 0,
           "journeyId": "20261004-f73a1cc8-78bd-371c-9c12-ff2d598d4103",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
