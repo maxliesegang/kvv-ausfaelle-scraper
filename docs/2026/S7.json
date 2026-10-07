@@ -3378,5 +3378,75 @@
       "journeyCancelled": true,
       "journeyId": "20261002-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-07T22:30:00.000Z",
+    "trainNumber": "85551",
+    "fromStop": "Rastatt Bf.",
+    "fromTime": "04:56",
+    "toStop": "Bühl Bf.",
+    "toTime": "05:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-07T23:59:12.133Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-07T22:30:00.000Z",
+    "trainNumber": "85595",
+    "fromStop": "Bühl Bf.",
+    "fromTime": "05:44",
+    "toStop": "Albtalbahnhof",
+    "toTime": "06:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-07T23:59:12.133Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-07T22:30:00.000Z",
+    "trainNumber": "85473",
+    "fromStop": "Achern Bf.",
+    "fromTime": "06:17",
+    "toStop": "Albtalbahnhof",
+    "toTime": "07:13",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-07T23:59:12.133Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-07T22:30:00.000Z",
+    "trainNumber": "85573",
+    "fromStop": "Tullastraße",
+    "fromTime": "12:17",
+    "toStop": "Achern Bf.",
+    "toTime": "13:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-07T23:59:12.133Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-07T22:30:00.000Z",
+    "trainNumber": "85574",
+    "fromStop": "Achern Bf.",
+    "fromTime": "13:30",
+    "toStop": "Tullastraße",
+    "toTime": "14:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-07T23:59:12.133Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
