@@ -233,5 +233,19 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S12",
+    "date": "2026-10-07",
+    "stand": "2026-10-07T00:50:00.000Z",
+    "trainNumber": "40015",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "07:36",
+    "toStop": "Tullastraße",
+    "toTime": "08:32",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278283",
+    "capturedAt": "2026-10-07T03:58:40.709Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

@@ -184,5 +184,33 @@
       "journeyCancelled": true,
       "journeyId": "20261001-264d7345-d13f-3602-925f-416a32b0e655"
     }
+  },
+  {
+    "line": "S31",
+    "date": "2026-10-07",
+    "stand": "2026-10-06T22:45:00.000Z",
+    "trainNumber": "85206",
+    "fromStop": "Ubstadt Ort",
+    "fromTime": "08:00",
+    "toStop": "Odenheim Bf.",
+    "toTime": "08:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278267",
+    "capturedAt": "2026-10-07T03:58:41.006Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S31",
+    "date": "2026-10-07",
+    "stand": "2026-10-06T22:45:00.000Z",
+    "trainNumber": "85115",
+    "fromStop": "Odenheim Bf.",
+    "fromTime": "08:23",
+    "toStop": "Ubstadt Ort",
+    "toTime": "08:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278267",
+    "capturedAt": "2026-10-07T03:58:41.006Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
