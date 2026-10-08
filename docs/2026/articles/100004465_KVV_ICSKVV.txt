@@ -7,4 +7,15 @@ Datum:  2026-09-28T08:41:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Diese Meldung existiert nicht mehr
+Vom 19.10.2026 bis 20.10.2026
+Linien: S51, SEV
+Wörth (Rhein) - Germersheim: S51 Teilabschnitt entfällt ab 22:00 Uhr
+(AVG)
+Wörth (Rhein) - Germersheim: S51 Teilabschnitt entfällt ab 22:00 Uhr 
+Linie(n): S51
+Zeitraum: In der Nacht 19./20.10.2026 (22:00 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn:  Wörth (Rhein) Bahnhof <-> Germersheim 
+Ersatzverkehr:  Wörth (Rhein) Bahnhof  <-> Germersheim
+Grund: DB InfraGO - Zeitfenster für Instandhaltung 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
