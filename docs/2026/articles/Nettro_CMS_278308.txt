@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278308
-Stand:  2026-10-07T22:30:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 - Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Germersheim Bahnhof, Wörth Badepark, Albtalbahnhof und Pforzheim Hbf. Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (08.10.2026 bis 08.10.2026)
+Stand:  2026-10-08T11:09:00.000Z
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6 zwischen Bad Wildbad Kurpark, Wörth Badepark, Albtalbahnhof und Pforzheim Hbf. Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (08.10.2026 bis 08.10.2026)
 Datum:  2026-10-07T22:39:00.000Z
 ========================================================================
 
@@ -8,27 +8,24 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 08.10.2026, 00:39 Uhr
-Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52
-Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Germersheim Bahnhof, Wörth Badepark, Albtalbahnhof und Pforzheim Hbf.
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S6 zwischen Bad Wildbad Kurpark, Wörth Badepark, Albtalbahnhof und Pforzheim Hbf.
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Germersheim Bahnhof, Wörth Badepark, Albtalbahnhof und Pforzheim Hbf.
 Wir bitten um Entschuldigung.
-Nach aktuellem Stand 08.10.2026 00:30:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84701 Rheinhafen (04:18 Uhr) - Söllingen Bf. (04:56 Uhr)
-84957 Rheinbergstraße (05:02 Uhr) - Pforzheim Hbf. (06:11 Uhr)
-84702 Söllingen Bf. (05:18 Uhr) - Rheinbergstraße (06:04 Uhr)
-84709 Rheinbergstraße (05:32 Uhr) - Söllingen Bf. (06:17 Uhr)
-84874 Albtalbahnhof (06:06 Uhr) - Germersheim Bf. (07:17 Uhr)
-84950 Pforzheim Hbf. (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
-84706 Söllingen Bf. (06:38 Uhr) - Rheinbergstraße (07:24 Uhr)
-84965 Rheinbergstraße (06:42 Uhr - Pforzheim Hbf. (07:50 Uhr)
-84885 Germersheim Bf. (07:26 Uhr) - Karlsruhe Marktplatz (08:26 Uhr)
-84969 Rheinbergstraße (07:42 Uhr) - Pforzheim Hbf. (08:50 Uhr)
-84809 Wörth Badepark (08:05 Uhr) - Söllingen Bf. (09:09 Uhr)
-84960 Pforzheim Hbf. (08:06 Uhr) - Tullastraße (08:50 Uhr)
-80702 Karlsruhe Marktplatz (08:39 Uhr) - Albtalbahnhof (08:48 Uhr)
-84722 Söllingen Bf. (09:18 Uhr) - Rheinbergstraße (10:04 Uhr)
+Nach aktuellem Stand 08.10.2026 13:09:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+84886 Marktplatz Pyramide (15:37) - Germersheim Bf. (16:35 Uhr)
+84921 Germersheim Bf. (16:50 Uhr) - Tullastraße (17:57 Uhr)
+84779 Tullastraße (18:37 Uhr) - Söllingen Bf. (18:56 Uhr) 
+84772 Söllingen Bf (19:01 Uhr) - Rheinbergstr. (19:44 Uhr) 
+84785 Rheinbergstr. (19:52 Uhr) - Söllingen Bf. (20:37 Uhr)
+85084 Tullastraße (20:30 Uhr) - Wörth Badepark (21:12 Uhr)
+85097 Wörth Badepark (21:45 Uhr) - Bad Wildbad Kurpark (23:52 Uhr)
+85094 Bad Wildbad Kurpark (00:15 Uhr) - Pforzheim (00:49 Uhr)
+85028 Pforzheim (01:06 Uhr) - Tullastraße (01:55 Uhr)
+84860 Söllingen Bf (20:51 Uhr) - Rheinbergstr. (21:34 Uhr)
+84851 Rheinbergstr. (22:22 Uhr) - Söllingen Bf (23:06 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

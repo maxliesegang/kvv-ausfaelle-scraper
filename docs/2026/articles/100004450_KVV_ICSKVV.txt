@@ -7,19 +7,4 @@ Datum:  2026-09-24T09:43:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 05.10.2026 bis 14.11.2026
-Linie 246
-Hundsbach: Umleitung wegen Bauarbeiten
-(eic) Aufgrund von Baumaßnahmen auf der L80b im Bereich Hochries muss die Linie 246
-von Montag, den 05. Oktober 2026
-bis Samstag, den 10. Oktober 2026
-sowie
-von Montag, den 02. November 2026
-bis Samstag, den 14. November 2026
-überörtlich umgeleitet werden. Die Linie 246 verkehrt in diesen Zeiträumen jeweils nach einem gesonderten Baustellenfahrplan und kann die folgenden Haltestellen nicht bedienen:
-Schindelbronn
-Pandurenbronn
-Hochries
-Hundsbach Am Skihang
-Die Haltestelle "Erbersbronn" muss mit einer Ersatzhaltestelle an den nordöstlichen Ortseingang verlegt werden.
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr

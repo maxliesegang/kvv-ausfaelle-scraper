@@ -1,5 +1,5 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278332
-Stand:  2026-10-07T22:30:00.000Z
+Stand:  2026-10-08T07:00:00.000Z
 Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S8 - Betriebsbedingte Fahrtausfälle auf der Linie S8 zwischen Karlsruhe Tullastraße/Alter Schlachthof und Freudenstadt Hauptbahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (08.10.2026 bis 08.10.2026)
 Datum:  2026-10-07T22:52:00.000Z
 ========================================================================
@@ -13,11 +13,11 @@ Betriebsbedingte Fahrtausfälle auf der Linie S8 zwischen Karlsruhe Tullastraße
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf der Linie S8 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Karlsruhe Tullastraße/Alter Schlachthof und Freudenstadt Hauptbahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 08.10.2026 00:30:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-85605 Tullastraße (04:50 Uhr) - Freudenstadt Hbf. (07:05 Uhr)
-85626 Freudenstadt Hbf. (08:15 Uhr) - Freudenstadt Hbf. (08:20 Uhr)
-85617 Freudenstadt Stadt (08:32 Uhr) - Freudenstadt Stadt (08:37 Uhr)
-85630 Freudenstadt Hbf. (08:53 Uhr) - Tullastraße (11:00 Uhr)
+Nach aktuellem Stand 08.10.2026 09:00:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+85633 Forbach Bf (11:16 Uhr) - Freudenstadt Stadt (11:58 Uhr)
+85637 Freudenstadt Stadt (12:32 Uhr) - Freudenstadt Bf (12:37 Uhr)
+85644 Freudenstadt Bf (12:57 Uhr) - Tullastraße (15:06 Uhr)
+85655 Tullastraße (15:51 Uhr) - Forbach (17:17 Uhr)   
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

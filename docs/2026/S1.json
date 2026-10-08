@@ -6527,5 +6527,65 @@
       "journeyCancelled": true,
       "journeyId": "20261007-a2b1d66b-0489-34fe-99ef-53bb630707e0"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-08",
+    "stand": "2026-10-08T06:37:00.000Z",
+    "trainNumber": "30019",
+    "fromStop": "Bad Herrenalb Bf",
+    "fromTime": "09:03",
+    "toStop": "Hochstetten",
+    "toTime": "10:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278340",
+    "capturedAt": "2026-10-08T15:09:01.190Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 52,
+      "segmentCancelledStops": 52,
+      "segmentTrackedStops": 0,
+      "journeyStops": 52,
+      "journeyCancelledStops": 52,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261008-f70f85bd-dc4d-3889-97a5-b91b94ac252a"
+    }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-08",
+    "stand": "2026-10-08T06:37:00.000Z",
+    "trainNumber": "10040",
+    "fromStop": "Hochstetten",
+    "fromTime": "11:52",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "12:58",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278340",
+    "capturedAt": "2026-10-08T15:09:01.190Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 43,
+      "segmentCancelledStops": 43,
+      "segmentTrackedStops": 0,
+      "journeyStops": 43,
+      "journeyCancelledStops": 43,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261008-8431709b-bd1a-36ca-8176-541f69a30abc"
+    }
   }
 ]

@@ -7,14 +7,4 @@ Datum:  2026-09-23T12:39:00.000Z
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 14.10.2026 bis 15.10.2026
-Linien: S31, S32, SEV
-Karlsruhe Hbf - Bruchsal: S31/S32 - Nächtliche Teilausfälle im Oktober
-(AVG) Karlsruhe Hbf - Bruchsal: S31/S32 - Nächtliche Teilausfälle im Oktober
-Linie(n): S31/S32
-Zeitraum: Nacht  14./15.10. (22:00 - 05:00 Uhr) 
-Entfall Stadtbahn: Karlsruhe Hbf «  Bruchsal
-Ersatzverkehr: Karlsruhe Hbf (Vorpl.) « Bruchsal
-Grund: DB InfraGO - Bauarbeiten
-Fahrplan Ersatzverkehr
-Zurück zur Übersicht
+Diese Meldung existiert nicht mehr

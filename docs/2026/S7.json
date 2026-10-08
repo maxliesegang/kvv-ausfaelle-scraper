@@ -3450,7 +3450,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
     "capturedAt": "2026-10-07T23:59:12.133Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 14,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 61,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 34,
+      "trackedOutsideSegment": 34,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261008-51a3bdad-2ea4-3dbe-b834-2ea7af2fe01e"
+    }
   },
   {
     "line": "S7",
@@ -3464,7 +3479,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
     "capturedAt": "2026-10-07T23:59:12.133Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261008-f21794ce-0c5f-3652-8ce6-6dcbab181616"
+    }
   },
   {
     "line": "S7",
@@ -3477,6 +3508,50 @@
     "toTime": "14:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
     "capturedAt": "2026-10-07T23:59:12.133Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261008-e9a95f61-ed94-3b83-b6ce-e48c7dba8de2"
+    }
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-08T11:15:00.000Z",
+    "trainNumber": "85597",
+    "fromStop": "Tullastraße",
+    "fromTime": "22:13",
+    "toStop": "Rastatt Bf.",
+    "toTime": "22:57",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-08T15:09:02.372Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S7",
+    "date": "2026-10-08",
+    "stand": "2026-10-08T11:15:00.000Z",
+    "trainNumber": "85590",
+    "fromStop": "Rastatt Bf.",
+    "fromTime": "23:10",
+    "toStop": "Tullastraße",
+    "toTime": "23:54",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278316",
+    "capturedAt": "2026-10-08T15:09:02.372Z",
     "cause": "operational",
     "causeKeyword": "betriebsbedingt"
   }

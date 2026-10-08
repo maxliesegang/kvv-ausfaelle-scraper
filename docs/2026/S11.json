@@ -3755,5 +3755,64 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-08",
+    "stand": "2026-10-08T06:37:00.000Z",
+    "trainNumber": "20040",
+    "fromStop": "Ettlingen Stadt",
+    "fromTime": "14:18",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "14:45",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278340",
+    "capturedAt": "2026-10-08T15:09:01.190Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "ran",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 13,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 13,
+      "journeyStops": 55,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 55,
+      "trackedOutsideSegment": 43,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261008-f4bdef17-3a24-3df1-bb49-7e2fd0bc3494"
+    }
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-08",
+    "stand": "2026-10-08T06:37:00.000Z",
+    "trainNumber": "20041",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "14:51",
+    "toStop": "Hochstetten",
+    "toTime": "16:27",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278340",
+    "capturedAt": "2026-10-08T15:09:01.190Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-08",
+      "segmentStops": 55,
+      "segmentCancelledStops": 55,
+      "segmentTrackedStops": 0,
+      "journeyStops": 55,
+      "journeyCancelledStops": 55,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261008-015a153d-0e40-3b68-bec3-0f25ee5aeee4"
+    }
   }
 ]
