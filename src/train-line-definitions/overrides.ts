@@ -128,5 +128,12 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_277170: {
       '40015': 'S11',
     },
+    // AVG staffing notice for S5/S51/S52 (Germersheim–Wörth Badepark–Pforzheim Hbf), 2026-10-08.
+    // Same `E` route gap as Nettro_CMS_275214: GTFS knows 80702 only as "E-Wagen B-Plan"
+    // (KA Marktplatz 08:39 → Albtalbahnhof 08:48, matching the notice). It is the depot
+    // continuation of 84885, which GTFS calls S52 and this notice also lists.
+    Nettro_CMS_278308: {
+      '80702': 'S52',
+    },
   },
 };
