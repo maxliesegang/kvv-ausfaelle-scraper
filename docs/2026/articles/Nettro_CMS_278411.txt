@@ -18,6 +18,9 @@ Nach aktuellem Stand 09.10.2026 01:00:00 sind folgende Fahrten von einem (Teil-)
 85626 Freudenstadt Hbf. (08:15 Uhr) - Freudenstadt Stadt (08:20 Uhr)
 85617 Freudenstadt Stadt (08:32 Uhr) - Freudenstadt Hbf. (08:39 Uhr)
 85630 Freudenstadt Hbf. (08:53 Uhr) - Tullastraße (11:00 Uhr)
+85627 Freudenstadt Stadt (10:32 Uhr) - Freudenstadt Hbf. (10:37 Uhr)
+85640 Freudenstadt Hbf. (11:57 Uhr) - Karlsruhe Tullastr. (14:00 Uhr)
+85653 Karlsruhe Tullastr. (14:57 Uhr) - Freudenstadt Hbf. (17:07 Uhr) 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

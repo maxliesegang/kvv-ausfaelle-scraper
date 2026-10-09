@@ -14,24 +14,14 @@ Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor na
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Betriebsbedingte Fahrtausfälle. Auf den Linien S5 und S51 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Wörth Badepark und Pforzheim Hauptbahnhof. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 09.10.2026 01:00:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
-84792 Tullastraße (04:10 Uhr) - Wörth Badepark (04:51 Uhr)
-84796 Tullastraße (04:40 Uhr - Wörth Badepark (05:21 Uhr
-84705 Albtalbahnhof (05:02 Uhr) - Söllingen Bf. (05:35 Uhr)
-84957 Rheinbergstraße (05:02 Uhr) - Pforzheim Hbf. (06:11 Uhr)
-84791 Wörth Badepark (05:05 Uhr) - Söllingen Bf. (06:07 Uhr)
-84793 Wörth Badepark (05:45 Uhr) - Söllingen Bf. (06:47 Uhr
-84806 Söllingen Bf. (05:58 Uhr) - Wörth Badepark (07:05 Uhr)
-84810 Söllingen Bf. (06:18 Uhr) - Wörth Badepark (07:22 Uhr)
-84950 Pforzheim Hbf. (06:25 Uhr) - Wörth Badepark (07:52 Uhr)
-84803 Wörth Badepark (07:15 Uhr) - Söllingen Bf. (08:17 Uhr)
-84710 Söllingen Bf. (07:18 Uhr) - Tullastraße (07:40 Uhr)
-84805 Wörth Badepark (07:35 Uhr) - Söllingen Bf. (08:37 Uhr)
-84809 Wörth Badepark (08:05 Uhr) - Söllingen Bf. (09:09 Uhr)
-84888 Söllingen Bf. (08:38 Uhr) - Karlsruhe Marktplatz (09:06 Uhr)
-84820 Söllingen Bf. (08:48 Uhr) - Tullastraße (09:10 Uhr)
-84722 Söllingen Bf. (09:18 Uhr) - Rheinbergstraße (10:04 Uhr)
-84730 Tullastraße (11:41 Uhr) - Rheinbergstraße (12:04 Uhr)
-84745 Rheinbergstraße (12:52 Uhr) - Tullastraße (13:16 Uhr)
+84834 Ka Tullastraße (14:10 Uhr) - Wörth Badepark (14:53 Uhr)
+84831 Wörth Badepark (15:05 Uhr) - Söllingen Bf (16:09 Uhr)
+84758 Söllingen Bf (16:18 Uhr) - Ka Rheinbergstraße (17:04 Uhr)
+84779 Ka Rheinbergstraße (18:12 Uhr) - Söllingen Bf (18:56 Uhr)
+84772 Söllingen Bf (19:01 Uhr) - Ka Rheinbergstraße (19:44 Uhr)
+84785 Ka Rheinbergstraße (19:52 Uhr) - Söllingen Bf (20:38 Uhr)
+84860 Söllingen (20:50 Uhr) - Wörth Badepark (21:53 Uhr)
+81851 Wörth Badepark (22:04 Uhr) - Söllingen Bf (23:06 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
