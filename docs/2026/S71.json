@@ -118,7 +118,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-08",
+      "checkedAt": "2026-10-09",
       "segmentStops": 15,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -128,13 +128,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261008-0f0c743a-ee54-37fc-b678-a822127c4e3b",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-08",
+          "checkedAt": "2026-10-09",
           "segmentStops": 15,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -144,7 +144,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261008-0f0c743a-ee54-37fc-b678-a822127c4e3b",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
@@ -166,5 +166,19 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S71",
+    "date": "2026-10-09",
+    "stand": "2026-10-08T23:00:00.000Z",
+    "trainNumber": "85553",
+    "fromStop": "Karlsruhe Hbf.",
+    "fromTime": "05:16",
+    "toStop": "Achern Bf.",
+    "toTime": "06:08",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278419",
+    "capturedAt": "2026-10-09T04:16:54.612Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

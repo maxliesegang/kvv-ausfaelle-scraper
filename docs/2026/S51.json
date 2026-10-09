@@ -2398,7 +2398,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-08",
+      "checkedAt": "2026-10-09",
       "segmentStops": 38,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -2408,13 +2408,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261008-17f722b3-94cb-327b-ab94-c586b2a09754",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-08",
+          "checkedAt": "2026-10-09",
           "segmentStops": 38,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -2424,7 +2424,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261008-17f722b3-94cb-327b-ab94-c586b2a09754",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
@@ -2475,5 +2475,19 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261008-fbaf362a-bf06-3e1e-b6d3-a4a3fd8b2266"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-10-09",
+    "stand": "2026-10-08T23:00:00.000Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "08:38",
+    "toStop": "Karlsruhe Marktplatz",
+    "toTime": "09:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278427",
+    "capturedAt": "2026-10-09T04:16:54.679Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

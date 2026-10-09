@@ -3612,7 +3612,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-08",
+      "checkedAt": "2026-10-09",
       "segmentStops": 13,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -3622,13 +3622,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261006-457af5c4-9d74-3074-b723-0e637c31431c",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-08",
+          "checkedAt": "2026-10-09",
           "segmentStops": 13,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -3638,7 +3638,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261006-457af5c4-9d74-3074-b723-0e637c31431c",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -3707,7 +3707,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-08",
+      "checkedAt": "2026-10-09",
       "segmentStops": 29,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -3717,13 +3717,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261007-86e403de-9b85-3884-bad9-212e0b13c7fd",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-08",
+          "checkedAt": "2026-10-09",
           "segmentStops": 29,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -3733,7 +3733,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261007-86e403de-9b85-3884-bad9-212e0b13c7fd",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -3814,5 +3814,47 @@
       "journeyCancelled": true,
       "journeyId": "20261008-015a153d-0e40-3b68-bec3-0f25ee5aeee4"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-09",
+    "stand": "2026-10-09T03:42:00.000Z",
+    "trainNumber": "20022",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "09:04",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "09:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278435",
+    "capturedAt": "2026-10-09T04:16:53.972Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-09",
+    "stand": "2026-10-09T03:42:00.000Z",
+    "trainNumber": "20028",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "10:35",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "11:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278435",
+    "capturedAt": "2026-10-09T04:16:53.972Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-09",
+    "stand": "2026-10-09T03:42:00.000Z",
+    "trainNumber": "20044",
+    "fromStop": "Hochstetten",
+    "fromTime": "14:12",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "15:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278435",
+    "capturedAt": "2026-10-09T04:16:53.972Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
