@@ -3688,7 +3688,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278491",
     "capturedAt": "2026-10-10T14:09:53.313Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-10",
+      "segmentStops": 17,
+      "segmentCancelledStops": 17,
+      "segmentTrackedStops": 0,
+      "journeyStops": 17,
+      "journeyCancelledStops": 17,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261010-89b64ba6-4288-33b7-a162-6daba9ecbffc"
+    }
   },
   {
     "line": "S7",
@@ -3702,6 +3718,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278491",
     "capturedAt": "2026-10-10T14:09:53.313Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-10",
+      "segmentStops": 17,
+      "segmentCancelledStops": 17,
+      "segmentTrackedStops": 0,
+      "journeyStops": 17,
+      "journeyCancelledStops": 17,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261010-cfe7fceb-b7ca-373b-8d7f-ccc0128d80dd"
+    }
   }
 ]

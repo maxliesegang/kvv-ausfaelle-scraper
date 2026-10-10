@@ -303,5 +303,33 @@
       "journeyCancelled": true,
       "journeyId": "20261008-ecc5a1f2-357f-3bcf-af33-5ff80f14f795"
     }
+  },
+  {
+    "line": "S52",
+    "date": "2026-10-11",
+    "stand": "2026-10-10T12:38:00.000Z",
+    "trainNumber": "84947",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "01:30",
+    "toStop": "Söllingen Bf.",
+    "toTime": "01:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278475",
+    "capturedAt": "2026-10-10T19:41:01.603Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S52",
+    "date": "2026-10-11",
+    "stand": "2026-10-10T12:38:00.000Z",
+    "trainNumber": "84936",
+    "fromStop": "Karlsruhe Marktplatz",
+    "fromTime": "01:36",
+    "toStop": "Wörth Bahnhof",
+    "toTime": "02:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278475",
+    "capturedAt": "2026-10-10T19:41:01.603Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278475
 Stand:  2026-10-10T12:38:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Bad Wildbad Kurpark und Wörth Badepark Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (10.10.2026 bis 11.10.2026)
+Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5, S51, S52 und S6 - Betriebsbedingte Fahrtausfälle auf den Linien S5, S51, S52 und S6 zwischen Bad Wildbad Kurpark und Wörth Badepark Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (10.10.2026 bis 11.10.2026)
 Datum:  2026-10-10T09:34:00.000Z
 ========================================================================
 
@@ -8,25 +8,31 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 10.10.2026, 11:34 Uhr
-Betriebsbedingte Fahrtausfälle auf der Linie S5
-Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Bad Wildbad Kurpark und Wörth Badepark 
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51, S52 und S6
+Betriebsbedingte Fahrtausfälle auf den Linien S5, S51, S52 und S6 zwischen Bad Wildbad Kurpark und Wörth Badepark 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Wörth Badepark. Wir bitten um Entschuldigung.
+Betriebsbedingte Fahrtausfälle. Auf den Linien S5, S51, S52 und S6 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Wörth Badepark. Wir bitten um Entschuldigung.
 Nach aktuellem Stand 10.10.2026 14:38:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
+84775 KA Rheinbergstraße (17:52 Uhr) - Söllingen Bf. (18:37 Uhr)
 85089 KA Starckstraße (18:07 Uhr) - Bad Wildbad Kurpark (19:52 Uhr)
+85091 KA Starckstraße (19:07 Uhr) - Bad Wildbad Kurpark (20:52 Uhr)
 85086 Bad Wildbad Kurpark (20:05 Uhr) - Wörth Badepark (22:15 Uhr)
+84856 Söllingen Bf. (18:51 Uhr) - KA Rheinbergstraße (19:34 Uhr)
 84774 KA Tullastraße (19:21 Uhr) - KA Rheinbergstraße (19:44 Uhr)
 84785 KA Rheinbergstraße (19:51 Uhr) - Söllingen Bf. (20:37 Uhr)
 84860 Söllingen Bf. (20:51 Uhr) - Wörth Badepark (21:53 Uhr)
+85088 Bad Wildbad Kurpark (21:05 Uhr) - Wörth Badepark (23:16 Uhr)
 84851 Wörth Badepark (22:05 Uhr) - Söllingen Bf. (23:06 Uhr)
 84853 Wörth Badepark (22:45 Uhr) - KA Lameyplatz (23:09 Uhr)
-85088 KA Entenfang (22:46 Uhr) - Wörth Badepark (23:16 Uhr)
 84859 Wörth Badepark (23:35 Uhr) - KA Albtalbahnhof (00:21 Uhr)
 80705 KA Albtalbahnhof (01:19 Uhr) - Karlsruhe Marktplatz (01:27 Uhr)
+84947 Karlsruhe Marktplatz (01:30 Uhr) - Söllingen Bf. (01:55 Uhr)
 84936 Karlsruhe Marktplatz (01:36) - Wörth Bahnhof (02:00 Uhr)
 85033 KA Strackstraße (01:42 Uhr) - Pforzheim Hbf (02:48 Uhr)
+84870 Söllingen Bf. (02:01 Uhr) - Wörth Badepark (03:05 Uhr)
 85034 Pforzheim Hbf (03:09 Uhr) - KA Tullastraße (03:50 Uhr)
+84869 Wörth Badepark (03:20 Uhr) - KA Rheinbergstraße (03:35 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
