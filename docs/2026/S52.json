@@ -157,7 +157,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-09",
+      "checkedAt": "2026-10-10",
       "segmentStops": 26,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -167,13 +167,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261008-e1111a0f-2cb8-3edf-81f5-bee6f957a23d",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-10",
           "segmentStops": 26,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -183,7 +183,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261008-e1111a0f-2cb8-3edf-81f5-bee6f957a23d",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -223,7 +223,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-09",
+      "checkedAt": "2026-10-10",
       "segmentStops": 7,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -234,13 +234,13 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261008-2d5edf3e-c937-3d11-9c45-629c9ed1c1a3",
       "feedLine": "E",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-09",
+          "checkedAt": "2026-10-10",
           "segmentStops": 7,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -251,7 +251,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20261008-2d5edf3e-c937-3d11-9c45-629c9ed1c1a3",
           "feedLine": "E",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
