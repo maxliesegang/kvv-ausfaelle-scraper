@@ -3917,5 +3917,33 @@
       "journeyCancelled": true,
       "journeyId": "20261009-97fa20cd-0399-338f-9194-61afd6ddfb09"
     }
+  },
+  {
+    "line": "S8",
+    "date": "2026-10-10",
+    "stand": "2026-10-10T12:42:00.000Z",
+    "trainNumber": "85675",
+    "fromStop": "KA Tullastraße",
+    "fromTime": "21:57",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "00:00",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278499",
+    "capturedAt": "2026-10-10T14:09:52.661Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S8",
+    "date": "2026-10-11",
+    "stand": "2026-10-10T12:42:00.000Z",
+    "trainNumber": "85686",
+    "fromStop": "Freudenstadt Hbf",
+    "fromTime": "00:15",
+    "toStop": "KA Tullastraße",
+    "toTime": "02:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278499",
+    "capturedAt": "2026-10-10T14:09:52.661Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

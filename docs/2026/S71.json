@@ -196,5 +196,33 @@
       "journeyCancelled": true,
       "journeyId": "20261009-0f0c743a-ee54-37fc-b678-a822127c4e3b"
     }
+  },
+  {
+    "line": "S71",
+    "date": "2026-10-10",
+    "stand": "2026-10-10T12:40:00.000Z",
+    "trainNumber": "85588",
+    "fromStop": "Rastatt",
+    "fromTime": "21:24",
+    "toStop": "Karlsruhe Hauptbahnhof",
+    "toTime": "21:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278491",
+    "capturedAt": "2026-10-10T14:09:53.313Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S71",
+    "date": "2026-10-10",
+    "stand": "2026-10-10T12:40:00.000Z",
+    "trainNumber": "85593",
+    "fromStop": "Karlsruhe Hbf",
+    "fromTime": "22:47",
+    "toStop": "Rastatt",
+    "toTime": "23:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278491",
+    "capturedAt": "2026-10-10T14:09:53.313Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
