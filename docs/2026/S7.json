@@ -3470,7 +3470,7 @@
   {
     "line": "S7",
     "date": "2026-10-08",
-    "stand": "2026-10-07T22:30:00.000Z",
+    "stand": "2026-10-08T11:15:00.000Z",
     "trainNumber": "85573",
     "fromStop": "Tullastraße",
     "fromTime": "12:17",
@@ -3500,7 +3500,7 @@
   {
     "line": "S7",
     "date": "2026-10-08",
-    "stand": "2026-10-07T22:30:00.000Z",
+    "stand": "2026-10-08T11:15:00.000Z",
     "trainNumber": "85574",
     "fromStop": "Achern Bf.",
     "fromTime": "13:30",

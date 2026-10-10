@@ -135,5 +135,19 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_278308: {
       '80702': 'S52',
     },
+    // AVG staffing notice for S5/S51 (Wörth Badepark–Pforzheim Hbf), 2026-10-09. GTFS has no
+    // 81851. The row (Wörth Badepark 22:04 → Söllingen Bf 23:06) mirrors 84851, which GTFS
+    // files as an S5 at Wörth Badepark 22:05 → Söllingen Bf 23:06 and which follows 84860 in
+    // the same evening cycle, so it is the S5 run under a deviating Zugnummer.
+    Nettro_CMS_278427: {
+      '81851': 'S5',
+    },
+    // AVG staffing notice for S5/S51/S52/S6 (Bad Wildbad Kurpark–Wörth Badepark), 2026-10-10.
+    // GTFS has no 80705. It is the KA Albtalbahnhof → Karlsruhe Marktplatz depot continuation
+    // (01:19 → 01:27) of 84859, the S5 run listed just above it that ends at Albtalbahnhof at
+    // 00:21 — the same positioning-run pattern as 80702 after 84885.
+    Nettro_CMS_278475: {
+      '80705': 'S5',
+    },
   },
 };
