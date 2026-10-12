@@ -1,0 +1,23 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004500_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S31, S32 - S31/S32: Stundentakt zwischen Bruchsal und Karlsruhe Hbf (23.10.2026 bis 13.11.2026)
+Datum:  2026-10-12T11:54:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 23.10.2026 bis 13.11.2026
+Linien: S31, S32
+S31/S32: Stundentakt zwischen Bruchsal und Karlsruhe Hbf
+(AVG)
+S31/S32: Stundentakt zwischen Bruchsal und Karlsruhe Hbf
+Zeitraum: Freitag 23.10.2026 (22:00 Uhr) bis Freitag 13.11.2026 (04:00 Uhr)
+Grund: 
+•    Weichenerneuerung DB InfraGO  im Bereich Graben-Neudorf führt zur Umleitung von Fern- und Güterverkehrszügen über die Strecke Bruchsal - Karlsruhe Hbf
+•    Durch den Umleitungsverkehr keine ausreichende Streckenkapazität für die Stadtbahnen der AVG
+->   Stadtbahn fährt nur noch im Stundentakt, d.h. es fährt nur noch jeder zweite Zug zwischen Karlsruhe und Bruchsal
+Alternativen/ Übriger Regionalverkehr: 
+•    Fahrgäste können die S3 von DB Regio nutzen
+•    Bitte Fahrplanauskunft nutzen
+Zurück zur Übersicht
