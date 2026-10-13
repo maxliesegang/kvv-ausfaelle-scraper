@@ -2533,5 +2533,47 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261011-3fc9a979-99f8-311e-8ccd-9031fbc87a3c"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-10-13",
+    "stand": "2026-10-13T17:41:00.000Z",
+    "trainNumber": "84934",
+    "fromStop": "KA Albtalbahnhof",
+    "fromTime": "21:56",
+    "toStop": ". Germersheim Bf.",
+    "toTime": "23:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278628",
+    "capturedAt": "2026-10-13T18:47:21.622Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-10-13",
+    "stand": "2026-10-13T17:41:00.000Z",
+    "trainNumber": "84945",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "23:30",
+    "toStop": "Söllingen Bf.",
+    "toTime": "00:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278628",
+    "capturedAt": "2026-10-13T18:47:21.622Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-10-14",
+    "stand": "2026-10-13T17:41:00.000Z",
+    "trainNumber": "84784",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "01:01",
+    "toStop": "KA Albtalbahnhof",
+    "toTime": "01:34",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278628",
+    "capturedAt": "2026-10-13T18:47:21.622Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
