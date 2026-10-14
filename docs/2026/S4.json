@@ -9165,5 +9165,49 @@
       "journeyCancelled": true,
       "journeyId": "20261011-9d38a13c-e668-3699-82c1-cc715a30b643"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-14",
+    "stand": "2026-10-14T13:00:00.000Z",
+    "trainNumber": "85501",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "16:35",
+    "toStop": "Eppingen Bahnhof",
+    "toTime": "17:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278666",
+    "capturedAt": "2026-10-14T16:23:13.382Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-14",
+      "segmentStops": 36,
+      "segmentCancelledStops": 36,
+      "segmentTrackedStops": 0,
+      "journeyStops": 36,
+      "journeyCancelledStops": 36,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261014-fca778a8-04a7-371b-afc5-14be6032c529"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-14",
+    "stand": "2026-10-14T13:00:00.000Z",
+    "trainNumber": "85548",
+    "fromStop": "Eppingen Bahnhof",
+    "fromTime": "18:05",
+    "toStop": "Albtalbahnhof",
+    "toTime": "19:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278666",
+    "capturedAt": "2026-10-14T16:23:13.382Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

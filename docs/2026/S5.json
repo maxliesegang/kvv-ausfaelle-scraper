@@ -5266,6 +5266,20 @@
   {
     "line": "S5",
     "date": "2026-05-15",
+    "stand": "2026-10-14T13:41:00.000Z",
+    "trainNumber": "84863",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "00:05",
+    "toStop": "Tullastraße",
+    "toTime": "00:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278675",
+    "capturedAt": "2026-10-14T16:23:12.453Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-05-15",
     "stand": "2026-05-15T11:41:00.000Z",
     "trainNumber": "85570",
     "fromStop": "Ka. Albtalbahnhof",
@@ -34935,5 +34949,47 @@
       "journeyCancelled": true,
       "journeyId": "20261011-090b2d73-5ae0-3528-b0f8-905c32e2ffe8"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-14",
+    "stand": "2026-10-14T13:41:00.000Z",
+    "trainNumber": "84858",
+    "fromStop": "Tullastraße",
+    "fromTime": "20:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "20:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278675",
+    "capturedAt": "2026-10-14T16:23:12.453Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-14",
+    "stand": "2026-10-14T13:41:00.000Z",
+    "trainNumber": "84849",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "21:07",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "22:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278675",
+    "capturedAt": "2026-10-14T16:23:12.453Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-14",
+    "stand": "2026-10-14T13:41:00.000Z",
+    "trainNumber": "84864",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "22:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "23:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278675",
+    "capturedAt": "2026-10-14T16:23:12.453Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
