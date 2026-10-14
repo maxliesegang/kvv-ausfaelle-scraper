@@ -9208,6 +9208,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278666",
     "capturedAt": "2026-10-14T16:23:13.382Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-15",
+      "segmentStops": 36,
+      "segmentCancelledStops": 36,
+      "segmentTrackedStops": 0,
+      "journeyStops": 36,
+      "journeyCancelledStops": 36,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261014-73cff15c-f03c-32c6-983b-381b806ff3af"
+    }
   }
 ]
