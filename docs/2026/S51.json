@@ -2624,5 +2624,19 @@
       "journeyId": "20261014-21cfc19d-8743-32dc-b3ce-c7d2941171ce",
       "feedLine": "S5"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-10-15",
+    "stand": "2026-10-15T07:10:00.000Z",
+    "trainNumber": "84901",
+    "fromStop": "Germersheim Bf.",
+    "fromTime": "11:50",
+    "toStop": "Tullastr.",
+    "toTime": "12:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278715",
+    "capturedAt": "2026-10-15T08:46:21.910Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

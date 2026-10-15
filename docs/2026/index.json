@@ -24,7 +24,7 @@
     "source": "multiple",
     "sources": ["bahn.expert", "transitous"],
     "checkedTrips": 1217,
-    "totalTrips": 2988,
+    "totalTrips": 2997,
     "statusCounts": {
       "cancelled": 970,
       "partial": 57,
@@ -33,5 +33,5 @@
       "unresolved": 53
     }
   },
-  "generatedAt": "2026-10-15T02:55:12.613Z"
+  "generatedAt": "2026-10-15T08:46:23.761Z"
 }
