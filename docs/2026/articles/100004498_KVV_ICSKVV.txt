@@ -1,18 +1,18 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004498_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linien: S31, S32 - S31/S32: Tagsüber kein Stadtbahnverkehr im Abschnitt Bruchsal - Karlsruhe Hbf (16.10.2026 bis 20.10.2026)
+Titel:  Linien: S31, S32 - S31/S32: Tagsüber kein Stadtbahnverkehr im Abschnitt Bruchsal - Karlsruhe Hbf (17.10.2026 bis 19.10.2026)
 Datum:  2026-10-12T11:48:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 16.10.2026 bis 20.10.2026
+Vom 17.10.2026 bis 19.10.2026
 Linien: S31, S32
 S31/S32: Tagsüber kein Stadtbahnverkehr im Abschnitt Bruchsal - Karlsruhe Hbf
 (AVG)
 S31/S32: Tagsüber kein Stadtbahnverkehr im Abschnitt Bruchsal - Karlsruhe Hbf
-Zeitraum: Freitag 16.10. bis Dienstag 20.10.2026  (jeweils ca. 6 - 22 Uhr)
+Zeitraum: Samstag 17.10. bis Montag 19.10.2026  (jeweils ca. 6 - 22 Uhr)
 Grund: 
 •    Sperrung DB InfraGO  im Abschnitt Pforzheim - Mühlacker führt zur Umleitung von RE1 über die Strecke Bruchsal - Karlsruhe Hbf
 •    Durch den Umleitungsverkehr keine ausreichende Streckenkapazität für die Stadtbahnen der AVG

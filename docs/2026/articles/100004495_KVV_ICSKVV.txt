@@ -1,0 +1,116 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004495_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S1, S2, S4, S5, S11, S51, S52, S7, S8, 1, 2, 3, 4, 5, 6, 21, 24, 26, 30, 31, 42, NL, SEV - Karlsruhe: Bauarbeiten und Sperrung des Stadtbahntunnels (Phase 4) (24.10.2026 bis 31.10.2026)
+Datum:  2026-10-15T01:30:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 24.10.2026 bis 31.10.2026
+Linien: S1, S2, S4, S5, S11, S51, S52, S7, S8, 1, 2, 3, 4, 5, 6, 21, 24, 26, 30, 31, 42, NL, SEV
+Karlsruhe: Bauarbeiten und Sperrung des Stadtbahntunnels (Phase 4)
+(kue) Im Zeitraum der Herbstferien, somit
+von Samstag, 24. Oktober 2026 (06:45 Uhr),
+bis Samstag, 31. Oktober 2026 (01:00 Uhr),
+gilt Phase 4 der Bauarbeiten in der zweiten Jahreshälfte 2026.
+Grund: Gleis- und Weichenerneuerungen, Sanierungsarbeiten in der Waldstadt, sowie Sperrung des Stadtbahntunnel
+Gesperrte Streckenabschnitte und somit kein Bahnverkehr zwischen:
+• Durlach Turmberg über Schlossplatz und Friedrichschule - Auer Straße 
+• Wolfartsweier Nord - Zündhütle - Auer Straße
+• Europäische Schule - Jägerhaus - Fächerbad - Hirtenweg 
+• Mathystraße - Otto-Sachs-Straße - Lessingstraße - Weinbrennerplatz
+• Durlacher Tor (U) - Marktplatz (U) - Europaplatz (U)
+• Marktplatz (U) - Ettlinger Tor (U) - Augartenstraße
+Es ergeben sich folgende Änderungen der Linien (jeweils in beide Fahrtrichtungen):
+S-Bahn
+S1/S11
+Hochstetten/Neureut - Mühlburger Tor - Europaplatz - Mathystraße - Ebertstraße - Albtalbahnhof - Ettlingen - Bad Herrenalb/Ittersbach
+S12
+Ittersbach - Albtalbahnhof - Kolpingplatz - Karlstor (Karlstraße und Kriegsstraße) - Rüppurrer Tor (Kriegsstraße) - Südostbahn - Tullastraße
+S2
+Rheinstetten - Entenfang - Mühlburger Tor - Europa-platz - Ettlinger Tor - Rüppurrer Tor - Durlacher Tor - Hauptfriedhof - Hagsfeld - Blankenloch/Spöck
+S4 
+Albtalbahnhof - KA Hbf (Vorplatz) - Kronenplatz - Durlacher Tor - Tullastraße/Alter Schlachthof - Durlach Bahnhof - Heilbronn/Öhringen
+S7/S8
+Tullastraße/Alter Schlachthof - Kronenplatz - Rüppurrer Tor - Tivoli - KA Hbf (Vorplatz) - Rastatt - Murgtal/Achern
+S5/S51
+Die S5/S51 ist innerstädtisch unterbrochen und wird zweigeteilt:
+Ost: Germersheim/Wörth - Entenfang - Mühlburger Tor
+West: Kronenplatz (Fritz-Erler-Straße) - Tullastraße/Alter Schlachthof - Durlach Bahnhof - Söllingen/Pforzheim
+Die beiden Eilzüge der Linie S51 zwischen Germersheim und Karlsruhe werden auf dem regulären Fahrweg durchgeführt.
+S52
+Germersheim - Karlsruhe West - Albtalbahnhof - Hauptbahnhof (Vorplatz) - Tivoli - Konzerthaus
+Tram
+Linie 1
+Heide - Europaplatz - Ettlinger Tor - Kronenplatz - Durlacher Tor - Durlach Bahnhof
+Linie 2
+Rheinhafen - Lameyplatz - Kühler Krug - Hübschstraße - Yorkstraße - Knielingen Nord
+Linie 3
+Die Linie 3 verkehrt wieder auf ihrem Regelfahrweg und damit über die Haltestelle Kronenplatz (Fritz-Erler-Straße)
+Linie 4
+Oberreut - Sophienstraße - Mühlburger Tor - Europaplatz - Ettlinger Tor - Rüppurrer Tor - Schloss Gottesaue - Tullastraße/Alter Schlachthof - Hirtenweg
+Linie 5
+Die Linie 5 wird in ihrem kompletten Fahrweg während Phase 4 eingestellt
+Linie 6
+Pendelverkehr zwischen Tivoli - KA Hbf (Vorplatz) - ZKM - Arbeitsagentur
+Linie 8
+Die Linie 8 entfällt auf ihrem kompletten Laufweg
+Nightliner
+NL1
+Hirtenweg - Tullastraße - Durlacher Tor -  Rüppurrer Tor (Kriegsstraße) - Ettlinger Tor (Kriegsstraße) - Karlstor (Kriegsstraße) - Europaplatz - Mühlburger Tor (Grashofstraße) - Heide
+Kein Verkehr in Richtung Waldstadt - Europäische Schule.
+NL2
+Durlach Bahnhof - Tullastraße - Durlacher Tor - Kronenplatz (Fritz-Erler-Straße) - Rüppurrer Tor (Rüppurrer Straße) - Tivoli - Hbf (Vorplatz) - Kolpingplatz - Europaplatz - Mühlburger Tor (Kaiserallee) - Schillerstraße - Oberreut
+NL3
+Wegen der Sperrung zwischen Turmberg und Auer Straße wird die Linie NL3 bis Durlach Bahnhof verlängert. 
+Hierfür nutzt sie zwischen Turmberg und Durlach Bahnhof den Linienweg der 31. 
+Die Haltestelle Turmberg wird nur in Fahrtrichtung Stupferich bedient. Anschließend verkehrt die Linie wieder auf ihrem regulären Linienweg.
+Schienenersatzverkehr (SEV)
+Folgende Buslinien ersetzen die Bahnen:
+SEV 14
+Waldstadt Zentrum - Hirtenweg
+SEV 14X
+Waldstadt Zentrum - Durlacher Tor
+SEV 14N
+Europäische Schule - Hirtenweg (Nachtverkehr)
+SEV 15
+Europäische Schule - Waldstadt Zentrum
+Hinweis: Die Fahrradmitnahme in den SEV-Bussen ist nicht möglich.
+Änderungen bei den Buslinien:
+Bus 21:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße wird die Linie 21 über die bisherige Endhaltestelle Durlach Turmberg hinaus über die Haltestellen „Ochsentorstraße“ und „An der Fayence“ bis "Durlach Bahnhof" umgeleitet.
+Bus 24:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße wird die Linie 24 zwischen "Blattwiesenstraße" und "Durlach Turmberg" über "Durlach Bahnhof" entlang des Fahrwegs der Linie 31 umgeleitet.
+Bus 24A:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der daraus resultierenden Umleitung der Linie 24 wird diese Linie zwischen "Durlach Turmberg" (Steig C) und "Durlach Bahnhof" verstärkt.
+Linie 26:
+Aufgrund der Sperrung des Streckenabschnitts Durlach Turmberg - Auer Straße und der Gymnasiumstraße wird die Linie 26 weiträumig über die Haltestelle „Rommelstraße“ umgeleitet.
+Linie 30:
+Alle Fahrten werden von der Haltestelle "Elbinger Straße West" bis zur "Europäischen Schule" verlängert.
+Linie 31:
+Umleitung in Richtung "Durlach Bahnhof" zwischen "Waldstadt Zentrum", "Fächerbad" und "Hallesche Allee".
+Linie 42/42A:
+Aufgrund der Sperrung des Streckenabschnitts Wolfartsweier Nord - Auer Straße wird die Linie 42 durch die zusätzliche Verstärkerlinie 42A ergänzt.
+Somit ergeben sich zusätzliche Fahrtmöglichkeiten zwischen Durlach Bahnhof und Durlach-Aue.
+Besonderheiten an den Haltestellen
+Baustellenbedingt kann die Haltestelle „Durlach Schlossplatz“ von den Linien 21, 23, 24, 26 und NL3 nicht bedient werden.
+Übersicht der Abfahrtssteige an der Haltestelle "Durlach Bahnhof"
+Steig A (am Kiosk): Fahrten über bzw. nach Turmberg (Linien 21, 24, 24A, 31, NL3 und 18)
+Steig B: Fahrten zum Durlacher Tor bzw. nach Killisfeld (Linien 42 und 42A)
+Steig C: Fahrten nach Ettlingen (Linie 107)
+Steig D: Fahrten über Brühlstraße und Zündhütle (Linien 24 und 24A)
+Steig E: Express- und Schulfahrten (Linien 18 und 31X)
+Aufgrund von Umleitungen und zusätzlichem Umstieg auf Ersatzbusse planen Sie bitte mehr Fahrzeit ein.
+Baustellenflyer
+Liniennetzplan (Phase 4)
+Weitere Informationen
+Umgebungsplan Albtalbahnhof und Ebertstrasse
+Umgebungsplan Durlacher Tor
+Umgebungsplan Europaplatz
+Umgebungsplan Hbf (Vorplatz)
+Umgebungsplan Hauptfriedhof
+Umgebungsplan Karlstor
+Umgebungsplan Tullastraße
+Umgebungsplan Yorckstraße
+Zurück zur Übersicht

@@ -4012,5 +4012,19 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-15",
+    "stand": "2026-10-15T13:40:00.000Z",
+    "trainNumber": "20066",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "20:05",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "20:48",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278783",
+    "capturedAt": "2026-10-15T16:11:05.167Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
