@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278799
-Stand:  2026-10-16T03:28:00.000Z
-Titel:  Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 - Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Pforzheim Hauptbahnhof und Germersheim Bahnhof Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (16.10.2026 bis 16.10.2026)
+Stand:  2026-10-16T15:38:00.000Z
+Titel:  Betriebsbedingte Fahrtausfälle auf der Linie S5 - Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Söllingen Bahnhof und Knielingen Rheinbergstraße Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen: www.kvv.de/abfahrtsmonitor oder in der KVV App. (16.10.2026 bis 17.10.2026)
 Datum:  2026-10-16T03:28:00.000Z
 ========================================================================
 
@@ -8,19 +8,16 @@ KVV
 Fahrplan
 Verkehrsmeldungen
 16.10.2026, 05:28 Uhr
-Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52
-Betriebsbedingte Fahrtausfälle auf den Linien S5, S51 und S52 zwischen Pforzheim Hauptbahnhof und Germersheim Bahnhof 
+Betriebsbedingte Fahrtausfälle auf der Linie S5
+Betriebsbedingte Fahrtausfälle auf der Linie S5 zwischen Söllingen Bahnhof und Knielingen Rheinbergstraße 
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
-Betriebsbedingte Fahrtausfälle. Auf den Linien S5, S51 und S52 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Pforzheim Hauptbahnhof und Germersheim Bahnhof. Wir bitten um Entschuldigung.
-Nach aktuellem Stand 16.10.2026 05:28:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen:
+Betriebsbedingte Fahrtausfälle. Auf der Linie S5 kommt es wegen Engpässen beim Fahrpersonal der AVG zu Fahrtausfällen. Betroffen ist der Bereich zwischen Söllingen Bahnhof und Knielingen Rheinbergstraße. Wir bitten um Entschuldigung.
+Nach aktuellem Stand 16.10.2026 17:38:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen:
 S5
-84820 Söllingen Bf. (08:48 Uhr) - Wörth Badepark (09:53 Uhr)
-84813 Wörth Badepark (10:05 Uhr) - Söllingen Bf. (11:06 Uhr)
-84730 Söllingen Bf. (11:18 Uhr) - KA Rheinbergstr. (12:04 Uhr)
-84826 Karlsruhe Lameyplatz (11:28 Uhr) - Wörth Badepark (11:53 Uhr)
-84819 Wörth Badepark (12:05 Uhr) - KA Rheinbergstr. (12:20 Uhr)
-84745 KA Rheinbergstr. (12:52 Uhr) - KA Tullastr. (13:17 Uhr)
+85026 Ka. Lameyplatz (01:07 Uhr) - Ka. Rheinbergstraße (01:14 Uhr)
+84789 Ka. Rheinbergstraße (02:07 Uhr) - Söllingen (02:55 Uhr)
+84788 Söllingen (03:01 Uhr) - Ka. Rheinbergstraße (03:47 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht
