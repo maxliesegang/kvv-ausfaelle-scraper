@@ -479,6 +479,50 @@ describe('archived article parser regressions', () => {
     );
   });
 
+  test('parses time/stop rows carrying a "(Fr, 16.10)" weekday-date marker before a time', () => {
+    // "20074 22:42 Uhr Hochstetten - (Fr, 16.10) 00:15 Uhr Ittersbach Rathaus" marks only the
+    // arrival, so the trip still departs on the list's day; "10086 (Fr, 16.10) 00:25 Uhr …" marks
+    // the departure, which dates the row itself. Before the marker was stripped, neither matched.
+    const trips = parseArchivedArticle('Nettro_CMS_278783');
+
+    assert.deepEqual(
+      trips.slice(-3).map(({ trainNumber, date, fromStop, fromTime, toStop, toTime }) => ({
+        trainNumber,
+        date,
+        fromStop,
+        fromTime,
+        toStop,
+        toTime,
+      })),
+      [
+        {
+          trainNumber: '20074',
+          date: '2026-10-15',
+          fromStop: 'Hochstetten',
+          fromTime: '22:42',
+          toStop: 'Ittersbach Rathaus',
+          toTime: '00:15',
+        },
+        {
+          trainNumber: '10085',
+          date: '2026-10-15',
+          fromStop: 'Ettlingen Albgaubad',
+          fromTime: '23:04',
+          toStop: 'Neureut Kirchfeld',
+          toTime: '23:51',
+        },
+        {
+          trainNumber: '10086',
+          date: '2026-10-16',
+          fromStop: 'Neureut Kirchfeld',
+          fromTime: '00:25',
+          toStop: 'Ettlingen Albgaubad',
+          toTime: '01:12',
+        },
+      ],
+    );
+  });
+
   test('parses time/stop rows with parenthesized times and a "bis" separator', () => {
     // "85507 (08:21 Uhr) Bretten Bf. bis (08:37 Uhr) Flehingen Bf." puts each time before its
     // stop, in parentheses, joined by "bis" — a layout no earlier format accepted.

@@ -147,6 +147,22 @@ export const TRIP_LIST_DATE_ROW_PATTERN = /^(\d{1,2})\.(\d{1,2})\.(\d{4})?\.?$/;
 export const TRIP_ROW_DATE_SUFFIX_PATTERN = /\s*\(\s*(\d{1,2})\.(\d{1,2})\.(\d{4})?\s*\)\s*$/;
 
 /**
+ * A parenthesized weekday and date in front of a clock time — "20074 22:42 Uhr Hochstetten -
+ * (Fr, 16.10) 00:15 Uhr Ittersbach Rathaus" — with which KVV marks a time falling on another day
+ * than the list's. Stripped (globally) before format matching so no trip format has to tolerate it.
+ */
+export const TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN =
+  /\(\s*(?:Mo|Di|Mi|Do|Fr|Sa|So)\.?\s*,\s*(\d{1,2})\.(\d{1,2})\.?(\d{4})?\s*\)\s*/gi;
+
+/**
+ * The same weekday-date marker in the departure position, directly after the leading train
+ * number — "10086 (Fr, 16.10) 00:25 Uhr Neureut Kirchfeld - …". It dates that row alone; a marker
+ * in front of the arrival time does not, since the trip departs before it.
+ */
+export const TRIP_ROW_DEPARTURE_WEEKDAY_DATE_PATTERN =
+  /^\d+\s+\(\s*(?:Mo|Di|Mi|Do|Fr|Sa|So)\.?\s*,\s*(\d{1,2})\.(\d{1,2})\.?(\d{4})?\s*\)/i;
+
+/**
  * Text markers used to identify sections in the HTML.
  */
 export const MARKERS = {

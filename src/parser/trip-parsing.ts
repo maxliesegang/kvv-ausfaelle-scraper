@@ -16,7 +16,7 @@ import { extractDetailId, normalizeLineUppercase } from '../utils/normalization.
 import {
   assignTripDates,
   parseTripListDateRow,
-  parseTripRowDateSuffix,
+  parseTripRowDate,
   type TripDateAnchor,
 } from './trip-dates.js';
 import { MAX_ROWS_TO_COMBINE } from '../utils/constants.js';
@@ -31,6 +31,7 @@ import {
   TRIP_TIME_PAIR_PATTERN,
   TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
   TRIP_ROW_DATE_SUFFIX_PATTERN,
+  TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN,
   PARENTHESIZED_ROUTE_TIME_PATTERN,
   ROUTE_SEPARATOR_PATTERN,
   DIVERSION_STATEMENT_PATTERN,
@@ -273,8 +274,11 @@ interface ValidTripFields extends ParsedTripFields {
  * format whose regex matches and whose captured fields pass validation.
  */
 function matchTripFormat(row: string): ValidTripFields | null {
-  // A trailing "(27.09.2026)" dates the row (see extractDatedTripRows); it is no trip field.
-  const tripFieldsRow = row.replace(TRIP_ROW_DATE_SUFFIX_PATTERN, '');
+  // A trailing "(27.09.2026)" or a "(Fr, 16.10)" before a time dates the row (see
+  // extractDatedTripRows); neither is a trip field.
+  const tripFieldsRow = row
+    .replace(TRIP_ROW_DATE_SUFFIX_PATTERN, '')
+    .replace(TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN, '');
   for (const { pattern, rejectUhrOnlyStops, extract } of TRIP_FORMATS) {
     const match = tripFieldsRow.match(pattern);
     if (!match) continue;
@@ -573,7 +577,7 @@ export function extractDatedTripRows(text: string, anchor: TripDateAnchor): Date
     mergedRows.map((merged) => ({
       departureTime: matchTripFormat(merged.row)?.fromTime,
       explicitDate: explicitDateByRawIndex[merged.rawIndex],
-      rowDate: parseTripRowDateSuffix(merged.row, anchor.date),
+      rowDate: parseTripRowDate(merged.row, anchor.date),
     })),
     anchor,
   );

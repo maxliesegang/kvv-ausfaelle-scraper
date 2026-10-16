@@ -19,7 +19,12 @@
 
 import { formatBerlinWallClock } from '../utils/berlin-time.js';
 import { ISO_DATE_LENGTH, MINUTES_PER_HOUR, CLOCK_TIME_LENGTH } from '../utils/constants.js';
-import { PATTERNS, TRIP_LIST_DATE_ROW_PATTERN, TRIP_ROW_DATE_SUFFIX_PATTERN } from './patterns.js';
+import {
+  PATTERNS,
+  TRIP_LIST_DATE_ROW_PATTERN,
+  TRIP_ROW_DATE_SUFFIX_PATTERN,
+  TRIP_ROW_DEPARTURE_WEEKDAY_DATE_PATTERN,
+} from './patterns.js';
 
 /** The article timestamp a trip list's clock times are read against. */
 export interface TripDateAnchor {
@@ -76,11 +81,16 @@ export function parseTripListDateRow(row: string, fallbackIsoDate: string): stri
 }
 
 /**
- * Parses the parenthesized date trailing a trip row (`… 01:55 Uhr (27.09.2026)`) into an ISO
- * date, taking a missing year from `fallbackIsoDate`. Returns `undefined` when the row has none.
+ * Parses the date a trip row carries for itself into an ISO date — a trailing
+ * `… 01:55 Uhr (27.09.2026)`, or a weekday-date marker in front of the departure time
+ * (`10086 (Fr, 16.10) 00:25 Uhr …`) — taking a missing year from `fallbackIsoDate`.
+ * Returns `undefined` when the row has none.
  */
-export function parseTripRowDateSuffix(row: string, fallbackIsoDate: string): string | undefined {
-  return toIsoDate(TRIP_ROW_DATE_SUFFIX_PATTERN.exec(row), fallbackIsoDate);
+export function parseTripRowDate(row: string, fallbackIsoDate: string): string | undefined {
+  return (
+    toIsoDate(TRIP_ROW_DATE_SUFFIX_PATTERN.exec(row), fallbackIsoDate) ??
+    toIsoDate(TRIP_ROW_DEPARTURE_WEEKDAY_DATE_PATTERN.exec(row), fallbackIsoDate)
+  );
 }
 
 /** Builds an ISO date from a day/month/optional-year match, or `undefined` without one. */

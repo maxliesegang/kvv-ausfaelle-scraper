@@ -4041,5 +4041,19 @@
       "trackedAdjacentStops": 2,
       "journeyId": "20261015-7c941025-b0c7-30d5-b0f2-a1bff9aa68d8"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-15",
+    "stand": "2026-10-15T13:40:00.000Z",
+    "trainNumber": "20074",
+    "fromStop": "Hochstetten",
+    "fromTime": "22:42",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "00:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278783",
+    "capturedAt": "2026-10-16T09:05:55.555Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

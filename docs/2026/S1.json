@@ -7538,5 +7538,19 @@
       "journeyCancelled": true,
       "journeyId": "20261015-5bee3446-d87b-31ca-855e-dabb3efc06b4"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-16",
+    "stand": "2026-10-15T13:40:00.000Z",
+    "trainNumber": "10086",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "00:25",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "01:12",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278783",
+    "capturedAt": "2026-10-16T09:05:55.555Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
