@@ -35262,20 +35262,55 @@
     "cause": "operational",
     "causeKeyword": "betriebsbedingt",
     "verification": {
-      "status": "unresolved",
+      "status": "cancelled",
       "methodVersion": 7,
-      "source": "transitous",
-      "checkedAt": "2026-10-16",
-      "segmentStops": 0,
-      "segmentCancelledStops": 0,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-17",
+      "segmentStops": 30,
+      "segmentCancelledStops": 30,
       "segmentTrackedStops": 0,
-      "journeyStops": 0,
-      "journeyCancelledStops": 0,
+      "journeyStops": 30,
+      "journeyCancelledStops": 30,
       "journeyTrackedStops": 0,
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
-      "unresolvedReason": "journey-not-found",
-      "attempts": 1
+      "journeyCancelled": true,
+      "journeyId": "20261015-d28ac138-83c6-3d5c-83e3-ca2dfcde5778",
+      "checks": {
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-10-16",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "unresolvedReason": "journey-not-found",
+          "attempts": 1
+        },
+        "bahn.expert": {
+          "status": "cancelled",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-10-17",
+          "segmentStops": 30,
+          "segmentCancelledStops": 30,
+          "segmentTrackedStops": 0,
+          "journeyStops": 30,
+          "journeyCancelledStops": 30,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyCancelled": true,
+          "journeyId": "20261015-d28ac138-83c6-3d5c-83e3-ca2dfcde5778"
+        }
+      },
+      "agreement": "single-source"
     }
   },
   {
@@ -35324,7 +35359,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-16",
+      "checkedAt": "2026-10-17",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -35334,13 +35369,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-16",
+          "checkedAt": "2026-10-17",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -35350,13 +35385,13 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "unresolvedReason": "journey-not-in-network",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "transitous",
-          "checkedAt": "2026-10-16",
+          "checkedAt": "2026-10-17",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -35366,7 +35401,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "unresolvedReason": "journey-not-found",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
@@ -35389,7 +35424,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-16",
+      "checkedAt": "2026-10-17",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -35399,13 +35434,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-16",
+          "checkedAt": "2026-10-17",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -35415,13 +35450,13 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "unresolvedReason": "journey-not-in-network",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "transitous",
-          "checkedAt": "2026-10-16",
+          "checkedAt": "2026-10-17",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -35431,7 +35466,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "unresolvedReason": "journey-not-found",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
