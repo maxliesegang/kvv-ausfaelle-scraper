@@ -75,6 +75,13 @@ const ARTICLE_CORRECTIONS: Readonly<Record<string, readonly ArticleCorrection[]>
   // and is dropped. The time itself is intact, and GTFS confirms it: every run of short name
   // 85519 leaving Karlsruhe Albtalbahnhof at 13:35 terminates at Flehingen at 14:37.
   Nettro_CMS_277856: [{ find: 'Flehingen Bf. /14:37 Uhr)', replace: 'Flehingen Bf. (14:37 Uhr)' }],
+  // S1/S11 AVG cancellations, 2026-10-16. The departure of train 20068 is published as
+  // "(21:18 Uh)", a truncated time suffix that matches no trip format, so the row is dropped.
+  // The time itself is intact, and GTFS confirms it: every run of short name 20068 is an S11
+  // reaching Ettlingen Stadt at 21:18 and terminating at Ittersbach Rathaus at 21:45.
+  Nettro_CMS_278824: [
+    { find: 'Ettlingen Stadt (21:18 Uh)', replace: 'Ettlingen Stadt (21:18 Uhr)' },
+  ],
 };
 
 /**

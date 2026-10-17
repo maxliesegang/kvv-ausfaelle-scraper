@@ -149,5 +149,12 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_278475: {
       '80705': 'S5',
     },
+    // AVG staffing notice for S1/S11 (Hochstetten–Ittersbach Rathaus), 2026-10-16. GTFS has no
+    // 33058. Its row (Ettlingen Albgaubad 20:32 → Bad Herrenalb 20:53) matches only S1 runs in
+    // GTFS (30058/36032/37044, Albgaubad 20:32 → Bad Herrenalb 20:53), and the same vehicle
+    // turns at Bad Herrenalb into 30061 (21:03), the S1 run listed just below it.
+    Nettro_CMS_278824: {
+      '33058': 'S1',
+    },
   },
 };
