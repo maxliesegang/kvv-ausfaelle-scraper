@@ -9,7 +9,9 @@
     "toStop": "Heilbronn Willy-Brandt-Platz",
     "toTime": "05:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262171",
-    "capturedAt": "2026-01-27T04:43:05.460Z"
+    "capturedAt": "2026-01-27T04:43:05.460Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -21,7 +23,9 @@
     "toStop": "Mosbach Bf",
     "toTime": "08:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T08:26:53.927Z"
+    "capturedAt": "2026-02-14T08:26:53.927Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -33,7 +37,9 @@
     "toStop": "Mosbach Neckarelz",
     "toTime": "08:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T08:26:53.927Z"
+    "capturedAt": "2026-02-14T08:26:53.927Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -45,7 +51,9 @@
     "toStop": "Mosbach Bf",
     "toTime": "08:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T08:26:53.927Z"
+    "capturedAt": "2026-02-14T08:26:53.927Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -57,7 +65,9 @@
     "toStop": "Bad Friedrichshall Hbf",
     "toTime": "09:08",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T08:26:53.927Z"
+    "capturedAt": "2026-02-14T08:26:53.927Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -69,7 +79,9 @@
     "toStop": "Mosbach Bf",
     "toTime": "10:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -81,7 +93,9 @@
     "toStop": "Mosbach-Neckarelz",
     "toTime": "11:08",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -93,7 +107,9 @@
     "toStop": "Mosbach Bf.",
     "toTime": "10:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -105,7 +121,9 @@
     "toStop": "Bad Friedrichshall Hbf.",
     "toTime": "11:08",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -117,7 +135,9 @@
     "toStop": "Sinsheim Hbf",
     "toTime": "12:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -129,7 +149,9 @@
     "toStop": "Bad Friedrichshall Hbf",
     "toTime": "13:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -141,7 +163,9 @@
     "toStop": "Sinsheim Hbf",
     "toTime": "14:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -153,7 +177,9 @@
     "toStop": "Bad Friedrichshall Hbf",
     "toTime": "15:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263270",
-    "capturedAt": "2026-02-14T12:38:32.428Z"
+    "capturedAt": "2026-02-14T12:38:32.428Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -165,7 +191,9 @@
     "toStop": "Heilbronn Kaufland",
     "toTime": "08:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263444",
-    "capturedAt": "2026-02-16T05:24:06.569Z"
+    "capturedAt": "2026-02-16T05:24:06.569Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -177,7 +205,9 @@
     "toStop": "Heilbronn Willy Brandt-Pl.",
     "toTime": "09:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_263444",
-    "capturedAt": "2026-02-16T05:24:06.569Z"
+    "capturedAt": "2026-02-16T05:24:06.569Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -189,7 +219,9 @@
     "toStop": "Heilbronn Kaufland",
     "toTime": "14:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
-    "capturedAt": "2026-02-28T12:37:01.250Z"
+    "capturedAt": "2026-02-28T12:37:01.250Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -201,7 +233,9 @@
     "toStop": "Heilbronn Hbf/Vorplatz",
     "toTime": "14:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
-    "capturedAt": "2026-02-28T12:37:01.250Z"
+    "capturedAt": "2026-02-28T12:37:01.250Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -213,7 +247,9 @@
     "toStop": "Heilbronn Kaufland",
     "toTime": "15:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
-    "capturedAt": "2026-02-28T12:37:01.250Z"
+    "capturedAt": "2026-02-28T12:37:01.250Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -225,7 +261,9 @@
     "toStop": "Heilbronn Hbf/Vorplatz",
     "toTime": "15:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_264418",
-    "capturedAt": "2026-02-28T12:37:01.250Z"
+    "capturedAt": "2026-02-28T12:37:01.250Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -237,7 +275,9 @@
     "toStop": "Mosbach Bf.",
     "toTime": "15:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
-    "capturedAt": "2026-03-15T12:42:50.268Z"
+    "capturedAt": "2026-03-15T12:42:50.268Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -249,7 +289,9 @@
     "toStop": "Neckarelz Bf.",
     "toTime": "15:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
-    "capturedAt": "2026-03-15T12:42:50.268Z"
+    "capturedAt": "2026-03-15T12:42:50.268Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -261,7 +303,9 @@
     "toStop": "Mosbach Bf.",
     "toTime": "15:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
-    "capturedAt": "2026-03-15T12:42:50.268Z"
+    "capturedAt": "2026-03-15T12:42:50.268Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -273,7 +317,9 @@
     "toStop": "Bad Friedrichshall Bf.",
     "toTime": "16:08",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_265323",
-    "capturedAt": "2026-03-15T12:42:50.268Z"
+    "capturedAt": "2026-03-15T12:42:50.268Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -285,7 +331,9 @@
     "toStop": "Mosbach Bf.",
     "toTime": "21:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268265",
-    "capturedAt": "2026-05-09T13:06:36.169Z"
+    "capturedAt": "2026-05-09T13:06:36.169Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -297,7 +345,9 @@
     "toStop": "Mosbach Neckarelz",
     "toTime": "21:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268265",
-    "capturedAt": "2026-05-09T13:06:36.169Z"
+    "capturedAt": "2026-05-09T13:06:36.169Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -309,6 +359,22 @@
     "toStop": "Mosbach Bf.(21:38 Uhr) 85740 Mosbach Bf.",
     "toTime": "21:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_268265",
-    "capturedAt": "2026-05-09T13:06:36.169Z"
+    "capturedAt": "2026-05-09T13:06:36.169Z",
+    "cause": "unknown",
+    "causeKeyword": null
+  },
+  {
+    "line": "S41",
+    "date": "2026-10-17",
+    "stand": "2026-10-17T10:49:00.000Z",
+    "trainNumber": "85741",
+    "fromStop": "Heilbronn Vorplatz",
+    "fromTime": "23:18",
+    "toStop": "Mosbach Neckarelz",
+    "toTime": "00:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278888",
+    "capturedAt": "2026-10-17T14:51:25.833Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
