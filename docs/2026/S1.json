@@ -7394,7 +7394,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-17",
+      "checkedAt": "2026-10-18",
       "segmentStops": 30,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 29,
@@ -7404,13 +7404,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261015-21bb606c-1c43-33d9-afd7-61ba406fe01d",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-17",
+          "checkedAt": "2026-10-18",
           "segmentStops": 30,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 29,
@@ -7420,7 +7420,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261015-21bb606c-1c43-33d9-afd7-61ba406fe01d",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -7460,7 +7460,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-17",
+      "checkedAt": "2026-10-18",
       "segmentStops": 43,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 31,
@@ -7470,13 +7470,13 @@
       "trackedOutsideSegment": 10,
       "trackedAdjacentStops": 2,
       "journeyId": "20261015-d3bc410c-f2f9-37bb-86d5-ca7123ea7c38",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-17",
+          "checkedAt": "2026-10-18",
           "segmentStops": 43,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 31,
@@ -7486,7 +7486,7 @@
           "trackedOutsideSegment": 10,
           "trackedAdjacentStops": 2,
           "journeyId": "20261015-d3bc410c-f2f9-37bb-86d5-ca7123ea7c38",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
@@ -7676,7 +7676,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-17",
+      "checkedAt": "2026-10-18",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -7686,7 +7686,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 1
+      "attempts": 2
     }
   },
   {
@@ -7856,7 +7856,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-17",
+      "checkedAt": "2026-10-18",
       "segmentStops": 30,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -7866,13 +7866,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261017-d214c653-2551-35f9-82d0-33427b56d048",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-17",
+          "checkedAt": "2026-10-18",
           "segmentStops": 30,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -7882,13 +7882,13 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261017-d214c653-2551-35f9-82d0-33427b56d048",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "transitous",
-          "checkedAt": "2026-10-17",
+          "checkedAt": "2026-10-18",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -7899,7 +7899,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20261017_18:04_de-KVV_632.T2.22-301-E-s26-2.11.H",
           "unresolvedReason": "journey-mismatch",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
@@ -7917,6 +7917,58 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_278863",
     "capturedAt": "2026-10-17T14:51:26.178Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "no-data",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-18",
+      "segmentStops": 43,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 52,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261017-49c2f1f0-9697-34de-8162-41bb1811e377",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "no-data",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-10-18",
+          "segmentStops": 43,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 52,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261017-49c2f1f0-9697-34de-8162-41bb1811e377",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-10-18",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261017_22:03_de-KVV_675.T2.22-301-E-s26-2.14.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   }
 ]
