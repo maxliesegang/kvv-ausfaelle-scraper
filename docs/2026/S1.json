@@ -7922,7 +7922,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-19",
+      "checkedAt": "2026-10-20",
       "segmentStops": 43,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -7932,13 +7932,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261017-49c2f1f0-9697-34de-8162-41bb1811e377",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-19",
+          "checkedAt": "2026-10-20",
           "segmentStops": 43,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -7948,7 +7948,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261017-49c2f1f0-9697-34de-8162-41bb1811e377",
-          "attempts": 2
+          "attempts": 3
         },
         "transitous": {
           "status": "unresolved",
