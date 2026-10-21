@@ -1,0 +1,23 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004517_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien S51, SEV - Karlsruhe - Germersheim: Haltentfall und Umleitung im Stadtgebiet KA (01.11.2026 bis 01.11.2026)
+Datum:  2026-10-21T05:21:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 01.11.2026 bis 01.11.2026
+Linien S51, SEV
+Karlsruhe - Germersheim: Haltentfall und Umleitung im Stadtgebiet KA
+(AVG)
+Linie(n): S51
+Zeitraum: In der Nacht 31.10./01.11.2026 (01:00 bis 03:00 Uhr)
+Auswirkungen Stadtbahn: 
+•    Karlsruhe Albtalbahnhof (01:19) - Karlsruhe Marktplatz (Pyramide U) (01:27) entfällt komplett
+•    Karlsruhe Marktplatz (Pyramide U) (01:36) - Karlsruhe Albtalbahnhof (01:24) - Germersheim (02:33), 
+o    innerstädtische Umleitung: Albtalbahnhof - Kongresszentrum - Mühlburger Tor - Karlsruhe Rheinbergstraße - Maximiliansau Eisenbahnstraße - Germersheim 
+o    die Halte KA-West, KA-Mühlburg, KA-Knielingen werden mit der genannten Zugfahrt nicht bedient
+Ersatzverkehr:  es wird kein Ersatzverkehr mit Bussen eingerichtet, bitte verbleibende Fahrten im Stadtgebiet Karlsruhe nutzen
+Grund: DB InfraGO - Bauarbeiten im Abschnitt  Karlsruhe-Knielingen - Karlsruhe Rheinbrücke
+Zurück zur Übersicht

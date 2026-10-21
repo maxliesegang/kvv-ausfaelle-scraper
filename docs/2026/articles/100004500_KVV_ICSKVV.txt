@@ -1,19 +1,18 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004500_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linien: S31, S32 - S31/S32: Ausfälle zwischen Bruchsal und Karlsruhe Hbf (23.10.2026 bis 10.11.2026)
+Titel:  Linien: S31, S32, SEV - Bruchsal - Karlsruhe: Ausfälle wegen Bauarbeiten (23.10.2026 bis 12.11.2026)
 Datum:  2026-10-12T11:54:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 23.10.2026 bis 10.11.2026
-Linien: S31, S32
-S31/S32: Ausfälle zwischen Bruchsal und Karlsruhe Hbf
+Vom 23.10.2026 bis 12.11.2026
+Linien: S31, S32, SEV
+Bruchsal - Karlsruhe: Ausfälle wegen Bauarbeiten
 (AVG)
-S31/S32: Stundentakt zwischen Bruchsal und Karlsruhe Hbf
 Zeitraum: Freitag 23.10.2026 (22:00 Uhr) bis Mittwoch 10.11.2026 (23:00 Uhr)
-Im Wesentlichen geht es um folgende Einschränkungen
+Im Wesentlichen geht es um folgende Einschränkungen:
 Phase 1: 24.10.-01.11 + 07.11.-08.11.2026 (Werktags Schulferien + Wochenenden)
 •    Tagsüber (ca. 6-23 Uhr) kein Stadtbahnbetrieb zwischen Bruchsal und Karlsruhe
 •    In den Tagesrandlagen können die Züge der AVG noch verkehren
@@ -26,4 +25,15 @@ Alternativen/ Übriger Regionalverkehr:
 •    Fahrgäste können die S3 von DB Regio nutzen
 •    Bitte Fahrplanauskunft nutzen
 •    Bitte beachten Sie, dass es auch bei den Linien RE73 und S3 von DB Regio zu Einschränkungen kommen kann.
+---------------------------------------------------------------------------------------------------
+Zeitraum: folgende Nächte , jeweils ca. 22:00 - 05:00 Uhr
+•    31.10./01.11.2026
+•    06./07.11. - 09.11./10.11.2026
+•    11.11./12.11.2026
+Entfall Stadtbahn: jeweils Karlsruhe Hbf <-> Bruchsal
+Ersatzverkehr:  jeweils Karlsruhe Hbf (Vorpl.) <->Bruchsal 
+Grund: DB InfraGO - Bauarbeiten 
+Ausnahmen/Sonstiges: vereinzelt können noch Züge in den genannten Nächten verkehren, je nach Umfang der Bauarbeiten
+Fahrplan Ersatzverkehr (06.11. bis 08.11.2026)
+Fahrplan Ersatzverkehr (09.11. bis 12.11.2026)
 Zurück zur Übersicht
