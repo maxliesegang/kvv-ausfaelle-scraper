@@ -2336,5 +2336,62 @@
       "journeyCancelled": true,
       "journeyId": "20261010-0d596333-faaa-31a7-a2e8-3f54345d1f97"
     }
+  },
+  {
+    "line": "S6",
+    "date": "2026-10-22",
+    "stand": "2026-10-22T11:19:00.000Z",
+    "trainNumber": "85079",
+    "fromStop": "Bad Wildbad Bf",
+    "fromTime": "17:19",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "17:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279088",
+    "capturedAt": "2026-10-22T16:38:29.883Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-22",
+      "segmentStops": 3,
+      "segmentCancelledStops": 3,
+      "segmentTrackedStops": 0,
+      "journeyStops": 19,
+      "journeyCancelledStops": 3,
+      "journeyTrackedStops": 17,
+      "trackedOutsideSegment": 17,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261022-fa5d865a-e538-316a-9832-0ec6035f57dc"
+    }
+  },
+  {
+    "line": "S6",
+    "date": "2026-10-22",
+    "stand": "2026-10-22T11:19:00.000Z",
+    "trainNumber": "85080",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "17:35",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "18:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279088",
+    "capturedAt": "2026-10-22T16:38:29.883Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S6",
+    "date": "2026-10-22",
+    "stand": "2026-10-22T11:19:00.000Z",
+    "trainNumber": "85087",
+    "fromStop": "Pforzheim Hbf",
+    "fromTime": "18:47",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "19:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279088",
+    "capturedAt": "2026-10-22T16:38:29.883Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

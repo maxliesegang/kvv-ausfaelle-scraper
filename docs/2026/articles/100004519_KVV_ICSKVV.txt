@@ -1,0 +1,23 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004519_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien S5, SEV - Pforzheim - Söllingen: Entfall einzelner Züge in der Nacht (06.11.2026 bis 07.11.2026)
+Datum:  2026-10-22T09:31:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 06.11.2026 bis 07.11.2026
+Linien S5, SEV
+Pforzheim - Söllingen: Entfall einzelner Züge in der Nacht
+(AVG)
+Linie(n): S5
+Zeitraum: Nacht 06./07.11. (ca. 21:00 bis 05:00)
+Entfall Stadtbahn: Pforzheim Hbf <-> Söllingen (b Karlsruhe)
+Ersatzverkehr: für die entfallenden Verbindungen jeweils Pforzheim Hbf <->Söllingen Reetztstraße
+Grund: DB InfraGO - Zeitfenster für Instandhaltung
+Ausnahmen/Sonstiges:
+•    Einzelne Züge können noch verkehren
+•    Kein Umstieg zwischen Ersatzverkehr und Stadtbahn in Söllingen Bahnhof! 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht

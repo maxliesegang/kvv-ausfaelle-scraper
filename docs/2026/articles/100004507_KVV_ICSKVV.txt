@@ -1,17 +1,17 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004507_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 101, 102 - Schluttenbach: Haltestelle Zellmarkstraße aufgehoben (19.10.2026 bis 31.12.2026)
+Titel:  Linie 101, 102 - Schluttenbach: Haltestelle Zellmarkstraße aufgehoben (19.10.2026 bis 27.10.2026)
 Datum:  2026-10-14T07:03:00.000Z
 ========================================================================
 
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 19.10.2026 bis 31.12.2026
+Vom 19.10.2026 bis 27.10.2026
 Linie 101, 102
 Schluttenbach: Haltestelle Zellmarkstraße aufgehoben
 (eic) Aufgrund von Baumaßnahmen in der Lange Straße in Schluttenbach können die Linien 101 und 102
 von Montag, den 19. Oktober 2026
-bis vsl. Ende 2026
+bis Dienstag, den 27.10.2026
 die Haltestelle "Schluttenbach Zellmarkstraße" nicht bedienen, welche in diesem Zeitraum ersatzlos aufgehoben ist.
 Zurück zur Übersicht
