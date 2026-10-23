@@ -36063,5 +36063,47 @@
       "journeyCancelled": true,
       "journeyId": "20261022-abf33c0b-7892-3f3b-8385-f9055ada5727"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-24",
+    "stand": "2026-10-23T14:35:00.000Z",
+    "trainNumber": "84945",
+    "fromStop": "Ka Tullastraße",
+    "fromTime": "00:37",
+    "toStop": "Söllingen Bf",
+    "toTime": "00:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279118",
+    "capturedAt": "2026-10-23T16:20:32.686Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-24",
+    "stand": "2026-10-23T14:35:00.000Z",
+    "trainNumber": "84868",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "01:01",
+    "toStop": "Wörth Badepark",
+    "toTime": "02:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279118",
+    "capturedAt": "2026-10-23T16:20:32.686Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-24",
+    "stand": "2026-10-23T14:35:00.000Z",
+    "trainNumber": "84867",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "02:20",
+    "toStop": "Ka Durlach Bf",
+    "toTime": "03:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279118",
+    "capturedAt": "2026-10-23T16:20:32.686Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
