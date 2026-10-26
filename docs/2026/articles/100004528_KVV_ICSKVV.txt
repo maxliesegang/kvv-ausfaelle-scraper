@@ -1,0 +1,53 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004528_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linie M - Karlsruhe: Messe-Express verkehrt zum Festival "Hasardeur" (14.11.2026 bis 15.11.2026)
+Datum:  2026-07-29T01:00:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 14.11.2026 bis 15.11.2026
+Linie M
+Karlsruhe: Messe-Express verkehrt zum Festival "Hasardeur"
+(sie)
+Der Messe-Express verkehrt zum Festival "Hasardeur"
+vom 14.11. bis 15.11.2026
+zwischen Karlsruhe Hbf (Vorplatz) und Messe Karlsruhe (Haltestelle Messe-Express)
+und
+Karlsruhe Entenfang und Messe Karlsruhe (Haltestelle Messe-Express)
+Die Abfahrtszeiten sind wie folgt:
+ab Hauptbahnhof
+Samstag:
+20:40 Uhr bis 23:20 Uhr alle 20 Minuten
+Sonntag:
+00:00 Uhr bis 01:00 Uhr alle 20 Minuten
+04:40 Uhr bis 07:10 Uhr alle 15 Minuten
+zusätzlich um 04:20 Uhr
+ab Messe Karlsruhe
+Samstag:
+20:58 Uhr bis 23:58 Uhr alle 20 Minuten
+Sonntag:
+00:18 Uhr und 00:38 Uhr
+03:40 Uhr bis 05:00 Uhr alle 20 Minuten
+05:00 Uhr bis 07:30 Uhr alle 15 Minuten
+ab Entenfang
+Samstag:
+21:00 Uhr bis 23:40 Uhr alle 20 Minuten
+Sonntag:
+00:00 Uhr bis 01:00 Uhr alle 20 Minuten
+04:10 Uhr bis 06:50 Uhr alle 10 Minuten
+ab Messe Karlsruhe Richtung Entenfang
+Samstag:
+21:07 Uhr bis 23:47 Uhr alle 20 Minuten
+Sonntag:
+00:07 Uhr bis 00:47 Uhr alle 20 Minuten
+04:00 Uhr bis 07:00 Uhr alle 10 Minuten
+Hinweis:
+Für die Fahrt mit dem Messe-Express ist ein separates Ticket notwendig, 
+welches ausschließlich beim Veranstalter (https://hasardeur.festival.de) erhältlich ist. 
+Der KVV-Tarif ist nicht gültig!
+weitere Informationen
+Fahrplan Messe-Express
+Fahrplan Messe-Express Entenfang - Messe
+Zurück zur Übersicht
