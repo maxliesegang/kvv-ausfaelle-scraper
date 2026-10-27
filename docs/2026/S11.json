@@ -4725,5 +4725,34 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-10-27",
+    "stand": "2026-10-27T10:35:00.000Z",
+    "trainNumber": "20035",
+    "fromStop": "KA Haus Bethlehem",
+    "fromTime": "14:25",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "14:31",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279347",
+    "capturedAt": "2026-10-27T17:19:46.373Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung",
+    "verification": {
+      "status": "ran",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-27",
+      "segmentStops": 5,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 5,
+      "journeyStops": 39,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 39,
+      "trackedOutsideSegment": 35,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261027-93b0d704-b918-355f-af79-472d972f7102"
+    }
   }
 ]
