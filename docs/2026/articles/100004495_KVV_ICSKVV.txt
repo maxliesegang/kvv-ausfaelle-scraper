@@ -31,13 +31,16 @@ Ittersbach - Albtalbahnhof - Kolpingplatz - Karlstor (Karlstraße und Kriegsstra
 S2
 Rheinstetten - Entenfang - Mühlburger Tor - Europa-platz - Ettlinger Tor - Rüppurrer Tor - Durlacher Tor - Hauptfriedhof - Hagsfeld - Blankenloch/Spöck
 S4 
-Albtalbahnhof - KA Hbf (Vorplatz) - Kronenplatz - Durlacher Tor - Tullastraße/Alter Schlachthof - Durlach Bahnhof - Heilbronn/Öhringen
+Bitte beachten: Die Fahrten von / nach Kraichgau müssen kurzfristig abweichend dem Linienetzplan wie folgt verkehren:
+Albtalbahnhof - KA Hbf (Vorplatz) - Werderstraße - Rüppurrer Tor - Ostendstraße - Tullastraße/Alter Schlachthof - Durlach Bahnhof - Heilbronn/Öhringen
+Die Haltestellen Gottesauer Platz, Durlacher Tor und Kronenplatz können nicht bedient werden.
 S7/S8
 Tullastraße/Alter Schlachthof - Kronenplatz - Rüppurrer Tor - Tivoli - KA Hbf (Vorplatz) - Rastatt - Murgtal/Achern
 S5/S51
 Die S5/S51 ist innerstädtisch unterbrochen und wird zweigeteilt:
-Ost: Germersheim/Wörth - Entenfang - Mühlburger Tor
-West: Kronenplatz (Fritz-Erler-Straße) - Tullastraße/Alter Schlachthof - Durlach Bahnhof - Söllingen/Pforzheim
+West: Germersheim/Wörth - Entenfang - Mühlburger Tor
+Ost: Bitte beachten: Die Fahrten von / nach Pfinztal müssen kurzfristig abweichend dem Linienetzplan wie folgt verkehren:
+Durlach Bahnhof - Tullastraße/Alter Schlachthof - Südostbahn - Ostendstraße bis Philipp-Reis-Straße und zurück über Rüppurrer Tor - Südostbahn - Tullastraße/Alter Schlachthof - Durlach Bahnhof. Die Haltestellen Gottesauer Platz, Durlacher Tor und Kronenplatz können nicht bedient werden.
 Die beiden Eilzüge der Linie S51 zwischen Germersheim und Karlsruhe werden auf dem regulären Fahrweg durchgeführt.
 S52
 Germersheim - Karlsruhe West - Albtalbahnhof - Hauptbahnhof (Vorplatz) - Tivoli - Konzerthaus
