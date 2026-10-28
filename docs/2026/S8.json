@@ -3977,5 +3977,19 @@
       "journeyCancelled": true,
       "journeyId": "20261011-7abc39b1-37d4-3d51-bd71-987bb2c43592"
     }
+  },
+  {
+    "line": "S8",
+    "date": "2026-10-29",
+    "stand": "2026-10-28T15:12:00.000Z",
+    "trainNumber": "85627",
+    "fromStop": "Freudenstadt Stadt",
+    "fromTime": "10:32",
+    "toStop": "Freudenstadt Hbf",
+    "toTime": "10:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279494",
+    "capturedAt": "2026-10-28T23:49:57.975Z",
+    "cause": "construction",
+    "causeKeyword": "bauarbeiten"
   }
 ]
