@@ -156,5 +156,19 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_278824: {
       '33058': 'S1',
     },
+    // DB construction notice for S8/S81 (Forbach–Freudenstadt), 2026-10-29. KVV numbers the
+    // Murgtal runs 85946/85948/85949/85951, which GTFS uses only for unrelated S5
+    // Pforzheim–KA Albtalbahnhof runs. Every GTFS run at the reported times is an S8 (e.g.
+    // 85634 Freudenstadt Hbf 09:53 → Forbach 10:39, 85623 Forbach 09:17 → Freudenstadt Hbf
+    // 10:07); none is an S81. GTFS has no 85788; its row (Freudenstadt Hbf 10:06 → Freudenstadt
+    // Stadt 10:20) is the outbound leg of the shuttle that returns as 85627 at 10:32, and every
+    // Hbf–Stadt shuttle in GTFS is an S8.
+    Nettro_CMS_279494: {
+      '85946': 'S8',
+      '85948': 'S8',
+      '85949': 'S8',
+      '85951': 'S8',
+      '85788': 'S8',
+    },
   },
 };
