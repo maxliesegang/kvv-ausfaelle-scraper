@@ -432,7 +432,7 @@
       "status": "partial",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-10-29",
+      "checkedAt": "2026-10-30",
       "segmentStops": 25,
       "segmentCancelledStops": 20,
       "segmentTrackedStops": 0,
@@ -442,13 +442,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261029-e0524166-b93c-3f2f-94b8-1362567e6eb1",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "partial",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-10-29",
+          "checkedAt": "2026-10-30",
           "segmentStops": 25,
           "segmentCancelledStops": 20,
           "segmentTrackedStops": 0,
@@ -458,13 +458,13 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261029-e0524166-b93c-3f2f-94b8-1362567e6eb1",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
           "methodVersion": 7,
           "source": "transitous",
-          "checkedAt": "2026-10-29",
+          "checkedAt": "2026-10-30",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -475,7 +475,7 @@
           "trackedAdjacentStops": 0,
           "journeyId": "20261029_13:42_de-KVV_935.T0.22-342-E-s26-14.49.H",
           "unresolvedReason": "journey-mismatch",
-          "attempts": 1
+          "attempts": 2
         }
       },
       "agreement": "single-source"
