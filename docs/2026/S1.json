@@ -8263,5 +8263,34 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-30",
+    "stand": "2026-10-30T09:49:00.000Z",
+    "trainNumber": "30021",
+    "fromStop": "Karlsruhe Haus Bethlehem",
+    "fromTime": "10:45",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "10:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279683",
+    "capturedAt": "2026-10-30T14:45:58.867Z",
+    "cause": "infrastructure",
+    "causeKeyword": "weichenstoerung",
+    "verification": {
+      "status": "ran",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-30",
+      "segmentStops": 5,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 5,
+      "journeyStops": 36,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 36,
+      "trackedOutsideSegment": 32,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261030-3a1b6b69-536c-31d2-a1a6-f8d03e4d731b"
+    }
   }
 ]

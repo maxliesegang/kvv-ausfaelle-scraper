@@ -134,5 +134,63 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S32",
+    "date": "2026-10-30",
+    "stand": "2026-10-30T06:39:00.000Z",
+    "trainNumber": "85901",
+    "fromStop": "Menzingen",
+    "fromTime": "07:18",
+    "toStop": "Ubstadt Ort",
+    "toTime": "07:39",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279655",
+    "capturedAt": "2026-10-30T14:45:58.413Z",
+    "cause": "construction",
+    "causeKeyword": "sperrung",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-30",
+      "segmentStops": 10,
+      "segmentCancelledStops": 10,
+      "segmentTrackedStops": 0,
+      "journeyStops": 13,
+      "journeyCancelledStops": 10,
+      "journeyTrackedStops": 4,
+      "trackedOutsideSegment": 4,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261030-68d5cce7-b4b8-3d9f-b785-103bddf07fc0"
+    }
+  },
+  {
+    "line": "S32",
+    "date": "2026-10-30",
+    "stand": "2026-10-30T06:39:00.000Z",
+    "trainNumber": "85106",
+    "fromStop": "Ubstadt Ort",
+    "fromTime": "07:59",
+    "toStop": "Menzingen",
+    "toTime": "08:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279655",
+    "capturedAt": "2026-10-30T14:45:58.413Z",
+    "cause": "construction",
+    "causeKeyword": "sperrung",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-30",
+      "segmentStops": 10,
+      "segmentCancelledStops": 10,
+      "segmentTrackedStops": 0,
+      "journeyStops": 13,
+      "journeyCancelledStops": 10,
+      "journeyTrackedStops": 3,
+      "trackedOutsideSegment": 3,
+      "trackedAdjacentStops": 1,
+      "journeyId": "20261030-a79a0bd0-e203-3677-a48c-988e6c444b66"
+    }
   }
 ]

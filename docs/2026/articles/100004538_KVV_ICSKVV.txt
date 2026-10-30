@@ -1,0 +1,22 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004538_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S71, SEV - Karlsruhe - Baden-Baden: Eine Fahrt der Linie S71 entfällt abends (09.11.2026 bis 13.11.2026)
+Datum:  2026-10-30T07:19:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 09.11.2026 bis 13.11.2026
+Linien: S71, SEV
+Karlsruhe - Baden-Baden: Eine Fahrt der Linie S71 entfällt abends
+(AVG)
+Karlsruhe - Baden-Baden: Eine Fahrt der Linie S71 entfällt abends
+Linie(n): S71
+Zeitraum: Montag 09.11. bis Freitag 13.11.2026
+Entfall Stadtbahn: 
+•    S71 Karlsruhe Hbf (22:47) - Rastatt - Baden-Baden (23:17) entfällt
+Ersatzverkehr: Karlsruhe Hbf (Vorpl.) <-> Ettlingen West <-> Rastatt <-> Baden-Baden
+Grund: DB InfraGO - Bauarbeiten
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
