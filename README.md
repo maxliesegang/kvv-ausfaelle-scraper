@@ -88,7 +88,7 @@ Transitous fallback data follows the attribution and source terms listed at
 
 ## Running locally
 
-Requirements: Node.js 22 or newer.
+Requirements: Node.js 26 or newer (see `.nvmrc`; run `nvm use` to switch).
 
 ```bash
 npm ci

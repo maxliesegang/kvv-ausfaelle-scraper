@@ -36,7 +36,7 @@ would withhold data that is already valid.
 
 1. Environment setup:
    - checkout
-   - Node.js 22
+   - Node.js 26 via `node-version-file: .nvmrc`
    - `npm ci`
 2. Build and execute:
    - `npm run build`
