@@ -42,7 +42,7 @@ When multiple files apply, use the closest file to the edited path as the most s
 
 ## Code Conventions
 
-- The project targets Node.js 22+ and uses ESM. Prefix built-in imports with `node:` and include
+- The project targets Node.js 26+ (pinned in `.nvmrc`) and uses ESM. Prefix built-in imports with `node:` and include
   `.js` extensions on relative imports.
 - Prefer shared helpers under `src/utils/` over local reimplementations.
 - Treat published JSON field names as contracts, even when a longer internal name would be more
