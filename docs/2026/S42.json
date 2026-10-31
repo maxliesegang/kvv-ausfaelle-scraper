@@ -480,5 +480,33 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S42",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T15:16:00.000Z",
+    "trainNumber": "85865",
+    "fromStop": "Heilbronn Willy Brandt Platz",
+    "fromTime": "18:36",
+    "toStop": "Bad Rappenau",
+    "toTime": "19:21",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279786",
+    "capturedAt": "2026-10-31T16:43:21.476Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S42",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T15:16:00.000Z",
+    "trainNumber": "85872",
+    "fromStop": "Bad Rappenau",
+    "fromTime": "19:33",
+    "toStop": "Heilbronn Willy Brandt Platz",
+    "toTime": "20:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279786",
+    "capturedAt": "2026-10-31T16:43:21.476Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

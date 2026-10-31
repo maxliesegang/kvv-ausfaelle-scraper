@@ -36191,5 +36191,77 @@
       "journeyCancelled": true,
       "journeyId": "20261024-7c151592-0d9a-347f-a77c-1d84df132f6c"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:09:00.000Z",
+    "trainNumber": "84840",
+    "fromStop": "Karlsruhe Tullastr.",
+    "fromTime": "15:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "15:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279761",
+    "capturedAt": "2026-10-31T16:43:21.361Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-31",
+      "segmentStops": 28,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 7,
+      "trackedOutsideSegment": 7,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261031-45fc042f-591b-3f54-9e45-00c22d742f79"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:09:00.000Z",
+    "trainNumber": "84833",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "16:05",
+    "toStop": "Karlsruhe Tullastr.",
+    "toTime": "16:46",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279761",
+    "capturedAt": "2026-10-31T16:43:21.361Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-31",
+      "segmentStops": 28,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 7,
+      "trackedOutsideSegment": 7,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261031-a398be2b-1d42-3109-9cfd-98ee96b3cdff"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:09:00.000Z",
+    "trainNumber": "85090",
+    "fromStop": "Karlsruhe Lameypl.",
+    "fromTime": "23:47",
+    "toStop": "Knielingen Rheinbergstr.",
+    "toTime": "23:54",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279761",
+    "capturedAt": "2026-10-31T16:43:21.361Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]

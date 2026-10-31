@@ -8292,5 +8292,49 @@
       "trackedAdjacentStops": 2,
       "journeyId": "20261030-3a1b6b69-536c-31d2-a1a6-f8d03e4d731b"
     }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T14:50:00.000Z",
+    "trainNumber": "16029",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "13:54",
+    "toStop": "Hochstetten",
+    "toTime": "15:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279782",
+    "capturedAt": "2026-10-31T16:43:21.358Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-10-31",
+      "segmentStops": 44,
+      "segmentCancelledStops": 44,
+      "segmentTrackedStops": 0,
+      "journeyStops": 44,
+      "journeyCancelledStops": 44,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261031-b3874032-77ba-38cb-9e9f-bd0cac0355b8"
+    }
+  },
+  {
+    "line": "S1",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T14:50:00.000Z",
+    "trainNumber": "16055",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "18:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "18:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279782",
+    "capturedAt": "2026-10-31T16:43:21.358Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
