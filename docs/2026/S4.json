@@ -9421,5 +9421,61 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:05:00.000Z",
+    "trainNumber": "85523",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "15:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "16:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279752",
+    "capturedAt": "2026-10-31T10:07:33.278Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:05:00.000Z",
+    "trainNumber": "85532",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "17:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279752",
+    "capturedAt": "2026-10-31T10:07:33.278Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:05:00.000Z",
+    "trainNumber": "85527",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "17:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "18:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279752",
+    "capturedAt": "2026-10-31T10:07:33.278Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-10-31",
+    "stand": "2026-10-31T09:05:00.000Z",
+    "trainNumber": "85536",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "19:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "20:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279752",
+    "capturedAt": "2026-10-31T10:07:33.278Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
