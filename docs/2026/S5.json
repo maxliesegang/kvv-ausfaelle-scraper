@@ -36317,5 +36317,63 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-01",
+    "stand": "2026-11-01T12:17:00.000Z",
+    "trainNumber": "84825",
+    "fromStop": "Tullastraße",
+    "fromTime": "14:47",
+    "toStop": "Söllingen Bahnhof",
+    "toTime": "15:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279803",
+    "capturedAt": "2026-11-01T17:32:24.857Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-01",
+      "segmentStops": 13,
+      "segmentCancelledStops": 13,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 13,
+      "journeyTrackedStops": 5,
+      "trackedOutsideSegment": 5,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261101-17e9b8ec-a2b3-3be8-9c60-0478b293e770"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-01",
+    "stand": "2026-11-01T12:17:00.000Z",
+    "trainNumber": "84844",
+    "fromStop": "Söllingen Bahnhof",
+    "fromTime": "15:51",
+    "toStop": "Tullastraße",
+    "toTime": "16:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279803",
+    "capturedAt": "2026-11-01T17:32:24.857Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-01",
+      "segmentStops": 13,
+      "segmentCancelledStops": 13,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 13,
+      "journeyTrackedStops": 5,
+      "trackedOutsideSegment": 5,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261101-9118c5a0-b996-3023-90d5-7db16b7d1537"
+    }
   }
 ]
