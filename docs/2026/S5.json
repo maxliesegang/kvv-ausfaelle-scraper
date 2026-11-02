@@ -36375,5 +36375,61 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261101-9118c5a0-b996-3023-90d5-7db16b7d1537"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-02",
+    "stand": "2026-11-01T23:15:00.000Z",
+    "trainNumber": "84957",
+    "fromStop": "Rheinbergstraße",
+    "fromTime": "05:02",
+    "toStop": "Pforzheim Hbf.",
+    "toTime": "06:11",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279832",
+    "capturedAt": "2026-11-02T04:01:45.913Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-02",
+    "stand": "2026-11-01T23:15:00.000Z",
+    "trainNumber": "84950",
+    "fromStop": "Pforzheim Hbf.",
+    "fromTime": "06:25",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279832",
+    "capturedAt": "2026-11-02T04:01:45.913Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-02",
+    "stand": "2026-11-01T23:15:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "08:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "09:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279832",
+    "capturedAt": "2026-11-02T04:01:45.913Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-02",
+    "stand": "2026-11-01T23:15:00.000Z",
+    "trainNumber": "84722",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "09:18",
+    "toStop": "Rheinbergstraße",
+    "toTime": "10:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_279832",
+    "capturedAt": "2026-11-02T04:01:45.913Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
