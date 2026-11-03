@@ -1,0 +1,21 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004547_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S41, SEV - Neckarzimmern - Mosbach (Baden): S41 - Teilausfälle nachts (16.11.2026 bis 20.11.2026)
+Datum:  2026-11-03T10:57:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 16.11.2026 bis 20.11.2026
+Linien: S41, SEV
+Neckarzimmern - Mosbach (Baden): S41 - Teilausfälle nachts
+(AVG)
+Neckarzimmern - Mosbach (Baden): S41 - Teilausfälle nachts
+Linie(n): S41
+Zeitraum: Nächte 16./17. bis 19./20.11.2026 (jeweils 21:00 Uhr bis 05:10 Uhr)
+Entfall Stadtbahn: Neckarzimmern <-> Mosbach (Baden)
+Ersatzverkehr: Ersatzbusse Neckarzimmern <-> Mosbach (Baden)
+Grund: DB InfraGO - Bauarbeiten 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht

@@ -1,0 +1,22 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004546_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S42, SEV - Grombach - Sinsheim: S42 - Teilausfälle nachts (17.11.2026 bis 18.11.2026)
+Datum:  2026-11-03T10:46:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 17.11.2026 bis 18.11.2026
+Linien: S42, SEV
+Grombach - Sinsheim: S42 - Teilausfälle nachts
+(AVG)
+Grombach - Sinsheim: S42 - Teilausfälle nachts
+Linie(n): S42
+Zeitraum: Dienstag 17.11. (23:30 Uhr) bis Mittwoch 18.11. (04:50 Uhr)
+Entfall Stadtbahn: Grombach <-> Sinsheim (Elsenz) Hbf
+Ersatzverkehr: Ersatzbusse Grombach <-> Sinsheim (Elsenz) Hbf
+Grund: DB InfraGO - Oberleitungsarbeiten
+Sonstiges: Achtung erster Zug in Richtung Heilbronn beginnt am 18.11. erst in Grombach
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
