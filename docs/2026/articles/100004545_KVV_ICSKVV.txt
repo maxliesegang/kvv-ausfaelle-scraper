@@ -1,0 +1,23 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004545_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S41, S42, SEV - Bad Friedrichshall - Neckarsulm: S41/S42 - Teilausfälle nachts (11.11.2026 bis 16.11.2026)
+Datum:  2026-11-03T10:25:00.000Z
+========================================================================
+
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 11.11.2026 bis 16.11.2026
+Linien: S41, S42, SEV
+Bad Friedrichshall - Neckarsulm: S41/S42 - Teilausfälle nachts
+(AVG)
+Bad Friedrichshall - Neckarsulm: S41/S42 - Teilausfälle nachts
+Linie(n): S41, S42
+Zeitraum: Nächte 11./12. bis 15./16-11. (jeweils ca. 20:45 Uhr bis 05:00 Uhr)
+Entfall Stadtbahn: Neckarsulm Bad Friedrichshall <-> Bad Friedrichshall Hbf 
+Ersatzverkehr:  Ersatzbusse Neckarsulm <-> Bad Friedrichshall Hbf 
+Grund: DB InfraGO - Bauarbeiten
+Sonstiges:
+•    Achtung: Geänderte Abfahrtszeiten Neckarsulm <-> Heilbronn Hbf/Willy-Brandt-Pl. und Bad Friedrichshall <->  Sinsheim/Mosbach, es kommt teilweise zu früheren Abfahrten wegen dem Anschluss zum Ersatzverkehr
+•    Achtung: bei den letzten Zügen nachts und den ersten Zügen morgens kommt es teilweise zu Abweichungen mit längeren Ersatzverkehren
+Zurück zur Übersicht
