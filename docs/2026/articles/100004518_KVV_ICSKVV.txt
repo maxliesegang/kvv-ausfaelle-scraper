@@ -4,6 +4,7 @@ Titel:  Linien: S4, SEV - Öhringen-Cappel - Weinsberg: Abschnitt entfällt für
 Datum:  2026-10-15T09:02:00.000Z
 ========================================================================
 
+Verkehrsmeldungen
 KVV
 Fahrplan
 Verkehrsmeldungen
