@@ -1,6 +1,6 @@
 Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004338_KVV_ICSKVV
 Stand:  unbekannt
-Titel:  Linie 101 - Ettlingen: Haltestelle Wilhelmshöhe aufgeoben (20.08.2026 bis 31.12.2027)
+Titel:  Linie 101 - Ettlingen: Haltestelle Wilhelmshöhe aufgeoben (20.08.2026 bis 05.11.2026)
 Datum:  2026-08-20T07:25:00.000Z
 ========================================================================
 
@@ -8,11 +8,11 @@ Verkehrsmeldungen
 KVV
 Fahrplan
 Verkehrsmeldungen
-Vom 20.08.2026 bis 31.12.2027
+Vom 20.08.2026 bis 05.11.2026
 Linie 101
 Ettlingen: Haltestelle Wilhelmshöhe aufgeoben
 (eic) Aufgrund baulicher Mängel kann die Haltestelle "Ettlingen Wilhelmshöhe" von der Linie 101
 von Donnerstag, den 20. August 2026
-bis auf Weiteres
+bis Donnerstag, den 05. November 2026
 nicht bedient werden und ist ersatzlos aufgehoben. Bitte nutzen Sie alternativ die Haltestelle "Ettlingen Schützenkreuz" (ca. 700 m).
 Zurück zur Übersicht

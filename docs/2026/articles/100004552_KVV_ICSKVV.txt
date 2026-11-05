@@ -1,0 +1,32 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004552_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S5, SEV - Pforzheim Hbf - Söllingen (b Karlsruhe): S5 - Einzelne Züge entfallen nachts (19.11.2026 bis 22.11.2026)
+Datum:  2026-11-05T11:38:00.000Z
+========================================================================
+
+Verkehrsmeldungen
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 19.11.2026 bis 22.11.2026
+Linien: S5, SEV
+Pforzheim Hbf - Söllingen (b Karlsruhe): S5 - Einzelne Züge entfallen nachts
+(AVG)
+Pforzheim Hbf - Söllingen (b Karlsruhe): S5 - Einzelne Züge entfallen nachts
+Linie(n): S5
+Zeitraum: Nächte 19.11. bis  22.11.2026  (jeweils ca. 01:00 Uhr bis 03:00 Uhr)
+Entfall Stadtbahn: Pforzheim Hbf <-> Söllingen (b Karlsruhe)
+•    nur 19.+20.11.
+o    Pforzheim Hbf (01:06) - Söllingen (b KA) (01:29) - Karlsruhe Tullastraße  
+o    SEV abweichend bis KA Hauptbahnhof (Vorplatz)
+•    Nur 21.+22.11. 
+o    Pforzheim Hbf (01:09) - Söllingen (b KA) (01:31) - Karlsruhe Tullastraße  
+o    Pforzheim Hbf (02:09) - Söllingen (b KA) (02:31) - Karlsruhe Rheinbergstraße
+o    Wörth Badepark - Söllingen (b KA) (an 01:26) - Pforzheim Hbf (01:49)
+o    Wörth Badepark - Söllingen (b KA) (an 02:25) - Pforzheim Hbf (02:48)
+Ersatzverkehr: für die entfallenden Verbindungen jeweils Pforzheim Hbf <-> Söllingen Reetztstraße
+Grund: DB InfraGO - Zeitfenster für Instandhaltung - kurzfristige Maßnahme zur Beseitigung einer Schlammstelle
+Ausnahmen/Sonstiges: 
+•    Kein Umstieg zwischen Ersatzverkehr und Stadtbahn in Söllingen Bahnhof! 
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
