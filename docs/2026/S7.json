@@ -3735,5 +3735,33 @@
       "journeyCancelled": true,
       "journeyId": "20261010-cfe7fceb-b7ca-373b-8d7f-ccc0128d80dd"
     }
+  },
+  {
+    "line": "S7",
+    "date": "2026-11-07",
+    "stand": "2026-11-07T12:43:00.000Z",
+    "trainNumber": "85589",
+    "fromStop": "Tullastraße/Alter Schlachthof",
+    "fromTime": "19:17",
+    "toStop": "Achern Bf",
+    "toTime": "20:25",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280068",
+    "capturedAt": "2026-11-07T14:37:19.361Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S7",
+    "date": "2026-11-07",
+    "stand": "2026-11-07T12:43:00.000Z",
+    "trainNumber": "85588",
+    "fromStop": "Achern Bf",
+    "fromTime": "20:55",
+    "toStop": "Hauptbahnhof Karlsruhe",
+    "toTime": "21:47",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280068",
+    "capturedAt": "2026-11-07T14:37:19.361Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
