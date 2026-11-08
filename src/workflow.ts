@@ -10,7 +10,7 @@ import {
 } from './parser/index.js';
 import { findUnparsedTripLikeRows, leadingTrainNumber } from './parser/trip-parsing.js';
 import { toArticleText } from './parser/article-corrections.js';
-import { classifyCause } from './cause.js';
+import { classifyCause, statesCause } from './cause.js';
 import { isKnownTrainNumber } from './train-lines.js';
 import { analyzeDetailPage, analyzeRssItem } from './relevance.js';
 
@@ -49,7 +49,13 @@ export type SkipReason =
  * away the good trips. See {@link findMissedKnownTripsError}.
  */
 export type ItemOutcome =
-  | { readonly status: 'parsed'; readonly trips: Cancellation[]; readonly parseError?: ParseError }
+  | {
+      readonly status: 'parsed';
+      readonly trips: Cancellation[];
+      readonly parseError?: ParseError;
+      /** True when the cause is `unknown` because the article gives no reason at all. */
+      readonly causeUnstated?: boolean;
+    }
   | { readonly status: 'skipped'; readonly reason: SkipReason };
 
 function skipped(reason: SkipReason): ItemOutcome {
@@ -171,7 +177,17 @@ export async function processRssItem(
     // format matched. Either fails CI as a notification without losing what did parse.
     const parseError =
       findMissedKnownTripsError(html, trips, url) ?? findUnmappedTrainNumbersError(html, url);
-    return { status: 'parsed', trips, ...(parseError ? { parseError } : {}) };
+    // An `unknown` cause is only actionable (extend `src/cause.ts`) when the article states a
+    // reason we failed to recognize. KVV sometimes announces "einzelne Fahrtausfälle" with no
+    // reason at all; flag that so the caller can report it without failing CI forever.
+    const causeUnstated =
+      trips.some((trip) => trip.cause === 'unknown') && !statesCause(toArticleText(html, url));
+    return {
+      status: 'parsed',
+      trips,
+      ...(parseError ? { parseError } : {}),
+      ...(causeUnstated ? { causeUnstated } : {}),
+    };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
 
@@ -238,6 +254,8 @@ export interface CollectTripsResult {
   readonly cancellations: Cancellation[];
   /** Parse errors encountered (e.g., missing train number mappings) */
   readonly parseErrors: ParseError[];
+  /** Source URLs of parsed articles whose `unknown` cause is due to KVV stating no reason. */
+  readonly causeUnstatedSourceUrls: ReadonlySet<string>;
 }
 
 /**
@@ -255,6 +273,7 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
 
   const cancellations: Cancellation[] = [];
   const parseErrors: ParseError[] = [];
+  const causeUnstatedSourceUrls = new Set<string>();
 
   // Count how each item was handled so the run summary explains where trips went.
   let parsedItems = 0;
@@ -275,6 +294,9 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
       if (outcome.status === 'parsed') {
         parsedItems += 1;
         cancellations.push(...outcome.trips);
+        if (outcome.causeUnstated) {
+          outcome.trips.forEach((trip) => causeUnstatedSourceUrls.add(trip.sourceUrl));
+        }
         // A parsed article can still report a dropped known-number trip: keep its good
         // trips (already pushed) and surface the error so CI fails as a notification.
         if (outcome.parseError) {
@@ -303,7 +325,7 @@ export async function collectTrips(items: Item[]): Promise<CollectTripsResult> {
     unexpectedErrors,
   });
 
-  return { cancellations, parseErrors };
+  return { cancellations, parseErrors, causeUnstatedSourceUrls };
 }
 
 interface ItemOutcomeSummary {

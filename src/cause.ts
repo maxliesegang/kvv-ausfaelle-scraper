@@ -153,7 +153,8 @@ const CANCELLATION_CAUSE_DEFINITIONS = [
     id: 'operational',
     label: 'Betriebsbedingt',
     description: 'Ein betrieblicher Grund ohne zuverlässige Benennung einer konkreteren Ursache.',
-    keywords: ['betriebsbedingt', 'dichte zugfolge'],
+    // `Abweichungen/Unregelmäßigkeiten im Betriebsablauf` is the same unspecified euphemism.
+    keywords: ['betriebsbedingt', 'dichte zugfolge', 'betriebsablauf'],
   },
   {
     // Unspecified acute operational disruption (`Betriebsstörung`): KVV reports a disruption
@@ -267,6 +268,31 @@ export function classifyCauseWithEvidence(text: string): CauseClassification {
     }
   }
   return { cause: 'unknown', causeKeyword: null };
+}
+
+/**
+ * Normalized causal connectors ("because of …", "due to …", "… -related"). Their presence means
+ * the article *gives* a reason; their absence means KVV stated none. Broad on purpose: a false
+ * positive only keeps an `unknown` notification loud, while a false negative would silence a
+ * real keyword gap. `grund` covers `aufgrund`/`Grund`; `bedingt` covers every `…bedingt` form.
+ */
+const CAUSE_INDICATOR_KEYWORDS: readonly string[] = [
+  'wegen',
+  'grund',
+  'gruende',
+  'infolge',
+  'ursache',
+  'bedingt',
+];
+
+/**
+ * Whether the article text states *some* reason, recognized or not. Lets callers separate an
+ * `unknown` that a new keyword could fix (a reason we failed to recognize) from one no keyword
+ * can fix (KVV announced cancellations without giving any reason).
+ */
+export function statesCause(text: string): boolean {
+  const normalized = normalizeGermanText(text);
+  return CAUSE_INDICATOR_KEYWORDS.some((keyword) => normalized.includes(keyword));
 }
 
 /**

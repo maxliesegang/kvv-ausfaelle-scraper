@@ -1326,8 +1326,8 @@
     "toTime": "12:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273185",
     "capturedAt": "2026-07-27T07:10:14.321Z",
-    "cause": "unknown",
-    "causeKeyword": null
+    "cause": "operational",
+    "causeKeyword": "betriebsablauf"
   },
   {
     "line": "S7",
@@ -1340,8 +1340,8 @@
     "toTime": "13:28",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_273185",
     "capturedAt": "2026-07-27T07:10:14.321Z",
-    "cause": "unknown",
-    "causeKeyword": null
+    "cause": "operational",
+    "causeKeyword": "betriebsablauf"
   },
   {
     "line": "S7",
