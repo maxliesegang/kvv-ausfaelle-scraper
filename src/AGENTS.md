@@ -41,6 +41,11 @@ Guidance in this file applies to `src/**` unless a deeper `AGENTS.md` overrides 
     unspecified `Betriebsstörung`.
   - Extension rule: add normalized keywords or a deliberately positioned category. A rising
     share of `unknown` indicates missing classification rules.
+  - The `unknown` CI gate in `index.ts` fails only when the article *states* a reason
+    (`statesCause`: `wegen`, `aufgrund`, `infolge`, `…bedingt`, …) that no category matched.
+    KVV notices that announce cancellations with no reason at all are still stored as
+    `unknown` but only logged — no keyword can classify them, so failing would just repeat
+    every run until the notice leaves the feed.
 - `normalizeGermanText` (`src/utils/normalization.ts`) is the canonical normalizer for German-text keyword matching, used by both `relevance.ts` and `cause.ts`. It lowercases and expands umlauts (ä→ae, ö→oe, ü→ue, ß→ss) **before** NFD diacritic stripping, then strips non-alphanumerics — so keywords spelled `ae/oe/ue` match source spellings with umlauts. Always route German keyword matching through it.
 - Reconciliation (`reconcileBucket` in `src/storage.ts`) is forward-looking only. Prune a stored
   trip whose article no longer lists it **only while its departure is still ahead** — KVV's pages

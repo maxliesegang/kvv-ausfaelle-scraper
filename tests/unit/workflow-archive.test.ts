@@ -91,6 +91,33 @@ describe('Workflow article archive eligibility', () => {
     await assert.rejects(access(join(tempDir, ...ARCHIVE_PATH)));
   });
 
+  it('flags an unknown cause as unstated when the article gives no reason', async () => {
+    const html = [
+      '<html><main>',
+      '<p>Linie S8:</p>',
+      '<p>. Auf der Linie S8 kommt es zu einzelnen Fahrtausfällen.</p>',
+      '<p>85653 KA Tullastraße (14:53 Uhr) - Gaggenau Bf (15:52 Uhr)</p>',
+      '<p>Stand 23.07.2026 10:00:00</p>',
+      '</main></html>',
+    ].join('\n');
+    const item: Item = {
+      title: 'Linie S8: Auf der Linie S8 kommt es zu einzelnen Fahrtausfällen.',
+      link: DETAIL_URL,
+      pubDate: 'Thu, 23 Jul 2026 10:00:00 GMT',
+    };
+
+    const outcome = await processRssItem(item, {
+      dataDir: tempDir,
+      fetchDetail: async () => html,
+      nowMs: NOW_MS,
+    });
+
+    assert.strictEqual(outcome.status, 'parsed');
+    assert.ok(outcome.status === 'parsed' && outcome.trips.length > 0);
+    assert.ok(outcome.status === 'parsed' && outcome.trips.every((t) => t.cause === 'unknown'));
+    assert.strictEqual(outcome.status === 'parsed' && outcome.causeUnstated, true);
+  });
+
   it('fails on an unparsed known train number even when construction caused the cancellation', async () => {
     const html = [
       '<html><main>',

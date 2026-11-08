@@ -9,6 +9,7 @@ import {
   classifyCause,
   classifyCauseWithEvidence,
   PUBLIC_CAUSE_DEFINITIONS,
+  statesCause,
 } from '../../src/cause.js';
 
 describe('cause taxonomy contract', () => {
@@ -43,6 +44,15 @@ describe('classifyCause - categories', () => {
       classifyCause('Dichte Zugfolge. Auf der Linie S4 kommt es zu Fahrtausfällen.'),
       'operational',
     );
+  });
+
+  it('classifies a Betriebsablauf euphemism as operational', () => {
+    // Nettro_CMS_273185 wording.
+    assert.strictEqual(
+      classifyCause('Aufgrund von Abweichungen im Betriebsablauf entfallen einzelne Fahrten'),
+      'operational',
+    );
+    assert.strictEqual(classifyCause('Unregelmäßigkeiten im Betriebsablauf'), 'operational');
   });
 
   it('classifies a generic Betriebsstörung as an (unspecified) disruption', () => {
@@ -217,5 +227,28 @@ describe('classifyCauseWithEvidence - matched keyword', () => {
       cause: 'unknown',
       causeKeyword: null,
     });
+  });
+});
+
+describe('statesCause', () => {
+  it('detects a stated reason even when no category recognizes it', () => {
+    assert.strictEqual(statesCause('Wegen eines Polizeieinsatzes entfallen Fahrten'), true);
+    assert.strictEqual(statesCause('Aufgrund einer Reparatur entfällt die Fahrt'), true);
+    assert.strictEqual(statesCause('aus betrieblichen Gründen'), true);
+    assert.strictEqual(statesCause('Infolge eines Notarzteinsatzes'), true);
+  });
+
+  it('reports no stated reason for a bare cancellation announcement', () => {
+    // Nettro_CMS_280118 wording: cancellations announced without any reason.
+    const text = [
+      'Linie S8:',
+      '. Auf der Linie S8 kommt es zu einzelnen Fahrtausfällen.',
+      'Betroffen ist der Bereich zwischen Karlsruhe Tullastraße/Alter Schlachthof und Gaggenau Bahnhof.',
+      '85653 KA Tullastraße (14:53 Uhr) - Gaggenau Bf (15:52 Uhr)',
+      'Bitte beachten sie die Regional Züge der DB halten außerplanmäßig zwischen Rastatt Bf und Gaggenau Bf an allen Zwischenhalten .',
+      'Nähere Infos zu den betroffenen Fahrten gibt es im Abfahrtsmonitor auf: www.kvv.de/abfahrtsmonitor oder in der KVV App.',
+    ].join('\n');
+    assert.strictEqual(classifyCause(text), 'unknown');
+    assert.strictEqual(statesCause(text), false);
   });
 });

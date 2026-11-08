@@ -31,12 +31,25 @@ function reportParseErrors(result: CollectTripsResult): boolean {
 
 /**
  * Logs any cancellations whose cause could not be classified. An unknown cause never
- * invalidates the data — it's saved either way — but it signals the keyword lists in
- * `classifyCause` (`src/cause.ts`) need extending. Surfacing it lets CI fail as a
- * notification while the good data is still published. Returns true if any were present.
+ * invalidates the data — it's saved either way — but when the article states a reason we did
+ * not recognize, it signals the keyword lists in `classifyCause` (`src/cause.ts`) need
+ * extending. Surfacing it lets CI fail as a notification while the good data is still
+ * published. Articles that give no reason at all are logged but not fatal: no keyword can
+ * classify them. Returns true if any actionable unknown causes were present.
  */
 function reportUnknownCauses(result: CollectTripsResult): boolean {
-  const unknown = result.cancellations.filter((c) => c.cause === 'unknown');
+  const allUnknown = result.cancellations.filter((c) => c.cause === 'unknown');
+  const unstated = allUnknown.filter((c) => result.causeUnstatedSourceUrls.has(c.sourceUrl));
+  const unknown = allUnknown.filter((c) => !result.causeUnstatedSourceUrls.has(c.sourceUrl));
+
+  if (unstated.length > 0) {
+    const unstatedSources = [...new Set(unstated.map((c) => c.sourceUrl))];
+    console.log(
+      `\nNo cause stated: ${unstated.length} cancellation(s) across ${unstatedSources.length} article(s) give no reason; stored as 'unknown'.`,
+    );
+    unstatedSources.forEach((url) => console.log(`  ${url}`));
+  }
+
   if (unknown.length === 0) {
     return false;
   }
