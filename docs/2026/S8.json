@@ -4350,7 +4350,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280118",
     "capturedAt": "2026-11-08T14:42:51.741Z",
     "cause": "unknown",
-    "causeKeyword": null
+    "causeKeyword": null,
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-09",
+      "segmentStops": 24,
+      "segmentCancelledStops": 24,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 24,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261108-8a66ccf6-7572-3117-ad4f-5e3d0239779c"
+    }
   },
   {
     "line": "S8",
@@ -4364,6 +4380,21 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280118",
     "capturedAt": "2026-11-08T14:42:51.741Z",
     "cause": "unknown",
-    "causeKeyword": null
+    "causeKeyword": null,
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-09",
+      "segmentStops": 8,
+      "segmentCancelledStops": 8,
+      "segmentTrackedStops": 0,
+      "journeyStops": 24,
+      "journeyCancelledStops": 8,
+      "journeyTrackedStops": 6,
+      "trackedOutsideSegment": 6,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261108-6b5e55cb-648e-31fb-9e74-7de342886992"
+    }
   }
 ]
