@@ -1,0 +1,22 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004557_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S31, SEV - Ubstadt Ort - Odenheim: S31 - Nächtliche Teilausfälle ab 19 Uhr (22.11.2026 bis 23.11.2026)
+Datum:  2026-11-09T11:49:00.000Z
+========================================================================
+
+Verkehrsmeldungen
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 22.11.2026 bis 23.11.2026
+Linien: S31, SEV
+Ubstadt Ort - Odenheim: S31 - Nächtliche Teilausfälle ab 19 Uhr
+(AVG)
+Ubstadt Ort - Odenheim: S31 - Nächtliche Teilausfälle ab 19 Uhr
+Linie(n): S31
+Zeitraum:  Sonntag 22.11./ Montag 23.11.2026 (ca. 19:00 Uhr - 04:30 Uhr)
+Entfall Stadtbahn: Ubstadt Ort  <->  Odenheim
+Ersatzverkehr:  Ubstadt Ort Bf  <->  Odenheim
+Grund: AVG -  Gleisstopf- und Richtarbeiten im Abschnitt Ubstadt-Odenheim
+Fahrplan Ersatzverkehr
+Zurück zur Übersicht
