@@ -5,9 +5,9 @@
     "stand": "2025-12-17T01:00:00.000Z",
     "trainNumber": "84940",
     "fromStop": "Pforzheim Bahnhof",
-    "fromTime": "4:46",
+    "fromTime": "04:46",
     "toStop": "Wörth Badepark",
-    "toTime": "6:13",
+    "toTime": "06:13",
     "cause": "operational"
   },
   {
@@ -16,9 +16,9 @@
     "stand": "2025-12-17T01:00:00.000Z",
     "trainNumber": "84965",
     "fromStop": "Wörth Badepark",
-    "fromTime": "6:23",
+    "fromTime": "06:23",
     "toStop": "Pforzheim Bahnhof",
-    "toTime": "7:50",
+    "toTime": "07:50",
     "cause": "operational"
   }
 ]

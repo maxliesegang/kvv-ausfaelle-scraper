@@ -9,7 +9,9 @@
     "toStop": "Karlsruhe Weinweg 84823 Karlsruhe Lameyplatz (13:29 Uhr) - Söllingen Bahnhof (14:09 Uhr)",
     "toTime": "09:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T09:46:23.274Z"
+    "capturedAt": "2025-11-12T09:46:23.274Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -21,7 +23,9 @@
     "toStop": "Söllingen",
     "toTime": "14:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256858",
-    "capturedAt": "2025-11-11T17:33:38.985Z"
+    "capturedAt": "2025-11-11T17:33:38.985Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -33,7 +37,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "14:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T11:51:47.404Z"
+    "capturedAt": "2025-11-12T11:51:47.404Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -45,7 +51,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "15:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256858",
-    "capturedAt": "2025-11-11T17:33:38.985Z"
+    "capturedAt": "2025-11-11T17:33:38.985Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -57,7 +65,9 @@
     "toStop": "Söllingen",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256858",
-    "capturedAt": "2025-11-11T17:33:38.985Z"
+    "capturedAt": "2025-11-11T17:33:38.985Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -69,7 +79,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T11:51:47.404Z"
+    "capturedAt": "2025-11-12T11:51:47.404Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -81,7 +93,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "17:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256858",
-    "capturedAt": "2025-11-11T17:33:38.985Z"
+    "capturedAt": "2025-11-11T17:33:38.985Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -93,7 +107,9 @@
     "toStop": "Söllingen",
     "toTime": "19:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256858",
-    "capturedAt": "2025-11-11T17:33:38.985Z"
+    "capturedAt": "2025-11-11T17:33:38.985Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -105,7 +121,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "20:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256858",
-    "capturedAt": "2025-11-11T17:33:38.985Z"
+    "capturedAt": "2025-11-11T17:33:38.985Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -117,7 +135,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "04:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -129,7 +149,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "05:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -141,7 +163,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "06:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -153,7 +177,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "07:05",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -165,7 +191,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "07:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -177,7 +205,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "08:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -189,7 +219,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "08:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -201,7 +233,9 @@
     "toStop": "Karlsruhe Weinweg",
     "toTime": "09:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256933",
-    "capturedAt": "2025-11-12T07:18:13.654Z"
+    "capturedAt": "2025-11-12T07:18:13.654Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -213,7 +247,9 @@
     "toStop": "Söllingen",
     "toTime": "14:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257091",
-    "capturedAt": "2025-11-13T09:57:18.035Z"
+    "capturedAt": "2025-11-13T09:57:18.035Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -225,7 +261,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "15:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257091",
-    "capturedAt": "2025-11-13T09:57:18.035Z"
+    "capturedAt": "2025-11-13T09:57:18.035Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -237,7 +275,9 @@
     "toStop": "Söllingen",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257091",
-    "capturedAt": "2025-11-13T09:57:18.035Z"
+    "capturedAt": "2025-11-13T09:57:18.035Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -249,7 +289,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "17:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257091",
-    "capturedAt": "2025-11-13T09:57:18.035Z"
+    "capturedAt": "2025-11-13T09:57:18.035Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -261,7 +303,9 @@
     "toStop": "Söllingen",
     "toTime": "19:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257091",
-    "capturedAt": "2025-11-13T09:57:18.035Z"
+    "capturedAt": "2025-11-13T09:57:18.035Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -273,7 +317,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "20:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257091",
-    "capturedAt": "2025-11-13T09:57:18.035Z"
+    "capturedAt": "2025-11-13T09:57:18.035Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -285,7 +331,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "14:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -297,7 +345,9 @@
     "toStop": "Pforzheim Bf",
     "toTime": "16:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -309,7 +359,9 @@
     "toStop": "Sollingen Bf",
     "toTime": "15:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -321,7 +373,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -333,7 +387,9 @@
     "toStop": "Söllingen Bf",
     "toTime": "18:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -345,7 +401,9 @@
     "toStop": "KA Lameyplatz",
     "toTime": "18:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -357,7 +415,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "13:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
-    "capturedAt": "2025-11-17T12:47:20.850Z"
+    "capturedAt": "2025-11-17T12:47:20.850Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -369,7 +429,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "14:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
-    "capturedAt": "2025-11-17T12:47:20.850Z"
+    "capturedAt": "2025-11-17T12:47:20.850Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -381,7 +443,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "16:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
-    "capturedAt": "2025-11-17T12:47:20.850Z"
+    "capturedAt": "2025-11-17T12:47:20.850Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -393,7 +457,9 @@
     "toStop": "KA-Rheinbergstr.",
     "toTime": "17:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
-    "capturedAt": "2025-11-17T12:47:20.850Z"
+    "capturedAt": "2025-11-17T12:47:20.850Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -405,7 +471,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "18:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
-    "capturedAt": "2025-11-17T12:47:20.850Z"
+    "capturedAt": "2025-11-17T12:47:20.850Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -417,7 +485,9 @@
     "toStop": "KA-Rheinbergstr.",
     "toTime": "19:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257484",
-    "capturedAt": "2025-11-17T12:47:20.850Z"
+    "capturedAt": "2025-11-17T12:47:20.850Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -429,7 +499,9 @@
     "toStop": "Söllingen",
     "toTime": "01:26",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257838",
-    "capturedAt": "2025-11-20T18:33:08.403Z"
+    "capturedAt": "2025-11-20T18:33:08.403Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -441,7 +513,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "15:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -453,7 +527,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -465,7 +541,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "18:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -477,7 +555,9 @@
     "toStop": "Söllingen Bahnhfo",
     "toTime": "18:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -486,10 +566,12 @@
     "trainNumber": "84770",
     "fromStop": "Söllingen Bahnhof",
     "fromTime": "18:18",
-    "toStop": "Knielingen  Rheinbergstraße",
+    "toStop": "Knielingen Rheinbergstraße",
     "toTime": "19:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -501,7 +583,9 @@
     "toStop": "Knielingen Rheinbergstraße",
     "toTime": "19:34",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -513,7 +597,9 @@
     "toStop": "Knielingen Rheinbergstraße",
     "toTime": "20:14",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -525,7 +611,9 @@
     "toStop": "Karlsruhe Tullastraße",
     "toTime": "20:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -537,7 +625,9 @@
     "toStop": "Pforzheim Hauptbahnhof",
     "toTime": "22:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -549,7 +639,9 @@
     "toStop": "Knielingen Rheinbergstraße",
     "toTime": "00:14",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257885",
-    "capturedAt": "2025-11-22T12:39:15.343Z"
+    "capturedAt": "2025-11-22T12:39:15.343Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -561,7 +653,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "00:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257955",
-    "capturedAt": "2025-11-23T18:30:03.987Z"
+    "capturedAt": "2025-11-23T18:30:03.987Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -573,7 +667,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "22:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257955",
-    "capturedAt": "2025-11-23T18:30:03.987Z"
+    "capturedAt": "2025-11-23T18:30:03.987Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -585,7 +681,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "23:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257955",
-    "capturedAt": "2025-11-23T18:30:03.987Z"
+    "capturedAt": "2025-11-23T18:30:03.987Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -597,7 +695,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "07:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -609,7 +709,9 @@
     "toStop": "Pforzheim Hbf.",
     "toTime": "07:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -621,7 +723,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "08:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -633,7 +737,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "08:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -643,9 +749,11 @@
     "fromStop": "Pforzheim Hbf.",
     "fromTime": "08:06",
     "toStop": "Tullastraße/Alter Schlachthof",
-    "toTime": "8:50",
+    "toTime": "08:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -657,7 +765,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "09:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -669,7 +779,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "10:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -681,7 +793,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "11:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -693,7 +807,9 @@
     "toStop": "Tullastraße/Alter Schlachthof",
     "toTime": "10:41",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -705,7 +821,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "11:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -717,7 +835,9 @@
     "toStop": "Rheinbergstraße Karlsruhe",
     "toTime": "12:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -729,7 +849,9 @@
     "toStop": "Söllingen",
     "toTime": "12:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -741,7 +863,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "13:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258148",
-    "capturedAt": "2025-11-25T06:35:45.267Z"
+    "capturedAt": "2025-11-25T06:35:45.267Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -753,7 +877,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "05:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -765,7 +891,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "07:05",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -777,7 +905,9 @@
     "toStop": "KA Rheinbergstraße",
     "toTime": "06:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -789,7 +919,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "07:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -801,7 +933,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "08:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -813,7 +947,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "05:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -825,7 +961,9 @@
     "toStop": "KA Tullastraße",
     "toTime": "09:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -837,7 +975,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "10:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -849,7 +989,9 @@
     "toStop": "KA Tullastraße",
     "toTime": "10:41",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258377",
-    "capturedAt": "2025-11-28T06:35:18.760Z"
+    "capturedAt": "2025-11-28T06:35:18.760Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -861,7 +1003,9 @@
     "toStop": "Söllingen",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
-    "capturedAt": "2025-11-29T18:30:40.270Z"
+    "capturedAt": "2025-11-29T18:30:40.270Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -873,7 +1017,9 @@
     "toStop": "Ka. Lameyplatz",
     "toTime": "17:28",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
-    "capturedAt": "2025-11-29T18:30:40.270Z"
+    "capturedAt": "2025-11-29T18:30:40.270Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -885,7 +1031,9 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "19:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
-    "capturedAt": "2025-11-29T18:30:40.270Z"
+    "capturedAt": "2025-11-29T18:30:40.270Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -897,7 +1045,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "22:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
-    "capturedAt": "2025-11-29T18:30:40.270Z"
+    "capturedAt": "2025-11-29T18:30:40.270Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -909,7 +1059,9 @@
     "toStop": "Ka. Rheinbergstraße",
     "toTime": "23:00",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258502",
-    "capturedAt": "2025-11-29T18:30:40.270Z"
+    "capturedAt": "2025-11-29T18:30:40.270Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -921,7 +1073,9 @@
     "toStop": "Pforzheim",
     "toTime": "06:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258685",
-    "capturedAt": "2025-12-02T08:49:38.575Z"
+    "capturedAt": "2025-12-02T08:49:38.575Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -933,7 +1087,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "07:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258685",
-    "capturedAt": "2025-12-02T08:49:38.575Z"
+    "capturedAt": "2025-12-02T08:49:38.575Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -945,7 +1101,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "09:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258685",
-    "capturedAt": "2025-12-02T08:49:38.575Z"
+    "capturedAt": "2025-12-02T08:49:38.575Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -957,7 +1115,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "09:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258685",
-    "capturedAt": "2025-12-02T08:49:38.575Z"
+    "capturedAt": "2025-12-02T08:49:38.575Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -969,7 +1129,9 @@
     "toStop": "Pforzheim Bf.",
     "toTime": "21:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259246",
-    "capturedAt": "2025-12-08T16:22:33.721Z"
+    "capturedAt": "2025-12-08T16:22:33.721Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -981,7 +1143,9 @@
     "toStop": "Germersheim Bf.",
     "toTime": "00:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259246",
-    "capturedAt": "2025-12-08T16:22:33.721Z"
+    "capturedAt": "2025-12-08T16:22:33.721Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -993,7 +1157,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "04:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1005,7 +1171,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "05:21",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1017,7 +1185,9 @@
     "toStop": "Söllingen",
     "toTime": "06:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1029,7 +1199,9 @@
     "toStop": "Söllingen",
     "toTime": "06:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1041,7 +1213,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "07:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1053,7 +1227,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "08:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1065,7 +1241,9 @@
     "toStop": "Söllingen",
     "toTime": "08:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1077,7 +1255,9 @@
     "toStop": "Pforzheim Bahnhof",
     "toTime": "09:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1089,7 +1269,9 @@
     "toStop": "Karlsruhe Tullastraße",
     "toTime": "09:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1101,7 +1283,9 @@
     "toStop": "Tullastraße",
     "toTime": "10:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T04:25:48.393Z"
+    "capturedAt": "2025-12-09T04:25:48.393Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1113,7 +1297,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "14:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259256",
-    "capturedAt": "2025-12-09T16:46:43.376Z"
+    "capturedAt": "2025-12-09T16:46:43.376Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1125,7 +1311,9 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "16:20",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
-    "capturedAt": "2025-12-09T16:46:43.353Z"
+    "capturedAt": "2025-12-09T16:46:43.353Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1137,7 +1325,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
-    "capturedAt": "2025-12-09T16:46:43.353Z"
+    "capturedAt": "2025-12-09T16:46:43.353Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1149,7 +1339,9 @@
     "toStop": "Karlsruhe Hbf",
     "toTime": "17:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
-    "capturedAt": "2025-12-09T16:46:43.353Z"
+    "capturedAt": "2025-12-09T16:46:43.353Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1161,7 +1353,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "17:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
-    "capturedAt": "2025-12-09T16:46:43.353Z"
+    "capturedAt": "2025-12-09T16:46:43.353Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1173,7 +1367,9 @@
     "toStop": "Söllingen Bahnhof",
     "toTime": "19:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
-    "capturedAt": "2025-12-09T16:46:43.353Z"
+    "capturedAt": "2025-12-09T16:46:43.353Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1185,7 +1381,9 @@
     "toStop": "Karlsruhe Entenfang",
     "toTime": "19:55",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259380",
-    "capturedAt": "2025-12-09T16:46:43.353Z"
+    "capturedAt": "2025-12-09T16:46:43.353Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1197,7 +1395,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "04:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1209,7 +1409,9 @@
     "toStop": "Söllingen Bf (AVG)",
     "toTime": "06:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1221,7 +1423,9 @@
     "toStop": "Rheinbergstraße",
     "toTime": "06:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1233,7 +1437,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "07:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1245,7 +1451,9 @@
     "toStop": "Karlsruhe Tullastraße",
     "toTime": "07:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1257,7 +1465,9 @@
     "toStop": "Söllingen Bf (AVG)",
     "toTime": "08:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1269,7 +1479,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "08:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
-    "capturedAt": "2025-12-10T08:23:47.974Z"
+    "capturedAt": "2025-12-10T08:23:47.974Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1281,7 +1493,9 @@
     "toStop": "Karlsruhe Tullastraße",
     "toTime": "09:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259450",
-    "capturedAt": "2025-12-10T04:30:10.971Z"
+    "capturedAt": "2025-12-10T04:30:10.971Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1293,7 +1507,9 @@
     "toStop": "Söllingen Bf (AVG)",
     "toTime": "10:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
-    "capturedAt": "2025-12-10T08:23:47.974Z"
+    "capturedAt": "2025-12-10T08:23:47.974Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1305,7 +1521,9 @@
     "toStop": "KarlsruheTullastraße",
     "toTime": "10:41",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259459",
-    "capturedAt": "2025-12-10T08:23:47.974Z"
+    "capturedAt": "2025-12-10T08:23:47.974Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1317,7 +1535,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "11:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1329,7 +1549,9 @@
     "toStop": "Tullastraße",
     "toTime": "12:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1341,7 +1563,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "13:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1353,7 +1577,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "14:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1365,7 +1591,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "16:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1377,7 +1605,9 @@
     "toStop": "Knielingen Rheinbergstraße",
     "toTime": "17:04",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1389,7 +1619,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "18:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1401,7 +1633,9 @@
     "toStop": "Knielingen Rheinbergstraße",
     "toTime": "19:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T12:37:06.269Z"
+    "capturedAt": "2025-12-11T12:37:06.269Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1413,7 +1647,9 @@
     "toStop": "Wörth Badepark",
     "toTime": "20:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T16:24:38.336Z"
+    "capturedAt": "2025-12-11T16:24:38.336Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1425,7 +1661,9 @@
     "toStop": "Pforzheim Hbf",
     "toTime": "22:10",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259586",
-    "capturedAt": "2025-12-11T16:24:38.336Z"
+    "capturedAt": "2025-12-11T16:24:38.336Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1437,7 +1675,9 @@
     "toStop": "Wörth Badepark ( 11:53 Uhr) 84819 Wörth Badepark",
     "toTime": "12:05",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259663",
-    "capturedAt": "2025-12-12T12:35:46.259Z"
+    "capturedAt": "2025-12-12T12:35:46.259Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1449,7 +1689,9 @@
     "toStop": "KA Rheinbergstr.",
     "toTime": "00:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1461,7 +1703,9 @@
     "toStop": "KA Rheinbergstr.",
     "toTime": "18:14",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1473,7 +1717,9 @@
     "toStop": "Pforzheim",
     "toTime": "19:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1485,7 +1731,9 @@
     "toStop": "Berghausen",
     "toTime": "19:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1497,7 +1745,9 @@
     "toStop": "KA Rheinbergstr.",
     "toTime": "20:44",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S5",
@@ -1509,210 +1759,8 @@
     "toStop": "KA Tullastr.",
     "toTime": "20:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-14",
-    "stand": "2025-12-14T01:00:00.000Z",
-    "trainNumber": "84800",
-    "fromStop": "Tullastraße",
-    "fromTime": "04:49",
-    "toStop": "Wörth Badepark",
-    "toTime": "05:35",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259904",
-    "capturedAt": "2025-12-14T06:28:52.772Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-14",
-    "stand": "2025-12-14T01:00:00.000Z",
-    "trainNumber": "84795",
-    "fromStop": "Wörth Badepark",
-    "fromTime": "05:50",
-    "toStop": "Söllingen Bf.",
-    "toTime": "06:55",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259904",
-    "capturedAt": "2025-12-14T06:28:52.772Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-14",
-    "stand": "2025-12-14T01:00:00.000Z",
-    "trainNumber": "84942",
-    "fromStop": "Tullastraße",
-    "fromTime": "05:50",
-    "toStop": "Wörth Badepark",
-    "toTime": "06:35",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259904",
-    "capturedAt": "2025-12-14T06:28:52.772Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-14",
-    "stand": "2025-12-14T01:00:00.000Z",
-    "trainNumber": "84801",
-    "fromStop": "Wörth Badepark",
-    "fromTime": "07:06",
-    "toStop": "Tullastraße",
-    "toTime": "07:46",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259904",
-    "capturedAt": "2025-12-14T06:28:52.772Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-14",
-    "stand": "2025-12-14T01:00:00.000Z",
-    "trainNumber": "84816",
-    "fromStop": "Söllingen Bf.",
-    "fromTime": "07:09",
-    "toStop": "Wörth Badepark",
-    "toTime": "08:15",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259904",
-    "capturedAt": "2025-12-14T06:28:52.772Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-14",
-    "stand": "2025-12-14T01:00:00.000Z",
-    "trainNumber": "85057",
-    "fromStop": "Wörth Badepark",
-    "fromTime": "08:45",
-    "toStop": "Starckstraße",
-    "toTime": "09:07",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259904",
-    "capturedAt": "2025-12-14T06:28:52.772Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84782",
-    "fromStop": "Söllingen Bahnhof",
-    "fromTime": "00:02",
-    "toStop": "Knielingen  Rheinbergstraße",
-    "toTime": "00:44",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T20:19:34.513Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84705",
-    "fromStop": "Albtalbahnhof",
-    "fromTime": "05:02",
-    "toStop": "Söllingen Bf.",
-    "toTime": "05:35",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84806",
-    "fromStop": "Söllingen Bf.",
-    "fromTime": "05:58",
-    "toStop": "Wörth Badepark",
-    "toTime": "07:05",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84717",
-    "fromStop": "Albtalbahnhof",
-    "fromTime": "07:02",
-    "toStop": "Söllingen Bf.",
-    "toTime": "07:37",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84803",
-    "fromStop": "Wörth Badepark",
-    "fromTime": "07:15",
-    "toStop": "Söllingen Bf.",
-    "toTime": "08:17",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84818",
-    "fromStop": "Söllingen Bf.",
-    "fromTime": "07:48",
-    "toStop": "Wörth Badepark",
-    "toTime": "08:53",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84888",
-    "fromStop": "Söllingen Bf.",
-    "fromTime": "08:38",
-    "toStop": "Marktplatz",
-    "toTime": "09:06",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84811",
-    "fromStop": "Wörth Badepark",
-    "fromTime": "09:05",
-    "toStop": "Söllingen Bf.",
-    "toTime": "10:06",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T04:36:48.474Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84928",
-    "fromStop": "Karlsruhe Tullastraße",
-    "fromTime": "21:01",
-    "toStop": "Wörth Bahnhof",
-    "toTime": "21:33",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T20:19:34.513Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "74358",
-    "fromStop": "Wörth Bahnhof",
-    "fromTime": "21:35",
-    "toStop": "Wörth Badepark",
-    "toTime": "21:35",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T20:19:34.513Z"
-  },
-  {
-    "line": "S5",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T04:26:00.000Z",
-    "trainNumber": "84943",
-    "fromStop": "Wörth Badepark",
-    "fromTime": "22:55",
-    "toStop": "Söllingen Bahnhof",
-    "toTime": "23:56",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259969",
-    "capturedAt": "2025-12-15T20:19:34.513Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

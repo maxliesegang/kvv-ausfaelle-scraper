@@ -9,7 +9,9 @@
     "toStop": "Eppingen",
     "toTime": "17:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -21,7 +23,9 @@
     "toStop": "Mosbach (Baden)",
     "toTime": "19:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -33,7 +37,9 @@
     "toStop": "Mosbach-Neckarelz",
     "toTime": "19:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -45,7 +51,9 @@
     "toStop": "Mosbach (Baden)",
     "toTime": "19:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -57,7 +65,9 @@
     "toStop": "Heilbronn Hbf/Willy-Brand-Platz",
     "toTime": "20:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -69,7 +79,9 @@
     "toStop": "Mosbach (Baden)",
     "toTime": "21:16",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -81,7 +93,9 @@
     "toStop": "Mosbach-Neckarelz",
     "toTime": "21:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -93,7 +107,9 @@
     "toStop": "Mosbach (Baden)",
     "toTime": "21:38",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S41",
@@ -105,6 +121,8 @@
     "toStop": "Heilbronn Hbf/Willy-Brand-Platz",
     "toTime": "22:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

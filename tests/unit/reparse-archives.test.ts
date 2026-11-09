@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
+import { replayArticleRevisions } from '../../scripts/archive-history.js';
 import { listsUnresolvedTripRows, reconcileArchivedTrips } from '../../scripts/reparse-archives.js';
 import type { Cancellation } from '../../src/types.js';
 import type { TripVerification } from '../../src/verification/verify.js';
@@ -142,5 +143,37 @@ describe('trip-less archive detection', () => {
   it('accepts a notice without trip rows', () => {
     const body = article('<p>Nähere Infos gibt es im Abfahrtsmonitor.</p>');
     assert.ok(!listsUnresolvedTripRows(body, 'test://no-rows'));
+  });
+});
+
+describe('archive revision replay', () => {
+  // The fixture trip departs 2026-10-10 03:55 Europe/Berlin (01:55 UTC).
+  const BEFORE_DEPARTURE_MS = Date.parse('2026-10-09T20:00:00Z');
+  const AFTER_DEPARTURE_MS = Date.parse('2026-10-10T08:00:00Z');
+  const otherTrip = trip({ trainNumber: '85403', fromTime: '04:55' });
+
+  it('keeps a trip a later version dropped only after it departed', () => {
+    const replayed = replayArticleRevisions([
+      { capturedAtMs: BEFORE_DEPARTURE_MS, trips: [trip(), otherTrip] },
+      { capturedAtMs: AFTER_DEPARTURE_MS, trips: [otherTrip] },
+    ]);
+    assert.deepEqual(replayed, [trip(), otherTrip]);
+  });
+
+  it('treats a drop before departure as a retraction', () => {
+    const replayed = replayArticleRevisions([
+      { capturedAtMs: BEFORE_DEPARTURE_MS - 3_600_000, trips: [trip(), otherTrip] },
+      { capturedAtMs: BEFORE_DEPARTURE_MS, trips: [otherTrip] },
+    ]);
+    assert.deepEqual(replayed, [otherTrip]);
+  });
+
+  it('lets a later listing of the same trip replace its fields', () => {
+    const corrected = trip({ toStop: 'Heilbronn Hbf', stand: '2026-10-09T21:00:00.000Z' });
+    const replayed = replayArticleRevisions([
+      { capturedAtMs: AFTER_DEPARTURE_MS, trips: [corrected] },
+      { capturedAtMs: BEFORE_DEPARTURE_MS, trips: [trip()] },
+    ]);
+    assert.deepEqual(replayed, [corrected]);
   });
 });

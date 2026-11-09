@@ -9,7 +9,9 @@
     "toStop": "Hochstetten",
     "toTime": "13:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257012",
-    "capturedAt": "2025-11-12T13:53:51.951Z"
+    "capturedAt": "2025-11-12T13:53:51.951Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -21,7 +23,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "15:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257012",
-    "capturedAt": "2025-11-12T13:53:51.951Z"
+    "capturedAt": "2025-11-12T13:53:51.951Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -33,7 +37,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "10:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T09:57:18.042Z"
+    "capturedAt": "2025-11-13T09:57:18.042Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -45,7 +51,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "12:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T09:57:18.042Z"
+    "capturedAt": "2025-11-13T09:57:18.042Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -57,7 +65,9 @@
     "toStop": "Bad-Herrenalb",
     "toTime": "12:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T09:57:18.042Z"
+    "capturedAt": "2025-11-13T09:57:18.042Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -69,7 +79,9 @@
     "toStop": "Hochstetten",
     "toTime": "14:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T09:57:18.042Z"
+    "capturedAt": "2025-11-13T09:57:18.042Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -81,7 +93,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "15:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -93,7 +107,9 @@
     "toStop": "Bad-Herrenalb",
     "toTime": "16:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -105,7 +121,9 @@
     "toStop": "Hochstetten",
     "toTime": "16:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -117,7 +135,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "17:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -129,7 +149,9 @@
     "toStop": "Hochstetten",
     "toTime": "18:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -141,7 +163,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "18:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -153,7 +177,9 @@
     "toStop": "Hochstetten",
     "toTime": "18:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -165,19 +191,23 @@
     "toStop": "Hochstetten",
     "toTime": "19:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T09:57:18.042Z"
+    "capturedAt": "2025-11-13T09:57:18.042Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
     "date": "2025-11-13",
     "stand": "2025-11-13T13:24:00.000Z",
     "trainNumber": "10066",
-    "fromStop": "Hochstetten &nbsp;18:32 Uhr - Ettlingen Albgaubad 19:42 Uhr 10068 Hochstetten",
-    "fromTime": "18:52",
+    "fromStop": "Hochstetten",
+    "fromTime": "18:32",
     "toStop": "Ettlingen Albgaubad",
-    "toTime": "20:02",
+    "toTime": "19:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T18:32:01.171Z"
+    "capturedAt": "2025-11-13T18:32:01.171Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -189,7 +219,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "20:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -201,31 +233,65 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "19:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T12:48:55.542Z"
+    "capturedAt": "2025-11-13T12:48:55.542Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
     "date": "2025-11-13",
     "stand": "2025-11-13T13:24:00.000Z",
     "trainNumber": "10077",
-    "fromStop": "Ettlingen Albgaubad 19:53 Uhr - Hochstetten &nbsp;21:05 Uhr 20066 Neureut Kirchfeld",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "19:53",
+    "toStop": "Hochstetten",
+    "toTime": "21:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T18:32:01.171Z",
+    "cause": "unknown",
+    "causeKeyword": null
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "20066",
+    "fromStop": "Neureut Kirchfeld",
     "fromTime": "20:05",
     "toStop": "Ittersbach Rathaus",
     "toTime": "21:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T18:32:01.171Z"
+    "capturedAt": "2025-11-13T18:32:01.171Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
     "date": "2025-11-13",
     "stand": "2025-11-13T13:24:00.000Z",
     "trainNumber": "10083",
-    "fromStop": "Ettlingen Albgaubad 22:04 Uhr - Neureut Kirchfeld 22:51 Uhr 20069 Ittersbach Rathaus",
+    "fromStop": "Ettlingen Albgaubad",
+    "fromTime": "22:04",
+    "toStop": "Neureut Kirchfeld",
+    "toTime": "22:51",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
+    "capturedAt": "2025-11-13T18:32:01.171Z",
+    "cause": "unknown",
+    "causeKeyword": null
+  },
+  {
+    "line": "S1",
+    "date": "2025-11-13",
+    "stand": "2025-11-13T13:24:00.000Z",
+    "trainNumber": "20069",
+    "fromStop": "Ittersbach Rathaus",
     "fromTime": "22:21",
     "toStop": "Hochstetten",
     "toTime": "23:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257073",
-    "capturedAt": "2025-11-13T18:32:01.171Z"
+    "capturedAt": "2025-11-13T18:32:01.171Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -237,7 +303,9 @@
     "toStop": "Neureut",
     "toTime": "14:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -249,7 +317,9 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "15:49",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -261,7 +331,9 @@
     "toStop": "Hochstetten",
     "toTime": "16:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -273,7 +345,9 @@
     "toStop": "Bad Herrenalb Bf.",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -285,7 +359,9 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "18:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -297,7 +373,9 @@
     "toStop": "Neureut",
     "toTime": "18:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -309,7 +387,9 @@
     "toStop": "Bad Herrenalb Bf.",
     "toTime": "19:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -321,7 +401,9 @@
     "toStop": "Neureut",
     "toTime": "19:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -333,7 +415,9 @@
     "toStop": "Ittersbach Rathaus",
     "toTime": "21:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -345,7 +429,9 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "21:45",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257700",
-    "capturedAt": "2025-11-19T12:47:52.846Z"
+    "capturedAt": "2025-11-19T12:47:52.846Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -357,7 +443,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "14:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
-    "capturedAt": "2025-11-20T12:45:55.486Z"
+    "capturedAt": "2025-11-20T12:45:55.486Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -369,7 +457,9 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "15:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
-    "capturedAt": "2025-11-20T12:45:55.486Z"
+    "capturedAt": "2025-11-20T12:45:55.486Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -381,7 +471,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
-    "capturedAt": "2025-11-20T12:45:55.486Z"
+    "capturedAt": "2025-11-20T12:45:55.486Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -393,7 +485,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "18:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
-    "capturedAt": "2025-11-20T12:45:55.486Z"
+    "capturedAt": "2025-11-20T12:45:55.486Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -405,7 +499,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "19:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257789",
-    "capturedAt": "2025-11-20T12:45:55.486Z"
+    "capturedAt": "2025-11-20T12:45:55.486Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -417,7 +513,9 @@
     "toStop": "Ettlingen Freibad",
     "toTime": "01:12",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258629",
-    "capturedAt": "2025-12-01T19:27:20.547Z"
+    "capturedAt": "2025-12-01T19:27:20.547Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -429,7 +527,9 @@
     "toStop": "Hochstetten",
     "toTime": "20:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258629",
-    "capturedAt": "2025-12-01T19:27:20.547Z"
+    "capturedAt": "2025-12-01T19:27:20.547Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -441,7 +541,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "20:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258629",
-    "capturedAt": "2025-12-01T19:27:20.547Z"
+    "capturedAt": "2025-12-01T19:27:20.547Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -453,7 +555,9 @@
     "toStop": "Ettlingen Freibad",
     "toTime": "22:12",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258629",
-    "capturedAt": "2025-12-01T19:27:20.547Z"
+    "capturedAt": "2025-12-01T19:27:20.547Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -465,7 +569,9 @@
     "toStop": "Hochstetten",
     "toTime": "22:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258629",
-    "capturedAt": "2025-12-01T19:27:20.547Z"
+    "capturedAt": "2025-12-01T19:27:20.547Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -477,7 +583,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "23:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258629",
-    "capturedAt": "2025-12-01T19:27:20.547Z"
+    "capturedAt": "2025-12-01T19:27:20.547Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -489,7 +597,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "07:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -501,7 +611,9 @@
     "toStop": "Karlsruhe Europahalle",
     "toTime": "07:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -513,7 +625,9 @@
     "toStop": "Karlsruhe Rheinhafen",
     "toTime": "07:50",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -525,7 +639,9 @@
     "toStop": "Hochstetten",
     "toTime": "09:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -537,7 +653,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "08:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -549,7 +667,9 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "12:29",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -561,7 +681,9 @@
     "toStop": "Hochstetten",
     "toTime": "13:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -573,7 +695,9 @@
     "toStop": "Hochstetten",
     "toTime": "14:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -585,7 +709,9 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "15:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259197",
-    "capturedAt": "2025-12-08T07:31:09.123Z"
+    "capturedAt": "2025-12-08T07:31:09.123Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -597,7 +723,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "15:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259348",
-    "capturedAt": "2025-12-09T16:46:43.361Z"
+    "capturedAt": "2025-12-09T16:46:43.361Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -609,7 +737,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "14:51",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259618",
-    "capturedAt": "2025-12-11T16:24:38.319Z"
+    "capturedAt": "2025-12-11T16:24:38.319Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -621,7 +751,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259618",
-    "capturedAt": "2025-12-11T16:24:38.319Z"
+    "capturedAt": "2025-12-11T16:24:38.319Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -633,7 +765,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "18:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259618",
-    "capturedAt": "2025-12-11T16:24:38.319Z"
+    "capturedAt": "2025-12-11T16:24:38.319Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -645,7 +779,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "19:33",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259618",
-    "capturedAt": "2025-12-11T16:24:38.319Z"
+    "capturedAt": "2025-12-11T16:24:38.319Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -657,7 +793,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "01:09",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -669,7 +807,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "01:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -681,7 +821,9 @@
     "toStop": "Hochstetten",
     "toTime": "11:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -693,7 +835,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "13:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -705,7 +849,9 @@
     "toStop": "Neureut Kirchfeld",
     "toTime": "15:11",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -717,7 +863,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "16:12",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -729,7 +877,9 @@
     "toStop": "Hochstetten",
     "toTime": "17:47",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -741,7 +891,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "19:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -753,7 +905,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "20:12",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -765,7 +919,9 @@
     "toStop": "Ettlingen Albgaubad",
     "toTime": "21:02",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -777,7 +933,9 @@
     "toStop": "Hochstetten",
     "toTime": "22:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S1",
@@ -789,6 +947,8 @@
     "toStop": "Ettlingen Stadt",
     "toTime": "23:29",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259788",
-    "capturedAt": "2025-12-13T15:41:01.939Z"
+    "capturedAt": "2025-12-13T15:41:01.939Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

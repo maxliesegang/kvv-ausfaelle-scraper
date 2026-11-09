@@ -9,7 +9,9 @@
     "toStop": "Bad Herrenalb",
     "toTime": "16:53",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262903",
-    "capturedAt": "2026-02-08T12:39:57.084Z"
+    "capturedAt": "2026-02-08T12:39:57.084Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "UNKNOWN",
@@ -21,6 +23,8 @@
     "toStop": "Karlsruhe Hbf",
     "toTime": "17:36",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_262903",
-    "capturedAt": "2026-02-08T12:39:57.084Z"
+    "capturedAt": "2026-02-08T12:39:57.084Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

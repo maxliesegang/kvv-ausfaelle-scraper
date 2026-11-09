@@ -5,6 +5,7 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert';
+import { readFileSync } from 'node:fs';
 import {
   classifyCause,
   classifyCauseWithEvidence,
@@ -13,6 +14,22 @@ import {
 } from '../../src/cause.js';
 
 describe('cause taxonomy contract', () => {
+  it('documents every published category in the README, in classifier order', () => {
+    const readme = readFileSync(new URL('../../README.md', import.meta.url), 'utf8');
+    const documentedIds = PUBLIC_CAUSE_DEFINITIONS.map(({ id }) => id).map((id) =>
+      readme.indexOf(`\`${id}\``),
+    );
+    assert.ok(
+      documentedIds.every((index) => index >= 0),
+      'README misses a cause id',
+    );
+    assert.deepStrictEqual(
+      documentedIds,
+      [...documentedIds].sort((a, b) => a - b),
+      'README lists cause ids out of classifier order',
+    );
+  });
+
   it('publishes every category once, with unknown last', () => {
     const publicIds = PUBLIC_CAUSE_DEFINITIONS.map(({ id }) => id);
 
@@ -76,10 +93,66 @@ describe('classifyCause - categories', () => {
     assert.strictEqual(classifyCause('Feuerwehreinsatz im Bereich Forbach Bahnhof'), 'emergency');
   });
 
+  it('classifies a Personenunfall and other named interventions as emergency', () => {
+    assert.strictEqual(
+      classifyCause('Personenunfall Schwaigern in beiden Richtungen'),
+      'emergency',
+    );
+    assert.strictEqual(classifyCause('wegen eines Polizeieinsatzes'), 'emergency');
+    assert.strictEqual(classifyCause('nach einem Notarzteinsatz'), 'emergency');
+  });
+
+  it('classifies an outside obstruction of the route', () => {
+    for (const text of [
+      'Linie 2: Falschparker behoben',
+      'Verkehrsunfall im Bereich Daxlanden Hammweg',
+      'Menschen im Gleisbereich im Bereich Weinsberg',
+      'Tiere im Gleisbereich im Bereich Heilbronn Trappensee',
+      'Behördliche Anordnung Bf. Durlach in beiden Richtungen',
+      'Hohes Verkehrsaufkommen im Bereich Karlsruhe Innenstadt',
+    ]) {
+      assert.strictEqual(classifyCause(text), 'obstruction', text);
+    }
+  });
+
+  it('does not mistake construction work in the track for an obstruction', () => {
+    assert.strictEqual(classifyCause('Bauarbeiten im Gleisbereich'), 'construction');
+  });
+
+  it('prefers the outside obstruction over the fault it caused', () => {
+    assert.strictEqual(classifyCause('Fahrzeugstörung nach einem Verkehrsunfall'), 'obstruction');
+  });
+
+  it('classifies a planned event and prefers it over the closure it causes', () => {
+    assert.strictEqual(classifyCause('Umleitung wegen KSC-Spiel: Heimspiel des KSC'), 'event');
+    assert.strictEqual(classifyCause('Haltestellen wegen Straßenfest aufgehoben'), 'event');
+    assert.strictEqual(
+      classifyCause('Aufgrund einer Veranstaltung (Martinsumzug) ist die Straße gesperrt'),
+      'event',
+    );
+  });
+
   it('classifies a vehicle (rolling-stock) fault', () => {
     assert.strictEqual(classifyCause('Fahrzeugstörung auf der Strecke'), 'vehicle');
     assert.strictEqual(classifyCause('wegen eines Fahrzeugschadens'), 'vehicle');
     assert.strictEqual(classifyCause('aufgrund eines Fahrzeugdefekts'), 'vehicle');
+  });
+
+  it("classifies KVV's recurring Fahzeugstörung misspelling as vehicle", () => {
+    assert.strictEqual(classifyCause('Fahzeugstörung im Bereich Gaggenau'), 'vehicle');
+  });
+
+  it('classifies named Fahrleitung, Bahnübergang and radio faults as infrastructure', () => {
+    for (const text of [
+      'Fahrleitungsstörung Grötzingen Bahnhof in beiden Richtungen',
+      'wegen eines Fahrleitungsschadens',
+      'Gestörter Bahnübergang behoben',
+      'wegen eines gestörten Bahnübergangs',
+      'Gestörte Funkeinrichtung behoben',
+      'aufgrund einer Funkstörung',
+    ]) {
+      assert.strictEqual(classifyCause(text), 'infrastructure', text);
+    }
   });
 
   it('classifies vehicle keywords robustly across German declension', () => {

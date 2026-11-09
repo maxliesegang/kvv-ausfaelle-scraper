@@ -139,12 +139,13 @@ export const TRIP_LIST_DATE_ROW_PATTERN = /^(\d{1,2})\.(\d{1,2})\.(\d{4})?\.?$/;
 
 /**
  * A parenthesized date trailing a trip row — "84947 KA Starckstraße 01:12 Uhr - Söllingen
- * Bahnhof 01:55 Uhr    (27.09.2026)" — with which KVV dates a single after-midnight row in place
+ * Bahnhof 01:55 Uhr    (27.09.2026)", also with a two-digit year ("(28.09.26)",
+ * Nettro_CMS_277465) — with which KVV dates a single after-midnight row in place
  * of a separate date row. It dates that row only, and is stripped before format matching so no
  * trip format has to tolerate it. Anchored at the end so a date inside a stop name or prose
  * cannot match.
  */
-export const TRIP_ROW_DATE_SUFFIX_PATTERN = /\s*\(\s*(\d{1,2})\.(\d{1,2})\.(\d{4})?\s*\)\s*$/;
+export const TRIP_ROW_DATE_SUFFIX_PATTERN = /\s*\(\s*(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})?\s*\)\s*$/;
 
 /**
  * A parenthesized weekday and date in front of a clock time — "20074 22:42 Uhr Hochstetten -
@@ -237,3 +238,12 @@ export const DIVERSION_STATEMENT_PATTERN = /\bumgeleitet\b|\bumleitung\b|\bumfah
  */
 export const CANCELLATION_STATEMENT_PATTERN =
   /\bentf(?:ä|ae)ll(?:t|en)\b|\bausfall\b|\bausf(?:ä|ae)lle\b|\bf(?:ä|ae)llt\s+aus\b/i;
+
+/**
+ * An unshifted "8" typed where the opening parenthesis of a time belongs — on a German keyboard
+ * "(" is Shift+8: "85188 Bruchsal Bf. 8 14:32 Uhr) - Odenheim Bf. (14:55 Uhr)"
+ * (Nettro_CMS_277980). Only matches directly before a clock time that a ")" closes, so a stop
+ * name ending in a digit is never touched.
+ */
+export const TRIP_ROW_UNSHIFTED_OPENING_PARENTHESIS_PATTERN =
+  /\s8\s*(?=\d{1,2}[:.]\d{2}\s*(?:Uhr)?\s*\))/g;

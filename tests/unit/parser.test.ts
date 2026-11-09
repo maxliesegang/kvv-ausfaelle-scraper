@@ -16,7 +16,7 @@ import {
   parseGermanDateTime,
   stripHtml,
 } from '../../src/parser/text-extraction.js';
-import { extractTripDateAnchor } from '../../src/parser/trip-dates.js';
+import { extractTripDateAnchor, parseTripRowDate } from '../../src/parser/trip-dates.js';
 import {
   extractTripRows,
   extractTripSectionCandidateRows,
@@ -26,6 +26,8 @@ import {
   isValidTripRow,
   leadingTrainNumber,
   parseTripRow,
+  toClockTime,
+  toStopName,
 } from '../../src/parser/trip-parsing.js';
 import type { TripParsingMetadata } from '../../src/types.js';
 import { findMissedKnownTripsError } from '../../src/workflow.js';
@@ -298,6 +300,64 @@ describe('Parser - Detail Page Parsing', () => {
 
       const [trip] = parseDetailPage(html, 'test://labelled-line');
       assert.equal(trip?.line, 'S5');
+    });
+  });
+
+  describe('Field normalization', () => {
+    it('normalizes clock times to the published HH:MM form', () => {
+      assert.strictEqual(toClockTime('0:05'), '00:05');
+      assert.strictEqual(toClockTime('17.52'), '17:52');
+      assert.strictEqual(toClockTime('9.44'), '09:44');
+      assert.strictEqual(toClockTime('23:59'), '23:59');
+    });
+
+    it('pads an unpadded hour so the trip keeps one identity', () => {
+      const [trip] = parseTripRowFields(
+        '84863 Wörth Badepark (0:05 Uhr) - Karlsruhe Tullatr. (0:51 Uhr)',
+      );
+      assert.strictEqual(trip?.fromTime, '00:05');
+      assert.strictEqual(trip?.toTime, '00:51');
+    });
+
+    it('strips typo punctuation from stop names but keeps real parentheses', () => {
+      // Each input is a stop name the parser captured from a real archived article.
+      const cases: [string, string][] = [
+        ['Söllingen(', 'Söllingen'],
+        ['(Söllingen Bf.', 'Söllingen Bf.'],
+        ['KA Albtalbahnhof (26.07,', 'KA Albtalbahnhof'],
+        ['Bretten (Baden) (26.07,', 'Bretten (Baden)'],
+        ['Karlsruhe Tullastraße  (28.09.26)', 'Karlsruhe Tullastraße'],
+        ['Söllingen Bahnhof -', 'Söllingen Bahnhof'],
+        ['Pforzheim Hbf:', 'Pforzheim Hbf'],
+        ['Germersheim Bf,', 'Germersheim Bf'],
+        ['Knielingen  Rheinbergstraße', 'Knielingen Rheinbergstraße'],
+        ['Karlsruhe Rheinbergstrasse ab', 'Karlsruhe Rheinbergstrasse'],
+        ['Söllingen (b KA)', 'Söllingen (b KA)'],
+        ['Wörth (Rhein) Badepark', 'Wörth (Rhein) Badepark'],
+      ];
+      for (const [raw, expected] of cases) {
+        assert.strictEqual(toStopName(raw), expected, raw);
+      }
+    });
+
+    it('reads an unshifted "8" before a closed time as the opening parenthesis', () => {
+      // Nettro_CMS_277980: "(" is Shift+8 on a German keyboard.
+      const [trip] = parseTripRowFields(
+        '85188 Bruchsal Bf. 8 14:32 Uhr) - Odenheim Bf. (14:55 Uhr)',
+      );
+      assert.deepStrictEqual(trip, {
+        trainNumber: '85188',
+        fromStop: 'Bruchsal Bf.',
+        fromTime: '14:32',
+        toStop: 'Odenheim Bf.',
+        toTime: '14:55',
+      });
+    });
+
+    it('dates a row by a trailing date with a two-digit year and strips it', () => {
+      const row = '84863 00:05 Uhr Wörth Badepark - 00:49 Uhr Karlsruhe Tullastraße  (28.09.26)';
+      assert.strictEqual(parseTripRowDate(row, '2026-09-27'), '2026-09-28');
+      assert.strictEqual(parseTripRowFields(row)[0]?.toStop, 'Karlsruhe Tullastraße');
     });
   });
 

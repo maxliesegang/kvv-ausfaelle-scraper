@@ -49,6 +49,8 @@ interface CauseDefinitionInput {
  * cause first":
  *
  *   strike, weather, emergency — unambiguous external causes.
+ *   obstruction            — an outside party blocks the route (Falschparker, Verkehrsunfall,
+ *                            Personen im Gleis); above the technical family it often triggers.
  *   vehicle, infrastructure — a *named* technical fault, split by what broke.
  *   technical              — a fault KVV named only generically (`technischer Defekt`).
  *   personnel              — KVV *named* a staffing/sickness cause. Sits ABOVE `operational`
@@ -57,6 +59,8 @@ interface CauseDefinitionInput {
  *                            residual: often staffing, but never assume it (see project docs).
  *   disruption             — a bare `Betriebsstörung`; below the named technical causes so
  *                            "Betriebsstörung wegen Fahrzeugstörung" still resolves to vehicle.
+ *   event                  — a planned Veranstaltung/Umzug; above construction, whose closure
+ *                            terms (`gesperrt`) such notices also use.
  *   construction           — broad building/closure terms (`sperrung` etc.), matched last.
  */
 const CANCELLATION_CAUSE_DEFINITIONS = [
@@ -88,8 +92,35 @@ const CANCELLATION_CAUSE_DEFINITIONS = [
     // disruption or closure language that commonly accompanies it.
     id: 'emergency',
     label: 'Einsatz von Rettungskräften',
-    description: 'Ein gemeldeter Einsatz von Feuerwehr oder anderen Rettungskräften.',
-    keywords: ['feuerwehreinsatz'],
+    description:
+      'Ein gemeldeter Einsatz von Feuerwehr, Rettungsdienst oder Polizei, etwa nach einem Personenunfall.',
+    keywords: [
+      'feuerwehreinsatz',
+      'rettungseinsatz',
+      'notarzteinsatz',
+      'polizeieinsatz',
+      'personenunfall',
+    ],
+  },
+  {
+    // An outside obstruction of the right of way: something or someone that is not part of the
+    // railway blocks it. Above the technical family because the outside cause is the more
+    // informative one ("Fahrzeugstörung nach Verkehrsunfall" was caused by the accident).
+    // Phrases name *who* is in the track, so construction's "Arbeiten im Gleisbereich" never
+    // matches.
+    id: 'obstruction',
+    label: 'Behinderung durch Dritte',
+    description:
+      'Eine Behinderung von außen, etwa durch Falschparker, Verkehrsunfälle, Personen oder Tiere im Gleis oder eine behördliche Anordnung.',
+    keywords: [
+      'falschparker',
+      'verkehrsunfall',
+      'hohes verkehrsaufkommen',
+      'personen im gleis',
+      'menschen im gleis',
+      'tiere im gleis',
+      'behoerdliche anordnung',
+    ],
   },
   {
     // A named fault on the rolling stock (the train itself). Keywords are compound nouns on
@@ -100,14 +131,32 @@ const CANCELLATION_CAUSE_DEFINITIONS = [
     id: 'vehicle',
     label: 'Fahrzeugstörung',
     description: 'Eine benannte Störung oder ein Schaden am eingesetzten Fahrzeug.',
-    keywords: ['fahrzeugstoerung', 'fahrzeugschaden', 'fahrzeugdefekt', 'zugstoerung'],
+    // `fahzeugstoerung` is KVV's own recurring misspelling (Nettro_CMS_278620).
+    keywords: [
+      'fahrzeugstoerung',
+      'fahzeugstoerung',
+      'fahrzeugschaden',
+      'fahrzeugdefekt',
+      'zugstoerung',
+    ],
   },
   {
     // A named fault on the fixed infrastructure (track, signals, power, switches).
     id: 'infrastructure',
     label: 'Infrastrukturstörung',
-    description: 'Eine benannte Störung an Stellwerk, Signal, Oberleitung, Weiche oder Gleis.',
+    description:
+      'Eine benannte Störung an Stellwerk, Signal, Oberleitung, Weiche, Gleis, Bahnübergang oder Zugfunk.',
+    // KVV's ticker says `Fahrleitung` where DB says `Oberleitung`. "Gestörter Bahnübergang" and
+    // "Gestörte Funkeinrichtung" are adjective phrases, so their declined forms are listed.
     keywords: [
+      'fahrleitungsstoerung',
+      'fahrleitungsschaden',
+      'funkstoerung',
+      'gestoerte funkeinrichtung',
+      'gestoerten funkeinrichtung',
+      'gestoerter bahnuebergang',
+      'gestoerten bahnuebergang',
+      'gestoertem bahnuebergang',
       'stellwerkstoerung',
       'signalstoerung',
       'oberleitungsstoerung',
@@ -162,7 +211,26 @@ const CANCELLATION_CAUSE_DEFINITIONS = [
     id: 'disruption',
     label: 'Betriebsstörung',
     description: 'Eine gemeldete Betriebsstörung ohne näher benannte Ursache.',
+    // Not `behinderung`: it also occurs in accessibility wording ("Menschen mit Behinderung"),
+    // and this category outranks construction.
     keywords: ['betriebsstoerung'],
+  },
+  {
+    // A planned event (procession, festival, sports race) that closes the route. Above
+    // construction because such notices also say `gesperrt`, which is construction's catch-all.
+    id: 'event',
+    label: 'Veranstaltung',
+    description:
+      'Eine Veranstaltung wie ein Umzug, Fest oder Sportereignis, die die Strecke sperrt.',
+    keywords: [
+      'veranstaltung',
+      'umzug',
+      'stadtfest',
+      'strassenfest',
+      'weihnachtsmarkt',
+      'troedelmarkt',
+      'heimspiel',
+    ],
   },
   {
     id: 'construction',
@@ -185,6 +253,7 @@ const CANCELLATION_CAUSE_DEFINITIONS = [
       'baumfaellarbeiten',
       'instandhaltung',
       'instandhaltungsarbeiten',
+      'reparaturarbeiten',
       'kanalsanierung',
       'kanalsanierungsarbeiten',
       'sperrung',

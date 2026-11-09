@@ -32,6 +32,7 @@ import {
   TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
   TRIP_ROW_DATE_SUFFIX_PATTERN,
   TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN,
+  TRIP_ROW_UNSHIFTED_OPENING_PARENTHESIS_PATTERN,
   PARENTHESIZED_ROUTE_TIME_PATTERN,
   ROUTE_SEPARATOR_PATTERN,
   DIVERSION_STATEMENT_PATTERN,
@@ -270,6 +271,40 @@ interface ValidTripFields extends ParsedTripFields {
 }
 
 /**
+ * Normalizes a captured clock time to the published `HH:MM` contract. KVV writes a dot
+ * ("17.52 Uhr") and drops the leading zero ("0:05 Uhr"); both are the same time, and an unpadded
+ * hour would also give the same trip a second identity (`getCancellationKey` includes it).
+ */
+export function toClockTime(rawTime: string): string {
+  const [hours = '', minutes = ''] = rawTime.trim().split(/[:.]/);
+  return `${hours.padStart(2, '0')}:${minutes}`;
+}
+
+/**
+ * Removes the punctuation KVV's typos leave on a captured stop name, without touching the name
+ * itself. Each rule is a shape observed in the archive:
+ * - an unclosed "(" fragment at the end: a misplaced time or date opener
+ *   ("Söllingen(", "KA Albtalbahnhof (26.07,");
+ * - a "(" at the start with no ")" after it ("(Söllingen Bf.");
+ * - a parenthesized date at the end ("Karlsruhe Tullastraße  (28.09.26)");
+ * - a dangling separator ("Söllingen Bahnhof -", "Pforzheim Hbf:") and doubled whitespace.
+ * - a departure/arrival marker left behind its time ("Karlsruhe Rheinbergstrasse ab").
+ * Balanced parentheses are part of real names ("Bretten (Baden)", "Söllingen (b KA)") and stay.
+ */
+export function toStopName(rawStop: string): string {
+  return (
+    rawStop
+      .replace(/\s+/g, ' ')
+      // Leading "(" first: otherwise the next rule reads the whole name as an unclosed fragment.
+      .replace(/^\(\s*(?=[^)]*$)/, '')
+      .replace(/\s*\([^)]*$/, '')
+      .replace(TRIP_ROW_DATE_SUFFIX_PATTERN, '')
+      .replace(/^[-–,:\s]+|[-–,:\s]+$/g, '')
+      .replace(/\s+(?:ab|an)$/i, '')
+  );
+}
+
+/**
  * Matches a row against the known trip formats, returning the fields of the first
  * format whose regex matches and whose captured fields pass validation.
  */
@@ -278,19 +313,21 @@ function matchTripFormat(row: string): ValidTripFields | null {
   // extractDatedTripRows); neither is a trip field.
   const tripFieldsRow = row
     .replace(TRIP_ROW_DATE_SUFFIX_PATTERN, '')
-    .replace(TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN, '');
+    .replace(TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN, '')
+    .replace(TRIP_ROW_UNSHIFTED_OPENING_PARENTHESIS_PATTERN, ' (');
   for (const { pattern, rejectUhrOnlyStops, extract } of TRIP_FORMATS) {
     const match = tripFieldsRow.match(pattern);
     if (!match) continue;
 
-    // KVV sometimes writes clock times with a dot ("17.52 Uhr"). Keep the published
-    // Cancellation contract's HH:MM representation and normalize before trip dating and line
-    // resolution consume the extracted departure time.
+    // Normalize to the published HH:MM contract before trip dating and line resolution consume
+    // the departure time, and strip the punctuation KVV's typos leave on stop names.
     const extracted = extract(match);
     const fields = {
       ...extracted,
-      fromTime: extracted.fromTime?.replace('.', ':'),
-      toTime: extracted.toTime?.replace('.', ':'),
+      fromStop: extracted.fromStop && toStopName(extracted.fromStop),
+      fromTime: extracted.fromTime && toClockTime(extracted.fromTime),
+      toStop: extracted.toStop && toStopName(extracted.toStop),
+      toTime: extracted.toTime && toClockTime(extracted.toTime),
     };
     if (isValidTripFields(fields, rejectUhrOnlyStops)) {
       return fields;

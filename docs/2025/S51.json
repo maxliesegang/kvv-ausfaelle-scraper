@@ -9,7 +9,9 @@
     "toStop": "Germersheim Bahnhof 84897 10:50 Uhr Germersheim Bahnhof - 11:30 Uhr Karlsruhe Rheinbergstraße",
     "toTime": "10:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
-    "capturedAt": "2025-11-12T09:46:23.276Z"
+    "capturedAt": "2025-11-12T09:46:23.276Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -21,7 +23,9 @@
     "toStop": "Karlsruhe Rheinbergstraße",
     "toTime": "11:30",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
-    "capturedAt": "2025-11-12T11:51:47.376Z"
+    "capturedAt": "2025-11-12T11:51:47.376Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -33,7 +37,9 @@
     "toStop": "Germersheim Bahnhof",
     "toTime": "10:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
-    "capturedAt": "2025-11-12T07:18:13.582Z"
+    "capturedAt": "2025-11-12T07:18:13.582Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -45,7 +51,9 @@
     "toStop": "Karlsruhe Rheinbergstraße",
     "toTime": "11:30",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_256942",
-    "capturedAt": "2025-11-12T07:18:13.582Z"
+    "capturedAt": "2025-11-12T07:18:13.582Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -57,7 +65,9 @@
     "toStop": "Germersheim",
     "toTime": "08:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258676",
-    "capturedAt": "2025-12-02T08:49:38.638Z"
+    "capturedAt": "2025-12-02T08:49:38.638Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -69,7 +79,9 @@
     "toStop": "Germersheim",
     "toTime": "17:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259627",
-    "capturedAt": "2025-12-11T16:24:37.957Z"
+    "capturedAt": "2025-12-11T16:24:37.957Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -81,7 +93,9 @@
     "toStop": "Söllingen Bf.",
     "toTime": "19:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259627",
-    "capturedAt": "2025-12-11T16:24:37.957Z"
+    "capturedAt": "2025-12-11T16:24:37.957Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -93,7 +107,9 @@
     "toStop": "Germersheim",
     "toTime": "21:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259627",
-    "capturedAt": "2025-12-11T16:24:37.957Z"
+    "capturedAt": "2025-12-11T16:24:37.957Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -105,7 +121,9 @@
     "toStop": "KA Tullastraße",
     "toTime": "22:57",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259627",
-    "capturedAt": "2025-12-11T16:24:37.957Z"
+    "capturedAt": "2025-12-11T16:24:37.957Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -117,7 +135,9 @@
     "toStop": "Germersheim",
     "toTime": "16:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -129,7 +149,9 @@
     "toStop": "KA Tullastr.",
     "toTime": "17:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -141,7 +163,9 @@
     "toStop": "Germersheim",
     "toTime": "22:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -153,7 +177,9 @@
     "toStop": "KA Tullastr.",
     "toTime": "22:01",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S51",
@@ -165,6 +191,8 @@
     "toStop": "Söllingen Bf",
     "toTime": "23:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259833",
-    "capturedAt": "2025-12-13T15:41:01.826Z"
+    "capturedAt": "2025-12-13T15:41:01.826Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

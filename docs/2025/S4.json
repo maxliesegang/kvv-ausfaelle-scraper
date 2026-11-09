@@ -9,7 +9,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "11:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
-    "capturedAt": "2025-11-12T11:51:47.409Z"
+    "capturedAt": "2025-11-12T11:51:47.409Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -21,7 +23,9 @@
     "toStop": "Flehingen Bahnhof",
     "toTime": "13:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
-    "capturedAt": "2025-11-12T11:51:47.409Z"
+    "capturedAt": "2025-11-12T11:51:47.409Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -33,7 +37,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "15:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
-    "capturedAt": "2025-11-12T11:51:47.409Z"
+    "capturedAt": "2025-11-12T11:51:47.409Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -45,7 +51,9 @@
     "toStop": "Bretten Bahnhof",
     "toTime": "16:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257003",
-    "capturedAt": "2025-11-12T11:51:47.409Z"
+    "capturedAt": "2025-11-12T11:51:47.409Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -57,7 +65,9 @@
     "toStop": "Flehingen",
     "toTime": "13:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257118",
-    "capturedAt": "2025-11-13T09:57:17.740Z"
+    "capturedAt": "2025-11-13T09:57:17.740Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -69,7 +79,9 @@
     "toStop": "Albtalbahnhof",
     "toTime": "15:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257118",
-    "capturedAt": "2025-11-13T09:57:17.740Z"
+    "capturedAt": "2025-11-13T09:57:17.740Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -81,7 +93,9 @@
     "toStop": "Flehingen Bf",
     "toTime": "12:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257287",
-    "capturedAt": "2025-11-15T12:06:44.446Z"
+    "capturedAt": "2025-11-15T12:06:44.446Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -93,7 +107,9 @@
     "toStop": "KA Albtal Bf",
     "toTime": "14:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257287",
-    "capturedAt": "2025-11-15T12:06:44.446Z"
+    "capturedAt": "2025-11-15T12:06:44.446Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -105,7 +121,9 @@
     "toStop": "Flehingen Bf",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257287",
-    "capturedAt": "2025-11-15T12:06:44.446Z"
+    "capturedAt": "2025-11-15T12:06:44.446Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -117,7 +135,9 @@
     "toStop": "KA Albtal Bf",
     "toTime": "18:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257287",
-    "capturedAt": "2025-11-15T12:06:44.446Z"
+    "capturedAt": "2025-11-15T12:06:44.446Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -129,7 +149,9 @@
     "toStop": "Flehingen Bf",
     "toTime": "14:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257799",
-    "capturedAt": "2025-11-20T12:45:55.194Z"
+    "capturedAt": "2025-11-20T12:45:55.194Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -141,7 +163,9 @@
     "toStop": "KA Albtalbahnhof",
     "toTime": "16:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257799",
-    "capturedAt": "2025-11-20T12:45:55.194Z"
+    "capturedAt": "2025-11-20T12:45:55.194Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -153,7 +177,9 @@
     "toStop": "Eppingen Bf",
     "toTime": "01:06",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258175",
-    "capturedAt": "2025-11-25T18:34:47.139Z"
+    "capturedAt": "2025-11-25T18:34:47.139Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -165,7 +191,9 @@
     "toStop": "Heilbronn Pfühlpark",
     "toTime": "00:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258175",
-    "capturedAt": "2025-11-25T18:34:47.139Z"
+    "capturedAt": "2025-11-25T18:34:47.139Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -177,7 +205,9 @@
     "toStop": "Flehingen",
     "toTime": "12:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -189,7 +219,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "14:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -201,7 +233,9 @@
     "toStop": "Flehingen",
     "toTime": "14:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -213,7 +247,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "16:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -225,7 +261,9 @@
     "toStop": "Flehingen",
     "toTime": "16:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -237,7 +275,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "18:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -249,7 +289,9 @@
     "toStop": "Flehingen",
     "toTime": "18:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -261,7 +303,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "20:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258477",
-    "capturedAt": "2025-11-29T12:42:36.471Z"
+    "capturedAt": "2025-11-29T12:42:36.471Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -273,7 +317,9 @@
     "toStop": "Flehingen Bahnhof",
     "toTime": "13:37",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
-    "capturedAt": "2025-11-30T12:41:56.973Z"
+    "capturedAt": "2025-11-30T12:41:56.973Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -285,7 +331,9 @@
     "toStop": "Heilbronn Pfühlpark",
     "toTime": "14:15",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
-    "capturedAt": "2025-11-30T12:41:56.973Z"
+    "capturedAt": "2025-11-30T12:41:56.973Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -297,7 +345,9 @@
     "toStop": "Karlsruhe Albtalbahnhof",
     "toTime": "15:22",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
-    "capturedAt": "2025-11-30T12:41:56.973Z"
+    "capturedAt": "2025-11-30T12:41:56.973Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -309,7 +359,9 @@
     "toStop": "Eppingen Bf.",
     "toTime": "15:24",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
-    "capturedAt": "2025-11-30T12:41:56.973Z"
+    "capturedAt": "2025-11-30T12:41:56.973Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -321,7 +373,9 @@
     "toStop": "Ka. Albtalbahnhof",
     "toTime": "21:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
-    "capturedAt": "2025-11-30T18:30:38.790Z"
+    "capturedAt": "2025-11-30T18:30:38.790Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -333,7 +387,9 @@
     "toStop": "Ka Tullastrasse",
     "toTime": "23:30",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258511",
-    "capturedAt": "2025-11-30T18:30:38.790Z"
+    "capturedAt": "2025-11-30T18:30:38.790Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -345,7 +401,9 @@
     "toStop": "Gölshausen",
     "toTime": "02:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_258666",
-    "capturedAt": "2025-12-01T19:27:20.213Z"
+    "capturedAt": "2025-12-01T19:27:20.213Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -357,7 +415,9 @@
     "toStop": "Cappel",
     "toTime": "02:20",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259178",
-    "capturedAt": "2025-12-08T01:17:10.867Z"
+    "capturedAt": "2025-12-08T01:17:10.867Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -369,7 +429,9 @@
     "toStop": "KA Albtalbahnhof",
     "toTime": "11:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259672",
-    "capturedAt": "2025-12-12T12:35:45.925Z"
+    "capturedAt": "2025-12-12T12:35:45.925Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -381,7 +443,9 @@
     "toStop": "Bretten Bf",
     "toTime": "14:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259672",
-    "capturedAt": "2025-12-12T12:35:45.925Z"
+    "capturedAt": "2025-12-12T12:35:45.925Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -393,7 +457,9 @@
     "toStop": "Albtalbahnhof",
     "toTime": "06:42",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259750",
-    "capturedAt": "2025-12-13T04:22:40.640Z"
+    "capturedAt": "2025-12-13T04:22:40.640Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S4",
@@ -405,66 +471,8 @@
     "toStop": "Bretten Bf.",
     "toTime": "07:58",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259750",
-    "capturedAt": "2025-12-13T04:22:40.640Z"
-  },
-  {
-    "line": "S4",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T03:00:00.000Z",
-    "trainNumber": "85473",
-    "fromStop": "Albtalbahnhof",
-    "fromTime": "07:15",
-    "toStop": "Tullastraße",
-    "toTime": "07:29",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
-    "capturedAt": "2025-12-15T04:36:48.505Z"
-  },
-  {
-    "line": "S4",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T02:00:00.000Z",
-    "trainNumber": "85507",
-    "fromStop": "KA Tullastr.",
-    "fromTime": "07:50",
-    "toStop": "Flehingen Bf",
-    "toTime": "08:37",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
-    "capturedAt": "2025-12-15T16:48:24.608Z"
-  },
-  {
-    "line": "S4",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T02:00:00.000Z",
-    "trainNumber": "85516",
-    "fromStop": "Flehingen Bf",
-    "fromTime": "09:20",
-    "toStop": "Albtal Bf",
-    "toTime": "10:22",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
-    "capturedAt": "2025-12-15T16:48:24.608Z"
-  },
-  {
-    "line": "S4",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T02:00:00.000Z",
-    "trainNumber": "85515",
-    "fromStop": "KA Albtalbahnhof",
-    "fromTime": "11:35",
-    "toStop": "Flehingen Bf",
-    "toTime": "12:37",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
-    "capturedAt": "2025-12-15T16:48:24.608Z"
-  },
-  {
-    "line": "S4",
-    "date": "2025-12-15",
-    "stand": "2025-12-15T02:00:00.000Z",
-    "trainNumber": "85524",
-    "fromStop": "Flehingen Bf",
-    "fromTime": "13:20",
-    "toStop": "KA Albtal Bf",
-    "toTime": "14:22",
-    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259960",
-    "capturedAt": "2025-12-15T16:48:24.608Z"
+    "capturedAt": "2025-12-13T04:22:40.640Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

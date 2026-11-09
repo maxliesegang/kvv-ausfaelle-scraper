@@ -30,18 +30,24 @@ Guidance in this file applies to `src/**` unless a deeper `AGENTS.md` overrides 
   `CANCELLATION_CAUSE_DEFINITIONS`. Those definitions are the single source for classification
   priority and the public root-index taxonomy; never maintain a second category list. The
   classifier returns the category plus the most-specific (longest) matching `causeKeyword`
-  within that category. Priority is: strike → weather → emergency → vehicle → infrastructure
-  → technical → personnel → operational → disruption → construction → unknown.
+  within that category. Priority is: strike → weather → emergency → obstruction → vehicle →
+  infrastructure → technical → personnel → operational → disruption → event → construction →
+  unknown.
   - **`betriebsbedingt` is a euphemism, not a personnel signal.** `personnel` requires named
     staffing/sickness evidence (`personalmangel`, `krankheit…`, `fahrpersonal`); the bare phrase
     remains `operational`.
   - The technical family identifies what broke: `vehicle` for rolling stock,
     `infrastructure` for track/signals/power, and `technical` for a generic named fault.
-  - `emergency` is a named emergency-services intervention. `disruption` is the otherwise
-    unspecified `Betriebsstörung`.
+  - `emergency` is a named emergency-services intervention (incl. `Personenunfall`).
+    `obstruction` is an outside party blocking the route (Falschparker, Verkehrsunfall, Personen
+    or Tiere im Gleis, behördliche Anordnung). `disruption` is the otherwise unspecified
+    `Betriebsstörung`. `event` is a planned Veranstaltung/Umzug that closes the route.
+  - Keywords must not collide with lower-priority wording: check a candidate against the whole
+    text archive before adding it (e.g. `im gleis` alone also matches construction's "Arbeiten im
+    Gleisbereich"; `behinderung` also matches accessibility wording).
   - Extension rule: add normalized keywords or a deliberately positioned category. A rising
     share of `unknown` indicates missing classification rules.
-  - The `unknown` CI gate in `index.ts` fails only when the article *states* a reason
+  - The `unknown` CI gate in `index.ts` fails only when the article _states_ a reason
     (`statesCause`: `wegen`, `aufgrund`, `infolge`, `…bedingt`, …) that no category matched.
     KVV notices that announce cancellations with no reason at all are still stored as
     `unknown` but only logged — no keyword can classify them, so failing would just repeat

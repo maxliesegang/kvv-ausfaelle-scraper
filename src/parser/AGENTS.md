@@ -49,6 +49,14 @@ This is the most specific guidance for parser files.
   the same failure `trip-dates.ts` exists to prevent. Per the rule above, leave the row
   unparsed rather than publish a guess; the workflow already skips these as `construction`.
 
+- Captured fields are normalized in `matchTripFormat`, never downstream: `toClockTime` pads and
+  colon-separates times (`0:05`, `17.52` → `00:05`, `17:52`; the departure time is part of trip
+  identity), and `toStopName` strips only the punctuation KVV's typos leave on a stop (an unclosed
+  `(` fragment, a leading `(`, a trailing date, a dangling separator, an `ab`/`an` marker).
+  Balanced parentheses are part of real names (`Bretten (Baden)`). An unshifted `8` directly
+  before a `)`-closed time is the `(` it was meant to be (Shift+8 on a German keyboard).
+  Normalization changes that alter `fromTime` change trip identity, so stored records need an
+  in-place migration rather than `--write-trips` (which would keep the old record as departed).
 - Prefer additive parsing improvements over breaking existing patterns.
 - A corrupt value in the published text (not an unsupported layout) belongs in
   `article-corrections.ts`, which repairs the article text before parsing, scoped to one

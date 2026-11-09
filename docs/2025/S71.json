@@ -9,7 +9,9 @@
     "toStop": "Rastatt",
     "toTime": "08:32",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257993",
-    "capturedAt": "2025-11-24T06:34:57.906Z"
+    "capturedAt": "2025-11-24T06:34:57.906Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S71",
@@ -21,7 +23,9 @@
     "toStop": "Rastatt Bf",
     "toTime": "22:56",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259807",
-    "capturedAt": "2025-12-13T15:41:02.011Z"
+    "capturedAt": "2025-12-13T15:41:02.011Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S71",
@@ -33,7 +37,9 @@
     "toStop": "Baden-Baden",
     "toTime": "23:18",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259807",
-    "capturedAt": "2025-12-13T15:41:02.011Z"
+    "capturedAt": "2025-12-13T15:41:02.011Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S71",
@@ -45,6 +51,8 @@
     "toStop": "KA Tullastr.",
     "toTime": "23:54",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259807",
-    "capturedAt": "2025-12-13T15:41:02.011Z"
+    "capturedAt": "2025-12-13T15:41:02.011Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

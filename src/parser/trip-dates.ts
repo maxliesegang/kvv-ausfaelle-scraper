@@ -93,12 +93,21 @@ export function parseTripRowDate(row: string, fallbackIsoDate: string): string |
   );
 }
 
+/**
+ * The four-digit year a date row writes, or the fallback's when it writes none. A two-digit year
+ * ("28.09.26") takes its century from the fallback, the list's own date.
+ */
+function toFullYear(writtenYear: string | undefined, fallbackIsoDate: string): string {
+  if (writtenYear === undefined) return fallbackIsoDate.slice(0, 4);
+  return writtenYear.length === 2 ? `${fallbackIsoDate.slice(0, 2)}${writtenYear}` : writtenYear;
+}
+
 /** Builds an ISO date from a day/month/optional-year match, or `undefined` without one. */
 function toIsoDate(match: RegExpExecArray | null, fallbackIsoDate: string): string | undefined {
   const day = match?.[1];
   const month = match?.[2];
   if (!day || !month) return undefined;
-  const year = match[3] ?? fallbackIsoDate.slice(0, 4);
+  const year = toFullYear(match[3], fallbackIsoDate);
   return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 }
 

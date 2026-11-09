@@ -9,7 +9,9 @@
     "toStop": "Bad Wildbad Kurpark",
     "toTime": "18:52",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S6",
@@ -21,6 +23,8 @@
     "toStop": "Pforzheim Bf",
     "toTime": "19:40",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_257307",
-    "capturedAt": "2025-11-15T12:06:44.437Z"
+    "capturedAt": "2025-11-15T12:06:44.437Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

@@ -26,6 +26,9 @@
  *   npm run reparse-archives -- --write     # re-stamp cause/causeKeyword on archived trips
  *   npm run reparse-archives -- --write-trips # reconcile stored trips from parsed archives
  *   npm run reparse-archives -- --write-dates # correct stored trip dates from parsed archives
+ *   npm run reparse-archives -- --history   # replay every git revision of each archive (needs
+ *                                           # full history); combine with --write-trips to restore
+ *                                           # trips only an earlier version listed
  *
  * Exit code is 0 regardless of findings. Pipe/read the summary to act on it.
  */
@@ -49,6 +52,12 @@ import {
 import { toArticleText } from '../src/parser/article-corrections.js';
 import { findUnparsedTripLikeRows, leadingTrainNumber } from '../src/parser/trip-parsing.js';
 import { ARCHIVE_SUBDIR, parseArchive } from '../src/article-archive.js';
+import {
+  readArchiveRevisionsByFilename,
+  replayArticleRevisions,
+  type ArchiveRevision,
+  type ReparsedArchiveRevision,
+} from './archive-history.js';
 import { getFahrplanYear, listFahrplanYearDirectories } from '../src/fahrplan.js';
 import { listFiles, readTextFile, writeJsonFile } from '../src/utils/fs.js';
 import { extractDetailId } from '../src/utils/normalization.js';
@@ -57,7 +66,7 @@ import type { CauseClassification } from '../src/cause.js';
 import type { Cancellation } from '../src/types.js';
 
 /** One-line, human-readable identity of a trip for the diff report. */
-function formatTrip(trip: Cancellation): string {
+export function formatTrip(trip: Cancellation): string {
   return `${trip.line} ${trip.trainNumber} ${trip.date} ${trip.fromTime}→${trip.toTime} (${trip.cause})`;
 }
 
@@ -67,11 +76,14 @@ interface ArchiveCommandOptions {
   readonly fahrplanYear?: string;
   readonly verbose: boolean;
   readonly operation: ArchiveOperation;
+  /** Replay every git revision of each archive instead of only its working-tree copy. */
+  readonly history: boolean;
 }
 
 function parseCommandOptions(args: string[]): ArchiveCommandOptions {
   let fahrplanYear: string | undefined;
   let verbose = false;
+  let history = false;
   let operation: ArchiveOperation = 'report';
   for (const arg of args) {
     if (arg === '--')
@@ -79,6 +91,7 @@ function parseCommandOptions(args: string[]): ArchiveCommandOptions {
     else if (arg.startsWith('--year=')) {
       fahrplanYear = arg.slice('--year='.length).trim();
     } else if (arg === '--verbose') verbose = true;
+    else if (arg === '--history') history = true;
     else if (arg === '--write') {
       if (operation !== 'report') throw new Error('Use only one write mode.');
       operation = 'backfill-classifications';
@@ -90,7 +103,10 @@ function parseCommandOptions(args: string[]): ArchiveCommandOptions {
       operation = 'redate-trips';
     } else throw new Error(`Unknown argument: ${arg}`);
   }
-  return { fahrplanYear, verbose, operation };
+  if (history && (operation === 'backfill-classifications' || operation === 'redate-trips')) {
+    throw new Error('--history applies only to the report and --write-trips.');
+  }
+  return { fahrplanYear, verbose, operation, history };
 }
 
 /** Directory names under `docs/` that are Fahrplan-year buckets, optionally filtered to one. */
@@ -134,7 +150,7 @@ async function loadStoredTripsByLine(
   return storedTripsByLine;
 }
 
-interface ArchiveProcessingTotals {
+export interface ArchiveProcessingTotals {
   articlesProcessed: number;
   articlesParsed: number;
   articlesWithParseErrors: number;
@@ -214,42 +230,109 @@ export function listsUnresolvedTripRows(articleBody: string, sourceUrl: string):
   );
 }
 
+/** What reparsing one archive version yields. Pure data: counting and logging are the caller's. */
+type ArchiveParseOutcome =
+  | {
+      readonly status: 'parsed';
+      readonly sourceUrl: string;
+      readonly trips: readonly Cancellation[];
+    }
+  | { readonly status: 'without-source-url' }
+  | { readonly status: 'without-structured-trips' }
+  | { readonly status: 'parse-error'; readonly message: string };
+
+/** Reparses one archive file's content — a working-tree copy or a git revision of it. */
+function parseArchiveContent(archiveContent: string): ArchiveParseOutcome {
+  const { url: sourceUrl, body: articleBody } = parseArchive(archiveContent);
+  if (!sourceUrl) return { status: 'without-source-url' };
+  try {
+    return { status: 'parsed', sourceUrl, trips: parseDetailPage(articleBody, sourceUrl) };
+  } catch (error) {
+    if (error instanceof NoTripsFoundError && !listsUnresolvedTripRows(articleBody, sourceUrl)) {
+      return { status: 'without-structured-trips' };
+    }
+    const errorType = error instanceof ParseError ? 'ParseError' : 'error';
+    return {
+      status: 'parse-error',
+      message: `${errorType}: ${(error as Error).message.split('\n')[0]}`,
+    };
+  }
+}
+
 /**
- * Reparses one archive file into its source URL + trips, updating the parse totals and warning
- * on any skip. Returns `null` when the file is unreadable, carries no `Quelle` URL, or fails to
- * parse — the single place both report and backfill modes turn frozen text back into trips.
+ * Counts and logs one archived article's outcome — the single place every mode turns frozen text
+ * back into trips. Returns the parsed article, or `null` for any skip.
  */
+function recordArchiveParseOutcome(
+  archiveLabel: string,
+  outcome: ArchiveParseOutcome,
+  totals: ArchiveProcessingTotals,
+): ParsedArchivedArticle | null {
+  totals.articlesProcessed += 1;
+  switch (outcome.status) {
+    case 'parsed':
+      totals.articlesParsed += 1;
+      return { sourceUrl: outcome.sourceUrl, trips: outcome.trips };
+    case 'without-source-url':
+      totals.articlesWithoutSourceUrl += 1;
+      console.warn(`  ? ${archiveLabel}: no Quelle header, cannot map to stored data`);
+      return null;
+    case 'without-structured-trips':
+      totals.articlesWithoutStructuredTrips += 1;
+      console.log(`  - ${archiveLabel}: no structured train-number trip rows`);
+      return null;
+    case 'parse-error':
+      totals.articlesWithParseErrors += 1;
+      console.warn(`  ! ${archiveLabel}: ${outcome.message}`);
+      return null;
+  }
+}
+
+/** Reparses one archive file's working-tree copy. */
 async function parseArchivedArticle(
   archiveFilePath: string,
   totals: ArchiveProcessingTotals,
 ): Promise<ParsedArchivedArticle | null> {
-  totals.articlesProcessed += 1;
   const archiveContent = await readTextFile(archiveFilePath);
   if (archiveContent === null) return null;
+  return recordArchiveParseOutcome(
+    basename(archiveFilePath),
+    parseArchiveContent(archiveContent),
+    totals,
+  );
+}
 
-  const { url: sourceUrl, body: articleBody } = parseArchive(archiveContent);
-  if (!sourceUrl) {
-    totals.articlesWithoutSourceUrl += 1;
-    console.warn(`  ? ${basename(archiveFilePath)}: no Quelle header, cannot map to stored data`);
-    return null;
-  }
-
-  try {
-    const trips = parseDetailPage(articleBody, sourceUrl);
-    totals.articlesParsed += 1;
-    return { sourceUrl, trips };
-  } catch (error) {
-    const errorMessage = (error as Error).message;
-    if (error instanceof NoTripsFoundError && !listsUnresolvedTripRows(articleBody, sourceUrl)) {
-      totals.articlesWithoutStructuredTrips += 1;
-      console.log(`  - ${basename(archiveFilePath)}: no structured train-number trip rows`);
-      return null;
+/**
+ * Reparses every captured version of one archive file and replays them into the trips they
+ * establish ({@link replayArticleRevisions}). With no version parsing, the latest version's
+ * outcome stands; a parse error in an older version is only warned about, since a newer one
+ * still yields the article's trips.
+ */
+function replayArchivedArticle(
+  archiveFilename: string,
+  revisions: readonly ArchiveRevision[],
+  totals: ArchiveProcessingTotals,
+): ParsedArchivedArticle | null {
+  const reparsedRevisions: ReparsedArchiveRevision[] = [];
+  let sourceUrl: string | undefined;
+  let latestOutcome: ArchiveParseOutcome = { status: 'without-source-url' };
+  for (const { capturedAtMs, content } of revisions) {
+    latestOutcome = parseArchiveContent(content);
+    if (latestOutcome.status === 'parsed') {
+      sourceUrl = latestOutcome.sourceUrl;
+      reparsedRevisions.push({ capturedAtMs, trips: latestOutcome.trips });
+    } else if (latestOutcome.status === 'parse-error') {
+      const capturedAt = new Date(capturedAtMs).toISOString();
+      console.warn(`  ! ${archiveFilename} @ ${capturedAt}: ${latestOutcome.message}`);
     }
-    totals.articlesWithParseErrors += 1;
-    const errorType = error instanceof ParseError ? 'ParseError' : 'error';
-    console.warn(`  ! ${basename(archiveFilePath)}: ${errorType}: ${errorMessage.split('\n')[0]}`);
-    return null;
   }
+  return recordArchiveParseOutcome(
+    archiveFilename,
+    sourceUrl === undefined
+      ? latestOutcome
+      : { status: 'parsed', sourceUrl, trips: replayArticleRevisions(reparsedRevisions) },
+    totals,
+  );
 }
 
 /** The fields a correction rewrites, as `field: old → new`; a dropped verdict is named, not dumped. */
@@ -350,15 +433,21 @@ function reportTripReconciliation(
  */
 async function loadReparsedTripsBySourceUrl(
   fahrplanYearDirectory: string,
-  totals: ArchiveProcessingTotals,
+  { nowMs, history, totals }: Required<TripReconciliationOptions>,
 ): Promise<Map<string, readonly Cancellation[]>> {
   const archiveDirectory = join(fahrplanYearDirectory, ARCHIVE_SUBDIR);
   const archiveFilenames = (await listFiles(archiveDirectory))
     .filter((filename) => filename.endsWith('.txt'))
     .sort();
+  const revisionsByFilename = history
+    ? readArchiveRevisionsByFilename(archiveDirectory, nowMs)
+    : undefined;
   const reparsedTripsBySourceUrl = new Map<string, readonly Cancellation[]>();
   for (const filename of archiveFilenames) {
-    const archivedArticle = await parseArchivedArticle(join(archiveDirectory, filename), totals);
+    const revisions = revisionsByFilename?.get(filename);
+    const archivedArticle = revisions
+      ? replayArchivedArticle(filename, revisions, totals)
+      : await parseArchivedArticle(join(archiveDirectory, filename), totals);
     if (archivedArticle) {
       reparsedTripsBySourceUrl.set(archivedArticle.sourceUrl, archivedArticle.trips);
     }
@@ -648,6 +737,32 @@ export function reconcileArchivedTrips(
   };
 }
 
+export interface TripReconciliationOptions {
+  /** The clock that decides which trips have departed. */
+  readonly nowMs: number;
+  /** Replay every git revision of each archive instead of only its working-tree copy. */
+  readonly history?: boolean;
+  /** Parse counters to accumulate into; a fresh set when omitted. */
+  readonly totals?: ArchiveProcessingTotals;
+}
+
+/**
+ * Reconciles one Fahrplan year's stored trips with what its archive reparses to, without writing.
+ * The report, `--write-trips` and the archive/store consistency audit
+ * (`tests/unit/archive-store-consistency.test.ts`) all read this one plan, so the audit's verdict
+ * is exactly what the write mode would change.
+ */
+export async function planYearTripReconciliation(
+  fahrplanYearDirectory: string,
+  { nowMs, history = false, totals = createArchiveProcessingTotals() }: TripReconciliationOptions,
+): Promise<TripReconciliation> {
+  return reconcileArchivedTrips(
+    await loadStoredTripsByLine(fahrplanYearDirectory),
+    await loadReparsedTripsBySourceUrl(fahrplanYearDirectory, { nowMs, history, totals }),
+    nowMs,
+  );
+}
+
 /** Writes the line files a reconciliation changes. */
 async function writeTripReconciliation(
   fahrplanYearDirectory: string,
@@ -804,11 +919,11 @@ async function main(): Promise<void> {
         continue;
       case 'report':
       case 'reconcile-trips': {
-        const reconciliation = reconcileArchivedTrips(
-          await loadStoredTripsByLine(fahrplanYearDirectory),
-          await loadReparsedTripsBySourceUrl(fahrplanYearDirectory, totals),
-          Date.now(),
-        );
+        const reconciliation = await planYearTripReconciliation(fahrplanYearDirectory, {
+          nowMs: Date.now(),
+          history: options.history,
+          totals,
+        });
         if (options.operation === 'report') {
           reportTripReconciliation(reconciliation, options, totals);
         } else {

@@ -16,8 +16,20 @@ This is the most specific guidance for maintenance scripts.
   result against stored `docs/<fahrplan-year>/<line>.json`, matched by the `Quelle:` source
   URL. The base trip identity is `date|trainNumber|fromTime`; report/reconciliation lookups add
   the appropriate line or source scope when crossing files. Surfaces parser/classifier
-  improvements and regressions. Flags: `--year=N`, `--verbose`, `--write`, `--write-dates`, and
-  `--write-trips`. The three write flags are mutually exclusive.
+  improvements and regressions. Flags: `--year=N`, `--verbose`, `--history`, `--write`,
+  `--write-dates`, and `--write-trips`. The three write flags are mutually exclusive.
+  - `--history` (report and `--write-trips` only) replays every git revision of each archive file
+    instead of its working-tree copy. Archive files are overwritten in place and KVV's pages are
+    rolling lists, so a trip only an earlier version listed exists nowhere but in git history;
+    if the store missed it at the time (parser gap, or the pruning before forward-looking
+    reconciliation), the default mode cannot recover it. `replayArticleRevisions` applies the
+    live rule per version: a drop is a retraction only while the trip had not departed at that
+    version's commit time; a later listing replaces a trip's fields. Every archived version has
+    already passed the one-hour age gate, so each is one the scraper adopted. History reading and
+    the replay live in `archive-history.ts`: two git processes per year directory (one `log`, one
+    `cat-file --batch`), and a shallow checkout fails loudly instead of replaying a truncated
+    history. CI checks out depth 1, so it is not part of `npm test`; run it after parser or
+    mapping fixes alongside the default report.
   - No write flag: reports differences, writes nothing, and exits 0 regardless of findings. The
     report prints the same `reconcileArchivedTrips` result `--write-trips` writes, grouped by the
     article each change belongs to, so the two cannot disagree: a trip already stored under a
@@ -25,6 +37,9 @@ This is the most specific guidance for maintenance scripts.
     added under the other, and corrections (with any verdict they would drop) are listed field by
     field under `--verbose`. `reconcileArchivedTrips` is pure and exported; the script runs `main`
     only when executed directly, and `tests/unit/reparse-archives.test.ts` pins its rules.
+    `planYearTripReconciliation` loads one year and returns that same plan without writing; the
+    archive/store consistency audit (`tests/unit/archive-store-consistency.test.ts`) fails while
+    it is non-empty, so a fix cannot land without its backfill.
   - `--write`: backfills only `cause`/`causeKeyword` for stored trips that reparse to the same
     identity. Pre-archive trips retain their stored classification.
   - `--write-dates`: re-stamps only `date`, matching a stored trip to its reparsed self by

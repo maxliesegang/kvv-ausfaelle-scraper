@@ -9,7 +9,9 @@
     "toStop": "Bad Rappenau",
     "toTime": "19:21",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -21,7 +23,9 @@
     "toStop": "Heilbronn Hbf/Willy-Brand-Platz",
     "toTime": "20:17",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -33,7 +37,9 @@
     "toStop": "Sinsheim (Elsenz) Hbf",
     "toTime": "00:48",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259389",
-    "capturedAt": "2025-12-09T16:46:43.303Z"
+    "capturedAt": "2025-12-09T16:46:43.303Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -45,7 +51,9 @@
     "toStop": "Sinsheim Hbf",
     "toTime": "14:07",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259779",
-    "capturedAt": "2025-12-13T08:20:41.106Z"
+    "capturedAt": "2025-12-13T08:20:41.106Z",
+    "cause": "unknown",
+    "causeKeyword": null
   },
   {
     "line": "S42",
@@ -57,6 +65,8 @@
     "toStop": "Heilbronn Hbf/Willy-Brandt-Platz",
     "toTime": "15:46",
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_259779",
-    "capturedAt": "2025-12-13T08:20:41.106Z"
+    "capturedAt": "2025-12-13T08:20:41.106Z",
+    "cause": "unknown",
+    "causeKeyword": null
   }
 ]

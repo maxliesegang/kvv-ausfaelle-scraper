@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { describe, test } from 'node:test';
 import { parseArchive } from '../../src/article-archive.js';
 import { parseDetailPage } from '../../src/parser/index.js';
-import { isDiversionRow } from '../../src/parser/trip-parsing.js';
+import { isDiversionRow, toClockTime, toStopName } from '../../src/parser/trip-parsing.js';
 
 const DOCS_DIR = join(process.cwd(), 'docs');
 const CLOCK_TIME_PATTERN = /\b(\d{1,2}:\d{2})\b/g;
@@ -130,7 +130,8 @@ function auditArchiveCorpus(): ArchiveCorpusAudit {
           continue;
         }
 
-        const times = [...line.matchAll(CLOCK_TIME_PATTERN)].map((match) => match[1]);
+        // Compared in the published HH:MM form the parser normalizes to ("0:05" → "00:05").
+        const times = [...line.matchAll(CLOCK_TIME_PATTERN)].map((match) => toClockTime(match[1]));
 
         const lineNumber = index + 1;
         const trainNumbers = [...line.matchAll(TRAIN_NUMBER_PATTERN)].map((match) => match[1]);
@@ -219,5 +220,44 @@ describe('preserved article corpus', () => {
       `expected at least 320 numbered rows, found ${auditResult.numberedRowOccurrences.length}`,
     );
     assert.deepEqual(auditResult.numberedRowProblems, []);
+  });
+});
+
+describe('parsed archive field hygiene', () => {
+  // Every trip the current parser recovers from the archive is what a live run would publish, so
+  // its fields must already be in published form: KVV's typos (an unclosed "(", a trailing date
+  // or separator, an unpadded hour) are the parser's to strip, never the consumer's.
+  const CLOCK_TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
+  const LEFTOVER_TIME = /\d{1,2}[:.]\d{2}|\bUhr\b/i;
+
+  test('every parsed stop name and time is in published form', () => {
+    const problems: string[] = [];
+    for (const yearEntry of readdirSync(DOCS_DIR, { withFileTypes: true })) {
+      const articlesDirectory = join(DOCS_DIR, yearEntry.name, 'articles');
+      if (!yearEntry.isDirectory() || !existsSync(articlesDirectory)) continue;
+      for (const filename of readdirSync(articlesDirectory).filter((name) =>
+        name.endsWith('.txt'),
+      )) {
+        const { body, url } = parseArchive(readFileSync(join(articlesDirectory, filename), 'utf8'));
+        let trips: ReturnType<typeof parseDetailPage> = [];
+        try {
+          trips = parseDetailPage(body, url);
+        } catch {
+          continue; // Parse failures are the other corpus tests' concern.
+        }
+        for (const trip of trips) {
+          const location = `${yearEntry.name}/${filename} ${trip.trainNumber}`;
+          for (const time of [trip.fromTime, trip.toTime]) {
+            if (!CLOCK_TIME.test(time)) problems.push(`${location}: time ${JSON.stringify(time)}`);
+          }
+          for (const stop of [trip.fromStop, trip.toStop]) {
+            if (toStopName(stop) !== stop || LEFTOVER_TIME.test(stop)) {
+              problems.push(`${location}: stop ${JSON.stringify(stop)}`);
+            }
+          }
+        }
+      }
+    }
+    assert.deepStrictEqual(problems, []);
   });
 });

@@ -28,6 +28,16 @@ This is the most specific guidance for test code.
   `src/relevance.ts` must keep it green, including its trip-less-notice precision guard.
 - `tests/unit/article-archive.test.ts` verifies byte-stable archives and HTML/archive reparse
   fidelity.
+- `tests/unit/archive-store-consistency.test.ts` fails while stored trips are not reproducible
+  from the archive — exactly what `npm run reparse-archives -- --write-trips` would change. A
+  parser, train-line or classifier fix that lands after a notice left the feed never reaches its
+  stored trips otherwise (`Nettro_CMS_279494` lost five trips that way). Land the fix and its
+  backfill (`--write` / `--write-dates` / `--write-trips`) in the same change.
+- `tests/unit/published-data-contract.test.ts` audits every published record, including
+  pre-archive ones: HH:MM times, ISO dates in the directory's Fahrplan year, `line` matching the
+  file, a cause from the taxonomy, one identity per file and per year. Stop-name hygiene is held
+  on parser output instead (`archive-corpus.test.ts`, "parsed archive field hygiene"), because
+  some pre-archive records have no source left to repair them from.
 - `tests/unit/storage.test.ts` pins the forward-looking reconciliation rule: a future trip KVV
   un-lists is pruned, a departed one is kept. Pass an explicit `nowMs` to `saveCancellations` so
   the fixtures' departures are judged against a fixed clock instead of the wall clock, which

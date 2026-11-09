@@ -67,8 +67,8 @@ Each line file contains cancellation records:
 
 `cause` is a best-effort article-level category:
 
-`strike`, `weather`, `emergency`, `vehicle`, `infrastructure`, `technical`, `personnel`,
-`operational`, `disruption`, `construction`, or `unknown`.
+`strike`, `weather`, `emergency`, `obstruction`, `vehicle`, `infrastructure`, `technical`,
+`personnel`, `operational`, `disruption`, `event`, `construction`, or `unknown`.
 
 `causeKeyword` is the normalized keyword that selected the category. It is `null` when no evidence
 is available, including `unknown` classifications and legacy records that predate evidence
