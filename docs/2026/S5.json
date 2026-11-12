@@ -37406,5 +37406,77 @@
       "trackedAdjacentStops": 0,
       "journeyId": "20261111-96b32a69-8547-30dc-9e5a-7137caa425a4"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-12",
+    "stand": "2026-11-12T04:30:00.000Z",
+    "trainNumber": "84705",
+    "fromStop": "Ka. Albtalbahnhof",
+    "fromTime": "05:02",
+    "toStop": "Söllingen",
+    "toTime": "05:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280301",
+    "capturedAt": "2026-11-12T05:30:25.291Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-12",
+      "segmentStops": 23,
+      "segmentCancelledStops": 23,
+      "segmentTrackedStops": 0,
+      "journeyStops": 23,
+      "journeyCancelledStops": 23,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261112-229f15ea-46eb-3854-bb99-9a2271e2a099"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-12",
+    "stand": "2026-11-12T04:30:00.000Z",
+    "trainNumber": "84806",
+    "fromStop": "Söllingen",
+    "fromTime": "05:58",
+    "toStop": "Wörth Badepark",
+    "toTime": "07:05",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280301",
+    "capturedAt": "2026-11-12T05:30:25.291Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-12",
+    "stand": "2026-11-12T04:30:00.000Z",
+    "trainNumber": "84803",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "07:15",
+    "toStop": "Söllingen",
+    "toTime": "08:17",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280301",
+    "capturedAt": "2026-11-12T05:30:25.291Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-12",
+    "stand": "2026-11-12T04:30:00.000Z",
+    "trainNumber": "84888",
+    "fromStop": "Söllingen",
+    "fromTime": "08:38",
+    "toStop": "Ka Entenfang",
+    "toTime": "09:16",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280301",
+    "capturedAt": "2026-11-12T05:30:25.291Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
