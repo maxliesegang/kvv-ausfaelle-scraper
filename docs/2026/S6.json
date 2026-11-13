@@ -2564,5 +2564,33 @@
       "journeyCancelled": true,
       "journeyId": "20261107-0d596333-faaa-31a7-a2e8-3f54345d1f97"
     }
+  },
+  {
+    "line": "S6",
+    "date": "2026-11-13",
+    "stand": "2026-11-13T07:20:00.000Z",
+    "trainNumber": "85073",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "14:27",
+    "toStop": "Bad Wildbad Kurpark",
+    "toTime": "15:52",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280362",
+    "capturedAt": "2026-11-13T11:48:29.334Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S6",
+    "date": "2026-11-13",
+    "stand": "2026-11-13T07:20:00.000Z",
+    "trainNumber": "85074",
+    "fromStop": "Bad Wildbad Kurpark",
+    "fromTime": "16:05",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "17:30",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280362",
+    "capturedAt": "2026-11-13T11:48:29.334Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
