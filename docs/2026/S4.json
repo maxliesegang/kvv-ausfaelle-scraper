@@ -10113,7 +10113,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-11-15",
+      "checkedAt": "2026-11-16",
       "segmentStops": 33,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -10123,13 +10123,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261114-e334f5ca-eb9a-3622-b591-f7a62e11ccb2",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-16",
           "segmentStops": 33,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -10139,7 +10139,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261114-e334f5ca-eb9a-3622-b591-f7a62e11ccb2",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
@@ -10179,7 +10179,7 @@
       "status": "no-data",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-11-15",
+      "checkedAt": "2026-11-16",
       "segmentStops": 10,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -10189,13 +10189,13 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "journeyId": "20261114-12133a4f-c27a-38f9-9c6a-a4e4c5477e15",
-      "attempts": 1,
+      "attempts": 2,
       "checks": {
         "bahn.expert": {
           "status": "no-data",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-11-15",
+          "checkedAt": "2026-11-16",
           "segmentStops": 10,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -10205,7 +10205,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "journeyId": "20261114-12133a4f-c27a-38f9-9c6a-a4e4c5477e15",
-          "attempts": 1
+          "attempts": 2
         },
         "transitous": {
           "status": "unresolved",
