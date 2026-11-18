@@ -10287,5 +10287,33 @@
       "journeyCancelled": true,
       "journeyId": "20261115-b8adab35-4d6a-3163-a56b-db503fae9684"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-18",
+    "stand": "2026-11-18T01:01:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Albtalbahnhof KA",
+    "fromTime": "07:35",
+    "toStop": "Flehingen Bf.",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280718",
+    "capturedAt": "2026-11-18T05:41:36.445Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-18",
+    "stand": "2026-11-18T01:01:00.000Z",
+    "trainNumber": "85516",
+    "fromStop": "Flehingen Bf.",
+    "fromTime": "09:20",
+    "toStop": "Tullastraße KA",
+    "toTime": "10:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280718",
+    "capturedAt": "2026-11-18T05:41:36.445Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
