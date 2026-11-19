@@ -29,7 +29,7 @@ import {
   LINE_MENTION_SECTION_PATTERN,
   LINE_IDENTIFIER_PATTERN,
   TRIP_TIME_PAIR_PATTERN,
-  TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN,
+  TRIP_ROW_TRAIN_NUMBER_SEPARATOR_PATTERN,
   TRIP_ROW_DATE_SUFFIX_PATTERN,
   TRIP_ROW_WEEKDAY_DATE_MARKER_PATTERN,
   TRIP_ROW_UNSHIFTED_OPENING_PARENTHESIS_PATTERN,
@@ -355,8 +355,8 @@ export function buildTripCandidateRows(text: string): string[] {
         .replace(/&nbsp;/gi, ' ')
         .replace(/\u00a0/g, ' ')
         .trim()
-        // Drop the colon KVV sometimes puts after the leading train number
-        .replace(TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN, '$1 '),
+        // Drop the colon or comma KVV sometimes puts after the leading train number
+        .replace(TRIP_ROW_TRAIN_NUMBER_SEPARATOR_PATTERN, '$1 '),
     )
     .filter((line) => {
       if (!line) return false;

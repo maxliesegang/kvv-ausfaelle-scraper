@@ -511,6 +511,29 @@ describe('Parser - Detail Page Parsing', () => {
       );
     });
 
+    it('drops a colon or comma after the leading train number', () => {
+      // "10013:" and Nettro_CMS_280771's "85541," — punctuation, not part of any field layout.
+      const text = [
+        'Betroffene Fahrten:',
+        '10013: Ettlingen Stadt (06:04 Uhr) - Neureut Kirchfeld (06:51 Uhr)',
+        '85541, KA-Albtalbahnhof (01:15 Uhr) - Bretten Gölshausen (02:07 Uhr)',
+      ].join('\n');
+      const rows = extractTripRows(text);
+      assert.deepStrictEqual(rows, [
+        '10013 Ettlingen Stadt (06:04 Uhr) - Neureut Kirchfeld (06:51 Uhr)',
+        '85541 KA-Albtalbahnhof (01:15 Uhr) - Bretten Gölshausen (02:07 Uhr)',
+      ]);
+      assert.deepStrictEqual(parseTripRowFields(rows[1]!), [
+        {
+          trainNumber: '85541',
+          fromStop: 'KA-Albtalbahnhof',
+          fromTime: '01:15',
+          toStop: 'Bretten Gölshausen',
+          toTime: '02:07',
+        },
+      ]);
+    });
+
     it('never merges adjacent rows that each start with a train number', () => {
       const text = [
         'Betroffene Fahrten:',

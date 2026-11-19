@@ -10347,5 +10347,19 @@
       "trackedAdjacentStops": 2,
       "journeyId": "20261118-3c840690-c34d-32ce-9654-cdcb207fb8c5"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-19",
+    "stand": "2026-11-18T21:18:00.000Z",
+    "trainNumber": "85541",
+    "fromStop": "KA-Albtalbahnhof",
+    "fromTime": "01:15",
+    "toStop": "Bretten Gölshausen",
+    "toTime": "02:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280771",
+    "capturedAt": "2026-11-19T06:49:42.627Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

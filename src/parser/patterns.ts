@@ -121,14 +121,15 @@ export const PATTERNS = {
 } as const;
 
 /**
- * A leading train number followed by a colon separator, as in
- * "10013: Ettlingen Stadt (06:04 Uhr) - Neureut Kirchfeld (06:51 Uhr)".
- * The colon is punctuation KVV sometimes adds, not part of any field layout, so candidate
- * lines drop it before format matching instead of every trip format tolerating it.
+ * A leading train number followed by a colon or comma separator, as in
+ * "10013: Ettlingen Stadt (06:04 Uhr) - Neureut Kirchfeld (06:51 Uhr)" or
+ * "85541, KA-Albtalbahnhof (01:15 Uhr) - Bretten Gölshausen (02:07 Uhr)" (Nettro_CMS_280771).
+ * The punctuation is something KVV sometimes adds, not part of any field layout, so candidate
+ * rows drop it before format matching instead of every trip format tolerating it.
  * Requires at least three digits plus trailing whitespace so a leading clock time
  * ("10:30 Uhr Söllingen …") can never match.
  */
-export const TRIP_ROW_TRAIN_NUMBER_COLON_PATTERN = /^(\d{3,})\s*:\s+/;
+export const TRIP_ROW_TRAIN_NUMBER_SEPARATOR_PATTERN = /^(\d{3,})\s*[:,]\s+/;
 
 /**
  * A date row standing alone between trip rows — "06.07.2026", occasionally "6.7." — which KVV
