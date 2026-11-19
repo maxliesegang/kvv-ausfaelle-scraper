@@ -1,0 +1,30 @@
+Quelle: https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=100004582_KVV_ICSKVV
+Stand:  unbekannt
+Titel:  Linien: S1, S11, SEV - Karlsruhe Hbf (Vorplatz) - Ettlingen: S1/S11 Teilabschnitt entfällt ab 20 Uhr (15.12.2026 bis 17.12.2026)
+Datum:  2026-11-19T11:55:00.000Z
+========================================================================
+
+Verkehrsmeldungen
+KVV
+Fahrplan
+Verkehrsmeldungen
+Vom 15.12.2026 bis 17.12.2026
+Linien: S1, S11, SEV
+Karlsruhe Hbf (Vorplatz) - Ettlingen: S1/S11 Teilabschnitt entfällt ab 20 Uhr
+(AVG)
+Karlsruhe Hbf (Vorplatz) - Ettlingen: S1/S11 Teilabschnitt entfällt ab 20 Uhr
+Linie(n): S1/S11
+Zeitraum:  Nächte 15.12./16.12. -  16.12./17.12.2026  (jeweils 20:00 Uhr - 04:10 Uhr)
+Entfall Stadtbahn: Karlsruhe Hbf (Vorplatz) <-> Ettlingen Stadt 
+Ersatzverkehr:  
+•    Karlsruhe Hbf (Vorplatz) <-> Ettlingen Stadt  
+•    in Fahrtrichtung Karlsruhe Innenstadt erfolgt der Umstieg von SEV zu Stadtbahn an der Haltestelle Poststraße 
+Grund: Bauarbeiten der AVG (dringend notwendige Schienenschleifarbeiten in Karlsruhe Rüppurr)
+Ausnahmen/Sonstiges:  
+Die Fahrzeiten der letzten Fahrten nach Hochstetten sowie der jeweils letzten Fahrt nach Ittersbach und Bad Herrenalb wurden angepasst:
+•    S1 Ettlingen Stadt (00:31) (00:58) - Bad Herrenalb (00:53) (01:22)
+•    S11 Ettlingen Stadt (00:51) (01:18) - Ittersbach Rathaus (01:15) (01:42)
+•    S1 Karlsruhe Hbf (Vorplatz) (00:25) (00:45) - Hochstetten (01:16) (01:36)
+•    S1 Karlsruhe Hbf (Vorplatz) (00:45) (01:05) - Hochstetten (01:36) (01:56)
+Fahrplan Ersatzverkehr (öffnet in neuem Fenster)
+Zurück zur Übersicht

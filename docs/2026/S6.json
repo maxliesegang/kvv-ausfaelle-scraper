@@ -2674,7 +2674,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280787",
     "capturedAt": "2026-11-19T12:25:36.051Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 19,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 19,
+      "journeyStops": 19,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 19,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261119-50ebc2e6-5be2-348d-aba4-536bbd85429d"
+    }
   },
   {
     "line": "S6",
@@ -2688,7 +2704,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280823",
     "capturedAt": "2026-11-19T12:25:35.858Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 19,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 0,
+      "journeyStops": 67,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 22,
+      "trackedOutsideSegment": 22,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261119-ceff9a36-0f56-333d-8201-c9bf4e0b4c58",
+      "feedLine": "S5"
+    }
   },
   {
     "line": "S6",
@@ -2702,7 +2734,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280787",
     "capturedAt": "2026-11-19T12:25:36.051Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 19,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 19,
+      "journeyStops": 19,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 19,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261119-623d3464-54e8-3b15-8e3d-222a035b5af6"
+    }
   },
   {
     "line": "S6",
@@ -2716,7 +2764,59 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280823",
     "capturedAt": "2026-11-19T12:25:35.858Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "partial",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 40,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 17,
+      "journeyStops": 67,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 17,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261119-b8596878-ac51-3fe4-9633-ca10de41553b",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "partial",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-11-19",
+          "segmentStops": 40,
+          "segmentCancelledStops": 19,
+          "segmentTrackedStops": 17,
+          "journeyStops": 67,
+          "journeyCancelledStops": 19,
+          "journeyTrackedStops": 17,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261119-b8596878-ac51-3fe4-9633-ca10de41553b",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-11-19",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261119_14:05_de-KVV_170.T0.22-306-E-s26-16.7.R",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   },
   {
     "line": "S6",
@@ -2730,7 +2830,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280787",
     "capturedAt": "2026-11-19T12:25:36.051Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 19,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 0,
+      "journeyStops": 19,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261119-d463549a-5fe1-3eca-aee0-8c17a132de75"
+    }
   },
   {
     "line": "S6",
@@ -2744,7 +2860,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280787",
     "capturedAt": "2026-11-19T12:25:36.051Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 19,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 0,
+      "journeyStops": 19,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261119-236ce8bb-68c0-3958-8aeb-0aedd6302972"
+    }
   },
   {
     "line": "S6",
@@ -2758,6 +2890,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280787",
     "capturedAt": "2026-11-19T12:25:36.051Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 19,
+      "segmentCancelledStops": 19,
+      "segmentTrackedStops": 0,
+      "journeyStops": 19,
+      "journeyCancelledStops": 19,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261119-64cb6de7-095b-31e0-9f7a-c5ba57c87587"
+    }
   }
 ]
