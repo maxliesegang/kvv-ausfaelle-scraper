@@ -10360,6 +10360,50 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280771",
     "capturedAt": "2026-11-19T06:49:42.627Z",
     "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-19",
+      "segmentStops": 28,
+      "segmentCancelledStops": 28,
+      "segmentTrackedStops": 0,
+      "journeyStops": 28,
+      "journeyCancelledStops": 28,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261119-a9d32261-eb8e-32ab-9d10-9ce1f549984e"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-19",
+    "stand": "2026-11-19T10:32:00.000Z",
+    "trainNumber": "85531",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "19:35",
+    "toStop": "Flehingen Bf",
+    "toTime": "20:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280839",
+    "capturedAt": "2026-11-19T12:25:35.862Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-19",
+    "stand": "2026-11-19T10:32:00.000Z",
+    "trainNumber": "85540",
+    "fromStop": "Flehingen Bf",
+    "fromTime": "21:20",
+    "toStop": "Albtalbahnhof",
+    "toTime": "22:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280839",
+    "capturedAt": "2026-11-19T12:25:35.862Z",
+    "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }
 ]
