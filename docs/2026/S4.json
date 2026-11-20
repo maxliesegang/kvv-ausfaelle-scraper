@@ -10450,7 +10450,24 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280898",
     "capturedAt": "2026-11-20T05:28:54.152Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-20",
+      "segmentStops": 40,
+      "segmentCancelledStops": 40,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261120-dd2b2e57-8092-3f7b-89fa-2a59b2cec35a",
+      "feedLine": "S7"
+    }
   },
   {
     "line": "S4",
@@ -10464,6 +10481,63 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280898",
     "capturedAt": "2026-11-20T05:28:54.152Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-20",
+      "segmentStops": 22,
+      "segmentCancelledStops": 22,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 22,
+      "journeyTrackedStops": 11,
+      "trackedOutsideSegment": 11,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261120-3c840690-c34d-32ce-9654-cdcb207fb8c5"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T12:55:00.000Z",
+    "trainNumber": "85480",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "17:27",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "17:42",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280940",
+    "capturedAt": "2026-11-20T16:37:45.314Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T12:55:00.000Z",
+    "trainNumber": "85529",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "18:35",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "18:49",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280940",
+    "capturedAt": "2026-11-20T16:37:45.314Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T12:55:00.000Z",
+    "trainNumber": "85538",
+    "fromStop": "Karlsruhe Tullastraße",
+    "fromTime": "21:07",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "21:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280940",
+    "capturedAt": "2026-11-20T16:37:45.314Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

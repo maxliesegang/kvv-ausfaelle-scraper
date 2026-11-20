@@ -5609,5 +5609,78 @@
       },
       "agreement": "single-source"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T09:37:00.000Z",
+    "trainNumber": "20036",
+    "fromStop": "Hochstetten",
+    "fromTime": "12:12",
+    "toStop": "Ettlingen Stadt",
+    "toTime": "13:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280932",
+    "capturedAt": "2026-11-20T16:37:45.404Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-20",
+      "segmentStops": 43,
+      "segmentCancelledStops": 43,
+      "segmentTrackedStops": 0,
+      "journeyStops": 55,
+      "journeyCancelledStops": 43,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261120-a9d6533e-e3e3-309c-9ccb-76ea2458267a"
+    }
+  },
+  {
+    "line": "S11",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T09:37:00.000Z",
+    "trainNumber": "20046",
+    "fromStop": "Neureut/Kirchfeld",
+    "fromTime": "15:03",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "16:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280932",
+    "capturedAt": "2026-11-20T16:37:45.404Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-20",
+      "segmentStops": 41,
+      "segmentCancelledStops": 41,
+      "segmentTrackedStops": 0,
+      "journeyStops": 41,
+      "journeyCancelledStops": 41,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261120-ba3d000d-3d74-3ad7-997b-08f3c510362f"
+    }
+  },
+  {
+    "line": "S11",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T09:37:00.000Z",
+    "trainNumber": "20047",
+    "fromStop": "Ittersbach Rathaus",
+    "fromTime": "16:21",
+    "toStop": "Hochstetten",
+    "toTime": "17:55",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280932",
+    "capturedAt": "2026-11-20T16:37:45.404Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
