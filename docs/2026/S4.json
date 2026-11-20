@@ -10437,5 +10437,33 @@
       "journeyCancelled": true,
       "journeyId": "20261119-696c7b9e-d4a3-3720-9b69-7c87f9791f8b"
     }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T01:33:00.000Z",
+    "trainNumber": "85507",
+    "fromStop": "Baden-Baden",
+    "fromTime": "07:00",
+    "toStop": "Flehingen",
+    "toTime": "08:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280898",
+    "capturedAt": "2026-11-20T05:28:54.152Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T01:33:00.000Z",
+    "trainNumber": "85516",
+    "fromStop": "Flehingen",
+    "fromTime": "09:20",
+    "toStop": "KA Tullastr./Alter Schlachthof",
+    "toTime": "10:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280898",
+    "capturedAt": "2026-11-20T05:28:54.152Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
