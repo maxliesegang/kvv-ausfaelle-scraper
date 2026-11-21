@@ -17,8 +17,13 @@ Betriebsbedingte Fahrtausfälle. Auf der Linie S4 kommt es wegen Engpässen beim
 Nach aktuellem Stand 21.11.2026 10:17:00 sind folgende Fahrten von einem (Teil-)Ausfall betroffen: 
 85515 Karlsruhe Albtalbahnhof (11:35 Uhr) - Flehingen Bahnhof ( 12:37 Uhr)
 85524 Flehingen Bahnhof (13:20 Uhr) - Karlsruhe Albtalbahnhof (14:22 Uhr)
+85449 Karlsruhe Albtalbahnhof (15:15 Uhr) - Heilbronn Willy-Brandt-Platz (17:05 Uhr)
 85523 Karlsruhe Albtalbahnhof (15:35 Uhr) - Flehingen Bahnhof (16:37 Uhr)
 85532 Flehingen Bahnhof (17:20 Uhr) - Karlsruhe Albtalbahnhof (18:22 Uhr)
+85531 Karlsruhe Albtalbahnhof (19:35 Uhr) - Flehingen Bahnhof (20:37 Uhr)
+80059 Heilbronn Willy-Brandt-Platz (20:06 Uhr) - Heilbronn Pfühlpark (20:15 Uhr)
+85466 Heilbronn Pfühlpark (20:44 Uhr) - Karlsruhe Albtalbahnhof (22:42 Uhr)
+85540 Flehingen Bahnhof (21:20 Uhr) - Karlsruhe Albtalbahnhof (22:22 Uhr)
 Ob deine Verbindung davon betroffen ist, kannst Du in unserem Abfahrtsmonitor nachschauen:
 www.kvv.de/abfahrtsmonitor oder in der KVV App.
 Zurück zur Übersicht

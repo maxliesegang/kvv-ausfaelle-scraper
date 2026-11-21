@@ -5698,5 +5698,71 @@
       "journeyCancelled": true,
       "journeyId": "20261120-ace2532a-fee5-3795-9a4f-c7a10ec3a459"
     }
+  },
+  {
+    "line": "S11",
+    "date": "2026-11-21",
+    "stand": "2026-11-21T14:24:00.000Z",
+    "trainNumber": "26048",
+    "fromStop": "Neureut Kirchfeld",
+    "fromTime": "18:05",
+    "toStop": "Ettlingen Albgaubad",
+    "toTime": "18:49",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281082",
+    "capturedAt": "2026-11-21T19:02:52.602Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "no-data",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 30,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 41,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261121-6e4c9ea7-5986-39fe-b39b-a3d9a813182b",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "no-data",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-11-21",
+          "segmentStops": 30,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 41,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261121-6e4c9ea7-5986-39fe-b39b-a3d9a813182b",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-11-21",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261121_18:05_de-KVV_106.T2.22-311-E-s26-7.11.R",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   }
 ]
