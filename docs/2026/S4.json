@@ -10627,7 +10627,23 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280981",
     "capturedAt": "2026-11-21T01:01:31.407Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 57,
+      "segmentCancelledStops": 57,
+      "segmentTrackedStops": 0,
+      "journeyStops": 57,
+      "journeyCancelledStops": 57,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261121-9d38a13c-e668-3699-82c1-cc715a30b643"
+    }
   },
   {
     "line": "S4",
@@ -10641,6 +10657,78 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280981",
     "capturedAt": "2026-11-21T01:01:31.407Z",
     "cause": "operational",
-    "causeKeyword": "betriebsbedingt"
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 29,
+      "segmentCancelledStops": 29,
+      "segmentTrackedStops": 0,
+      "journeyStops": 29,
+      "journeyCancelledStops": 29,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261121-ecebd376-57e7-36a9-bf04-aba0d6882b43"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-21",
+    "stand": "2026-11-21T09:17:00.000Z",
+    "trainNumber": "85515",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "11:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "12:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281007",
+    "capturedAt": "2026-11-21T12:00:08.166Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-21",
+    "stand": "2026-11-21T09:17:00.000Z",
+    "trainNumber": "85524",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "13:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "14:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281007",
+    "capturedAt": "2026-11-21T12:00:08.166Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-21",
+    "stand": "2026-11-21T09:17:00.000Z",
+    "trainNumber": "85523",
+    "fromStop": "Karlsruhe Albtalbahnhof",
+    "fromTime": "15:35",
+    "toStop": "Flehingen Bahnhof",
+    "toTime": "16:37",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281007",
+    "capturedAt": "2026-11-21T12:00:08.166Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-21",
+    "stand": "2026-11-21T09:17:00.000Z",
+    "trainNumber": "85532",
+    "fromStop": "Flehingen Bahnhof",
+    "fromTime": "17:20",
+    "toStop": "Karlsruhe Albtalbahnhof",
+    "toTime": "18:22",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281007",
+    "capturedAt": "2026-11-21T12:00:08.166Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
