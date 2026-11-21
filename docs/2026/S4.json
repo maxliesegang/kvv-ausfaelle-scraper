@@ -10510,7 +10510,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280940",
     "capturedAt": "2026-11-20T16:37:45.314Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 37,
+      "trackedOutsideSegment": 37,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261120-620aec80-c968-3035-9993-bc2ff615d827"
+    }
   },
   {
     "line": "S4",
@@ -10524,7 +10539,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280940",
     "capturedAt": "2026-11-20T16:37:45.314Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 11,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 17,
+      "trackedOutsideSegment": 17,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261120-e85d67c9-56ab-3469-9b41-ee8b5591a7d1"
+    }
   },
   {
     "line": "S4",
@@ -10538,6 +10568,79 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280940",
     "capturedAt": "2026-11-20T16:37:45.314Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 11,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 18,
+      "trackedOutsideSegment": 18,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261120-3f259e6f-9561-3a18-a001-dc061119bff9"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-20",
+    "stand": "2026-11-20T20:25:00.000Z",
+    "trainNumber": "85469",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "23:15",
+    "toStop": "Pfühlpark",
+    "toTime": "01:18",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280981",
+    "capturedAt": "2026-11-21T01:01:31.407Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-21",
+      "segmentStops": 57,
+      "segmentCancelledStops": 57,
+      "segmentTrackedStops": 0,
+      "journeyStops": 57,
+      "journeyCancelledStops": 57,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261120-38f7648f-20c6-3ae9-b5e5-a7587414b59c"
+    }
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-21",
+    "stand": "2026-11-20T20:25:00.000Z",
+    "trainNumber": "85476",
+    "fromStop": "Pfühlpark",
+    "fromTime": "01:25",
+    "toStop": "Albtalbahnhof",
+    "toTime": "03:23",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280981",
+    "capturedAt": "2026-11-21T01:01:31.407Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
+  },
+  {
+    "line": "S4",
+    "date": "2026-11-21",
+    "stand": "2026-11-20T20:25:00.000Z",
+    "trainNumber": "85545",
+    "fromStop": "Albtalbahnhof",
+    "fromTime": "02:11",
+    "toStop": "Gölshausen",
+    "toTime": "03:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_280981",
+    "capturedAt": "2026-11-21T01:01:31.407Z",
+    "cause": "operational",
+    "causeKeyword": "betriebsbedingt"
   }
 ]
