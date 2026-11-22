@@ -40671,5 +40671,75 @@
       "journeyCancelled": true,
       "journeyId": "20261121-abf33c0b-7892-3f3b-8385-f9055ada5727"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-22",
+    "stand": "2026-11-22T08:52:00.000Z",
+    "trainNumber": "84852",
+    "fromStop": "KA Tullastr.",
+    "fromTime": "18:11",
+    "toStop": "Wörth Badepark",
+    "toTime": "18:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281098",
+    "capturedAt": "2026-11-22T12:13:24.582Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-22",
+    "stand": "2026-11-22T08:52:00.000Z",
+    "trainNumber": "84845",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "19:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "20:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281098",
+    "capturedAt": "2026-11-22T12:13:24.582Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-22",
+    "stand": "2026-11-22T08:52:00.000Z",
+    "trainNumber": "84860",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "20:51",
+    "toStop": "Wörth Badepark",
+    "toTime": "21:53",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281098",
+    "capturedAt": "2026-11-22T12:13:24.582Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-22",
+    "stand": "2026-11-22T08:52:00.000Z",
+    "trainNumber": "84851",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "22:05",
+    "toStop": "Söllingen Bf.",
+    "toTime": "23:06",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281098",
+    "capturedAt": "2026-11-22T12:13:24.582Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-22",
+    "stand": "2026-11-22T08:52:00.000Z",
+    "trainNumber": "85096",
+    "fromStop": "Söllingen Bf.",
+    "fromTime": "23:19",
+    "toStop": "Betriebshof Gerwigstr.",
+    "toTime": "23:36",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281098",
+    "capturedAt": "2026-11-22T12:13:24.582Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
