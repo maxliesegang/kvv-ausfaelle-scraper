@@ -16,11 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # commit/push docs/
-      pages: write # deploy to GitHub Pages
-      id-token: write # OIDC token for deploy-pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+    outputs:
+      pages-artifact-id: ${{ steps.upload-pages.outputs.artifact_id }}
 
     steps:
       - uses: actions/checkout@v7
@@ -75,21 +72,18 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Upload Pages artifact
+        id: upload-pages
         if: ${{ !cancelled() }}
         uses: actions/upload-pages-artifact@v5
         with:
           path: docs
 
-      - name: Deploy to GitHub Pages
-        id: deploy
-        if: ${{ !cancelled() }}
-        uses: actions/deploy-pages@v5
-
       # The corpus audits (tests/unit/archive-corpus.test.ts, archive-relevance.test.ts) read
       # docs/, so an article archived by the run above can turn them red with no code change —
       # a class of regression the CI workflow, which only sees commits it is triggered by, can
-      # report only after the fact. Run them here, after the data is committed and published,
-      # so the good data still goes live and the failure lands on the run that produced it.
+      # report only after the fact. Run them here, after the data is committed and the Pages
+      # artifact uploaded: the deploy job keys off the artifact, not this job's result, so the
+      # good data still goes live and the failure lands on the run that produced it.
       - name: Audit the committed data
         if: ${{ !cancelled() }}
         run: npm test
@@ -105,3 +99,27 @@ jobs:
           echo "Scraper exited non-zero (parse errors or unclassified 'unknown' causes)."
           echo "Data was still committed above; check logs for affected articles."
           exit 1
+
+  # Deploy in its own job, as GitHub's Pages starter workflows do. deploy-pages@v5 has no
+  # artifact_id input; it finds the artifact by name through the run-artifacts listing API, and
+  # that listing can lag a just-finalized upload. Run in the same job as the upload, the lookup
+  # came back empty ("No artifacts named github-pages", actions/deploy-pages#451). A separate
+  # job adds seconds between upload and lookup.
+  #
+  # Gate on the uploaded artifact id rather than on build-and-run succeeding: that job ends red
+  # whenever the audit or the scraper verdict fails, and neither should withhold valid data.
+  deploy:
+    needs: build-and-run
+    if: ${{ !cancelled() && needs.build-and-run.outputs.pages-artifact-id != '' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write # deploy to GitHub Pages
+      id-token: write # OIDC token for deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v5
