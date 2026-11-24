@@ -26,12 +26,12 @@
     "checkedTrips": 1565,
     "totalTrips": 3417,
     "statusCounts": {
-      "cancelled": 1242,
+      "cancelled": 1243,
       "partial": 71,
       "ran": 33,
       "no-data": 153,
-      "unresolved": 66
+      "unresolved": 65
     }
   },
-  "generatedAt": "2026-11-23T19:45:38.463Z"
+  "generatedAt": "2026-11-24T04:33:43.080Z"
 }
