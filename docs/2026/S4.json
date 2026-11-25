@@ -11148,7 +11148,22 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281431",
     "capturedAt": "2026-11-25T13:49:27.639Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-26",
+      "segmentStops": 11,
+      "segmentCancelledStops": 11,
+      "segmentTrackedStops": 0,
+      "journeyStops": 32,
+      "journeyCancelledStops": 11,
+      "journeyTrackedStops": 18,
+      "trackedOutsideSegment": 18,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261125-850e89cc-aeae-39fe-9c14-ae3ae97bdea2"
+    }
   },
   {
     "line": "S4",
@@ -11162,7 +11177,61 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281431",
     "capturedAt": "2026-11-25T13:49:27.639Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "unresolved",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-26",
+      "segmentStops": 0,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 36,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 21,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261125-71d1a2f1-b732-3d15-8ff6-6073e8dc7ea7",
+      "unresolvedReason": "journey-mismatch",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-11-26",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 36,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 21,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261125-71d1a2f1-b732-3d15-8ff6-6073e8dc7ea7",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-11-26",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261125_15:35_de-KVV_517.T0.22-304-E-s26-17.123.R",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   },
   {
     "line": "S4",
@@ -11176,7 +11245,59 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281431",
     "capturedAt": "2026-11-25T13:49:27.639Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "partial",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-26",
+      "segmentStops": 11,
+      "segmentCancelledStops": 10,
+      "segmentTrackedStops": 0,
+      "journeyStops": 51,
+      "journeyCancelledStops": 10,
+      "journeyTrackedStops": 37,
+      "trackedOutsideSegment": 37,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261125-652a6ed8-c70f-33ac-80a6-3f8bdcc3f9a6",
+      "attempts": 1,
+      "checks": {
+        "bahn.expert": {
+          "status": "partial",
+          "methodVersion": 7,
+          "source": "bahn.expert",
+          "checkedAt": "2026-11-26",
+          "segmentStops": 11,
+          "segmentCancelledStops": 10,
+          "segmentTrackedStops": 0,
+          "journeyStops": 51,
+          "journeyCancelledStops": 10,
+          "journeyTrackedStops": 37,
+          "trackedOutsideSegment": 37,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261125-652a6ed8-c70f-33ac-80a6-3f8bdcc3f9a6",
+          "attempts": 1
+        },
+        "transitous": {
+          "status": "unresolved",
+          "methodVersion": 7,
+          "source": "transitous",
+          "checkedAt": "2026-11-26",
+          "segmentStops": 0,
+          "segmentCancelledStops": 0,
+          "segmentTrackedStops": 0,
+          "journeyStops": 0,
+          "journeyCancelledStops": 0,
+          "journeyTrackedStops": 0,
+          "trackedOutsideSegment": 0,
+          "trackedAdjacentStops": 0,
+          "journeyId": "20261125_17:43_de-KVV_1675.T0.22-304-E-s26-17.184.H",
+          "unresolvedReason": "journey-mismatch",
+          "attempts": 1
+        }
+      },
+      "agreement": "single-source"
+    }
   },
   {
     "line": "S4",
@@ -11190,6 +11311,21 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281431",
     "capturedAt": "2026-11-25T13:49:27.639Z",
     "cause": "personnel",
-    "causeKeyword": "fahrpersonal"
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-26",
+      "segmentStops": 11,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 0,
+      "journeyStops": 33,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 19,
+      "trackedOutsideSegment": 19,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261125-f4b8dba8-8f0f-36e4-84a3-911888d6c722"
+    }
   }
 ]

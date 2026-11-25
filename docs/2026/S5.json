@@ -40844,7 +40844,7 @@
       "status": "unresolved",
       "methodVersion": 7,
       "source": "bahn.expert",
-      "checkedAt": "2026-11-25",
+      "checkedAt": "2026-11-26",
       "segmentStops": 0,
       "segmentCancelledStops": 0,
       "segmentTrackedStops": 0,
@@ -40854,7 +40854,7 @@
       "trackedOutsideSegment": 0,
       "trackedAdjacentStops": 0,
       "unresolvedReason": "journey-not-in-network",
-      "attempts": 2,
+      "attempts": 3,
       "checks": {
         "transitous": {
           "status": "unresolved",
@@ -40876,7 +40876,7 @@
           "status": "unresolved",
           "methodVersion": 7,
           "source": "bahn.expert",
-          "checkedAt": "2026-11-25",
+          "checkedAt": "2026-11-26",
           "segmentStops": 0,
           "segmentCancelledStops": 0,
           "segmentTrackedStops": 0,
@@ -40886,7 +40886,7 @@
           "trackedOutsideSegment": 0,
           "trackedAdjacentStops": 0,
           "unresolvedReason": "journey-not-in-network",
-          "attempts": 2
+          "attempts": 3
         }
       },
       "agreement": "single-source"
