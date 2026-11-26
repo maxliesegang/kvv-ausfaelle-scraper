@@ -40964,6 +40964,63 @@
     "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281485",
     "capturedAt": "2026-11-26T07:15:02.761Z",
     "cause": "personnel",
+    "causeKeyword": "fahrpersonal",
+    "verification": {
+      "status": "ran",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-26",
+      "segmentStops": 30,
+      "segmentCancelledStops": 0,
+      "segmentTrackedStops": 30,
+      "journeyStops": 30,
+      "journeyCancelledStops": 0,
+      "journeyTrackedStops": 30,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyId": "20261126-a209b918-6750-3061-8a86-75d577eb30eb"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-26",
+    "stand": "2026-11-26T11:54:00.000Z",
+    "trainNumber": "84770",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "18:18",
+    "toStop": "KA Rheinbergstraße",
+    "toTime": "19:04",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281485",
+    "capturedAt": "2026-11-26T18:03:10.721Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-26",
+    "stand": "2026-11-26T11:54:00.000Z",
+    "trainNumber": "85084",
+    "fromStop": "Ka. Tullastraße",
+    "fromTime": "20:31",
+    "toStop": "Wörth Badepark",
+    "toTime": "21:15",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281485",
+    "capturedAt": "2026-11-26T18:03:10.721Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-26",
+    "stand": "2026-11-26T11:54:00.000Z",
+    "trainNumber": "85097",
+    "fromStop": "Wörth Badepark",
+    "fromTime": "21:43",
+    "toStop": "Pforzheim Hbf",
+    "toTime": "23:10",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281485",
+    "capturedAt": "2026-11-26T18:03:10.721Z",
+    "cause": "personnel",
     "causeKeyword": "fahrpersonal"
   }
 ]
