@@ -263,5 +263,19 @@
       "journeyCancelled": true,
       "journeyId": "20261007-30a457f2-bbed-3dfe-bea9-4871af66d5b1"
     }
+  },
+  {
+    "line": "S12",
+    "date": "2026-11-27",
+    "stand": "2026-11-27T09:23:00.000Z",
+    "trainNumber": "40016",
+    "fromStop": "Ka. Tullastraße",
+    "fromTime": "16:06",
+    "toStop": "Ittersbach Rathaus",
+    "toTime": "16:59",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281646",
+    "capturedAt": "2026-11-27T13:25:59.282Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]

@@ -41108,5 +41108,64 @@
       "journeyCancelled": true,
       "journeyId": "20261126-a1d54703-4ec8-30f1-985a-14257208b31d"
     }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-27",
+    "stand": "2026-11-27T05:09:00.000Z",
+    "trainNumber": "84809",
+    "fromStop": "Wörth (Rhein) Badepark",
+    "fromTime": "08:05",
+    "toStop": "Söllingen Bf",
+    "toTime": "09:09",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281604",
+    "capturedAt": "2026-11-27T13:25:59.424Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-27",
+      "segmentStops": 40,
+      "segmentCancelledStops": 40,
+      "segmentTrackedStops": 0,
+      "journeyStops": 40,
+      "journeyCancelledStops": 40,
+      "journeyTrackedStops": 0,
+      "trackedOutsideSegment": 0,
+      "trackedAdjacentStops": 0,
+      "journeyCancelled": true,
+      "journeyId": "20261127-20fc27a7-55c6-3486-b3b1-94c7d9dbd2d3"
+    }
+  },
+  {
+    "line": "S5",
+    "date": "2026-11-27",
+    "stand": "2026-11-27T05:09:00.000Z",
+    "trainNumber": "84722",
+    "fromStop": "Söllingen Bf",
+    "fromTime": "09:18",
+    "toStop": "Karlsruhe Tullastraße",
+    "toTime": "09:40",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281604",
+    "capturedAt": "2026-11-27T13:25:59.424Z",
+    "cause": "vehicle",
+    "causeKeyword": "fahrzeugstoerung",
+    "verification": {
+      "status": "cancelled",
+      "methodVersion": 7,
+      "source": "bahn.expert",
+      "checkedAt": "2026-11-27",
+      "segmentStops": 13,
+      "segmentCancelledStops": 13,
+      "segmentTrackedStops": 0,
+      "journeyStops": 30,
+      "journeyCancelledStops": 13,
+      "journeyTrackedStops": 18,
+      "trackedOutsideSegment": 18,
+      "trackedAdjacentStops": 2,
+      "journeyId": "20261127-5b9de8e7-ca67-3aec-952c-612ce6a3edcc"
+    }
   }
 ]
