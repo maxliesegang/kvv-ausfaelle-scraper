@@ -3,6 +3,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, test } from 'node:test';
 import { parseArchive } from '../../src/article-archive.js';
+import { toArticleText } from '../../src/parser/article-corrections.js';
 import { parseDetailPage } from '../../src/parser/index.js';
 import { isDiversionRow, toClockTime, toStopName } from '../../src/parser/trip-parsing.js';
 
@@ -121,7 +122,9 @@ function auditArchiveCorpus(): ArchiveCorpusAudit {
         parsingError = error;
       }
 
-      const bodyRows = archivedArticle.body.split('\n');
+      // Judge the same text the parser sees: an article correction (a KVV typo repaired from GTFS
+      // evidence) changes what a row says, so the raw archive row is no longer the expectation.
+      const bodyRows = toArticleText(archivedArticle.body, archivedArticle.url).split('\n');
 
       for (const [index, line] of bodyRows.entries()) {
         // A diverted train still runs, so no trip is expected from it — the same rule the live

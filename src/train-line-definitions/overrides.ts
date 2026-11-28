@@ -156,6 +156,13 @@ export const TRAIN_LINE_OVERRIDES: Readonly<
     Nettro_CMS_278824: {
       '33058': 'S1',
     },
+    // AVG staffing notice for S1/S11 (Hochstetten–Ittersbach Rathaus), 2026-11-25. Same
+    // S12-on-the-S11-corridor case as Nettro_CMS_274705: GTFS files the KA Tullastraße–Ittersbach
+    // Rathaus run 40016 only as an S12, while KVV reports it under the S11 corridor and never
+    // mentions S12.
+    Nettro_CMS_281372: {
+      '40016': 'S11',
+    },
     // DB construction notice for S8/S81 (Forbach–Freudenstadt), 2026-10-29. KVV numbers the
     // Murgtal runs 85946/85948/85949/85951, which GTFS uses only for unrelated S5
     // Pforzheim–KA Albtalbahnhof runs. Every GTFS run at the reported times is an S8 (e.g.

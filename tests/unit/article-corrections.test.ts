@@ -68,4 +68,23 @@ describe('article text corrections', () => {
     const article = loadArchivedArticle('2026', CORRECTED_ARTICLE_ID);
     assert.match(article.body, /Söllingen Bahnhof 09:009 Uhr/);
   });
+
+  test('renumbers a row whose signature GTFS files under a different Zugnummer', () => {
+    // Nettro_CMS_281507 lists "85095 Pforzheim Hbf (23:17) - Bad Wildbad (23:52)"; GTFS's S6
+    // 85095 runs an hour earlier, and this exact signature is 85097.
+    const article = loadArchivedArticle('2026', 'Nettro_CMS_281507');
+    const trips = parseDetailPage(article.body, article.url);
+
+    assert.equal(
+      trips.some((trip) => trip.trainNumber === '85095'),
+      false,
+    );
+    const renumbered = trips.find((trip) => trip.trainNumber === '85097');
+    assert.ok(renumbered, 'the corrected row must parse as 85097');
+    assert.deepEqual(
+      [renumbered.line, renumbered.date, renumbered.fromTime, renumbered.toTime],
+      ['S6', '2026-11-26', '23:17', '23:52'],
+    );
+    assert.match(article.body, /85095 Pforzheim Hbf \(23:17 Uhr\)/);
+  });
 });

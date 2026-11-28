@@ -82,6 +82,19 @@ const ARTICLE_CORRECTIONS: Readonly<Record<string, readonly ArticleCorrection[]>
   Nettro_CMS_278824: [
     { find: 'Ettlingen Stadt (21:18 Uh)', replace: 'Ettlingen Stadt (21:18 Uhr)' },
   ],
+  // S6 DB Regio cancellations, 2026-11-26. The Pforzheim Hbf 23:17 → Bad Wildbad 23:52 row is
+  // published as train 85095, but GTFS's S6 run 85095 that day leaves Pforzheim at 22:17 and
+  // reaches Bad Wildbad at 22:52, while the run with exactly this signature (Pforzheim Hbf 23:17
+  // → Bad Wildbad 23:52, active 2026-06-22–2026-12-12) is 85097 — the number the notice itself
+  // names a few rows further down as the train replaced by a Vorderpfalz bus, the same bus
+  // company this row names. bahn.expert found no 85095 journey matching the row
+  // (`journey-mismatch`), so the number, not the times, is the typo.
+  Nettro_CMS_281507: [
+    {
+      find: '85095 Pforzheim Hbf (23:17 Uhr) - Bad Wildbad (23:52)',
+      replace: '85097 Pforzheim Hbf (23:17 Uhr) - Bad Wildbad (23:52)',
+    },
+  ],
 };
 
 /**
