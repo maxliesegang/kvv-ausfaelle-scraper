@@ -33,11 +33,11 @@
     "rss-parser": "^3.13.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.6",
+    "@types/node": "^26.6.11",
     "@types/xml2js": "^0.4.14",
     "c8": "^12.0.0",
     "fflate": "^0.8.3",
-    "prettier": "^3.9.10",
+    "prettier": "^3.10.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
@@ -48,5 +48,9 @@
     "scraper",
     "rss",
     "cancellations"
-  ]
+  ],
+  "overrides": {
+    "minimatch": "^11.0.1",
+    "glob": "^14.0.2"
+  }
 }

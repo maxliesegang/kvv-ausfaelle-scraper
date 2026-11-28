@@ -48,6 +48,16 @@ When multiple files apply, use the closest file to the edited path as the most s
 - Treat published JSON field names as contracts, even when a longer internal name would be more
   descriptive.
 
+## Dependency Overrides
+
+`package.json` `overrides` pins `minimatch@^11.0.1` and `glob@^14.0.2`. Both are dev-only
+transitive dependencies of `c8` → `test-exclude@8.0.0`, which still requires the vulnerable
+`minimatch@^10` (GHSA-g3hv-75wg-m249) and `glob@^13` (GHSA-3g3m-2fjr-6pw4). Whenever `c8` or
+`test-exclude` is updated, drop the overrides if the new ranges already include the patched
+versions (`npm ls glob minimatch`, `npm audit`); otherwise an override silently holds back a
+newer major the dependency asks for. Verify with `npm run test:coverage` — coverage totals must
+stay unchanged, since `test-exclude` selects the measured files.
+
 ## Path Map
 
 - `/.github/AGENTS.md` - GitHub-level automation and monitoring context.
