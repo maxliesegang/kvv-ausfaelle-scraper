@@ -2763,5 +2763,33 @@
       "trackedAdjacentStops": 2,
       "journeyId": "20261027-1856cb2d-fc2b-3051-82df-bbe5c69fee59"
     }
+  },
+  {
+    "line": "S51",
+    "date": "2026-11-28",
+    "stand": "2026-11-28T14:52:00.000Z",
+    "trainNumber": "84928",
+    "fromStop": "Berghausen Bf",
+    "fromTime": "20:41",
+    "toStop": "Germersheim Bf",
+    "toTime": "22:07",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281738",
+    "capturedAt": "2026-11-28T16:34:21.310Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
+  },
+  {
+    "line": "S51",
+    "date": "2026-11-28",
+    "stand": "2026-11-28T14:52:00.000Z",
+    "trainNumber": "84943",
+    "fromStop": "Germersheim Bf",
+    "fromTime": "22:30",
+    "toStop": "Söllingen Bf",
+    "toTime": "23:56",
+    "sourceUrl": "https://www.kvv.de/fahrplan/verkehrsmeldungen.html?tx_ixkvvticker_list%5Baction%5D=detail&tx_ixkvvticker_list%5Bcontroller%5D=Ticker&tx_ixkvvticker_list%5BdetailID%5D=Nettro_CMS_281738",
+    "capturedAt": "2026-11-28T16:34:21.310Z",
+    "cause": "personnel",
+    "causeKeyword": "fahrpersonal"
   }
 ]
